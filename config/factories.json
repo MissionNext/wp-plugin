@@ -1,0 +1,32 @@
+{
+    "MailService" : {
+        "class" : "\\MissionNext\\lib\\MailService"
+    },
+    "User" : {
+        "class" : "\\MissionNext\\lib\\core\\User"
+    },
+    "FlashDataManager" : {
+        "class" : "\\MissionNext\\lib\\core\\FlashDataManager"
+    },
+    "GlobalConfigManager" : {
+        "class" : "\\MissionNext\\lib\\GlobalConfigManager"
+    },
+    "SiteConfigManager" : {
+        "class" : "\\MissionNext\\lib\\SiteConfigManager"
+    },
+    "UserConfigManager" : {
+        "class" : "\\MissionNext\\lib\\UserConfigManager"
+    },
+    "LocalizationManager" : {
+        "class" : "\\MissionNext\\lib\\LocalizationManager"
+    },
+    "CustomTranslationsManager" : {
+        "class" : "\\MissionNext\\lib\\CustomTranslationsManager"
+    },
+    "AvatarManager" : {
+        "class" : "\\MissionNext\\lib\\AvatarManager"
+    },
+    "AdminMailService" : {
+        "class" : "\\MissionNext\\lib\\AdminMailService"
+    }
+}

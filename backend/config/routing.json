@@ -1,0 +1,39 @@
+{
+    "model/field/delete" : {
+        "controller" : "model",
+        "action" : "deleteField"
+    },
+    "/model/field/get/translation" : {
+        "controller" : "model",
+        "action" : "getTranslation"
+    },
+    "/model/field/save/translation" : {
+        "controller" : "model",
+        "action" : "saveTranslation"
+    },
+
+    "folder/add" : {
+        "controller" : "folder",
+        "action" : "add"
+    },
+    "folder/delete" : {
+        "controller" : "folder",
+        "action" : "delete"
+    },
+    "folder/update" : {
+        "controller" : "folder",
+        "action" : "update"
+    },
+    "/folder/translation/load" : {
+        "controller" : "folder",
+        "action" : "loadTranslation"
+    },
+    "/folder/translation/save" : {
+        "controller" : "folder",
+        "action" : "saveTranslation"
+    },
+    "/folder/default/save" : {
+        "controller" : "folder",
+        "action" : "makeDefault"
+    }
+}

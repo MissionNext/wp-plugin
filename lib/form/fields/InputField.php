@@ -9,6 +9,10 @@ class InputField extends BaseField {
     public function printField ($options = array())
     {
         $default = ($this->default && $this->field['type'] != 'password')?$this->default:null;
+        if (!$default && !empty($this->field['default_value'])) {
+            $default = $this->field['default_value'];
+        }
+
         $placeholder = is_array($this->field['default_value'])?current($this->field['default_value']):$this->field['default_value'];
 
         if(is_array($default)){

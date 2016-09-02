@@ -34,7 +34,10 @@ class JobForm extends Form {
             $defaults = $this->job['profileData'];
             $name = $this->job['name'];
 
+            $publicKey = Context::getInstance()->getApiManager()->publicKey;
+
             if($force_new){
+                unset($defaults['job_title_!#'.$publicKey]);
                 unset($defaults['job_title']);
             }
         }
@@ -124,7 +127,7 @@ class JobForm extends Form {
         if (isset($pdata['job_title_!#'.$publicKey]) && $pdata['job_title_!#'.$publicKey]['value']) {
             $name = $pdata['job_title_!#'.$publicKey]['value'];
         } elseif (isset($pdata['job_title']) && $pdata['job_title']['value']) {
-            $name = $pdata['job_title_!#'.$publicKey]['value'];
+            $name = $pdata['job_title']['value'];
         } else {
             $name = 'undefined';
         }

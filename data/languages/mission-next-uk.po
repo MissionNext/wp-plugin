@@ -1,0 +1,723 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: mission-next\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/MissionNext\n"
+"POT-Creation-Date: 2014-06-27 13:42:55+00:00\n"
+"PO-Revision-Date: 2014-06-27 16:52+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: uk_UA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.5\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: LoginWidget.php:16
+msgid "MissionNext Login Widget"
+msgstr "uk_MissionNext Login Widget"
+
+#: LoginWidget.php:17
+msgid "A Login widget"
+msgstr "uk_A Login widget"
+
+#: LoginWidget.php:37 frontend/templates/home/index.php:2
+msgid "Hello"
+msgstr "Привіт"
+
+#: LoginWidget.php:40 frontend/templates/sidebarLayout.php:22
+msgid "My Profile"
+msgstr "uk_My Profile"
+
+#: LoginWidget.php:42 frontend/templates/sidebarLayout.php:55
+msgid "Logout"
+msgstr "uk_Logout"
+
+#: LoginWidget.php:53
+msgid "Not a member yet? Please register:"
+msgstr "uk_Not a member yet? Please register:"
+
+#: LoginWidget.php:54 LoginWidget.php:55 LoginWidget.php:56
+msgid "Register as %s"
+msgstr "Зареєструватись як %s"
+
+#: LoginWidget.php:57
+msgid "Forgot you password?"
+msgstr "Забули пароль?"
+
+#: LoginWidget.php:58
+msgid "Reset password"
+msgstr "uk_Reset password"
+
+#: frontend/controllers/AbstractLayoutController.php:68
+msgid "Please complete your profile to reveal the majesty and power of %s"
+msgstr "uk_Please complete your profile to reveal the majesty and power of %s"
+
+#: frontend/controllers/forgotPasswordController.php:27
+msgid "Check your e-mail for the confirmation link."
+msgstr "uk_Check your e-mail for the confirmation link."
+
+#: frontend/controllers/forgotPasswordController.php:33
+msgid ""
+"Please enter your username or email address. You will receive a link to "
+"create a new password via email."
+msgstr ""
+"uk_Please enter your username or email address. You will receive a link to "
+"create a new password via email."
+
+#: frontend/controllers/forgotPasswordController.php:45
+msgid "Sorry, that key has expired. Please try again."
+msgstr "uk_Sorry, that key has expired. Please try again."
+
+#: frontend/controllers/forgotPasswordController.php:47
+msgid "Sorry, that key does not appear to be valid."
+msgstr "uk_Sorry, that key does not appear to be valid."
+
+#: frontend/controllers/homeController.php:33
+msgid "Your account info saved successfully!"
+msgstr "uk_Your account info saved successfully!"
+
+#: frontend/controllers/inquireController.php:53
+#: frontend/controllers/inquireController.php:58
+msgid "Job inquire"
+msgstr "uk_Job inquire"
+
+#: frontend/controllers/inquireController.php:86
+#: frontend/controllers/inquireController.php:91
+msgid "%s inquire"
+msgstr "uk %s inquire"
+
+#: frontend/controllers/inquireController.php:123
+#: frontend/controllers/inquireController.php:124
+#: frontend/controllers/inquireController.php:129
+#: frontend/controllers/inquireController.php:161
+#: frontend/controllers/inquireController.php:166
+msgid "%s inquire cancel"
+msgstr "uk %s inquire cancel"
+
+#: frontend/templates/_avatar.php:77
+msgid "Upload"
+msgstr "Завантижити"
+
+#: frontend/templates/_avatar.php:79 frontend/templates/job/index.php:29
+#: frontend/templates/search/_ajax_search_saved.php:17
+msgid "Delete"
+msgstr "Видалити"
+
+#: frontend/templates/_email_popup.php:3
+msgid "To"
+msgstr "uk_To"
+
+#: frontend/templates/_email_popup.php:7
+msgid "From"
+msgstr "uk_From"
+
+#: frontend/templates/_email_popup.php:11
+msgid "Subject"
+msgstr "uk_Subject"
+
+#: frontend/templates/_email_popup.php:15
+msgid "Body"
+msgstr "uk_Body"
+
+#: frontend/templates/_email_popup.php:40
+msgid "Send"
+msgstr "Відправити"
+
+#: frontend/templates/_email_popup.php:53
+#: frontend/templates/affiliates/affiliates.php:32
+#: frontend/templates/affiliates/affiliates.php:47
+#: frontend/templates/affiliates/affiliates.php:70
+#: frontend/templates/common/_table.php:309
+#: frontend/templates/favorite/agency.php:123
+#: frontend/templates/inquire/candidate.php:31
+msgid "Cancel"
+msgstr "uk_Cancel"
+
+#: frontend/templates/affiliates/affiliates.php:10
+#: frontend/templates/sidebarLayout.php:34
+#: frontend/templates/sidebarLayout.php:47
+msgid "Affiliates"
+msgstr "uk_Affiliates"
+
+#: frontend/templates/affiliates/affiliates.php:19
+#: frontend/templates/affiliates/jobs.php:19
+#: frontend/templates/favorite/agency.php:20
+#: frontend/templates/favorite/candidate.php:23
+#: frontend/templates/favorite/organization.php:20
+#: frontend/templates/inquire/agency.php:20
+#: frontend/templates/inquire/candidate.php:20
+#: frontend/templates/inquire/organization.php:19
+#: frontend/templates/job/index.php:19
+msgid "Actions"
+msgstr "uk_Actions"
+
+#: frontend/templates/affiliates/affiliates.php:24
+msgid "Approved"
+msgstr "uk_Approved"
+
+#: frontend/templates/affiliates/affiliates.php:37
+msgid "Pending"
+msgstr "uk_Pending"
+
+#: frontend/templates/affiliates/affiliates.php:45
+msgid "Approve"
+msgstr "uk_Approve"
+
+#: frontend/templates/affiliates/affiliates.php:56
+#, fuzzy
+msgid "No affiliates yet."
+msgstr "uk_Affiliates"
+
+#: frontend/templates/affiliates/jobs.php:16
+msgid "Exp Date"
+msgstr "uk_Exp Date"
+
+#: frontend/templates/affiliates/jobs.php:17
+#: frontend/templates/common/_table.php:111
+#: frontend/templates/job/index.php:18 frontend/templates/job/show.php:43
+msgid "Name"
+msgstr "uk_Name"
+
+#: frontend/templates/affiliates/jobs.php:18
+#: frontend/templates/common/_table.php:124
+msgid "Location"
+msgstr "uk_Location"
+
+#: frontend/templates/affiliates/jobs.php:36
+#: frontend/templates/job/index.php:27
+msgid "Matches"
+msgstr "uk_Matches"
+
+#: frontend/templates/affiliates/jobs.php:45
+#, fuzzy
+msgid "No %s yet."
+msgstr "uk_No jobs yet."
+
+#: frontend/templates/agency/show.php:24
+#: frontend/templates/candidate/show.php:26 frontend/templates/job/show.php:24
+#: frontend/templates/organization/show.php:23
+msgid "Send message"
+msgstr "uk_Send message"
+
+#: frontend/templates/agency/show.php:30
+#: frontend/templates/candidate/show.php:39
+#: frontend/templates/common/_table.php:111
+#: frontend/templates/login/login.php:13
+#: frontend/templates/organization/show.php:33 lib/form/SearchForm.php:37
+#: lib/form/UserForm.php:31
+msgid "Username"
+msgstr "uk_Username"
+
+#: frontend/templates/agency/show.php:31
+#: frontend/templates/candidate/show.php:40
+#: frontend/templates/organization/show.php:34 lib/form/UserForm.php:38
+msgid "Email"
+msgstr "uk_Email"
+
+#: frontend/templates/agency/show.php:61
+#: frontend/templates/candidate/show.php:69 frontend/templates/job/edit.php:13
+#: frontend/templates/job/newJob.php:45 frontend/templates/job/show.php:74
+#: frontend/templates/organization/show.php:64
+#: frontend/templates/search/agency.php:32
+#: frontend/templates/search/agency.php:47
+#: frontend/templates/search/candidate.php:33
+#: frontend/templates/search/candidate.php:48
+#: frontend/templates/search/job.php:32 frontend/templates/search/job.php:47
+#: frontend/templates/search/organization.php:33
+#: frontend/templates/search/organization.php:48
+#: frontend/templates/matches/candidateForJob.php:30
+#: frontend/templates/matches/candidateForOrganization.php:27
+#: frontend/templates/matches/jobForCandidate.php:28
+#: frontend/templates/matches/organizationForCandidate.php:28
+msgid "Back"
+msgstr "uk_Back"
+
+#: frontend/templates/agency/show.php:62
+#: frontend/templates/candidate/show.php:70 frontend/templates/job/show.php:75
+#: frontend/templates/organization/show.php:65
+msgid "Home"
+msgstr "uk_Home"
+
+#: frontend/templates/candidate/show.php:32 frontend/templates/job/show.php:35
+msgid "Make favorite"
+msgstr "uk_Make favorite"
+
+#: frontend/templates/candidate/show.php:33 frontend/templates/job/show.php:36
+msgid "Remove from favorites"
+msgstr "uk_Remove from favorites"
+
+#: frontend/templates/common/_table.php:91
+msgid "Results with match rate below"
+msgstr "uk_Results with match rate below"
+
+#: frontend/templates/common/_table.php:103
+msgid "not shown."
+msgstr "uk_not shown."
+
+#: frontend/templates/common/_table.php:115
+msgid "Region"
+msgstr "uk_Region"
+
+#: frontend/templates/common/_table.php:116
+msgid "Categories"
+msgstr "uk_Categories"
+
+#: frontend/templates/common/_table.php:117
+msgid "Commitment Time"
+msgstr "uk_Commitment Time"
+
+#: frontend/templates/common/_table.php:121
+msgid "Age"
+msgstr "Вік"
+
+#: frontend/templates/common/_table.php:122
+msgid "Gender"
+msgstr "Стать"
+
+#: frontend/templates/common/_table.php:123
+msgid "Marital status"
+msgstr "uk_Marital status"
+
+#: frontend/templates/common/_table.php:125
+msgid "Last login"
+msgstr "Останнє залогінювання"
+
+#: frontend/templates/common/_table.php:129
+msgid "Match percent (%)"
+msgstr "uk_Match percent (%)"
+
+#: frontend/templates/common/_table.php:130
+msgid "Match highlight"
+msgstr "uk_Match highlight"
+
+#: frontend/templates/common/_table.php:134
+msgid "Favorite"
+msgstr "Улюблені"
+
+#: frontend/templates/common/_table.php:137
+msgid "Folder"
+msgstr "Папки"
+
+#: frontend/templates/common/_table.php:138
+#: frontend/templates/favorite/agency.php:19
+#: frontend/templates/favorite/candidate.php:22
+#: frontend/templates/favorite/organization.php:19
+msgid "Notes"
+msgstr "Нотатки"
+
+#: frontend/templates/common/_table.php:141
+msgid "Affiliate"
+msgstr "uk_Affiliate"
+
+#: frontend/templates/common/_table.php:226
+msgid "Request"
+msgstr "uk_Request"
+
+#: frontend/templates/common/_table.php:240
+#: frontend/templates/favorite/agency.php:53
+#: frontend/templates/favorite/candidate.php:58
+#: frontend/templates/favorite/organization.php:53
+msgid "Enter or update a brief note about this"
+msgstr "uk_Enter or update a brief note about this"
+
+#: frontend/templates/common/_table.php:241
+#: frontend/templates/favorite/agency.php:56
+#: frontend/templates/favorite/candidate.php:61
+#: frontend/templates/favorite/organization.php:56
+msgid "Notation Re:"
+msgstr "uk_Notation Re:"
+
+#: frontend/templates/common/_table.php:242
+msgid "This record is stored in folder:"
+msgstr "uk_This record is stored in folder:"
+
+#: frontend/templates/common/_table.php:276
+#: frontend/templates/favorite/agency.php:90
+#: frontend/templates/home/wpProfile.php:80 frontend/templates/job/edit.php:16
+#: frontend/templates/profile/index.php:17
+#: frontend/templates/search/_search_save_block.php:36
+msgid "Save"
+msgstr "Зберегти"
+
+#: frontend/templates/favorite/agency.php:10
+#: frontend/templates/favorite/candidate.php:11
+#: frontend/templates/favorite/organization.php:10
+msgid "Favorites"
+msgstr "uk_Favorites"
+
+#: frontend/templates/favorite/agency.php:18
+#: frontend/templates/favorite/organization.php:18
+#: frontend/templates/inquire/agency.php:18
+#: frontend/templates/inquire/organization.php:18
+msgid "Full name"
+msgstr "Повне імя"
+
+#: frontend/templates/favorite/agency.php:33
+#: frontend/templates/favorite/candidate.php:38
+#: frontend/templates/favorite/organization.php:33
+#: frontend/templates/inquire/agency.php:38
+#: frontend/templates/inquire/organization.php:36
+msgid "Remove"
+msgstr "Видалити"
+
+#: frontend/templates/favorite/agency.php:43
+#: frontend/templates/favorite/candidate.php:48
+#: frontend/templates/favorite/organization.php:43
+#, fuzzy
+msgid "No favorites yet."
+msgstr "uk_My Favorites"
+
+#: frontend/templates/favorite/candidate.php:19
+#: frontend/templates/inquire/candidate.php:18
+msgid "%s title"
+msgstr "%s назва"
+
+#: frontend/templates/favorite/candidate.php:21
+msgid "Expiration Date"
+msgstr "uk_Expiration Date"
+
+#: frontend/templates/forgotPassword/request.php:8
+msgid "Get New Password"
+msgstr "Дістати нового паролю"
+
+#: frontend/templates/forgotPassword/reset.php:8
+#: frontend/templates/forgotPassword/reset.php:19
+msgid "Reset Password"
+msgstr "uk_Reset Password"
+
+#: frontend/templates/home/wpProfile.php:11
+msgid "User Account"
+msgstr "uk_User Account"
+
+#: frontend/templates/inquire/agency.php:10
+#: frontend/templates/inquire/organization.php:10
+msgid "Inquiries list"
+msgstr "uk_Inquiries list"
+
+#: frontend/templates/inquire/agency.php:50
+#: frontend/templates/inquire/candidate.php:41
+#: frontend/templates/inquire/organization.php:48
+#, fuzzy
+msgid "No inquiries yet."
+msgstr "uk_Inquiries list"
+
+#: frontend/templates/inquire/candidate.php:10
+msgid "Inquire list"
+msgstr "uk_Inquire list"
+
+#: frontend/templates/job/edit.php:3
+msgid "Edit %s"
+msgstr "uk_Edit %s"
+
+#: frontend/templates/job/index.php:28
+msgid "Edit"
+msgstr "Редагувати"
+
+#: frontend/templates/job/index.php:37
+#: frontend/templates/organization/jobs.php:15
+msgid "No jobs yet."
+msgstr "uk_No jobs yet."
+
+#: frontend/templates/job/index.php:40
+msgid "New"
+msgstr "Новий"
+
+#: frontend/templates/job/newJob.php:10
+msgid "New %s"
+msgstr "uk_New %s"
+
+#: frontend/templates/job/newJob.php:19
+msgid "Populate from"
+msgstr "uk_Populate from"
+
+#: frontend/templates/job/newJob.php:31
+msgid "Populate"
+msgstr "uk_Populate"
+
+#: frontend/templates/job/newJob.php:45
+#: frontend/templates/job/edit.php:13
+msgid "Dashboard"
+msgstr "uk_Dashboard"
+
+#: frontend/templates/job/newJob.php:48
+#: frontend/templates/job/edit.php:16
+msgid "Job"
+msgstr "uk_Job"
+
+#: frontend/templates/job/newJob.php:51
+msgid "Create"
+msgstr "uk_Create"
+
+#: frontend/templates/job/show.php:30
+msgid "Inquire Now"
+msgstr "uk_Inquire Now"
+
+#: frontend/templates/job/show.php:31
+msgid "Cancel Inquire"
+msgstr "uk_Cancel Inquire"
+
+#: frontend/templates/login/login.php:2 frontend/templates/login/login.php:39
+msgid "Log In"
+msgstr "uk_Log In"
+
+#: frontend/templates/login/login.php:24
+msgid "Password"
+msgstr "uk_Password"
+
+#: frontend/templates/login/login.php:31
+msgid "Remember Me"
+msgstr "uk_Remember Me"
+
+#: frontend/templates/matches/candidateForJob.php:13
+#: frontend/templates/matches/candidateForOrganization.php:10
+#: frontend/templates/matches/jobForCandidate.php:11
+#: frontend/templates/matches/organizationForCandidate.php:11
+msgid "%s Matches"
+msgstr "uk_%s Matches"
+
+#: frontend/templates/matches/candidateForJob.php:23
+#: frontend/templates/matches/candidateForOrganization.php:20
+#: frontend/templates/matches/jobForCandidate.php:21
+#: frontend/templates/matches/organizationForCandidate.php:21
+msgid "Sorry, no matches yet."
+msgstr "uk_Sorry, no matches yet."
+
+#: frontend/templates/organization/show.php:28
+msgid "View positions"
+msgstr "uk_View positions"
+
+#: frontend/templates/profile/index.php:8
+msgid "Profile"
+msgstr "uk_Profile"
+
+#: frontend/templates/search/_ajax_search_saved.php:16
+#: frontend/templates/search/agency.php:48
+#: frontend/templates/search/candidate.php:49
+#: frontend/templates/search/job.php:48
+#: frontend/templates/search/organization.php:49
+msgid "Search"
+msgstr "uk_Search"
+
+#: frontend/templates/search/_search_form.php:8
+msgid "Welcome!"
+msgstr "uk_Welcome!"
+
+#: frontend/templates/search/_search_form.php:10
+msgid "Selection fields available for a search."
+msgstr "uk_Selection fields available for a search."
+
+#: frontend/templates/search/_search_form.php:11
+msgid ""
+"Many selections in a group increases the count. More groups selected will "
+"narrow the search."
+msgstr ""
+"uk_Many selections in a group increases the count. More groups selected will "
+"narrow the search."
+
+#: frontend/templates/search/_search_form.php:12
+msgid ""
+"Play with it. Useful searches can be saved after assigning a search name."
+msgstr ""
+"uk_Play with it. Useful searches can be saved after assigning a search name."
+
+#: frontend/templates/search/_search_save_block.php:34
+msgid "Save this search. Search Name:"
+msgstr "uk_Save this search. Search Name:"
+
+#: frontend/templates/search/agency.php:13
+#: frontend/templates/search/organization.php:14
+msgid "Interactive %s Search"
+msgstr "uk_Interactive %s Search"
+
+#: frontend/templates/search/agency.php:27
+#: frontend/templates/search/candidate.php:28
+#: frontend/templates/search/job.php:27
+#: frontend/templates/search/organization.php:28
+msgid "No %s found"
+msgstr "uk_No %s found"
+
+#: frontend/templates/search/agency.php:33
+#: frontend/templates/search/candidate.php:34
+#: frontend/templates/search/job.php:33
+#: frontend/templates/search/organization.php:34
+msgid "Start over"
+msgstr "uk_Start over"
+
+#: frontend/templates/search/candidate.php:14
+#: frontend/templates/search/job.php:13
+#: frontend/templates/sidebarLayout.php:28
+#: frontend/templates/sidebarLayout.php:36
+#: frontend/templates/sidebarLayout.php:37
+#: frontend/templates/sidebarLayout.php:38
+#: frontend/templates/sidebarLayout.php:48
+#: frontend/templates/sidebarLayout.php:50
+msgid "Search %s"
+msgstr "uk_Search %s"
+
+#: frontend/templates/sidebarLayout.php:23
+msgid "My Account"
+msgstr "uk_My Account"
+
+#: frontend/templates/sidebarLayout.php:26
+#: frontend/templates/sidebarLayout.php:27
+#: frontend/templates/sidebarLayout.php:45
+msgid "View %s Matches"
+msgstr "uk_View %s Matches"
+
+#: frontend/templates/sidebarLayout.php:29
+#: frontend/templates/sidebarLayout.php:40
+#: frontend/templates/sidebarLayout.php:52
+msgid "Inquiry List"
+msgstr "uk_Inquiry List"
+
+#: frontend/templates/sidebarLayout.php:44
+#: frontend/templates/sidebarLayout.php:58
+msgid "Utilities"
+msgstr "uk_Utilities"
+
+#: frontend/templates/sidebarLayout.php:30
+#: frontend/templates/sidebarLayout.php:39
+#: frontend/templates/sidebarLayout.php:51
+msgid "My Favorites"
+msgstr "uk_My Favorites"
+
+#: frontend/templates/signup/registration.php:11
+msgid "%s Registration"
+msgstr "uk_%s Registration"
+
+#: frontend/templates/signup/registration.php:29
+#: frontend/templates/signup/registration.php:32
+msgid "Captcha"
+msgstr "uk_Captcha"
+
+#: frontend/templates/signup/registration.php:44
+msgid "Sign up"
+msgstr "uk_Sign up"
+
+#: lib/AvatarManager.php:53
+msgid "Unsupported file type."
+msgstr "uk_Unsupported file type."
+
+#: lib/form/PasswordRequestForm.php:28
+msgid "Username or E-mail:"
+msgstr "uk_Username or E-mail:"
+
+#: lib/form/PasswordRequestForm.php:43
+msgid "<strong>ERROR</strong>: Enter a username or e-mail address."
+msgstr "<strong>ERROR</strong>: uk_Enter a username or e-mail address."
+
+#: lib/form/PasswordRequestForm.php:47
+msgid ""
+"<strong>ERROR</strong>: There is no user registered with that email address."
+msgstr ""
+"<strong>ERROR</strong>: uk_There is no user registered with that email "
+"address."
+
+#: lib/form/PasswordRequestForm.php:53
+msgid "<strong>ERROR</strong>: Invalid username or e-mail."
+msgstr "<strong>ERROR</strong>: uk_Invalid username or e-mail."
+
+#: lib/form/PasswordRequestForm.php:78
+msgid "Someone requested that the password be reset for the following account:"
+msgstr ""
+"uk_Someone requested that the password be reset for the following account:"
+
+#: lib/form/PasswordRequestForm.php:80
+msgid "Username: %s"
+msgstr "uk_Username: %s"
+
+#: lib/form/PasswordRequestForm.php:81
+msgid "If this was a mistake, just ignore this email and nothing will happen."
+msgstr ""
+"uk_If this was a mistake, just ignore this email and nothing will happen."
+
+#: lib/form/PasswordRequestForm.php:82
+msgid "To reset your password, visit the following address:"
+msgstr "uk_To reset your password, visit the following address:"
+
+#: lib/form/PasswordRequestForm.php:88
+msgid "Password reset"
+msgstr "uk_Password reset"
+
+#: lib/form/PasswordResetForm.php:30
+msgid "New password"
+msgstr "uk_New password"
+
+#: lib/form/PasswordResetForm.php:37
+msgid "Confirm new password"
+msgstr "uk_Confirm new password"
+
+#: lib/form/PasswordResetForm.php:52 lib/form/PasswordResetForm.php:56
+msgid "Please fill in the new password field."
+msgstr "uk_Please fill in the new password field."
+
+#: lib/form/PasswordResetForm.php:63
+msgid "The passwords do not match."
+msgstr "uk_The passwords do not match."
+
+#: lib/form/RegistrationForm.php:117
+msgid "Please fill in the password"
+msgstr "uk_Please fill in the password"
+
+#: lib/form/RegistrationForm.php:123
+msgid "Captcha not set"
+msgstr "uk_Captcha not set"
+
+#: lib/form/RegistrationForm.php:127
+msgid "Captcha not matched"
+msgstr "uk_Captcha not matched"
+
+#: lib/form/SearchForm.php:30
+msgid "Main Fields"
+msgstr "uk_Main Fields"
+
+#: lib/form/UserForm.php:45
+#, fuzzy
+msgid "Old Password"
+msgstr "uk_Password"
+
+#: lib/form/UserForm.php:52
+#, fuzzy
+msgid "New Password"
+msgstr "uk_New password"
+
+#: lib/form/UserForm.php:66
+msgid "Fill in the email"
+msgstr "uk_Fill in the email"
+
+#: lib/form/UserForm.php:70
+msgid "Fill in new password"
+msgstr "uk_Fill in new password"
+
+#: lib/form/UserForm.php:74
+msgid "Fill in old password"
+msgstr "uk_Fill in old password"
+
+#: lib/form/UserForm.php:80
+msgid "Password doesn't match"
+msgstr "uk_Password doesn't match"
+
+#: lib/form/fields/FileField.php:42
+msgid "Max file size is %s"
+msgstr "uk_Max file size is %s"
+
+#. Plugin Name of the plugin/theme
+msgid "Mission Next"
+msgstr "uk_Mission Next"
+
+#. Description of the plugin/theme
+msgid "Connector to MissionNext api"
+msgstr "uk_Connector to MissionNext api"
+
+#: frontend/templates/common/_table.php:225
+#, fuzzy
+msgid "pending"
+msgstr "uk_Pending"
+
+#: frontend/templates/common/_table.php:225
+#, fuzzy
+msgid "approved"
+msgstr "uk_Approved"

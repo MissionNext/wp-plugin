@@ -33,7 +33,9 @@
                 <td class="name"><a href="/job/<?php echo $job['id'] ?>"><?php echo $job['name'] ?></a></td>
                 <td class="location"><?php echo __(\MissionNext\lib\ProfileLib::getProfileField($job, 'location')) ?></td>
                 <td class="actions">
-                    <a class="btn btn-link" href="/job/matches/candidate/<?php echo $job['id'] ?>"><?php echo __("Matches", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                    <a class="btn btn-link" href="/job/matches/candidate/<?php echo $job['id'] ?>">
+                        <?php echo __("Matches", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+                    </a>
                 </td>
             </tr>
             <?php endforeach; ?>

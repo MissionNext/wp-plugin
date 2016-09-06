@@ -21,7 +21,7 @@
             <table class="subscriptions-table">
                 <?php foreach($subscriptions as $subscription) { ?>
                     <tr>
-                        <td><a class="btn <?php echo ($app_key == $subscription['app']['public_key']) ? "btn-success" : "btn-default"; ?>" target="_blank" href="<?php echo $apps[$subscription['app_id']]; ?>/dashboard"><?php echo $subscription['app']['name']; ?></a></td>
+                        <td><a class="btn <?php echo ($app_key == $subscription['app']['public_key']) ? "btn-success" : "btn-default"; ?>" <?php if ($app_key != $subscription['app']['public_key']) { ?> target="_blank" <?php } ?> href="<?php echo $apps[$subscription['app_id']]; ?>/dashboard"><?php echo $subscription['app']['name']; ?></a></td>
                         <td></td>
                     </tr>
                 <?php } ?>
@@ -35,7 +35,7 @@
         <?php } else { ?>
             <p class="left">
                 <?php foreach($subscriptions as $subscription) { ?>
-                    <a class="btn <?php echo ($app_key == $subscription['app']['public_key']) ? "btn-success" : "btn-default"; ?>" target="_blank" href="<?php echo $apps[$subscription['app_id']]; ?>/dashboard"><?php echo $subscription['app']['name']; ?></a>
+                    <a class="btn <?php echo ($app_key == $subscription['app']['public_key']) ? "btn-success" : "btn-default"; ?>" <?php if ($app_key != $subscription['app']['public_key']) { ?> target="_blank" <?php } ?> href="<?php echo $apps[$subscription['app_id']]; ?>/dashboard"><?php echo $subscription['app']['name']; ?></a>
                     <br><br><!-- line breaks added by Nelson to have the buttons stack vertically;  -->
                 <?php } ?>
             </p>

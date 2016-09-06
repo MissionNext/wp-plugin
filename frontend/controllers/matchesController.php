@@ -32,7 +32,6 @@ class matchesController extends AbstractLayoutController {
         }
 
         $jobs = $this->api->getMatchedJobsForCandidate($this->userId, compact('page', 'rate'));
-
         $jobs = $jobs?$jobs:array();
 
         if($this->userRole == 'candidate'){

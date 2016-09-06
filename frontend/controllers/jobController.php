@@ -63,7 +63,6 @@ class jobController extends AbstractLayoutController {
 
             //Inquires
             $inquires = $this->api->getInquiredJobs($this->userId);
-
             $is_inquired = false;
 
             if($inquires){
@@ -81,7 +80,6 @@ class jobController extends AbstractLayoutController {
         $this->job = $job;
 
         $fields = $this->api->getModelFields('job');
-
         $this->fields = array();
 
         $organizationProfile = $this->api->getUserProfile($job['organization']['id']);

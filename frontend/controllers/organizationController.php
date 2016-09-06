@@ -49,7 +49,6 @@ class organizationController extends AbstractLayoutController {
         $this->organization = $organization;
 
         $fields = $this->api->getModelFields('organization');
-
         $this->fields = array();
 
         foreach($fields as $field){

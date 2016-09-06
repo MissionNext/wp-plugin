@@ -210,7 +210,9 @@ function getLastLogin($item){
 
                             <?php if($role == \MissionNext\lib\Constants::ROLE_CANDIDATE): ?>
                                 <td class="name">
-                                    <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo $item['show_name'] ?></a>
+                                    <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')">
+                                        <?php echo $item['show_name'] ?>
+                                    </a>
                                 </td>
                                 <td class="age"><?php echo getAge($item) ?></td>
                                 <td class="gender"><?php echo getProfileField($item, 'gender') ?></td>

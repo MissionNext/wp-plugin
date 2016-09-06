@@ -88,6 +88,7 @@ class organizationController extends AbstractLayoutController {
         if ($candidateJobCategories) {
             $tmpJobArray = $this->api->getOrganizationPositions($id, $this->userId);
             foreach ($tmpJobArray as $job) {
+                $job['organization']['profileData']['organization_name'] = $this->organization['profileData']['organization_name'];
                 if ($favoritedJobs && in_array($job['id'], $favoritedJobs)) {
                     $favKey = array_search($job['id'], $favoritedJobs);
                     $job['favorite'] = $favKey;

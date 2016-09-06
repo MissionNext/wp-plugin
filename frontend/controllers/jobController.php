@@ -84,10 +84,12 @@ class jobController extends AbstractLayoutController {
 
         $this->fields = array();
 
+        $organizationProfile = $this->api->getUserProfile($job['organization']['id']);
+        $this->job['organization']['organization_name'] = $organizationProfile['profileData']['organization_name'];
+
         foreach($fields as $field){
             $this->fields[$field['symbol_key']] = $field;
         }
-
     }
 
     public function newJob(){

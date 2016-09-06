@@ -23,7 +23,7 @@
         <?php foreach($jobs as $organization):?>
 
             <tr class="header">
-                <td colspan="5"><a href="/organization/<?php echo $organization['org_data']['id'] ?>"><?php echo $organization['org_data']['username'] ?></a></td>
+                <td colspan="5"><a href="/organization/<?php echo $organization['org_data']['id'] ?>"><?php echo $organization['org_data']['profileData']['organization_name']; ?></a></td>
             </tr>
 
             <?php $key = 0; foreach($organization['jobs'] as $job): $key++;?>

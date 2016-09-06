@@ -192,7 +192,12 @@ function getLastLogin($item){
                                     <?php $job_key = 'job_title_!#'.$item['app_names'][0]; ?>
                                     <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo !empty($item['profileData'][$job_key]) ? current($item['profileData'][$job_key]) : $item['show_name'] ?></a>
                                 </td>
-                                <td class="organization" ><a href="/organization/<?php echo $item['organization']['id'] ?>"><?php echo !empty($item['org_name']) ? $item['org_name'] : $item['organization']['username']; ?></a></td>
+                                <td class="organization" >
+                                    <a href="/organization/<?php echo $item['organization']['id'] ?>">
+                                        <?php echo !empty($item['organization']['profileData']['organization_name']) ? $item['organization']['profileData']['organization_name'] : $item['organization']['username']; ?>
+                                    </a>
+
+                                </td>
                                 <td class="region"><?php echo getProfileField($item, 'world_region') ?></td>
                                 <td class="categories"><?php echo getProfileField($item, 'job_category') ?></td>
                                 <td class="time-commitment"><?php echo getProfileField($item, 'time_commitment') ?></td>

@@ -58,7 +58,7 @@ function groupEmpty($group){
         <p> <strong><?php echo __("Name", \MissionNext\lib\Constants::TEXT_DOMAIN) ?> : <?php echo $job['name'] ?></strong></p>
         <p> <strong><?php echo ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_ORGANIZATION)) ?></strong> :
             <a href="/organization/<?php echo $job['organization']['id'] ?>">
-                <?php echo $job['organization']['organization_name']; ?>
+                <?php echo $job['org_name']; ?>
             </a>
         </p>
 

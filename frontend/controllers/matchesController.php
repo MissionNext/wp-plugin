@@ -40,7 +40,7 @@ class matchesController extends AbstractLayoutController {
 
             foreach($jobs as $key => $job){
                 $organization = $this->api->getUserProfile($job['organization']['id']);
-                $job['organization']['profileData']['organization_name'] = $organization['profileData']['organization_name'];
+                $job['org_name'] = $organization['profileData']['organization_name'];
 
                 $jobs[$key]['favorite'] = null;
                 foreach($favs as $fav){

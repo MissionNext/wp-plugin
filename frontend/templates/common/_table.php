@@ -194,7 +194,7 @@ function getLastLogin($item){
                                 </td>
                                 <td class="organization" >
                                     <a href="/organization/<?php echo $item['organization']['id'] ?>">
-                                        <?php echo !empty($item['organization']['profileData']['organization_name']) ? $item['organization']['profileData']['organization_name'] : $item['organization']['username']; ?>
+                                        <?php echo !empty($item['org_name']) ? $item['org_name'] : $item['organization']['username']; ?>
                                     </a>
 
                                 </td>

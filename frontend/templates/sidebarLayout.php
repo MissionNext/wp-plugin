@@ -40,7 +40,6 @@ get_header();
                                     <a href="/organization/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_ORGANIZATION_PLURAL))) ?></a>
                                     <a href="/favorite"><?php echo __('My Favorites', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                                     <a href="/inquiries"><?php echo __('Inquiry List', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
-                                    <a href="/folders"><?php echo __('Utilities', \MissionNext\lib\Constants::TEXT_DOMAIN); ?></a>
                                 <?php endif; ?>
 
                                 <?php if($userRole == 'organization'): ?>

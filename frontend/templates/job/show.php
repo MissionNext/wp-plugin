@@ -39,7 +39,7 @@ function groupEmpty($group){
             </div>
         <?php endif; ?>
 
-        <?php if($userRole == 'candidate'): ?>
+        <?php if($userRole == \MissionNext\lib\Constants::ROLE_CANDIDATE): ?>
         <div class="buttons">
             <button id="make_inquire" class="btn btn-success <?php echo $job['inquire']?'hide':'' ?>"><?php echo __("Inquire Now", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
             <button id="cancel_inquire" class="btn btn-danger <?php echo $job['inquire']?'':'hide' ?>"><?php echo __("Cancel Inquire", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>

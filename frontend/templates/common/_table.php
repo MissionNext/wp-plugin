@@ -67,19 +67,11 @@ foreach($items as $item){
     $groups[$item['folder']?$item['folder']:($default_folder?$default_folder:key($folders))][] = $item;
 }
 
-//echo 123;
-//echo "<pre>";
-//print_r($items);
-//echo "</pre>";
-
 //MATCHING
 $matching = isset($items[0]['matching_percentage']);
-// print_r($items[0]);  // what matched; weight of each; matching_percentage; favorite 
-// echo '<br>\$matching = '; echo $matching; // $matching = 1, if to appear in this list. (?)
 
 //AFFILIATE
 $affiliate = ($userRole == 'agency' && $role == 'organization') || ($userRole == 'organization' && $role == 'agency');
-// echo '<br>\$affiliate = '; echo $affiliate; // not sure if these conditions will ever be true. 
 
 if($affiliate){
     $aff_tmp = \MissionNext\lib\core\Context::getInstance()->getApiManager()->getApi()->getAffiliates($userId, 'any');
@@ -92,7 +84,6 @@ if($affiliate){
 }
 
 //FAVORITES
-//$favorites = ( ($userRole == 'organization' || $userRole == 'agency') && $role == 'candidate') || ($userRole == 'candidate' && $role == 'job');
 
 function sortFolders($a, $b){
     return $a['id'] < $b['id']? -1: 1;
@@ -117,9 +108,6 @@ function getLastLogin($item){
     return date("Y-m-d", strtotime($item['last_login']));
 }
 
-//echo "<pre>";
-//print_r($groups);
-//echo "</pre>";
 ?>
 <div class="panel panel-default">
     <div class="panel-body">
@@ -158,8 +146,10 @@ function getLastLogin($item){
 
                     <th><?php echo __("Favorite", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
 
-                    <th class="center"><?php echo __("Folder", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                    <th><?php echo __("Notes", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                    <?php if($userRole != \MissionNext\lib\Constants::ROLE_AGENCY): ?>
+                        <th class="center"><?php echo __("Folder", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                        <th><?php echo __("Notes", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                    <?php endif; ?>
 
                     <?php if($affiliate): ?>
                         <th><?php echo __("Affiliate", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
@@ -236,16 +226,18 @@ function getLastLogin($item){
                                 <div class="favorite-block <?php echo is_integer($item['favorite'])?'favorite':'not-favorite' ?>"></div>
                             </td>
 
-                            <td class="folder">
-                                <select>
-                                    <?php foreach($folders as $value => $folder): ?>
-                                        <option <?php if($item['folder'] == $value) echo 'selected="selected"' ?> value="<?php echo $value ?>"><?php echo $folder ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </td>
-                            <td class="note" data-note="<?php echo htmlentities($item['notes']) ?>">
-                                <div <?php if(!$item['notes']) echo 'class="no-note"' ?>></div>
-                            </td>
+                            <?php if($userRole != \MissionNext\lib\Constants::ROLE_AGENCY): ?>
+                                <td class="folder">
+                                    <select>
+                                        <?php foreach($folders as $value => $folder): ?>
+                                            <option <?php if($item['folder'] == $value) echo 'selected="selected"' ?> value="<?php echo $value ?>"><?php echo $folder ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </td>
+                                <td class="note" data-note="<?php echo htmlentities($item['notes']) ?>">
+                                    <div <?php if(!$item['notes']) echo 'class="no-note"' ?>></div>
+                                </td>
+                            <?php endif; ?>
 
                             <?php if($affiliate) : ?>
                                 <td class="affiliate" data-status="<?php echo isset($affiliates[$item['id']])?$affiliates[$item['id']]['status']:'' ?>">

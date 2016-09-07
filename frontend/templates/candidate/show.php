@@ -39,7 +39,7 @@ function groupEmpty($group){
             </div>
             <?php endif; ?>
 
-            <?php if( $userRole == 'organization' || $userRole == 'agency' ): ?>
+            <?php if( $userRole == \MissionNext\lib\Constants::ROLE_ORGANIZATION ): ?>
             <div class="buttons">
                 <button id="make_favorite" class="btn btn-success <?php echo $candidate['favorite']?'hide':'' ?>"><?php echo __("Make favorite", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
                 <button data-id="<?php echo $candidate['favorite'] ?>"  id="remove_from_favorites" class="btn btn-danger <?php echo $candidate['favorite']?'':'hide' ?>"><?php echo __("Unfavorite", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>

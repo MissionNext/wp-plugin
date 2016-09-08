@@ -100,7 +100,12 @@ class organizationController extends AbstractLayoutController {
                 }
             }
         } else {
-            $this->jobs = [];
+            $this->jobs = $this->api->getOrganizationPositions($id, $this->userId);
+            $organization = $this->organization;
+
+            foreach ($this->jobs as &$job) {
+                $job['org_name'] = $organization['profileData']['organization_name'];
+            }
         }
     }
 

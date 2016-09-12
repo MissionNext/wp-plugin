@@ -1,0 +1,2 @@
+<h1>Blocked</h1>
+<p>Sorry, but you are blocked on this web site.</p>

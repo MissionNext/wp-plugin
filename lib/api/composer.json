@@ -1,0 +1,13 @@
+{
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
+    "require" : {
+
+    "mashape/unirest-php" : "dev-master"
+    },
+    "autoload" : {
+        "psr-4" : { "MissionNext\\" : "src/" },
+        "psr-0": {"Unirest": "lib/"}
+    }
+}

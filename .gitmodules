@@ -1,0 +1,3 @@
+[submodule "lib/api"]
+	path = lib/api
+	url = ssh://sc@source.comfortsteel.com:2222/Vladyslav.Chernobai/missionnext-apiclient.git

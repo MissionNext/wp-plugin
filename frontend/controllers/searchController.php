@@ -38,19 +38,6 @@ class searchController extends AbstractLayoutController {
         $this->role = 'candidate';
 
         $this->processSearch();
-
-        /*if ($this->userRole == Constants::ROLE_AGENCY) {
-            $newResults = [];
-            foreach ($this->result as $item) {
-                if ($newResults[$item['id']]) {
-                    $newResults[$item['id']]['notes'] .= '<br />'.$item['notes'];
-                } else {
-                    $newResults[$item['id']] = $item;
-                }
-            }
-
-            $this->result = $newResults;
-        }*/
     }
 
     public function organization(){

@@ -148,9 +148,8 @@ function getLastLogin($item){
 
                     <?php if($userRole != \MissionNext\lib\Constants::ROLE_AGENCY): ?>
                         <th class="center"><?php echo __("Folder", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                        <th><?php echo __("Notes", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                     <?php endif; ?>
-
-                    <th><?php echo __("Notes", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
 
                     <?php if($affiliate): ?>
                         <th><?php echo __("Affiliate", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
@@ -235,17 +234,10 @@ function getLastLogin($item){
                                         <?php endforeach; ?>
                                     </select>
                                 </td>
-                            <?php endif; ?>
-
-                            <td class="note" data-note="<?php echo htmlentities($item['notes']) ?>">
-                                <?php if($userRole != \MissionNext\lib\Constants::ROLE_AGENCY) { ?>
+                                <td class="note" data-note="<?php echo htmlentities($item['notes']) ?>">
                                     <div <?php if(!$item['notes']) echo 'class="no-note"' ?>></div>
-                                <?php } else { ?>
-                                    <?php if($item['notes']) { ?>
-                                        <div></div>
-                                    <?php } ?>
-                                <?php } ?>
-                            </td>
+                                </td>
+                            <?php endif; ?>
 
                             <?php if($affiliate) : ?>
                                 <td class="affiliate" data-status="<?php echo isset($affiliates[$item['id']])?$affiliates[$item['id']]['status']:'' ?>">

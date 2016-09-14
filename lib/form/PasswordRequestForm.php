@@ -89,7 +89,7 @@ class PasswordRequestForm extends Form {
 
         $ms->from = "no-reply@".$_SERVER['SERVER_NAME'];
         $ms->fromName = "MissionNext";
-        
+
         return $ms->send($user['email'], __("Password reset", Constants::TEXT_DOMAIN), $message);
     }
 

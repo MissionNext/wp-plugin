@@ -1,6 +1,13 @@
 <div class="page-header">
     <h1><?php echo __("Password recovery", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></h1>
-    <p><?php echo __("Please enter your username or email address. You will receive a link to create a new password via email.", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></p>
+    <p>
+        <?php
+        if(isset($messages['notice']))
+            echo $messages['notice'];
+        else
+            echo __("Please enter your username or email address. You will receive a link to create a new password via email.", \MissionNext\lib\Constants::TEXT_DOMAIN)
+        ?>
+    </p>
 </div>
 <div class="page-content">
     <form role="form" class="form-horizontal" action="<?php echo $_SERVER[ 'REQUEST_URI' ] ?>" method="post">

@@ -140,6 +140,13 @@ class searchController extends AbstractLayoutController {
                 if ($this->form->isValid()) {
                     $this->result = $this->form->search();
 
+                    foreach ($this->result as &$item) {
+                        if (Constants::ROLE_AGENCY == $item['role']) {
+                            if (!$item['org_name']) {
+                                $item['org_name'] = $item['org_name'] = $item['profileData']['agency_full_name'];
+                            }
+                        }
+                    }
                     $this->search = $this->form->searchRequest;
 
                     if(empty($this->search['profileData'])){

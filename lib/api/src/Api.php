@@ -512,10 +512,6 @@ class Api {
         $this->client->setUrl($this->apiBasePath.$url);
         $this->addAuthInfo($url);
 
-//        echo "<pre>";
-//        print_r($this->client);
-//        echo "</pre>";
-
         $resp = $this->client->exec();
 
         return $resp;

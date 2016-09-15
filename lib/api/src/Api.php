@@ -223,6 +223,14 @@ class Api {
         return $this->post("affiliate/$requester_id/to/$target_id/cancel");
     }
 
+    public function featureAffiliate($requester_id, $target_id){
+        return $this->post("affiliate/$requester_id/to/$target_id/feature");
+    }
+
+    public function removeFeatureAffiliate($requester_id, $target_id){
+        return $this->post("affiliate/$requester_id/to/$target_id/unfeature");
+    }
+
     public function getMatchedJobsForCandidate($candidate_id, $options = array()){
         return $this->get("match/candidate/jobs/$candidate_id", $options);
     }

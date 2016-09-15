@@ -15,19 +15,12 @@ if ($userRole == "agency") {
 */
 $items = array_values($items);
 
-// echo "\$receiving_org = $receiving_org";  // receiving org id from job data
-// echo "<br>\$userId = $userId ";  // receiving or sending organization user 
-// echo "\$userRole = $userRole "; // receiving as "organization" sending as "agency" role 
-// echo "\$role = $role"; // matching target role "candidate"
-// print_r($items); // has matching results and folder assignment 
-// print_r($messages); // array is empty even with notes entered. Maybe used early in development, then abandoned ?
 $foldersApi = \MissionNext\lib\core\Context::getInstance()->getApiManager()->getApi()->getUserFolders($role, $userId);
 
 $default_folder_id = \MissionNext\lib\SiteConfig::getDefaultFolder($role);
 $default_folder = '';
 
 uasort($foldersApi, 'sortFolders');
-// print_r($foldersApi); // seems to be list of available folders for current users. 
 
 $folders = array();
 
@@ -46,7 +39,6 @@ $groups = array();
 foreach($folders as $key => $folder){
     $groups[$key] = array();
 }
-// print_r($groups); // an array of this user's folders each defined as an array 
 
 reset($folders);
 
@@ -146,10 +138,11 @@ function getLastLogin($item){
 
                     <th><?php echo __("Favorite", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
 
-                    <?php if($userRole != \MissionNext\lib\Constants::ROLE_AGENCY): ?>
+                    <?php if (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
                         <th class="center"><?php echo __("Folder", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                        <th><?php echo __("Notes", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                    <?php endif; ?>
+                    <?php } ?>
+
+                    <th><?php echo __("Notes", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
 
                     <?php if($affiliate): ?>
                         <th><?php echo __("Affiliate", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
@@ -226,7 +219,7 @@ function getLastLogin($item){
                                 <div class="favorite-block <?php echo is_integer($item['favorite'])?'favorite':'not-favorite' ?>"></div>
                             </td>
 
-                            <?php if($userRole != \MissionNext\lib\Constants::ROLE_AGENCY): ?>
+                            <?php if (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
                                 <td class="folder">
                                     <select>
                                         <?php foreach($folders as $value => $folder): ?>
@@ -234,10 +227,17 @@ function getLastLogin($item){
                                         <?php endforeach; ?>
                                     </select>
                                 </td>
-                                <td class="note" data-note="<?php echo htmlentities($item['notes']) ?>">
+                            <?php } ?>
+
+                            <td class="note" data-note="<?php echo htmlentities($item['notes']) ?>">
+                                <?php if (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
                                     <div <?php if(!$item['notes']) echo 'class="no-note"' ?>></div>
-                                </td>
-                            <?php endif; ?>
+                                <?php } else { ?>
+                                    <?php if($item['notes']) { ?>
+                                        <div></div>
+                                    <?php } ?>
+                                <?php } ?>
+                            </td>
 
                             <?php if($affiliate) : ?>
                                 <td class="affiliate" data-status="<?php echo isset($affiliates[$item['id']])?$affiliates[$item['id']]['status']:'' ?>">

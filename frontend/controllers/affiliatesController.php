@@ -136,5 +136,35 @@ class affiliatesController extends AbstractLayoutController {
         return false;
     }
 
+    public function makeFeature(){
+        if($_SERVER['REQUEST_METHOD'] != 'POST'
+            || !$this->userId
+            || !isset($_POST['requester_id'])
+            || !isset($_POST['approver_id'])
+        ){
+            $this->forward404();
+        }
 
+        $response = $this->api->featureAffiliate($_POST['requester_id'], $_POST['approver_id']);
+
+        echo json_encode($response);
+
+        return false;
+    }
+
+    public function unFeature(){
+        if($_SERVER['REQUEST_METHOD'] != 'POST'
+            || !$this->userId
+            || !isset($_POST['requester_id'])
+            || !isset($_POST['approver_id'])
+        ){
+            $this->forward404();
+        }
+
+        $response = $this->api->removeFeatureAffiliate($_POST['requester_id'], $_POST['approver_id']);
+
+        echo json_encode($response);
+
+        return false;
+    }
 } 

@@ -168,6 +168,8 @@ class matchesController extends AbstractLayoutController {
 
     public function candidateForJob($params){
 
+        $this->job = $this->api->getJobProfile($params[0]);
+
         if( ($this->userRole != 'organization' && $this->userRole != 'agency') || !isset($params[0])){
             $this->forward404();
         }
@@ -186,30 +188,16 @@ class matchesController extends AbstractLayoutController {
         }
 
         $user_id = $this->userId;
+        $job_owner = $this->job['organization_id'];
 
-        $candidates = $this->api->getMatchedCandidatesForJob($params[0], compact('page', 'rate', 'user_id'));
+        $candidates = $this->api->getMatchedCandidatesForJob($params[0], compact('page', 'rate', 'user_id', 'job_owner'));
 
         $candidates = $candidates?$candidates:array();
-
-        if($this->userRole == 'organization' || $this->userRole == 'agency'){
-
-            $favs = $this->api->getFavorites($this->userId, 'candidate');
-
-            foreach($candidates as $key => $candidate){
-                $candidates[$key]['favorite'] = null;
-                foreach($favs as $fav){
-                    if($candidate['id'] == $fav['target_id']){
-                        $candidates[$key]['favorite'] = $fav['id'];
-                    }
-                }
-            }
-        }
 
         uasort($candidates, array($this, 'sortByMatchingPercent' ));
 
         $this->candidates =$candidates;
 
-        $this->job = $this->api->getJobProfile($params[0]);
         $this->page = $page;
         $this->pages = $candidates?$candidates[0]['totalPages']:1;
         $this->rate = $rate;

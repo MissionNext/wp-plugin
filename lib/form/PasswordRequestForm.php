@@ -61,36 +61,29 @@ class PasswordRequestForm extends Form {
 
     public function save(){
 
-        global $wpdb, $wp_hasher;
-
         $user_login = $this->user_data->user_login;
 
-        $user = Context::getInstance()->getApiManager()->getApi()->getUserProfile(get_user_meta($this->user_data->ID, Constants::META_KEY, true));
+        $key = get_password_reset_key($this->user_data);
 
-        $key = wp_generate_password( 20, false );
+        if($key) {
+            $user = Context::getInstance()->getApiManager()->getApi()->getUserProfile(get_user_meta($this->user_data->ID, Constants::META_KEY, true));
 
-        if ( empty( $wp_hasher ) ) {
-            require_once ABSPATH . 'wp-includes/class-phpass.php';
-            $wp_hasher = new \PasswordHash( 8, true );
+            $message = __('Someone requested that the password be reset for the following account:', Constants::TEXT_DOMAIN) . "\r\n\r\n";
+            $message .= home_url('/') . "\r\n\r\n";
+            $message .= sprintf(__('Username: %s', Constants::TEXT_DOMAIN), $user_login) . "\r\n\r\n";
+            $message .= __('If this was a mistake, just ignore this email and nothing will happen.', Constants::TEXT_DOMAIN) . "\r\n\r\n";
+            $message .= __('To reset your password, visit the following address:', Constants::TEXT_DOMAIN) . "\r\n\r\n";
+            $message .= '<a href="' . site_url("password/reset?key=$key&login=" . rawurlencode($user_login), 'login') . '">' . site_url("password/reset?key=$key&login=" . rawurlencode($user_login), 'login') . '</a>';
+
+            $ms = Context::getInstance()->getMailService();
+
+            $ms->from = "no-reply@" . $_SERVER['SERVER_NAME'];
+            $ms->fromName = "MissionNext";
+
+            return $ms->send($user['email'], __("Password reset", Constants::TEXT_DOMAIN), $message);
         }
 
-        $hashed = $wp_hasher->HashPassword( $key );
-
-        $wpdb->update( $wpdb->users, array( 'user_activation_key' => $hashed ), array( 'user_login' => $user_login ) );
-
-        $message = __('Someone requested that the password be reset for the following account:', Constants::TEXT_DOMAIN) . "\r\n\r\n";
-        $message .= home_url( '/' ) . "\r\n\r\n";
-        $message .= sprintf(__('Username: %s', Constants::TEXT_DOMAIN), $user_login) . "\r\n\r\n";
-        $message .= __('If this was a mistake, just ignore this email and nothing will happen.', Constants::TEXT_DOMAIN) . "\r\n\r\n";
-        $message .= __('To reset your password, visit the following address:', Constants::TEXT_DOMAIN) . "\r\n\r\n";
-        $message .= '<a href="' . site_url("password/reset?key=$key&login=" . rawurlencode($user_login), 'login') . '">' . site_url("password/reset?key=$key&login=" . rawurlencode($user_login), 'login') . '</a>';
-
-        $ms = Context::getInstance()->getMailService();
-
-        $ms->from = "no-reply@".$_SERVER['SERVER_NAME'];
-        $ms->fromName = "MissionNext";
-
-        return $ms->send($user['email'], __("Password reset", Constants::TEXT_DOMAIN), $message);
+        return false;
     }
 
 } 

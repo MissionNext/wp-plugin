@@ -110,7 +110,7 @@ function getLastLogin($item){
                 <tr>
                     <th>#</th>
 
-                    <?php if($role == \MissionNext\lib\Constants::ROLE_ORGANIZATION): ?>
+                    <?php if($role == \MissionNext\lib\Constants::ROLE_ORGANIZATION || $role == \MissionNext\lib\Constants::ROLE_AGENCY): ?>
                         <th class="sortable"><?php echo __('Organization Name', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                     <?php endif;?>
                     <?php if($role == \MissionNext\lib\Constants::ROLE_JOB): ?>
@@ -167,6 +167,12 @@ function getLastLogin($item){
                             <?php if($role == \MissionNext\lib\Constants::ROLE_ORGANIZATION): ?>
                                 <td class="name">
                                     <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo $item['profileData']['organization_name']; ?></a>
+                                </td>
+                            <?php endif; ?>
+
+                            <?php if($role == \MissionNext\lib\Constants::ROLE_AGENCY): ?>
+                                <td class="name">
+                                    <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo $item['profileData']['last_name']." ".$item['profileData']['first_name']; ?></a>
                                 </td>
                             <?php endif; ?>
 

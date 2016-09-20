@@ -140,6 +140,10 @@ class searchController extends AbstractLayoutController {
                 if ($this->form->isValid()) {
                     $this->result = $this->form->search();
 
+                    if (Constants::ROLE_AGENCY == $this->userRole) {
+                        $this->additional_info = $this->api->getMetaInfoForAgency($this->userId, $this->role);
+                    }
+
                     foreach ($this->result as &$item) {
                         if (Constants::ROLE_AGENCY == $item['role']) {
                             if (!$item['org_name']) {

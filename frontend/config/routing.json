@@ -193,14 +193,6 @@
         "controller" : "affiliates",
         "action" : "cancelAffiliate"
     },
-    "/affiliate/feature" : {
-        "controller" : "affiliates",
-        "action" : "makeFeature"
-    },
-    "/affiliate/unfeature" : {
-        "controller" : "affiliates",
-        "action" : "unFeature"
-    },
 
     "/folder/change" : {
         "controller" : "commonAjax",

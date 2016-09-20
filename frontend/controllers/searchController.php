@@ -143,7 +143,7 @@ class searchController extends AbstractLayoutController {
                     foreach ($this->result as &$item) {
                         if (Constants::ROLE_AGENCY == $item['role']) {
                             if (!$item['org_name']) {
-                                $item['org_name'] = $item['org_name'] = $item['profileData']['agency_full_name'];
+                                $item['org_name'] = $item['profileData']['last_name']." ".$item['profileData']['first_name'];
                             }
                         }
                     }

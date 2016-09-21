@@ -39,18 +39,6 @@ class searchController extends AbstractLayoutController {
 
         $this->processSearch();
 
-        /*if ($this->userRole == Constants::ROLE_AGENCY) {
-            $newResults = [];
-            foreach ($this->result as $item) {
-                if ($newResults[$item['id']]) {
-                    $newResults[$item['id']]['notes'] .= '<br />'.$item['notes'];
-                } else {
-                    $newResults[$item['id']] = $item;
-                }
-            }
-
-            $this->result = $newResults;
-        }*/
     }
 
     public function organization(){
@@ -141,7 +129,34 @@ class searchController extends AbstractLayoutController {
                     $this->result = $this->form->search();
 
                     if (Constants::ROLE_AGENCY == $this->userRole) {
+                        $default_folder_id = \MissionNext\lib\SiteConfig::getDefaultFolder($this->role);
+                        $foldersApi = \MissionNext\lib\core\Context::getInstance()->getApiManager()->getApi()->getUserFolders($this->role, $this->userId);
+                        $default_folder = '';
+                        foreach($foldersApi as $folder) {
+                            if ($folder['id'] == $default_folder_id) {
+                                $default_folder = $folder['title'];
+                                break;
+                            }
+                        }
+
                         $this->additional_info = $this->api->getMetaInfoForAgency($this->userId, $this->role);
+                        foreach ($this->result as &$item) {
+                            foreach ($this->additional_info['notes'] as $note) {
+                                if ($note['user_id'] == $item['id'] && !empty($note['notes'])) {
+                                    $item['meta'][$note['note_owner']]['note'] = $note['notes'];
+                                }
+                            }
+                            foreach ($this->additional_info['favorites'] as $fav) {
+                                if ($fav['target_id'] == $item['id']) {
+                                    $item['meta'][$fav['favorite_owner']]['fav'] = true;
+                                }
+                            }
+                            foreach ($this->additional_info['folders'] as $folder) {
+                                if ($folder['user_id'] == $item['id'] && $default_folder != $folder['folder']) {
+                                    $item['meta'][$folder['folder_owner']]['folder'] = $folder['folder'];
+                                }
+                            }
+                        }
                     }
 
                     foreach ($this->result as &$item) {

@@ -511,3 +511,6 @@ table.payment td.price{
 .ui-state-default.ui-tabs-active a{
     font-weight: bold !important;
 }
+.org-list{
+    margin: 0 0 15px 0;
+}

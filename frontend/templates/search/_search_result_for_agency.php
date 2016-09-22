@@ -45,6 +45,7 @@
     uasort($foldersApi, 'sortFolders');
 
     $folders = array();
+    $folders[$default_folder] = $default_folder;
     foreach ($additional_info['folders'] as $folder) {
         $folders[$folder['folder']] = $folder['folder'];
     }

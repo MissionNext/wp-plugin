@@ -1,0 +1,1235 @@
+# Copyright (C) 2014 Mission Next
+# This file is distributed under the same license as the Mission Next package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Mission Next 0.1\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/MissionNext\n"
+"POT-Creation-Date: 2014-10-01 11:45:48+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: LoginWidget.php:16
+msgid "MissionNext Login Widget"
+msgstr ""
+
+#: LoginWidget.php:17
+msgid "A Login widget"
+msgstr ""
+
+#: LoginWidget.php:37 frontend/templates/home/index.php:2
+msgid "Hello"
+msgstr ""
+
+#: LoginWidget.php:40 frontend/templates/sidebarLayout.php:23
+msgid "My Dashboard"
+msgstr ""
+
+#: LoginWidget.php:42 frontend/templates/sidebarLayout.php:59
+msgid "Logout"
+msgstr ""
+
+#: LoginWidget.php:53
+msgid "Not a member yet? Please register:"
+msgstr ""
+
+#: LoginWidget.php:54 LoginWidget.php:56 LoginWidget.php:58
+msgid "Register as %s"
+msgstr ""
+
+#: LoginWidget.php:59
+msgid "Forgot you password?"
+msgstr ""
+
+#: LoginWidget.php:60
+msgid "Reset password"
+msgstr ""
+
+#: frontend/controllers/AbstractLayoutController.php:77
+msgid "Please choose your subscription to proceed"
+msgstr ""
+
+#: frontend/controllers/AbstractLayoutController.php:80
+msgid "Choose your subscription"
+msgstr ""
+
+#: frontend/controllers/AbstractLayoutController.php:85
+msgid "Your subscription is expired, please renew it"
+msgstr ""
+
+#: frontend/controllers/AbstractLayoutController.php:88
+msgid "You are under grace period, please %s renew %s your subscription"
+msgstr ""
+
+#: frontend/controllers/AbstractLayoutController.php:110
+msgid "Please complete your profile to reveal the majesty and power of %s"
+msgstr ""
+
+#: frontend/controllers/forgotPasswordController.php:27
+msgid "Check your e-mail for the confirmation link."
+msgstr ""
+
+#: frontend/controllers/forgotPasswordController.php:33
+msgid ""
+"Please enter your username or email address. You will receive a link to "
+"create a new password via email."
+msgstr ""
+
+#: frontend/controllers/forgotPasswordController.php:45
+msgid "Sorry, that key has expired. Please try again."
+msgstr ""
+
+#: frontend/controllers/forgotPasswordController.php:47
+msgid "Sorry, that key does not appear to be valid."
+msgstr ""
+
+#: frontend/controllers/homeController.php:33
+msgid "Your account info saved successfully!"
+msgstr ""
+
+#: frontend/controllers/inquireController.php:53
+#: frontend/controllers/inquireController.php:58
+msgid "Job inquire"
+msgstr ""
+
+#: frontend/controllers/inquireController.php:86
+#: frontend/controllers/inquireController.php:91
+msgid "%s inquire"
+msgstr ""
+
+#: frontend/controllers/inquireController.php:123
+#: frontend/controllers/inquireController.php:124
+#: frontend/controllers/inquireController.php:129
+#: frontend/controllers/inquireController.php:161
+#: frontend/controllers/inquireController.php:166
+msgid "%s inquire cancel"
+msgstr ""
+
+#: frontend/controllers/paymentController.php:53
+#: frontend/controllers/paymentController.php:62
+msgid "You must choose at least one site!"
+msgstr ""
+
+#: frontend/controllers/paymentController.php:95
+#: frontend/controllers/paymentController.php:200
+msgid "Payment successful"
+msgstr ""
+
+#: frontend/controllers/paymentController.php:156
+msgid ""
+"You must choose at least one site! Please notice that you must choose new "
+"partnership level for limited level if any."
+msgstr ""
+
+#: frontend/controllers/profileController.php:28
+msgid "Profile saved"
+msgstr ""
+
+#: frontend/controllers/profileController.php:56
+msgid "Presentation saved"
+msgstr ""
+
+#: frontend/templates/_avatar.php:77
+msgid "Upload"
+msgstr ""
+
+#: frontend/templates/_avatar.php:79 frontend/templates/job/index.php:29
+#: frontend/templates/search/_ajax_search_saved.php:17
+msgid "Delete"
+msgstr ""
+
+#: frontend/templates/_email_popup.php:3
+msgid "To"
+msgstr ""
+
+#: frontend/templates/_email_popup.php:7
+msgid "From"
+msgstr ""
+
+#: frontend/templates/_email_popup.php:11
+msgid "Subject"
+msgstr ""
+
+#: frontend/templates/_email_popup.php:15
+msgid "Body"
+msgstr ""
+
+#: frontend/templates/_email_popup.php:40
+msgid "Send"
+msgstr ""
+
+#: frontend/templates/_email_popup.php:53
+#: frontend/templates/affiliates/affiliates.php:32
+#: frontend/templates/affiliates/affiliates.php:47
+#: frontend/templates/affiliates/affiliates.php:70
+#: frontend/templates/common/_table.php:324
+#: frontend/templates/favorite/agency.php:123
+#: frontend/templates/favorite/candidate.php:129
+#: frontend/templates/favorite/organization.php:123
+#: frontend/templates/inquire/candidate.php:31
+msgid "Cancel"
+msgstr ""
+
+#: frontend/templates/affiliates/affiliates.php:10
+#: frontend/templates/sidebarLayout.php:37
+#: frontend/templates/sidebarLayout.php:51
+msgid "Affiliates"
+msgstr ""
+
+#: frontend/templates/affiliates/affiliates.php:19
+#: frontend/templates/affiliates/jobs.php:19
+#: frontend/templates/favorite/agency.php:20
+#: frontend/templates/favorite/candidate.php:23
+#: frontend/templates/favorite/organization.php:20
+#: frontend/templates/inquire/agency.php:20
+#: frontend/templates/inquire/candidate.php:20
+#: frontend/templates/inquire/organization.php:19
+#: frontend/templates/job/index.php:19
+msgid "Actions"
+msgstr ""
+
+#: frontend/templates/affiliates/affiliates.php:24
+msgid "Approved"
+msgstr ""
+
+#: frontend/templates/affiliates/affiliates.php:37
+msgid "Pending"
+msgstr ""
+
+#: frontend/templates/affiliates/affiliates.php:45
+msgid "Approve"
+msgstr ""
+
+#: frontend/templates/affiliates/affiliates.php:56
+msgid "No affiliates yet."
+msgstr ""
+
+#: frontend/templates/affiliates/jobs.php:16
+msgid "Exp Date"
+msgstr ""
+
+#: frontend/templates/affiliates/jobs.php:17
+#: frontend/templates/common/_table.php:116
+#: frontend/templates/job/index.php:18 frontend/templates/job/show.php:56
+msgid "Name"
+msgstr ""
+
+#: frontend/templates/affiliates/jobs.php:18
+#: frontend/templates/common/_table.php:129
+msgid "Location"
+msgstr ""
+
+#: frontend/templates/affiliates/jobs.php:36
+#: frontend/templates/job/index.php:27
+msgid "Matches"
+msgstr ""
+
+#: frontend/templates/affiliates/jobs.php:45
+msgid "No %s yet."
+msgstr ""
+
+#: frontend/templates/agency/presentation.php:22
+#: frontend/templates/agency/show.php:36
+#: frontend/templates/candidate/show.php:38 frontend/templates/job/show.php:37
+#: frontend/templates/organization/presentation.php:22
+#: frontend/templates/organization/show.php:35
+msgid "Send message"
+msgstr ""
+
+#: frontend/templates/agency/presentation.php:28
+#: frontend/templates/agency/show.php:42
+#: frontend/templates/organization/presentation.php:32
+#: frontend/templates/organization/show.php:45
+msgid "View presentation"
+msgstr ""
+
+#: frontend/templates/agency/presentation.php:33
+#: frontend/templates/organization/presentation.php:37
+#: frontend/templates/profile/presentation.php:10
+#: frontend/templates/sidebarLayout.php:36
+#: frontend/templates/sidebarLayout.php:47
+msgid "My Presentation"
+msgstr ""
+
+#: frontend/templates/agency/show.php:47
+#: frontend/templates/candidate/show.php:51
+#: frontend/templates/common/_table.php:116
+#: frontend/templates/login/login.php:13
+#: frontend/templates/organization/show.php:51
+#: lib/form/RegistrationForm.php:67 lib/form/RegistrationForm.php:68
+#: lib/form/SearchForm.php:39 lib/form/UserForm.php:33
+msgid "Username"
+msgstr ""
+
+#: frontend/templates/agency/show.php:48
+#: frontend/templates/candidate/show.php:52
+#: frontend/templates/organization/show.php:52
+#: lib/form/RegistrationForm.php:107 lib/form/RegistrationForm.php:108
+#: lib/form/UserForm.php:40
+msgid "Email"
+msgstr ""
+
+#: frontend/templates/agency/show.php:81
+#: frontend/templates/candidate/show.php:84 frontend/templates/job/show.php:90
+#: frontend/templates/organization/show.php:84
+msgid "Home"
+msgstr ""
+
+#: frontend/templates/candidate/show.php:44 frontend/templates/job/show.php:48
+msgid "Make favorite"
+msgstr ""
+
+#: frontend/templates/candidate/show.php:45 frontend/templates/job/show.php:49
+msgid "Remove from favorites"
+msgstr ""
+
+#: frontend/templates/common/_table.php:95
+msgid "Results with match rate below"
+msgstr ""
+
+#: frontend/templates/common/_table.php:107
+msgid "not shown."
+msgstr ""
+
+#: frontend/templates/common/_table.php:120
+msgid "Region"
+msgstr ""
+
+#: frontend/templates/common/_table.php:121
+msgid "Categories"
+msgstr ""
+
+#: frontend/templates/common/_table.php:122
+msgid "Commitment Time"
+msgstr ""
+
+#: frontend/templates/common/_table.php:126
+msgid "Age"
+msgstr ""
+
+#: frontend/templates/common/_table.php:127
+msgid "Gender"
+msgstr ""
+
+#: frontend/templates/common/_table.php:128
+msgid "Marital status"
+msgstr ""
+
+#: frontend/templates/common/_table.php:130
+msgid "Last login"
+msgstr ""
+
+#: frontend/templates/common/_table.php:134
+msgid "Match percent (%)"
+msgstr ""
+
+#: frontend/templates/common/_table.php:135
+msgid "Match highlight"
+msgstr ""
+
+#: frontend/templates/common/_table.php:139
+msgid "Favorite"
+msgstr ""
+
+#: frontend/templates/common/_table.php:142
+msgid "Folder"
+msgstr ""
+
+#: frontend/templates/common/_table.php:143
+#: frontend/templates/favorite/agency.php:19
+#: frontend/templates/favorite/candidate.php:22
+#: frontend/templates/favorite/organization.php:19
+msgid "Notes"
+msgstr ""
+
+#: frontend/templates/common/_table.php:146
+msgid "Affiliate"
+msgstr ""
+
+#: frontend/templates/common/_table.php:236
+msgid "Request"
+msgstr ""
+
+#: frontend/templates/common/_table.php:248
+msgid "No results with the set matching rate."
+msgstr ""
+
+#: frontend/templates/common/_table.php:254
+#: frontend/templates/favorite/agency.php:49
+#: frontend/templates/favorite/candidate.php:54
+#: frontend/templates/favorite/organization.php:49
+msgid "Note"
+msgstr ""
+
+#: frontend/templates/common/_table.php:258
+#: frontend/templates/favorite/agency.php:53
+#: frontend/templates/favorite/candidate.php:58
+#: frontend/templates/favorite/organization.php:53
+msgid "Enter or update a brief note about this"
+msgstr ""
+
+#: frontend/templates/common/_table.php:259
+#: frontend/templates/favorite/agency.php:56
+#: frontend/templates/favorite/candidate.php:61
+#: frontend/templates/favorite/organization.php:56
+msgid "Notation Re:"
+msgstr ""
+
+#: frontend/templates/common/_table.php:260
+msgid "This record is stored in folder:"
+msgstr ""
+
+#: frontend/templates/common/_table.php:291
+#: frontend/templates/favorite/agency.php:90
+#: frontend/templates/favorite/candidate.php:96
+#: frontend/templates/favorite/organization.php:90
+#: frontend/templates/home/wpProfile.php:80 frontend/templates/job/edit.php:16
+#: frontend/templates/profile/index.php:17
+#: frontend/templates/profile/presentation.php:21
+#: frontend/templates/search/_search_save_block.php:32
+msgid "Save"
+msgstr ""
+
+#: frontend/templates/common/_table.php:543
+msgid "Close"
+msgstr ""
+
+#: frontend/templates/favorite/agency.php:10
+#: frontend/templates/favorite/candidate.php:11
+#: frontend/templates/favorite/organization.php:10
+msgid "Favorites"
+msgstr ""
+
+#: frontend/templates/favorite/agency.php:18
+#: frontend/templates/favorite/organization.php:18
+#: frontend/templates/inquire/agency.php:18
+#: frontend/templates/inquire/organization.php:18
+msgid "Full name"
+msgstr ""
+
+#: frontend/templates/favorite/agency.php:33
+#: frontend/templates/favorite/candidate.php:38
+#: frontend/templates/favorite/organization.php:33
+#: frontend/templates/inquire/agency.php:38
+#: frontend/templates/inquire/organization.php:36
+msgid "Remove"
+msgstr ""
+
+#: frontend/templates/favorite/agency.php:43
+#: frontend/templates/favorite/candidate.php:48
+#: frontend/templates/favorite/organization.php:43
+msgid "No favorites yet."
+msgstr ""
+
+#: frontend/templates/favorite/candidate.php:19
+#: frontend/templates/inquire/candidate.php:18
+msgid "%s title"
+msgstr ""
+
+#: frontend/templates/favorite/candidate.php:21
+msgid "Expiration Date"
+msgstr ""
+
+#: frontend/templates/forgotPassword/request.php:8
+msgid "Get New Password"
+msgstr ""
+
+#: frontend/templates/forgotPassword/reset.php:8
+#: frontend/templates/forgotPassword/reset.php:19
+msgid "Reset Password"
+msgstr ""
+
+#: frontend/templates/home/wpProfile.php:11
+msgid "User Account"
+msgstr ""
+
+#: frontend/templates/inquire/agency.php:10
+#: frontend/templates/inquire/organization.php:10
+msgid "Inquiries list"
+msgstr ""
+
+#: frontend/templates/inquire/agency.php:50
+#: frontend/templates/inquire/candidate.php:41
+#: frontend/templates/inquire/organization.php:48
+msgid "No inquiries yet."
+msgstr ""
+
+#: frontend/templates/inquire/candidate.php:10
+msgid "Inquire list"
+msgstr ""
+
+#: frontend/templates/job/edit.php:3
+msgid "Edit %s"
+msgstr ""
+
+#: frontend/templates/job/edit.php:13 frontend/templates/job/newJob.php:45
+#: frontend/templates/search/agency.php:32
+#: frontend/templates/search/agency.php:47
+#: frontend/templates/search/candidate.php:33
+#: frontend/templates/search/candidate.php:48
+#: frontend/templates/search/job.php:32 frontend/templates/search/job.php:47
+#: frontend/templates/search/organization.php:33
+#: frontend/templates/search/organization.php:48
+#: frontend/templates/matches/candidateForJob.php:30
+#: frontend/templates/matches/candidateForOrganization.php:27
+#: frontend/templates/matches/jobForCandidate.php:28
+#: frontend/templates/matches/organizationForCandidate.php:28
+msgid "Back"
+msgstr ""
+
+#: frontend/templates/job/index.php:28
+msgid "Edit"
+msgstr ""
+
+#: frontend/templates/job/index.php:37
+#: frontend/templates/organization/jobs.php:15
+msgid "No jobs yet."
+msgstr ""
+
+#: frontend/templates/job/index.php:40
+msgid "New"
+msgstr ""
+
+#: frontend/templates/job/newJob.php:10
+msgid "New %s"
+msgstr ""
+
+#: frontend/templates/job/newJob.php:19
+msgid "Populate from"
+msgstr ""
+
+#: frontend/templates/job/newJob.php:31
+msgid "Populate"
+msgstr ""
+
+#: frontend/templates/job/newJob.php:45
+#: frontend/templates/job/edit.php:13
+msgid "Dashboard"
+msgstr ""
+
+#: frontend/templates/job/newJob.php:48
+#: frontend/templates/job/edit.php:16
+msgid "Job"
+msgstr ""
+
+#: frontend/templates/job/newJob.php:51
+msgid "Create"
+msgstr ""
+
+#: frontend/templates/job/show.php:43
+msgid "Inquire Now"
+msgstr ""
+
+#: frontend/templates/job/show.php:44
+msgid "Cancel Inquire"
+msgstr ""
+
+#: frontend/templates/login/login.php:2 frontend/templates/login/login.php:39
+msgid "Log In"
+msgstr ""
+
+#: frontend/templates/login/login.php:24 lib/form/RegistrationForm.php:79
+#: lib/form/RegistrationForm.php:80
+msgid "Password"
+msgstr ""
+
+#: frontend/templates/login/login.php:31
+msgid "Remember Me"
+msgstr ""
+
+#: frontend/templates/matches/candidateForJob.php:13
+#: frontend/templates/matches/candidateForOrganization.php:10
+#: frontend/templates/matches/jobForCandidate.php:11
+#: frontend/templates/matches/organizationForCandidate.php:11
+msgid "%s Matches"
+msgstr ""
+
+#: frontend/templates/matches/candidateForJob.php:25
+#: frontend/templates/matches/candidateForOrganization.php:22
+#: frontend/templates/matches/jobForCandidate.php:23
+#: frontend/templates/matches/organizationForCandidate.php:23
+msgid "Sorry, no matches yet."
+msgstr ""
+
+#: frontend/templates/organization/presentation.php:27
+#: frontend/templates/organization/show.php:40
+msgid "View positions"
+msgstr ""
+
+#: frontend/templates/payment/_coupon.php:8
+msgid "Coupon:"
+msgstr ""
+
+#: frontend/templates/payment/_coupon.php:13
+msgid "Apply"
+msgstr ""
+
+#: frontend/templates/payment/_coupon.php:42
+msgid "Wrong code"
+msgstr ""
+
+#: frontend/templates/payment/_first_no_roles.php:12
+#: frontend/templates/payment/_first_roles.php:11
+#: frontend/templates/payment/_renew_no_roles.php:35
+#: frontend/templates/payment/_renew_roles.php:35
+msgid "Website"
+msgstr ""
+
+#: frontend/templates/payment/_first_no_roles.php:14
+#: frontend/templates/payment/_renew_no_roles.php:37
+#: frontend/templates/payment/_renew_no_roles.php:40
+msgid "Price for"
+msgstr ""
+
+#: frontend/templates/payment/_first_no_roles.php:14
+#: frontend/templates/payment/_renew_no_roles.php:27
+#: frontend/templates/payment/_renew_no_roles.php:40
+#: frontend/templates/payment/_renew_roles.php:28 lib/form/PaymentForm.php:61
+msgid "Year"
+msgstr ""
+
+#: frontend/templates/payment/_first_roles.php:12
+#: frontend/templates/payment/_renew_roles.php:36
+msgid "Limited"
+msgstr ""
+
+#: frontend/templates/payment/_first_roles.php:13
+#: frontend/templates/payment/_renew_roles.php:37
+msgid "Basic"
+msgstr ""
+
+#: frontend/templates/payment/_first_roles.php:14
+#: frontend/templates/payment/_renew_roles.php:38
+msgid "Plus"
+msgstr ""
+
+#: frontend/templates/payment/_first_roles.php:15
+#: frontend/templates/payment/_renew_roles.php:39
+msgid "None"
+msgstr ""
+
+#: frontend/templates/payment/_info_block.php:7
+msgid "Your subscription"
+msgstr ""
+
+#: frontend/templates/payment/_info_block.php:9
+msgid "On Monthly Basis"
+msgstr ""
+
+#: frontend/templates/payment/_info_block.php:11
+msgid "Days left: %s"
+msgstr ""
+
+#: frontend/templates/payment/_info_block.php:15
+msgid "Partnership Level: %s"
+msgstr ""
+
+#: frontend/templates/payment/_info_block.php:18
+msgid "Renew Now"
+msgstr ""
+
+#: frontend/templates/payment/_renew_no_roles.php:20
+#: frontend/templates/payment/_renew_roles.php:21
+msgid ""
+"NOTE: Your current subscription has %s days remaining until %s for a "
+"residual value of $%s."
+msgstr ""
+
+#: frontend/templates/payment/_renew_no_roles.php:24
+#: frontend/templates/payment/_renew_roles.php:25 lib/form/PaymentForm.php:56
+msgid "Period"
+msgstr ""
+
+#: frontend/templates/payment/_renew_no_roles.php:26
+#: frontend/templates/payment/_renew_no_roles.php:37
+#: frontend/templates/payment/_renew_roles.php:27 lib/form/PaymentForm.php:65
+msgid "Month"
+msgstr ""
+
+#: frontend/templates/payment/_renew_no_roles.php:43
+#: frontend/templates/payment/_renew_roles.php:40
+msgid "Unused value"
+msgstr ""
+
+#: frontend/templates/payment/_renew_no_roles.php:79
+#: frontend/templates/payment/_renew_roles.php:105
+msgid "A new plan is selected."
+msgstr ""
+
+#: frontend/templates/payment/_renew_no_roles.php:83
+#: frontend/templates/payment/_renew_roles.php:109
+msgid "Revise Plan Extending for 1 Year to %s"
+msgstr ""
+
+#: frontend/templates/payment/_renew_no_roles.php:90
+#: frontend/templates/payment/_renew_roles.php:116
+msgid "Reset Plan with new choice. Keep expiration: %s"
+msgstr ""
+
+#: frontend/templates/payment/_renew_no_roles.php:96
+#: frontend/templates/payment/_renew_roles.php:122
+msgid "The selected plan is the same as the current plan."
+msgstr ""
+
+#: frontend/templates/payment/_renew_no_roles.php:100
+#: frontend/templates/payment/_renew_roles.php:126
+msgid "Renew Plan Extending for 1 Year to %s"
+msgstr ""
+
+#: frontend/templates/payment/_renew_no_roles.php:107
+#: frontend/templates/payment/_renew_roles.php:133
+msgid "All the subscriptions will  be canceled and new one created"
+msgstr ""
+
+#: frontend/templates/payment/_total_cart.php:6
+msgid "Subtotal"
+msgstr ""
+
+#: frontend/templates/payment/_total_cart.php:7
+#: frontend/templates/payment/firstProcess.php:18
+#: frontend/templates/payment/processRenew.php:21
+msgid "Discount"
+msgstr ""
+
+#: frontend/templates/payment/_total_cart.php:8
+#: frontend/templates/payment/firstProcess.php:21
+#: frontend/templates/payment/processRenew.php:27
+msgid "Coupon"
+msgstr ""
+
+#: frontend/templates/payment/_total_cart.php:10
+msgid "Fee"
+msgstr ""
+
+#: frontend/templates/payment/_total_cart.php:12
+#: frontend/templates/payment/processRenew.php:30
+msgid "First payment"
+msgstr ""
+
+#: frontend/templates/payment/_total_cart.php:13
+#: frontend/templates/payment/processRenew.php:32
+msgid "Monthly"
+msgstr ""
+
+#: frontend/templates/payment/_total_cart.php:14
+#: frontend/templates/payment/firstProcess.php:23
+#: frontend/templates/payment/processRenew.php:32
+msgid "Total"
+msgstr ""
+
+#: frontend/templates/payment/_total_cart.php:16
+msgid "Checkout"
+msgstr ""
+
+#: frontend/templates/payment/firstProcess.php:13
+msgid "Selected sites"
+msgstr ""
+
+#: frontend/templates/payment/firstProcess.php:32
+#: frontend/templates/payment/processRenew.php:41
+msgid "Submit"
+msgstr ""
+
+#: frontend/templates/payment/processRenew.php:15
+msgid "Sites:"
+msgstr ""
+
+#: frontend/templates/payment/processRenew.php:19
+msgid "Price"
+msgstr ""
+
+#: frontend/templates/payment/processRenew.php:24
+msgid "Convenience fee"
+msgstr ""
+
+#: frontend/templates/profile/index.php:8
+msgid "Profile"
+msgstr ""
+
+#: frontend/templates/search/_ajax_search_saved.php:16
+#: frontend/templates/search/agency.php:48
+#: frontend/templates/search/candidate.php:49
+#: frontend/templates/search/job.php:48
+#: frontend/templates/search/organization.php:49
+msgid "Search"
+msgstr ""
+
+#: frontend/templates/search/_search_form.php:8
+msgid "Welcome!"
+msgstr ""
+
+#: frontend/templates/search/_search_form.php:10
+msgid "Selection fields available for a search."
+msgstr ""
+
+#: frontend/templates/search/_search_form.php:11
+msgid ""
+"Many selections in a group increases the count. More groups selected will "
+"narrow the search."
+msgstr ""
+
+#: frontend/templates/search/_search_form.php:12
+msgid ""
+"Play with it. Useful searches can be saved after assigning a search name."
+msgstr ""
+
+#: frontend/templates/search/_search_save_block.php:30
+msgid "Save this search. Search Name:"
+msgstr ""
+
+#: frontend/templates/search/_search_save_block.php:62
+msgid "Successfully saved"
+msgstr ""
+
+#: frontend/templates/search/_search_save_block.php:66
+msgid "Save error"
+msgstr ""
+
+#: frontend/templates/search/agency.php:13
+#: frontend/templates/search/organization.php:14
+msgid "Interactive %s Search"
+msgstr ""
+
+#: frontend/templates/search/agency.php:27
+#: frontend/templates/search/candidate.php:28
+#: frontend/templates/search/job.php:27
+#: frontend/templates/search/organization.php:28
+msgid "No %s found"
+msgstr ""
+
+#: frontend/templates/search/agency.php:33
+#: frontend/templates/search/candidate.php:34
+#: frontend/templates/search/job.php:33
+#: frontend/templates/search/organization.php:34
+msgid "Start over"
+msgstr ""
+
+#: frontend/templates/search/candidate.php:14
+#: frontend/templates/search/job.php:13
+#: frontend/templates/sidebarLayout.php:30
+#: frontend/templates/sidebarLayout.php:39
+#: frontend/templates/sidebarLayout.php:40
+#: frontend/templates/sidebarLayout.php:41
+#: frontend/templates/sidebarLayout.php:52
+#: frontend/templates/sidebarLayout.php:54
+msgid "Search %s"
+msgstr ""
+
+#: frontend/templates/sidebarLayout.php:24
+msgid "My Profile"
+msgstr ""
+
+#: frontend/templates/sidebarLayout.php:25
+msgid "My Account"
+msgstr ""
+
+#: frontend/templates/sidebarLayout.php:28
+#: frontend/templates/sidebarLayout.php:29
+msgid "View %s Matches"
+msgstr ""
+
+#: frontend/templates/sidebarLayout.php:31
+#: frontend/templates/sidebarLayout.php:43
+#: frontend/templates/sidebarLayout.php:56
+msgid "Inquiry List"
+msgstr ""
+
+#: frontend/templates/sidebarLayout.php:44
+#: frontend/templates/sidebarLayout.php:58
+msgid "Utilities"
+msgstr ""
+
+#: frontend/templates/sidebarLayout.php:32
+#: frontend/templates/sidebarLayout.php:42
+#: frontend/templates/sidebarLayout.php:55
+msgid "My Favorites"
+msgstr ""
+
+#: frontend/templates/sidebarLayout.php:49
+msgid "View %s Match"
+msgstr ""
+
+#: frontend/templates/signup/registration.php:11
+msgid "%s Registration"
+msgstr ""
+
+#: frontend/templates/signup/registration.php:29
+#: frontend/templates/signup/registration.php:32
+msgid "Captcha"
+msgstr ""
+
+#: frontend/templates/signup/registration.php:44
+msgid "Sign up"
+msgstr ""
+
+#: lib/AvatarManager.php:53
+msgid "Unsupported file type."
+msgstr ""
+
+#: lib/form/PasswordRequestForm.php:30
+msgid "Username or E-mail:"
+msgstr ""
+
+#: lib/form/PasswordRequestForm.php:45
+msgid "<strong>ERROR</strong>: Enter a username or e-mail address."
+msgstr ""
+
+#: lib/form/PasswordRequestForm.php:49
+msgid ""
+"<strong>ERROR</strong>: There is no user registered with that email address."
+msgstr ""
+
+#: lib/form/PasswordRequestForm.php:55
+msgid "<strong>ERROR</strong>: Invalid username or e-mail."
+msgstr ""
+
+#: lib/form/PasswordRequestForm.php:80
+msgid "Someone requested that the password be reset for the following account:"
+msgstr ""
+
+#: lib/form/PasswordRequestForm.php:82
+msgid "Username: %s"
+msgstr ""
+
+#: lib/form/PasswordRequestForm.php:83
+msgid "If this was a mistake, just ignore this email and nothing will happen."
+msgstr ""
+
+#: lib/form/PasswordRequestForm.php:84
+msgid "To reset your password, visit the following address:"
+msgstr ""
+
+#: lib/form/PasswordRequestForm.php:90
+msgid "Password reset"
+msgstr ""
+
+#: lib/form/PasswordResetForm.php:31
+msgid "New password"
+msgstr ""
+
+#: lib/form/PasswordResetForm.php:38
+msgid "Confirm new password"
+msgstr ""
+
+#: lib/form/PasswordResetForm.php:53 lib/form/PasswordResetForm.php:57
+msgid "Please fill in the new password field."
+msgstr ""
+
+#: lib/form/PasswordResetForm.php:64
+msgid "The passwords do not match."
+msgstr ""
+
+#: lib/form/PaymentForm.php:76
+msgid "Payment Type"
+msgstr ""
+
+#: lib/form/PaymentForm.php:81
+msgid "E-Check"
+msgstr ""
+
+#: lib/form/PaymentForm.php:85 lib/form/PaymentForm.php:94
+msgid "Credit Card"
+msgstr ""
+
+#: lib/form/PaymentForm.php:101
+msgid "Card Expiration Date (MM/YYYY)"
+msgstr ""
+
+#: lib/form/PaymentForm.php:109
+msgid "Card Number"
+msgstr ""
+
+#: lib/form/PaymentForm.php:119
+msgid "E-check"
+msgstr ""
+
+#: lib/form/PaymentForm.php:126
+msgid "Routing Number"
+msgstr ""
+
+#: lib/form/PaymentForm.php:134
+msgid "Bank Account Number"
+msgstr ""
+
+#: lib/form/PaymentForm.php:142
+msgid "Bank Account Type"
+msgstr ""
+
+#: lib/form/PaymentForm.php:147
+msgid "Checking"
+msgstr ""
+
+#: lib/form/PaymentForm.php:151
+msgid "Business Checking"
+msgstr ""
+
+#: lib/form/PaymentForm.php:155
+msgid "Savings"
+msgstr ""
+
+#: lib/form/PaymentForm.php:164
+msgid "Bank Name"
+msgstr ""
+
+#: lib/form/PaymentForm.php:174
+msgid "Billing Info"
+msgstr ""
+
+#: lib/form/PaymentForm.php:181
+msgid "Ministry Name"
+msgstr ""
+
+#: lib/form/PaymentForm.php:188
+msgid "First Name"
+msgstr ""
+
+#: lib/form/PaymentForm.php:196
+msgid "Last Name"
+msgstr ""
+
+#: lib/form/PaymentForm.php:204
+msgid "Position Title"
+msgstr ""
+
+#: lib/form/PaymentForm.php:211
+msgid "E-mail"
+msgstr ""
+
+#: lib/form/PaymentForm.php:219
+msgid "Address"
+msgstr ""
+
+#: lib/form/PaymentForm.php:227
+msgid "City"
+msgstr ""
+
+#: lib/form/PaymentForm.php:235
+msgid "State "
+msgstr ""
+
+#: lib/form/PaymentForm.php:243
+msgid "Zip"
+msgstr ""
+
+#: lib/form/PaymentForm.php:251
+msgid "Country"
+msgstr ""
+
+#: lib/form/PaymentForm.php:259
+msgid "Phone"
+msgstr ""
+
+#: lib/form/PaymentForm.php:267
+msgid "Web Address"
+msgstr ""
+
+#: lib/form/PaymentForm.php:274
+msgid "Optional note"
+msgstr ""
+
+#: lib/form/PaymentForm.php:305
+msgid "Wrong period"
+msgstr ""
+
+#: lib/form/PaymentForm.php:311
+msgid "Enter card number"
+msgstr ""
+
+#: lib/form/PaymentForm.php:315
+msgid "Wrong card number"
+msgstr ""
+
+#: lib/form/PaymentForm.php:319
+msgid "Enter card expiration date"
+msgstr ""
+
+#: lib/form/PaymentForm.php:323
+msgid "Wrong card expiration date"
+msgstr ""
+
+#: lib/form/PaymentForm.php:330
+msgid "Enter routing number"
+msgstr ""
+
+#: lib/form/PaymentForm.php:332
+msgid "Wrong routing number"
+msgstr ""
+
+#: lib/form/PaymentForm.php:336
+msgid "Enter account number"
+msgstr ""
+
+#: lib/form/PaymentForm.php:338
+msgid "Wrong account number"
+msgstr ""
+
+#: lib/form/PaymentForm.php:342
+msgid "Enter account type"
+msgstr ""
+
+#: lib/form/PaymentForm.php:344
+msgid "Wrong account type"
+msgstr ""
+
+#: lib/form/PaymentForm.php:348
+msgid "Enter Bank name"
+msgstr ""
+
+#: lib/form/PaymentForm.php:350
+msgid "Too long Bank name"
+msgstr ""
+
+#: lib/form/PaymentForm.php:356
+msgid "Enter First name"
+msgstr ""
+
+#: lib/form/PaymentForm.php:358
+msgid "Too long First name"
+msgstr ""
+
+#: lib/form/PaymentForm.php:362
+msgid "Enter Last name"
+msgstr ""
+
+#: lib/form/PaymentForm.php:364
+msgid "Too long Last name"
+msgstr ""
+
+#: lib/form/PaymentForm.php:368
+msgid "Enter E-mail"
+msgstr ""
+
+#: lib/form/PaymentForm.php:370
+msgid "Wrong E-mail"
+msgstr ""
+
+#: lib/form/PaymentForm.php:374
+msgid "Enter Address"
+msgstr ""
+
+#: lib/form/PaymentForm.php:376
+msgid "Too long Address"
+msgstr ""
+
+#: lib/form/PaymentForm.php:380
+msgid "Enter City"
+msgstr ""
+
+#: lib/form/PaymentForm.php:382
+msgid "Too long City"
+msgstr ""
+
+#: lib/form/PaymentForm.php:386
+msgid "Enter State"
+msgstr ""
+
+#: lib/form/PaymentForm.php:388
+msgid "Too long State"
+msgstr ""
+
+#: lib/form/PaymentForm.php:392
+msgid "Enter Zip"
+msgstr ""
+
+#: lib/form/PaymentForm.php:394
+msgid "Too long Zip"
+msgstr ""
+
+#: lib/form/PaymentForm.php:398
+msgid "Enter Country"
+msgstr ""
+
+#: lib/form/PaymentForm.php:400
+msgid "Too long Country"
+msgstr ""
+
+#: lib/form/PaymentForm.php:404
+msgid "Enter Phone"
+msgstr ""
+
+#: lib/form/PaymentForm.php:408
+msgid "Not a valid phone"
+msgstr ""
+
+#: lib/form/PaymentForm.php:487
+msgid "Something went wrong."
+msgstr ""
+
+#: lib/form/RegistrationForm.php:159
+msgid "Please fill in the password"
+msgstr ""
+
+#: lib/form/RegistrationForm.php:165
+msgid "Captcha not set"
+msgstr ""
+
+#: lib/form/RegistrationForm.php:169
+msgid "Captcha not matched"
+msgstr ""
+
+#: lib/form/SearchForm.php:32
+msgid "Main Fields"
+msgstr ""
+
+#: lib/form/UserForm.php:26
+msgid "Profile fields"
+msgstr ""
+
+#: lib/form/UserForm.php:47
+msgid "Old Password"
+msgstr ""
+
+#: lib/form/UserForm.php:54
+msgid "New Password"
+msgstr ""
+
+#: lib/form/UserForm.php:68
+msgid "Fill in the email"
+msgstr ""
+
+#: lib/form/UserForm.php:72
+msgid "Fill in new password"
+msgstr ""
+
+#: lib/form/UserForm.php:76
+msgid "Fill in old password"
+msgstr ""
+
+#: lib/form/UserForm.php:82
+msgid "Password doesn't match"
+msgstr ""
+
+#: lib/form/fields/FileField.php:46
+msgid "Max file size is %s"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Mission Next"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Connector to MissionNext api"
+msgstr ""
+
+#. Login Form
+msgid "Registered Users"
+msgstr ""
+
+#. Login Form
+msgid "If you have previously registered, login to access your information."
+msgstr ""
+
+#. Login Form
+msgid "Can't Sign In?"
+msgstr ""
+
+#. Login Form
+msgid "Register as"
+msgstr ""
+
+#. Password recovery Form
+msgid "Password recovery"
+msgstr ""

@@ -1,0 +1,627 @@
+# Copyright (C) 2014 Mission Next
+# This file is distributed under the same license as the Mission Next package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Mission Next 0.1\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/MissionNext\n"
+"POT-Creation-Date: 2014-06-18 13:41:44+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-06-18 16:44+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: LoginWidget.php:16
+msgid "MissionNext Login Widget"
+msgstr ""
+
+#: LoginWidget.php:17
+msgid "A Login widget"
+msgstr ""
+
+#: LoginWidget.php:55
+msgid "Not a member yet? Please register:"
+msgstr ""
+
+#: LoginWidget.php:56 LoginWidget.php:57 LoginWidget.php:58
+msgid "Register as %s"
+msgstr ""
+
+#: LoginWidget.php:59
+msgid "Forgot you password?"
+msgstr ""
+
+#: LoginWidget.php:60
+msgid "Reset password"
+msgstr ""
+
+#: frontend/controllers/AbstractLayoutController.php:68
+msgid "Please complete your profile to reveal the majesty and power of %s"
+msgstr ""
+
+#: frontend/controllers/forgotPasswordController.php:27
+msgid "Check your e-mail for the confirmation link."
+msgstr ""
+
+#: frontend/controllers/forgotPasswordController.php:33
+msgid ""
+"Please enter your username or email address. You will receive a link to "
+"create a new password via email."
+msgstr ""
+
+#: frontend/controllers/forgotPasswordController.php:45
+msgid "Sorry, that key has expired. Please try again."
+msgstr ""
+
+#: frontend/controllers/forgotPasswordController.php:47
+msgid "Sorry, that key does not appear to be valid."
+msgstr ""
+
+#: frontend/controllers/inquireController.php:53
+#: frontend/controllers/inquireController.php:58
+msgid "Job inquire"
+msgstr ""
+
+#: frontend/controllers/inquireController.php:86
+#: frontend/controllers/inquireController.php:91
+msgid "%s inquire"
+msgstr ""
+
+#: frontend/controllers/inquireController.php:123
+#: frontend/controllers/inquireController.php:124
+#: frontend/controllers/inquireController.php:129
+#: frontend/controllers/inquireController.php:161
+#: frontend/controllers/inquireController.php:166
+msgid "%s inquire cancel"
+msgstr ""
+
+#: frontend/templates/_email_popup.php:3
+msgid "To"
+msgstr ""
+
+#: frontend/templates/_email_popup.php:7
+msgid "From"
+msgstr ""
+
+#: frontend/templates/_email_popup.php:11
+msgid "Subject"
+msgstr ""
+
+#: frontend/templates/_email_popup.php:15
+msgid "Body"
+msgstr ""
+
+#: frontend/templates/affiliates/affiliates.php:10
+#: frontend/templates/sidebarLayout.php:34
+#: frontend/templates/sidebarLayout.php:46
+msgid "Affiliates"
+msgstr ""
+
+#: frontend/templates/affiliates/affiliates.php:18
+#: frontend/templates/affiliates/jobs.php:18
+#: frontend/templates/favorite/agency.php:19
+#: frontend/templates/favorite/candidate.php:22
+#: frontend/templates/favorite/organization.php:19
+#: frontend/templates/inquire/agency.php:19
+#: frontend/templates/inquire/candidate.php:19
+#: frontend/templates/inquire/organization.php:18
+#: frontend/templates/job/index.php:18
+msgid "Actions"
+msgstr ""
+
+#: frontend/templates/affiliates/affiliates.php:23
+msgid "Approved"
+msgstr ""
+
+#: frontend/templates/affiliates/affiliates.php:31
+#: frontend/templates/affiliates/affiliates.php:46
+#: frontend/templates/affiliates/affiliates.php:64
+#: frontend/templates/inquire/candidate.php:30
+msgid "Cancel"
+msgstr ""
+
+#: frontend/templates/affiliates/affiliates.php:36
+msgid "Pending"
+msgstr ""
+
+#: frontend/templates/affiliates/affiliates.php:44
+msgid "Approve"
+msgstr ""
+
+#: frontend/templates/affiliates/jobs.php:15
+msgid "Exp Date"
+msgstr ""
+
+#: frontend/templates/affiliates/jobs.php:16
+#: frontend/templates/job/index.php:17 frontend/templates/job/show.php:43
+msgid "Name"
+msgstr ""
+
+#: frontend/templates/affiliates/jobs.php:17
+#: frontend/templates/common/_table.php:110
+msgid "Location"
+msgstr ""
+
+#: frontend/templates/affiliates/jobs.php:35
+#: frontend/templates/job/index.php:26
+msgid "Matches"
+msgstr ""
+
+#: frontend/templates/agency/show.php:24
+#: frontend/templates/candidate/show.php:26 frontend/templates/job/show.php:24
+#: frontend/templates/organization/show.php:23
+msgid "Send message"
+msgstr ""
+
+#: frontend/templates/agency/show.php:30
+#: frontend/templates/candidate/show.php:39
+#: frontend/templates/login/login.php:13
+#: frontend/templates/organization/show.php:33
+msgid "Username"
+msgstr ""
+
+#: frontend/templates/agency/show.php:31
+#: frontend/templates/candidate/show.php:40
+#: frontend/templates/organization/show.php:34
+msgid "Email"
+msgstr ""
+
+#: frontend/templates/agency/show.php:61
+#: frontend/templates/candidate/show.php:69 frontend/templates/job/edit.php:13
+#: frontend/templates/job/newJob.php:45 frontend/templates/job/show.php:74
+#: frontend/templates/organization/show.php:64
+#: frontend/templates/search/agency.php:32
+#: frontend/templates/search/agency.php:47
+#: frontend/templates/search/candidate.php:33
+#: frontend/templates/search/candidate.php:48
+#: frontend/templates/search/job.php:32 frontend/templates/search/job.php:47
+#: frontend/templates/search/organization.php:33
+#: frontend/templates/search/organization.php:48
+#: frontend/templates/matches/candidateForJob.php:30
+#: frontend/templates/matches/candidateForOrganization.php:27
+#: frontend/templates/matches/jobForCandidate.php:28
+#: frontend/templates/matches/organizationForCandidate.php:28
+msgid "Back"
+msgstr ""
+
+#: frontend/templates/agency/show.php:62
+#: frontend/templates/candidate/show.php:70 frontend/templates/job/show.php:75
+#: frontend/templates/organization/show.php:65
+msgid "Home"
+msgstr ""
+
+#: frontend/templates/candidate/show.php:32 frontend/templates/job/show.php:35
+msgid "Make favorite"
+msgstr ""
+
+#: frontend/templates/candidate/show.php:33 frontend/templates/job/show.php:36
+msgid "Remove from favorites"
+msgstr ""
+
+#: frontend/templates/common/_table.php:77
+msgid "Results with match rate below"
+msgstr ""
+
+#: frontend/templates/common/_table.php:89
+msgid "not shown."
+msgstr ""
+
+#: frontend/templates/common/_table.php:101
+msgid "Region"
+msgstr ""
+
+#: frontend/templates/common/_table.php:102
+msgid "Categories"
+msgstr ""
+
+#: frontend/templates/common/_table.php:103
+msgid "Commitment Time"
+msgstr ""
+
+#: frontend/templates/common/_table.php:107
+msgid "Age"
+msgstr ""
+
+#: frontend/templates/common/_table.php:108
+msgid "Gender"
+msgstr ""
+
+#: frontend/templates/common/_table.php:109
+msgid "Marital status"
+msgstr ""
+
+#: frontend/templates/common/_table.php:111
+msgid "Last login"
+msgstr ""
+
+#: frontend/templates/common/_table.php:115
+msgid "Match percent (%)"
+msgstr ""
+
+#: frontend/templates/common/_table.php:116
+msgid "Match highlight"
+msgstr ""
+
+#: frontend/templates/common/_table.php:120
+msgid "Favorite"
+msgstr ""
+
+#: frontend/templates/common/_table.php:123
+msgid "Folder"
+msgstr ""
+
+#: frontend/templates/common/_table.php:124
+#: frontend/templates/favorite/agency.php:18
+#: frontend/templates/favorite/candidate.php:21
+#: frontend/templates/favorite/organization.php:18
+msgid "Notes"
+msgstr ""
+
+#: frontend/templates/common/_table.php:127
+msgid "Affiliate"
+msgstr ""
+
+#: frontend/templates/common/_table.php:224
+#: frontend/templates/favorite/agency.php:47
+#: frontend/templates/favorite/candidate.php:52
+#: frontend/templates/favorite/organization.php:47
+msgid "Enter or update a brief note about this"
+msgstr ""
+
+#: frontend/templates/common/_table.php:225
+#: frontend/templates/favorite/agency.php:50
+#: frontend/templates/favorite/candidate.php:55
+#: frontend/templates/favorite/organization.php:50
+msgid "Notation Re:"
+msgstr ""
+
+#: frontend/templates/common/_table.php:226
+msgid "This record is stored in folder:"
+msgstr ""
+
+#: frontend/templates/favorite/agency.php:10
+#: frontend/templates/favorite/candidate.php:11
+#: frontend/templates/favorite/organization.php:10
+msgid "Favorites"
+msgstr ""
+
+#: frontend/templates/favorite/agency.php:17
+#: frontend/templates/favorite/organization.php:17
+#: frontend/templates/inquire/agency.php:17
+#: frontend/templates/inquire/organization.php:17
+msgid "Full name"
+msgstr ""
+
+#: frontend/templates/favorite/candidate.php:18
+#: frontend/templates/inquire/candidate.php:17
+msgid "%s title"
+msgstr ""
+
+#: frontend/templates/favorite/candidate.php:20
+msgid "Expiration Date"
+msgstr ""
+
+#: frontend/templates/forgotPassword/request.php:8
+msgid "Get New Password"
+msgstr ""
+
+#: frontend/templates/forgotPassword/reset.php:8
+#: frontend/templates/forgotPassword/reset.php:19
+msgid "Reset Password"
+msgstr ""
+
+#: frontend/templates/home/index.php:2
+msgid "Hello"
+msgstr ""
+
+#: frontend/templates/home/wpProfile.php:11
+msgid "User Account"
+msgstr ""
+
+#: frontend/templates/home/wpProfile.php:80 frontend/templates/job/edit.php:19
+#: frontend/templates/profile/index.php:17
+msgid "Save"
+msgstr ""
+
+#: frontend/templates/inquire/agency.php:10
+#: frontend/templates/inquire/organization.php:10
+msgid "Inquiries list"
+msgstr ""
+
+#: frontend/templates/inquire/agency.php:37
+#: frontend/templates/inquire/organization.php:35
+msgid "Remove"
+msgstr ""
+
+#: frontend/templates/inquire/candidate.php:10
+msgid "Inquire list"
+msgstr ""
+
+#: frontend/templates/job/edit.php:3
+msgid "Edit %s"
+msgstr ""
+
+#: frontend/templates/job/index.php:27
+msgid "Edit"
+msgstr ""
+
+#: frontend/templates/job/index.php:28
+#: frontend/templates/search/_search_saved.php:19
+msgid "Delete"
+msgstr ""
+
+#: frontend/templates/job/index.php:34
+msgid "New"
+msgstr ""
+
+#: frontend/templates/job/newJob.php:10
+msgid "New %s"
+msgstr ""
+
+#: frontend/templates/job/newJob.php:19
+msgid "Populate from"
+msgstr ""
+
+#: frontend/templates/job/newJob.php:31
+msgid "Populate"
+msgstr ""
+
+#: frontend/templates/job/newJob.php:45
+#: frontend/templates/job/edit.php:13
+msgid "Dashboard"
+msgstr ""
+
+#: frontend/templates/job/newJob.php:48
+#: frontend/templates/job/edit.php:16
+msgid "Job"
+msgstr ""
+
+#: frontend/templates/job/newJob.php:51
+msgid "Create"
+msgstr ""
+
+#: frontend/templates/job/show.php:30
+msgid "Inquire Now"
+msgstr ""
+
+#: frontend/templates/job/show.php:31
+msgid "Cancel Inquire"
+msgstr ""
+
+#: frontend/templates/login/login.php:2 frontend/templates/login/login.php:39
+msgid "Log In"
+msgstr ""
+
+#: frontend/templates/login/login.php:24
+msgid "Password"
+msgstr ""
+
+#: frontend/templates/login/login.php:31
+msgid "Remember Me"
+msgstr ""
+
+#: frontend/templates/matches/candidateForJob.php:13
+#: frontend/templates/matches/candidateForOrganization.php:10
+#: frontend/templates/matches/jobForCandidate.php:11
+#: frontend/templates/matches/organizationForCandidate.php:11
+msgid "%s Matches"
+msgstr ""
+
+#: frontend/templates/matches/candidateForJob.php:23
+#: frontend/templates/matches/candidateForOrganization.php:20
+#: frontend/templates/matches/jobForCandidate.php:21
+#: frontend/templates/matches/organizationForCandidate.php:21
+msgid "Sorry, no matches yet."
+msgstr ""
+
+#: frontend/templates/organization/show.php:28
+msgid "View positions"
+msgstr ""
+
+#: frontend/templates/profile/index.php:8
+msgid "Profile"
+msgstr ""
+
+#: frontend/templates/search/_search_form.php:8
+msgid "Welcome!"
+msgstr ""
+
+#: frontend/templates/search/_search_form.php:10
+msgid "Selection fields available for a search."
+msgstr ""
+
+#: frontend/templates/search/_search_form.php:11
+msgid ""
+"Many selections in a group increases the count. More groups selected will "
+"narrow the search."
+msgstr ""
+
+#: frontend/templates/search/_search_form.php:12
+msgid ""
+"Play with it. Useful searches can be saved after assigning a search name."
+msgstr ""
+
+#: frontend/templates/search/_search_save_block.php:34
+msgid "Save this search. Search Name:"
+msgstr ""
+
+#: frontend/templates/search/_search_saved.php:18
+#: frontend/templates/search/agency.php:48
+#: frontend/templates/search/candidate.php:49
+#: frontend/templates/search/job.php:48
+#: frontend/templates/search/organization.php:49
+msgid "Search"
+msgstr ""
+
+#: frontend/templates/search/agency.php:13
+#: frontend/templates/search/organization.php:14
+msgid "Interactive %s Search"
+msgstr ""
+
+#: frontend/templates/search/agency.php:27
+#: frontend/templates/search/candidate.php:28
+#: frontend/templates/search/job.php:27
+#: frontend/templates/search/organization.php:28
+msgid "No %s found"
+msgstr ""
+
+#: frontend/templates/search/agency.php:33
+#: frontend/templates/search/candidate.php:34
+#: frontend/templates/search/job.php:33
+#: frontend/templates/search/organization.php:34
+msgid "Start over"
+msgstr ""
+
+#: frontend/templates/search/candidate.php:14
+#: frontend/templates/search/job.php:13
+#: frontend/templates/sidebarLayout.php:28
+#: frontend/templates/sidebarLayout.php:36
+#: frontend/templates/sidebarLayout.php:37
+#: frontend/templates/sidebarLayout.php:38
+#: frontend/templates/sidebarLayout.php:47
+#: frontend/templates/sidebarLayout.php:48
+msgid "Search %s"
+msgstr ""
+
+#: frontend/templates/sidebarLayout.php:22
+msgid "My Profile"
+msgstr ""
+
+#: frontend/templates/sidebarLayout.php:23
+msgid "My Account"
+msgstr ""
+
+#: frontend/templates/sidebarLayout.php:26
+#: frontend/templates/sidebarLayout.php:27
+#: frontend/templates/sidebarLayout.php:45
+msgid "View %s Matches"
+msgstr ""
+
+#: frontend/templates/sidebarLayout.php:29
+#: frontend/templates/sidebarLayout.php:40
+#: frontend/templates/sidebarLayout.php:50
+msgid "Inquiry List"
+msgstr ""
+
+#: frontend/templates/sidebarLayout.php:44
+#: frontend/templates/sidebarLayout.php:58
+msgid "Folders"
+msgstr ""
+
+#: frontend/templates/sidebarLayout.php:30
+#: frontend/templates/sidebarLayout.php:39
+#: frontend/templates/sidebarLayout.php:49
+msgid "My Favorites"
+msgstr ""
+
+#: frontend/templates/sidebarLayout.php:53
+msgid "Logout"
+msgstr ""
+
+#: frontend/templates/signup/registration.php:11
+msgid "%s Registration"
+msgstr ""
+
+#: frontend/templates/signup/registration.php:29
+#: frontend/templates/signup/registration.php:32
+msgid "Captcha"
+msgstr ""
+
+#: frontend/templates/signup/registration.php:44
+msgid "Sign up"
+msgstr ""
+
+#: lib/form/PasswordRequestForm.php:28
+msgid "Username or E-mail:"
+msgstr ""
+
+#: lib/form/PasswordRequestForm.php:43
+msgid "<strong>ERROR</strong>: Enter a username or e-mail address."
+msgstr ""
+
+#: lib/form/PasswordRequestForm.php:47
+msgid ""
+"<strong>ERROR</strong>: There is no user registered with that email address."
+msgstr ""
+
+#: lib/form/PasswordRequestForm.php:53
+msgid "<strong>ERROR</strong>: Invalid username or e-mail."
+msgstr ""
+
+#: lib/form/PasswordRequestForm.php:78
+msgid "Someone requested that the password be reset for the following account:"
+msgstr ""
+
+#: lib/form/PasswordRequestForm.php:80
+msgid "Username: %s"
+msgstr ""
+
+#: lib/form/PasswordRequestForm.php:81
+msgid "If this was a mistake, just ignore this email and nothing will happen."
+msgstr ""
+
+#: lib/form/PasswordRequestForm.php:82
+msgid "To reset your password, visit the following address:"
+msgstr ""
+
+#: lib/form/PasswordRequestForm.php:88
+msgid "Password reset"
+msgstr ""
+
+#: lib/form/PasswordResetForm.php:30
+msgid "New password"
+msgstr ""
+
+#: lib/form/PasswordResetForm.php:37
+msgid "Confirm new password"
+msgstr ""
+
+#: lib/form/PasswordResetForm.php:52 lib/form/PasswordResetForm.php:56
+msgid "Please fill in the new password field."
+msgstr ""
+
+#: lib/form/PasswordResetForm.php:63
+msgid "The passwords do not match."
+msgstr ""
+
+#: lib/form/RegistrationForm.php:117
+msgid "Please fill in the password"
+msgstr ""
+
+#: lib/form/RegistrationForm.php:123
+msgid "Captcha not set"
+msgstr ""
+
+#: lib/form/RegistrationForm.php:127
+msgid "Captcha not matched"
+msgstr ""
+
+#: lib/form/UserForm.php:66
+msgid "Fill in the email"
+msgstr ""
+
+#: lib/form/UserForm.php:70
+msgid "Fill in new password"
+msgstr ""
+
+#: lib/form/UserForm.php:74
+msgid "Fill in old password"
+msgstr ""
+
+#: lib/form/UserForm.php:80
+msgid "Password doesn't match"
+msgstr ""
+
+#: lib/form/fields/FileField.php:42
+msgid "Max file size is %s"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Mission Next"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Connector to MissionNext api"
+msgstr ""

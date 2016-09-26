@@ -1,0 +1,299 @@
+{
+    "/login" : {
+        "controller" : "login",
+        "action" : "login"
+    },
+
+    "/signup/candidate" : {
+        "controller" : "signup",
+        "action" : "candidate"
+    },
+    "/signup/organization" : {
+        "controller" : "signup",
+        "action" : "organization"
+    },
+    "/signup/agency" : {
+        "controller" : "signup",
+        "action" : "agency"
+    },
+
+
+    "/payment/first" : {
+        "controller" : "payment",
+        "action" : "first"
+    },
+    "/payment/first/process" : {
+        "controller" : "payment",
+        "action" : "firstProcess"
+    },
+    "/payment/renew" : {
+        "controller" : "payment",
+        "action" : "renew"
+    },
+    "/payment/renew/process" : {
+        "controller" : "payment",
+        "action" : "processRenew"
+    },
+    "/payment/coupon/check" : {
+        "controller" : "payment",
+        "action" : "checkCoupon"
+    },
+    "/subscription/add/([0-9]+)" : {
+        "controller" : "payment",
+        "action" : "addSubscription"
+    },
+
+    "/saved/search/(agency|candidate|organization|job)": {
+        "controller" : "search",
+        "action" : "getSaved"
+    },
+    "/candidate/search" : {
+        "controller" : "search",
+        "action" : "candidate"
+    },
+    "/organization/search" : {
+        "controller" : "search",
+        "action" : "organization"
+    },
+    "/agency/search" : {
+        "controller" : "search",
+        "action" : "agency"
+    },
+    "/job/search" : {
+        "controller" : "search",
+        "action" : "job"
+    },
+    "/saved/search/add" : {
+        "controller" : "search",
+        "action" : "addSaved"
+    },
+    "/saved/search/delete" : {
+        "controller" : "search",
+        "action" : "deleteSaved"
+    },
+
+
+    "/dashboard" : {
+        "controller" : "home",
+        "action" : "index"
+    },
+    "/user/account" : {
+        "controller" : "home",
+        "action" : "wpProfile"
+    },
+    "/profile" : {
+        "controller" : "profile",
+        "action" : "index"
+    },
+    "/presentation" : {
+        "controller" : "profile",
+        "action" : "presentation"
+    },
+    "/avatar/update" : {
+        "controller" : "home",
+        "action" : "updateAvatar"
+    },
+    "/avatar/delete" : {
+        "controller" : "home",
+        "action" : "deleteAvatar"
+    },
+
+
+    "/job" : {
+        "controller" : "job",
+        "action" : "index"
+    },
+    "/job/([0-9]+)" : {
+        "controller" : "job",
+        "action" : "show"
+    },
+    "/job/new" : {
+        "controller" : "job",
+        "action" : "newJob"
+    },
+    "/job/([0-9]+)/edit" : {
+        "controller" : "job",
+        "action" : "edit"
+    }    ,
+    "/job/([0-9]+)/delete" : {
+        "controller" : "job",
+        "action" : "delete"
+    },
+
+
+    "/candidate/([0-9]+)" : {
+        "controller" : "candidate",
+        "action" : "show"
+    },
+
+
+    "/organization/([0-9]+)" : {
+        "controller" : "organization",
+        "action" : "show"
+    },
+    "/organization/([0-9]+)/jobs" : {
+        "controller" : "organization",
+        "action" : "jobs"
+    },
+    "/organization/([0-9]+)/presentation" : {
+        "controller" : "organization",
+        "action" : "presentation"
+    },
+
+
+    "/agency/([0-9]+)" : {
+        "controller" : "agency",
+        "action" : "show"
+    },
+    "/agency/([0-9]+)/presentation" : {
+        "controller" : "agency",
+        "action" : "presentation"
+    },
+
+    "/candidate/matches/job" : {
+        "controller" : "matches",
+        "action" : "jobForCandidate"
+    },
+    "/candidate/matches/organization" : {
+        "controller" : "matches",
+        "action" : "organizationForCandidate"
+    },
+    "/organization/matches/candidate" : {
+        "controller" : "matches",
+        "action" : "candidateForOrganization"
+    },
+    "/job/matches/candidate/([0-9]+)" : {
+        "controller" : "matches",
+        "action" : "candidateForJob"
+    },
+    "/matches/get_fields" : {
+        "controller" : "matches",
+        "action" : "getFields"
+    },
+
+
+    "/affiliates" : {
+        "controller" : "affiliates",
+        "action" : "affiliates"
+    },
+    "/affiliates/jobs" : {
+        "controller" : "affiliates",
+        "action" : "jobs"
+    },
+
+    "/affiliate/request" : {
+        "controller" : "affiliates",
+        "action" : "requestAffiliate"
+    },
+    "/affiliate/approve" : {
+        "controller" : "affiliates",
+        "action" : "approveAffiliate"
+    },
+    "/affiliate/cancel" : {
+        "controller" : "affiliates",
+        "action" : "cancelAffiliate"
+    },
+    "/affiliate/feature" : {
+        "controller" : "affiliates",
+        "action" : "makeFeature"
+    },
+    "/affiliate/unfeature" : {
+        "controller" : "affiliates",
+        "action" : "unFeature"
+    },
+
+    "/folder/change" : {
+        "controller" : "commonAjax",
+        "action" : "folderChange"
+    },
+
+    "/note/change" : {
+        "controller" : "commonAjax",
+        "action" : "noteChange"
+    },
+
+    "/email/send" : {
+        "controller" : "commonAjax",
+        "action" : "sendEmail"
+    },
+
+    "/select/country": {
+        "controller": "commonAjax",
+        "action": "selectCountry"
+    },
+
+    "/select/country/(agency|candidate|organization|job)": {
+        "controller": "customAjax",
+        "action": "selectCountry"
+    },
+
+    "/delete/file": {
+        "controller": "customAjax",
+        "action": "deleteFile"
+    },
+
+    "/favorite": {
+        "controller": "favorite",
+        "action" : "show"
+    },
+    "/favorite/add" : {
+        "controller" : "favorite",
+        "action" : "add"
+    },
+    "/favorite/remove" : {
+        "controller" : "favorite",
+        "action" : "remove"
+    },
+
+    "/inquiries" : {
+        "controller" : "inquire",
+        "action" : "show"
+    },
+    "/inquire/add" : {
+        "controller" : "inquire",
+        "action" : "inquire"
+    },
+    "/inquire/cancel" : {
+        "controller" : "inquire",
+        "action" : "cancel"
+    },
+    "/inquire/cancel/by/agency" : {
+        "controller" : "inquire",
+        "action" : "cancelByAgency"
+    },
+    "/inquire/cancel/by/organization" : {
+        "controller" : "inquire",
+        "action" : "cancelByOrganization"
+    },
+
+    "/password/request" : {
+        "controller" : "forgotPassword",
+        "action" : "request"
+    },
+    "/password/reset" : {
+        "controller" : "forgotPassword",
+        "action" : "reset"
+    },
+    "/check/queue" : {
+        "controller" : "home",
+        "action" : "checkQueue"
+    },
+    "/folders" : {
+        "controller" : "folders",
+        "action" : "index"
+    },
+    "/folders/add" : {
+        "controller" : "folders",
+        "action" : "add"
+    },
+    "/folders/delete" : {
+        "controller" : "folders",
+        "action" : "delete"
+    },
+    "/folders/update" : {
+        "controller" : "folders",
+        "action" : "update"
+    }
+
+
+}

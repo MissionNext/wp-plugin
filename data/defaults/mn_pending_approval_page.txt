@@ -1,0 +1,2 @@
+<h1>Thank you for registration!</h1>
+<p>You have successfully registered. One of our moderators will process your request.</p>

@@ -223,14 +223,6 @@ class Api {
         return $this->post("affiliate/$requester_id/to/$target_id/cancel");
     }
 
-    public function featureAffiliate($requester_id, $target_id){
-        return $this->post("affiliate/$requester_id/to/$target_id/feature");
-    }
-
-    public function removeFeatureAffiliate($requester_id, $target_id){
-        return $this->post("affiliate/$requester_id/to/$target_id/unfeature");
-    }
-
     public function getMatchedJobsForCandidate($candidate_id, $options = array()){
         return $this->get("match/candidate/jobs/$candidate_id", $options);
     }
@@ -265,6 +257,10 @@ class Api {
 
     public function search($role_for, $role_from, $user_id, $params){
         return $this->post("search/$role_for/for/$role_from/$user_id", $params);
+    }
+
+    public function getMetaInfoForAgency($user_id, $role){
+        return $this->get("meta/for/$user_id/$role");
     }
 
     public function changeNote( $user_id, $user_type, $for_user_id, $notes ){

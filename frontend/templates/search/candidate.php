@@ -34,7 +34,7 @@
 
         <?php if($result): ?>
             <?php if (\MissionNext\lib\Constants::ROLE_AGENCY == $userRole && \MissionNext\lib\Constants::ROLE_CANDIDATE == $role) { ?>
-                <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_result_for_agency', compact('result', 'role', 'messages', 'userRole', 'userId', 'additional_info')) ?>
+                <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_result_for_agency', compact('result', 'role', 'messages', 'userRole', 'userId', 'additional_info', 'multipleResults')) ?>
             <?php } else { ?>
                 <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_result', compact('result', 'role', 'messages', 'userRole', 'userId')) ?>
             <?php } ?>

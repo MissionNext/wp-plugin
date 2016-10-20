@@ -29,12 +29,12 @@
             <label class="col-sm-3 control-label" for="captcha"><?php echo __('Captcha', \MissionNext\lib\Constants::TEXT_DOMAIN) ?> </label>
 
             <div class="col-sm-9">
-                <img src="<?php echo $registrationForm->captcha_image ?>" alt="<?php echo __("Captcha", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>"/>
+                <img src="<?php echo $registrationForm->captcha_image ?>" title="Completely Automated Public Test to tell Computers and Humans Apart" alt="<?php echo __("Captcha", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>"/>
                 <input name="captcha[prefix]" type="hidden" value="<?php echo $registrationForm->captcha_prefix ?>"/>
             </div>
 
             <div class="col-sm-9 col-sm-offset-3">
-                <input id="captcha" name="captcha[value]" type="text"/> &nbsp; (Case Sensitive)
+                <input id="captcha" name="captcha[value]" type="text"/> &nbsp; (Case Sensitive) <br>To prove you are a real person
             </div>
         </div>
         <?php endif; ?>

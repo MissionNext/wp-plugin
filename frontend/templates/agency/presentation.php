@@ -16,7 +16,7 @@
             <div class="info">
 
                 <?php echo get_avatar($agency['email'], 203) ?>
-            </div>
+            </div> <!--class=info -->
             <?php if($agency['email'] != $user['email']): ?>
                 <div class="buttons">
                     <a onclick="EmailPopup.open('<?php echo $user['email'] ?>', '<?php echo $agency['email'] ?>')" class="btn btn-primary"><?php echo __('Send message', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
@@ -28,7 +28,21 @@
                     <a href="/agency/<?php echo $agency['id'] ?>" class="btn btn-default"><?php echo __('View profile', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                 </div>
             <?php endif; ?>
-        </div>
+
+            <?php if( $userRole != \MissionNext\lib\Constants::ROLE_AGENCY) { ?>
+                <div class="buttons">
+                    <button id="make_favorite" class="btn btn-success <?php echo $organization['favorite']?'hide':'' ?>"><?php echo __("Make favorite", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
+                    <button data-id="<?php echo $organization['favorite'] ?>"  id="remove_from_favorites" class="btn btn-danger <?php echo $organization['favorite']?'':'hide' ?>"><?php echo __("Unfavorite", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
+                </div>
+            <?php } ?>
+
+            <div class="control-buttons">
+                <div class="left">
+                <a class="btn btn-default" href="/dashboard"><?php echo __('Dashboard', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                </div>
+            </div>
+
+        </div> <!-- class=sidebar -->
     </div>
     <div class="content">
 

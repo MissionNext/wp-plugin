@@ -26,8 +26,8 @@ get_header();
                                 <?php if($userRole == 'candidate'): ?>
                                     <a href="/candidate/matches/job" class="matches"><?php echo sprintf(__('View %s Matches', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_JOB))) ?></a>
                                     <a href="/candidate/matches/organization" class="matches"><?php echo sprintf(__('View %s Matches', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_ORGANIZATION))) ?></a>
-                                    <a href="/job/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_JOB))) ?></a>
-                                    <a href="/inquiries"><?php echo __('Inquiry List', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                                    <a href="/job/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_JOB_PLURAL))) ?></a>
+                                    <a href="/inquiries"><?php echo __('Job Inquiry List', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                                     <a href="/favorite"><?php echo __('My Favorites', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                                 <?php endif; ?>
 
@@ -38,7 +38,7 @@ get_header();
                                     <a href="/job/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_JOB_PLURAL))) ?></a>
                                     <a href="/candidate/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_CANDIDATE_PLURAL))) ?></a>
                                     <a href="/organization/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_ORGANIZATION_PLURAL))) ?></a>
-                                    <a href="/inquiries"><?php echo __('Inquiry List', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                                    <a href="/inquiries"><?php echo __('Job Inquiry List', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                                 <?php endif; ?>
 
                                 <?php if($userRole == 'organization'): ?>
@@ -51,7 +51,7 @@ get_header();
                                     <?php endif; ?>
                                     <a href="/candidate/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_CANDIDATE_PLURAL))) ?></a>
                                     <a href="/favorite"><?php echo __('My Favorites', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
-                                    <a href="/inquiries"><?php echo __('Inquiry List', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                                    <a href="/inquiries"><?php echo __('Job Inquiry List', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                                     <a href="/folders"><?php echo __('Folders', \MissionNext\lib\Constants::TEXT_DOMAIN); ?></a>
                                 <?php endif; ?>
 

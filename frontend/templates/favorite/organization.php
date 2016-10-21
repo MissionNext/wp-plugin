@@ -4,6 +4,7 @@
  * @var String $userRole
  * @var Array $favorites
  * @var String $role
+ This page is seen by organizations
  */
 ?>
 <div class="page-header">

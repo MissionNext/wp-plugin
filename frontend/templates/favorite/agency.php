@@ -4,6 +4,7 @@
  * @var String $userRole
  * @var Array $favorites
  * @var String $role
+ This page is seen be agencies / agency reps
  */
 ?>
 <div class="page-header">

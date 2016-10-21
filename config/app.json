@@ -1,5 +1,5 @@
 {
-    "api_base_path" : "http://localhost.missionnext",
+    "api_base_path" : "http://api.missionnext.org",
     "api_uploads_dir" : "uploads",
     "helpers_dir" : "lib/helpers",
     "helpers" : [ "Template", "Array", "Request"],

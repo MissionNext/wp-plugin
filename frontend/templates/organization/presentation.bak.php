@@ -25,7 +25,7 @@
             <?php endif; ?>
 
             <div class="buttons">
-                <a href="/organization/<?php echo $organization['id'] ?>/jobs" class="btn btn-default"><?php echo __('View positions 28', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                <a href="/organization/<?php echo $organization['id'] ?>/jobs" class="btn btn-default"><?php echo __('View positions', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
             </div>
 
             <?php if(!empty($presentation['value'])): ?>
@@ -33,20 +33,7 @@
                     <a href="/organization/<?php echo $organization['id'] ?>" class="btn btn-default"><?php echo __('View profile', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                 </div>
             <?php endif; ?>
- 
-            <?php if( $userRole != \MissionNext\lib\Constants::ROLE_AGENCY) { ?>
-                <div class="buttons">
-                    <button id="make_favorite" class="btn btn-success <?php echo $organization['favorite']?'hide':'' ?>"><?php echo __("Make favorite", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
-                    <button data-id="<?php echo $organization['favorite'] ?>"  id="remove_from_favorites" class="btn btn-danger <?php echo $organization['favorite']?'':'hide' ?>"><?php echo __("Unfavorite", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
-                </div>
-            <?php } ?>
-
-            <div class="control-buttons">
-                <div class="left">
-                <a class="btn btn-default" href="/dashboard"><?php echo __('Dashboard', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
-                </div>
-            </div>
-        </div> <!--<div class="sidebar">-->
+        </div>
     </div>
 
     <div class="content">

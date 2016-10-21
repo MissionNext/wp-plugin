@@ -13,7 +13,7 @@ $years = [2001, 2010, 2011, 2012, 2013, 2014, 2015];
     <h1><?php echo sprintf(__("%s Matches", \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_CANDIDATE))) ?></h1>
 </div>
 <div class="page-content">
-	<!-- <? print_r($_COOKIE); ?> -->
+	
 	<div class="control-buttons">
         <div class="left">
             <a class="btn btn-default" href="/dashboard"><?php echo __("Dashboard", \MissionNext\lib\Constants::TEXT_DOMAIN); ?></a>
@@ -28,8 +28,8 @@ $years = [2001, 2010, 2011, 2012, 2013, 2014, 2015];
                 else
                     echo '<option value="' . $percentage . '">' . $percentage . '</option>';
             }?>
-        </select>
-        <?php echo __("not shown.", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+        </select> 
+        <?php echo __("not shown. <br>Folder icons clickable to expand/collapse. Refresh screen to update favorites and note icons. ", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
     </div>
 
     <div class="block">

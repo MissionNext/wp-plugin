@@ -57,8 +57,8 @@ class Form {
     public function getIntro()
     {
         $intro = '';
-
-        $translations = Context::getInstance()->getSiteConfigManager()->get("{$this->name}_{$this->role}_form_intro");
+        $role = (isset($this->searchRole)) ? $this->searchRole : $this->role;
+        $translations = Context::getInstance()->getSiteConfigManager()->get("{$this->name}_{$role}_form_intro");
         if(!empty($translations))
         {
             $lang_id = Context::getInstance()->getLocalizationManager()->getCurrentLangId();
@@ -83,8 +83,8 @@ class Form {
     public function getOutro()
     {
         $outro = '';
-
-        $translations = Context::getInstance()->getSiteConfigManager()->get("{$this->name}_{$this->role}_form_outro");
+        $role = (isset($this->searchRole)) ? $this->searchRole : $this->role;
+        $translations = Context::getInstance()->getSiteConfigManager()->get("{$this->name}_{$role}_form_outro");
         if(!empty($translations))
         {
             $lang_id = Context::getInstance()->getLocalizationManager()->getCurrentLangId();

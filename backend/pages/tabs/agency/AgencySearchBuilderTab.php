@@ -8,7 +8,7 @@ use MissionNext\backend\pages\tabs\AbstractFormBuilderTab;
 
 class AgencySearchBuilderTab extends AbstractFormBuilderTab {
 
-    protected $predefinedFields = array('Username');
+    protected $predefinedFields = array();
     protected $canHaveInnerDependencies = false;
     protected $canHaveOuterDependencies = false;
     protected $canHaveExpandedFields = true;

@@ -7,12 +7,16 @@
  * @var $messages Array
 
 // attempt to fake script into thinking this is an organization so the folders and notes for an agency are the same as the organization 
-// but this approach does not work. Maybe the cookies are taking over. 
+// but this approach does not work. Maybe the cookies are taking over. Nelson 
 if ($userRole == "agency") {
 	$userId = $receiving_org;
 	$userRole = "organization";
 }
+print_r($items);
 */
+// must distinguish which application is in use for users with more than one subscriptiion, since there is more than one app_id 
+$sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
+
 $items = array_values($items);
 
 $foldersApi = \MissionNext\lib\core\Context::getInstance()->getApiManager()->getApi()->getUserFolders($role, $userId);
@@ -145,7 +149,7 @@ function getLastLogin($item){
                     <th><?php echo __("Notes", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
 
                     <?php if($affiliate): ?>
-                        <th><?php echo __("Affiliate", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                        <th><font color="blue"><?php echo __("Affiliate", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></font></th>
                     <?php endif; ?>
                 </tr>
                 </thead>
@@ -172,7 +176,11 @@ function getLastLogin($item){
 
                             <?php if($role == \MissionNext\lib\Constants::ROLE_AGENCY): ?>
                                 <td class="name">
-                                    <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo $item['profileData']['last_name']." ".$item['profileData']['first_name']; ?></a>
+                                    <?php if (preg_match("/explorenext/",$sniff_host))   { ?>
+                                    <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo $item['profileData']['last_name']." ".$item['profileData']['first_name']." (".$item['profileData']['abbreviation'].")"; ?></a> 
+                                    <?php } else { ?>
+                                    <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo $item['profileData']['agency_full_name']; ?></a>
+                                	<?php } ?>
                                 </td>
                             <?php endif; ?>
 

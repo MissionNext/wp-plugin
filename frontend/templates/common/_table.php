@@ -325,7 +325,7 @@ function getLastLogin($item){
     ).on('change', 'table.result tr td.folder select', function(e){
             changeFolder(jQuery(e.target).parents('tr'), countFolderItems);
     }).ready(function(){
-        if ('candidate' == userRole) {
+        if ('agency' == userRole) {
             jQuery('#note').dialog({
                 autoOpen: false,
                 height: 'auto',

@@ -23,9 +23,12 @@ $percentages = [10, 20, 30, 40, 50, 60, 70, 80, 90];
                     echo '<option value="' . $percentage . '">' . $percentage . '</option>';
             }?>
         </select>
-        <?php echo __("not shown.", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+        <?php echo __("not shown. <br>Folder icons clickable to expand/collapse. Refresh screen to update favorites and note icons. <font color=white>jobforCandidate.php</font>", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
     </div>
-
+	
+    <?php 
+		// echo "<br>"; print_r($jobs); echo "<br>"; 
+    ?>
     <?php if($jobs): ?>
 
         <?php renderTemplate("common/_table", array('role' => 'job', 'items' => $jobs, 'messages' => $messages, 'userRole' => $userRole, 'userId' => $userId)) ?>

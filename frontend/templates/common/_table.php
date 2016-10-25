@@ -7,12 +7,16 @@
  * @var $messages Array
 
 // attempt to fake script into thinking this is an organization so the folders and notes for an agency are the same as the organization 
-// but this approach does not work. Maybe the cookies are taking over. 
+// but this approach does not work. Maybe the cookies are taking over. Nelson 
 if ($userRole == "agency") {
 	$userId = $receiving_org;
 	$userRole = "organization";
 }
+print_r($items);
 */
+// must distinguish which application is in use for users with more than one subscriptiion, since there is more than one app_id 
+$sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
+
 $items = array_values($items);
 
 $foldersApi = \MissionNext\lib\core\Context::getInstance()->getApiManager()->getApi()->getUserFolders($role, $userId);
@@ -145,7 +149,7 @@ function getLastLogin($item){
                     <th><?php echo __("Notes", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
 
                     <?php if($affiliate): ?>
-                        <th><?php echo __("Affiliate", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                        <th><font color="blue"><?php echo __("Affiliate", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></font></th>
                     <?php endif; ?>
                 </tr>
                 </thead>
@@ -161,7 +165,17 @@ function getLastLogin($item){
                             ($role == \MissionNext\lib\Constants::ROLE_ORGANIZATION && @$item['subscription']['partnership'] == \MissionNext\lib\Constants::PARTNERSHIP_PLUS);
                         ?>
 
-                        <tr class="item<?php if($prior) echo ' success'; ?>" data-id="<?php echo $item['id'] ?>" data-name="<?php echo htmlentities($role == 'job' ? $item['name'] : $item['username']) ?>" data-prior="<?php echo $prior ?>" data-updated="<?php echo date("Y", strtotime($item['updated_at'])); ?>">
+                        <tr class="item<?php if($prior) echo ' success'; ?>" data-id="<?php echo $item['id'] ?>" data-name="<?php
+                        if (\MissionNext\lib\Constants::ROLE_JOB == $role) {
+                            echo htmlentities($item['name']);
+                        } elseif (\MissionNext\lib\Constants::ROLE_CANDIDATE == $role) {
+                            echo htmlentities($item['show_name']);
+                        } elseif (\MissionNext\lib\Constants::ROLE_ORGANIZATION == $role) {
+                            echo htmlentities($item['profileData']['organization_name']);
+                        } else {
+                            echo htmlentities($item['profileData']['agency_full_name']);
+                        }
+                        ?>" data-prior="<?php echo $prior ?>" data-updated="<?php echo date("Y", strtotime($item['updated_at'])); ?>">
                             <td><?php echo $key + 1  ?></td>
 
                             <?php if($role == \MissionNext\lib\Constants::ROLE_ORGANIZATION): ?>
@@ -172,7 +186,11 @@ function getLastLogin($item){
 
                             <?php if($role == \MissionNext\lib\Constants::ROLE_AGENCY): ?>
                                 <td class="name">
-                                    <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo $item['profileData']['last_name']." ".$item['profileData']['first_name']; ?></a>
+                                    <?php if (preg_match("/explorenext/",$sniff_host))   { ?>
+                                    <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo $item['profileData']['last_name']." ".$item['profileData']['first_name']." (".$item['profileData']['abbreviation'].")"; ?></a> 
+                                    <?php } else { ?>
+                                    <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo $item['profileData']['agency_full_name']; ?></a>
+                                	<?php } ?>
                                 </td>
                             <?php endif; ?>
 
@@ -287,7 +305,7 @@ function getLastLogin($item){
 </div>
 
 <script>
-
+    var userRole = '<?php echo $userRole; ?>';
     function OpenInNewTab(url) {
         var win = window.open(url, '_blank');
         win.focus();
@@ -307,57 +325,75 @@ function getLastLogin($item){
     ).on('change', 'table.result tr td.folder select', function(e){
             changeFolder(jQuery(e.target).parents('tr'), countFolderItems);
     }).ready(function(){
-        jQuery('#note').dialog({
-            autoOpen: false,
-            height: 'auto',
-            width: '500',
-            modal: true,
-            draggable: false,
-            resizable: false,
-            buttons: {
-                "<?php echo __("Save", \MissionNext\lib\Constants::TEXT_DOMAIN); ?>" : function(){
-
+        if ('agency' == userRole) {
+            jQuery('#note').dialog({
+                autoOpen: false,
+                height: 'auto',
+                width: '500',
+                modal: true,
+                draggable: false,
+                resizable: false,
+                buttons: {},
+                close: function() {
                     var modal = jQuery(this);
-                    var role = modal.find('[name="role"]').val();
-                    var id = modal.find('[name="id"]').val();
-                    var message = modal.find('textarea.message').val();
-
-                    var data = {
-                        role : role,
-                        id: id,
-                        note: message.trim()
-                    };
-
-                    jQuery.ajax({
-                        type: "POST",
-                        url: "/note/change",
-                        data: data,
-                        success: function(data, textStatus, jqXHR){
-
-                            var tr = jQuery('table.result tr[data-id="'+data.user_id+'"]');
-
-                            tr.find('td.note').attr('data-note', data.notes);
-                            tr.find('td.note div').attr( 'class', data.notes ? '' : 'no-note');
-
-                            modal.dialog('close');
-                        },
-                        error: function(jqXHR, textStatus, errorThrown){
-                            modal.dialog('close');
-                        },
-                        dataType: "JSON"
-                    });
-
-                },
-                "<?php echo __("Cancel", \MissionNext\lib\Constants::TEXT_DOMAIN); ?>" : function(){
-                    jQuery(this).dialog('close');
+                    modal.find('[name="id"]').val('');
+                    modal.find('textarea.message').val('');
                 }
-            },
-            close: function() {
-                var modal = jQuery(this);
-                modal.find('[name="id"]').val('');
-                modal.find('textarea.message').val('');
-            }
-        });
+            });
+        } else {
+            jQuery('#note').dialog({
+                autoOpen: false,
+                height: 'auto',
+                width: '500',
+                modal: true,
+                draggable: false,
+                resizable: false,
+                buttons: {
+                    "<?php echo __("Save", \MissionNext\lib\Constants::TEXT_DOMAIN); ?>" : function(){
+
+                        var modal = jQuery(this);
+                        var role = modal.find('[name="role"]').val();
+                        var id = modal.find('[name="id"]').val();
+                        var message = modal.find('textarea.message').val();
+
+                        var data = {
+                            role : role,
+                            id: id,
+                            note: message.trim()
+                        };
+
+                        jQuery.ajax({
+                            type: "POST",
+                            url: "/note/change",
+                            data: data,
+                            success: function(data, textStatus, jqXHR){
+
+                                var tr = jQuery('table.result tr[data-id="'+data.user_id+'"]');
+
+                                tr.find('td.note').attr('data-note', data.notes);
+                                tr.find('td.note div').attr( 'class', data.notes ? '' : 'no-note');
+
+                                modal.dialog('close');
+                            },
+                            error: function(jqXHR, textStatus, errorThrown){
+                                modal.dialog('close');
+                            },
+                            dataType: "JSON"
+                        });
+
+                    },
+                    "<?php echo __("Cancel", \MissionNext\lib\Constants::TEXT_DOMAIN); ?>" : function(){
+                        jQuery(this).dialog('close');
+                    }
+                },
+                close: function() {
+                    var modal = jQuery(this);
+                    modal.find('[name="id"]').val('');
+                    modal.find('textarea.message').val('');
+                }
+            });
+        }
+
 
         var table = jQuery('table.result');
 

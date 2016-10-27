@@ -17,7 +17,7 @@
                     <input type="submit" name="submit" class="btn btn-success" title="Allows Program to Continue. All required fields must be completed." value="<?php echo __("Submit", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>" />
                 <?php } else { ?>
                     <input type="submit" name="submit" class="btn btn-success" title="Allows Program to Continue. All required fields must be completed." value="<?php echo __("Complete? Submit", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>" />
-                    <input type="submit" name="savelater" class="btn btn-success" title="Saves Entries Only" value="<?php echo __("Save for Later", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>" />
+                    <!--<input type="submit" name="savelater" class="btn btn-success" title="Saves Entries Only" value="<?php echo __("Save for Later", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>" />-->
                 <?php }?>
             </div>
         </div>

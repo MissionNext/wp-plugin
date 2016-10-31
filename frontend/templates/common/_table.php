@@ -12,8 +12,9 @@ if ($userRole == "agency") {
 	$userId = $receiving_org;
 	$userRole = "organization";
 }
-print_r($items);
 */
+// print_r($items);
+
 // must distinguish which application is in use for users with more than one subscriptiion, since there is more than one app_id 
 $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
 
@@ -160,7 +161,7 @@ function getLastLogin($item){
                         <td colspan="15"><?php echo $folders[$group_name] ?> (<span><?php echo count($folderItems) ?></span>)</td>
                     </tr>
                     <?php foreach($folderItems as $key => $item):
-
+					  if ($item['is_active'] == 1): // endif at line 277 
                         $prior = ($role == \MissionNext\lib\Constants::ROLE_JOB && @$item['organization']['subscription']['partnership'] == \MissionNext\lib\Constants::PARTNERSHIP_PLUS) ||
                             ($role == \MissionNext\lib\Constants::ROLE_ORGANIZATION && @$item['subscription']['partnership'] == \MissionNext\lib\Constants::PARTNERSHIP_PLUS);
                         ?>
@@ -180,7 +181,7 @@ function getLastLogin($item){
 
                             <?php if($role == \MissionNext\lib\Constants::ROLE_ORGANIZATION): ?>
                                 <td class="name">
-                                    <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo $item['profileData']['organization_name']; ?></a>
+                                    <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo $item['profileData']['organization_name']; ?></a> 
                                 </td>
                             <?php endif; ?>
 
@@ -273,6 +274,7 @@ function getLastLogin($item){
                                 </td>
                             <?php endif; ?>
                         </tr>
+                      <?php endif; ?> <!--From line 164 -->
                     <?php endforeach; ?>
                 <?php endforeach; ?>
                 </tbody>

@@ -4,7 +4,7 @@
  * @var $affiliates Array
  * @var $role String
  */
-
+// echo "\$userRole = $userRole "; echo "\$role = $role";
 ?>
 <div class="page-header">
     <h1><?php echo __('Affiliates', \MissionNext\lib\Constants::TEXT_DOMAIN)?></h1>
@@ -27,7 +27,7 @@
 
                 <tr data-requester="<?php echo $aff['affiliate_requester'] ?>" data-approver="<?php echo $aff['affiliate_approver'] ?>">
                     <td class="avatar"><?php echo get_avatar($aff[ $role . '_profile']['email'], 50) ?></td>
-                    <td class="name"><a href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getUserFullName($aff[$role . '_profile']) ?></a></td>
+                    <td class="name"><a href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getUserFullName($aff[$role . '_profile']) ?></a> </td>
                     <td class="actions">
                         <div class="btn btn-link cancel"><?php echo __('Cancel', \MissionNext\lib\Constants::TEXT_DOMAIN); ?></div>
                     </td>
@@ -39,7 +39,11 @@
             <?php foreach($affiliates['pending'] as $aff): ?>
                 <tr data-requester="<?php echo $aff['affiliate_requester'] ?>" data-approver="<?php echo $aff['affiliate_approver'] ?>">
                     <td class="avatar"><?php echo get_avatar($aff[ $role . '_profile']['email'], 50) ?></td>
-                    <td class="name"><a href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getUserFullName($aff[$role . '_profile']) ?></a></td>
+                    <?php if ($role == "organization"): ?>
+                    	<td class="name"><a href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getUserOrganizationName($aff[$role . '_profile']) ?></a> </td>
+                    <?php else: ?>
+                    	<td class="name"><a href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getUserFullName($aff[$role . '_profile']) ?></a> </td>
+                    <?php endif; ?>
                     <td class="actions">
                         <?php if($aff['affiliate_approver_type'] == $userRole): ?>
                             <div class="btn btn-link approve"><?php echo __('Approve', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></div>
@@ -56,6 +60,14 @@
             <?php echo __("No affiliates yet.", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
         </div>
     <?php endif; ?>
+    <!--Add Affiliate lines added by Nelson Oct 30, 2016-->
+    <!--<?php echo $_SERVER['HTTP_HOST'] ?>-->
+	<!--<? print_r($affiliates); echo "<br>\$userRole = $userRole"; ?>-->
+	<?php if ($userRole == "agency"): ?>
+		<a class="btn btn-default" href="/organization/search"><?php echo __("Add Affiliate", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> 
+	<?php elseif ($userRole == "organization"): ?>
+		<a class="btn btn-default" href="/agency/search"><?php echo __("Add Affiliate", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> 
+	<?php endif; ?>
 
 </div>
 

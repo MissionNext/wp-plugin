@@ -28,9 +28,9 @@
             <tbody>
 
             <?php foreach($org_favorites as $key => $favorite): ?>
-                <tr data-role="organization" data-id="<?php echo $favorite['data']['id'] ?>" data-fav-id="<?php echo $favorite['id'] ?>" data-name="<?php echo \MissionNext\lib\UserLib::getUserFullName($favorite['data']) ?>">
+                <tr data-role="organization" data-id="<?php echo $favorite['data']['id'] ?>" data-fav-id="<?php echo $favorite['id'] ?>" data-name="<?php echo \MissionNext\lib\UserLib::getUserOrganizationName($favorite['data']) ?>">
                     <td class="id"><?php echo $key+1 ?></td>
-                    <td class="name"><a href="/organization/<?php echo $favorite['data']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getUserOrganizationName($favorite['data']) ?></a> <!--<?php print_r($favorite); ?>--></td>
+                    <td class="name"><a href="/organization/<?php echo $favorite['data']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getUserOrganizationName($favorite['data']) ?></a></td>
                     <td class="note" data-note="<?php echo htmlentities($favorite['notes']) ?>">
                         <div <?php if(!$favorite['notes']) echo 'class="no-note"' ?>></div>
                     </td>

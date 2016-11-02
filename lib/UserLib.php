@@ -16,6 +16,15 @@ class UserLib extends ProfileLib {
         }
     }
 
+    public static function getUserOrganizationName($user){
+        if(isset($user['profileData'][Constants::$predefinedFields[$user['role']]['organization_name']])
+        ){
+            return $user['profileData'][Constants::$predefinedFields[$user['role']]['organization_name']];
+        } else {
+            return $user['username'];
+        }
+    }
+
     public static function replaceTokens($string, $user_from, $user_to, $job = null){
 
         $from = array();

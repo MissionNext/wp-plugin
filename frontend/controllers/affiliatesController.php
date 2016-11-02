@@ -135,6 +135,4 @@ class affiliatesController extends AbstractLayoutController {
 
         return false;
     }
-
-
-} 
+}

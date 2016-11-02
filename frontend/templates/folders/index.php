@@ -1,5 +1,5 @@
 <div class="page-header">
-    <h2>Utilities</h2>
+    <h2>Folders</h2>
 </div>
 <?php
 /**

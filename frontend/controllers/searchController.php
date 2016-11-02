@@ -38,6 +38,7 @@ class searchController extends AbstractLayoutController {
         $this->role = 'candidate';
 
         $this->processSearch();
+
     }
 
     public function organization(){
@@ -112,6 +113,10 @@ class searchController extends AbstractLayoutController {
                 foreach($this->searches as $item){
                     if($item['id'] == $_POST['saved']){
                         $this->result = $this->api->search($this->role, $this->userRole, $this->userId , $item['data']);
+                        if (Constants::ROLE_AGENCY == $this->userRole) {
+                            $this->multipleResults = [ 1 => $this->result ];
+                            $this->additional_info['affiliates'] = [ 1 => [ 'id' => '1', 'name' => 'Fake' ]];
+                        }
                         $this->search = $item['data'];
 
                         $this->form->setSearchDefaults($item['data']);
@@ -127,6 +132,66 @@ class searchController extends AbstractLayoutController {
                 if ($this->form->isValid()) {
                     $this->result = $this->form->search();
 
+                    if (Constants::ROLE_AGENCY == $this->userRole) {
+                        $default_folder_id = \MissionNext\lib\SiteConfig::getDefaultFolder($this->role);
+                        $foldersApi = \MissionNext\lib\core\Context::getInstance()->getApiManager()->getApi()->getUserFolders($this->role, $this->userId);
+                        $default_folder = '';
+                        foreach($foldersApi as $folder) {
+                            if ($folder['id'] == $default_folder_id) {
+                                $default_folder = $folder['title'];
+                                break;
+                            }
+                        }
+
+                        $this->additional_info = $this->api->getMetaInfoForAgency($this->userId, $this->role);
+                        $this->multipleResults = $multipleResults = [];
+                        foreach ($this->additional_info['affiliates'] as $org) {
+                            $multipleResults[$org['id']] = [];
+                        }
+                        foreach ($this->result as &$item) {
+                            foreach ($this->additional_info['notes'] as $note) {
+                                if ($note['user_id'] == $item['id'] && !empty($note['notes'])) {
+                                    $item['meta'][$note['note_owner']]['note'] = $note['notes'];
+                                }
+                            }
+                            foreach ($this->additional_info['favorites'] as $fav) {
+                                if ($fav['target_id'] == $item['id']) {
+                                    $item['meta'][$fav['favorite_owner']]['fav'] = true;
+                                }
+                            }
+                            foreach ($this->additional_info['folders'] as $folder) {
+                                if ($folder['user_id'] == $item['id'] && $default_folder != $folder['folder']) {
+                                    $item['meta'][$folder['folder_owner']]['folder'] = $folder['folder'];
+                                }
+                            }
+
+                            foreach ($this->additional_info['affiliates'] as $org) {
+                                $itemData = $item;
+                                $itemData['meta'] = null;
+                                if (isset($item['meta'][$org['id']])) {
+                                    $itemData['folder'] = isset($item['meta'][$org['id']]['folder']) ? $item['meta'][$org['id']]['folder'] : null;
+                                    $itemData['favorite'] = isset($item['meta'][$org['id']]['fav']) ? $item['meta'][$org['id']]['fav'] : null;;
+                                    $itemData['notes'] = isset($item['meta'][$org['id']]['note']) ? $item['meta'][$org['id']]['note'] : null;;
+                                }
+                                $multipleResults[$org['id']][] = $itemData;
+                            }
+                        }
+
+                        if (count($this->additional_info['affiliates']) > 0 ) {
+                            $this->multipleResults = $multipleResults;
+                        } else {
+                            $this->multipleResults = [ 1 => $this->result ];
+                            $this->additional_info['affiliates'] = [ 1 => [ 'id' => '1', 'name' => 'Fake' ]];
+                        }
+                    }
+
+                    foreach ($this->result as &$item) {
+                        if (Constants::ROLE_AGENCY == $item['role']) {
+                            if (!$item['org_name']) {
+                                $item['org_name'] = $item['profileData']['last_name']." ".$item['profileData']['first_name'];
+                            }
+                        }
+                    }
                     $this->search = $this->form->searchRequest;
 
                     if(empty($this->search['profileData'])){

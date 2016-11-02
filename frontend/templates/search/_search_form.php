@@ -9,7 +9,11 @@
     <div><?php echo $form->getIntro(); ?></div>
 
 <?php foreach($form->groups as $group): ?>
-
+<?php 
+$groupname = $group->name; 
+if ($groupname != "Main Fields") :
+// echo "$groupname"; 
+?>
 <div id="<?php echo $group->group['symbol_key'] ?>"  class="group" data-key="<?php echo $group->group['symbol_key'] ?>">
 
     <?php if($group->name): ?>
@@ -91,7 +95,7 @@
 <?php endif; ?>
 
     </div>
-
+<?php endif; ?>
 <?php endforeach; ?>
 
 <div><?php echo $form->getOutro(); ?></div>

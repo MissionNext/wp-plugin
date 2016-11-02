@@ -73,29 +73,9 @@ abstract class AbstractLayoutController extends Controller {
                     $subscriptions = $this->api->getSubscriptionConfigs();
 
                     $current_sub_free = false;
-                    $membership_level = null;
-
-                    if (isset($this->user['profileData']['membership_level']) && !empty($this->user['profileData']['membership_level'])) {
-                        $membership_level = strtolower(current($this->user['profileData']['membership_level']));
-                    }
 
                     foreach($subscriptions as $sub) {
-                        if ($sub['public_key'] == $app_name && Constants::ROLE_ORGANIZATION == $this->userRole) {
-                            if (count($sub['sub_configs']) == 0) {
-                                $current_sub_free = true;
-                            } else {
-                                $subscriptions_prices = false;
-                                foreach($sub['sub_configs'] as $item) {
-                                    if ($item['role'] == Constants::ROLE_ORGANIZATION && $item['partnership'] == $membership_level && ($item['price_month'] !=0 || $item['price_year'] != 0)) {
-                                        $subscriptions_prices = true;
-                                    }
-                                }
-                            }
-
-                            if (!$subscriptions_prices) {
-                                $current_sub_free = true;
-                            }
-                        } elseif ($sub['public_key'] == $app_name && Constants::ROLE_CANDIDATE == $this->userRole) {
+                        if ($sub['public_key'] == $app_name && Constants::ROLE_CANDIDATE == $this->userRole) {
                             foreach ($sub['sub_configs'] as $configItem) {
                                 if ($configItem['role'] == Constants::ROLE_CANDIDATE && 0 == $configItem['price_month'] && 0 == $configItem['price_year']) {
                                     $current_sub_free = true;
@@ -140,8 +120,9 @@ abstract class AbstractLayoutController extends Controller {
             $this->route['controller'] == 'profile' && $this->route['action'] == 'index' && !current_user_can('manage_options')
         ){
             $this->layout = 'layout.php';
-            if($_SERVER['REQUEST_METHOD'] == 'GET'){
-                $this->messages['notice'] = sprintf(__("Please complete your profile to reveal the majesty and power of %s", Constants::TEXT_DOMAIN), get_current_site()->site_name);
+            if($_SERVER['REQUEST_METHOD'] == 'GET'){  // message adjusted by Nelson 5 October 2016
+                // $this->messages['notice'] = sprintf(__("Please complete your profile to reveal the majesty and power of %s", Constants::TEXT_DOMAIN), get_current_site()->site_name);
+                $this->messages['notice'] = sprintf(__("Now complete the profile to short cut the process of finding connections through %s", Constants::TEXT_DOMAIN), get_current_site()->site_name);
             }
         }
     }

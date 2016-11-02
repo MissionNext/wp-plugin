@@ -49,22 +49,24 @@
             <a href="/inquiries">
                 <span class="icon-title"><?php echo __('Inquiries', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></span>
                 <img src="<?php echo getResourceUrl('/resources/images/dash_inquiries.jpg') ?>" />
-                <span class="icon-views"><?php echo __('Views', \MissionNext\lib\Constants::TEXT_DOMAIN) ?>: <?php echo $inquiriesCount; ?></span>
+                <span class="icon-views"><?php echo __('View', \MissionNext\lib\Constants::TEXT_DOMAIN) ?>: <?php echo $inquiriesCount; ?></span>
             </a>
         </li>
+        <?php if (\MissionNext\lib\Constants::ROLE_AGENCY != $userRole) { ?>
         <li>
             <a href="/favorite">
                 <span class="icon-title"><?php echo __('Favorites', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></span>
                 <img src="<?php echo getResourceUrl('/resources/images/dash_favorites.jpg') ?>" />
-                <span class="icon-views"><?php echo __('Views', \MissionNext\lib\Constants::TEXT_DOMAIN) ?>: <?php echo $favoritesCount; ?></span>
+                <span class="icon-views"><?php echo __('View', \MissionNext\lib\Constants::TEXT_DOMAIN) ?>: <?php echo $favoritesCount; ?></span>
             </a>
         </li>
+        <?php } ?>
         <?php if (\MissionNext\lib\Constants::ROLE_CANDIDATE != $userRole) { ?>
             <li>
                 <a href="/affiliates">
                     <span class="icon-title"><?php echo __('Affiliates', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></span>
                     <img src="<?php echo getResourceUrl('/resources/images/dash_affiliates.png') ?>" />
-                    <span class="icon-views"><?php echo __('Views', \MissionNext\lib\Constants::TEXT_DOMAIN) ?>: <?php echo $affiliatesCount; ?></span>
+                    <span class="icon-views"><?php echo __('View', \MissionNext\lib\Constants::TEXT_DOMAIN) ?>: <?php echo $affiliatesCount; ?></span>
                 </a>
             </li>
         <?php } ?>

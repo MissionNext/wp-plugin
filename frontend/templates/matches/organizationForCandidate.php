@@ -3,6 +3,7 @@
  * @var Array $user
  * @var String $userRole
  * @var Array $organizations
+   shows organization list for candidates
  */
 
 $percentages = [10, 20, 30, 40, 50, 60, 70, 80, 90];
@@ -29,7 +30,7 @@ $percentages = [10, 20, 30, 40, 50, 60, 70, 80, 90];
                     echo '<option value="' . $percentage . '">' . $percentage . '</option>';
             }?>
         </select>
-        <?php echo __("not shown.", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+        <?php echo __("not shown. <br>Folder icons clickable to expand/collapse. Refresh screen to update favorites and note icons. ", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
     </div>
 
     <?php if($organizations): ?>

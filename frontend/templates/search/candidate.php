@@ -17,12 +17,27 @@
 
     <?php if($_SERVER['REQUEST_METHOD'] == 'POST'): ?>
 
+        <?php if (\MissionNext\lib\Constants::ROLE_AGENCY == $userRole) { ?>
+            <div class="org-list <?php echo (2 > count($additional_info['affiliates'])) ? "hide" : ""; ?>">
+            <p>Affiliate:</p>
+                <select name="organization" class="affiliate-organization" >
+                    <?php foreach ($additional_info['affiliates'] as $item) { ?>
+                        <option value="<?php echo $item['id']; ?>"><?php echo $item['name']; ?></option>
+                    <?php } ?>
+                </select>
+            </div>
+        <?php } ?>
+
         <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_block', compact('form')) ?>
 
         <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_save_block', array('searches' => $searches, 'search' => $search, 'role' => $role, 'userRole' => $userRole)) ?>
 
         <?php if($result): ?>
-            <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_result', compact('result', 'role', 'messages', 'userRole', 'userId')) ?>
+            <?php if (\MissionNext\lib\Constants::ROLE_AGENCY == $userRole && \MissionNext\lib\Constants::ROLE_CANDIDATE == $role) { ?>
+                <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_result_for_agency', compact('result', 'role', 'messages', 'userRole', 'userId', 'additional_info', 'multipleResults')) ?>
+            <?php } else { ?>
+                <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_result', compact('result', 'role', 'messages', 'userRole', 'userId')) ?>
+            <?php } ?>
         <?php else: ?>
             <div class="block">
                 <?php echo sprintf(__("No %s found", \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_CANDIDATE_PLURAL))) ?>

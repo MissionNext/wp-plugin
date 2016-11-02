@@ -45,9 +45,9 @@ function groupEmpty($group){
             <button id="cancel_inquire" class="btn btn-danger <?php echo $job['inquire']?'':'hide' ?>"><?php echo __("Cancel Inquire", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
         </div>
 
-        <div class="block center">
-            <button id="make_favorite" class="btn btn-success <?php echo $job['favorite']?'hide':'' ?>"><?php echo __("Make favorite", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
-            <button data-id="<?php echo $job['favorite'] ?>" id="remove_from_favorites" class="btn btn-danger <?php echo $job['favorite']?'':'hide' ?>"><?php echo __("Unfavorite", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
+        <div class="buttons">
+            <button id="make_favorite" title="Click once. Wait a few seconds for update" class="btn btn-success <?php echo $job['favorite']?'hide':'' ?>"><?php echo __("Make favorite", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
+            <button data-id="<?php echo $job['favorite'] ?>" id="remove_from_favorites" title="Click once. Wait a few seconds for update" class="btn btn-danger <?php echo $job['favorite']?'':'hide' ?>"><?php echo __("Unfavorite", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
         </div>
 
         <?php endif; ?>
@@ -55,6 +55,7 @@ function groupEmpty($group){
 
     </div>
     <div class="content">
+        <button class="btn btn-default position-right" onclick="javascript:window.close();">Close</button>
         <p> <strong><?php echo __("Name", \MissionNext\lib\Constants::TEXT_DOMAIN) ?> : <?php echo $job['name'] ?></strong></p>
         <p> <strong><?php echo ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_ORGANIZATION)) ?></strong> :
             <a href="/organization/<?php echo $job['organization']['id'] ?>">
@@ -95,8 +96,11 @@ function groupEmpty($group){
         <div class="control-buttons">
             <div class="left">
                 <a class="btn btn-default" href="/dashboard"><?php echo __("Dashboard", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                <?php if($userRole == \MissionNext\lib\Constants::ROLE_ORGANIZATION): ?> <!--Only Organizations can enter/edit/delete jobs. Edit logic added by Nelson Oct 21, 2016-->
                 <a class="btn btn-default" href="/job/<?php echo $job['id'] ?>/edit"><?php echo __("Edit Job", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                <?php endif; ?>
                 <a class="btn btn-default" href="/job"><?php echo __("Jobs", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> <!--job button added by Nelson Apr 23, 2016-->
+            	<button class="btn btn-default" onclick="javascript:window.close();"><strong>Close</strong></button> <!--Close button added by Nelson Oct 21, 2016-->
             </div>
         </div>
     </div>

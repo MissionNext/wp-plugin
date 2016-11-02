@@ -259,6 +259,10 @@ class Api {
         return $this->post("search/$role_for/for/$role_from/$user_id", $params);
     }
 
+    public function getMetaInfoForAgency($user_id, $role){
+        return $this->get("meta/for/$user_id/$role");
+    }
+
     public function changeNote( $user_id, $user_type, $for_user_id, $notes ){
         return $this->post("meta/notes", compact('user_id', 'user_type', 'for_user_id', 'notes'));
     }
@@ -511,10 +515,6 @@ class Api {
         $url = $this->addTimestamp($url);
         $this->client->setUrl($this->apiBasePath.$url);
         $this->addAuthInfo($url);
-
-//        echo "<pre>";
-//        print_r($this->client);
-//        echo "</pre>";
 
         $resp = $this->client->exec();
 

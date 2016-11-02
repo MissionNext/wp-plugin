@@ -16,6 +16,7 @@
             <tr>
                 <th></th>
                 <th><?php echo ucfirst(getCustomTranslation($role, $role)) ?></th>
+                <th></th>
                 <th><?php echo __('Actions', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
             </tr>
             </thead>
@@ -27,7 +28,17 @@
 
                 <tr data-requester="<?php echo $aff['affiliate_requester'] ?>" data-approver="<?php echo $aff['affiliate_approver'] ?>">
                     <td class="avatar"><?php echo get_avatar($aff[ $role . '_profile']['email'], 50) ?></td>
-                    <td class="name"><a href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getUserFullName($aff[$role . '_profile']) ?></a> </td>
+                    <?php if ($role == "organization"): ?>
+                    	<td class="name"><a href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getUserOrganizationName($aff[$role . '_profile']) ?></a> </td>
+                    <?php else: ?>
+                    	<td class="name"><a href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getUserFullName($aff[$role . '_profile']) ?></a> </td>
+                    <?php endif; ?>
+                    
+                     <?php if ($role == "organization"): ?>
+                        <td class="actions"><div><a href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>/jobs"><?php echo __('View Positions', \MissionNext\lib\Constants::TEXT_DOMAIN); ?></a></div></td>
+                    <?php else: ?>
+                    	<td class="actions">&nbsp;</td>
+                    <?php endif; ?>
                     <td class="actions">
                         <div class="btn btn-link cancel"><?php echo __('Cancel', \MissionNext\lib\Constants::TEXT_DOMAIN); ?></div>
                     </td>
@@ -44,7 +55,8 @@
                     <?php else: ?>
                     	<td class="name"><a href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getUserFullName($aff[$role . '_profile']) ?></a> </td>
                     <?php endif; ?>
-                    <td class="actions">
+                    <td class="actions">&nbsp;</td>
+                	<td class="actions">
                         <?php if($aff['affiliate_approver_type'] == $userRole): ?>
                             <div class="btn btn-link approve"><?php echo __('Approve', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></div>
                         <?php endif; ?>

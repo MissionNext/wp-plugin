@@ -177,9 +177,14 @@ table tr td.folder select{
 }
 #match-highlight{
     padding: 15px;
+    height: 800px !important;
 }
 #match-highlight div.match{
     background: #D9F2D4;
+}
+#match-highlight div.match strong,
+#match-highlight div.match div {
+    font-size: 13px;
 }
 #match-highlight div.not-match{
     background: #F2DCD3;

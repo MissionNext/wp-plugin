@@ -3,6 +3,7 @@
 /**
  * @var $jobs Array
  */
+//  print_r($jobs);
 ?>
 <div class="page-header">
     <h1><?php echo ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_JOB_PLURAL))?></h1>
@@ -29,11 +30,11 @@
             <?php $key = 0; foreach($organization['jobs'] as $job): $key++;?>
             <tr>
                 <td class="id"><?php echo $key ?></td>
-                <td class="exp_date"><?php echo __(\MissionNext\lib\ProfileLib::getProfileField($job, 'expiration_date')) ?></td>
+                <td class="exp_date"><?php echo __(\MissionNext\lib\ProfileLib::getProfileField($job, 'listing_expiraton')) ?></td>
                 <td class="name"><a href="/job/<?php echo $job['id'] ?>"><?php echo $job['name'] ?></a></td>
-                <td class="location"><?php echo __(\MissionNext\lib\ProfileLib::getProfileField($job, 'location')) ?></td>
+                <td class="location"><?php echo __(\MissionNext\lib\ProfileLib::getProfileField($job, 'country')) ?></td>
                 <td class="actions">
-                    <a class="btn btn-link" href="/job/matches/candidate/<?php echo $job['id'] ?>">
+                    <a class="btn btn-primary" href="/job/matches/candidate/<?php echo $job['id'] ?>">
                         <?php echo __("Matches", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
                     </a>
                 </td>

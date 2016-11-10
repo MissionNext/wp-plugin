@@ -246,7 +246,13 @@ class matchesController extends AbstractLayoutController {
         $form = \MissionNext\lib\core\Context::getInstance()->getApiManager()->getApi()->getForm($role, $role == 'job'?'job':'profile');
         $profile = \MissionNext\lib\ProfileLib::prepareDataToShow($matchResult['profileData'], $form);
 
-        $results = $matchResult['results'];
+        $results = [];
+        foreach ($matchResult['results'] as $matchKey => $matchItem) {
+            foreach ($matchItem[$role."_value"] as &$resultValue) {
+                $resultValue = str_replace("(!) ", "", $resultValue);
+            }
+            $results[$matchItem['mainDataKey']] = $matchItem;
+        }
 
         $fields = $this->api->getModelFields($role);
         $checkboxFields = $this->getCheckboxWithGroups($fields);
@@ -287,10 +293,17 @@ class matchesController extends AbstractLayoutController {
                         $html .= '<strong>' . $field['label'] . ':</strong>';
                         $html .= '<div>';
 
+                        if (is_array($field['value'])) {
+                            sort($field['value'], SORT_STRING);
+                        }
                         if (!isset($checkboxFields[$field['symbol_key']])) {
                             if(is_array($field['value']))
-                                foreach($field['value'] as $value)
-                                    $html .= '<div>' . $value . '</div>';
+                                foreach($field['value'] as $value) {
+                                    $searchValue = trim(strtolower($value));
+                                    if (in_array($searchValue, $results[$field['symbol_key']][$role."_value"])) {
+                                        $html .= '<div>' . $value . '</div>';
+                                    }
+                                }
                             else
                                 $html .= $field['value'];
                         } else {
@@ -301,7 +314,8 @@ class matchesController extends AbstractLayoutController {
                                     $sectionLabel = $value;
                                     $sectionItemsCount = 0;
                                 }
-                                if ($searchKey = array_search($key, $field['value'])) {
+                                $searchValue = strtolower($key);
+                                if ($searchKey = array_search($key, $field['value']) && in_array($searchValue, $results[$field['symbol_key']][$role."_value"])) {
                                     if (0 == $sectionItemsCount) {
                                         $html .= '<h5 class="group-section">'.$sectionLabel.'</h5>';
                                     }
@@ -351,11 +365,13 @@ class matchesController extends AbstractLayoutController {
 
         foreach ($tempFields as $key => $value) {
             $groupName = '';
+            $tempArray = [];
             foreach ($value as $choiceItem) {
                 if (isset($choiceItem['dictionary_meta']) && isset($choiceItem['dictionary_meta']['group'])) {
                     $groupName = $choiceItem['dictionary_meta']['group'][0];
                 }
                 $fields[$key][$choiceItem['default_value']] = $groupName;
+                $tempArray[$choiceItem['default_value']] = $groupName;
             }
         }
 

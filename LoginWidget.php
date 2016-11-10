@@ -45,7 +45,14 @@ class LoginWidget extends \WP_Widget {
                     <?php if($user): ?>
                     <li class="mn-home-link"><a href="<?php echo site_url("/dashboard")?>"><?php echo __('My Dashboard', Constants::TEXT_DOMAIN) ?></a></li>
                     <?php endif; ?>
-                    <li class="mn-logout-link"><a href="<?php echo wp_logout_url($_SERVER['REQUEST_URI']) ?>"><?php echo __('Logout', Constants::TEXT_DOMAIN) ?></a></li>
+           		     <!-- <li class="mn-logout-link"><a href="<?php echo wp_logout_url($_SERVER['REQUEST_URI']) ?>"><?php echo __('Logout', Constants::TEXT_DOMAIN) ?></a></li>-->
+              		<?php 
+           			$sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
+					if (preg_match("/explorenext/",$sniff_host))   { $subdomain = "explorenext"; }
+					elseif (preg_match("/teachnext/",$sniff_host)) { $subdomain = "teachnext"; }
+                    $logout_link = "https://". $subdomain .".missionnext.org/wp-login.php?action=logout&redirect_to=https://". $subdomain .".missionnext.org";
+                    ?>
+                    <li class="logout-link"><a href="<?php echo $logout_link ?>"><?php echo __('Logout', Constants::TEXT_DOMAIN) ?></a></li>
                 </ul>
 
         <?php

@@ -9,10 +9,10 @@
 // attempt to fake script into thinking this is an organization so the folders and notes for an agency are the same as the organization 
 // but this approach does not work. Maybe the cookies are taking over. Nelson 
 if ($userRole == "agency") {
-	$userId = $receiving_org;
-	$userRole = "organization";
+$userId = $receiving_org;
+$userRole = "organization";
 }
-*/
+ */
 // print_r($items);
 
 // must distinguish which application is in use for users with more than one subscriptiion, since there is more than one app_id 
@@ -60,7 +60,7 @@ foreach($items as $item){
     }
 
     $item['profile'] = \MissionNext\lib\ProfileLib::prepareDataToShow($item['profileData'], $form);
-	// echo "\$item = <br>"; print_r($item); echo "<br>"; 
+    // echo "\$item = <br>"; print_r($item); echo "<br>";
     $groups[$item['folder']?$item['folder']:($default_folder?$default_folder:key($folders))][] = $item;
 }
 
@@ -109,7 +109,7 @@ function getLastLogin($item){
 <div class="panel panel-default">
     <div class="panel-body">
         <div class="table-responsive">
-		
+
             <table class="table table-striped result <?php echo $role ?>-matches" data-role="<?php echo $role ?>" >
                 <thead>
                 <tr>
@@ -161,120 +161,122 @@ function getLastLogin($item){
                         <td colspan="15"><?php echo $folders[$group_name] ?> (<span><?php echo count($folderItems) ?></span>)</td>
                     </tr>
                     <?php foreach($folderItems as $key => $item):
-					  if ($item['is_active'] == 1): // endif at line 277 
-                        $prior = ($role == \MissionNext\lib\Constants::ROLE_JOB && @$item['organization']['subscription']['partnership'] == \MissionNext\lib\Constants::PARTNERSHIP_PLUS) ||
-                            ($role == \MissionNext\lib\Constants::ROLE_ORGANIZATION && @$item['subscription']['partnership'] == \MissionNext\lib\Constants::PARTNERSHIP_PLUS);
-                        ?>
+                        if ($item['is_active'] == 1): // endif at line 277
+                            $prior = ($role == \MissionNext\lib\Constants::ROLE_JOB && @$item['organization']['subscription']['partnership'] == \MissionNext\lib\Constants::PARTNERSHIP_PLUS) ||
+                                ($role == \MissionNext\lib\Constants::ROLE_ORGANIZATION && @$item['subscription']['partnership'] == \MissionNext\lib\Constants::PARTNERSHIP_PLUS);
+                            ?>
 
-                        <tr class="item<?php if($prior) echo ' success'; ?>" data-id="<?php echo $item['id'] ?>" data-name="<?php
-                        if (\MissionNext\lib\Constants::ROLE_JOB == $role) {
-                            echo htmlentities($item['name']);
-                        } elseif (\MissionNext\lib\Constants::ROLE_CANDIDATE == $role) {
-                            echo htmlentities($item['show_name']);
-                        } elseif (\MissionNext\lib\Constants::ROLE_ORGANIZATION == $role) {
-                            echo htmlentities($item['profileData']['organization_name']);
-                        } else {
-                            echo htmlentities($item['profileData']['agency_full_name']);
-                        }
-                        ?>" data-prior="<?php echo $prior ?>" data-updated="<?php echo date("Y", strtotime($item['updated_at'])); ?>">
-                            <td><?php echo $key + 1  ?></td>
+                            <tr class="item<?php if($prior) echo ' success'; ?>" data-id="<?php echo $item['id'] ?>" data-name="<?php
+                            $record_name = '';
+                            if (\MissionNext\lib\Constants::ROLE_JOB == $role) {
+                                $record_name = htmlentities($item['name']);
+                            } elseif (\MissionNext\lib\Constants::ROLE_CANDIDATE == $role) {
+                                $record_name = htmlentities($item['show_name']);
+                            } elseif (\MissionNext\lib\Constants::ROLE_ORGANIZATION == $role) {
+                                $record_name = htmlentities($item['profileData']['organization_name']);
+                            } else {
+                                $record_name = htmlentities($item['profileData']['agency_full_name']);
+                            }
+                            echo $record_name;
+                            ?>" data-prior="<?php echo $prior ?>" data-updated="<?php echo date("Y", strtotime($item['updated_at'])); ?>">
+                                <td><?php echo $key + 1  ?></td>
 
-                            <?php if($role == \MissionNext\lib\Constants::ROLE_ORGANIZATION): ?>
-                                <td class="name">
-                                    <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo $item['profileData']['organization_name']; ?></a> 
+                                <?php if($role == \MissionNext\lib\Constants::ROLE_ORGANIZATION): ?>
+                                    <td class="name">
+                                        <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo $item['profileData']['organization_name']; ?></a>
+                                    </td>
+                                <?php endif; ?>
+
+                                <?php if($role == \MissionNext\lib\Constants::ROLE_AGENCY): ?>
+                                    <td class="name">
+                                        <?php if (preg_match("/explorenext/",$sniff_host))   { ?>
+                                            <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo $item['profileData']['last_name']." ".$item['profileData']['first_name']." (".$item['profileData']['abbreviation'].")"; ?></a>
+                                        <?php } else { ?>
+                                            <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo $item['profileData']['agency_full_name']; ?></a>
+                                        <?php } ?>
+                                    </td>
+                                <?php endif; ?>
+
+                                <?php if($role == \MissionNext\lib\Constants::ROLE_JOB): ?>
+                                    <td class="name">
+                                        <?php $job_key = 'job_title_!#'.$item['app_names'][0]; ?>
+                                        <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo !empty($item['profileData'][$job_key]) ? current($item['profileData'][$job_key]) : $item['show_name'] ?></a>
+                                    </td>
+                                    <td class="organization" >
+                                        <a href="/organization/<?php echo $item['organization']['id'] ?>">
+                                            <?php echo !empty($item['org_name']) ? $item['org_name'] : $item['organization']['username']; ?>
+                                        </a>
+
+                                    </td>
+                                    <td class="region"><?php echo getProfileField($item, 'world_region') ?></td>
+                                    <td class="categories"><?php echo getProfileField($item, 'job_category') ?></td>
+                                    <td class="time-commitment"><?php echo getProfileField($item, 'time_commitment') ?></td>
+                                    <td class="inquired">
+                                        <?php if (isset($item['inquired'])) { ?>
+                                            <img src="<?php echo getResourceUrl('/resources/images/inquire.png') ?>" height="16" width="16" />
+                                        <?php } ?>
+                                    </td>
+                                <?php endif; ?>
+
+                                <?php if($role == \MissionNext\lib\Constants::ROLE_CANDIDATE): ?>
+                                    <td class="name">
+                                        <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')">
+                                            <?php echo $item['show_name'] ?>
+                                        </a>
+                                    </td>
+                                    <td class="age"><?php echo getAge($item) ?></td>
+                                    <td class="gender"><?php echo getProfileField($item, 'gender') ?></td>
+                                    <td class="marital-status"><?php echo getProfileField($item, 'marital_status') ?></td>
+                                    <td class="location"><?php echo getLocation($item) ?></td>
+                                    <td class="last-login"><?php echo getLastLogin($item) ?></td>
+                                <?php endif; ?>
+
+                                <?php if($matching): ?>
+                                    <td class="matching" ><?php echo $item['matching_percentage'] ?></td>
+                                    <td class="match-highlight"  >
+                                        <!--                                    <div data-user-role='--><?php //echo str_replace('"','', json_encode($item['role'], JSON_HEX_APOS | JSON_HEX_QUOT)); ?><!--' data-item_profile='--><?php //echo json_encode($item['profile'], JSON_HEX_APOS | JSON_HEX_QUOT)?><!--' data-item_results='--><?php //echo json_encode($item['results'], JSON_HEX_APOS | JSON_HEX_QUOT)?><!--'></div>-->
+                                        <div data-name="<?php echo $record_name; ?>" data-for-user-id='<?php echo $userId ?>' data-user-role='<?php echo $item['role'] ?>' data-user-id='<?php echo $item['id'] ?>'></div>
+                                        <p class="spinner">
+                                            <img src="/wp-includes/images/spinner.gif" width="20" height="20" />
+                                        </p>
+                                    </td>
+                                <?php endif; ?>
+
+                                <td class="favorite" data-id="<?php echo $item['favorite'] ?>">
+                                    <div class="favorite-block <?php echo is_integer($item['favorite'])?'favorite':'not-favorite' ?>"></div>
                                 </td>
-                            <?php endif; ?>
 
-                            <?php if($role == \MissionNext\lib\Constants::ROLE_AGENCY): ?>
-                                <td class="name">
-                                    <?php if (preg_match("/explorenext/",$sniff_host))   { ?>
-                                    <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo $item['profileData']['last_name']." ".$item['profileData']['first_name']." (".$item['profileData']['abbreviation'].")"; ?></a> 
-                                    <?php } else { ?>
-                                    <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo $item['profileData']['agency_full_name']; ?></a>
-                                	<?php } ?>
-                                </td>
-                            <?php endif; ?>
-
-                            <?php if($role == \MissionNext\lib\Constants::ROLE_JOB): ?>
-                                <td class="name">
-                                    <?php $job_key = 'job_title_!#'.$item['app_names'][0]; ?>
-                                    <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo !empty($item['profileData'][$job_key]) ? current($item['profileData'][$job_key]) : $item['show_name'] ?></a>
-                                </td>
-                                <td class="organization" >
-                                    <a href="/organization/<?php echo $item['organization']['id'] ?>">
-                                        <?php echo !empty($item['org_name']) ? $item['org_name'] : $item['organization']['username']; ?>
-                                    </a>
-
-                                </td>
-                                <td class="region"><?php echo getProfileField($item, 'world_region') ?></td>
-                                <td class="categories"><?php echo getProfileField($item, 'job_category') ?></td>
-                                <td class="time-commitment"><?php echo getProfileField($item, 'time_commitment') ?></td>
-                                <td class="inquired">
-                                    <?php if (isset($item['inquired'])) { ?>
-                                        <img src="<?php echo getResourceUrl('/resources/images/inquire.png') ?>" height="16" width="16" />
-                                    <?php } ?>
-                                </td>
-                            <?php endif; ?>
-
-                            <?php if($role == \MissionNext\lib\Constants::ROLE_CANDIDATE): ?>
-                                <td class="name">
-                                    <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')">
-                                        <?php echo $item['show_name'] ?>
-                                    </a>
-                                </td>
-                                <td class="age"><?php echo getAge($item) ?></td>
-                                <td class="gender"><?php echo getProfileField($item, 'gender') ?></td>
-                                <td class="marital-status"><?php echo getProfileField($item, 'marital_status') ?></td>
-                                <td class="location"><?php echo getLocation($item) ?></td>
-                                <td class="last-login"><?php echo getLastLogin($item) ?></td>
-                            <?php endif; ?>
-
-                            <?php if($matching): ?>
-                                <td class="matching" ><?php echo $item['matching_percentage'] ?></td>
-                                <td class="match-highlight"  >
-<!--                                    <div data-user-role='--><?php //echo str_replace('"','', json_encode($item['role'], JSON_HEX_APOS | JSON_HEX_QUOT)); ?><!--' data-item_profile='--><?php //echo json_encode($item['profile'], JSON_HEX_APOS | JSON_HEX_QUOT)?><!--' data-item_results='--><?php //echo json_encode($item['results'], JSON_HEX_APOS | JSON_HEX_QUOT)?><!--'></div>-->
-                                    <div data-for-user-id='<?php echo $userId ?>' data-user-role='<?php echo $item['role'] ?>' data-user-id='<?php echo $item['id'] ?>'></div>
-                                    <p class="spinner">
-                                        <img src="/wp-includes/images/spinner.gif" width="20" height="20" />
-                                    </p>
-                                </td>
-                            <?php endif; ?>
-
-                            <td class="favorite" data-id="<?php echo $item['favorite'] ?>">
-                                <div class="favorite-block <?php echo is_integer($item['favorite'])?'favorite':'not-favorite' ?>"></div>
-                            </td>
-
-                            <?php if (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
-                                <td class="folder">
-                                    <select>
-                                        <?php foreach($folders as $value => $folder): ?>
-                                            <option <?php if($item['folder'] == $value) echo 'selected="selected"' ?> value="<?php echo $value ?>"><?php echo $folder ?></option>
-                                        <?php endforeach; ?>
-                                    </select>
-                                </td>
-                            <?php } ?>
-
-                            <td class="note" data-note="<?php echo htmlentities($item['notes']) ?>">
                                 <?php if (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
-                                    <div <?php if(!$item['notes']) echo 'class="no-note"' ?>></div>
-                                <?php } else { ?>
-                                    <?php if($item['notes']) { ?>
-                                        <div></div>
-                                    <?php } ?>
+                                    <td class="folder">
+                                        <select>
+                                            <?php foreach($folders as $value => $folder): ?>
+                                                <option <?php if($item['folder'] == $value) echo 'selected="selected"' ?> value="<?php echo $value ?>"><?php echo $folder ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </td>
                                 <?php } ?>
-                            </td>
 
-                            <?php if($affiliate) : ?>
-                                <td class="affiliate" data-status="<?php echo isset($affiliates[$item['id']])?$affiliates[$item['id']]['status']:'' ?>">
-                                    <div class="<?php echo isset($affiliates[$item['id']])?'mn-'.$affiliates[$item['id']]['status']:'btn btn-link request' ?>">
-                                        <?php echo isset($affiliates[$item['id']])?
-                                            ucfirst(__($affiliates[$item['id']]['status'], \MissionNext\lib\Constants::TEXT_DOMAIN)):
-                                            __('Request', \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
-                                    </div>
+                                <td class="note" data-note="<?php echo htmlentities($item['notes']) ?>">
+                                    <?php if (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
+                                        <div <?php if(!$item['notes']) echo 'class="no-note"' ?>></div>
+                                    <?php } else { ?>
+                                        <?php if($item['notes']) { ?>
+                                            <div></div>
+                                        <?php } ?>
+                                    <?php } ?>
                                 </td>
-                            <?php endif; ?>
-                        </tr>
-                      <?php endif; ?> <!--From line 164 -->
+
+                                <?php if($affiliate) : ?>
+                                    <td class="affiliate" data-status="<?php echo isset($affiliates[$item['id']])?$affiliates[$item['id']]['status']:'' ?>">
+                                        <div class="<?php echo isset($affiliates[$item['id']])?'mn-'.$affiliates[$item['id']]['status']:'btn btn-link request' ?>">
+                                            <?php echo isset($affiliates[$item['id']])?
+                                                ucfirst(__($affiliates[$item['id']]['status'], \MissionNext\lib\Constants::TEXT_DOMAIN)):
+                                                __('Request', \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+                                        </div>
+                                    </td>
+                                <?php endif; ?>
+                            </tr>
+                        <?php endif; ?> <!--From line 164 -->
                     <?php endforeach; ?>
                 <?php endforeach; ?>
                 </tbody>
@@ -315,17 +317,17 @@ function getLastLogin($item){
 
     jQuery(document).on('click', 'table.result tr td.note div', function(e){
 
-                var tr = jQuery(e.target).parents('tr');
+            var tr = jQuery(e.target).parents('tr');
 
-                openNote(
-                    tr.data('id'),
-                    jQuery(e.target).parents('td').attr('data-note'),
-                    tr.attr('data-name'),
-                    tr.find('.folder select').val()
-                );
-            }
+            openNote(
+                tr.data('id'),
+                jQuery(e.target).parents('td').attr('data-note'),
+                tr.attr('data-name'),
+                tr.find('.folder select').val()
+            );
+        }
     ).on('change', 'table.result tr td.folder select', function(e){
-            changeFolder(jQuery(e.target).parents('tr'), countFolderItems);
+        changeFolder(jQuery(e.target).parents('tr'), countFolderItems);
     }).ready(function(){
         if ('agency' == userRole) {
             jQuery('#note').dialog({
@@ -617,8 +619,11 @@ function getLastLogin($item){
     jQuery(document).on('click', 'table.result tr td.match-highlight div', function(){
         var spinner = jQuery(this).siblings('.spinner');
         spinner.show();
-        showMatchHighlight(jQuery(this).attr('data-for-user-id'), jQuery(this).attr('data-user-id'), jQuery(this).attr('data-user-role'), function(data){
+        var matchName = jQuery(this).attr('data-name');
+        showMatchHighlight(jQuery(this).attr('data-for-user-id'), jQuery(this).attr('data-user-id'), jQuery(this).attr('data-user-role'),  function(data){
             var dialog = jQuery('#match-highlight');
+
+            dialog.dialog('option', 'title', matchName);
             dialog.html(data);
             dialog.dialog('open');
             spinner.hide();
@@ -650,7 +655,7 @@ function getLastLogin($item){
             data: {
                 for_user_id: for_user_id,
                 user_id: user_id,
-                role: user_role
+                role: user_role,
             },
             success: success,
             error: error,

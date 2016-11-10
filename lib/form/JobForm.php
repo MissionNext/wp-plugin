@@ -63,6 +63,8 @@ class JobForm extends Form {
         );
 
         if(!empty($groups)){
+            uasort($groups, array($this, 'sortGroups'));
+
             foreach($group as $field){
                 array_unshift($groups[key($groups)]['fields'], $field);
             }

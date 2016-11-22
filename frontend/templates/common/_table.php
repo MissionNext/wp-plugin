@@ -161,7 +161,7 @@ function getLastLogin($item){
                         <td colspan="15"><?php echo $folders[$group_name] ?> (<span><?php echo count($folderItems) ?></span>)</td>
                     </tr>
                     <?php foreach($folderItems as $key => $item):
-                        if ($item['is_active'] == 1): // endif at line 277
+                        if ($role == \MissionNext\lib\Constants::ROLE_JOB || $item['is_active'] == 1): // endif at line 277
                             $prior = ($role == \MissionNext\lib\Constants::ROLE_JOB && @$item['organization']['subscription']['partnership'] == \MissionNext\lib\Constants::PARTNERSHIP_PLUS) ||
                                 ($role == \MissionNext\lib\Constants::ROLE_ORGANIZATION && @$item['subscription']['partnership'] == \MissionNext\lib\Constants::PARTNERSHIP_PLUS);
                             ?>

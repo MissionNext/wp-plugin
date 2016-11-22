@@ -36,7 +36,7 @@ $receiving_org = $job['organization']['id'];
 
     <?php if($candidates):
         ?>
-        <?php renderTemplate("common/_table", array('role' => 'candidate', 'items' => $candidates, 'messages' => $messages, 'userRole' => 'job', 'userId' => $job['id'], 'receiving_org' => $receiving_org, 'loggedRole' => $userRole)) ?>
+        <?php renderTemplate("common/_candidate_table", array('role' => 'candidate', 'items' => $candidates, 'messages' => $messages, 'userRole' => 'job', 'userId' => $job['id'], 'receiving_org' => $receiving_org, 'loggedRole' => $userRole)) ?>
         <?php renderTemplate("common/_pager", compact('page', 'pages')) ?>
     <?php else: ?>
         <div class="block">

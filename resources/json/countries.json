@@ -1,2960 +1,1 @@
-[
-{
-   "name": "United States",
-   "abbr": "US",
-   "states":
-   [
-      {
-      "name": "Alabama",
-      "abbr": "AL"
-      }, 
-      {
-      "name": "Alaska",
-      "abbr": "AK"
-      }, 
-      {
-      "name": "Arizona",
-      "abbr": "AZ"
-      }, 
-      {
-      "name": "Arkansas",
-      "abbr": "AR"
-      }, 
-      {
-      "name": "California",
-      "abbr": "CA"
-      }, 
-      {
-      "name": "Colorado",
-      "abbr": "CO"
-      }, 
-      {
-      "name": "Connecticut",
-      "abbr": "CT"
-      }, 
-      {
-      "name": "Delaware",
-      "abbr": "DE"
-      }, 
-      {
-      "name": "District of Columbia",
-      "abbr": "DC"
-      }, 
-      {
-      "name": "Florida",
-      "abbr": "FL"
-      }, 
-      {
-      "name": "Georgia",
-      "abbr": "GA"
-      }, 
-      {
-      "name": "Hawaii",
-      "abbr": "HI"
-      }, 
-      {
-      "name": "Idaho",
-      "abbr": "ID"
-      }, 
-      {
-      "name": "Illinois",
-      "abbr": "IL"
-      }, 
-      {
-      "name": "Indiana",
-      "abbr": "IN"
-      }, 
-      {
-      "name": "Iowa",
-      "abbr": "IA"
-      }, 
-      {
-      "name": "Kansas",
-      "abbr": "KS"
-      }, 
-      {
-      "name": "Kentucky",
-      "abbr": "KY"
-      }, 
-      {
-      "name": "Louisiana",
-      "abbr": "LA"
-      }, 
-      {
-      "name": "Maine",
-      "abbr": "ME"
-      }, 
-      {
-      "name": "Maryland",
-      "abbr": "MD"
-      }, 
-      {
-      "name": "Massachusetts",
-      "abbr": "MA"
-      }, 
-      {
-      "name": "Michigan",
-      "abbr": "MI"
-      }, 
-      {
-      "name": "Minnesota",
-      "abbr": "MN"
-      }, 
-      {
-      "name": "Mississippi",
-      "abbr": "MS"
-      }, 
-      {
-      "name": "Missouri",
-      "abbr": "MO"
-      }, 
-      {
-      "name": "Montana",
-      "abbr": "MT"
-      }, 
-      {
-      "name": "Nebraska",
-      "abbr": "NE"
-      }, 
-      {
-      "name": "Nevada",
-      "abbr": "NV"
-      }, 
-      {
-      "name": "New Hampshire",
-      "abbr": "NH"
-      }, 
-      {
-      "name": "New Jersey",
-      "abbr": "NJ"
-      }, 
-      {
-      "name": "New Mexico",
-      "abbr": "NM"
-      }, 
-      {
-      "name": "New York",
-      "abbr": "NY"
-      }, 
-      {
-      "name": "North Carolina",
-      "abbr": "NC"
-      }, 
-      {
-      "name": "North Dakota",
-      "abbr": "ND"
-      }, 
-      {
-      "name": "Ohio",
-      "abbr": "OH"
-      }, 
-      {
-      "name": "Oklahoma",
-      "abbr": "OK"
-      }, 
-      {
-      "name": "Oregon",
-      "abbr": "OR"
-      }, 
-      {
-      "name": "Pennsylvania",
-      "abbr": "PA"
-      }, 
-      {
-      "name": "Puerto Rico",
-      "abbr": "PR"
-      }, 
-      {
-      "name": "Rhode Island",
-      "abbr": "RI"
-      }, 
-      {
-      "name": "South Carolina",
-      "abbr": "SC"
-      }, 
-      {
-      "name": "South Dakota",
-      "abbr": "SD"
-      }, 
-      {
-      "name": "Tennessee",
-      "abbr": "TN"
-      }, 
-      {
-      "name": "Texas",
-      "abbr": "TX"
-      }, 
-      {
-      "name": "Utah",
-      "abbr": "UT"
-      }, 
-      {
-      "name": "Vermont",
-      "abbr": "VT"
-      }, 
-      {
-      "name": "Virginia",
-      "abbr": "VA"
-      }, 
-      {
-      "name": "Washington",
-      "abbr": "WA"
-      }, 
-      {
-      "name": "West Virginia",
-      "abbr": "WV"
-      }, 
-      {
-      "name": "Wisconsin",
-      "abbr": "WI"
-      }, 
-      {
-      "name": "Wyoming",
-      "abbr": "WY"
-      }
-   ]
-},
-{
-   "name": "Canada",
-   "abbr": "CN",
-   "states":
-   [
-      {
-      "name": "Alberta",
-      "abbr": "AB"
-      }, 
-      {
-      "name": "British Columbia",
-      "abbr": "BC"
-      }, 
-      {
-      "name": "Manitoba",
-      "abbr": "MB"
-      }, 
-      {
-      "name": "New Brunswick",
-      "abbr": "NB"
-      }, 
-      {
-      "name": "Newfoundland",
-      "abbr": "NF"
-      }, 
-      {
-      "name": "Northwest Territories",
-      "abbr": "NT"
-      }, 
-      {
-      "name": "Nova Scotia",
-      "abbr": "NS"
-      }, 
-      {
-      "name": "Nunavut",
-      "abbr": "NU"
-      }, 
-      {
-      "name": "Ontario",
-      "abbr": "ON"
-      }, 
-      {
-      "name": "Prince Edward Island",
-      "abbr": "PE"
-      }, 
-      {
-      "name": "Quebec",
-      "abbr": "QC"
-      }, 
-      {
-      "name": "Saskatchewan",
-      "abbr": "SK"
-      }, 
-      {
-      "name": "Yukon Territory",
-      "abbr": "YT"
-      }
-   ]
-},
-{
-   "name": "Afghanistan",
-   "abbr": "AF"
-},
-{
-   "name": "Albania",
-   "abbr": "AL"
-},
-{
-   "name": "Algeria",
-   "abbr": "DZ"
-},
-{
-   "name": "American Samoa",
-   "abbr": "AS"
-},
-{
-   "name": "Andorra",
-   "abbr": "AD"
-},
-{
-   "name": "Angola",
-   "abbr": "AO"
-},
-{
-   "name": "Anguilla",
-   "abbr": "AI"
-},
-{
-   "name": "Antarctica",
-   "abbr": "AQ"
-},
-{
-   "name": "Antigua and Barbuda",
-   "abbr": "AG"
-},
-{
-   "name": "Argentina",
-   "abbr": "AR",
-   "states":
-   [
-      {
-      "name": "Buenos Aires",
-      "abbr": ""
-      }, 
-      {
-      "name": "Catamarca",
-      "abbr": ""
-      }, 
-      {
-      "name": "Chaco",
-      "abbr": ""
-      }, 
-      {
-      "name": "Chubut",
-      "abbr": ""
-      }, 
-      {
-      "name": "Ciudad Autnoma de Buenos Aires",
-      "abbr": ""
-      }, 
-      {
-      "name": "Crdoba",
-      "abbr": ""
-      }, 
-      {
-      "name": "Corrientes",
-      "abbr": ""
-      }, 
-      {
-      "name": "Entre Ros",
-      "abbr": ""
-      }, 
-      {
-      "name": "Formosa",
-      "abbr": ""
-      }, 
-      {
-      "name": "Jujuy",
-      "abbr": ""
-      }, 
-      {
-      "name": "La Pampa",
-      "abbr": ""
-      }, 
-      {
-      "name": "La Rioja",
-      "abbr": ""
-      }, 
-      {
-      "name": "Mendoza",
-      "abbr": ""
-      }, 
-      {
-      "name": "Misiones",
-      "abbr": ""
-      }, 
-      {
-      "name": "Neuqun",
-      "abbr": ""
-      }, 
-      {
-      "name": "Salta",
-      "abbr": ""
-      }, 
-      {
-      "name": "San Juan",
-      "abbr": ""
-      }, 
-      {
-      "name": "San Luis",
-      "abbr": ""
-      }, 
-      {
-      "name": "Santa Cruz",
-      "abbr": ""
-      }, 
-      {
-      "name": "Santa Fe",
-      "abbr": ""
-      }, 
-      {
-      "name": "Santiago del Estero",
-      "abbr": ""
-      }, 
-      {
-      "name": "Terra do Fogo Ushuaia",
-      "abbr": ""
-      }, 
-      {
-      "name": "Tucumn",
-      "abbr": ""
-      }
-   ]
-},
-{
-   "name": "Armenia",
-   "abbr": "AM"
-},
-{
-   "name": "Aruba",
-   "abbr": "AW"
-},
-{
-   "name": "Australia",
-   "abbr": "AU"
-},
-{
-   "name": "Austria",
-   "abbr": "AT"
-},
-{
-   "name": "Azerbaijan",
-   "abbr": "AZ"
-},
-{
-   "name": "Bahamas",
-   "abbr": "BS",
-   "states":
-   [
-      {
-      "name": "Acklins",
-      "abbr": ""
-      }, 
-      {
-      "name": "Berry Islands",
-      "abbr": ""
-      }, 
-      {
-      "name": "Bimini",
-      "abbr": ""
-      }, 
-      {
-      "name": "Black Point",
-      "abbr": ""
-      }, 
-      {
-      "name": "Cat Island",
-      "abbr": ""
-      }, 
-      {
-      "name": "Central Abaco",
-      "abbr": ""
-      }, 
-      {
-      "name": "Central Andos",
-      "abbr": ""
-      }, 
-      {
-      "name": "Central Eleuthera",
-      "abbr": ""
-      }, 
-      {
-      "name": "Crooked Island",
-      "abbr": ""
-      }, 
-      {
-      "name": "East Grand Bahama",
-      "abbr": ""
-      }, 
-      {
-      "name": "Exuma",
-      "abbr": ""
-      }, 
-      {
-      "name": "Freeport",
-      "abbr": ""
-      }, 
-      {
-      "name": "Grand Cay",
-      "abbr": ""
-      }, 
-      {
-      "name": "Harbour Island",
-      "abbr": ""
-      }, 
-      {
-      "name": "Hope Town",
-      "abbr": ""
-      }, 
-      {
-      "name": "Inagua",
-      "abbr": ""
-      }, 
-      {
-      "name": "Long Island",
-      "abbr": ""
-      }, 
-      {
-      "name": "Mangrove Cay",
-      "abbr": ""
-      }, 
-      {
-      "name": "Mayaguana",
-      "abbr": ""
-      }, 
-      {
-      "name": "Moore's Island",
-      "abbr": ""
-      }, 
-      {
-      "name": "North Abaco",
-      "abbr": ""
-      }, 
-      {
-      "name": "North Andros",
-      "abbr": ""
-      }, 
-      {
-      "name": "North Eleuthera",
-      "abbr": ""
-      }, 
-      {
-      "name": "Ragged Island",
-      "abbr": ""
-      }, 
-      {
-      "name": "Rum Cay",
-      "abbr": ""
-      }, 
-      {
-      "name": "San Salvador",
-      "abbr": ""
-      }, 
-      {
-      "name": "South Abaco",
-      "abbr": ""
-      }, 
-      {
-      "name": "South Andros",
-      "abbr": ""
-      }, 
-      {
-      "name": "South Eleuthera",
-      "abbr": ""
-      }, 
-      {
-      "name": "Spanish Wells",
-      "abbr": ""
-      }, 
-      {
-      "name": "West Grand Bahama",
-      "abbr": ""
-      }
-   ]
-},
-{
-   "name": "Bahrain",
-   "abbr": "BH"
-},
-{
-   "name": "Bangladesh",
-   "abbr": "BD"
-},
-{
-   "name": "Barbados",
-   "abbr": "BB"
-},
-{
-   "name": "Belarus",
-   "abbr": "BY"
-},
-{
-   "name": "Belgium",
-   "abbr": "BE"
-},
-{
-   "name": "Belize",
-   "abbr": "BZ",
-   "states":
-   [
-      {
-      "name": "Belize",
-      "abbr": ""
-      }, 
-      {
-      "name": "Cayo",
-      "abbr": ""
-      }, 
-      {
-      "name": "Corozal",
-      "abbr": ""
-      }, 
-      {
-      "name": "Orange Walk",
-      "abbr": ""
-      }, 
-      {
-      "name": "Stann Creek",
-      "abbr": ""
-      }, 
-      {
-      "name": "Toledo",
-      "abbr": ""
-      }
-   ]
-},
-{
-   "name": "Benin",
-   "abbr": "BJ"
-},
-{
-   "name": "Bermuda",
-   "abbr": "BM",
-   "states":
-   [
-      {
-      "name": "Devonshire",
-      "abbr": ""
-      }, 
-      {
-      "name": "Hamilton",
-      "abbr": ""
-      }, 
-      {
-      "name": "Paget",
-      "abbr": ""
-      }, 
-      {
-      "name": "Pembroke",
-      "abbr": ""
-      }, 
-      {
-      "name": "Saint George",
-      "abbr": ""
-      }, 
-      {
-      "name": "Sandys",
-      "abbr": ""
-      }, 
-      {
-      "name": "Smith",
-      "abbr": ""
-      }, 
-      {
-      "name": "Southhampton",
-      "abbr": ""
-      }, 
-      {
-      "name": "Warwick",
-      "abbr": ""
-      }
-   ]
-},
-{
-   "name": "Bhutan",
-   "abbr": "BT"
-},
-{
-   "name": "Bolivia",
-   "abbr": "BO",
-   "states":
-   [
-      {
-      "name": "Beni",
-      "abbr": ""
-      }, 
-      {
-      "name": "Chuquisaca",
-      "abbr": ""
-      }, 
-      {
-      "name": "Cochabamba",
-      "abbr": ""
-      }, 
-      {
-      "name": "La Paz",
-      "abbr": ""
-      }, 
-      {
-      "name": "Oruro",
-      "abbr": ""
-      }, 
-      {
-      "name": "Pando",
-      "abbr": ""
-      }, 
-      {
-      "name": "Potos",
-      "abbr": ""
-      }, 
-      {
-      "name": "Santa Cruz",
-      "abbr": ""
-      }, 
-      {
-      "name": "Tarija",
-      "abbr": ""
-      }
-   ]
-},
-{
-   "name": "Bosnia and Herzegovina",
-   "abbr": "BA"
-},
-{
-   "name": "Botswana",
-   "abbr": "BW"
-},
-{
-   "name": "Bouvet Island",
-   "abbr": "BV"
-},
-{
-   "name": "Brazil",
-   "abbr": "BR",
-   "states":
-   [
-      {
-      "name": "Acre",
-      "abbr": "AC"
-      }, 
-      {
-      "name": "Alagoas",
-      "abbr": "AL"
-      }, 
-      {
-      "name": "Amap",
-      "abbr": "AP"
-      }, 
-      {
-      "name": "Amazonas",
-      "abbr": "AM"
-      }, 
-      {
-      "name": "Bahia",
-      "abbr": "BA"
-      }, 
-      {
-      "name": "Cear",
-      "abbr": "CE"
-      }, 
-      {
-      "name": "Distrito Federal",
-      "abbr": "DF"
-      }, 
-      {
-      "name": "Esprito Santo",
-      "abbr": "ES"
-      }, 
-      {
-      "name": "Gois",
-      "abbr": "GO"
-      }, 
-      {
-      "name": "Mato Grosso",
-      "abbr": "MT"
-      }, 
-      {
-      "name": "Mato Grosso do Sul",
-      "abbr": "MS"
-      }, 
-      {
-      "name": "Minas Gerais",
-      "abbr": "MG"
-      }, 
-      {
-      "name": "Par",
-      "abbr": "PA"
-      }, 
-      {
-      "name": "Paraba",
-      "abbr": "PB"
-      }, 
-      {
-      "name": "Paran",
-      "abbr": "PR"
-      }, 
-      {
-      "name": "Pernambuco",
-      "abbr": "PE"
-      }, 
-      {
-      "name": "Piau",
-      "abbr": "PI"
-      }, 
-      {
-      "name": "Rio de Janeiro",
-      "abbr": "RJ"
-      }, 
-      {
-      "name": "Rio Grande do Norte",
-      "abbr": "RN"
-      }, 
-      {
-      "name": "Rio Grande do Sul",
-      "abbr": "RS"
-      }, 
-      {
-      "name": "Rondonia",
-      "abbr": "RO"
-      }, 
-      {
-      "name": "Roraima",
-      "abbr": "RR"
-      }, 
-      {
-      "name": "Santa Catarina",
-      "abbr": "SC"
-      }, 
-      {
-      "name": "Sao Paulo",
-      "abbr": "SP"
-      }, 
-      {
-      "name": "Sergipe",
-      "abbr": "SE"
-      }, 
-      {
-      "name": "Tocantins",
-      "abbr": "TO"
-      }
-   ]
-},
-{
-   "name": "British Indian Ocean Territory",
-   "abbr": "IO"
-},
-{
-   "name": "Brunei Darussalam",
-   "abbr": "BN"
-},
-{
-   "name": "Bulgaria",
-   "abbr": "BG"
-},
-{
-   "name": "Burkina Faso",
-   "abbr": "BF"
-},
-{
-   "name": "Burundi",
-   "abbr": "BI"
-},
-{
-   "name": "Cambodia",
-   "abbr": "KH"
-},
-{
-   "name": "Cameroon",
-   "abbr": "CM"
-},
-{
-   "name": "Cape Verde",
-   "abbr": "CV"
-},
-{
-   "name": "Cayman Islands",
-   "abbr": "KY"
-},
-{
-   "name": "Central African Republic",
-   "abbr": "CF"
-},
-{
-   "name": "Chad",
-   "abbr": "TD"
-},
-{
-   "name": "Chile",
-   "abbr": "CL"
-},
-{
-   "name": "China",
-   "abbr": "CN",
-   "states":
-   [
-      {
-      "name": "Aisn",
-      "abbr": ""
-      }, 
-      {
-      "name": "Antofagasta",
-      "abbr": ""
-      }, 
-      {
-      "name": "Araucana",
-      "abbr": ""
-      }, 
-      {
-      "name": "Arica e Parinacota",
-      "abbr": ""
-      }, 
-      {
-      "name": "Atacama",
-      "abbr": ""
-      }, 
-      {
-      "name": "Biobo",
-      "abbr": ""
-      }, 
-      {
-      "name": "Coquimbo",
-      "abbr": ""
-      }, 
-      {
-      "name": "Los Lagos",
-      "abbr": ""
-      }, 
-      {
-      "name": "Los Rios",
-      "abbr": ""
-      }, 
-      {
-      "name": "Magallanes",
-      "abbr": ""
-      }, 
-      {
-      "name": "Maule",
-      "abbr": ""
-      }, 
-      {
-      "name": "O'Higgins",
-      "abbr": ""
-      }, 
-      {
-      "name": "Santiago",
-      "abbr": ""
-      }, 
-      {
-      "name": "Tarapac",
-      "abbr": ""
-      }, 
-      {
-      "name": "Valparaso",
-      "abbr": ""
-      }
-   ]
-},
-{
-   "name": "Christmas Island",
-   "abbr": "CX"
-},
-{
-   "name": "Cocos (Keeling) Islands",
-   "abbr": "CC"
-},
-{
-   "name": "Colombia",
-   "abbr": "CO",
-   "states":
-   [
-      {
-      "name": "Amazonas",
-      "abbr": ""
-      }, 
-      {
-      "name": "Antioquia",
-      "abbr": ""
-      }, 
-      {
-      "name": "Arauca",
-      "abbr": ""
-      }, 
-      {
-      "name": "Atlntico",
-      "abbr": ""
-      }, 
-      {
-      "name": "Bolvar",
-      "abbr": ""
-      }, 
-      {
-      "name": "Boyac",
-      "abbr": ""
-      }, 
-      {
-      "name": "Caldas",
-      "abbr": ""
-      }, 
-      {
-      "name": "Caquet",
-      "abbr": ""
-      }, 
-      {
-      "name": "Casanare",
-      "abbr": ""
-      }, 
-      {
-      "name": "Cauca",
-      "abbr": ""
-      }, 
-      {
-      "name": "Cesar",
-      "abbr": ""
-      }, 
-      {
-      "name": "Choc",
-      "abbr": ""
-      }, 
-      {
-      "name": "Crdoba",
-      "abbr": ""
-      }, 
-      {
-      "name": "Cundinamarca",
-      "abbr": ""
-      }, 
-      {
-      "name": "Ditrito Capital",
-      "abbr": ""
-      }, 
-      {
-      "name": "Guaina",
-      "abbr": ""
-      }, 
-      {
-      "name": "Guaviare",
-      "abbr": ""
-      }, 
-      {
-      "name": "Huila",
-      "abbr": ""
-      }, 
-      {
-      "name": "La Guajira",
-      "abbr": ""
-      }, 
-      {
-      "name": "Magdalena",
-      "abbr": ""
-      }, 
-      {
-      "name": "Meta",
-      "abbr": ""
-      }, 
-      {
-      "name": "Nario",
-      "abbr": ""
-      }, 
-      {
-      "name": "Norte de Santander",
-      "abbr": ""
-      }, 
-      {
-      "name": "Putumayo",
-      "abbr": ""
-      }, 
-      {
-      "name": "Quindo",
-      "abbr": ""
-      }, 
-      {
-      "name": "Risaralda",
-      "abbr": ""
-      }, 
-      {
-      "name": "San Andrs",
-      "abbr": ""
-      }, 
-      {
-      "name": "Santander",
-      "abbr": ""
-      }, 
-      {
-      "name": "Sucre",
-      "abbr": ""
-      }, 
-      {
-      "name": "Tolima",
-      "abbr": ""
-      }, 
-      {
-      "name": "Valle del Cauca",
-      "abbr": ""
-      }, 
-      {
-      "name": "Vaups",
-      "abbr": ""
-      }, 
-      {
-      "name": "Vichada",
-      "abbr": ""
-      }
-   ]
-},
-{
-   "name": "Comoros",
-   "abbr": "KM"
-},
-{
-   "name": "Congo",
-   "abbr": "CG"
-},
-{
-   "name": "Congo DRC",
-   "abbr": "CD"
-},
-{
-   "name": "Cook Islands",
-   "abbr": "CK"
-},
-{
-   "name": "Costa Rica",
-   "abbr": "CR"
-},
-{
-   "name": "Ivory Coast",
-   "abbr": "CI"
-},
-{
-   "name": "Croatia",
-   "abbr": "HR"
-},
-{
-   "name": "Cuba",
-   "abbr": "CU"
-},
-{
-   "name": "Cyprus",
-   "abbr": "CY"
-},
-{
-   "name": "Czech Republic",
-   "abbr": "CZ"
-},
-{
-   "name": "Denmark",
-   "abbr": "DK"
-},
-{
-   "name": "Djibouti",
-   "abbr": "DJ"
-},
-{
-   "name": "Dominica",
-   "abbr": "DM"
-},
-{
-   "name": "Dominican Republic",
-   "abbr": "DO"
-},
-{
-   "name": "Ecuador",
-   "abbr": "EC",
-   "states":
-   [
-      {
-      "name": "Azuay",
-      "abbr": ""
-      }, 
-      {
-      "name": "Bolvar",
-      "abbr": ""
-      }, 
-      {
-      "name": "Caar",
-      "abbr": ""
-      }, 
-      {
-      "name": "Carchi",
-      "abbr": ""
-      }, 
-      {
-      "name": "Chimborazo",
-      "abbr": ""
-      }, 
-      {
-      "name": "Cotopaxi",
-      "abbr": ""
-      }, 
-      {
-      "name": "El Oro",
-      "abbr": ""
-      }, 
-      {
-      "name": "Esmeraldas",
-      "abbr": ""
-      }, 
-      {
-      "name": "Galpagos",
-      "abbr": ""
-      }, 
-      {
-      "name": "Guayas",
-      "abbr": ""
-      }, 
-      {
-      "name": "Imbambura",
-      "abbr": ""
-      }, 
-      {
-      "name": "Loja",
-      "abbr": ""
-      }, 
-      {
-      "name": "Los Ros",
-      "abbr": ""
-      }, 
-      {
-      "name": "Manab",
-      "abbr": ""
-      }, 
-      {
-      "name": "Morona-Santiago",
-      "abbr": ""
-      }, 
-      {
-      "name": "Napo",
-      "abbr": ""
-      }, 
-      {
-      "name": "Orellana",
-      "abbr": ""
-      }, 
-      {
-      "name": "Pastaza",
-      "abbr": ""
-      }, 
-      {
-      "name": "Pichincha",
-      "abbr": ""
-      }, 
-      {
-      "name": "Santa Elena",
-      "abbr": ""
-      }, 
-      {
-      "name": "Santo Domingo de los Tschilas",
-      "abbr": ""
-      }, 
-      {
-      "name": "Sucumbos",
-      "abbr": ""
-      }, 
-      {
-      "name": "Tungurahua",
-      "abbr": ""
-      }, 
-      {
-      "name": "Zamora-Chinchipe",
-      "abbr": ""
-      }
-   ]
-},
-{
-   "name": "Egypt",
-   "abbr": "EG"
-},
-{
-   "name": "El Salvador",
-   "abbr": "SV",
-   "states":
-   [
-      {
-      "name": "Ahuachapn",
-      "abbr": ""
-      }, 
-      {
-      "name": "Cabaas",
-      "abbr": ""
-      }, 
-      {
-      "name": "Chalatenango",
-      "abbr": ""
-      }, 
-      {
-      "name": "Cuscatln",
-      "abbr": ""
-      }, 
-      {
-      "name": "La Libertad",
-      "abbr": ""
-      }, 
-      {
-      "name": "La Paz",
-      "abbr": ""
-      }, 
-      {
-      "name": "La Unin",
-      "abbr": ""
-      }, 
-      {
-      "name": "Morazn",
-      "abbr": ""
-      }, 
-      {
-      "name": "San Miguel",
-      "abbr": ""
-      }, 
-      {
-      "name": "San Salvador",
-      "abbr": ""
-      }, 
-      {
-      "name": "San Vicente",
-      "abbr": ""
-      }, 
-      {
-      "name": "Santa Ana",
-      "abbr": ""
-      }, 
-      {
-      "name": "Sonsonate",
-      "abbr": ""
-      }, 
-      {
-      "name": "Usulutn",
-      "abbr": ""
-      }
-   ]
-},
-{
-   "name": "Equatorial Guinea",
-   "abbr": "GQ"
-},
-{
-   "name": "Eritrea",
-   "abbr": "ER"
-},
-{
-   "name": "Estonia",
-   "abbr": "EE"
-},
-{
-   "name": "Ethiopia",
-   "abbr": "ET"
-},
-{
-   "name": "Falkland Islands",
-   "abbr": "FK"
-},
-{
-   "name": "Faroe Islands",
-   "abbr": "FO"
-},
-{
-   "name": "Fiji",
-   "abbr": "FJ"
-},
-{
-   "name": "Finland",
-   "abbr": "FI"
-},
-{
-   "name": "France",
-   "abbr": "FR"
-},
-{
-   "name": "French Guiana",
-   "abbr": "GF"
-},
-{
-   "name": "French Polynesia",
-   "abbr": "PF"
-},
-{
-   "name": "French Southern Territories",
-   "abbr": "TF"
-},
-{
-   "name": "Gabon",
-   "abbr": "GA"
-},
-{
-   "name": "Gambia",
-   "abbr": "GM"
-},
-{
-   "name": "Georgia",
-   "abbr": "GE"
-},
-{
-   "name": "Germany",
-   "abbr": "DE"
-},
-{
-   "name": "Ghana",
-   "abbr": "GH"
-},
-{
-   "name": "Gibraltar",
-   "abbr": "GI"
-},
-{
-   "name": "Greece",
-   "abbr": "GR"
-},
-{
-   "name": "Greenland",
-   "abbr": "GL"
-},
-{
-   "name": "Grenada",
-   "abbr": "GD"
-},
-{
-   "name": "Guadeloupe",
-   "abbr": "GP"
-},
-{
-   "name": "Guam",
-   "abbr": "GU"
-},
-{
-   "name": "Guatemala",
-   "abbr": "GT",
-   "states":
-   [
-      {
-      "name": "Alta Verapaz",
-      "abbr": ""
-      }, 
-      {
-      "name": "Baja Verapaz",
-      "abbr": ""
-      }, 
-      {
-      "name": "Chimaltenango",
-      "abbr": ""
-      }, 
-      {
-      "name": "Chiquimula",
-      "abbr": ""
-      }, 
-      {
-      "name": "Ciudad Guatemala",
-      "abbr": ""
-      }, 
-      {
-      "name": "El Progreso",
-      "abbr": ""
-      }, 
-      {
-      "name": "El Quich",
-      "abbr": ""
-      }, 
-      {
-      "name": "Escuintla",
-      "abbr": ""
-      }, 
-      {
-      "name": "Huehuetenango",
-      "abbr": ""
-      }, 
-      {
-      "name": "Izabal",
-      "abbr": ""
-      }, 
-      {
-      "name": "Jalapa",
-      "abbr": ""
-      }, 
-      {
-      "name": "Jutiapa",
-      "abbr": ""
-      }, 
-      {
-      "name": "Petn",
-      "abbr": ""
-      }, 
-      {
-      "name": "Quetzaltenango",
-      "abbr": ""
-      }, 
-      {
-      "name": "Retalhuleu",
-      "abbr": ""
-      }, 
-      {
-      "name": "Sacatepequez",
-      "abbr": ""
-      }, 
-      {
-      "name": "San Marcos",
-      "abbr": ""
-      }, 
-      {
-      "name": "Santa Rosa",
-      "abbr": ""
-      }, 
-      {
-      "name": "Solola",
-      "abbr": ""
-      }, 
-      {
-      "name": "Suchitepequez",
-      "abbr": ""
-      }, 
-      {
-      "name": "Totonicapan",
-      "abbr": ""
-      }, 
-      {
-      "name": "Zacapa",
-      "abbr": ""
-      }
-   ]
-},
-{
-   "name": "Guinea",
-   "abbr": "GN"
-},
-{
-   "name": "Guinea-Bissau",
-   "abbr": "GW"
-},
-{
-   "name": "Guyana",
-   "abbr": "GY"
-},
-{
-   "name": "Haiti",
-   "abbr": "HT",
-   "states":
-   [
-      {
-      "name": "Artibonite",
-      "abbr": ""
-      }, 
-      {
-      "name": "Centro",
-      "abbr": ""
-      }, 
-      {
-      "name": "Depto do Norte",
-      "abbr": ""
-      }, 
-      {
-      "name": "Depto do Oeste",
-      "abbr": ""
-      }, 
-      {
-      "name": "Depto do Sul",
-      "abbr": ""
-      }, 
-      {
-      "name": "Grande Enseada",
-      "abbr": ""
-      }, 
-      {
-      "name": "Nippes",
-      "abbr": ""
-      }, 
-      {
-      "name": "Nordeste",
-      "abbr": ""
-      }, 
-      {
-      "name": "Noroeste",
-      "abbr": ""
-      }, 
-      {
-      "name": "Sudeste",
-      "abbr": ""
-      }
-   ]
-},
-{
-   "name": "Heard Island and McDonald Islands",
-   "abbr": "HM"
-},
-{
-   "name": "Honduras",
-   "abbr": "HN",
-   "states":
-   [
-      {
-      "name": "Atlntida",
-      "abbr": ""
-      }, 
-      {
-      "name": "Choluteca",
-      "abbr": ""
-      }, 
-      {
-      "name": "Coln",
-      "abbr": ""
-      }, 
-      {
-      "name": "Comayagua",
-      "abbr": ""
-      }, 
-      {
-      "name": "Copn",
-      "abbr": ""
-      }, 
-      {
-      "name": "Corts",
-      "abbr": ""
-      }, 
-      {
-      "name": "El Paraso",
-      "abbr": ""
-      }, 
-      {
-      "name": "Francisco Morazn",
-      "abbr": ""
-      }, 
-      {
-      "name": "Gracias a Dios",
-      "abbr": ""
-      }, 
-      {
-      "name": "Ilhas da Bahia",
-      "abbr": ""
-      }, 
-      {
-      "name": "Intibuc",
-      "abbr": ""
-      }, 
-      {
-      "name": "La Paz",
-      "abbr": ""
-      }, 
-      {
-      "name": "Lempira",
-      "abbr": ""
-      }, 
-      {
-      "name": "Ocotepeque",
-      "abbr": ""
-      }, 
-      {
-      "name": "Olancho",
-      "abbr": ""
-      }, 
-      {
-      "name": "Santa Brbara",
-      "abbr": ""
-      }, 
-      {
-      "name": "Valle",
-      "abbr": ""
-      }, 
-      {
-      "name": "Yoro",
-      "abbr": ""
-      }
-   ]
-},
-{
-   "name": "Hong Kong",
-   "abbr": "HK"
-},
-{
-   "name": "Hungary",
-   "abbr": "HU"
-},
-{
-   "name": "Iceland",
-   "abbr": "IS"
-},
-{
-   "name": "India",
-   "abbr": "IN"
-},
-{
-   "name": "Indonesia",
-   "abbr": "ID"
-},
-{
-   "name": "Iran",
-   "abbr": "IR"
-},
-{
-   "name": "Iraq",
-   "abbr": "IQ"
-},
-{
-   "name": "Ireland",
-   "abbr": "IE"
-},
-{
-   "name": "Israel",
-   "abbr": "IL"
-},
-{
-   "name": "Italy",
-   "abbr": "IT"
-},
-{
-   "name": "Jamaica",
-   "abbr": "JM",
-   "states":
-   [
-      {
-      "name": "Claredon",
-      "abbr": ""
-      }, 
-      {
-      "name": "Hanover",
-      "abbr": ""
-      }, 
-      {
-      "name": "Kingston",
-      "abbr": ""
-      }, 
-      {
-      "name": "Manchester",
-      "abbr": ""
-      }, 
-      {
-      "name": "Portland",
-      "abbr": ""
-      }, 
-      {
-      "name": "Saint Andrew",
-      "abbr": ""
-      }, 
-      {
-      "name": "Saint Ann",
-      "abbr": ""
-      }, 
-      {
-      "name": "Saint Catherine",
-      "abbr": ""
-      }, 
-      {
-      "name": "Saint Elizabeth",
-      "abbr": ""
-      }, 
-      {
-      "name": "Saint James",
-      "abbr": ""
-      }, 
-      {
-      "name": "Saint Mary",
-      "abbr": ""
-      }, 
-      {
-      "name": "Saint Thomas",
-      "abbr": ""
-      }, 
-      {
-      "name": "Trelawny",
-      "abbr": ""
-      }, 
-      {
-      "name": "Westmoreland",
-      "abbr": ""
-      }
-   ]
-},
-{
-   "name": "Japan",
-   "abbr": "JP"
-},
-{
-   "name": "Jordan",
-   "abbr": "JO"
-},
-{
-   "name": "Kazakhstan",
-   "abbr": "KZ"
-},
-{
-   "name": "Kenya",
-   "abbr": "KE"
-},
-{
-   "name": "Kiribati",
-   "abbr": "KI"
-},
-{
-   "name": "Korea-North",
-   "abbr": "KP"
-},
-{
-   "name": "Korea-South",
-   "abbr": "KR"
-},
-{
-   "name": "Kuwait",
-   "abbr": "KW"
-},
-{
-   "name": "Kyrgyzstan",
-   "abbr": "KG"
-},
-{
-   "name": "Lao People",
-   "abbr": "LA"
-},
-{
-   "name": "Latvia",
-   "abbr": "LV"
-},
-{
-   "name": "Lebanon",
-   "abbr": "LB"
-},
-{
-   "name": "Lesotho",
-   "abbr": "LS"
-},
-{
-   "name": "Liberia",
-   "abbr": "LR"
-},
-{
-   "name": "Libya",
-   "abbr": "LY"
-},
-{
-   "name": "Liechtenstein",
-   "abbr": "LI"
-},
-{
-   "name": "Lithuania",
-   "abbr": "LT"
-},
-{
-   "name": "Luxembourg",
-   "abbr": "LU"
-},
-{
-   "name": "Macao",
-   "abbr": "MO"
-},
-{
-   "name": "Macedonia",
-   "abbr": "MK"
-},
-{
-   "name": "Madagascar",
-   "abbr": "MG"
-},
-{
-   "name": "Malawi",
-   "abbr": "MW"
-},
-{
-   "name": "Malaysia",
-   "abbr": "MY"
-},
-{
-   "name": "Maldives",
-   "abbr": "MV"
-},
-{
-   "name": "Mali",
-   "abbr": "ML"
-},
-{
-   "name": "Malta",
-   "abbr": "MT"
-},
-{
-   "name": "Marshall Islands",
-   "abbr": "MH"
-},
-{
-   "name": "Martinique",
-   "abbr": "MQ"
-},
-{
-   "name": "Mauritania",
-   "abbr": "MR"
-},
-{
-   "name": "Mauritius",
-   "abbr": "MU"
-},
-{
-   "name": "Mayotte",
-   "abbr": "YT"
-},
-{
-   "name": "Mexico",
-   "abbr": "MX",
-   "states":
-   [
-      {
-      "name": "Aguascalientes",
-      "abbr": ""
-      }, 
-      {
-      "name": "Baja California",
-      "abbr": ""
-      }, 
-      {
-      "name": "Baja California Sur",
-      "abbr": ""
-      }, 
-      {
-      "name": "Campeche",
-      "abbr": ""
-      }, 
-      {
-      "name": "Chiapas",
-      "abbr": ""
-      }, 
-      {
-      "name": "Chihuahua",
-      "abbr": ""
-      }, 
-      {
-      "name": "Coahuila de Zaragoza",
-      "abbr": ""
-      }, 
-      {
-      "name": "Colima",
-      "abbr": ""
-      }, 
-      {
-      "name": "Durango",
-      "abbr": ""
-      }, 
-      {
-      "name": "Estado do Mxico",
-      "abbr": ""
-      }, 
-      {
-      "name": "Guanajuato",
-      "abbr": ""
-      }, 
-      {
-      "name": "Guerrero",
-      "abbr": ""
-      }, 
-      {
-      "name": "Hidalgo",
-      "abbr": ""
-      }, 
-      {
-      "name": "Jalisco",
-      "abbr": ""
-      }, 
-      {
-      "name": "Michoacn de Ocampo",
-      "abbr": ""
-      }, 
-      {
-      "name": "Morelos",
-      "abbr": ""
-      }
-   ]
-},
-{
-   "name": "Micronesia",
-   "abbr": "FM"
-},
-{
-   "name": "Moldova",
-   "abbr": "MD"
-},
-{
-   "name": "Monaco",
-   "abbr": "MC"
-},
-{
-   "name": "Mongolia",
-   "abbr": "MN"
-},
-{
-   "name": "Montserrat",
-   "abbr": "MS"
-},
-{
-   "name": "Morocco",
-   "abbr": "MA"
-},
-{
-   "name": "Mozambique",
-   "abbr": "MZ"
-},
-{
-   "name": "Myanmar",
-   "abbr": "MM"
-},
-{
-   "name": "Namibia",
-   "abbr": "NA"
-},
-{
-   "name": "Nauru",
-   "abbr": "NR"
-},
-{
-   "name": "Nepal",
-   "abbr": "NP"
-},
-{
-   "name": "Netherlands",
-   "abbr": "NL"
-},
-{
-   "name": "Netherlands Antilles",
-   "abbr": "AN"
-},
-{
-   "name": "New Caledonia",
-   "abbr": "NC"
-},
-{
-   "name": "New Zealand",
-   "abbr": "NZ"
-},
-{
-   "name": "Nicaragua",
-   "abbr": "NI"
-},
-{
-   "name": "Niger",
-   "abbr": "NE"
-},
-{
-   "name": "Nigeria",
-   "abbr": "NG"
-},
-{
-   "name": "Niue",
-   "abbr": "NU"
-},
-{
-   "name": "Norfolk Island",
-   "abbr": "NF"
-},
-{
-   "name": "Northern Mariana Islands",
-   "abbr": "MP"
-},
-{
-   "name": "Norway",
-   "abbr": "NO"
-},
-{
-   "name": "Oman",
-   "abbr": "OM"
-},
-{
-   "name": "Pakistan",
-   "abbr": "PK"
-},
-{
-   "name": "Palau",
-   "abbr": "PW"
-},
-{
-   "name": "Palestinian Territory",
-   "abbr": "PS"
-},
-{
-   "name": "Panama",
-   "abbr": "PA",
-   "states":
-   [
-      {
-      "name": "Aguadulce",
-      "abbr": ""
-      }, 
-      {
-      "name": "Alanje",
-      "abbr": ""
-      }, 
-      {
-      "name": "Antn",
-      "abbr": ""
-      }, 
-      {
-      "name": "Arraijn",
-      "abbr": ""
-      }, 
-      {
-      "name": "Balboa",
-      "abbr": ""
-      }, 
-      {
-      "name": "Bar",
-      "abbr": ""
-      }, 
-      {
-      "name": "Besiko",
-      "abbr": ""
-      }, 
-      {
-      "name": "Bocas del Toro",
-      "abbr": ""
-      }, 
-      {
-      "name": "Boquern",
-      "abbr": ""
-      }, 
-      {
-      "name": "Boquete",
-      "abbr": ""
-      }, 
-      {
-      "name": "Bugaba",
-      "abbr": ""
-      }, 
-      {
-      "name": "Capira",
-      "abbr": ""
-      }, 
-      {
-      "name": "Cmaco",
-      "abbr": ""
-      }, 
-      {
-      "name": "Chagres",
-      "abbr": ""
-      }, 
-      {
-      "name": "Chame",
-      "abbr": ""
-      }, 
-      {
-      "name": "Changuinola",
-      "abbr": ""
-      }, 
-      {
-      "name": "Chepigana",
-      "abbr": ""
-      }, 
-      {
-      "name": "Chepo",
-      "abbr": ""
-      }, 
-      {
-      "name": "Chimn",
-      "abbr": ""
-      }, 
-      {
-      "name": "Chiriqu Grande",
-      "abbr": ""
-      }, 
-      {
-      "name": "Chitr",
-      "abbr": ""
-      }, 
-      {
-      "name": "David",
-      "abbr": ""
-      }, 
-      {
-      "name": "Dolega",
-      "abbr": ""
-      }, 
-      {
-      "name": "Donoso",
-      "abbr": ""
-      }, 
-      {
-      "name": "Guacar",
-      "abbr": ""
-      }, 
-      {
-      "name": "Gualaca",
-      "abbr": ""
-      }, 
-      {
-      "name": "Kankint",
-      "abbr": ""
-      }, 
-      {
-      "name": "Kusapn",
-      "abbr": ""
-      }, 
-      {
-      "name": "La Chorrera",
-      "abbr": ""
-      }, 
-      {
-      "name": "La Pintada",
-      "abbr": ""
-      }, 
-      {
-      "name": "Las Minas",
-      "abbr": ""
-      }, 
-      {
-      "name": "Las Tablas",
-      "abbr": ""
-      }, 
-      {
-      "name": "Los Pozos",
-      "abbr": ""
-      }, 
-      {
-      "name": "Los Santos",
-      "abbr": ""
-      }, 
-      {
-      "name": "Macaracas",
-      "abbr": ""
-      }, 
-      {
-      "name": "Mirono",
-      "abbr": ""
-      }, 
-      {
-      "name": "Mna",
-      "abbr": ""
-      }, 
-      {
-      "name": "Nat",
-      "abbr": ""
-      }, 
-      {
-      "name": "Nole Duima",
-      "abbr": ""
-      }, 
-      {
-      "name": "Panam",
-      "abbr": ""
-      }, 
-      {
-      "name": "Parita",
-      "abbr": ""
-      }, 
-      {
-      "name": "Pedas",
-      "abbr": ""
-      }, 
-      {
-      "name": "Penonom",
-      "abbr": ""
-      }, 
-      {
-      "name": "Pes",
-      "abbr": ""
-      }, 
-      {
-      "name": "Pinogana",
-      "abbr": ""
-      }, 
-      {
-      "name": "Pocr",
-      "abbr": ""
-      }, 
-      {
-      "name": "Portobelo",
-      "abbr": ""
-      }, 
-      {
-      "name": "Remedios",
-      "abbr": ""
-      }, 
-      {
-      "name": "Renacimiento",
-      "abbr": ""
-      }, 
-      {
-      "name": "Renacimiento distrito",
-      "abbr": ""
-      }, 
-      {
-      "name": "Samb",
-      "abbr": ""
-      }, 
-      {
-      "name": "San Carlos",
-      "abbr": ""
-      }, 
-      {
-      "name": "San Flix",
-      "abbr": ""
-      }, 
-      {
-      "name": "San Francisco",
-      "abbr": ""
-      }, 
-      {
-      "name": "San Lorenzo",
-      "abbr": ""
-      }, 
-      {
-      "name": "San Miguelito",
-      "abbr": ""
-      }, 
-      {
-      "name": "Santa Isabel",
-      "abbr": ""
-      }, 
-      {
-      "name": "Santa Mara",
-      "abbr": ""
-      }, 
-      {
-      "name": "Taboga",
-      "abbr": ""
-      }, 
-      {
-      "name": "Tol",
-      "abbr": ""
-      }, 
-      {
-      "name": "Tonos",
-      "abbr": ""
-      }
-   ]
-},
-{
-   "name": "Papua New Guinea",
-   "abbr": "PG"
-},
-{
-   "name": "Paraguay",
-   "abbr": "PY",
-   "states":
-   [
-      {
-      "name": "Alto Paraguay",
-      "abbr": ""
-      }, 
-      {
-      "name": "Alto Paran",
-      "abbr": ""
-      }, 
-      {
-      "name": "Amambay",
-      "abbr": ""
-      }, 
-      {
-      "name": "Boquern",
-      "abbr": ""
-      }, 
-      {
-      "name": "Caaguaz",
-      "abbr": ""
-      }, 
-      {
-      "name": "Caazap",
-      "abbr": ""
-      }, 
-      {
-      "name": "Canindey",
-      "abbr": ""
-      }, 
-      {
-      "name": "Central",
-      "abbr": ""
-      }, 
-      {
-      "name": "Concepcin",
-      "abbr": ""
-      }, 
-      {
-      "name": "Cordillera",
-      "abbr": ""
-      }, 
-      {
-      "name": "Distrito Capital",
-      "abbr": ""
-      }, 
-      {
-      "name": "Guair",
-      "abbr": ""
-      }, 
-      {
-      "name": "Itapa",
-      "abbr": ""
-      }, 
-      {
-      "name": "Misiones",
-      "abbr": ""
-      }, 
-      {
-      "name": "eembuc",
-      "abbr": ""
-      }, 
-      {
-      "name": "Paraguari",
-      "abbr": ""
-      }, 
-      {
-      "name": "Presidente Hayes",
-      "abbr": ""
-      }, 
-      {
-      "name": "San Pedro",
-      "abbr": ""
-      }
-   ]
-},
-{
-   "name": "Peru",
-   "abbr": "PE",
-   "states":
-   [
-      {
-      "name": "Amazonas",
-      "abbr": ""
-      }, 
-      {
-      "name": "Ancash",
-      "abbr": ""
-      }, 
-      {
-      "name": "Apurmac",
-      "abbr": ""
-      }, 
-      {
-      "name": "Arequipa",
-      "abbr": ""
-      }, 
-      {
-      "name": "Ayacucho",
-      "abbr": ""
-      }, 
-      {
-      "name": "Cajamarca",
-      "abbr": ""
-      }, 
-      {
-      "name": "Callao",
-      "abbr": ""
-      }, 
-      {
-      "name": "Cusco",
-      "abbr": ""
-      }, 
-      {
-      "name": "Huancavelica",
-      "abbr": ""
-      }, 
-      {
-      "name": "Hunuco",
-      "abbr": ""
-      }, 
-      {
-      "name": "Ica",
-      "abbr": ""
-      }, 
-      {
-      "name": "Junin",
-      "abbr": ""
-      }, 
-      {
-      "name": "La Libertad",
-      "abbr": ""
-      }, 
-      {
-      "name": "Lambayeque",
-      "abbr": ""
-      }, 
-      {
-      "name": "Lima",
-      "abbr": ""
-      }, 
-      {
-      "name": "Loreto",
-      "abbr": ""
-      }, 
-      {
-      "name": "Madre de Dios",
-      "abbr": ""
-      }, 
-      {
-      "name": "Moquegua",
-      "abbr": ""
-      }, 
-      {
-      "name": "Pasco",
-      "abbr": ""
-      }, 
-      {
-      "name": "Piura",
-      "abbr": ""
-      }, 
-      {
-      "name": "Puno",
-      "abbr": ""
-      }, 
-      {
-      "name": "San Martin",
-      "abbr": ""
-      }, 
-      {
-      "name": "Tacna",
-      "abbr": ""
-      }, 
-      {
-      "name": "Tumbes",
-      "abbr": ""
-      }, 
-      {
-      "name": "Ucayali",
-      "abbr": ""
-      }
-   ]
-},
-{
-   "name": "Philippines",
-   "abbr": "PH"
-},
-{
-   "name": "Pitcairn",
-   "abbr": "PN"
-},
-{
-   "name": "Poland",
-   "abbr": "PL"
-},
-{
-   "name": "Portugal",
-   "abbr": "PT"
-},
-{
-   "name": "Puerto Rico",
-   "abbr": "PR"
-},
-{
-   "name": "Qatar",
-   "abbr": "QA"
-},
-{
-   "name": "Reunion",
-   "abbr": "RE"
-},
-{
-   "name": "Romania",
-   "abbr": "RO"
-},
-{
-   "name": "Russian Federation",
-   "abbr": "RU"
-},
-{
-   "name": "Rwanda",
-   "abbr": "RW"
-},
-{
-   "name": "Saint Helena",
-   "abbr": "SH"
-},
-{
-   "name": "Saint Kitts and Nevis",
-   "abbr": "KN"
-},
-{
-   "name": "Saint Lucia",
-   "abbr": "LC"
-},
-{
-   "name": "Saint Pierre and Miquelon",
-   "abbr": "PM"
-},
-{
-   "name": "Saint Vincent and the Grenadines",
-   "abbr": "VC"
-},
-{
-   "name": "Samoa",
-   "abbr": "WS"
-},
-{
-   "name": "San Marino",
-   "abbr": "SM"
-},
-{
-   "name": "Sao Tome and Principe",
-   "abbr": "ST"
-},
-{
-   "name": "Saudi Arabia",
-   "abbr": "SA"
-},
-{
-   "name": "Senegal",
-   "abbr": "SN"
-},
-{
-   "name": "Serbia and Montenegro",
-   "abbr": "CS"
-},
-{
-   "name": "Seychelles",
-   "abbr": "SC"
-},
-{
-   "name": "Sierra Leone",
-   "abbr": "SL"
-},
-{
-   "name": "Singapore",
-   "abbr": "SG"
-},
-{
-   "name": "Slovakia",
-   "abbr": "SK"
-},
-{
-   "name": "Slovenia",
-   "abbr": "SI"
-},
-{
-   "name": "Solomon Islands",
-   "abbr": "SB"
-},
-{
-   "name": "Somalia",
-   "abbr": "SO"
-},
-{
-   "name": "South Africa",
-   "abbr": "ZA"
-},
-{
-   "name": "S Georgia and S Sandwich Islands",
-   "abbr": "GS"
-},
-{
-   "name": "Southern Sudan",
-   "abbr": "SS"
-},
-{
-   "name": "Spain",
-   "abbr": "ES"
-},
-{
-   "name": "Sri Lanka",
-   "abbr": "LK"
-},
-{
-   "name": "Sudan",
-   "abbr": "SD"
-},
-{
-   "name": "Suriname",
-   "abbr": "SR"
-},
-{
-   "name": "Svalbard and Jan Mayen",
-   "abbr": "SJ"
-},
-{
-   "name": "Swaziland",
-   "abbr": "SZ"
-},
-{
-   "name": "Sweden",
-   "abbr": "SE"
-},
-{
-   "name": "Switzerland",
-   "abbr": "CH"
-},
-{
-   "name": "Syrian Arab Republic",
-   "abbr": "SY"
-},
-{
-   "name": "Taiwan",
-   "abbr": "TW"
-},
-{
-   "name": "Tajikistan",
-   "abbr": "TJ"
-},
-{
-   "name": "Tanzania",
-   "abbr": "TZ"
-},
-{
-   "name": "Thailand",
-   "abbr": "TH"
-},
-{
-   "name": "Timor-Leste",
-   "abbr": "TL"
-},
-{
-   "name": "Togo",
-   "abbr": "TG"
-},
-{
-   "name": "Tokelau",
-   "abbr": "TK"
-},
-{
-   "name": "Tonga",
-   "abbr": "TO"
-},
-{
-   "name": "Trinidad and Tobago",
-   "abbr": "TT"
-},
-{
-   "name": "Tunisia",
-   "abbr": "TN"
-},
-{
-   "name": "Turkey",
-   "abbr": "TR"
-},
-{
-   "name": "Turkmenistan",
-   "abbr": "TM"
-},
-{
-   "name": "Turks and Caicos Islands",
-   "abbr": "TC"
-},
-{
-   "name": "Tuvalu",
-   "abbr": "TV"
-},
-{
-   "name": "Uganda",
-   "abbr": "UG"
-},
-{
-   "name": "Ukraine",
-   "abbr": "UA"
-},
-{
-   "name": "United Arab Emirates",
-   "abbr": "AE"
-},
-{
-   "name": "United Kingdom",
-   "abbr": "GB"
-},
-{
-   "name": "United States Minor Outlying Islands",
-   "abbr": "UM"
-},
-{
-   "name": "Uruguay",
-   "abbr": "UY",
-   "states":
-   [
-      {
-      "name": "Artigas",
-      "abbr": ""
-      }, 
-      {
-      "name": "Canelones",
-      "abbr": ""
-      }, 
-      {
-      "name": "Cerro Largo",
-      "abbr": ""
-      }, 
-      {
-      "name": "Colnia",
-      "abbr": ""
-      }, 
-      {
-      "name": "Durazno",
-      "abbr": ""
-      }, 
-      {
-      "name": "Flores",
-      "abbr": ""
-      }, 
-      {
-      "name": "Florida",
-      "abbr": ""
-      }, 
-      {
-      "name": "Lavalleja",
-      "abbr": ""
-      }, 
-      {
-      "name": "Maldonado",
-      "abbr": ""
-      }, 
-      {
-      "name": "Montevidu",
-      "abbr": ""
-      }, 
-      {
-      "name": "Paysand",
-      "abbr": ""
-      }, 
-      {
-      "name": "Rio Negro",
-      "abbr": ""
-      }, 
-      {
-      "name": "Rivera",
-      "abbr": ""
-      }, 
-      {
-      "name": "Rocha",
-      "abbr": ""
-      }, 
-      {
-      "name": "Salto",
-      "abbr": ""
-      }, 
-      {
-      "name": "San Jos",
-      "abbr": ""
-      }, 
-      {
-      "name": "Soriano",
-      "abbr": ""
-      }, 
-      {
-      "name": "Tacuaremb",
-      "abbr": ""
-      }, 
-      {
-      "name": "Treinta y Tres",
-      "abbr": ""
-      }
-   ]
-},
-{
-   "name": "Uzbekistan",
-   "abbr": "UZ"
-},
-{
-   "name": "Vanuatu",
-   "abbr": "VU"
-},
-{
-   "name": "Various",
-   "abbr": "VS"
-},
-{
-   "name": "Vatican City",
-   "abbr": "VA"
-},
-{
-   "name": "Venezuela",
-   "abbr": "VE",
-   "states":
-   [
-      {
-      "name": "Amazonas",
-      "abbr": ""
-      }, 
-      {
-      "name": "Anzotegui",
-      "abbr": ""
-      }, 
-      {
-      "name": "Apure",
-      "abbr": ""
-      }, 
-      {
-      "name": "Aragua",
-      "abbr": ""
-      }, 
-      {
-      "name": "Barinas",
-      "abbr": ""
-      }, 
-      {
-      "name": "Bolivar",
-      "abbr": ""
-      }, 
-      {
-      "name": "Carabobo",
-      "abbr": ""
-      }, 
-      {
-      "name": "Cojedes",
-      "abbr": ""
-      }, 
-      {
-      "name": "Delta Amacuro",
-      "abbr": ""
-      }, 
-      {
-      "name": "Distrito Capital",
-      "abbr": ""
-      }, 
-      {
-      "name": "Falcn",
-      "abbr": ""
-      }, 
-      {
-      "name": "Gurico",
-      "abbr": ""
-      }, 
-      {
-      "name": "Lara",
-      "abbr": ""
-      }, 
-      {
-      "name": "Mrida",
-      "abbr": ""
-      }, 
-      {
-      "name": "Miranda",
-      "abbr": ""
-      }, 
-      {
-      "name": "Monagas",
-      "abbr": ""
-      }, 
-      {
-      "name": "Nueva Esparta",
-      "abbr": ""
-      }, 
-      {
-      "name": "Portuguesa",
-      "abbr": ""
-      }, 
-      {
-      "name": "Sucre",
-      "abbr": ""
-      }, 
-      {
-      "name": "Tchira",
-      "abbr": ""
-      }, 
-      {
-      "name": "Trujillo",
-      "abbr": ""
-      }, 
-      {
-      "name": "Vargas",
-      "abbr": ""
-      }, 
-      {
-      "name": "Yaracuy",
-      "abbr": ""
-      }, 
-      {
-      "name": "Zulia",
-      "abbr": ""
-      }
-   ]
-},
-{
-   "name": "Viet Nam",
-   "abbr": "VN"
-},
-{
-   "name": "Virgin Islands-British",
-   "abbr": "VG"
-},
-{
-   "name": "Virgin Islands-US",
-   "abbr": "VI"
-},
-{
-   "name": "Wallis and Futuna",
-   "abbr": "WF"
-},
-{
-   "name": "Western Sahara",
-   "abbr": "EH"
-},
-{
-   "name": "Yemen",
-   "abbr": "YE"
-},
-{
-   "name": "Zambia",
-   "abbr": "ZM"
-},
-{
-   "name": "Zimbabwe",
-   "abbr": "ZW"
-}
-]
+[{	"name": "United States",	"abbr": "US",	"states": [{		"name": "Alabama",		"abbr": "AL"	}, {		"name": "Alaska",		"abbr": "AK"	}, {		"name": "Arizona",		"abbr": "AZ"	}, {		"name": "Arkansas",		"abbr": "AR"	}, {		"name": "California",		"abbr": "CA"	}, {		"name": "Colorado",		"abbr": "CO"	}, {		"name": "Connecticut",		"abbr": "CT"	}, {		"name": "Delaware",		"abbr": "DE"	}, {		"name": "District of Columbia",		"abbr": "DC"	}, {		"name": "Florida",		"abbr": "FL"	}, {		"name": "Georgia",		"abbr": "GA"	}, {		"name": "Hawaii",		"abbr": "HI"	}, {		"name": "Idaho",		"abbr": "ID"	}, {		"name": "Illinois",		"abbr": "IL"	}, {		"name": "Indiana",		"abbr": "IN"	}, {		"name": "Iowa",		"abbr": "IA"	}, {		"name": "Kansas",		"abbr": "KS"	}, {		"name": "Kentucky",		"abbr": "KY"	}, {		"name": "Louisiana",		"abbr": "LA"	}, {		"name": "Maine",		"abbr": "ME"	}, {		"name": "Maryland",		"abbr": "MD"	}, {		"name": "Massachusetts",		"abbr": "MA"	}, {		"name": "Michigan",		"abbr": "MI"	}, {		"name": "Minnesota",		"abbr": "MN"	}, {		"name": "Mississippi",		"abbr": "MS"	}, {		"name": "Missouri",		"abbr": "MO"	}, {		"name": "Montana",		"abbr": "MT"	}, {		"name": "Nebraska",		"abbr": "NE"	}, {		"name": "Nevada",		"abbr": "NV"	}, {		"name": "New Hampshire",		"abbr": "NH"	}, {		"name": "New Jersey",		"abbr": "NJ"	}, {		"name": "New Mexico",		"abbr": "NM"	}, {		"name": "New York",		"abbr": "NY"	}, {		"name": "North Carolina",		"abbr": "NC"	}, {		"name": "North Dakota",		"abbr": "ND"	}, {		"name": "Ohio",		"abbr": "OH"	}, {		"name": "Oklahoma",		"abbr": "OK"	}, {		"name": "Oregon",		"abbr": "OR"	}, {		"name": "Pennsylvania",		"abbr": "PA"	}, {		"name": "Rhode Island",		"abbr": "RI"	}, {		"name": "South Carolina",		"abbr": "SC"	}, {		"name": "South Dakota",		"abbr": "SD"	}, {		"name": "Tennessee",		"abbr": "TN"	}, {		"name": "Texas",		"abbr": "TX"	}, {		"name": "Utah",		"abbr": "UT"	}, {		"name": "Vermont",		"abbr": "VT"	}, {		"name": "Virginia",		"abbr": "VA"	}, {		"name": "Washington",		"abbr": "WA"	}, {		"name": "West Virginia",		"abbr": "WV"	}, {		"name": "Wisconsin",		"abbr": "WI"	}, {		"name": "Wyoming",		"abbr": "WY"	}, {		"name": "AA",		"abbr": "AA"	}, {		"name": "AE",		"abbr": "AE"	}, {		"name": "AP",		"abbr": "AP"	}]}, {	"name": "Canada",	"abbr": "CN",	"states": [{		"name": "Alberta",		"abbr": "AB"	}, {		"name": "British Columbia",		"abbr": "BC"	}, {		"name": "Manitoba",		"abbr": "MB"	}, {		"name": "New Brunswick",		"abbr": "NB"	}, {		"name": "Newfoundland",		"abbr": "NF"	}, {		"name": "Northwest Territories",		"abbr": "NT"	}, {		"name": "Nova Scotia",		"abbr": "NS"	}, {		"name": "Nunavut",		"abbr": "NU"	}, {		"name": "Ontario",		"abbr": "ON"	}, {		"name": "Prince Edward Island",		"abbr": "PE"	}, {		"name": "Quebec",		"abbr": "QC"	}, {		"name": "Saskatchewan",		"abbr": "SK"	}, {		"name": "Yukon Territory",		"abbr": "YT"	}]}, {	"name": "Afghanistan",	"abbr": "AF",	"states": [{		"name": "Enter Below",		"abbr": ""	}]}, {	"name": "Albania",	"abbr": "AL",	"states": [{		"name": "Berat",		"abbr": ""	}, {		"name": "Diber",		"abbr": ""	}, {		"name": "Durres",		"abbr": ""	}, {		"name": "Elbasan",		"abbr": ""	}, {		"name": "Fier",		"abbr": ""	}, {		"name": "Gjirokaster",		"abbr": ""	}, {		"name": "Korce",		"abbr": ""	}, {		"name": "Kukes",		"abbr": ""	}, {		"name": "Lezhe",		"abbr": ""	}, {		"name": "Shkoder",		"abbr": ""	}, {		"name": "Tirane",		"abbr": ""	}, {		"name": "Vlore",		"abbr": ""	}]}, {	"name": "Algeria",	"abbr": "DZ",	"states": [{		"name": "Enter Below",		"abbr": ""	}]}, {	"name": "American Samoa",	"abbr": "AS",	"states": [{		"name": "Eastern District",		"abbr": ""	}, {		"name": "Western District",		"abbr": ""	}, {		"name": "Manu'a District",		"abbr": ""	}]}, {	"name": "Andorra",	"abbr": "AD",	"states": [{		"name": "Andorra la Vella",		"abbr": ""	}, {		"name": "Canillo",		"abbr": ""	}, {		"name": "Encamp",		"abbr": ""	}, {		"name": "Escaldes-Engordany",		"abbr": ""	}, {		"name": "La Massana",		"abbr": ""	}, {		"name": "Ordino",		"abbr": ""	}, {		"name": "Sant Julia de Loria",		"abbr": ""	}]}, {	"name": "Angola",	"abbr": "AO",	"states": [{		"name": "Bengo",		"abbr": ""	}, {		"name": "Benguela",		"abbr": ""	}, {		"name": "Bie",		"abbr": ""	}, {		"name": "Cabinda",		"abbr": ""	}, {		"name": "Cuando Cubango",		"abbr": ""	}, {		"name": "Cuanza Norte",		"abbr": ""	}, {		"name": "Cuanza Sul",		"abbr": ""	}, {		"name": "Cunene",		"abbr": ""	}, {		"name": "Huambo",		"abbr": ""	}, {		"name": "Huila",		"abbr": ""	}, {		"name": "Luanda",		"abbr": ""	}, {		"name": "Lunda Norte",		"abbr": ""	}, {		"name": "Lunda Sul",		"abbr": ""	}, {		"name": "Malanje",		"abbr": ""	}, {		"name": "Moxico",		"abbr": ""	}, {		"name": "Namibe",		"abbr": ""	}, {		"name": "Uige",		"abbr": ""	}, {		"name": "Zaire",		"abbr": ""	}]}, {	"name": "Anguilla",	"abbr": "AI",	"states": [{		"name": "Blowing Point",		"abbr": ""	}, {		"name": "East End",		"abbr": ""	}, {		"name": "George Hill",		"abbr": ""	}, {		"name": "Island Harbour",		"abbr": ""	}, {		"name": "North Hill",		"abbr": ""	}, {		"name": "North Side",		"abbr": ""	}, {		"name": "Sandy Ground",		"abbr": ""	}, {		"name": "Sandy Hill",		"abbr": ""	}, {		"name": "South Hill",		"abbr": ""	}, {		"name": "Stoney Ground",		"abbr": ""	}, {		"name": "The Farrington",		"abbr": ""	}, {		"name": "The Quarter (incl. Rey Hill)",		"abbr": ""	}, {		"name": "The Valley (incl. Upper & South Valley)",		"abbr": ""	}, {		"name": "West End (incl. Long Bay)",		"abbr": ""	}]}, {	"name": "Antarctica",	"abbr": "AQ",	"states": [{		"name": "Antarctica",		"abbr": ""	}]}, {	"name": "Antigua and Barbuda",	"abbr": "AG",	"states": [{		"name": "Saint George",		"abbr": ""	}, {		"name": "Saint John",		"abbr": ""	}, {		"name": "Saint Mary",		"abbr": ""	}, {		"name": "Saint Paul",		"abbr": ""	}, {		"name": "Saint Peter",		"abbr": ""	}, {		"name": "Saint Philip",		"abbr": ""	}, {		"name": "Barbuda",		"abbr": ""	}]}, {	"name": "Argentina",	"abbr": "AR",	"states": [{		"name": "Buenos Aires",		"abbr": ""	}, {		"name": "Catamarca",		"abbr": ""	}, {		"name": "Chaco",		"abbr": ""	}, {		"name": "Chubut",		"abbr": ""	}, {		"name": "Ciudad Autnoma de Buenos Aires",		"abbr": ""	}, {		"name": "Crdoba",		"abbr": ""	}, {		"name": "Corrientes",		"abbr": ""	}, {		"name": "Entre Ros",		"abbr": ""	}, {		"name": "Formosa",		"abbr": ""	}, {		"name": "Jujuy",		"abbr": ""	}, {		"name": "La Pampa",		"abbr": ""	}, {		"name": "La Rioja",		"abbr": ""	}, {		"name": "Mendoza",		"abbr": ""	}, {		"name": "Misiones",		"abbr": ""	}, {		"name": "Neuqun",		"abbr": ""	}, {		"name": "Salta",		"abbr": ""	}, {		"name": "San Juan",		"abbr": ""	}, {		"name": "San Luis",		"abbr": ""	}, {		"name": "Santa Cruz",		"abbr": ""	}, {		"name": "Santa Fe",		"abbr": ""	}, {		"name": "Santiago del Estero",		"abbr": ""	}, {		"name": "Terra do Fogo Ushuaia",		"abbr": ""	}, {		"name": "Tucumn",		"abbr": ""	}]}, {	"name": "Armenia",	"abbr": "AM",	"states": [{		"name": "Aragatsotn Province",		"abbr": ""	}, {		"name": "Ararat Province",		"abbr": ""	}, {		"name": "Armavir Province",		"abbr": ""	}, {		"name": "Gegharkunik Province",		"abbr": ""	}, {		"name": "Kotayk Province",		"abbr": ""	}, {		"name": "Lori Province",		"abbr": ""	}, {		"name": "Shirak Province",		"abbr": ""	}, {		"name": "Syunik Province",		"abbr": ""	}, {		"name": "Tavush Province",		"abbr": ""	}, {		"name": "Vayots Dzor Province",		"abbr": ""	}, {		"name": "Yerevan",		"abbr": ""	}]}, {	"name": "Aruba",	"abbr": "AW",	"states": [{		"name": "Noord / Tanki Leendert",		"abbr": ""	}, {		"name": "Oranjestad West",		"abbr": ""	}, {		"name": "Oranjestad Oost",		"abbr": ""	}, {		"name": "Paradera",		"abbr": ""	}, {		"name": "San Nicolas Noord",		"abbr": ""	}, {		"name": "San Nicolas Zuid",		"abbr": ""	}, {		"name": "Santa Cruz",		"abbr": ""	}, {		"name": "Savaneta",		"abbr": ""	}]}, {	"name": "Australia",	"abbr": "AU",	"states": [{		"name": "South Australia",		"abbr": ""	}, {		"name": "Tasmania",		"abbr": ""	}, {		"name": "New South Wales",		"abbr": ""	}, {		"name": "Victoria",		"abbr": ""	}, {		"name": "Western Australia",		"abbr": ""	}, {		"name": "Queensland",		"abbr": ""	}]}, {	"name": "Austria",	"abbr": "AT",	"states": [{		"name": "Vienna (Wien)",		"abbr": ""	}, {		"name": "Lower Austria (Niederosterreich)",		"abbr": ""	}, {		"name": "Upper Austria (Oberosterreich)",		"abbr": ""	}, {		"name": "Styria (Steiermark)",		"abbr": ""	}, {		"name": "Tyrol (Tirol)",		"abbr": ""	}, {		"name": "Carinthia (Karnten)",		"abbr": ""	}, {		"name": "Salzburg",		"abbr": ""	}, {		"name": "Vorarlberg",		"abbr": ""	}, {		"name": "Burgenland",		"abbr": ""	}]}, {	"name": "Azerbaijan",	"abbr": "AZ",	"states": [{		"name": "Enter Below",		"abbr": ""	}]}, {	"name": "Bahamas",	"abbr": "BS",	"states": [{		"name": "Acklins",		"abbr": ""	}, {		"name": "Berry Islands",		"abbr": ""	}, {		"name": "Bimini",		"abbr": ""	}, {		"name": "Black Point",		"abbr": ""	}, {		"name": "Cat Island",		"abbr": ""	}, {		"name": "Central Abaco",		"abbr": ""	}, {		"name": "Central Andos",		"abbr": ""	}, {		"name": "Central Eleuthera",		"abbr": ""	}, {		"name": "Crooked Island",		"abbr": ""	}, {		"name": "East Grand Bahama",		"abbr": ""	}, {		"name": "Exuma",		"abbr": ""	}, {		"name": "Freeport",		"abbr": ""	}, {		"name": "Grand Cay",		"abbr": ""	}, {		"name": "Harbour Island",		"abbr": ""	}, {		"name": "Hope Town",		"abbr": ""	}, {		"name": "Inagua",		"abbr": ""	}, {		"name": "Long Island",		"abbr": ""	}, {		"name": "Mangrove Cay",		"abbr": ""	}, {		"name": "Mayaguana",		"abbr": ""	}, {		"name": "Moore's Island",		"abbr": ""	}, {		"name": "North Abaco",		"abbr": ""	}, {		"name": "North Andros",		"abbr": ""	}, {		"name": "North Eleuthera",		"abbr": ""	}, {		"name": "Ragged Island",		"abbr": ""	}, {		"name": "Rum Cay",		"abbr": ""	}, {		"name": "San Salvador",		"abbr": ""	}, {		"name": "South Abaco",		"abbr": ""	}, {		"name": "South Andros",		"abbr": ""	}, {		"name": "South Eleuthera",		"abbr": ""	}, {		"name": "Spanish Wells",		"abbr": ""	}, {		"name": "West Grand Bahama",		"abbr": ""	}]}, {	"name": "Bahrain",	"abbr": "BH",	"states": [{		"name": "Enter Below",		"abbr": ""	}]}, {	"name": "Bangladesh",	"abbr": "BD",	"states": [{		"name": "Barisal Division",		"abbr": ""	}, {		"name": "Chittagong Division",		"abbr": ""	}, {		"name": "Dhaka Division",		"abbr": ""	}, {		"name": "Khulna Division",		"abbr": ""	}, {		"name": "Mymensingh Division",		"abbr": ""	}, {		"name": "Rajshahi Division",		"abbr": ""	}, {		"name": "Rangpur Division",		"abbr": ""	}, {		"name": "Sylhet Division",		"abbr": ""	}]}, {	"name": "Barbados",	"abbr": "BB",	"states": [{		"name": "Northern District",		"abbr": ""	}, {		"name": "Southern District",		"abbr": ""	}, {		"name": "City of Bridgetown",		"abbr": ""	}]}, {	"name": "Belarus",	"abbr": "BY",	"states": [{		"name": "City of Minsk",		"abbr": ""	}, {		"name": "Brest Region",		"abbr": ""	}, {		"name": "Gomel Region",		"abbr": ""	}, {		"name": "Grodno Region",		"abbr": ""	}, {		"name": "Mogilev Region",		"abbr": ""	}, {		"name": "Minsk Region",		"abbr": ""	}, {		"name": "Vitebsk Region",		"abbr": ""	}]}, {	"name": "Belgium",	"abbr": "BE",	"states": [{		"name": "Antwerp",		"abbr": ""	}, {		"name": "East Flanders",		"abbr": ""	}, {		"name": "Flemish Brabant",		"abbr": ""	}, {		"name": "Hainaut",		"abbr": ""	}, {		"name": "Liege",		"abbr": ""	}, {		"name": "Limburg",		"abbr": ""	}, {		"name": "Luxembourg",		"abbr": ""	}, {		"name": "Namur",		"abbr": ""	}, {		"name": "Walloon Brabant",		"abbr": ""	}, {		"name": "West Flanders",		"abbr": ""	}]}, {	"name": "Belize",	"abbr": "BZ",	"states": [{		"name": "Belize",		"abbr": ""	}, {		"name": "Cayo",		"abbr": ""	}, {		"name": "Corozal",		"abbr": ""	}, {		"name": "Orange Walk",		"abbr": ""	}, {		"name": "Stann Creek",		"abbr": ""	}, {		"name": "Toledo",		"abbr": ""	}]}, {	"name": "Benin",	"abbr": "BJ",	"states": [{		"name": "Alibori",		"abbr": ""	}, {		"name": "Atakora",		"abbr": ""	}, {		"name": "Atlantique",		"abbr": ""	}, {		"name": "Borgou",		"abbr": ""	}, {		"name": "Collines",		"abbr": ""	}, {		"name": "Kouffo",		"abbr": ""	}, {		"name": "Donga",		"abbr": ""	}, {		"name": "Littoral",		"abbr": ""	}, {		"name": "Mono",		"abbr": ""	}, {		"name": "Oueme",		"abbr": ""	}, {		"name": "Plateau",		"abbr": ""	}, {		"name": "Zou",		"abbr": ""	}]}, {	"name": "Bermuda",	"abbr": "BM",	"states": [{		"name": "Devonshire",		"abbr": ""	}, {		"name": "Hamilton",		"abbr": ""	}, {		"name": "Paget",		"abbr": ""	}, {		"name": "Pembroke",		"abbr": ""	}, {		"name": "Saint George",		"abbr": ""	}, {		"name": "Sandys",		"abbr": ""	}, {		"name": "Smith",		"abbr": ""	}, {		"name": "Southhampton",		"abbr": ""	}, {		"name": "Warwick",		"abbr": ""	}]}, {	"name": "Bhutan",	"abbr": "BT",	"states": [{		"name": "Bumthang",		"abbr": ""	}, {		"name": "Daga",		"abbr": ""	}, {		"name": "Kurmaed",		"abbr": ""	}, {		"name": "Kurtoed",		"abbr": ""	}, {		"name": "Paro",		"abbr": ""	}, {		"name": "Punakha",		"abbr": ""	}, {		"name": "Thimphu",		"abbr": ""	}, {		"name": "Trongsa",		"abbr": ""	}, {		"name": "Wangdue Phodrang",		"abbr": ""	}]}, {	"name": "Bolivia",	"abbr": "BO",	"states": [{		"name": "Beni",		"abbr": ""	}, {		"name": "Chuquisaca",		"abbr": ""	}, {		"name": "Cochabamba",		"abbr": ""	}, {		"name": "La Paz",		"abbr": ""	}, {		"name": "Oruro",		"abbr": ""	}, {		"name": "Pando",		"abbr": ""	}, {		"name": "Potos",		"abbr": ""	}, {		"name": "Santa Cruz",		"abbr": ""	}, {		"name": "Tarija",		"abbr": ""	}]}, {	"name": "Bosnia and Herzegovina",	"abbr": "BA",	"states": [{		"name": "Bosanska Krajina",		"abbr": ""	}, {		"name": "Bosanska Posavina (Bosnian Sava river basin)",		"abbr": ""	}, {		"name": "Semberija",		"abbr": ""	}, {		"name": "Podrinje",		"abbr": ""	}, {		"name": "Tropolje",		"abbr": ""	}, {		"name": "West Herzegovina",		"abbr": ""	}, {		"name": "East Herzegovina",		"abbr": ""	}, {		"name": "High Herzegovina",		"abbr": ""	}, {		"name": "Zagorje",		"abbr": ""	}]}, {	"name": "Botswana",	"abbr": "BW",	"states": [{		"name": "Gaborone City",		"abbr": ""	}, {		"name": "Francistown City",		"abbr": ""	}, {		"name": "Lobatse Town",		"abbr": ""	}, {		"name": "Selebi-Phikwe Town",		"abbr": ""	}, {		"name": "Jwaneng Town",		"abbr": ""	}, {		"name": "Orapa Town",		"abbr": ""	}, {		"name": "Sowa Township",		"abbr": ""	}, {		"name": "Southern District",		"abbr": ""	}, {		"name": "South-East District",		"abbr": ""	}, {		"name": "Kweneng District",		"abbr": ""	}, {		"name": "Kgatleng District",		"abbr": ""	}, {		"name": "Central District",		"abbr": ""	}, {		"name": "North-East District",		"abbr": ""	}, {		"name": "North-West District",		"abbr": ""	}, {		"name": "Ghanzi District",		"abbr": ""	}, {		"name": "Kgalagadi District",		"abbr": ""	}]}, {	"name": "Brazil",	"abbr": "BR",	"states": [{		"name": "Acre",		"abbr": "AC"	}, {		"name": "Alagoas",		"abbr": "AL"	}, {		"name": "Amap",		"abbr": "AP"	}, {		"name": "Amazonas",		"abbr": "AM"	}, {		"name": "Bahia",		"abbr": "BA"	}, {		"name": "Cear",		"abbr": "CE"	}, {		"name": "Distrito Federal",		"abbr": "DF"	}, {		"name": "Esprito Santo",		"abbr": "ES"	}, {		"name": "Gois",		"abbr": "GO"	}, {		"name": "Mato Grosso",		"abbr": "MT"	}, {		"name": "Mato Grosso do Sul",		"abbr": "MS"	}, {		"name": "Minas Gerais",		"abbr": "MG"	}, {		"name": "Par",		"abbr": "PA"	}, {		"name": "Paraba",		"abbr": "PB"	}, {		"name": "Paran",		"abbr": "PR"	}, {		"name": "Pernambuco",		"abbr": "PE"	}, {		"name": "Piau",		"abbr": "PI"	}, {		"name": "Rio de Janeiro",		"abbr": "RJ"	}, {		"name": "Rio Grande do Norte",		"abbr": "RN"	}, {		"name": "Rio Grande do Sul",		"abbr": "RS"	}, {		"name": "Rondonia",		"abbr": "RO"	}, {		"name": "Roraima",		"abbr": "RR"	}, {		"name": "Santa Catarina",		"abbr": "SC"	}, {		"name": "Sao Paulo",		"abbr": "SP"	}, {		"name": "Sergipe",		"abbr": "SE"	}, {		"name": "Tocantins",		"abbr": "TO"	}]}, {	"name": "Brunei Darussalam",	"abbr": "BN",	"states": [{		"name": "Belait",		"abbr": ""	}, {		"name": "Brunei-Muara",		"abbr": ""	}, {		"name": "Temburong",		"abbr": ""	}, {		"name": "Tutong",		"abbr": ""	}]}, {	"name": "Bulgaria",	"abbr": "BG",	"states": [{		"name": "Enter Below",		"abbr": ""	}]}, {	"name": "Burkina Faso",	"abbr": "BF",	"states": [{		"name": "Boucle du Mouhoun",		"abbr": ""	}, {		"name": "Cascades",		"abbr": ""	}, {		"name": "Centre",		"abbr": ""	}, {		"name": "Centre-Est",		"abbr": ""	}, {		"name": "Centre-Nord",		"abbr": ""	}, {		"name": "Centre-Ouest",		"abbr": ""	}, {		"name": "Centre-Sud",		"abbr": ""	}, {		"name": "Est",		"abbr": ""	}, {		"name": "Hauts-Bassins",		"abbr": ""	}, {		"name": "Nord",		"abbr": ""	}, {		"name": "Plateau-Central",		"abbr": ""	}, {		"name": "Sahel",		"abbr": ""	}, {		"name": "Sud-Ouest",		"abbr": ""	}]}, {	"name": "Burundi",	"abbr": "BI",	"states": [{		"name": "Bubanza",		"abbr": ""	}, {		"name": "Bujumbura Mairie",		"abbr": ""	}, {		"name": "Bujumbura Rural",		"abbr": ""	}, {		"name": "Bururi",		"abbr": ""	}, {		"name": "Cankuzo",		"abbr": ""	}, {		"name": "Cibitoke",		"abbr": ""	}, {		"name": "Gitega",		"abbr": ""	}, {		"name": "Karuzi",		"abbr": ""	}, {		"name": "Kayanza",		"abbr": ""	}, {		"name": "Kirundo",		"abbr": ""	}, {		"name": "Makamba",		"abbr": ""	}, {		"name": "Muramvya",		"abbr": ""	}, {		"name": "Muyinga",		"abbr": ""	}, {		"name": "Mwaro",		"abbr": ""	}, {		"name": "Ngozi",		"abbr": ""	}, {		"name": "Rumonge",		"abbr": ""	}, {		"name": "Rutana",		"abbr": ""	}, {		"name": "Ruyigi",		"abbr": ""	}]}, {	"name": "Cambodia",	"abbr": "KH",	"states": [{		"name": "Enter Below",		"abbr": ""	}]}, {	"name": "Cameroon",	"abbr": "CM",	"states": [{		"name": "Adamawa",		"abbr": ""	}, {		"name": "Centre",		"abbr": ""	}, {		"name": "East",		"abbr": ""	}, {		"name": "Far North",		"abbr": ""	}, {		"name": "Littoral",		"abbr": ""	}, {		"name": "North",		"abbr": ""	}, {		"name": "Northwest",		"abbr": ""	}, {		"name": "South",		"abbr": ""	}, {		"name": "Southwest",		"abbr": ""	}, {		"name": "West",		"abbr": ""	}]}, {	"name": "Cape Verde",	"abbr": "CV",	"states": [{		"name": "Enter Below",		"abbr": ""	}]}, {	"name": "Cayman Islands",	"abbr": "KY",	"states": [{		"name": "Bodden Town",		"abbr": ""	}, {		"name": "East End",		"abbr": ""	}, {		"name": "George Town",		"abbr": ""	}, {		"name": "North Side",		"abbr": ""	}, {		"name": "West Bay",		"abbr": ""	}]}, {	"name": "Central African Republic",	"abbr": "CF",	"states": [{		"name": "Bangui (AC)",		"abbr": ""	}, {		"name": "Mbomou",		"abbr": ""	}, {		"name": "Basse-Kotto",		"abbr": ""	}, {		"name": "Kemo",		"abbr": ""	}, {		"name": "Nana-Mambere",		"abbr": ""	}, {		"name": "Ouham",		"abbr": ""	}, {		"name": "Sangha-Mbaere",		"abbr": ""	}, {		"name": "Lobaye",		"abbr": ""	}, {		"name": "Ombella-M'Poko",		"abbr": ""	}, {		"name": "Ouham-Pende",		"abbr": ""	}, {		"name": "Haut-Mbomou",		"abbr": ""	}, {		"name": "Ouaka",		"abbr": ""	}, {		"name": "Haute-Kotto",		"abbr": ""	}, {		"name": "Bamingui-Bangoran",		"abbr": ""	}, {		"name": "Vakaga",		"abbr": ""	}, {		"name": "Nana-Grebizi",		"abbr": ""	}, {		"name": "Mambere-Kadei",		"abbr": ""	}]}, {	"name": "Chad",	"abbr": "TD",	"states": [{		"name": "Batha",		"abbr": ""	}, {		"name": "Biltine",		"abbr": ""	}, {		"name": "Borkou-Ennedi-Tibesti",		"abbr": ""	}, {		"name": "Chari-Baguirmi",		"abbr": ""	}, {		"name": "Guera",		"abbr": ""	}, {		"name": "Kanem",		"abbr": ""	}, {		"name": "Lac",		"abbr": ""	}, {		"name": "Logone Occidental",		"abbr": ""	}, {		"name": "Logone Oriental",		"abbr": ""	}, {		"name": "Mayo-Kebbi",		"abbr": ""	}, {		"name": "Moyen-Chari",		"abbr": ""	}, {		"name": "Ouaddai",		"abbr": ""	}, {		"name": "Salamat",		"abbr": ""	}, {		"name": "Tandjile",		"abbr": ""	}]}, {	"name": "Chile",	"abbr": "CL",	"states": [{		"name": "Aisen",		"abbr": ""	}, {		"name": "Antofagasta",		"abbr": ""	}, {		"name": "Araucania",		"abbr": ""	}, {		"name": "Arica and Parinacota",		"abbr": ""	}, {		"name": "Atacama",		"abbr": ""	}, {		"name": "Bio Bio",		"abbr": ""	}, {		"name": "Coquimbo",		"abbr": ""	}, {		"name": "Los Lagos",		"abbr": ""	}, {		"name": "Los Rios",		"abbr": ""	}, {		"name": "Magallanes",		"abbr": ""	}, {		"name": "Maule",		"abbr": ""	}, {		"name": "O'Higgins",		"abbr": ""	}, {		"name": "Santiago",		"abbr": ""	}, {		"name": "Tarapaca",		"abbr": ""	}, {		"name": "Valparaiso",		"abbr": ""	}]}, {	"name": "China",	"abbr": "CN",	"states": [{		"name": "Anhui Province",		"abbr": ""	}, {		"name": "Beijing Municipality",		"abbr": ""	}, {		"name": "Chongqing Municipality",		"abbr": ""	}, {		"name": "Fujian Province",		"abbr": ""	}, {		"name": "Gansu Province",		"abbr": ""	}, {		"name": "Guangdong Province",		"abbr": ""	}, {		"name": "Guangxi Zhuang Autonomous Region",		"abbr": ""	}, {		"name": "Guizhou Province",		"abbr": ""	}, {		"name": "Hainan Province",		"abbr": ""	}, {		"name": "Hebei Province",		"abbr": ""	}, {		"name": "Heilongjiang Province",		"abbr": ""	}, {		"name": "Henan Province",		"abbr": ""	}, {		"name": "Hong Kong Special Administrative Region",		"abbr": ""	}, {		"name": "Hubei Province",		"abbr": ""	}, {		"name": "Hunan Province",		"abbr": ""	}, {		"name": "Inner Mongolia Autonomous Region",		"abbr": ""	}, {		"name": "Jiangsu Province",		"abbr": ""	}, {		"name": "Jiangxi Province",		"abbr": ""	}, {		"name": "Jilin Province",		"abbr": ""	}, {		"name": "Liaoning Province",		"abbr": ""	}, {		"name": "Macau Special Administrative Region",		"abbr": ""	}, {		"name": "Ningxia Hui Autonomous Region",		"abbr": ""	}, {		"name": "Qinghai Province",		"abbr": ""	}, {		"name": "Shaanxi Province",		"abbr": ""	}, {		"name": "Shandong Province",		"abbr": ""	}, {		"name": "Shanghai Municipality",		"abbr": ""	}, {		"name": "Shanxi Province",		"abbr": ""	}, {		"name": "Sichuan Province",		"abbr": ""	}, {		"name": "Tianjin Municipality",		"abbr": ""	}, {		"name": "Tibet Autonomous Region",		"abbr": ""	}, {		"name": "Xinjiang Uyghur Autonomous Region",		"abbr": ""	}, {		"name": "Yunnan Province",		"abbr": ""	}, {		"name": "Zhejiang Province",		"abbr": ""	}]}, {	"name": "Christmas Island",	"abbr": "CX",	"states": [{		"name": "Christmas Island",		"abbr": ""	}]}, {	"name": "Cocos (Keeling) Islands",	"abbr": "CC",	"states": [{		"name": "Cocos (Keeling) Islands",		"abbr": ""	}]}, {	"name": "Colombia",	"abbr": "CO",	"states": [{		"name": "Amazonas",		"abbr": ""	}, {		"name": "Antioquia",		"abbr": ""	}, {		"name": "Arauca",		"abbr": ""	}, {		"name": "Atlntico",		"abbr": ""	}, {		"name": "Bolvar",		"abbr": ""	}, {		"name": "Boyac",		"abbr": ""	}, {		"name": "Caldas",		"abbr": ""	}, {		"name": "Caquet",		"abbr": ""	}, {		"name": "Casanare",		"abbr": ""	}, {		"name": "Cauca",		"abbr": ""	}, {		"name": "Cesar",		"abbr": ""	}, {		"name": "Choc",		"abbr": ""	}, {		"name": "Crdoba",		"abbr": ""	}, {		"name": "Cundinamarca",		"abbr": ""	}, {		"name": "Ditrito Capital",		"abbr": ""	}, {		"name": "Guaina",		"abbr": ""	}, {		"name": "Guaviare",		"abbr": ""	}, {		"name": "Huila",		"abbr": ""	}, {		"name": "La Guajira",		"abbr": ""	}, {		"name": "Magdalena",		"abbr": ""	}, {		"name": "Meta",		"abbr": ""	}, {		"name": "Nario",		"abbr": ""	}, {		"name": "Norte de Santander",		"abbr": ""	}, {		"name": "Putumayo",		"abbr": ""	}, {		"name": "Quindo",		"abbr": ""	}, {		"name": "Risaralda",		"abbr": ""	}, {		"name": "San Andrs",		"abbr": ""	}, {		"name": "Santander",		"abbr": ""	}, {		"name": "Sucre",		"abbr": ""	}, {		"name": "Tolima",		"abbr": ""	}, {		"name": "Valle del Cauca",		"abbr": ""	}, {		"name": "Vaups",		"abbr": ""	}, {		"name": "Vichada",		"abbr": ""	}]}, {	"name": "Comoros",	"abbr": "KM",	"states": [{		"name": "Comoros",		"abbr": ""	}]}, {	"name": "Congo",	"abbr": "CG",	"states": [{		"name": "Enter Below",		"abbr": ""	}]}, {	"name": "Congo, the DRC",	"abbr": "CD",	"states": [{		"name": "Enter Below",		"abbr": ""	}]}, {	"name": "Cook Islands",	"abbr": "CK",	"states": [{		"name": "Cook Islands",		"abbr": ""	}]}, {	"name": "Costa Rica",	"abbr": "CR",	"states": [{		"name": "Alajuela",		"abbr": ""	}, {		"name": "Cartago",		"abbr": ""	}, {		"name": "Guanacaste",		"abbr": ""	}, {		"name": "Heredia",		"abbr": ""	}, {		"name": "Limon",		"abbr": ""	}, {		"name": "Puntarenas",		"abbr": ""	}, {		"name": "San Jose",		"abbr": ""	}]}, {	"name": "Cote D'Ivoire",	"abbr": "CI",	"states": [{		"name": "Abidjan",		"abbr": ""	}, {		"name": "Bas-Sassandra",		"abbr": ""	}, {		"name": "Comoe",		"abbr": ""	}, {		"name": "Denguele",		"abbr": ""	}, {		"name": "Goh-Djiboua",		"abbr": ""	}, {		"name": "Lacs",		"abbr": ""	}, {		"name": "Lagunes",		"abbr": ""	}, {		"name": "Montagnes",		"abbr": ""	}, {		"name": "Sassandra-Marahoue",		"abbr": ""	}, {		"name": "Savanes",		"abbr": ""	}, {		"name": "Vallee du Bandama",		"abbr": ""	}, {		"name": "Woroba",		"abbr": ""	}, {		"name": "Yamoussoukro",		"abbr": ""	}, {		"name": "Zanzan",		"abbr": ""	}]}, {	"name": "Croatia",	"abbr": "HR",	"states": [{		"name": "Bjelovar-Bilogora",		"abbr": ""	}, {		"name": "Brod-Posavina",		"abbr": ""	}, {		"name": "Dubrovnik-Neretva",		"abbr": ""	}, {		"name": "Istria",		"abbr": ""	}, {		"name": "Karlovac",		"abbr": ""	}, {		"name": "Koprivnica-Krizevci",		"abbr": ""	}, {		"name": "Krapina-Zagorje",		"abbr": ""	}, {		"name": "Lika-Senj",		"abbr": ""	}, {		"name": "MeÄ‘imurje",		"abbr": ""	}, {		"name": "Osijek-Baranja",		"abbr": ""	}, {		"name": "Pozega-Slavonia",		"abbr": ""	}, {		"name": "Primorje-Gorski Kotar",		"abbr": ""	}, {		"name": "Sibenik-Knin",		"abbr": ""	}, {		"name": "Sisak-Moslavina",		"abbr": ""	}, {		"name": "Split-Dalmatia",		"abbr": ""	}, {		"name": "Varazdin",		"abbr": ""	}, {		"name": "Virovitica-Podravina",		"abbr": ""	}, {		"name": "Vukovar-Syrmia",		"abbr": ""	}, {		"name": "Zadar",		"abbr": ""	}, {		"name": "Zagreb",		"abbr": ""	}, {		"name": "City of Zagreb",		"abbr": ""	}]}, {	"name": "Cuba",	"abbr": "CU",	"states": [{		"name": "Pinar del Rio",		"abbr": ""	}, {		"name": "Artemisa",		"abbr": ""	}, {		"name": "Havana",		"abbr": ""	}, {		"name": "Mayabeque",		"abbr": ""	}, {		"name": "Matanzas",		"abbr": ""	}, {		"name": "Cienfuegos",		"abbr": ""	}, {		"name": "Villa Clara",		"abbr": ""	}, {		"name": "Sancti Spiritus",		"abbr": ""	}, {		"name": "Ciego de Avila",		"abbr": ""	}, {		"name": "Camaguey",		"abbr": ""	}, {		"name": "Las Tunas",		"abbr": ""	}, {		"name": "Granma",		"abbr": ""	}, {		"name": "Holguin",		"abbr": ""	}, {		"name": "Santiago de Cuba",		"abbr": ""	}, {		"name": "Guantanamo",		"abbr": ""	}, {		"name": "Isla de la Juventud",		"abbr": ""	}]}, {	"name": "Cyprus",	"abbr": "CY",	"states": [{		"name": "Famagusta",		"abbr": ""	}, {		"name": "Kyrenia",		"abbr": ""	}, {		"name": "Larnaca",		"abbr": ""	}, {		"name": "Limassol",		"abbr": ""	}, {		"name": "Nicosia",		"abbr": ""	}, {		"name": "Paphos",		"abbr": ""	}]}, {	"name": "Czech Republic",	"abbr": "CZ",	"states": [{		"name": "Prague",		"abbr": ""	}, {		"name": "Central Bohemia",		"abbr": ""	}, {		"name": "South Bohemia",		"abbr": ""	}, {		"name": "Plzen",		"abbr": ""	}, {		"name": "Karlovy Vary",		"abbr": ""	}, {		"name": "Usti nad Labem",		"abbr": ""	}, {		"name": "Liberec",		"abbr": ""	}, {		"name": "Hradec Kralove",		"abbr": ""	}, {		"name": "Pardubice",		"abbr": ""	}, {		"name": "Olomouc",		"abbr": ""	}, {		"name": "Moravia-Silesia",		"abbr": ""	}, {		"name": "South Moravia",		"abbr": ""	}, {		"name": "Zlin",		"abbr": ""	}, {		"name": "Vysocina",		"abbr": ""	}]}, {	"name": "Denmark",	"abbr": "DK",	"states": [{		"name": "Nord-Norge / Nord-Noreg (North Norway)",		"abbr": ""	}, {		"name": "Sorlandet (The South Country)",		"abbr": ""	}, {		"name": "Trondelag",		"abbr": ""	}, {		"name": "Vestlandet (The West Country)",		"abbr": ""	}, {		"name": "Ostlandet / Austlandet (The East Country)",		"abbr": ""	}]}, {	"name": "Djibouti",	"abbr": "DJ",	"states": [{		"name": "Alaili Dadda District",		"abbr": ""	}, {		"name": "Ali Sabieh District",		"abbr": ""	}, {		"name": "As Eyla District",		"abbr": ""	}, {		"name": "Balha District",		"abbr": ""	}, {		"name": "Dikhil District",		"abbr": ""	}, {		"name": "Djibouti District",		"abbr": ""	}, {		"name": "Dorra District",		"abbr": ""	}, {		"name": "Obock District",		"abbr": ""	}, {		"name": "Randa District",		"abbr": ""	}, {		"name": "Tadjourah District",		"abbr": ""	}, {		"name": "Yoboki District",		"abbr": ""	}]}, {	"name": "Dominica",	"abbr": "DM",	"states": [{		"name": "Dominica",		"abbr": ""	}]}, {	"name": "Dominican Republic",	"abbr": "DO",	"states": [{		"name": "Azua",		"abbr": ""	}, {		"name": "Baoruco",		"abbr": ""	}, {		"name": "Barahona",		"abbr": ""	}, {		"name": "Dajabon",		"abbr": ""	}, {		"name": "Distrito Nacional",		"abbr": ""	}, {		"name": "Duarte",		"abbr": ""	}, {		"name": "El Seibo",		"abbr": ""	}, {		"name": "Elias Pina",		"abbr": ""	}, {		"name": "Espaillat",		"abbr": ""	}, {		"name": "Hato Mayor",		"abbr": ""	}, {		"name": "Hermanas Mirabal",		"abbr": ""	}, {		"name": "Independencia",		"abbr": ""	}, {		"name": "La Altagracia",		"abbr": ""	}, {		"name": "La Romana",		"abbr": ""	}, {		"name": "La Vega",		"abbr": ""	}, {		"name": "Maria Trinidad Sanchez",		"abbr": ""	}, {		"name": "Monsenor Nouel",		"abbr": ""	}, {		"name": "Monte Cristi",		"abbr": ""	}, {		"name": "Monte Plata",		"abbr": ""	}, {		"name": "Pedernales",		"abbr": ""	}, {		"name": "Peravia",		"abbr": ""	}, {		"name": "Puerto Plata",		"abbr": ""	}, {		"name": "Samana",		"abbr": ""	}, {		"name": "San Cristobal",		"abbr": ""	}, {		"name": "San Jose de Ocoa",		"abbr": ""	}, {		"name": "San Juan",		"abbr": ""	}, {		"name": "San Pedro de Macoris",		"abbr": ""	}, {		"name": "Sanchez Ramirez",		"abbr": ""	}, {		"name": "Santiago",		"abbr": ""	}, {		"name": "Santiago Rodriguez",		"abbr": ""	}, {		"name": "Santo Domingo",		"abbr": ""	}, {		"name": "Valverde",		"abbr": ""	}]}, {	"name": "Ecuador",	"abbr": "EC",	"states": [{		"name": "Azuay",		"abbr": ""	}, {		"name": "Bolvar",		"abbr": ""	}, {		"name": "Caar",		"abbr": ""	}, {		"name": "Carchi",		"abbr": ""	}, {		"name": "Chimborazo",		"abbr": ""	}, {		"name": "Cotopaxi",		"abbr": ""	}, {		"name": "El Oro",		"abbr": ""	}, {		"name": "Esmeraldas",		"abbr": ""	}, {		"name": "Galpagos",		"abbr": ""	}, {		"name": "Guayas",		"abbr": ""	}, {		"name": "Imbambura",		"abbr": ""	}, {		"name": "Loja",		"abbr": ""	}, {		"name": "Los Ros",		"abbr": ""	}, {		"name": "Manab",		"abbr": ""	}, {		"name": "Morona-Santiago",		"abbr": ""	}, {		"name": "Napo",		"abbr": ""	}, {		"name": "Orellana",		"abbr": ""	}, {		"name": "Pastaza",		"abbr": ""	}, {		"name": "Pichincha",		"abbr": ""	}, {		"name": "Santa Elena",		"abbr": ""	}, {		"name": "Santo Domingo de los Tschilas",		"abbr": ""	}, {		"name": "Sucumbos",		"abbr": ""	}, {		"name": "Tungurahua",		"abbr": ""	}, {		"name": "Zamora-Chinchipe",		"abbr": ""	}]}, {	"name": "Egypt",	"abbr": "EG",	"states": [{		"name": "Enter Below",		"abbr": ""	}]}, {	"name": "El Salvador",	"abbr": "SV",	"states": [{		"name": "Ahuachapn",		"abbr": ""	}, {		"name": "Cabaas",		"abbr": ""	}, {		"name": "Chalatenango",		"abbr": ""	}, {		"name": "Cuscatln",		"abbr": ""	}, {		"name": "La Libertad",		"abbr": ""	}, {		"name": "La Paz",		"abbr": ""	}, {		"name": "La Unin",		"abbr": ""	}, {		"name": "Morazn",		"abbr": ""	}, {		"name": "San Miguel",		"abbr": ""	}, {		"name": "San Salvador",		"abbr": ""	}, {		"name": "San Vicente",		"abbr": ""	}, {		"name": "Santa Ana",		"abbr": ""	}, {		"name": "Sonsonate",		"abbr": ""	}, {		"name": "Usulutn",		"abbr": ""	}]}, {	"name": "Equatorial Guinea",	"abbr": "GQ",	"states": [{		"name": "Annobon Province",		"abbr": ""	}, {		"name": "Bioko Norte Province",		"abbr": ""	}, {		"name": "Bioko Sur Province",		"abbr": ""	}, {		"name": "Centro Sur Province",		"abbr": ""	}, {		"name": "Kie-Ntem Province",		"abbr": ""	}, {		"name": "Litoral Province",		"abbr": ""	}, {		"name": "Wele-Nzas Province",		"abbr": ""	}]}, {	"name": "Eritrea",	"abbr": "ER",	"states": [{		"name": "Akele Guzay",		"abbr": ""	}, {		"name": "Barka",		"abbr": ""	}, {		"name": "Denkalia",		"abbr": ""	}, {		"name": "Hamasien",		"abbr": ""	}, {		"name": "Sahel",		"abbr": ""	}, {		"name": "Semhar",		"abbr": ""	}, {		"name": "Senhit",		"abbr": ""	}, {		"name": "Seraye",		"abbr": ""	}]}, {	"name": "Estonia",	"abbr": "EE",	"states": [{		"name": "Harju County",		"abbr": ""	}, {		"name": "Hiiu County",		"abbr": ""	}, {		"name": "Ida-Viru County",		"abbr": ""	}, {		"name": "Jogeva County",		"abbr": ""	}, {		"name": "Jarva County",		"abbr": ""	}, {		"name": "Laane County",		"abbr": ""	}, {		"name": "Laane-Viru County",		"abbr": ""	}, {		"name": "Polva County",		"abbr": ""	}, {		"name": "Parnu County",		"abbr": ""	}, {		"name": "Rapla County",		"abbr": ""	}, {		"name": "Saare County",		"abbr": ""	}, {		"name": "Tartu County",		"abbr": ""	}, {		"name": "Valga County",		"abbr": ""	}, {		"name": "Viljandi County",		"abbr": ""	}, {		"name": "Voru County",		"abbr": ""	}]}, {	"name": "Ethiopia",	"abbr": "ET",	"states": [{		"name": "Addis Ababa (city)",		"abbr": ""	}, {		"name": "Afar Region",		"abbr": ""	}, {		"name": "Amhara Region",		"abbr": ""	}, {		"name": "Benishangul-Gumuz Region",		"abbr": ""	}, {		"name": "Dire Dawa (city)",		"abbr": ""	}, {		"name": "Gambela Region",		"abbr": ""	}, {		"name": "Harari Region",		"abbr": ""	}, {		"name": "Oromia Region",		"abbr": ""	}, {		"name": "Somali Region",		"abbr": ""	}, {		"name": "Southern Nations, Nationalities, and Peoples Region",		"abbr": ""	}, {		"name": "Tigray Region",		"abbr": ""	}]}, {	"name": "Falkland Islands",	"abbr": "FK",	"states": [{		"name": "Falkland Islands",		"abbr": ""	}]}, {	"name": "Faroe Islands",	"abbr": "FO",	"states": [{		"name": "Eysturoy",		"abbr": ""	}, {		"name": "Norooyar",		"abbr": ""	}, {		"name": "Sandoy",		"abbr": ""	}, {		"name": "Streymoy",		"abbr": ""	}, {		"name": "Suouroy",		"abbr": ""	}, {		"name": "Vagar",		"abbr": ""	}]}, {	"name": "Fiji",	"abbr": "FJ",	"states": [{		"name": "Fiji",		"abbr": ""	}]}, {	"name": "Finland",	"abbr": "FI",	"states": [{		"name": "Aland Islands",		"abbr": ""	}, {		"name": "Central Finland",		"abbr": ""	}, {		"name": "Central Ostrobothnia",		"abbr": ""	}, {		"name": "Finland Proper",		"abbr": ""	}, {		"name": "Kainuu",		"abbr": ""	}, {		"name": "Kymenlaakso",		"abbr": ""	}, {		"name": "Lapland",		"abbr": ""	}, {		"name": "North Karelia",		"abbr": ""	}, {		"name": "Northern Ostrobothnia",		"abbr": ""	}, {		"name": "Northern Savonia",		"abbr": ""	}, {		"name": "Ostrobothnia",		"abbr": ""	}, {		"name": "PÃ¤ijanne Tavastia",		"abbr": ""	}, {		"name": "Pirkanmaa",		"abbr": ""	}, {		"name": "Satakunta",		"abbr": ""	}, {		"name": "South Karelia",		"abbr": ""	}, {		"name": "Southern Ostrobothnia",		"abbr": ""	}, {		"name": "Southern Savonia",		"abbr": ""	}, {		"name": "Tavastia Proper",		"abbr": ""	}, {		"name": "Uusimaa",		"abbr": ""	}]}, {	"name": "France",	"abbr": "FR",	"states": [{		"name": "Arpitan: Overgne-Rono-Arpes",		"abbr": ""	}, {		"name": "Auvergne-Rhone-Alpes",		"abbr": ""	}, {		"name": "Basque: Akitania Berria",		"abbr": ""	}, {		"name": "Bordeaux",		"abbr": ""	}, {		"name": "Brittany",		"abbr": ""	}, {		"name": "Burgundy-Franche-Comte",		"abbr": ""	}, {		"name": "Catalan: Occitania",		"abbr": ""	}, {		"name": "Centre-Val de Loire",		"abbr": ""	}, {		"name": "Corsica",		"abbr": ""	}, {		"name": "Gallo: Bertaeyn",		"abbr": ""	}, {		"name": "Grand-Est",		"abbr": ""	}, {		"name": "Hauts-de-France",		"abbr": ""	}, {		"name": "Ile-de-France",		"abbr": ""	}, {		"name": "New Aquitaine",		"abbr": ""	}, {		"name": "Normandy",		"abbr": ""	}, {		"name": "Occitania",		"abbr": ""	}, {		"name": "Pays de la Loire",		"abbr": ""	}, {		"name": "Provence-Alpes-Cote d'Azur (PACA)",		"abbr": ""	}]}, {	"name": "French Guiana",	"abbr": "GF",	"states": [{		"name": "Arrondissement of Cayenne",		"abbr": ""	}, {		"name": "Arrondissement of Saint-Laurent-du-Maroni",		"abbr": ""	}]}, {	"name": "French Polynesia",	"abbr": "PF",	"states": [{		"name": "French Polynesia",		"abbr": ""	}]}, {	"name": "Gabon",	"abbr": "GA",	"states": [{		"name": "Estuaire",		"abbr": ""	}, {		"name": "Haut-Ogooue",		"abbr": ""	}, {		"name": "Moyen-Ogooue",		"abbr": ""	}, {		"name": "Ngounie",		"abbr": ""	}, {		"name": "Nyanga",		"abbr": ""	}, {		"name": "Ogooue-Ivindo",		"abbr": ""	}, {		"name": "Ogooue-Lolo",		"abbr": ""	}, {		"name": "Ogooue-Maritime",		"abbr": ""	}, {		"name": "Woleu-Ntem",		"abbr": ""	}]}, {	"name": "Gambia",	"abbr": "GM",	"states": [{		"name": "Eastern Gambia",		"abbr": ""	}, {		"name": "Western Gambia",		"abbr": ""	}]}, {	"name": "Georgia",	"abbr": "GE",	"states": [{		"name": "Abkhazia",		"abbr": ""	}, {		"name": "Adjara",		"abbr": ""	}, {		"name": "Guria",		"abbr": ""	}, {		"name": "Imereti",		"abbr": ""	}, {		"name": "Kakheti",		"abbr": ""	}, {		"name": "Kvemo Kartli",		"abbr": ""	}, {		"name": "Mtskheta-Mtianeti",		"abbr": ""	}, {		"name": "Racha-Lechkhumi and Kvemo Svaneti",		"abbr": ""	}, {		"name": "Samegrelo-Zemo Svaneti",		"abbr": ""	}, {		"name": "Samtskhe-Javakheti",		"abbr": ""	}, {		"name": "Shida Kartli",		"abbr": ""	}, {		"name": "Tbilisi",		"abbr": ""	}]}, {	"name": "Germany",	"abbr": "DE",	"states": [{		"name": "Baden-Wurttemberg",		"abbr": ""	}, {		"name": "Bavaria",		"abbr": ""	}, {		"name": "Berlin",		"abbr": ""	}, {		"name": "Brandenburg",		"abbr": ""	}, {		"name": "Bremen",		"abbr": ""	}, {		"name": "Hamburg",		"abbr": ""	}, {		"name": "Hesse",		"abbr": ""	}, {		"name": "Lower Saxony",		"abbr": ""	}, {		"name": "Mecklenburg-West Pomerania",		"abbr": ""	}, {		"name": "North Rhine-Westphalia",		"abbr": ""	}, {		"name": "Rhineland-Palatinate",		"abbr": ""	}, {		"name": "Saarland",		"abbr": ""	}, {		"name": "Saxony",		"abbr": ""	}, {		"name": "Saxony-Anhalt",		"abbr": ""	}, {		"name": "Schleswig-Holstein",		"abbr": ""	}, {		"name": "Thuringia",		"abbr": ""	}]}, {	"name": "Ghana",	"abbr": "GH",	"states": [{		"name": "Ashanti",		"abbr": ""	}, {		"name": "Brong-Ahafo",		"abbr": ""	}, {		"name": "Greater Accra",		"abbr": ""	}, {		"name": "Central",		"abbr": ""	}, {		"name": "Eastern",		"abbr": ""	}, {		"name": "Northern",		"abbr": ""	}, {		"name": "Western",		"abbr": ""	}, {		"name": "Upper East",		"abbr": ""	}, {		"name": "Upper West",		"abbr": ""	}, {		"name": "Volta",		"abbr": ""	}]}, {	"name": "Gibraltar",	"abbr": "GI",	"states": [{		"name": "Gibraltar",		"abbr": ""	}]}, {	"name": "Greece",	"abbr": "GR",	"states": [{		"name": "Attica",		"abbr": ""	}, {		"name": "Central Greece",		"abbr": ""	}, {		"name": "Central Macedonia",		"abbr": ""	}, {		"name": "Crete",		"abbr": ""	}, {		"name": "Eastern Macedonia and Thrace",		"abbr": ""	}, {		"name": "Epirus",		"abbr": ""	}, {		"name": "Ionian Islands",		"abbr": ""	}, {		"name": "North Aegean",		"abbr": ""	}, {		"name": "Peloponnese",		"abbr": ""	}, {		"name": "South Aegean",		"abbr": ""	}, {		"name": "Thessaly",		"abbr": ""	}, {		"name": "Western Greece",		"abbr": ""	}, {		"name": "Western Macedonia",		"abbr": ""	}]}, {	"name": "Greenland",	"abbr": "GL",	"states": [{		"name": "Greenland",		"abbr": ""	}]}, {	"name": "Grenada",	"abbr": "GD",	"states": [{		"name": "Carriacou",		"abbr": ""	}, {		"name": "Petite Martinique",		"abbr": ""	}, {		"name": "Saint Andrew",		"abbr": ""	}, {		"name": "Saint David",		"abbr": ""	}, {		"name": "Saint George",		"abbr": ""	}, {		"name": "Saint John",		"abbr": ""	}, {		"name": "Saint Mark",		"abbr": ""	}, {		"name": "Saint Patrick",		"abbr": ""	}]}, {	"name": "Guadeloupe",	"abbr": "GP",	"states": [{		"name": "Guadeloupe",		"abbr": ""	}]}, {	"name": "Guam",	"abbr": "GU",	"states": [{		"name": "Guam",		"abbr": ""	}]}, {	"name": "Guatemala",	"abbr": "GT",	"states": [{		"name": "Alta Verapaz",		"abbr": ""	}, {		"name": "Baja Verapaz",		"abbr": ""	}, {		"name": "Chimaltenango",		"abbr": ""	}, {		"name": "Chiquimula",		"abbr": ""	}, {		"name": "Ciudad Guatemala",		"abbr": ""	}, {		"name": "El Progreso",		"abbr": ""	}, {		"name": "El Quich",		"abbr": ""	}, {		"name": "Escuintla",		"abbr": ""	}, {		"name": "Huehuetenango",		"abbr": ""	}, {		"name": "Izabal",		"abbr": ""	}, {		"name": "Jalapa",		"abbr": ""	}, {		"name": "Jutiapa",		"abbr": ""	}, {		"name": "Petn",		"abbr": ""	}, {		"name": "Quetzaltenango",		"abbr": ""	}, {		"name": "Retalhuleu",		"abbr": ""	}, {		"name": "Sacatepequez",		"abbr": ""	}, {		"name": "San Marcos",		"abbr": ""	}, {		"name": "Santa Rosa",		"abbr": ""	}, {		"name": "Solola",		"abbr": ""	}, {		"name": "Suchitepequez",		"abbr": ""	}, {		"name": "Totonicapan",		"abbr": ""	}, {		"name": "Zacapa",		"abbr": ""	}]}, {	"name": "Guinea",	"abbr": "GN",	"states": [{		"name": "Conakry Region",		"abbr": ""	}, {		"name": "Nzerekore Region",		"abbr": ""	}, {		"name": "Kankan Region",		"abbr": ""	}, {		"name": "Kindia Region",		"abbr": ""	}, {		"name": "Boke Region",		"abbr": ""	}, {		"name": "Labe Region",		"abbr": ""	}, {		"name": "Faranah Region",		"abbr": ""	}, {		"name": "Mamou Region",		"abbr": ""	}]}, {	"name": "Guinea-Bissau",	"abbr": "GW",	"states": [{		"name": "Bafata",		"abbr": ""	}, {		"name": "Biombo",		"abbr": ""	}, {		"name": "Bissau",		"abbr": ""	}, {		"name": "Bolama",		"abbr": ""	}, {		"name": "Cacheu",		"abbr": ""	}, {		"name": "Gabu",		"abbr": ""	}, {		"name": "Oio",		"abbr": ""	}, {		"name": "Quinara",		"abbr": ""	}, {		"name": "Tombali",		"abbr": ""	}]}, {	"name": "Guyana",	"abbr": "GY",	"states": [{		"name": "Barima-Waini",		"abbr": ""	}, {		"name": "Pomeroon-Supenaam",		"abbr": ""	}, {		"name": "Essequibo Islands-West Demerara",		"abbr": ""	}, {		"name": "Demerara-Mahaica",		"abbr": ""	}, {		"name": "Mahaica-Berbice",		"abbr": ""	}, {		"name": "East Berbice-Corentyne",		"abbr": ""	}, {		"name": "Cuyuni-Mazaruni",		"abbr": ""	}, {		"name": "Potaro-Siparuni",		"abbr": ""	}, {		"name": "Upper Takutu-Upper Essequibo",		"abbr": ""	}, {		"name": "Upper Demerara-Berbice",		"abbr": ""	}]}, {	"name": "Haiti",	"abbr": "HT",	"states": [{		"name": "Artibonite",		"abbr": ""	}, {		"name": "Centro",		"abbr": ""	}, {		"name": "Depto do Norte",		"abbr": ""	}, {		"name": "Depto do Oeste",		"abbr": ""	}, {		"name": "Depto do Sul",		"abbr": ""	}, {		"name": "Grande Enseada",		"abbr": ""	}, {		"name": "Nippes",		"abbr": ""	}, {		"name": "Nordeste",		"abbr": ""	}, {		"name": "Noroeste",		"abbr": ""	}, {		"name": "Sudeste",		"abbr": ""	}]}, {	"name": "Honduras",	"abbr": "HN",	"states": [{		"name": "Atlntida",		"abbr": ""	}, {		"name": "Choluteca",		"abbr": ""	}, {		"name": "Coln",		"abbr": ""	}, {		"name": "Comayagua",		"abbr": ""	}, {		"name": "Copn",		"abbr": ""	}, {		"name": "Corts",		"abbr": ""	}, {		"name": "El Paraso",		"abbr": ""	}, {		"name": "Francisco Morazn",		"abbr": ""	}, {		"name": "Gracias a Dios",		"abbr": ""	}, {		"name": "Ilhas da Bahia",		"abbr": ""	}, {		"name": "Intibuc",		"abbr": ""	}, {		"name": "La Paz",		"abbr": ""	}, {		"name": "Lempira",		"abbr": ""	}, {		"name": "Ocotepeque",		"abbr": ""	}, {		"name": "Olancho",		"abbr": ""	}, {		"name": "Santa Brbara",		"abbr": ""	}, {		"name": "Valle",		"abbr": ""	}, {		"name": "Yoro",		"abbr": ""	}]}, {	"name": "Hong Kong",	"abbr": "HK",	"states": [{		"name": "Hong Kong",		"abbr": ""	}]}, {	"name": "Hungary",	"abbr": "HU",	"states": [{		"name": "Northern Hungary",		"abbr": ""	}, {		"name": "Northern Great Plain",		"abbr": ""	}, {		"name": "Southern Great Plain",		"abbr": ""	}, {		"name": "Central Hungary",		"abbr": ""	}, {		"name": "Central Transdanubia",		"abbr": ""	}, {		"name": "Western Transdanubia",		"abbr": ""	}, {		"name": "Southern Transdanubia",		"abbr": ""	}]}, {	"name": "Iceland",	"abbr": "IS",	"states": [{		"name": "Capital Region",		"abbr": ""	}, {		"name": "Southern Peninsula",		"abbr": ""	}, {		"name": "Western Region",		"abbr": ""	}, {		"name": "Westfjords",		"abbr": ""	}, {		"name": "Northwestern Region",		"abbr": ""	}, {		"name": "Northeastern Region",		"abbr": ""	}, {		"name": "Eastern Region",		"abbr": ""	}, {		"name": "Southern Region",		"abbr": ""	}]}, {	"name": "India",	"abbr": "IN",	"states": [{		"name": "Andhra Pradesh",		"abbr": ""	}, {		"name": "Arunachal Pradesh",		"abbr": ""	}, {		"name": "Assam",		"abbr": ""	}, {		"name": "Bihar",		"abbr": ""	}, {		"name": "Chhattisgarh",		"abbr": ""	}, {		"name": "Goa",		"abbr": ""	}, {		"name": "Gujarat",		"abbr": ""	}, {		"name": "Haryana",		"abbr": ""	}, {		"name": "Himachal Pradesh",		"abbr": ""	}, {		"name": "Jammu and Kashmir",		"abbr": ""	}, {		"name": "Jharkhand",		"abbr": ""	}, {		"name": "Karnataka",		"abbr": ""	}, {		"name": "Kerala",		"abbr": ""	}, {		"name": "Madhya Pradesh",		"abbr": ""	}, {		"name": "Maharashtra",		"abbr": ""	}, {		"name": "Manipur",		"abbr": ""	}, {		"name": "Meghalaya",		"abbr": ""	}, {		"name": "Mizoram",		"abbr": ""	}, {		"name": "Nagaland",		"abbr": ""	}, {		"name": "Odisha",		"abbr": ""	}, {		"name": "Punjab",		"abbr": ""	}, {		"name": "Rajasthan",		"abbr": ""	}, {		"name": "Sikkim",		"abbr": ""	}, {		"name": "Tamil Nadu",		"abbr": ""	}, {		"name": "Telangana",		"abbr": ""	}, {		"name": "Tripura",		"abbr": ""	}, {		"name": "Uttar Pradesh",		"abbr": ""	}, {		"name": "Uttarakhand",		"abbr": ""	}, {		"name": "West Bengal",		"abbr": ""	}]}, {	"name": "Indonesia",	"abbr": "ID",	"states": [{		"name": "Aceh",		"abbr": ""	}, {		"name": "Bali",		"abbr": ""	}, {		"name": "Bangka-Belitung",		"abbr": ""	}, {		"name": "Banten",		"abbr": ""	}, {		"name": "Bengkulu",		"abbr": ""	}, {		"name": "Gorontalo",		"abbr": ""	}, {		"name": "Jakarta Raya",		"abbr": ""	}, {		"name": "Jambi",		"abbr": ""	}, {		"name": "Jawa Barat",		"abbr": ""	}, {		"name": "Jawa Tengah",		"abbr": ""	}, {		"name": "Jawa Timur",		"abbr": ""	}, {		"name": "Kalimantan Barat",		"abbr": ""	}, {		"name": "Kalimantan Selatan",		"abbr": ""	}, {		"name": "Kalimantan Tengah",		"abbr": ""	}, {		"name": "Kalimantan Timur",		"abbr": ""	}, {		"name": "Kalimantan Utara",		"abbr": ""	}, {		"name": "Kepulauan Riau",		"abbr": ""	}, {		"name": "Lampung",		"abbr": ""	}, {		"name": "Maluku",		"abbr": ""	}, {		"name": "Maluku Utara",		"abbr": ""	}, {		"name": "Nusa Tenggara Barat",		"abbr": ""	}, {		"name": "Nusa Tenggara Timur",		"abbr": ""	}, {		"name": "Papua",		"abbr": ""	}, {		"name": "Papua Barat",		"abbr": ""	}, {		"name": "Riau",		"abbr": ""	}, {		"name": "Sulawesi Barat",		"abbr": ""	}, {		"name": "Sulawesi Selatan",		"abbr": ""	}, {		"name": "Sulawesi Tengah",		"abbr": ""	}, {		"name": "Sulawesi Tenggara",		"abbr": ""	}, {		"name": "Sulawesi Utara",		"abbr": ""	}, {		"name": "Sumatera Barat",		"abbr": ""	}, {		"name": "Sumatera Selatan",		"abbr": ""	}, {		"name": "Sumatera Utara",		"abbr": ""	}, {		"name": "Yogyakarta",		"abbr": ""	}]}, {	"name": "Iran",	"abbr": "IR",	"states": [{		"name": "Enter Below",		"abbr": ""	}]}, {	"name": "Iraq",	"abbr": "IQ",	"states": [{		"name": "Al Anbar",		"abbr": ""	}, {		"name": "Babil",		"abbr": ""	}, {		"name": "Baghdad",		"abbr": ""	}, {		"name": "Basra",		"abbr": ""	}, {		"name": "Dhi Qar",		"abbr": ""	}, {		"name": "Al-Qadisiyyah",		"abbr": ""	}, {		"name": "Diyala",		"abbr": ""	}, {		"name": "Dohuk",		"abbr": ""	}, {		"name": "Erbil",		"abbr": ""	}, {		"name": "Halabja",		"abbr": ""	}, {		"name": "Karbala",		"abbr": ""	}, {		"name": "Kirkuk",		"abbr": ""	}, {		"name": "Maysan",		"abbr": ""	}, {		"name": "Muthanna",		"abbr": ""	}, {		"name": "Najaf",		"abbr": ""	}, {		"name": "Nineveh",		"abbr": ""	}, {		"name": "Saladin",		"abbr": ""	}, {		"name": "Sulaymaniyah",		"abbr": ""	}, {		"name": "Wasit",		"abbr": ""	}]}, {	"name": "Ireland",	"abbr": "IE",	"states": [{		"name": "Border Region",		"abbr": ""	}, {		"name": "West Region",		"abbr": ""	}, {		"name": "Midland Region",		"abbr": ""	}, {		"name": "Mid-East Region",		"abbr": ""	}, {		"name": "Dublin Region",		"abbr": ""	}, {		"name": "South-East Region",		"abbr": ""	}, {		"name": "South-West Region",		"abbr": ""	}, {		"name": "Mid-West Region",		"abbr": ""	}]}, {	"name": "Israel",	"abbr": "IL",	"states": [{		"name": "Central District",		"abbr": ""	}, {		"name": "Haifa District",		"abbr": ""	}, {		"name": "Jerusalem District",		"abbr": ""	}, {		"name": "Judea and Samaria Area",		"abbr": ""	}, {		"name": "Northern District",		"abbr": ""	}, {		"name": "Southern District",		"abbr": ""	}, {		"name": "Tel Aviv District",		"abbr": ""	}]}, {	"name": "Italy",	"abbr": "IT",	"states": [{		"name": "Abruzzo",		"abbr": ""	}, {		"name": "Aosta Valley",		"abbr": ""	}, {		"name": "Apulia",		"abbr": ""	}, {		"name": "Basilicata",		"abbr": ""	}, {		"name": "Calabria",		"abbr": ""	}, {		"name": "Campania",		"abbr": ""	}, {		"name": "Emilia-Romagna",		"abbr": ""	}, {		"name": "Trieste",		"abbr": ""	}, {		"name": "Lazio",		"abbr": ""	}, {		"name": "Liguria",		"abbr": ""	}, {		"name": "Lombardy",		"abbr": ""	}, {		"name": "Marche",		"abbr": ""	}, {		"name": "Molise",		"abbr": ""	}, {		"name": "Piedmont",		"abbr": ""	}, {		"name": "Sardinia",		"abbr": ""	}, {		"name": "Sicily",		"abbr": ""	}, {		"name": "Trentino-Alto Adige/SÃ¼dtirol",		"abbr": ""	}, {		"name": "Tuscany",		"abbr": ""	}, {		"name": "Umbria",		"abbr": ""	}, {		"name": "Veneto",		"abbr": ""	}]}, {	"name": "Jamaica",	"abbr": "JM",	"states": [{		"name": "Claredon",		"abbr": ""	}, {		"name": "Hanover",		"abbr": ""	}, {		"name": "Kingston",		"abbr": ""	}, {		"name": "Manchester",		"abbr": ""	}, {		"name": "Portland",		"abbr": ""	}, {		"name": "Saint Andrew",		"abbr": ""	}, {		"name": "Saint Ann",		"abbr": ""	}, {		"name": "Saint Catherine",		"abbr": ""	}, {		"name": "Saint Elizabeth",		"abbr": ""	}, {		"name": "Saint James",		"abbr": ""	}, {		"name": "Saint Mary",		"abbr": ""	}, {		"name": "Saint Thomas",		"abbr": ""	}, {		"name": "Trelawny",		"abbr": ""	}, {		"name": "Westmoreland",		"abbr": ""	}]}, {	"name": "Japan",	"abbr": "JP",	"states": [{		"name": "Chubu Region",		"abbr": ""	}, {		"name": "Chugoku Region",		"abbr": ""	}, {		"name": "Hokkaido",		"abbr": ""	}, {		"name": "Kansai or Kinki Region",		"abbr": ""	}, {		"name": "Kanto Region",		"abbr": ""	}, {		"name": "Kyushu Island",		"abbr": ""	}, {		"name": "Shikoku Island",		"abbr": ""	}, {		"name": "Tohoku Region",		"abbr": ""	}]}, {	"name": "Jordan",	"abbr": "JO",	"states": [{		"name": "Ajloun",		"abbr": ""	}, {		"name": "Amman",		"abbr": ""	}, {		"name": "Aqaba",		"abbr": ""	}, {		"name": "Balqa",		"abbr": ""	}, {		"name": "Irbid",		"abbr": ""	}, {		"name": "Jerash",		"abbr": ""	}, {		"name": "Karak",		"abbr": ""	}, {		"name": "Ma'an",		"abbr": ""	}, {		"name": "Madaba",		"abbr": ""	}, {		"name": "Mafraq",		"abbr": ""	}, {		"name": "Tafilah",		"abbr": ""	}, {		"name": "Zarqa",		"abbr": ""	}]}, {	"name": "Kazakhstan",	"abbr": "KZ",	"states": [{		"name": "Almaty",		"abbr": ""	}, {		"name": "Almaty [City]",		"abbr": ""	}, {		"name": "Aqmola",		"abbr": ""	}, {		"name": "Aqtobe",		"abbr": ""	}, {		"name": "Atyrau",		"abbr": ""	}, {		"name": "East Kazakhstan",		"abbr": ""	}, {		"name": "KÃ¶kshetau",		"abbr": ""	}, {		"name": "Mangghystau",		"abbr": ""	}, {		"name": "North Kazakhstan",		"abbr": ""	}, {		"name": "Pavlodar",		"abbr": ""	}, {		"name": "Qaraghandy",		"abbr": ""	}, {		"name": "Qostanay",		"abbr": ""	}, {		"name": "Qyzylorda",		"abbr": ""	}, {		"name": "Semey",		"abbr": ""	}, {		"name": "South Kazakhstan",		"abbr": ""	}, {		"name": "Taldyqorghan",		"abbr": ""	}, {		"name": "Torghay",		"abbr": ""	}, {		"name": "West Kazakhstan",		"abbr": ""	}, {		"name": "Zhambyl",		"abbr": ""	}, {		"name": "Zhezqazghan",		"abbr": ""	}]}, {	"name": "Kenya",	"abbr": "KE",	"states": [{		"name": "Central",		"abbr": ""	}, {		"name": "Coast",		"abbr": ""	}, {		"name": "Eastern",		"abbr": ""	}, {		"name": "Nairobi",		"abbr": ""	}, {		"name": "North Eastern",		"abbr": ""	}, {		"name": "Nyanza",		"abbr": ""	}, {		"name": "Rift Valley",		"abbr": ""	}, {		"name": "Western",		"abbr": ""	}]}, {	"name": "Kiribati",	"abbr": "KI",	"states": [{		"name": "Kiribati",		"abbr": ""	}]}, {	"name": "Korea, North",	"abbr": "KP",	"states": [{		"name": "North Korea",		"abbr": ""	}]}, {	"name": "Korea, South",	"abbr": "KR",	"states": [{		"name": "Gangwon",		"abbr": ""	}, {		"name": "Gyeonggi",		"abbr": ""	}, {		"name": "Jeju",		"abbr": ""	}, {		"name": "North Chungcheong",		"abbr": ""	}, {		"name": "North Gyeongsang",		"abbr": ""	}, {		"name": "North Jeolla",		"abbr": ""	}, {		"name": "South Chungcheong",		"abbr": ""	}, {		"name": "South Gyeongsang",		"abbr": ""	}, {		"name": "South Jeolla",		"abbr": ""	}]}, {	"name": "Kuwait",	"abbr": "KW",	"states": [{		"name": "Ahmadi",		"abbr": ""	}, {		"name": "Asimah",		"abbr": ""	}, {		"name": "Farwaniyah",		"abbr": ""	}, {		"name": "Hawalli",		"abbr": ""	}, {		"name": "Jahra",		"abbr": ""	}, {		"name": "Wafrah",		"abbr": ""	}]}, {	"name": "Kyrgyzstan",	"abbr": "KG",	"states": [{		"name": "Batken",		"abbr": ""	}, {		"name": "Biskek [Bishkek]",		"abbr": ""	}, {		"name": "Cuj [Chuy]",		"abbr": ""	}, {		"name": "Naryn",		"abbr": ""	}, {		"name": "Os [Osh City]",		"abbr": ""	}, {		"name": "Os [Osh]",		"abbr": ""	}, {		"name": "Talas",		"abbr": ""	}, {		"name": "Ysykkol [Issyk Kul]",		"abbr": ""	}, {		"name": "Zalalabat [Jalal-Abad]",		"abbr": ""	}]}, {	"name": "Laos",	"abbr": "LA",	"states": [{		"name": "Attapu",		"abbr": ""	}, {		"name": "Bokeo",		"abbr": ""	}, {		"name": "Bolikhamxai",		"abbr": ""	}, {		"name": "Champasak",		"abbr": ""	}, {		"name": "Houaphan",		"abbr": ""	}, {		"name": "Khammouan",		"abbr": ""	}, {		"name": "Louang Namtha",		"abbr": ""	}, {		"name": "Louangphrabang",		"abbr": ""	}, {		"name": "Oudomxai",		"abbr": ""	}, {		"name": "Phongsali",		"abbr": ""	}, {		"name": "Saravan",		"abbr": ""	}, {		"name": "Savannakhet",		"abbr": ""	}, {		"name": "Vientiane",		"abbr": ""	}, {		"name": "Vientiane [prefecture]",		"abbr": ""	}, {		"name": "Xaignabouri",		"abbr": ""	}, {		"name": "Xaisomboun",		"abbr": ""	}, {		"name": "Xekong",		"abbr": ""	}, {		"name": "Xiangkhoang",		"abbr": ""	}]}, {	"name": "Latvia",	"abbr": "LV",	"states": [{		"name": "Enter Below",		"abbr": ""	}]}, {	"name": "Lebanon",	"abbr": "LB",	"states": [{		"name": "Aakkar",		"abbr": ""	}, {		"name": "An Nabatiyah",		"abbr": ""	}, {		"name": "Baalbek-Hermel",		"abbr": ""	}, {		"name": "Beirut",		"abbr": ""	}, {		"name": "Beqaa",		"abbr": ""	}, {		"name": "Mount Lebanon",		"abbr": ""	}, {		"name": "North Lebanon",		"abbr": ""	}, {		"name": "South Lebanon",		"abbr": ""	}]}, {	"name": "Lesotho",	"abbr": "LS",	"states": [{		"name": "Berea",		"abbr": ""	}, {		"name": "Butha-Buthe",		"abbr": ""	}, {		"name": "Leribe",		"abbr": ""	}, {		"name": "Mafeteng",		"abbr": ""	}, {		"name": "Maseru",		"abbr": ""	}, {		"name": "Mohale's Hoek",		"abbr": ""	}, {		"name": "Mokhotlong",		"abbr": ""	}, {		"name": "Qacha's Nek",		"abbr": ""	}, {		"name": "Quthing",		"abbr": ""	}, {		"name": "Thaba-Tseka",		"abbr": ""	}]}, {	"name": "Liberia",	"abbr": "LR",	"states": [{		"name": "Bomi",		"abbr": ""	}, {		"name": "Bong",		"abbr": ""	}, {		"name": "Gbarpolu",		"abbr": ""	}, {		"name": "Grand Bassa",		"abbr": ""	}, {		"name": "Grand Cape Mount",		"abbr": ""	}, {		"name": "Grand Gedeh",		"abbr": ""	}, {		"name": "Grand Kru",		"abbr": ""	}, {		"name": "Lofa",		"abbr": ""	}, {		"name": "Margibi",		"abbr": ""	}, {		"name": "Maryland",		"abbr": ""	}, {		"name": "Montserrado",		"abbr": ""	}, {		"name": "Nimba",		"abbr": ""	}, {		"name": "Rivercess",		"abbr": ""	}, {		"name": "River Gee",		"abbr": ""	}, {		"name": "Sinoe",		"abbr": ""	}]}, {	"name": "Libya",	"abbr": "LY",	"states": [{		"name": "Cyrenaica",		"abbr": ""	}, {		"name": "Fezzan",		"abbr": ""	}, {		"name": "Tripolitania",		"abbr": ""	}]}, {	"name": "Liechtenstein",	"abbr": "LI",	"states": [{		"name": "Electoral District of Unterland",		"abbr": ""	}, {		"name": "Electoral District of Oberland",		"abbr": ""	}]}, {	"name": "Lithuania",	"abbr": "LT",	"states": [{		"name": "Alytus",		"abbr": ""	}, {		"name": "Kaunas",		"abbr": ""	}, {		"name": "Klaipeda",		"abbr": ""	}, {		"name": "Marijampole",		"abbr": ""	}, {		"name": "Panevezys",		"abbr": ""	}, {		"name": "Siauliai",		"abbr": ""	}, {		"name": "Taurage",		"abbr": ""	}, {		"name": "Telsiai",		"abbr": ""	}, {		"name": "Utena",		"abbr": ""	}, {		"name": "Vilnius",		"abbr": ""	}]}, {	"name": "Luxembourg",	"abbr": "LU",	"states": [{		"name": "Diekirch",		"abbr": ""	}, {		"name": "Grevenmacher",		"abbr": ""	}, {		"name": "Luxembourg",		"abbr": ""	}]}, {	"name": "Macao",	"abbr": "MO",	"states": [{		"name": "Ilhas",		"abbr": ""	}, {		"name": "Macau",		"abbr": ""	}]}, {	"name": "Macedonia",	"abbr": "MK",	"states": [{		"name": "Macedonia",		"abbr": ""	}]}, {	"name": "Madagascar",	"abbr": "MG",	"states": [{		"name": "Antananarivo",		"abbr": ""	}, {		"name": "Antsiranana",		"abbr": ""	}, {		"name": "Fianarantsoa",		"abbr": ""	}, {		"name": "Mahajanga",		"abbr": ""	}, {		"name": "Toamasina",		"abbr": ""	}, {		"name": "Toliara",		"abbr": ""	}]}, {	"name": "Malawi",	"abbr": "MW",	"states": [{		"name": "Central",		"abbr": ""	}, {		"name": "Northern",		"abbr": ""	}, {		"name": "Southern",		"abbr": ""	}]}, {	"name": "Malaysia",	"abbr": "MY",	"states": [{		"name": "Alor Setar",		"abbr": ""	}, {		"name": "George Town",		"abbr": ""	}, {		"name": "Ipoh",		"abbr": ""	}, {		"name": "Johor Darul Ta'zim",		"abbr": ""	}, {		"name": "Kangar",		"abbr": ""	}, {		"name": "Kota Bharu",		"abbr": ""	}, {		"name": "Kota Kinabalu",		"abbr": ""	}, {		"name": "Kuala Lumpur",		"abbr": ""	}, {		"name": "Kuala Terengganu",		"abbr": ""	}, {		"name": "Kuantan",		"abbr": ""	}, {		"name": "Kuching",		"abbr": ""	}, {		"name": "Malacca City",		"abbr": ""	}, {		"name": "Putrajaya",		"abbr": ""	}, {		"name": "Seremban",		"abbr": ""	}, {		"name": "Shah Alam",		"abbr": ""	}, {		"name": "Victoria",		"abbr": ""	}]}, {	"name": "Maldives",	"abbr": "MV",	"states": [{		"name": "The Maldives",		"abbr": ""	}]}, {	"name": "Mali",	"abbr": "ML",	"states": [{		"name": "Kayes",		"abbr": ""	}, {		"name": "Koulikoro",		"abbr": ""	}, {		"name": "Bamako",		"abbr": ""	}, {		"name": "Sikasso",		"abbr": ""	}, {		"name": "Segou",		"abbr": ""	}, {		"name": "Mopti",		"abbr": ""	}, {		"name": "Tombouctou",		"abbr": ""	}, {		"name": "Gao",		"abbr": ""	}, {		"name": "Kidal",		"abbr": ""	}]}, {	"name": "Malta",	"abbr": "MT",	"states": [{		"name": "Central",		"abbr": ""	}, {		"name": "Gozo",		"abbr": ""	}, {		"name": "Northern",		"abbr": ""	}, {		"name": "South Eastern",		"abbr": ""	}, {		"name": "Southern",		"abbr": ""	}]}, {	"name": "Marshall Islands",	"abbr": "MH",	"states": [{		"name": "Marshall Islands",		"abbr": ""	}]}, {	"name": "Martinique",	"abbr": "MQ",	"states": [{		"name": "Martinique",		"abbr": ""	}]}, {	"name": "Mauritania",	"abbr": "MR",	"states": [{		"name": "Adrar",		"abbr": ""	}, {		"name": "Assaba",		"abbr": ""	}, {		"name": "Brakna",		"abbr": ""	}, {		"name": "Dakhlet Nouadhibou",		"abbr": ""	}, {		"name": "Gorgol",		"abbr": ""	}, {		"name": "Guidimaka",		"abbr": ""	}, {		"name": "Hodh ech Chargui",		"abbr": ""	}, {		"name": "Hodh el Gharbi",		"abbr": ""	}, {		"name": "Inchiri",		"abbr": ""	}, {		"name": "Nouakchott Nord",		"abbr": ""	}, {		"name": "Nouakchott Ouest",		"abbr": ""	}, {		"name": "Nouakchott Sud",		"abbr": ""	}, {		"name": "Tagant",		"abbr": ""	}, {		"name": "Tiris Zemmour",		"abbr": ""	}, {		"name": "Trarza",		"abbr": ""	}]}, {	"name": "Mauritius",	"abbr": "MU",	"states": [{		"name": "Agalega Islands",		"abbr": ""	}, {		"name": "Black River",		"abbr": ""	}, {		"name": "Cargados Carajos",		"abbr": ""	}, {		"name": "Flacq",		"abbr": ""	}, {		"name": "Grand Port",		"abbr": ""	}, {		"name": "Moka",		"abbr": ""	}, {		"name": "Pamplemousses",		"abbr": ""	}, {		"name": "Plaines Wilhems",		"abbr": ""	}, {		"name": "Port Louis",		"abbr": ""	}, {		"name": "RiviÃ¨re du Rempart",		"abbr": ""	}, {		"name": "Rodrigues",		"abbr": ""	}, {		"name": "Savanne",		"abbr": ""	}]}, {	"name": "Mayotte",	"abbr": "YT",	"states": [{		"name": "Mayotte",		"abbr": ""	}]}, {	"name": "Mexico",	"abbr": "MX",	"states": [{		"name": "Aguascalientes",		"abbr": ""	}, {		"name": "Baja California",		"abbr": ""	}, {		"name": "Baja California Sur",		"abbr": ""	}, {		"name": "Campeche",		"abbr": ""	}, {		"name": "Chiapas",		"abbr": ""	}, {		"name": "Chihuahua",		"abbr": ""	}, {		"name": "Coahuila",		"abbr": ""	}, {		"name": "Colima",		"abbr": ""	}, {		"name": "Durango",		"abbr": ""	}, {		"name": "Guanajuato",		"abbr": ""	}, {		"name": "Guerrero",		"abbr": ""	}, {		"name": "Hidalgo",		"abbr": ""	}, {		"name": "Jalisco",		"abbr": ""	}, {		"name": "Mexico",		"abbr": ""	}, {		"name": "Mexico City",		"abbr": ""	}, {		"name": "Michoacan",		"abbr": ""	}, {		"name": "Morelos",		"abbr": ""	}, {		"name": "Nayarit",		"abbr": ""	}, {		"name": "Nuevo Leon",		"abbr": ""	}, {		"name": "Oaxaca",		"abbr": ""	}, {		"name": "Puebla",		"abbr": ""	}, {		"name": "Queretaro",		"abbr": ""	}, {		"name": "Quintana Roo",		"abbr": ""	}, {		"name": "San Luis Potosi",		"abbr": ""	}, {		"name": "Sinaloa",		"abbr": ""	}, {		"name": "Sonora",		"abbr": ""	}, {		"name": "Tabasco",		"abbr": ""	}, {		"name": "Tamaulipas",		"abbr": ""	}, {		"name": "Tlaxcala",		"abbr": ""	}, {		"name": "Veracruz",		"abbr": ""	}, {		"name": "Yucatan",		"abbr": ""	}, {		"name": "Zacatecas",		"abbr": ""	}]}, {	"name": "Micronesia",	"abbr": "FM",	"states": [{		"name": "Chuuk State",		"abbr": ""	}, {		"name": "Kosrae",		"abbr": ""	}, {		"name": "Pohnpei State",		"abbr": ""	}, {		"name": "Yap State",		"abbr": ""	}]}, {	"name": "Moldova",	"abbr": "MD",	"states": [{		"name": "Enter Below",		"abbr": ""	}]}, {	"name": "Monaco",	"abbr": "MC",	"states": [{		"name": "Monte Carlo / Spelugues",		"abbr": ""	}, {		"name": "La Rousse / Saint Roman",		"abbr": ""	}, {		"name": "Larvotto/Bas Moulins",		"abbr": ""	}, {		"name": "La Condamine",		"abbr": ""	}, {		"name": "Monaco-Ville",		"abbr": ""	}, {		"name": "Fontvieille",		"abbr": ""	}, {		"name": "La Colle",		"abbr": ""	}, {		"name": "Les Revoires",		"abbr": ""	}, {		"name": "Moneghetti/ Boulevard de Belgique",		"abbr": ""	}, {		"name": "Saint Michel",		"abbr": ""	}]}, {	"name": "Mongolia",	"abbr": "MN",	"states": [{		"name": "Arhangay",		"abbr": ""	}, {		"name": "Bayanhongor",		"abbr": ""	}, {		"name": "Bayan-Olgiy",		"abbr": ""	}, {		"name": "Bulgan",		"abbr": ""	}, {		"name": "Darhan-Uul",		"abbr": ""	}, {		"name": "Dornod",		"abbr": ""	}, {		"name": "Dornogovi",		"abbr": ""	}, {		"name": "Dundgovi",		"abbr": ""	}, {		"name": "Dzavhan",		"abbr": ""	}, {		"name": "Govi-Altay",		"abbr": ""	}, {		"name": "Govisumber",		"abbr": ""	}, {		"name": "Hentiy",		"abbr": ""	}, {		"name": "Hovd",		"abbr": ""	}, {		"name": "HoÃ¶vsgol",		"abbr": ""	}, {		"name": "Omnogovi",		"abbr": ""	}, {		"name": "Orhon",		"abbr": ""	}, {		"name": "Ovorhangay",		"abbr": ""	}, {		"name": "Selenge",		"abbr": ""	}, {		"name": "SÃ¼hbaatar",		"abbr": ""	}, {		"name": "Tov",		"abbr": ""	}, {		"name": "Ulaanbaatar",		"abbr": ""	}, {		"name": "Uvs",		"abbr": ""	}]}, {	"name": "Montserrat",	"abbr": "MS",	"states": [{		"name": "Saint Anthony",		"abbr": ""	}, {		"name": "Saint Georges",		"abbr": ""	}, {		"name": "Saint Peter",		"abbr": ""	}]}, {	"name": "Morocco",	"abbr": "MA",	"states": [{		"name": "Beni Mellal-Khenifra",		"abbr": ""	}, {		"name": "Casablanca-Settat",		"abbr": ""	}, {		"name": "Dakhla-Oued ed Dahab",		"abbr": ""	}, {		"name": "Draa-Tafilalet",		"abbr": ""	}, {		"name": "Fez-Meknes",		"abbr": ""	}, {		"name": "Guelmim-Oued Noun",		"abbr": ""	}, {		"name": "Laayoune-Sakia el Hamra",		"abbr": ""	}, {		"name": "Marrakech-Safi",		"abbr": ""	}, {		"name": "Oriental",		"abbr": ""	}, {		"name": "Rabat-Sale-Kenitra",		"abbr": ""	}, {		"name": "Souss-Massa",		"abbr": ""	}, {		"name": "Tanger-Tetouan",		"abbr": ""	}]}, {	"name": "Mozambique",	"abbr": "MZ",	"states": [{		"name": "Cabo Delgado",		"abbr": ""	}, {		"name": "Gaza",		"abbr": ""	}, {		"name": "Inhambane",		"abbr": ""	}, {		"name": "Manica",		"abbr": ""	}, {		"name": "Maputo",		"abbr": ""	}, {		"name": "Maputo [city]",		"abbr": ""	}, {		"name": "Nampula",		"abbr": ""	}, {		"name": "Niassa",		"abbr": ""	}, {		"name": "Sofala",		"abbr": ""	}, {		"name": "Tete",		"abbr": ""	}, {		"name": "Zambezia",		"abbr": ""	}]}, {	"name": "Myanmar",	"abbr": "MM",	"states": [{		"name": "Ayeyarwady",		"abbr": ""	}, {		"name": "Bago",		"abbr": ""	}, {		"name": "Chin",		"abbr": ""	}, {		"name": "Kachin",		"abbr": ""	}, {		"name": "Kayah",		"abbr": ""	}, {		"name": "Kayin",		"abbr": ""	}, {		"name": "Magway",		"abbr": ""	}, {		"name": "Mandalay",		"abbr": ""	}, {		"name": "Mon",		"abbr": ""	}, {		"name": "Naypyidaw",		"abbr": ""	}, {		"name": "Rakhine",		"abbr": ""	}, {		"name": "Sagaing",		"abbr": ""	}, {		"name": "Shan",		"abbr": ""	}, {		"name": "Tanintharyi",		"abbr": ""	}, {		"name": "Yangon",		"abbr": ""	}]}, {	"name": "Namibia",	"abbr": "NA",	"states": [{		"name": "Erongo Region",		"abbr": ""	}, {		"name": "Hardap Region",		"abbr": ""	}, {		"name": "!Karas Region",		"abbr": ""	}, {		"name": "Kavango East Region",		"abbr": ""	}, {		"name": "Kavango West Region",		"abbr": ""	}, {		"name": "Khomas Region",		"abbr": ""	}, {		"name": "Kunene Region",		"abbr": ""	}, {		"name": "Ohangwena Region",		"abbr": ""	}, {		"name": "Omaheke Region",		"abbr": ""	}, {		"name": "Omusati Region",		"abbr": ""	}, {		"name": "Oshana Region",		"abbr": ""	}, {		"name": "Oshikoto Region",		"abbr": ""	}, {		"name": "Otjozondjupa Region",		"abbr": ""	}, {		"name": "Zambezi Region",		"abbr": ""	}]}, {	"name": "Nauru",	"abbr": "NR",	"states": [{		"name": "Nauru Island",		"abbr": ""	}]}, {	"name": "Nepal",	"abbr": "NP",	"states": [{		"name": "One - Koshi",		"abbr": ""	}, {		"name": "Two - Janakpur",		"abbr": ""	}, {		"name": "Three - Bagmati",		"abbr": ""	}, {		"name": "Four - Gandaki",		"abbr": ""	}, {		"name": "Five - Lumbini",		"abbr": ""	}, {		"name": "Six - Karnali",		"abbr": ""	}, {		"name": "Seven - Far West",		"abbr": ""	}]}, {	"name": "Netherlands",	"abbr": "NL",	"states": [{		"name": "Drenthe",		"abbr": ""	}, {		"name": "Flevoland",		"abbr": ""	}, {		"name": "Friesland",		"abbr": ""	}, {		"name": "Gelderland",		"abbr": ""	}, {		"name": "Groningen",		"abbr": ""	}, {		"name": "Limburg",		"abbr": ""	}, {		"name": "Noord-Brabant",		"abbr": ""	}, {		"name": "Noord-Holland",		"abbr": ""	}, {		"name": "Overijssel",		"abbr": ""	}, {		"name": "Utrecht",		"abbr": ""	}, {		"name": "Zeeland",		"abbr": ""	}, {		"name": "Zuid-Holland",		"abbr": ""	}]}, {	"name": "Netherlands Antilles",	"abbr": "AN",	"states": [{		"name": "Netherlands Antilles",		"abbr": ""	}]}, {	"name": "New Caledonia",	"abbr": "NC",	"states": [{		"name": "New Caledonia Islands",		"abbr": ""	}]}, {	"name": "New Zealand",	"abbr": "NZ",	"states": [{		"name": "Auckland (North Island)",		"abbr": ""	}, {		"name": "Bay of Plenty (North Island)",		"abbr": ""	}, {		"name": "Canterbury (South Island)",		"abbr": ""	}, {		"name": "Chatham Islands",		"abbr": ""	}, {		"name": "Gisborne (North Island)",		"abbr": ""	}, {		"name": "Hawke's Bay (North Island)",		"abbr": ""	}, {		"name": "Manawatu-Wanganui (North Island)",		"abbr": ""	}, {		"name": "Marlborough (South Island)",		"abbr": ""	}, {		"name": "Nelson (South Island)",		"abbr": ""	}, {		"name": "Northland (North Island)",		"abbr": ""	}, {		"name": "Otago (South Island)",		"abbr": ""	}, {		"name": "Southland (South Island)",		"abbr": ""	}, {		"name": "Taranaki (North Island)",		"abbr": ""	}, {		"name": "Tasman (South Island)",		"abbr": ""	}, {		"name": "Tokelau (Territory)",		"abbr": ""	}, {		"name": "Waikato (North Island)",		"abbr": ""	}, {		"name": "Wellington (North Island)",		"abbr": ""	}, {		"name": "West Coast (South Island)",		"abbr": ""	}]}, {	"name": "Nicaragua",	"abbr": "NI",	"states": [{		"name": "Boaco",		"abbr": ""	}, {		"name": "Carazo",		"abbr": ""	}, {		"name": "Chinandega",		"abbr": ""	}, {		"name": "Chontales",		"abbr": ""	}, {		"name": "Esteli",		"abbr": ""	}, {		"name": "Granada",		"abbr": ""	}, {		"name": "Jinotega",		"abbr": ""	}, {		"name": "Leon",		"abbr": ""	}, {		"name": "Madriz",		"abbr": ""	}, {		"name": "Managua",		"abbr": ""	}, {		"name": "Masaya",		"abbr": ""	}, {		"name": "Matagalpa",		"abbr": ""	}, {		"name": "Nueva Segovia",		"abbr": ""	}, {		"name": "Region Autonoma del Caribe Norte",		"abbr": ""	}, {		"name": "Region Autonoma del Caribe Sur",		"abbr": ""	}, {		"name": "Rio San Juan",		"abbr": ""	}, {		"name": "Rivas",		"abbr": ""	}]}, {	"name": "Niger",	"abbr": "NE",	"states": [{		"name": "Agadez",		"abbr": ""	}, {		"name": "Diffa",		"abbr": ""	}, {		"name": "Dosso",		"abbr": ""	}, {		"name": "Maradi",		"abbr": ""	}, {		"name": "Niamey",		"abbr": ""	}, {		"name": "Tahoua",		"abbr": ""	}, {		"name": "Tillaberi",		"abbr": ""	}, {		"name": "Zinder",		"abbr": ""	}]}, {	"name": "Nigeria",	"abbr": "NG",	"states": [{		"name": "Abia",		"abbr": ""	}, {		"name": "Adamawa",		"abbr": ""	}, {		"name": "Akwa Ibom",		"abbr": ""	}, {		"name": "Anambra",		"abbr": ""	}, {		"name": "Bauchi",		"abbr": ""	}, {		"name": "Bayelsa",		"abbr": ""	}, {		"name": "Benue",		"abbr": ""	}, {		"name": "Borno",		"abbr": ""	}, {		"name": "Cross River",		"abbr": ""	}, {		"name": "Delta",		"abbr": ""	}, {		"name": "Ebonyi",		"abbr": ""	}, {		"name": "Edo",		"abbr": ""	}, {		"name": "Ekiti",		"abbr": ""	}, {		"name": "Enugu",		"abbr": ""	}, {		"name": "Federal Capital Territory",		"abbr": ""	}, {		"name": "Gombe",		"abbr": ""	}, {		"name": "Imo",		"abbr": ""	}, {		"name": "Jigawa",		"abbr": ""	}, {		"name": "Kaduna",		"abbr": ""	}, {		"name": "Kano",		"abbr": ""	}, {		"name": "Katsina",		"abbr": ""	}, {		"name": "Kebbi",		"abbr": ""	}, {		"name": "Kogi",		"abbr": ""	}, {		"name": "Kwara",		"abbr": ""	}, {		"name": "Lagos",		"abbr": ""	}, {		"name": "Nasarawa",		"abbr": ""	}, {		"name": "Niger",		"abbr": ""	}, {		"name": "Ogun",		"abbr": ""	}, {		"name": "Ondo",		"abbr": ""	}, {		"name": "Osun",		"abbr": ""	}, {		"name": "Oyo",		"abbr": ""	}, {		"name": "Plateau",		"abbr": ""	}, {		"name": "Rivers",		"abbr": ""	}, {		"name": "Sokoto",		"abbr": ""	}, {		"name": "Taraba",		"abbr": ""	}, {		"name": "Yobe",		"abbr": ""	}, {		"name": "Zamfara",		"abbr": ""	}]}, {	"name": "Niue",	"abbr": "NU",	"states": [{		"name": "Niue Island",		"abbr": ""	}]}, {	"name": "Norfolk Island",	"abbr": "NF",	"states": [{		"name": "Norfolk Island",		"abbr": ""	}]}, {	"name": "Northern Mariana Islands",	"abbr": "MP",	"states": [{		"name": "Northern Mariana Islands",		"abbr": ""	}]}, {	"name": "Norway",	"abbr": "NO",	"states": [{		"name": "Akershus",		"abbr": ""	}, {		"name": "Aust-Agder",		"abbr": ""	}, {		"name": "Buskerud",		"abbr": ""	}, {		"name": "Finnmark",		"abbr": ""	}, {		"name": "Hedmark",		"abbr": ""	}, {		"name": "Hordaland",		"abbr": ""	}, {		"name": "More og Romsdal",		"abbr": ""	}, {		"name": "Nordland",		"abbr": ""	}, {		"name": "Nord-Trondelag",		"abbr": ""	}, {		"name": "Oppland",		"abbr": ""	}, {		"name": "Oslo",		"abbr": ""	}, {		"name": "Ostfold",		"abbr": ""	}, {		"name": "Rogaland",		"abbr": ""	}, {		"name": "Sogn og Fjordane",		"abbr": ""	}, {		"name": "Sor-Trondelag",		"abbr": ""	}, {		"name": "Telemark",		"abbr": ""	}, {		"name": "Troms",		"abbr": ""	}, {		"name": "Vest-Agder",		"abbr": ""	}, {		"name": "Vestfold",		"abbr": ""	}]}, {	"name": "Oman",	"abbr": "OM",	"states": [{		"name": "Ad Dakhliyah",		"abbr": ""	}, {		"name": "Adh Dhahirah",		"abbr": ""	}, {		"name": "Al Batinah North",		"abbr": ""	}, {		"name": "Al Batinah South",		"abbr": ""	}, {		"name": "Al Buraymi",		"abbr": ""	}, {		"name": "Al Wusta",		"abbr": ""	}, {		"name": "Ash Sharqiyah North",		"abbr": ""	}, {		"name": "Ash Sharqiyah South",		"abbr": ""	}, {		"name": "Dhofar",		"abbr": ""	}, {		"name": "Musandam",		"abbr": ""	}, {		"name": "Muscat",		"abbr": ""	}]}, {	"name": "Pakistan",	"abbr": "PK",	"states": [{		"name": "Azad Kashmir",		"abbr": ""	}, {		"name": "Balochistan",		"abbr": ""	}, {		"name": "Federally Administered Tribal Areas",		"abbr": ""	}, {		"name": "Gilgit-Baltistan",		"abbr": ""	}, {		"name": "Islamabad",		"abbr": ""	}, {		"name": "Khyber-Pakhtunkhwa",		"abbr": ""	}, {		"name": "Punjab",		"abbr": ""	}, {		"name": "Sindh",		"abbr": ""	}]}, {	"name": "Palau",	"abbr": "PW",	"states": [{		"name": "Palau Island",		"abbr": ""	}]}, {	"name": "Palestinian Territory",	"abbr": "PS",	"states": [{		"name": "West Bank",		"abbr": ""	}, {		"name": "East Jerusalem",		"abbr": ""	}, {		"name": "Gaza Strip",		"abbr": ""	}]}, {	"name": "Panama",	"abbr": "PA",	"states": [{		"name": "Bocas del Toro",		"abbr": ""	}, {		"name": "Chiriqui",		"abbr": ""	}, {		"name": "Cocle",		"abbr": ""	}, {		"name": "Colon",		"abbr": ""	}, {		"name": "Darien",		"abbr": ""	}, {		"name": "Herrera",		"abbr": ""	}, {		"name": "Los Santos",		"abbr": ""	}, {		"name": "Panama",		"abbr": ""	}, {		"name": "Panama Oeste",		"abbr": ""	}, {		"name": "Veraguas",		"abbr": ""	}]}, {	"name": "Papua New Guinea",	"abbr": "PG",	"states": [{		"name": "Bougainville",		"abbr": ""	}, {		"name": "Central",		"abbr": ""	}, {		"name": "Chimbu",		"abbr": ""	}, {		"name": "Eastern Highlands",		"abbr": ""	}, {		"name": "East New Britain",		"abbr": ""	}, {		"name": "East Sepik",		"abbr": ""	}, {		"name": "Enga",		"abbr": ""	}, {		"name": "Gulf",		"abbr": ""	}, {		"name": "Hela",		"abbr": ""	}, {		"name": "Jiwaka",		"abbr": ""	}, {		"name": "Madang",		"abbr": ""	}, {		"name": "Manus",		"abbr": ""	}, {		"name": "Milne Bay",		"abbr": ""	}, {		"name": "Morobe",		"abbr": ""	}, {		"name": "National Capital District",		"abbr": ""	}, {		"name": "New Ireland",		"abbr": ""	}, {		"name": "Northern",		"abbr": ""	}, {		"name": "Sandaun",		"abbr": ""	}, {		"name": "Southern Highlands",		"abbr": ""	}, {		"name": "Western",		"abbr": ""	}, {		"name": "Western Highlands",		"abbr": ""	}, {		"name": "West New Britain",		"abbr": ""	}]}, {	"name": "Paraguay",	"abbr": "PY",	"states": [{		"name": "Alto Paraguay",		"abbr": ""	}, {		"name": "Alto Paran",		"abbr": ""	}, {		"name": "Amambay",		"abbr": ""	}, {		"name": "Boquern",		"abbr": ""	}, {		"name": "Caaguaz",		"abbr": ""	}, {		"name": "Caazap",		"abbr": ""	}, {		"name": "Canindey",		"abbr": ""	}, {		"name": "Central",		"abbr": ""	}, {		"name": "Concepcin",		"abbr": ""	}, {		"name": "Cordillera",		"abbr": ""	}, {		"name": "Distrito Capital",		"abbr": ""	}, {		"name": "Guair",		"abbr": ""	}, {		"name": "Itapa",		"abbr": ""	}, {		"name": "Misiones",		"abbr": ""	}, {		"name": "Eembuc",		"abbr": ""	}, {		"name": "Paraguari",		"abbr": ""	}, {		"name": "Presidente Hayes",		"abbr": ""	}, {		"name": "San Pedro",		"abbr": ""	}]}, {	"name": "Peru",	"abbr": "PE",	"states": [{		"name": "Amazonas",		"abbr": ""	}, {		"name": "Ancash",		"abbr": ""	}, {		"name": "Apurmac",		"abbr": ""	}, {		"name": "Arequipa",		"abbr": ""	}, {		"name": "Ayacucho",		"abbr": ""	}, {		"name": "Cajamarca",		"abbr": ""	}, {		"name": "Callao",		"abbr": ""	}, {		"name": "Cusco",		"abbr": ""	}, {		"name": "Huancavelica",		"abbr": ""	}, {		"name": "Hunuco",		"abbr": ""	}, {		"name": "Ica",		"abbr": ""	}, {		"name": "Junin",		"abbr": ""	}, {		"name": "La Libertad",		"abbr": ""	}, {		"name": "Lambayeque",		"abbr": ""	}, {		"name": "Lima",		"abbr": ""	}, {		"name": "Loreto",		"abbr": ""	}, {		"name": "Madre de Dios",		"abbr": ""	}, {		"name": "Moquegua",		"abbr": ""	}, {		"name": "Pasco",		"abbr": ""	}, {		"name": "Piura",		"abbr": ""	}, {		"name": "Puno",		"abbr": ""	}, {		"name": "San Martin",		"abbr": ""	}, {		"name": "Tacna",		"abbr": ""	}, {		"name": "Tumbes",		"abbr": ""	}, {		"name": "Ucayali",		"abbr": ""	}]}, {	"name": "Philippines",	"abbr": "PH",	"states": [{		"name": "Luzon",		"abbr": ""	}, {		"name": "Mindanao",		"abbr": ""	}, {		"name": "Visayas",		"abbr": ""	}]}, {	"name": "Poland",	"abbr": "PL",	"states": [{		"name": "DolnoslÄ…skie",		"abbr": ""	}, {		"name": "Kujawsko-pomorskie",		"abbr": ""	}, {		"name": "Lodzkie",		"abbr": ""	}, {		"name": "Lubelskie",		"abbr": ""	}, {		"name": "Lubuskie",		"abbr": ""	}, {		"name": "MaÅ‚opolskie",		"abbr": ""	}, {		"name": "Mazowieckie",		"abbr": ""	}, {		"name": "Opolskie",		"abbr": ""	}, {		"name": "Podkarpackie",		"abbr": ""	}, {		"name": "Podlaskie",		"abbr": ""	}, {		"name": "Pomorskie",		"abbr": ""	}, {		"name": "Slaskie",		"abbr": ""	}, {		"name": "Swietokrzyskie",		"abbr": ""	}, {		"name": "Warminsko-mazurskie",		"abbr": ""	}, {		"name": "Wielkopolskie",		"abbr": ""	}, {		"name": "Zachodniopomorskie",		"abbr": ""	}]}, {	"name": "Portugal",	"abbr": "PT",	"states": [{		"name": "Aveiro",		"abbr": ""	}, {		"name": "Azores",		"abbr": ""	}, {		"name": "Beja",		"abbr": ""	}, {		"name": "Braga",		"abbr": ""	}, {		"name": "Braganca",		"abbr": ""	}, {		"name": "Castelo Branco",		"abbr": ""	}, {		"name": "Coimbra",		"abbr": ""	}, {		"name": "Evora",		"abbr": ""	}, {		"name": "Faro",		"abbr": ""	}, {		"name": "Guarda",		"abbr": ""	}, {		"name": "Leiria",		"abbr": ""	}, {		"name": "Lisboa",		"abbr": ""	}, {		"name": "Madeira",		"abbr": ""	}, {		"name": "Portalegre",		"abbr": ""	}, {		"name": "Porto",		"abbr": ""	}, {		"name": "Santarem",		"abbr": ""	}, {		"name": "SetÃºbal",		"abbr": ""	}, {		"name": "Viana do Castelo",		"abbr": ""	}, {		"name": "Vila Real",		"abbr": ""	}, {		"name": "Viseu",		"abbr": ""	}]}, {	"name": "Puerto Rico",	"abbr": "PR",	"states": [{		"name": "Eastern Region",		"abbr": ""	}, {		"name": "La MontaÅˆa (Central)",		"abbr": ""	}, {		"name": "Northern Region",		"abbr": ""	}, {		"name": "Porta Caribe (South)",		"abbr": ""	}, {		"name": "Porta del Sol (West)",		"abbr": ""	}, {		"name": "San Juan and Metro Region",		"abbr": ""	}]}, {	"name": "Qatar",	"abbr": "QA",	"states": [{		"name": "Ad Dawhah",		"abbr": ""	}, {		"name": "Al Daayen",		"abbr": ""	}, {		"name": "Al Khawr",		"abbr": ""	}, {		"name": "Al Wakrah",		"abbr": ""	}, {		"name": "Ar Rayyan",		"abbr": ""	}, {		"name": "Madinat ach Shamal",		"abbr": ""	}, {		"name": "Umm Salal",		"abbr": ""	}]}, {	"name": "Reunion",	"abbr": "RE",	"states": [{		"name": "Reunion Island",		"abbr": ""	}]}, {	"name": "Romania",	"abbr": "RO",	"states": [{		"name": "Nord-Vest",		"abbr": ""	}, {		"name": "Centru",		"abbr": ""	}, {		"name": "Nord-Est",		"abbr": ""	}, {		"name": "Sud-Est",		"abbr": ""	}, {		"name": "Sud - Muntenia",		"abbr": ""	}, {		"name": "Bucuresti - Ilfov",		"abbr": ""	}, {		"name": "Sud-Vest Oltenia",		"abbr": ""	}, {		"name": "Vest",		"abbr": ""	}]}, {	"name": "Russian Federation",	"abbr": "RU",	"states": [{		"name": "Enter Below",		"abbr": ""	}]}, {	"name": "Rwanda",	"abbr": "RW",	"states": [{		"name": "Bugesera",		"abbr": ""	}, {		"name": "Burera",		"abbr": ""	}, {		"name": "Gakenke",		"abbr": ""	}, {		"name": "Gasabo",		"abbr": ""	}, {		"name": "Gatsibo",		"abbr": ""	}, {		"name": "Gicumbi",		"abbr": ""	}, {		"name": "Gisagara",		"abbr": ""	}, {		"name": "Huye",		"abbr": ""	}, {		"name": "Kamonyi",		"abbr": ""	}, {		"name": "Karongi",		"abbr": ""	}, {		"name": "Kayonza",		"abbr": ""	}, {		"name": "Kicukiro",		"abbr": ""	}, {		"name": "Kirehe",		"abbr": ""	}, {		"name": "Muhanga",		"abbr": ""	}, {		"name": "Musanze",		"abbr": ""	}, {		"name": "Ngoma",		"abbr": ""	}, {		"name": "Ngororero",		"abbr": ""	}, {		"name": "Nyabihu",		"abbr": ""	}, {		"name": "Nyagatare",		"abbr": ""	}, {		"name": "Nyamagabe",		"abbr": ""	}, {		"name": "Nyamasheke",		"abbr": ""	}, {		"name": "Nyanza",		"abbr": ""	}, {		"name": "Nyarugenge",		"abbr": ""	}, {		"name": "Nyaruguru",		"abbr": ""	}, {		"name": "Rubavu",		"abbr": ""	}, {		"name": "Ruhango",		"abbr": ""	}, {		"name": "Rulindo",		"abbr": ""	}, {		"name": "Rusizi",		"abbr": ""	}, {		"name": "Rutsiro",		"abbr": ""	}, {		"name": "Rwamagana",		"abbr": ""	}]}, {	"name": "Saint Helena",	"abbr": "SH",	"states": [{		"name": "Saint Helena island",		"abbr": ""	}]}, {	"name": "Saint Kitts and Nevis",	"abbr": "KN",	"states": [{		"name": "Saint Kitts Island",		"abbr": ""	}, {		"name": "Nevis Island",		"abbr": ""	}]}, {	"name": "Saint Lucia",	"abbr": "LC",	"states": [{		"name": "Saint Lucia Island",		"abbr": ""	}]}, {	"name": "Saint Pierre and Miquelon",	"abbr": "PM",	"states": [{		"name": "Langlade",		"abbr": ""	}, {		"name": "Miquelon",		"abbr": ""	}, {		"name": "Saint Pierre",		"abbr": ""	}]}, {	"name": "Saint Vincent and the Grenadines",	"abbr": "VC",	"states": [{		"name": "Saint Vincen",		"abbr": ""	}, {		"name": "The Grenadines",		"abbr": ""	}]}, {	"name": "Samoa",	"abbr": "WS",	"states": [{		"name": "Savai'i",		"abbr": ""	}, {		"name": "Upolu",		"abbr": ""	}]}, {	"name": "San Marino",	"abbr": "SM",	"states": [{		"name": "San Marino",		"abbr": ""	}]}, {	"name": "Sao Tome and Principe",	"abbr": "ST",	"states": [{		"name": "Principe",		"abbr": ""	}, {		"name": "Sao Tome",		"abbr": ""	}]}, {	"name": "Saudi Arabia",	"abbr": "SA",	"states": [{		"name": "Al Bahah",		"abbr": ""	}, {		"name": "Al á¸¤udud ash Shamaliyah",		"abbr": ""	}, {		"name": "Al Jawf",		"abbr": ""	}, {		"name": "Al Madinah",		"abbr": ""	}, {		"name": "Al Qasim",		"abbr": ""	}, {		"name": "Ar Riyad",		"abbr": ""	}, {		"name": "Ash Sharqiyah",		"abbr": ""	}, {		"name": "Asir",		"abbr": ""	}, {		"name": "Ha'il",		"abbr": ""	}, {		"name": "Jizan",		"abbr": ""	}, {		"name": "Makkah",		"abbr": ""	}, {		"name": "Najran",		"abbr": ""	}, {		"name": "Tabuk",		"abbr": ""	}]}, {	"name": "Senegal",	"abbr": "SN",	"states": [{		"name": "Dakar",		"abbr": ""	}, {		"name": "Diourbel",		"abbr": ""	}, {		"name": "Fatick",		"abbr": ""	}, {		"name": "Kaffrine",		"abbr": ""	}, {		"name": "Kaolack",		"abbr": ""	}, {		"name": "Kedougou",		"abbr": ""	}, {		"name": "Kolda",		"abbr": ""	}, {		"name": "Louga",		"abbr": ""	}, {		"name": "Matam",		"abbr": ""	}, {		"name": "Saint-Louis",		"abbr": ""	}, {		"name": "Sedhiou",		"abbr": ""	}, {		"name": "Tambacounda",		"abbr": ""	}, {		"name": "Thies",		"abbr": ""	}, {		"name": "Ziguinchor",		"abbr": ""	}]}, {	"name": "Serbia and Montenegro",	"abbr": "CS",	"states": [{		"name": "Northern Serbia",		"abbr": ""	}, {		"name": "Western Serbia",		"abbr": ""	}, {		"name": "Central Serbia",		"abbr": ""	}, {		"name": "Eastern Serbia",		"abbr": ""	}, {		"name": "South-western Serbia",		"abbr": ""	}, {		"name": "Southern Serbia",		"abbr": ""	}]}, {	"name": "Seychelles",	"abbr": "SC",	"states": [{		"name": "Seychelles Islands",		"abbr": ""	}]}, {	"name": "Sierra Leone",	"abbr": "SL",	"states": [{		"name": "Bo",		"abbr": ""	}, {		"name": "Bombali",		"abbr": ""	}, {		"name": "Bonthe",		"abbr": ""	}, {		"name": "Kailahun",		"abbr": ""	}, {		"name": "Kambia",		"abbr": ""	}, {		"name": "Kenema",		"abbr": ""	}, {		"name": "Koinadugu",		"abbr": ""	}, {		"name": "Kono",		"abbr": ""	}, {		"name": "Moyamba",		"abbr": ""	}, {		"name": "Port Loko",		"abbr": ""	}, {		"name": "Pujehun",		"abbr": ""	}, {		"name": "Sherbro Urban",		"abbr": ""	}, {		"name": "Tonkolili",		"abbr": ""	}, {		"name": "Western Rural",		"abbr": ""	}, {		"name": "Western Urban",		"abbr": ""	}]}, {	"name": "Singapore",	"abbr": "SG",	"states": [{		"name": "Singapore",		"abbr": ""	}]}, {	"name": "Slovakia",	"abbr": "SK",	"states": [{		"name": "Banska Bystrica",		"abbr": ""	}, {		"name": "Bratislava",		"abbr": ""	}, {		"name": "Kosice",		"abbr": ""	}, {		"name": "Nitra",		"abbr": ""	}, {		"name": "Presov",		"abbr": ""	}, {		"name": "Trencin",		"abbr": ""	}, {		"name": "Trnava",		"abbr": ""	}, {		"name": "Zilina",		"abbr": ""	}]}, {	"name": "Slovenia",	"abbr": "SI",	"states": [{		"name": "Dolenjska",		"abbr": ""	}, {		"name": "Gorenjska",		"abbr": ""	}, {		"name": "GoriÅ¡ka",		"abbr": ""	}, {		"name": "KoroÅ¡ka",		"abbr": ""	}, {		"name": "Notranjsko-kraÅ¡ka",		"abbr": ""	}, {		"name": "Obalno-kraÅ¡ka",		"abbr": ""	}, {		"name": "Osrednjeslovenska",		"abbr": ""	}, {		"name": "Podravska",		"abbr": ""	}, {		"name": "Pomurska",		"abbr": ""	}, {		"name": "Savinjska",		"abbr": ""	}, {		"name": "Spodnjeposavska",		"abbr": ""	}, {		"name": "Zasavska",		"abbr": ""	}]}, {	"name": "Solomon Islands",	"abbr": "SB",	"states": [{		"name": "Solomon Islands",		"abbr": ""	}]}, {	"name": "Somalia",	"abbr": "SO",	"states": [{		"name": "Awdal",		"abbr": ""	}, {		"name": "Bakool",		"abbr": ""	}, {		"name": "Banaadir",		"abbr": ""	}, {		"name": "Bari",		"abbr": ""	}, {		"name": "Bay",		"abbr": ""	}, {		"name": "Galguduud",		"abbr": ""	}, {		"name": "Gedo",		"abbr": ""	}, {		"name": "Hiiraan",		"abbr": ""	}, {		"name": "Jubbada Dhexe",		"abbr": ""	}, {		"name": "Jubbada Hoose",		"abbr": ""	}, {		"name": "Mudug",		"abbr": ""	}, {		"name": "Nugaal",		"abbr": ""	}, {		"name": "Sanaag",		"abbr": ""	}, {		"name": "Shabeellaha Dhexe",		"abbr": ""	}, {		"name": "Shabeellaha Hoose",		"abbr": ""	}, {		"name": "Sool",		"abbr": ""	}, {		"name": "Togdheer",		"abbr": ""	}, {		"name": "Woqooyi Galbeed",		"abbr": ""	}]}, {	"name": "South Africa",	"abbr": "ZA",	"states": [{		"name": "Eastern Cape",		"abbr": ""	}, {		"name": "Free State",		"abbr": ""	}, {		"name": "Gauteng",		"abbr": ""	}, {		"name": "KwaZulu-Natal",		"abbr": ""	}, {		"name": "Limpopo",		"abbr": ""	}, {		"name": "Mpumalanga",		"abbr": ""	}, {		"name": "North West",		"abbr": ""	}, {		"name": "Northern Cape",		"abbr": ""	}, {		"name": "Western Cape",		"abbr": ""	}]}, {	"name": "Southern Sudan",	"abbr": "SS",	"states": [{		"name": "Northern Bahr el Ghazal",		"abbr": ""	}, {		"name": "Western Bahr el Ghazal",		"abbr": ""	}, {		"name": "Lakes",		"abbr": ""	}, {		"name": "Warrap",		"abbr": ""	}, {		"name": "Western Equatoria",		"abbr": ""	}, {		"name": "Central Equatoria",		"abbr": ""	}, {		"name": "Eastern Equatoria",		"abbr": ""	}, {		"name": "Jonglei",		"abbr": ""	}, {		"name": "Unity",		"abbr": ""	}, {		"name": "Upper Nile",		"abbr": ""	}]}, {	"name": "Spain",	"abbr": "ES",	"states": [{		"name": "Andalusia",		"abbr": ""	}, {		"name": "Aragon",		"abbr": ""	}, {		"name": "Asturias",		"abbr": ""	}, {		"name": "Balearic Islands",		"abbr": ""	}, {		"name": "Basque Country",		"abbr": ""	}, {		"name": "Canary Islands",		"abbr": ""	}, {		"name": "Cantabria",		"abbr": ""	}, {		"name": "Castile and Leon",		"abbr": ""	}, {		"name": "Castilla-La Mancha",		"abbr": ""	}, {		"name": "Catalonia",		"abbr": ""	}, {		"name": "Community of Madrid",		"abbr": ""	}, {		"name": "Extremadura",		"abbr": ""	}, {		"name": "Galicia",		"abbr": ""	}, {		"name": "Juan Vicente Herrera (PP)",		"abbr": ""	}, {		"name": "La Rioja",		"abbr": ""	}, {		"name": "Navarre",		"abbr": ""	}, {		"name": "Region of Murcia",		"abbr": ""	}, {		"name": "Valencian Community",		"abbr": ""	}]}, {	"name": "Sri Lanka",	"abbr": "LK",	"states": [{		"name": "Central",		"abbr": ""	}, {		"name": "Eastern",		"abbr": ""	}, {		"name": "North Central",		"abbr": ""	}, {		"name": "Northern",		"abbr": ""	}, {		"name": "North Western",		"abbr": ""	}, {		"name": "Sabaragamuwa",		"abbr": ""	}, {		"name": "Southern",		"abbr": ""	}, {		"name": "Uva",		"abbr": ""	}, {		"name": "Western",		"abbr": ""	}]}, {	"name": "Sudan",	"abbr": "SD",	"states": [{		"name": "Blue Nile",		"abbr": ""	}, {		"name": "Central Darfur",		"abbr": ""	}, {		"name": "East Darfur",		"abbr": ""	}, {		"name": "Gedarif",		"abbr": ""	}, {		"name": "Gezira",		"abbr": ""	}, {		"name": "Kassala",		"abbr": ""	}, {		"name": "Khartoum",		"abbr": ""	}, {		"name": "North Darfur",		"abbr": ""	}, {		"name": "Northern",		"abbr": ""	}, {		"name": "North Kordofan",		"abbr": ""	}, {		"name": "Red Sea",		"abbr": ""	}, {		"name": "River Nile",		"abbr": ""	}, {		"name": "Sennar",		"abbr": ""	}, {		"name": "South Darfur",		"abbr": ""	}, {		"name": "South Kordofan",		"abbr": ""	}, {		"name": "West Darfur",		"abbr": ""	}, {		"name": "West Kordofan",		"abbr": ""	}, {		"name": "White Nile",		"abbr": ""	}]}, {	"name": "Suriname",	"abbr": "SR",	"states": [{		"name": "Brokopondo",		"abbr": ""	}, {		"name": "Commewijne",		"abbr": ""	}, {		"name": "Coronie",		"abbr": ""	}, {		"name": "Marowijne",		"abbr": ""	}, {		"name": "Nickerie",		"abbr": ""	}, {		"name": "Para",		"abbr": ""	}, {		"name": "Paramaribo",		"abbr": ""	}, {		"name": "Saramacca",		"abbr": ""	}, {		"name": "Sipaliwini",		"abbr": ""	}, {		"name": "Wanica",		"abbr": ""	}]}, {	"name": "Svalbard and Jan Mayen",	"abbr": "SJ",	"states": [{		"name": "Jan Mayen",		"abbr": ""	}, {		"name": "Svalbard",		"abbr": ""	}]}, {	"name": "Swaziland",	"abbr": "SZ",	"states": [{		"name": "Hhohho",		"abbr": ""	}, {		"name": "Lubombo",		"abbr": ""	}, {		"name": "Manzini",		"abbr": ""	}, {		"name": "Shiselweni",		"abbr": ""	}]}, {	"name": "Sweden",	"abbr": "SE",	"states": [{		"name": "Blekinge",		"abbr": ""	}, {		"name": "Dalarna",		"abbr": ""	}, {		"name": "Gavleborg",		"abbr": ""	}, {		"name": "Gotland",		"abbr": ""	}, {		"name": "Halland",		"abbr": ""	}, {		"name": "JÃ¤mtland",		"abbr": ""	}, {		"name": "Jonkoping",		"abbr": ""	}, {		"name": "Kalmar",		"abbr": ""	}, {		"name": "Kronoberg",		"abbr": ""	}, {		"name": "Norrbotten",		"abbr": ""	}, {		"name": "Orebro",		"abbr": ""	}, {		"name": "Ostergotland",		"abbr": ""	}, {		"name": "Skane",		"abbr": ""	}, {		"name": "Sodermanland",		"abbr": ""	}, {		"name": "Stockholm",		"abbr": ""	}, {		"name": "Uppsala",		"abbr": ""	}, {		"name": "Varmland",		"abbr": ""	}, {		"name": "Vasterbotten",		"abbr": ""	}, {		"name": "Vasternorrland",		"abbr": ""	}, {		"name": "Vastmanland",		"abbr": ""	}, {		"name": "Vastra Gotaland",		"abbr": ""	}]}, {	"name": "Switzerland",	"abbr": "CH",	"states": [{		"name": "Aargau (Argovia)",		"abbr": ""	}, {		"name": "Appenzell Ausserrhoden (Outer Rhodes)",		"abbr": ""	}, {		"name": "Appenzell Innerrhoden (Inner Rhodes)",		"abbr": ""	}, {		"name": "Basel-Landschaft (Basle-Country)",		"abbr": ""	}, {		"name": "Basel-Stadt (Basle-City)",		"abbr": ""	}, {		"name": "Berne (Bern)",		"abbr": ""	}, {		"name": "Fribourg",		"abbr": ""	}, {		"name": "Geneva",		"abbr": ""	}, {		"name": "Glarus",		"abbr": ""	}, {		"name": "Graubunden (Grisons)",		"abbr": ""	}, {		"name": "Jura",		"abbr": ""	}, {		"name": "Lucerne",		"abbr": ""	}, {		"name": "Neuchatel",		"abbr": ""	}, {		"name": "Nidwalden (Nidwald)",		"abbr": ""	}, {		"name": "Obwalden (Obwald)",		"abbr": ""	}, {		"name": "Schaffhausen",		"abbr": ""	}, {		"name": "Schwyz",		"abbr": ""	}, {		"name": "Solothurn",		"abbr": ""	}, {		"name": "St. Gallen (St. Gall)",		"abbr": ""	}, {		"name": "Thurgau (Thurgovia)",		"abbr": ""	}, {		"name": "Ticino",		"abbr": ""	}, {		"name": "Uri",		"abbr": ""	}, {		"name": "Valais",		"abbr": ""	}, {		"name": "Vaud",		"abbr": ""	}, {		"name": "Zug",		"abbr": ""	}, {		"name": "Zurich",		"abbr": ""	}]}, {	"name": "Syrian Arab Republic",	"abbr": "SY",	"states": [{		"name": "Syria",		"abbr": ""	}]}, {	"name": "Taiwan",	"abbr": "TW",	"states": [{		"name": "Fukien",		"abbr": ""	}, {		"name": "Kaohsiung",		"abbr": ""	}, {		"name": "New Taipei",		"abbr": ""	}, {		"name": "Taichung",		"abbr": ""	}, {		"name": "Tainan",		"abbr": ""	}, {		"name": "Taipei",		"abbr": ""	}, {		"name": "Taiwan",		"abbr": ""	}]}, {	"name": "Tajikistan",	"abbr": "TJ",	"states": [{		"name": "Sughd",		"abbr": ""	}, {		"name": "Region of Republican Subordination",		"abbr": ""	}, {		"name": "Khatlon",		"abbr": ""	}, {		"name": "Gorno-Badakhshan",		"abbr": ""	}]}, {	"name": "Tanzania",	"abbr": "TZ",	"states": [{		"name": "Arusha",		"abbr": ""	}, {		"name": "Dar es Salaam",		"abbr": ""	}, {		"name": "Dodoma",		"abbr": ""	}, {		"name": "Geita",		"abbr": ""	}, {		"name": "Iringa",		"abbr": ""	}, {		"name": "Kagera",		"abbr": ""	}, {		"name": "Katavi",		"abbr": ""	}, {		"name": "Kigoma",		"abbr": ""	}, {		"name": "Kilimanjaro",		"abbr": ""	}, {		"name": "Lindi",		"abbr": ""	}, {		"name": "Manyara",		"abbr": ""	}, {		"name": "Mara",		"abbr": ""	}, {		"name": "Mbeya",		"abbr": ""	}, {		"name": "Morogoro",		"abbr": ""	}, {		"name": "Mtwara",		"abbr": ""	}, {		"name": "Mwanza",		"abbr": ""	}, {		"name": "Njombe",		"abbr": ""	}, {		"name": "Pemba North",		"abbr": ""	}, {		"name": "Pemba South",		"abbr": ""	}, {		"name": "Pwani",		"abbr": ""	}, {		"name": "Rukwa",		"abbr": ""	}, {		"name": "Ruvuma",		"abbr": ""	}, {		"name": "Shinyanga",		"abbr": ""	}, {		"name": "Simiyu",		"abbr": ""	}, {		"name": "Singida",		"abbr": ""	}, {		"name": "Tabora",		"abbr": ""	}, {		"name": "Tanga",		"abbr": ""	}, {		"name": "Zanzibar North",		"abbr": ""	}, {		"name": "Zanzibar South and Central",		"abbr": ""	}, {		"name": "Zanzibar West",		"abbr": ""	}]}, {	"name": "Thailand",	"abbr": "TH",	"states": [{		"name": "Central Thailand",		"abbr": ""	}, {		"name": "Eastern Thailand",		"abbr": ""	}, {		"name": "Northeastern Thailand",		"abbr": ""	}, {		"name": "Northern Thailand",		"abbr": ""	}, {		"name": "Northwestern Thailand (Tak)",		"abbr": ""	}, {		"name": "Southern Thailand",		"abbr": ""	}, {		"name": "Western Thailand",		"abbr": ""	}]}, {	"name": "Timor-Leste",	"abbr": "TL",	"states": [{		"name": "Oecusse",		"abbr": ""	}, {		"name": "Liquica",		"abbr": ""	}, {		"name": "Dili",		"abbr": ""	}, {		"name": "Manatuto",		"abbr": ""	}, {		"name": "Baucau",		"abbr": ""	}, {		"name": "Lautem",		"abbr": ""	}, {		"name": "Bobonaro",		"abbr": ""	}, {		"name": "Ermera",		"abbr": ""	}, {		"name": "Aileu",		"abbr": ""	}, {		"name": "Viqueque",		"abbr": ""	}, {		"name": "Cova Lima",		"abbr": ""	}, {		"name": "Ainaro",		"abbr": ""	}, {		"name": "Manufahi",		"abbr": ""	}]}, {	"name": "Togo",	"abbr": "TG",	"states": [{		"name": "Centrale",		"abbr": ""	}, {		"name": "Kara",		"abbr": ""	}, {		"name": "Maritime",		"abbr": ""	}, {		"name": "Plateaux",		"abbr": ""	}, {		"name": "Savanes",		"abbr": ""	}]}, {	"name": "Tonga",	"abbr": "TO",	"states": [{		"name": "Tonga Islands",		"abbr": ""	}]}, {	"name": "Trinidad and Tobago",	"abbr": "TT",	"states": [{		"name": "Arima",		"abbr": ""	}, {		"name": "County of Caroni",		"abbr": ""	}, {		"name": "County of Nariva",		"abbr": ""	}, {		"name": "County of Saint Andrew",		"abbr": ""	}, {		"name": "County of Saint David",		"abbr": ""	}, {		"name": "County of Saint George",		"abbr": ""	}, {		"name": "County of Saint Patrick",		"abbr": ""	}, {		"name": "County of Victoria",		"abbr": ""	}, {		"name": "Mayaro",		"abbr": ""	}, {		"name": "Port of Spain",		"abbr": ""	}, {		"name": "San Fernando",		"abbr": ""	}, {		"name": "Tobago",		"abbr": ""	}, {		"name": "Other - Enter Below",		"abbr": ""	}]}, {	"name": "Tunisia",	"abbr": "TN",	"states": [{		"name": "Ariana",		"abbr": ""	}, {		"name": "Beja",		"abbr": ""	}, {		"name": "Ben Arous",		"abbr": ""	}, {		"name": "Bizerte",		"abbr": ""	}, {		"name": "Gabes",		"abbr": ""	}, {		"name": "Gafsa",		"abbr": ""	}, {		"name": "Jendouba",		"abbr": ""	}, {		"name": "Kairouan",		"abbr": ""	}, {		"name": "Kasserine",		"abbr": ""	}, {		"name": "Kebili",		"abbr": ""	}, {		"name": "Kef",		"abbr": ""	}, {		"name": "Mahdia",		"abbr": ""	}, {		"name": "Manouba",		"abbr": ""	}, {		"name": "Medenine",		"abbr": ""	}, {		"name": "Monastir",		"abbr": ""	}, {		"name": "Nabeul",		"abbr": ""	}, {		"name": "Sfax",		"abbr": ""	}, {		"name": "Sidi Bouzid",		"abbr": ""	}, {		"name": "Siliana",		"abbr": ""	}, {		"name": "Sousse",		"abbr": ""	}, {		"name": "Tataouine",		"abbr": ""	}, {		"name": "Tozeur",		"abbr": ""	}, {		"name": "Tunis",		"abbr": ""	}, {		"name": "Zaghouan",		"abbr": ""	}]}, {	"name": "Turkey",	"abbr": "TR",	"states": [{		"name": "Enter Below",		"abbr": ""	}]}, {	"name": "Turkmenistan",	"abbr": "TM",	"states": [{		"name": "Ahal",		"abbr": ""	}, {		"name": "Ashgabat",		"abbr": ""	}, {		"name": "Balkan",		"abbr": ""	}, {		"name": "Dashoguz",		"abbr": ""	}, {		"name": "Lebap",		"abbr": ""	}, {		"name": "Mary",		"abbr": ""	}]}, {	"name": "Turks and Caicos Islands",	"abbr": "TC",	"states": [{		"name": "A Caicos Island",		"abbr": ""	}, {		"name": "A Turks Island",		"abbr": ""	}]}, {	"name": "Tuvalu",	"abbr": "TV",	"states": [{		"name": "Tuvalu Islands",		"abbr": ""	}]}, {	"name": "Uganda",	"abbr": "UG",	"states": [{		"name": "Central Region",		"abbr": ""	}, {		"name": "Eastern Region",		"abbr": ""	}, {		"name": "Northern Region",		"abbr": ""	}, {		"name": "Western Region",		"abbr": ""	}]}, {	"name": "Ukraine",	"abbr": "UA",	"states": [{		"name": "Cherkasy",		"abbr": ""	}, {		"name": "Chernihiv",		"abbr": ""	}, {		"name": "Chernivtsi",		"abbr": ""	}, {		"name": "Crimea",		"abbr": ""	}, {		"name": "Dnipropetrovs'k",		"abbr": ""	}, {		"name": "Donets'k",		"abbr": ""	}, {		"name": "Ivano-Frankivs'k",		"abbr": ""	}, {		"name": "Kharkiv",		"abbr": ""	}, {		"name": "Kherson",		"abbr": ""	}, {		"name": "Khmel'nyts'kyy",		"abbr": ""	}, {		"name": "Kiev",		"abbr": ""	}, {		"name": "Kiev City",		"abbr": ""	}, {		"name": "Kirovohrad",		"abbr": ""	}, {		"name": "Luhans'k",		"abbr": ""	}, {		"name": "L'viv",		"abbr": ""	}, {		"name": "Mykolayiv",		"abbr": ""	}, {		"name": "Odessa",		"abbr": ""	}, {		"name": "Poltava",		"abbr": ""	}, {		"name": "Rivne",		"abbr": ""	}, {		"name": "Sevastopol' City",		"abbr": ""	}, {		"name": "Sumy",		"abbr": ""	}, {		"name": "Ternopil'",		"abbr": ""	}, {		"name": "Transcarpathia",		"abbr": ""	}, {		"name": "Vinnytsya",		"abbr": ""	}, {		"name": "Volyn",		"abbr": ""	}, {		"name": "Zaporizhzhya",		"abbr": ""	}, {		"name": "Zhytomyr",		"abbr": ""	}]}, {	"name": "United Arab Emirates",	"abbr": "AE",	"states": [{		"name": "Abu Dhabi",		"abbr": ""	}, {		"name": "Ajman",		"abbr": ""	}, {		"name": "Dubay",		"abbr": ""	}, {		"name": "Fujayrah",		"abbr": ""	}, {		"name": "Ras al Khaymah",		"abbr": ""	}, {		"name": "Sharjah",		"abbr": ""	}, {		"name": "Umm al Qaywayn",		"abbr": ""	}]}, {	"name": "United Kingdom",	"abbr": "GB",	"states": [{		"name": "East Midlands",		"abbr": ""	}, {		"name": "East of England",		"abbr": ""	}, {		"name": "London",		"abbr": ""	}, {		"name": "North East",		"abbr": ""	}, {		"name": "North West",		"abbr": ""	}, {		"name": "South East",		"abbr": ""	}, {		"name": "South West",		"abbr": ""	}, {		"name": "West Midlands",		"abbr": ""	}, {		"name": "Yorkshire and the Humber",		"abbr": ""	}]}, {	"name": "Uruguay",	"abbr": "UY",	"states": [{		"name": "Artigas",		"abbr": ""	}, {		"name": "Canelones",		"abbr": ""	}, {		"name": "Cerro Largo",		"abbr": ""	}, {		"name": "Colnia",		"abbr": ""	}, {		"name": "Durazno",		"abbr": ""	}, {		"name": "Flores",		"abbr": ""	}, {		"name": "Florida",		"abbr": ""	}, {		"name": "Lavalleja",		"abbr": ""	}, {		"name": "Maldonado",		"abbr": ""	}, {		"name": "Montevidu",		"abbr": ""	}, {		"name": "Paysand",		"abbr": ""	}, {		"name": "Rio Negro",		"abbr": ""	}, {		"name": "Rivera",		"abbr": ""	}, {		"name": "Rocha",		"abbr": ""	}, {		"name": "Salto",		"abbr": ""	}, {		"name": "San Jos",		"abbr": ""	}, {		"name": "Soriano",		"abbr": ""	}, {		"name": "Tacuaremb",		"abbr": ""	}, {		"name": "Treinta y Tres",		"abbr": ""	}]}, {	"name": "Uzbekistan",	"abbr": "UZ",	"states": [{		"name": "Andijon",		"abbr": ""	}, {		"name": "Buxoro",		"abbr": ""	}, {		"name": "Farg`ona",		"abbr": ""	}, {		"name": "Jizzax",		"abbr": ""	}, {		"name": "Karakalpakstan",		"abbr": ""	}, {		"name": "Kashkadarya",		"abbr": ""	}, {		"name": "Namangan",		"abbr": ""	}, {		"name": "Navoi",		"abbr": ""	}, {		"name": "Samarkand",		"abbr": ""	}, {		"name": "Sirdaryo",		"abbr": ""	}, {		"name": "Surxondaryo",		"abbr": ""	}, {		"name": "Tashkent",		"abbr": ""	}, {		"name": "Tashkent City",		"abbr": ""	}, {		"name": "Xorazm",		"abbr": ""	}]}, {	"name": "Vanuatu",	"abbr": "VU",	"states": [{		"name": "Vanuatu Islands",		"abbr": ""	}]}, {	"name": "Various",	"abbr": "VS",	"states": [{		"name": "Not a Country",		"abbr": ""	}]}, {	"name": "Vatican City",	"abbr": "VA",	"states": [{		"name": "Vatican City",		"abbr": ""	}]}, {	"name": "Venezuela",	"abbr": "VE",	"states": [{		"name": "Amazonas",		"abbr": ""	}, {		"name": "Anzotegui",		"abbr": ""	}, {		"name": "Apure",		"abbr": ""	}, {		"name": "Aragua",		"abbr": ""	}, {		"name": "Barinas",		"abbr": ""	}, {		"name": "Bolivar",		"abbr": ""	}, {		"name": "Carabobo",		"abbr": ""	}, {		"name": "Cojedes",		"abbr": ""	}, {		"name": "Delta Amacuro",		"abbr": ""	}, {		"name": "Distrito Capital",		"abbr": ""	}, {		"name": "Falcn",		"abbr": ""	}, {		"name": "Gurico",		"abbr": ""	}, {		"name": "Lara",		"abbr": ""	}, {		"name": "Mrida",		"abbr": ""	}, {		"name": "Miranda",		"abbr": ""	}, {		"name": "Monagas",		"abbr": ""	}, {		"name": "Nueva Esparta",		"abbr": ""	}, {		"name": "Portuguesa",		"abbr": ""	}, {		"name": "Sucre",		"abbr": ""	}, {		"name": "Tchira",		"abbr": ""	}, {		"name": "Trujillo",		"abbr": ""	}, {		"name": "Vargas",		"abbr": ""	}, {		"name": "Yaracuy",		"abbr": ""	}, {		"name": "Zulia",		"abbr": ""	}]}, {	"name": "Viet Nam",	"abbr": "VN",	"states": [{		"name": "Enter Below",		"abbr": ""	}]}, {	"name": "Virgin Islands, British",	"abbr": "VG",	"states": [{		"name": "British Virgin Islands",		"abbr": ""	}]}, {	"name": "Virgin Islands, U.S.",	"abbr": "VI",	"states": [{		"name": "US Virgin Islands",		"abbr": ""	}]}, {	"name": "Wallis and Futuna",	"abbr": "WF",	"states": [{		"name": "Wallis Island",		"abbr": ""	}, {		"name": "Hoorn Islands",		"abbr": ""	}]}, {	"name": "Western Sahara",	"abbr": "EH",	"states": [{		"name": "Boujdour",		"abbr": ""	}, {		"name": "Es Semara",		"abbr": ""	}, {		"name": "Laayoune",		"abbr": ""	}, {		"name": "Oued el Dahab",		"abbr": ""	}]}, {	"name": "Yemen",	"abbr": "YE",	"states": [{		"name": "Enter Below",		"abbr": ""	}]}, {	"name": "Zambia",	"abbr": "ZM",	"states": [{		"name": "Central",		"abbr": ""	}, {		"name": "Copperbelt",		"abbr": ""	}, {		"name": "Eastern",		"abbr": ""	}, {		"name": "Luapula",		"abbr": ""	}, {		"name": "Lusaka",		"abbr": ""	}, {		"name": "Muchinga",		"abbr": ""	}, {		"name": "North-Western",		"abbr": ""	}, {		"name": "Northern",		"abbr": ""	}, {		"name": "Southern",		"abbr": ""	}, {		"name": "Western",		"abbr": ""	}]}, {	"name": "Zimbabwe",	"abbr": "ZW",	"states": [{		"name": "Bulawayo",		"abbr": ""	}, {		"name": "Harare",		"abbr": ""	}, {		"name": "Manicaland",		"abbr": ""	}, {		"name": "Mashonaland Central",		"abbr": ""	}, {		"name": "Mashonaland East",		"abbr": ""	}, {		"name": "Mashonaland West",		"abbr": ""	}, {		"name": "Masvingo",		"abbr": ""	}, {		"name": "Matabeleland North",		"abbr": ""	}, {		"name": "Matabeleland South",		"abbr": ""	}, {		"name": "Midlands",		"abbr": ""	}]}]

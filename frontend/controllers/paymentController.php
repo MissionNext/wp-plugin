@@ -106,7 +106,7 @@ class paymentController extends AbstractLayoutController {
 
             if($this->form->isValid()){
                 if($this->form->process($helper)){
-                    $this->setMessage('notice', __("Payment successful", Constants::TEXT_DOMAIN), 1);
+                    $this->setMessage('notice', __("Payment successful. Now your profile must be completed in order to post jobs and receive candidate matches. ", Constants::TEXT_DOMAIN), 1);
                     $this->redirect('/profile');
                 }
             }
@@ -219,7 +219,7 @@ class paymentController extends AbstractLayoutController {
 
             if($this->form->isValid()){
                 if($this->form->process($helper)){
-                    $this->setMessage('notice', __("Payment successful", Constants::TEXT_DOMAIN), 1);
+                    $this->setMessage('notice', __("Payment successful. Thank you for renewing your subscription. Be sure the profile and job entries are up-to-date.", Constants::TEXT_DOMAIN), 1);
                     $this->redirect('/profile');
                 }
             }

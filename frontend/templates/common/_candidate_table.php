@@ -52,33 +52,13 @@ reset($folders);
 $form = \MissionNext\lib\core\Context::getInstance()->getApiManager()->getApi()->getForm($role, $role == 'job'?'job':'profile');
 
 foreach($items as $item){
-
-    if($role == 'job'){
-        $item['show_name'] = $item['name'];
-    } else {
-        $item['show_name'] = \MissionNext\lib\UserLib::getUserFullName($item);
-    }
-
+    $item['show_name'] = \MissionNext\lib\UserLib::getUserFullName($item);
     $item['profile'] = \MissionNext\lib\ProfileLib::prepareDataToShow($item['profileData'], $form);
-    // echo "\$item = <br>"; print_r($item); echo "<br>";
     $groups[$item['folder']?$item['folder']:($default_folder?$default_folder:key($folders))][] = $item;
 }
 
 //MATCHING
 $matching = isset($items[0]['matching_percentage']);
-
-//AFFILIATE
-$affiliate = ($userRole == 'agency' && $role == 'organization') || ($userRole == 'organization' && $role == 'agency');
-
-if($affiliate){
-    $aff_tmp = \MissionNext\lib\core\Context::getInstance()->getApiManager()->getApi()->getAffiliates($userId, 'any');
-
-    $affiliates = array();
-
-    foreach($aff_tmp as $aff_key => $aff){
-        $affiliates[$aff[$role.'_profile']['id']] = $aff;
-    }
-}
 
 //FAVORITES
 
@@ -114,27 +94,12 @@ function getLastLogin($item){
                 <thead>
                 <tr>
                     <th>#</th>
-
-                    <?php if($role == \MissionNext\lib\Constants::ROLE_ORGANIZATION || $role == \MissionNext\lib\Constants::ROLE_AGENCY): ?>
-                        <th class="sortable"><?php echo __('Organization Name', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                    <?php endif;?>
-                    <?php if($role == \MissionNext\lib\Constants::ROLE_JOB): ?>
-                        <th class="sortable"><?php echo __('Name', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                        <th class="sortable"><?php echo ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_ORGANIZATION)) ?></th>
-                        <th class="sortable"><?php echo __("Region", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                        <th class="sortable"><?php echo __("Category", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                        <th class="sortable"><?php echo __("Commitment Time", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                        <th class="sortable"><?php echo __("Inquired", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                    <?php endif; ?>
-
-                    <?php if($role == \MissionNext\lib\Constants::ROLE_CANDIDATE): ?>
-                        <th class="sortable"><?php echo __('Candidate Name', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                        <th class="sortable"><?php echo __("Age", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                        <th><?php echo __("Gender", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                        <th><?php echo __("Marital status", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                        <th class="sortable"><?php echo __("Location", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                        <th><?php echo __("Last login", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                    <?php endif; ?>
+                    <th class="sortable"><?php echo __('Candidate Name', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                    <th class="sortable"><?php echo __("Age", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                    <th><?php echo __("Gender", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                    <th><?php echo __("Marital status", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                    <th class="sortable"><?php echo __("Location", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                    <th><?php echo __("Last login", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
 
                     <?php if($matching): ?>
                         <th class="sortable asc"><?php echo __("Match (%)", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
@@ -148,10 +113,6 @@ function getLastLogin($item){
                     <?php } ?>
 
                     <th><?php echo __("Notes", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-
-                    <?php if($affiliate): ?>
-                        <th><font color="blue"><?php echo __("Affiliate", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></font></th>
-                    <?php endif; ?>
                 </tr>
                 </thead>
                 <tbody>
@@ -161,75 +122,24 @@ function getLastLogin($item){
                         <td colspan="15"><?php echo $folders[$group_name] ?> (<span><?php echo count($folderItems) ?></span>)</td>
                     </tr>
                     <?php foreach($folderItems as $key => $item):
-                        if ($role == \MissionNext\lib\Constants::ROLE_JOB || $item['is_active'] == 1): // endif at line 277
-                            $prior = ($role == \MissionNext\lib\Constants::ROLE_JOB && @$item['organization']['subscription']['partnership'] == \MissionNext\lib\Constants::PARTNERSHIP_PLUS) ||
-                                ($role == \MissionNext\lib\Constants::ROLE_ORGANIZATION && @$item['subscription']['partnership'] == \MissionNext\lib\Constants::PARTNERSHIP_PLUS);
+                        if ($item['is_active'] == 1): // endif at line 277
                             ?>
 
-                            <tr class="item<?php if($prior) echo ' success'; ?>" data-id="<?php echo $item['id'] ?>" data-name="<?php
-                            $record_name = '';
-                            if (\MissionNext\lib\Constants::ROLE_JOB == $role) {
-                                $record_name = htmlentities($item['name']);
-                            } elseif (\MissionNext\lib\Constants::ROLE_CANDIDATE == $role) {
-                                $record_name = htmlentities($item['show_name']);
-                            } elseif (\MissionNext\lib\Constants::ROLE_ORGANIZATION == $role) {
-                                $record_name = htmlentities($item['profileData']['organization_name']);
-                            } else {
-                                $record_name = htmlentities($item['profileData']['agency_full_name']);
-                            }
+                            <tr class="item" data-id="<?php echo $item['id'] ?>" data-name="<?php
+                            $record_name = htmlentities($item['show_name']);
                             echo $record_name;
-                            ?>" data-prior="<?php echo $prior ?>" data-updated="<?php echo date("Y", strtotime($item['updated_at'])); ?>">
+                            ?>" data-prior="" data-updated="<?php echo date("Y", strtotime($item['updated_at'])); ?>">
                                 <td><?php echo $key + 1  ?></td>
-
-                                <?php if($role == \MissionNext\lib\Constants::ROLE_ORGANIZATION): ?>
-                                    <td class="name">
-                                        <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo $item['profileData']['organization_name']; ?></a>
-                                    </td>
-                                <?php endif; ?>
-
-                                <?php if($role == \MissionNext\lib\Constants::ROLE_AGENCY): ?>
-                                    <td class="name">
-                                        <?php if (preg_match("/explorenext/",$sniff_host))   { ?>
-                                            <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo $item['profileData']['last_name']." ".$item['profileData']['first_name']." (".$item['profileData']['abbreviation'].")"; ?></a>
-                                        <?php } else { ?>
-                                            <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo $item['profileData']['agency_full_name']; ?></a>
-                                        <?php } ?>
-                                    </td>
-                                <?php endif; ?>
-
-                                <?php if($role == \MissionNext\lib\Constants::ROLE_JOB): ?>
-                                    <td class="name">
-                                        <?php $job_key = 'job_title_!#'.$item['app_names'][0]; ?>
-                                        <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo !empty($item['profileData'][$job_key]) ? current($item['profileData'][$job_key]) : $item['show_name'] ?></a>
-                                    </td>
-                                    <td class="organization" >
-                                        <a href="/organization/<?php echo $item['organization']['id'] ?>">
-                                            <?php echo !empty($item['org_name']) ? $item['org_name'] : $item['organization']['username']; ?>
-                                        </a>
-
-                                    </td>
-                                    <td class="region"><?php echo getProfileField($item, 'world_region') ?></td>
-                                    <td class="categories"><?php echo getProfileField($item, 'job_category') ?></td>
-                                    <td class="time-commitment"><?php echo getProfileField($item, 'time_commitment') ?></td>
-                                    <td class="inquired">
-                                        <?php if (isset($item['inquired'])) { ?>
-                                            <img src="<?php echo getResourceUrl('/resources/images/inquire.png') ?>" height="16" width="16" />
-                                        <?php } ?>
-                                    </td>
-                                <?php endif; ?>
-
-                                <?php if($role == \MissionNext\lib\Constants::ROLE_CANDIDATE): ?>
-                                    <td class="name">
-                                        <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')">
-                                            <?php echo $item['show_name'] ?>
-                                        </a>
-                                    </td>
-                                    <td class="age"><?php echo getAge($item) ?></td>
-                                    <td class="gender"><?php echo getProfileField($item, 'gender') ?></td>
-                                    <td class="marital-status"><?php echo getProfileField($item, 'marital_status') ?></td>
-                                    <td class="location"><?php echo getLocation($item) ?></td>
-                                    <td class="last-login"><?php echo getLastLogin($item) ?></td>
-                                <?php endif; ?>
+                                <td class="name">
+                                    <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')">
+                                        <?php echo $item['show_name'] ?>
+                                    </a>
+                                </td>
+                                <td class="age"><?php echo getAge($item) ?></td>
+                                <td class="gender"><?php echo getProfileField($item, 'gender') ?></td>
+                                <td class="marital-status"><?php echo getProfileField($item, 'marital_status') ?></td>
+                                <td class="location"><?php echo getLocation($item) ?></td>
+                                <td class="last-login"><?php echo getLastLogin($item) ?></td>
 
                                 <?php if($matching): ?>
                                     <td class="matching" ><?php echo $item['matching_percentage'] ?></td>
@@ -265,16 +175,6 @@ function getLastLogin($item){
                                         <?php } ?>
                                     <?php } ?>
                                 </td>
-
-                                <?php if($affiliate) : ?>
-                                    <td class="affiliate" data-status="<?php echo isset($affiliates[$item['id']])?$affiliates[$item['id']]['status']:'' ?>">
-                                        <div class="<?php echo isset($affiliates[$item['id']])?'mn-'.$affiliates[$item['id']]['status']:'btn btn-link request' ?>">
-                                            <?php echo isset($affiliates[$item['id']])?
-                                                ucfirst(__($affiliates[$item['id']]['status'], \MissionNext\lib\Constants::TEXT_DOMAIN)):
-                                                __('Request', \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
-                                        </div>
-                                    </td>
-                                <?php endif; ?>
                             </tr>
                         <?php endif; ?> <!--From line 164 -->
                     <?php endforeach; ?>
@@ -661,38 +561,6 @@ function getLastLogin($item){
             error: error,
             dataType: "HTML"
         });
-    }
-
-    <?php endif; ?>
-
-    <?php if($affiliate): ?>
-
-    jQuery(document).on('click', 'table.result tr td.affiliate[data-status=""] div', function(e){
-
-        var div = jQuery(e.target);
-        var td = div.parents('td');
-        var tr = div.parents('tr');
-
-        requestAffiliate(tr.attr('data-id'), function(data){
-            div.attr('class', 'mn-'+data['status']);
-            div.text(data['status'].charAt(0).toUpperCase() + data['status'].substr(1));
-            td.attr('data-status', data['status']);
-        });
-    });
-
-    function requestAffiliate(approver_id, success, error){
-
-        jQuery.ajax({
-            type: "POST",
-            url: "/affiliate/request",
-            data: {
-                id: approver_id
-            },
-            success: success,
-            error: error,
-            dataType: "JSON"
-        });
-
     }
 
     <?php endif; ?>

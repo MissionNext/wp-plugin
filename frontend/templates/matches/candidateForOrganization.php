@@ -47,7 +47,7 @@ $years = [2001, 2010, 2011, 2012, 2013, 2014, 2015];
     </div>
 
     <?php if($candidates): ?>
-        <?php renderTemplate("common/_table", array('role' => 'candidate', 'items' => $candidates, 'messages' => $messages, 'userRole' => $userRole, 'userId' => $userId)) ?>
+        <?php renderTemplate("common/_candidate_table", array('role' => 'candidate', 'items' => $candidates, 'messages' => $messages, 'userRole' => $userRole, 'userId' => $userId)) ?>
         <?php renderTemplate("common/_pager", compact('page', 'pages')) ?>
     <?php else: ?>
         <div class="block">

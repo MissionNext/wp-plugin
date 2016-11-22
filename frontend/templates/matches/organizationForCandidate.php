@@ -34,7 +34,7 @@ $percentages = [10, 20, 30, 40, 50, 60, 70, 80, 90];
     </div>
 
     <?php if($organizations): ?>
-        <?php renderTemplate("common/_table", array('role' => 'organization', 'items' => $organizations, 'messages' => $messages, 'userRole' => $userRole, 'userId' => $userId)) ?>
+        <?php renderTemplate("common/_organization_table", array('role' => 'organization', 'items' => $organizations, 'messages' => $messages, 'userRole' => $userRole, 'userId' => $userId)) ?>
         <?php renderTemplate("common/_pager", compact('page', 'pages')) ?>
     <?php else: ?>
         <div class="block">

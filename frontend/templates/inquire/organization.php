@@ -34,7 +34,7 @@ $key = 0;
 
             <tr data-id="<?php echo $inquirie['id'] ?>" data-job-id="<?php echo $job['id'] ?>" data-candidate-id="<?php echo $inquirie['candidate']['id'] ?>">
                 <td class="id"><?php echo ++$key ?></td>
-                <td class="name"><a href="/candidate/<?php echo $inquirie['candidate']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getUserFullName($inquirie['candidate']) ?></a></td>
+                <td class="name"><a href="/candidate/<?php echo $inquirie['candidate']['id'] ?> " target="_blank"><?php echo \MissionNext\lib\UserLib::getUserFullName($inquirie['candidate']) ?></a></td>
                 <td><?php echo date('Y-m-d', strtotime($inquirie['updated_at'])) ?></td>
                 <td class="favorite" >
                     <div class="favorite-block <?php echo is_integer($inquirie['favorite'])?'favorite':'not-favorite' ?>"></div>

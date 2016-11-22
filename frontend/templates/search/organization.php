@@ -56,13 +56,14 @@ elseif (preg_match("/teachnext/",$sniff_host)) { $this_app = 6; }
 
         </div>
 	<!-- custom instructions depending on $role (entity that is target of the search) and $app -->
-    <?php     if($role == "organization" && $this_app == 6): ?>
+	
+    <?php     if($role == "organization" && $userRole == "agency" && $this_app == 6): ?>
         <?php echo __("Search/Find a mission agency. Select to affiliate with your school to assist in recruiting candidates.", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
-    <?php elseif($role == "organization" && $this_app == 3): ?>
+    <?php elseif($role == "organization" && $userRole == "agency" && $this_app == 3): ?>
         <?php echo __("Search/Find a mission agency representative, typically working with your organization. Select to &quot;affiliate&quot; with your agency to assist in recruiting candidates.", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
-    <?php elseif($role == "agency" && $this_app == 6): ?>
+    <?php elseif($role == "agency" && $userRole == "organization" && $this_app == 6): ?>
         <?php echo __("Search/Find a school. Select to affiliate with you or your agency to assist in recruiting candidates.", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
-    <?php elseif($role == "agency" && $this_app == 3): ?>
+    <?php elseif($role == "agency" && $userRole == "organization" && $this_app == 3): ?>
         <?php echo __("Search/Find a mission agency, typically the one you are serving with. Select to &quot;affiliate&quot; to assist in recruiting candidates fitting your agency assignments.", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
     <?php elseif(preg_match("/affiliates/",$FROM)): ?>
         <?php echo __("Search/Find a partner, then request to affiliate.", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>

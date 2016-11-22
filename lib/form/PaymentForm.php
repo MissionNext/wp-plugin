@@ -99,16 +99,16 @@ class PaymentForm extends Form {
             'fields' => array(
                 array(
                     'type' => 'input',
-                    'symbol_key' => 'exp_date',
-                    'name' => __('Card Expiration Date (MM/YYYY)', Constants::TEXT_DOMAIN),
+                    'symbol_key' => 'card_num',
+                    'name' => __('Card Number', Constants::TEXT_DOMAIN),
                     'order' => 0,
                     'default_value' => '',
                     'constraints' => 'required'
                 ),
                 array(
                     'type' => 'input',
-                    'symbol_key' => 'card_num',
-                    'name' => __('Card Number', Constants::TEXT_DOMAIN),
+                    'symbol_key' => 'exp_date',
+                    'name' => __('Card Expiration Date (MM/YYYY)', Constants::TEXT_DOMAIN),
                     'order' => 1,
                     'default_value' => '',
                     'constraints' => 'required'
@@ -265,17 +265,17 @@ class PaymentForm extends Form {
                     'default_value' => UserLib::getProfileField($this->user, Constants::$predefinedFields[$this->user['role']]['phone']),
                     'constraints' => 'required'
                 ),
-                array(
+                /*array(
                     'type' => 'input',
                     'symbol_key' => 'web_address',
                     'name' => __('Web Address', Constants::TEXT_DOMAIN),
                     'order' => 12,
                     'default_value' => ''
-                ),
+                ),*/
                 array(
                     'type' => 'text',
                     'symbol_key' => 'note',
-                    'name' => __('Optional note', Constants::TEXT_DOMAIN),
+                    'name' => __('Optional note: (For exammple, what organization should be credited with the payment?)', Constants::TEXT_DOMAIN),
                     'order' => 13,
                     'default_value' => ''
                 )

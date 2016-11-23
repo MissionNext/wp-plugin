@@ -19,7 +19,7 @@ class DateField extends BaseField {
         $default = date('Y-m-d', strtotime($default));
 
         $checkConstraints = $this->checkLessMoreConstraint($this->constraints);
-        if ($checkConstraints && !$this->default) {
+        if ($checkConstraints && !$this->default && !$this->field['default_value']) {
             $default = date('Y-m-d', mktime(0, 0, 0, date('m') + $checkConstraints['month'], date('d') + $checkConstraints['day'], date('Y') + $checkConstraints['year']));
         }
         $type = $this->field['type'];

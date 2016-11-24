@@ -95,9 +95,8 @@ class organizationController extends AbstractLayoutController {
                 if ($filteredInquiredJobs && in_array($job['name'], $filteredInquiredJobs)) {
                     $job['inquired'] = true;
                 }
-                if (in_array($job['name'], $candidateJobCategories)) {
-                    $this->jobs[] = $job;
-                }
+
+                $this->jobs[] = $job;
             }
         } else {
             $this->jobs = $this->api->getOrganizationPositions($id, $this->userId);

@@ -70,7 +70,6 @@ class organizationController extends AbstractLayoutController {
             $this->forward404();
         }
 
-        $candidateJobCategories = isset($this->user['profileData']) ? $this->user['profileData']['job_categories'] : null;
         $favorites = $this->api->getFavorites($this->userId, 'job');
 
         foreach ($favorites as $key => $value) {
@@ -84,28 +83,18 @@ class organizationController extends AbstractLayoutController {
             }, $inquiredJobs);
         }
 
-        if ($candidateJobCategories) {
-            $tmpJobArray = $this->api->getOrganizationPositions($id, $this->userId);
-            foreach ($tmpJobArray as $job) {
-                $job['org_name'] = $this->organization['profileData']['organization_name'];
-                if ($favoritedJobs && in_array($job['id'], $favoritedJobs)) {
-                    $favKey = array_search($job['id'], $favoritedJobs);
-                    $job['favorite'] = $favKey;
-                }
-                if ($filteredInquiredJobs && in_array($job['name'], $filteredInquiredJobs)) {
-                    $job['inquired'] = true;
-                }
-                if (in_array($job['name'], $candidateJobCategories)) {
-                    $this->jobs[] = $job;
-                }
+        $tmpJobArray = $this->api->getOrganizationPositions($id, $this->userId);
+        foreach ($tmpJobArray as $job) {
+            $job['org_name'] = $this->organization['profileData']['organization_name'];
+            if ($favoritedJobs && in_array($job['id'], $favoritedJobs)) {
+                $favKey = array_search($job['id'], $favoritedJobs);
+                $job['favorite'] = $favKey;
             }
-        } else {
-            $this->jobs = $this->api->getOrganizationPositions($id, $this->userId);
-            $organization = $this->organization;
+            if ($filteredInquiredJobs && in_array($job['name'], $filteredInquiredJobs)) {
+                $job['inquired'] = true;
+            }
 
-            foreach ($this->jobs as &$job) {
-                $job['org_name'] = $organization['profileData']['organization_name'];
-            }
+            $this->jobs[] = $job;
         }
     }
 

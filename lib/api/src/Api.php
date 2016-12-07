@@ -404,6 +404,10 @@ class Api {
         return $this->post('user/check', compact('username', 'password'));
     }
 
+    public function setNewPassword($username, $password){
+        return $this->post('user/password/reset', compact('username', 'password'));
+    }
+
     public function register($username, $email, $password, $role, $profile = array()){
         return $this->post('user', compact('username', 'email', 'password', 'role', 'profile'));
     }

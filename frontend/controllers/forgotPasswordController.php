@@ -54,11 +54,15 @@ class forgotPasswordController extends AbstractLayoutController {
                 $form->validate();
 
                 if($form->isValid()){
-
-                    $form->save();
-                    $this->redirect('/');
+                    $response = $this->api->setNewPassword($user->data->user_login, mb_strtolower($form->data['main_fields']['pass1']));
+                    if ('success' == $response['status']) {
+                        $this->setMessage("notice", __($response['message'], Constants::TEXT_DOMAIN));
+                        $form->save();
+                        $this->redirect('/');
+                    } else {
+                        $this->setMessage("error", __($response['message'], Constants::TEXT_DOMAIN));
+                    }
                 }
-
             }
 
             $this->form = $form;

@@ -169,9 +169,12 @@ function removeMyCustomerAndKillHim(){
 add_action("wp_ajax_user_deleting_function", "removeMyCustomerAndKillHim");
 add_action("wp_ajax_nopriv_user_deleting_function", "removeMyCustomerAndKillHim");
 
-function checkNewPassword() {
-    $api = \MissionNext\lib\core\Context::getInstance()->getApiManager()->getApi();
-    $response = $api->setNewPassword($_POST['nickname'], $_POST['pass1']);
+function checkNewPassword()
+{
+    if (isset($_POST['pass1']) && !empty($_POST['pass1'])) {
+        $api = \MissionNext\lib\core\Context::getInstance()->getApiManager()->getApi();
+        $response = $api->setNewPassword($_POST['nickname'], $_POST['pass1']);
+    }
 }
 
 add_action('edit_user_profile_update', 'checkNewPassword');

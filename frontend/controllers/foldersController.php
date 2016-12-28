@@ -34,6 +34,7 @@ class foldersController extends Controller
                 $defaultFolders[] = $item;
             }
         }
+        $this->user = $user;
         $this->user_id = $user['id'];
         $this->role = 'candidate';
         $this->userRole = 'organization';

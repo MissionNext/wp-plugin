@@ -82,6 +82,30 @@ global $shortcode_tags;
                 </div>
 
             </form>
+<?php 
+// print_r($user);
+$user_role   = $user['role']; // echo "\$user_role = $user_role<br>";
+if ($user_role == "candidate") {
+$factor		 = rand(10,99); // generate random two-digit number
+$factored	 = $factor * $user['id'];  // factored is the product of the random number and user_id 
+$pass_string = $factor.$factored; // pass this string, then extract user_id as $factored / $factor 
+
+$sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
+if (preg_match("/explorenext/",$sniff_host)) { 
+	$site = 3 * $factor;
+	
+}
+elseif (preg_match("/teachnext/",$sniff_host)) { 
+	$site = 6 * $factor;
+}
+?>               
+                <div class="buttons"> 
+            	<a href="https://info.missionnext.org/print_profile.php?uid=<?php echo $pass_string ?>&site=<?php echo $site ?>" title="Printer Friendly Display" target="_blank"><button class="btn btn-default">Your Profile</button></a>
+            	</div>
+<?php
+} // if ($user_role == "candidate")
+?>        
+
         </div>
     </div>
 </div>

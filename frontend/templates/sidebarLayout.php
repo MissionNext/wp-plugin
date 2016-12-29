@@ -35,9 +35,8 @@ $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before
                                     <a href="/organization/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_ORGANIZATION_PLURAL))) ?></a>
                                     <a href="/inquiries"><?php echo __('Job Inquiry List', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                                     <a href="/favorite"><?php echo __('My Favorites', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
-                                    <?php if (preg_match("/explorenext/",$sniff_host)): ?>
-                                    	<a target="_blank" href="https://info.missionnext.org/qcs.php?uid=<?php echo $pass_string ?> "><?php echo __('Your QCS', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
-                                    <?php endif; ?> 
+                                    <a target="_blank" href="https://info.missionnext.org/qcs.php?uid=<?php echo $pass_string ?> "><?php echo __('Your QCS', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                                   
                                 <?php endif; ?>
 
                                 <?php if($userRole == 'agency'): ?>

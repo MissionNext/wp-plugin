@@ -20,6 +20,24 @@ function groupEmpty($group){
     }
     return true;
 }
+// print_r($user); echo "<br>\$userRole = $userRole";
+$organization_id = $user[id];
+// echo "\$organization_id = $user[id] ";
+$factor		 = rand(10,99); // generate random two-digit number
+$factored	 = $factor * $candidate['id'];  // factored is the product of the random number and user_id 
+$pass_string = $factor.$factored; // pass this string, then extract user_id as $factored / $factor 
+$factor_org  = $factor * $organization_id;  // factored is the product of the random number and user_id 
+$org_string  = $factor.$factor_org; // pass this string, then extract organization_id as $factored / $factor 
+
+$sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
+if (preg_match("/explorenext/",$sniff_host)) { 
+	$site = 3 * $factor;
+	
+}
+elseif (preg_match("/teachnext/",$sniff_host)) { 
+	$site = 6 * $factor;
+}
+
 ?>
 
 <div class="page-header">
@@ -43,6 +61,17 @@ function groupEmpty($group){
             <div class="buttons">
                 <button id="make_favorite" title="Click once. Wait a few seconds for update" class="btn btn-success <?php echo $candidate['favorite']?'hide':'' ?>"><?php echo __("Make favorite", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
                 <button data-id="<?php echo $candidate['favorite'] ?>"  id="remove_from_favorites" title="Click once. Wait a few seconds for update" class="btn btn-danger <?php echo $candidate['favorite']?'':'hide' ?>"><?php echo __("Unfavorite", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
+            </div>
+            <?php endif; ?>
+            <?php if( $userRole == \MissionNext\lib\Constants::ROLE_ORGANIZATION || $userRole == \MissionNext\lib\Constants::ROLE_AGENCY): ?>
+            <div class="buttons"> 
+             	<button class="btn btn-default"><a href="https://info.missionnext.org/qcs_view.php?uid=<?php echo $pass_string ?>" title="Qualified Candidate Score" target="_blank">View QCS Score</a></button>
+            </div>
+            <div class="buttons"> 
+            	<button class="btn btn-default"><a href="https://info.missionnext.org/print_view.php?uid=<?php echo $pass_string ?>&oid=<?php echo $org_string ?>&site=<?php echo $site ?>" title="Printer Friendly Display with What Matched" target="_blank">Print Profile</a></button>
+            </div>
+            <div class="buttons"> 
+            	<button class="btn btn-default"><a href="https://info.missionnext.org/jobs_view.php?uid=<?php echo $pass_string ?>&oid=<?php echo $org_string ?>&site=<?php echo $site ?>" title="Matches to Your Jobs" target="_blank">Job Matches</a></button>
             </div>
             <?php endif; ?>
         </div>

@@ -30,12 +30,12 @@ $factor_org  = $factor * $organization_id;  // factored is the product of the ra
 $org_string  = $factor.$factor_org; // pass this string, then extract organization_id as $factored / $factor 
 
 $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
-if (preg_match("/explorenext/",$sniff_host)) { 
-	$site = 3 * $factor;
-	
+if (preg_match("/explorenext/",$sniff_host)) {
+    $site = 3 * $factor;
+
 }
-elseif (preg_match("/teachnext/",$sniff_host)) { 
-	$site = 6 * $factor;
+elseif (preg_match("/teachnext/",$sniff_host)) {
+    $site = 6 * $factor;
 }
 
 ?>
@@ -52,24 +52,27 @@ elseif (preg_match("/teachnext/",$sniff_host)) {
                 <?php echo get_avatar($candidate['email'], 160) ?>
             </div>
             <?php if($candidate['email'] != $user['email']): ?>
-            <div class="buttons">
-                <a onclick="EmailPopup.open('<?php echo $user['email'] ?>', '<?php echo $candidate['email'] ?>')" class="btn btn-primary"><?php echo __("Send message", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
-            </div>
+                <div class="buttons">
+                    <a onclick="EmailPopup.open('<?php echo $user['email'] ?>', '<?php echo $candidate['email'] ?>')" class="btn btn-primary"><?php echo __("Send message", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                </div>
             <?php endif; ?>
 
             <?php if( $userRole == \MissionNext\lib\Constants::ROLE_ORGANIZATION ): ?>
-            <div class="buttons">
-                <button id="make_favorite" title="Click once. Wait a few seconds for update" class="btn btn-success <?php echo $candidate['favorite']?'hide':'' ?>"><?php echo __("Make favorite", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
-                <button data-id="<?php echo $candidate['favorite'] ?>"  id="remove_from_favorites" title="Click once. Wait a few seconds for update" class="btn btn-danger <?php echo $candidate['favorite']?'':'hide' ?>"><?php echo __("Unfavorite", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
-            </div>
+                <div class="buttons">
+                    <button id="make_favorite" title="Click once. Wait a few seconds for update" class="btn btn-success <?php echo $candidate['favorite']?'hide':'' ?>"><?php echo __("Make favorite", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
+                    <button data-id="<?php echo $candidate['favorite'] ?>"  id="remove_from_favorites" title="Click once. Wait a few seconds for update" class="btn btn-danger <?php echo $candidate['favorite']?'':'hide' ?>"><?php echo __("Unfavorite", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
+                </div>
             <?php endif; ?>
             <?php if( $userRole == \MissionNext\lib\Constants::ROLE_ORGANIZATION || $userRole == \MissionNext\lib\Constants::ROLE_AGENCY): ?>
-            <div class="buttons"> 
-             	<button class="btn btn-default"><a href="https://info.missionnext.org/qcs_view.php?uid=<?php echo $pass_string ?>" title="Qualified Candidate Score" target="_blank">View QCS Score</a></button>
-            </div>
-            <div class="buttons"> 
-            	<button class="btn btn-default"><a href="https://info.missionnext.org/print_view.php?uid=<?php echo $pass_string ?>&oid=<?php echo $org_string ?>&site=<?php echo $site ?>" title="Printer Friendly Display" target="_blank">Print Version</a></button>
-            </div>
+                <div class="buttons">
+                    <button class="btn btn-default"><a href="https://info.missionnext.org/qcs_view.php?uid=<?php echo $pass_string ?>" title="Qualified Candidate Score" target="_blank">View QCS Score</a></button>
+                </div>
+                <div class="buttons">
+                    <button class="btn btn-default"><a href="https://info.missionnext.org/print_view.php?uid=<?php echo $pass_string ?>&oid=<?php echo $org_string ?>&site=<?php echo $site ?>" title="Printer Friendly Display with What Matched" target="_blank">Print Profile</a></button>
+                </div>
+                <div class="buttons">
+                    <button class="btn btn-default"><a href="https://info.missionnext.org/jobs_view.php?uid=<?php echo $pass_string ?>&oid=<?php echo $org_string ?>&site=<?php echo $site ?>" title="Matches to Your Jobs" target="_blank">Job Matches</a></button>
+                </div>
             <?php endif; ?>
         </div>
     </div>
@@ -78,32 +81,32 @@ elseif (preg_match("/teachnext/",$sniff_host)) {
         <p> <strong><?php echo __("Email", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></strong> : <span><?php echo $candidate['email'] ?></span></p>
 
         <?php foreach($candidate['profile'] as $group): ?>
-        <?php if(!groupEmpty($group['fields']) && ( isset($group['meta']['is_private']) && !$group['meta']['is_private'] || !isset($group['meta']['is_private']) ) ): ?>
-        <fieldset class="mn-profile-group">
-            <legend><?php echo $group['name'] ?></legend>
+            <?php if(!groupEmpty($group['fields']) && ( isset($group['meta']['is_private']) && !$group['meta']['is_private'] || !isset($group['meta']['is_private']) ) ): ?>
+                <fieldset class="mn-profile-group">
+                    <legend><?php echo $group['name'] ?></legend>
 
-            <?php foreach($group['fields'] as $field): ?>
-            <?php if(!fieldEmpty($field['value'])): ?>
-            <div>
-                <strong><?php echo $field['label'] ?>:</strong>
-                <div>
-                    <?php if(is_array($field['value'])): ?>
+                    <?php foreach($group['fields'] as $field): ?>
+                        <?php if(!fieldEmpty($field['value'])): ?>
+                            <div>
+                                <strong><?php echo $field['label'] ?>:</strong>
+                                <div>
+                                    <?php if(is_array($field['value'])): ?>
 
-                    <?php foreach($field['value'] as $value): ?>
-                    <div><?php echo $value ?></div>
+                                        <?php foreach($field['value'] as $value): ?>
+                                            <div><?php echo $value ?></div>
+                                        <?php endforeach; ?>
+
+                                    <?php elseif($field['type'] == 'file' && $field['value']): ?>
+                                        <a href="<?php echo $config->get('api_base_path') . '/' . $config->get('api_uploads_dir') . '/' . $field['value'] ?>" class="mn-input-file-data"></a>
+                                    <?php else: echo "&nbsp;"; ?> <!--space added by Nelson Apr 20, 2016-->
+                                        <?php echo $field['value'] ?>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        <?php endif; ?>
                     <?php endforeach; ?>
-
-                    <?php elseif($field['type'] == 'file' && $field['value']): ?>
-                    <a href="<?php echo $config->get('api_base_path') . '/' . $config->get('api_uploads_dir') . '/' . $field['value'] ?>" class="mn-input-file-data"></a>
-                    <?php else: echo "&nbsp;"; ?> <!--space added by Nelson Apr 20, 2016-->
-                    <?php echo $field['value'] ?>
-                    <?php endif; ?>
-                </div>
-            </div>
+                </fieldset>
             <?php endif; ?>
-            <?php endforeach; ?>
-        </fieldset>
-        <?php endif; ?>
         <?php endforeach; ?>
 
         <div class="control-buttons">

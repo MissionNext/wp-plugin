@@ -76,7 +76,30 @@ class candidateController extends AbstractLayoutController {
 
             foreach($fields as $field){
                 $spouse_pos = strpos($field['symbol_key'], 'spouse');
-                if ($spouse_pos === FALSE || $spouse_pos === TRUE && $show_spouse_fields) {
+                if ($spouse_pos === false) {
+                    $value = isset($profile[$field['symbol_key']])?$profile[$field['symbol_key']]:null;
+
+                    if($value){
+                        if(is_array($value)){
+                            foreach($value as $key => $item){
+                                if(strpos($item, Constants::NO_PREFERENCE_SYMBOL) === 0){
+                                    $value[$key] = substr($item, 3);
+                                }
+                            }
+                        } else {
+                            if(strpos($value, Constants::NO_PREFERENCE_SYMBOL) === 0){
+                                $value = substr($value, 3);
+                            }
+                        }
+                    }
+
+                    $group['fields'][$field['symbol_key']] = array(
+                        'value' => $value,
+                        'symbol_key' => $field['symbol_key'],
+                        'label' => $field['name']?$field['name']:$field['default_name'],
+                        'type' => $field['type']
+                    );
+                } elseif ($show_spouse_fields) {
                     $value = isset($profile[$field['symbol_key']])?$profile[$field['symbol_key']]:null;
 
                     if($value){

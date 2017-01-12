@@ -25,7 +25,7 @@
             <?php endif; ?>
 
             <div class="buttons">
-                <a href="/organization/<?php echo $organization['id'] ?>/jobs" class="btn btn-default"><?php echo __('View positions 28', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                <a href="/organization/<?php echo $organization['id'] ?>/jobs" class="btn btn-default"><?php echo __('View positions', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
             </div>
 
             <?php if(!empty($presentation['value'])): ?>

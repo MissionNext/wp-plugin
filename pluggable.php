@@ -75,11 +75,12 @@ function mn_process_login( $is_ajax = false ) {
 
     wp_set_auth_cookie( $user_id, isset($_POST['rememberme'])?$_POST['rememberme']:false );
     $api->setUserId($user['id']);
-    $redirect_to = isset($redirect_to)? $redirect_to : "/dashboard";
+    $redirect_to = "/dashboard";
 
     if ( $is_ajax ) {
         echo '{"redirect":"' . $redirect_to . '"}';
     } else {
+
         wp_safe_redirect( $redirect_to );
     }
 

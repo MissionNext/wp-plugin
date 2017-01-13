@@ -50,13 +50,7 @@ class loginController extends AbstractLayoutController {
 
     private function redirectAfterLogin(){
 
-        $redirect_url = site_url('/');
-
-        if(current_user_can('manage_options')){
-            $redirect_url = site_url('/wp-admin/');
-        } else if(get_user_meta(get_current_user_id(), Constants::META_KEY, true)){
-            $redirect_url = "/dashboard";
-        }
+        $redirect_url = site_url('/dashboard');
 
         $this->redirect($redirect_url);
     }

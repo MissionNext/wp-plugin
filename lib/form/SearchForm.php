@@ -23,6 +23,8 @@ class SearchForm extends Form {
 
         $groups = $this->api->getForm($searchRole, $name);
 
+        $groups = $this->setEmptyOption($groups);
+
         $groups = $this->prepareExpandedFields($groups);
 
         $groups = $this->clearJobTitle($groups);
@@ -140,5 +142,26 @@ class SearchForm extends Form {
         }
 
         return $isValid;
+    }
+
+    private function setEmptyOption($groups)
+    {
+        foreach($groups as &$group){
+            foreach($group['fields'] as &$field){
+
+                if($field['type'] == 'select' || "custom_marital" == $field['type']){
+                    if (!empty($field['choices'][count($field['choices']) - 1]['default_value'])) {
+                        $field['choices'][] = [
+                            'value'             => null,
+                            'default_value'     => '',
+                            'id'                => '',
+                            'dictionary_order'  => -1,
+                            'dictionary_meta'   => null
+                        ];
+                    }
+                }
+            }
+        }
+        return $groups;
     }
 } 

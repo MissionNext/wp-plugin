@@ -9,9 +9,9 @@
     <thead>
     <tr>
         <th class="name"><?php echo __("Website", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-        <th><?php echo __('Limited', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-        <th><?php echo __('Basic', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-        <th><?php echo __('Plus', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+        <th><?php echo __('90 Day Trial', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th> <!-- limited -->
+        <th><?php echo __('Tier Two', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th> <!-- basic -->
+        <th><?php echo __('Tier Three', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th> <!-- plus -->
         <th><?php echo __('None', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
     </tr>
     </thead>
@@ -54,7 +54,11 @@
     <?php endforeach; ?>
     </tbody>
 </table>
-
+Partnership Notes (<a href="https://new.missionnext.org/welcome/for-organizations/#partnership-fees" title="Fee Schedule" target="_blank">ExploreNext Tier Pricing</a>):<ul>
+<li>Tier 1: Annual revenues of under $5 million (<a href="https://new.missionnext.org/welcome/contact-us/" title="Obtain Coupon Code" target="_blank">Contact MissionNext</a> before completing this form)
+<li>Tier 2: Annual revenues of $5 - $20 million
+<li>Tier 3: Annual revenues of $20 million or more
+</ul>
 <script>
 
     jQuery(document).on('change', '#payment_table_roles input[type="radio"]', function(e){

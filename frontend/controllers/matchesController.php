@@ -251,7 +251,7 @@ class matchesController extends AbstractLayoutController {
             foreach ($matchItem[$role."_value"] as &$resultValue) {
                 $resultValue = str_replace("(!) ", "", $resultValue);
             }
-            $results[$matchItem['mainDataKey']] = $matchItem;
+            $results[$matchItem['matchingDataKey']] = $matchItem;
         }
 
         $fields = $this->api->getModelFields($role);
@@ -315,7 +315,8 @@ class matchesController extends AbstractLayoutController {
                                     $sectionItemsCount = 0;
                                 }
                                 $searchValue = strtolower($key);
-                                if ($searchKey = array_search($key, $field['value']) && in_array($searchValue, $results[$field['symbol_key']][$role."_value"])) {
+                                $searchKey = array_search($key, $field['value']);
+                                if ($searchKey !== FALSE && in_array($searchValue, $results[$field['symbol_key']][$role."_value"])) {
                                     if (0 == $sectionItemsCount) {
                                         $html .= '<h5 class="group-section">'.$sectionLabel.'</h5>';
                                     }

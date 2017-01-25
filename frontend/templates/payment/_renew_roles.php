@@ -33,7 +33,7 @@ foreach($defaults as $default){
     <thead>
     <tr>
         <th class="name"><?php echo __("Website", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-        <!--<th><?php echo __('90 Day Trial', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th> limited -->
+        <th><?php echo __('Tier One', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th> <!--limited -->
         <th><?php echo __('Tier Two', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th> <!-- basic -->
         <th><?php echo __('Tier Three', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th> <!-- plus -->
         <th><?php echo __('None', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
@@ -46,7 +46,7 @@ foreach($defaults as $default){
         ?>
         <tr <?php if($left_amount): ?>data-left="<?php echo $left_amount ?>"<?php endif; ?>>
             <td class="name"><?php echo $app['name'] ?></td>
-<!--
+
             <?php if(isset($app['sub_configs'][\MissionNext\lib\Constants::PARTNERSHIP_LIMITED])): ?>
                 <td data-price="<?php echo $app['sub_configs'][\MissionNext\lib\Constants::PARTNERSHIP_LIMITED]['price_year']?>" data-period="year" data-partnership="<?php echo \MissionNext\lib\Constants::PARTNERSHIP_LIMITED ?>">
                     <input disabled="disabled" name="a[<?php echo $app['id'] ?>]" value="none" type="radio" <?php if( isset($defaults[$app['id']]) && !$defaults[$app['id']]['is_recurrent'] && $defaults[$app['id']]['partnership'] == \MissionNext\lib\Constants::PARTNERSHIP_LIMITED ) echo 'checked="checked"'?>/>
@@ -60,7 +60,7 @@ foreach($defaults as $default){
                 <td data-period="year">-</td>
                 <td data-period="month">-</td>
             <?php endif; ?>
--->
+
             <?php if(isset($app['sub_configs'][\MissionNext\lib\Constants::PARTNERSHIP_BASIC])): ?>
                 <td data-price="<?php echo $app['sub_configs'][\MissionNext\lib\Constants::PARTNERSHIP_BASIC]['price_year']?>" data-period="year" data-partnership="<?php echo \MissionNext\lib\Constants::PARTNERSHIP_BASIC ?>">
                     <input name="a[<?php echo $app['id'] ?>]" value="<?php echo \MissionNext\lib\Constants::PARTNERSHIP_BASIC ?>" type="radio" <?php if( isset($defaults[$app['id']]) && !$defaults[$app['id']]['is_recurrent'] && $defaults[$app['id']]['partnership'] == \MissionNext\lib\Constants::PARTNERSHIP_BASIC ) echo 'checked="checked"'?>/>
@@ -95,9 +95,10 @@ foreach($defaults as $default){
     </tbody>
 </table>
 Partnership Notes (<a href="https://new.missionnext.org/welcome/for-organizations/#partnership-fees" title="Fee Schedule" target="_blank">ExploreNext Tier Pricing</a>):<ul>
-<li>Tier 1: Annual revenues of under $5 million (<a href="https://new.missionnext.org/welcome/contact-us/" title="Obtain Coupon Code" target="_blank">Contact MissionNext</a> before completing this form)
-<li>Tier 2: Annual revenues of $5 - $20 million
+<li>Tier 1: Annual revenues of under $5 million 
+<li>Tier 2: Annual revenues of $5 - $20 million 
 <li>Tier 3: Annual revenues of $20 million or more
+<li>One Rate: All TeachNext Schools 
 </ul>
 <div class="col-sm-12 coupon-block">
     <?php renderTemplate('payment/_coupon') ?>

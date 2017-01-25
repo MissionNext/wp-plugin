@@ -51,16 +51,17 @@ $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before
 
                                 <?php if($userRole == 'organization'): ?>
                                     <a href="/presentation"><?php echo __('My Presentation', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
-                                    <a href="/job"><?php echo ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_JOB_PLURAL)) ?></a>
-                                    <a href="/organization/matches/candidate" class="matches"><?php echo sprintf(__('View %s Match', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_CANDIDATE_PLURAL))) ?></a>
-                                    <?php if(isAgencyOn()): ?>
-                                    <a href="/affiliates"><?php echo __('Affiliates', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
-                                    <a href="/agency/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_AGENCY_PLURAL))) ?></a>
-                                    <?php endif; ?>
+                                 
+                                    <a href="/organization/matches/candidate" class="matches"><?php echo sprintf(__('%s Matches', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_CANDIDATE))) ?></a>
                                     <a href="/candidate/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_CANDIDATE_PLURAL))) ?></a>
                                     <a href="/favorite"><?php echo __('My Favorites', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                                    <a href="/job">My <?php echo ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_JOB_PLURAL)) ?></a>  
                                     <a href="/inquiries"><?php echo __('Job Inquiry List', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
-                                    <a href="/folders"><?php echo __('Folders', \MissionNext\lib\Constants::TEXT_DOMAIN); ?></a>
+                                    <a href="/folders"><?php echo __('Manage Folders', \MissionNext\lib\Constants::TEXT_DOMAIN); ?></a>
+                                   <?php if(isAgencyOn()): ?>
+                                    <a href="/affiliates"><?php echo __('Affiliates', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                                    <!--<a href="/agency/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_AGENCY_PLURAL))) ?></a>-->
+                                    <?php endif; ?>
                                 <?php endif; ?>
 
                                 <a href="<?php echo wp_logout_url(home_url()); ?>" title="Logout"><?php echo __("Logout", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>

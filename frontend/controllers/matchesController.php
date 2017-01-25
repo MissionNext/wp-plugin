@@ -277,7 +277,6 @@ class matchesController extends AbstractLayoutController {
 
             if( (isset( $group['meta']['is_private'] ) && !$group['meta']['is_private'] || !isset($group['meta']['is_private'])) && $matchedFields > 0 ){
 
-                $html .= '<p></p>';
                 $html .= '<fieldset class="mn-profile-group">';
                 $html .= '<legend>' . $group['name'] . '</legend>';
 

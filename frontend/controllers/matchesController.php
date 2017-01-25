@@ -249,7 +249,11 @@ class matchesController extends AbstractLayoutController {
         $results = [];
         foreach ($matchResult['results'] as $matchKey => $matchItem) {
             foreach ($matchItem[$role."_value"] as &$resultValue) {
-                $resultValue = str_replace("(!) ", "", $resultValue);
+                $exclamation_mark = strpos($resultValue, '(!)');
+                if ($exclamation_mark !== false) {
+                    $resultValue = str_replace("(!) ", "", $resultValue);
+                    $matchItem['forcibly'] = true;
+                }
             }
             $results[$matchItem['matchingDataKey']] = $matchItem;
         }
@@ -298,9 +302,19 @@ class matchesController extends AbstractLayoutController {
                         }
                         if (!isset($checkboxFields[$field['symbol_key']])) {
                             if(is_array($field['value']))
-                                foreach($field['value'] as $value) {
-                                    $searchValue = trim(strtolower($value));
-                                    $html .= '<div>' . $value . '</div>';
+                                if (isset($results[$field['symbol_key']]['forcibly'])) {
+                                    $isGeographicField = $this->checkGeographicField($field['symbol_key']);
+                                    foreach($results[$field['symbol_key']][$role."_value"] as $value) {
+                                        if (!$isGeographicField) {
+                                            $html .= '<div>' . ucfirst($value) . '</div>';
+                                        } else {
+                                            $html .= '<div>' . ucwords($value) . '</div>';
+                                        }
+                                    }
+                                } else {
+                                    foreach($field['value'] as $value) {
+                                        $html .= '<div>' . $value . '</div>';
+                                    }
                                 }
                             else
                                 $html .= $field['value'];
@@ -335,6 +349,17 @@ class matchesController extends AbstractLayoutController {
         echo $html;
 
         return false;
+    }
+
+    private function checkGeographicField($field_key){
+        $world = strpos($field_key, 'world');
+        $country = strpos($field_key, 'country');
+
+        if ($world === false && $country === false) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     private function getCheckboxWithGroups($paramFields)

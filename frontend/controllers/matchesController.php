@@ -300,9 +300,7 @@ class matchesController extends AbstractLayoutController {
                             if(is_array($field['value']))
                                 foreach($field['value'] as $value) {
                                     $searchValue = trim(strtolower($value));
-                                    if (in_array($searchValue, $results[$field['symbol_key']][$role."_value"])) {
-                                        $html .= '<div>' . $value . '</div>';
-                                    }
+                                    $html .= '<div>' . $value . '</div>';
                                 }
                             else
                                 $html .= $field['value'];

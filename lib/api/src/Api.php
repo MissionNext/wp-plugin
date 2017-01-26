@@ -23,7 +23,7 @@ class Api {
     private $lastError;
     private $lastStatus;
 
-    public function __construct( ClientInterface $client, $publicKey, $privateKey, $basePath = 'http://api.missionfinder.net' ){
+    public function __construct( ClientInterface $client, $publicKey, $privateKey, $basePath = 'https://api.missionnext.org' ){
         $this->client = $client;
         $this->publicKey = $publicKey;
         $this->privateKey = $privateKey;
@@ -382,6 +382,10 @@ class Api {
 
     public function deleteProfileFile($field_name, $user_id){
         return $this->delete('profile/'.$user_id, array( 'field_name' => $field_name));
+    }
+
+    public function deleteJobProfileFile($field_name, $job_id){
+        return $this->delete('profile/job/'.$job_id, array( 'field_name' => $field_name));
     }
 
     public function updateUser($id, $params){

@@ -224,6 +224,11 @@
         "action": "deleteFile"
     },
 
+    "/delete/job/file": {
+        "controller": "customAjax",
+        "action"    : "deleteJobFile"
+    },
+
     "/favorite": {
         "controller": "favorite",
         "action" : "show"

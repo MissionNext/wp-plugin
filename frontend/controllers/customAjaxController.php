@@ -119,4 +119,19 @@ class customAjaxController extends Controller
 
         return false;
     }
+
+    public function deleteJobFile()
+    {
+        $result = '';
+        if (is_post()) {
+            $fieldname = element('fieldname', $_POST);
+            $job_id = element('jobid', $_POST);
+
+            $result = $this->api->deleteJobProfileFile($fieldname, $job_id);
+        }
+
+        echo json_encode($result);
+
+        return false;
+    }
 }

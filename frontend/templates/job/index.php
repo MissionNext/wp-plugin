@@ -37,7 +37,7 @@ elseif (preg_match("/teachnext/",$sniff_host)) { $this_app = 6; }
         <?php if($this_app == $job['app_id']): ?>
         
             <tr>
-                <td class="name"><a href="/job/<?php echo $job['id'] ?>"><?php echo $job['name'] ?></a> </td>
+                <td class="name"><a href="/job/<?php echo $job['id'] ?>" target="_blank"><?php echo $job['name'] ?></a> </td>
                 <td class="alt_title"><?php echo $job['profileData']['second_title'] ?></td>
                 <td class="country"><?php echo $job['profileData']['country'] ?></td>
                 <td class="actions">

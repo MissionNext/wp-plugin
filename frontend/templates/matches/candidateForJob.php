@@ -31,7 +31,7 @@ $receiving_org = $job['organization']['id'];
                     echo '<option value="' . $percentage . '">' . $percentage . '</option>';
             }?>
         </select>
-        <?php echo __("not shown. <br>Folder icons clickable to expand/collapse. Refresh screen to update favorites and note icons. C for J <font color=white>candidateForJob.php</font>", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+        <?php echo __("not shown. <br>Folder icons clickable to expand/collapse. Refresh screen to update favorites and note icons. <font color=white>candidateForJob.php</font>", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
     </div>
 
     <?php if($candidates):

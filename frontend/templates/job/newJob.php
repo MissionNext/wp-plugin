@@ -13,7 +13,7 @@
 
     <?php if($jobs): ?>
     <div class="block">
-        <form role="form" id="populate-from" action="<?php echo $_SERVER[ 'REQUEST_URI' ] ?>" method="GET" class="create-from form-horizontal">
+        <form role="form" id="populate-from" action="<?php echo $_SERVER[ 'REQUEST_URI' ] ?>" method="GET" class="create-from form-horizontal" enctype="multipart/form-data">
 
             <div class="form-group">
                 <label for="create-from-select" class="col-sm-2 control-label"><?php echo __("Populate from", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></label>

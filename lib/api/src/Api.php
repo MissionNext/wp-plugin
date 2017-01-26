@@ -23,7 +23,7 @@ class Api {
     private $lastError;
     private $lastStatus;
 
-    public function __construct( ClientInterface $client, $publicKey, $privateKey, $basePath = 'http://api.missionfinder.net' ){
+    public function __construct( ClientInterface $client, $publicKey, $privateKey, $basePath = 'https://api.missionnext.org' ){
         $this->client = $client;
         $this->publicKey = $publicKey;
         $this->privateKey = $privateKey;

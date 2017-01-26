@@ -104,7 +104,7 @@ class jobController extends AbstractLayoutController {
 
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-            $this->form->bind($_POST[$this->form->getName()]);
+            $this->form->bind(@$_POST[$this->form->getName()], $_FILES);
 
             $this->form->save();
 
@@ -126,7 +126,7 @@ class jobController extends AbstractLayoutController {
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $this->form->changedFields = $this->getChangedFields($this->form->groups, @$_POST[$this->form->getName()]);
 
-            $this->form->bind($_POST[$this->form->getName()]);
+            $this->form->bind(@$_POST[$this->form->getName()], $_FILES);
 
             $this->form->save();
 

@@ -132,6 +132,8 @@ class jobController extends AbstractLayoutController {
     public function edit($params){
 
         $this->form = new JobForm($this->api, $this->userId, $params[0]);
+        $public_key = Context::getInstance()->getApiManager()->publicKey;
+        $this->job_title_field = 'job_title_!#'.$public_key;
 
         if(!$this->form->job && $this->userRole != 'organization' || $this->form->job['organization_id'] != $this->userId ){
             $this->forward404();

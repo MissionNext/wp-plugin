@@ -21,6 +21,7 @@
 
 <script type="text/javascript">
     var job_id = <?php echo $form->job['id']; ?>;
+    var job_title_field = '<?php echo $job_title_field; ?>';
 
     jQuery(document).ready(function () {
 
@@ -50,6 +51,6 @@
             });
         });
 
-
+        jQuery('select[data-key="' + job_title_field + '"]').prop('disabled', true);
     });
 </script>

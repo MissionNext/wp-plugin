@@ -102,6 +102,20 @@ class jobController extends AbstractLayoutController {
 
         $this->form = new JobForm($this->api, $this->userId, isset($_GET['from']) ? $_GET['from'] : null, true);
 
+        /* Condition uncheck all fields dependance from job title */
+        if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['from']) && $this->form->job['id'] == $_GET['from']) {
+            $public_key = Context::getInstance()->getApiManager()->publicKey;
+            $job_title_field = 'job_title_!#'.$public_key;
+            foreach ($this->form->groups as $group) {
+                if ($group->group['depends_on'] == $job_title_field) {
+                    foreach ($group->fields as &$depend_field) {
+                        $depend_field->default = [];
+                    }
+                }
+            }
+            $this->setMessage('notice' , __('Job populated successfull.', Constants::TEXT_DOMAIN));
+        }
+
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
             $this->form->bind(@$_POST[$this->form->getName()], $_FILES);

@@ -34,7 +34,7 @@ elseif (preg_match("/teachnext/",$sniff_host)) { $this_app = 6; }
         </thead>
         <tbody>
         <?php foreach($jobs as $job): ?>
-        <?php if($this_app == $job['app_id']): ?>
+        <?php if(3 == $job['app_id']): ?>
         
             <tr>
                 <td class="name"><a href="/job/<?php echo $job['id'] ?>" target="_blank"><?php echo $job['name'] ?></a> </td>

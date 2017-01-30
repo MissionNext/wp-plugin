@@ -519,3 +519,7 @@ table.payment td.price{
 .org-list{
     margin: 0 0 15px 0;
 }
+.payment-textarea {
+    width: 307px;
+    height: 90px;
+}

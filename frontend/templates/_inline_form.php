@@ -47,7 +47,8 @@
         </div>
 
         <div class="col-sm-9">
-            <?php echo $field->printField($field->hasDependentGroup()?array('data-dependant' => $field->dependentGroup->group['symbol_key'], 'class' => 'mn-' . $field->field['type']):array('class' => 'mn-' . $field->field['type'])) ?>
+            <?php $class = isset($field->field['class']) ? $field->field['class'] : 'mn-'.$field->field['type'];?>
+            <?php echo $field->printField($field->hasDependentGroup()?array('data-dependant' => $field->dependentGroup->group['symbol_key'], 'class' => $class):array('class' => $class)) ?>
         </div>
 
         <?php if($field->notes['after']): ?>

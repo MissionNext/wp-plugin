@@ -2,7 +2,9 @@
     $(function(){
         if(!Modernizr.inputtypes.date) {
             console.log("The 'date' input type is not supported, so using JQueryUI datepicker instead.");
-            $("input[data-type='date']").datepicker();
+            $("input[data-type='date']").datepicker({
+                dateFormat: "yy-mm-dd"
+            });
         }
 
         $('form .field-tooltip').tooltip({

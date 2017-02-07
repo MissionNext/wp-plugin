@@ -167,6 +167,7 @@ Partnership Notes (<a href="https://new.missionnext.org/welcome/for-organization
         jQuery('#renewal-options > div').hide();
 
         if(period == 'year'){
+            jQuery('.coupon-block').show();
             if(is_new_selected()){
                 jQuery('#renewal-options .renewal-keep, #renewal-options .renewal-today').show();
                 if(jQuery('#renewal-options .renewal-keep input:checked').length > 0){
@@ -179,8 +180,13 @@ Partnership Notes (<a href="https://new.missionnext.org/welcome/for-organization
             }
         } else {
             jQuery('#renewal-options .renewal-month').show().find('input').prop('checked', true);
+            jQuery('.coupon-block').hide();
+            jQuery('#payment_coupon_store').val('');
+            jQuery('#payment_coupon').val('');
+            TotalCart.coupon_code = '';
+            TotalCart.coupon_price = 0;
+            TotalCart.update();
         }
-
     }
 
     function pushPrice(){

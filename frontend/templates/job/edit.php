@@ -51,6 +51,11 @@
             });
         });
 
-        jQuery('select[data-key="' + job_title_field + '"]').prop('disabled', true);
+        var job_title_value = jQuery('select[data-key="' + job_title_field + '"]').val();
+        jQuery('select[data-key="' + job_title_field + '"]')
+            .find('option')
+            .remove()
+            .end()
+            .append('<option value="' + job_title_value + '">' + job_title_value + '</option>');
     });
 </script>

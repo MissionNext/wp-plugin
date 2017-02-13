@@ -8,6 +8,7 @@ use MissionNext\Api;
 use MissionNext\lib\Constants;
 use MissionNext\lib\core\Context;
 use MissionNext\lib\core\Controller;
+use MissionNext\lib\form\Form;
 use MissionNext\lib\form\UserForm;
 
 class homeController extends AbstractLayoutController {
@@ -16,12 +17,37 @@ class homeController extends AbstractLayoutController {
 
     public function index(){
 
+        /* Simulation of the form save to get validation information */
+        $this->form = new Form($this->api, $this->userRole, 'profile', $this->userId);
+        $this->form->saveLater = null;
+        $this->form->changedFields = [
+            'status' => 'checked',
+            'changedFields' => []
+        ];
+        $data = [];
+        foreach ($this->form->groups as $key => $value) {
+            $groupData = $value->data;
+            foreach ($value->fields as $fieldKey => $fieldValue) {
+                if ($fieldValue->field['type'] == 'file') {
+                    unset($groupData[$fieldKey]);
+                }
+            }
+            $data[$key] = $groupData;
+        }
+        $this->form->data = $data;
+        $this->form->save();
+
+        if ($this->form->hasErrors()) {
+            $this->api->deactivateUserApp($this->userId);
+            $this->redirect('/profile');
+        }
+
         $this->app_key = Context::getInstance()->getApiManager()->publicKey;
         $this->name = Context::getInstance()->getUser()->getName();
 
         $this->subscriptions = $this->api->getSubscriptionsForUser($this->userId);
 
-        $this->matching = $this->api->checkQueue();
+        $this->matching = $this->api->checkQueue($this->userId);
 
         $configs = $this->api->getSubscriptionConfigs();
         $candidateSubscriptions = [];
@@ -62,13 +88,29 @@ class homeController extends AbstractLayoutController {
 
         $this->candidateSubs = $candidateSubscriptions;
 
+        if($this->userRole == Constants::ROLE_CANDIDATE){
+            $orgFavorites = $this->api->getFavorites($this->userId, 'organization');
+            $jobFavorites = $this->api->getFavorites($this->userId, 'job');
+            $this->favoritesCount = count($orgFavorites) + count($jobFavorites);
+
+            $this->inquiriesCount = $this->getInquiriesViews();
+        } else {
+            $favorites = $this->api->getFavorites($this->userId, 'candidate');
+            $this->favoritesCount = count($favorites);
+
+            $this->inquiriesCount = $this->getInquiriesViews();
+
+            $affiliates = $this->api->getAffiliates($this->userId, 'any');
+            $this->affiliatesCount = count($affiliates);
+        }
+
         $this->apps = [
-            1   => 'http://missionfinder.net',
-            2   => 'http://finishersproject.missionfinder.net',
-            3   => 'http://explorenext.missionfinder.net',
-            4   => 'http://journeydeepens.missionfinder.net',
-            5   => 'http://bammatch.missionfinder.net',
-            6   => 'http://missionteach.missionfinder.net',
+            1   => 'http://new.missionnext.org',
+            2   => 'http://finishersproject.missionnext.org',
+            3   => 'http://explorenext.missionnext.org',
+            4   => 'http://journeydeepens.missionnext.org',
+            5   => 'http://bammatch.missionnext.org',
+            6   => 'http://teachnext.missionnext.org',
         ];
     }
 
@@ -116,8 +158,34 @@ class homeController extends AbstractLayoutController {
 
     public function checkQueue(){
 
-        echo json_encode($this->api->checkQueue());
+        echo json_encode($this->api->checkQueue($this->userId));
 
         return false;
+    }
+
+    private function getInquiriesViews(){
+        $inquiries = array();
+
+        switch ($this->userRole) {
+            case "candidate" : {
+
+                $tmpInquiries = $this->api->getInquiredJobs($this->userId);
+                $inquiries = [];
+                foreach ($tmpInquiries as $jobItem) {
+                    $inquiries[] = $jobItem;
+                }
+                break;
+            }
+            case "organization" : {
+                $inquiries = $this->api->getInquiredCandidatesForOrganization($this->userId);
+                break;
+            }
+            case "agency" : {
+                $inquiries = $this->api->getInquiredCandidatesForAgency($this->userId);
+                break;
+            }
+        }
+
+        return count($inquiries);
     }
 }

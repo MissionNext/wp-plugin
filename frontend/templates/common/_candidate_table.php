@@ -6,12 +6,6 @@
  * @var $items Array
  * @var $messages Array
 
-// attempt to fake script into thinking this is an organization so the folders and notes for an agency are the same as the organization 
-// but this approach does not work. Maybe the cookies are taking over. Nelson 
-if ($userRole == "agency") {
-$userId = $receiving_org;
-$userRole = "organization";
-}
  */
 // print_r($items);
 

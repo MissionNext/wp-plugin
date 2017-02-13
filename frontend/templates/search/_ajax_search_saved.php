@@ -13,7 +13,7 @@
                 <span><?php echo $item['search_name'] ?></span>
             </div>
             <div>
-                <button class="btn search"><?php echo __("Search", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
+                <button class="btn btn-success"><?php echo __("Search", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
                 <button class="btn btn-danger delete" type="button" onclick="deleteJob(this)"><?php echo __("Delete", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
             </div>
         </form>

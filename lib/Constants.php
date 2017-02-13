@@ -106,6 +106,7 @@ class Constants {
             'time_commitment'   => 'time_commitment',
             'expiration_date'   => 'expiration_date',
             'job_title'         => 'job_title',
+            'second_title'      => 'second_title',
             'country'           => 'country',
             'state'             => 'state',
         )

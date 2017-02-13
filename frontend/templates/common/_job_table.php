@@ -6,15 +6,10 @@
  * @var $items Array
  * @var $messages Array
 
-// attempt to fake script into thinking this is an organization so the folders and notes for an agency are the same as the organization 
-// but this approach does not work. Maybe the cookies are taking over. Nelson 
-if ($userRole == "agency") {
-$userId = $receiving_org;
-$userRole = "organization";
-}
+
  */
 // print_r($items);
-
+// to add an item to a column must call the item into the array at MissionNext/lib/Constants.php 
 // must distinguish which application is in use for users with more than one subscriptiion, since there is more than one app_id 
 $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
 
@@ -97,19 +92,20 @@ function getLastLogin($item){
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th class="sortable"><?php echo __('Name', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                    <th class="sortable"><?php echo __('Job Category', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                     <th class="sortable"><?php echo ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_ORGANIZATION)) ?></th>
+                    <th class="sortable"><?php echo __("Job Title", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                     <th class="sortable"><?php echo __("Region", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                    <th class="sortable"><?php echo __("Category", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                    <th class="sortable"><?php echo __("Commitment Time", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                    <th class="sortable"><?php echo __("Inquired", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                    <!--<th class="sortable"><?php echo __("Category", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>-->
+                    
 
                     <?php if($matching): ?>
                         <th class="sortable asc"><?php echo __("Match (%)", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                         <th><?php echo __("What Matched?", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                     <?php endif; ?>
+                    <th class="sortable"><a title="Inquired"><?php echo __("Inq", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a></th>
 
-                    <th><?php echo __("Favorite", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                    <th><a title="Favorite"><?php echo __("Fav", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a></th>
 
                     <?php if (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
                         <th class="center"><?php echo __("Folder", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
@@ -144,15 +140,10 @@ function getLastLogin($item){
                                         <?php echo !empty($item['org_name']) ? $item['org_name'] : $item['organization']['username']; ?>
                                     </a>
                                 </td>
-                                <td class="region"><?php echo getProfileField($item, 'world_region') ?></td>
-                                <td class="categories"><?php echo getProfileField($item, 'job_category') ?></td>
-                                <td class="time-commitment"><?php echo getProfileField($item, 'time_commitment') ?></td>
-                                <td class="inquired">
-                                    <?php if (isset($item['inquired'])) { ?>
-                                        <img src="<?php echo getResourceUrl('/resources/images/inquire.png') ?>" height="16" width="16" />
-                                    <?php } ?>
-                                </td>
-
+                                 <td class="second_title"><?php echo getProfileField($item, 'second_title') ?></td>
+                                 <td class="region"><?php echo getProfileField($item, 'world_region') ?></td>
+                                <!--<td class="categories"><?php echo getProfileField($item, 'job_category') ?></td>-->
+                               
                                 <?php if($matching): ?>
                                     <td class="matching" ><?php echo $item['matching_percentage'] ?></td>
                                     <td class="match-highlight"  >
@@ -164,7 +155,12 @@ function getLastLogin($item){
                                     </td>
                                 <?php endif; ?>
 
-                                <td class="favorite" data-id="<?php echo $item['favorite'] ?>">
+                                <td class="inquired">
+                                    <?php if (isset($item['inquired'])) { ?>
+                                        <img src="<?php echo getResourceUrl('/resources/images/inquire.png') ?>" height="16" width="16" />
+                                    <?php } ?>
+                                </td>
+                              <td class="favorite" data-id="<?php echo $item['favorite'] ?>">
                                     <div class="favorite-block <?php echo is_integer($item['favorite'])?'favorite':'not-favorite' ?>"></div>
                                 </td>
 

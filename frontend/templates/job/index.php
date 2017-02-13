@@ -26,10 +26,10 @@ elseif (preg_match("/teachnext/",$sniff_host)) { $this_app = 6; }
     <table class="table table-bordered">
         <thead>
             <tr>
-                <td class="name"><?php echo __("Name", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></td>
-                <td class="alt_title"><?php echo __("Alternate Title", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></td>
-                <td class="country"><?php echo __("Country", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></td>
-                <td class="actions"><?php echo __("Actions", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></td>
+                <td class="name"><strong><?php echo __("Category", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></strong></td>
+                <td class="alt_title"><strong><?php echo __("Job Title", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></strong></td>
+                <td class="country"><strong><?php echo __("Country", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></strong></td>
+                <td class="actions" style="text-align:center"><strong><?php echo __("Actions", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></strong></td>
             </tr>
         </thead>
         <tbody>

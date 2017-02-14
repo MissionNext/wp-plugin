@@ -83,7 +83,7 @@ class paymentController extends AbstractLayoutController {
                 'user_id' => $this->userId,
                 'recurring' => $recurring,
                 'period' => 'year',
-                'type' => 'cc',
+                'type' => $_GET['payment_type'],
                 'coupon' => $helper->getCoupon()
             ));
 
@@ -96,7 +96,11 @@ class paymentController extends AbstractLayoutController {
         $this->fee = $helper->getFee();
         $this->discount = $helper->getDiscount();
 
-        $this->form = new PaymentForm(array('period' => 'year', 'echeck' => false));
+        $this->form = new PaymentForm(array(
+            'period' => 'year',
+            'echeck' => $_GET['payment_type'] == 'echeck',
+            'card'      => $_GET['payment_type'] == 'cc'
+        ));
 
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
@@ -185,7 +189,7 @@ class paymentController extends AbstractLayoutController {
                 'user_id' => $this->userId,
                 'recurring' => $recurring,
                 'period' => $_GET['p'],
-                'type' => $_GET['p'] == 'month' ? 'echeck' : 'cc',
+                'type' => $_GET['payment_type'],
                 'coupon' => $helper->getCoupon()
             ));
 
@@ -206,8 +210,8 @@ class paymentController extends AbstractLayoutController {
         }
 
         $this->form = new PaymentForm(array(
-            'echeck' => $_GET['p'] == 'month',
-            'card' => $_GET['p'] == 'year',
+            'echeck' => $_GET['payment_type'] == 'echeck',
+            'card' => $_GET['payment_type'] == 'cc',
             'period' => $_GET['p']
         ));
 

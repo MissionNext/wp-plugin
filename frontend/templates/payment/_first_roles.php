@@ -5,6 +5,15 @@
  */
 
 ?>
+
+<div class="block payment-period payment-type">
+    <label for="type-select"><?php echo __("Payment Type", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></label>
+    <select name="payment_type" id="type-select">
+        <option value="cc"><?php echo __("Credit card", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></option>
+        <option value="echeck"><?php echo __("eCheck", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></option>
+    </select>
+</div>
+
 <table class="table payment roles" id="payment_table_roles">
     <thead>
     <tr>

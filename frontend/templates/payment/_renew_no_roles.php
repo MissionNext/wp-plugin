@@ -28,6 +28,14 @@ foreach($defaults as $default){
     </select>
 </div>
 
+<div class="block payment-period payment-type">
+    <label for="type-select"><?php echo __("Payment Type", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></label>
+    <select name="payment_type" id="type-select">
+        <option value="cc"><?php echo __("Credit card", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></option>
+        <option value="echeck"><?php echo __("eCheck", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></option>
+    </select>
+</div>
+
 <table class="table payment no-roles" id="payment_no_roles">
     <thead>
     <tr>
@@ -142,7 +150,11 @@ foreach($defaults as $default){
             } else {
                 jQuery('#renewal-options .renewal-end').show().find('input').prop('checked', true);
             }
+
+            jQuery('.payment-type').hide();
+            jQuery('#type-select').val('cc');
         } else {
+            jQuery('.payment-type').show();
             jQuery('#renewal-options .renewal-month').show().find('input').prop('checked', true);
         }
 

@@ -85,8 +85,7 @@ class Constants {
             'address'           => 'address',
             'phone'             => 'phone',
             'agency_full_name'  => 'agency_full_name',
-
-        ),
+       ),
         self::ROLE_ORGANIZATION => array(
             'location'          => 'location',
             'first_name'        => 'first_name',
@@ -109,6 +108,7 @@ class Constants {
             'second_title'      => 'second_title',
             'country'           => 'country',
             'state'             => 'state',
+            'listing_expiraton' => 'listing_expiraton',
         )
     );
 

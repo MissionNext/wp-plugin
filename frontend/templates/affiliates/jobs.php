@@ -3,7 +3,7 @@
 /**
  * @var $jobs Array
  */
-//  print_r($jobs);
+// print_r($jobs);
 ?>
 <div class="page-header">
     <h1><?php echo ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_JOB_PLURAL))?></h1>

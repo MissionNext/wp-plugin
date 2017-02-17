@@ -136,7 +136,7 @@ function getLastLogin($item){
                                     <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo !empty($item['profileData'][$job_key]) ? current($item['profileData'][$job_key]) : $item['show_name'] ?></a>
                                 </td>
                                 <td class="organization" >
-                                    <a href="/organization/<?php echo $item['organization']['id'] ?>">
+                                    <a href="/organization/<?php echo $item['organization']['id'] ?>" target="blank">
                                         <?php echo !empty($item['org_name']) ? $item['org_name'] : $item['organization']['username']; ?>
                                     </a>
                                 </td>

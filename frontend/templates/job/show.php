@@ -5,6 +5,7 @@
  * @var Array $job
  * @var Array $fields
  */
+// echo "\$userRole = $userRole";
 $config = $context->getConfig();
 function fieldEmpty($field){
     return empty($field) || $field == array(''=>'');
@@ -62,8 +63,38 @@ function groupEmpty($group){
                 <?php echo $job['org_name']; ?>
             </a>
         </p>
-
+	<?php if($userRole == \MissionNext\lib\Constants::ROLE_AGENCY): ?> 
         <?php foreach($job['profile'] as $group): ?>
+            <?php if(!groupEmpty($group['fields'])): ?>
+                <fieldset class="mn-profile-group">
+                    <legend><?php echo $group['name'] ?></legend>
+
+                    <?php foreach($group['fields'] as $field): ?>
+                        <?php if(!fieldEmpty($field['value'])): ?>
+                            <div>
+                                <strong><?php echo $field['label'] ?>:</strong>
+                                <div>
+                                    <?php if(is_array($field['value'])): ?>
+
+                                        <?php foreach($field['value'] as $value): ?>
+                                            <div><?php echo $value ?></div>
+                                        <?php endforeach; ?>
+
+                                    <?php elseif($field['type'] == 'file' && $field['value']): ?>
+                                        <a href="<?php echo $config->get('api_base_path') . '/' . $config->get('api_uploads_dir') . '/' . $field['value'] ?>" class="mn-input-file-data"></a>
+                                    <?php else: echo "&nbsp;"; ?> <!--space added by Nelson Apr 23, 2016-->
+                                        <?php echo $field['value'] ?>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+
+                </fieldset>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    <?php else: ?>
+         <?php foreach($job['profile'] as $group): ?>
             <?php if(!groupEmpty($group['fields']) && ( isset($group['meta']['is_private']) && !$group['meta']['is_private'] || !isset($group['meta']['is_private']) ) ): ?>
                 <fieldset class="mn-profile-group">
                     <legend><?php echo $group['name'] ?></legend>
@@ -92,15 +123,16 @@ function groupEmpty($group){
                 </fieldset>
             <?php endif; ?>
         <?php endforeach; ?>
-
+   
+	<?php endif; ?>
         <div class="control-buttons">
             <div class="left">
                 <a class="btn btn-default" href="/dashboard"><?php echo __("Dashboard", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                 <?php if($userRole == \MissionNext\lib\Constants::ROLE_ORGANIZATION): ?> <!--Only Organizations can enter/edit/delete jobs. Edit logic added by Nelson Oct 21, 2016-->
                 <a class="btn btn-default" href="/job/<?php echo $job['id'] ?>/edit"><?php echo __("Edit Job", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
-                <?php endif; ?>
                 <a class="btn btn-default" href="/job"><?php echo __("Jobs", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> <!--job button added by Nelson Apr 23, 2016-->
-            	<button class="btn btn-default" onclick="javascript:window.close();"><strong>Close</strong></button> <!--Close button added by Nelson Oct 21, 2016-->
+            	<?php endif; ?>
+                <button class="btn btn-default" onclick="javascript:window.close();"><strong>Close</strong></button> <!--Close button added by Nelson Oct 21, 2016-->
             </div>
         </div>
     </div>

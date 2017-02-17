@@ -52,7 +52,7 @@ elseif (preg_match("/teachnext/",$sniff_host)) { $this_app = 6; }
     </table>
     <?php else: ?>
         <div class="block">
-            <?php echo __("No jobs yet.", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+            <?php echo __("Available jobs to be posted soon. Please check back.", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
         </div>
     <?php endif; ?>
     <a class="btn btn-success" href="/job/new"><?php echo __("New", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>

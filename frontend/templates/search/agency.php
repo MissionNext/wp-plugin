@@ -7,6 +7,8 @@
  * @var $searches Array
  * @var $search Array
  */
+
+// echo "\$role = $role "; echo "\$userRole = $userRole"; echo "<br>\$_POST = <br>"; print_r($_POST); echo "<br>\$result = <br>"; print_r($result); echo "<br>\$search = <br>"; print_r($search); echo "<br>\$searches = <br>"; print_r($searches); 
 ?>
 
 <div class="page-header">

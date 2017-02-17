@@ -98,10 +98,19 @@ if (preg_match("/explorenext/",$sniff_host)) {
 elseif (preg_match("/teachnext/",$sniff_host)) { 
 	$site = 6 * $factor;
 }
-?>               
+?> 
+<!-- javascript functions are needed to open a new window using Firefox running on Windows and Macs -->
+<script>
+function function_print() {
+    window.open("https://info.missionnext.org/print_profile.php?uid=<?php echo $pass_string ?>&site=<?php echo $site ?>");
+}
+</script>
+              
                 <div class="buttons"> 
-            	<a href="https://info.missionnext.org/print_profile.php?uid=<?php echo $pass_string ?>&site=<?php echo $site ?>" title="Printer Friendly Display" target="_blank"><button class="btn btn-default">Your Profile</button></a>
-            	</div>
+            	<!--<a href="https://info.missionnext.org/print_profile.php?uid=<?php echo $pass_string ?>&site=<?php echo $site ?>" title="Printer Friendly Display" target="_blank"><button class="btn btn-default">Your Profile</button></a>-->
+    			<button class="btn btn-default" title="Printer Friendly Display" onclick="function_print()"><a>Your Profile</a></button> 
+                </div>
+            	
 <?php
 } // if ($user_role == "candidate")
 ?>        

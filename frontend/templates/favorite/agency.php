@@ -26,7 +26,7 @@
         <?php foreach($favorites as $key => $favorite): ?>
         <tr data-id="<?php echo $favorite['data']['id'] ?>" data-fav-id="<?php echo $favorite['id'] ?>" data-name="<?php echo \MissionNext\lib\UserLib::getUserFullName($favorite['data']) ?>">
             <td class="id"><?php echo $key+1 ?></td>
-            <td class="name"><a href="/<?php echo $role ?>/<?php echo $favorite['data']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getUserFullName($favorite['data']) ?></a></td>
+            <td class="name"><a href="/<?php echo $role ?>/<?php echo $favorite['data']['id'] ?>" target="_blank"><?php echo \MissionNext\lib\UserLib::getUserFullName($favorite['data']) ?></a></td>
             <td class="note" data-note="<?php echo htmlentities($favorite['notes']) ?>">
                 <div <?php if(!$favorite['notes']) echo 'class="no-note"' ?>></div>
             </td>

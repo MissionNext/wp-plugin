@@ -8,6 +8,7 @@
 
  */
 // print_r($items);
+// echo "<br>\$role = $role";
 
 // must distinguish which application is in use for users with more than one subscriptiion, since there is more than one app_id 
 $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 

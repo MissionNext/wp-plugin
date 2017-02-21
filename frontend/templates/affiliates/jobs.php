@@ -14,7 +14,7 @@
         <thead>
             <tr>
                 <th class="id">#</th>
-                <th class="exp_date"><?php echo __("Exp Date", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                <th class="listing_expiration"><?php echo __("Exp Date", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                 <th class="name"><?php echo __("Name", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                 <th class="location"><?php echo __("Location", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                 <th class="actions"><?php echo __("Actions", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
@@ -30,10 +30,10 @@
             <?php $key = 0; foreach($organization['jobs'] as $job): $key++;?>
             <tr>
                 <td class="id"><?php echo $key ?></td>
-                <td class="exp_date"><?php echo __(\MissionNext\lib\ProfileLib::getProfileField($job, 'listing_expiraton')) ?></td>
+                <td class="listing_expiration" style='text-align:center'><?php echo __(\MissionNext\lib\ProfileLib::getProfileField($job, 'listing_expiration')) ?></td>
                 <td class="name"><a href="/job/<?php echo $job['id'] ?>"><?php echo $job['name'] ?></a></td>
                 <td class="location"><?php echo __(\MissionNext\lib\ProfileLib::getProfileField($job, 'country')) ?></td>
-                <td class="actions">
+                <td class="actions" style='text-align:center'>
                     <a class="btn btn-primary" href="/job/matches/candidate/<?php echo $job['id'] ?>">
                         <?php echo __("Matches", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
                     </a>

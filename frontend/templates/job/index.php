@@ -4,7 +4,7 @@
  * @var String $userRole
  * @var Array $jobs
  */
-
+// echo "<br>\$userRole = $userRole";
 // echo "<pre>";
 // print_r($jobs);
 // print_r($user);
@@ -52,7 +52,13 @@ elseif (preg_match("/teachnext/",$sniff_host)) { $this_app = 6; }
     </table>
     <?php else: ?>
         <div class="block">
-            <?php echo __("Available jobs to be posted soon. Please check back.", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+        	<?php if ($userRole == "organization") {
+            	echo __("Post your first job/assigment to find appropriate candidates.", \MissionNext\lib\Constants::TEXT_DOMAIN); 
+            }
+            else {
+            	echo __("Available jobs to be posted soon. Please check back.", \MissionNext\lib\Constants::TEXT_DOMAIN); 
+            }
+            ?>
         </div>
     <?php endif; ?>
     <a class="btn btn-success" href="/job/new"><?php echo __("New", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>

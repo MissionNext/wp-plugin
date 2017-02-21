@@ -76,9 +76,9 @@
     <!--<?php echo $_SERVER['HTTP_HOST'] ?>-->
 	<!--<? print_r($affiliates); echo "<br>\$userRole = $userRole"; ?>-->
 	<?php if ($userRole == "agency"): ?>
-		<a class="btn btn-default" href="/organization/search"><?php echo __("Add Affiliate", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> 
+		<a class="btn btn-default" href="/organization/search"><?php echo __("Request Affiliation", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> 
 	<?php elseif ($userRole == "organization"): ?>
-		<a class="btn btn-default" href="/agency/search"><?php echo __("Add Affiliate", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> 
+		<a class="btn btn-default" href="/agency/search"><?php echo __("Request Affiliation", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> 
 	<?php endif; ?>
 
 </div>

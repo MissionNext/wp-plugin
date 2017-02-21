@@ -108,7 +108,7 @@ class Constants {
             'second_title'      => 'second_title',
             'country'           => 'country',
             'state'             => 'state',
-            'listing_expiraton' => 'listing_expiraton',
+            'listing_expiration' => 'listing_expiration',
         )
     );
 

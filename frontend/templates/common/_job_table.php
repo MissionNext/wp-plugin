@@ -84,6 +84,7 @@ function getLastLogin($item){
 }
 
 ?>
+                
 <div class="panel panel-default">
     <div class="panel-body">
         <div class="table-responsive">
@@ -97,29 +98,31 @@ function getLastLogin($item){
                     <th class="sortable"><?php echo __("Job Title", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                     <th class="sortable"><?php echo __("Region", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                     <!--<th class="sortable"><?php echo __("Category", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>-->
-                    
+                    <?php if (($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
+                    <th style='text-align:center'><?php echo __("Candidate", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                    <?php } ?>
 
                     <?php if($matching): ?>
                         <th class="sortable asc"><?php echo __("Match (%)", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                         <th><?php echo __("What Matched?", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                     <?php endif; ?>
-                    <th class="sortable"><a title="Inquired"><?php echo __("Inq", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a></th>
-
-                    <th><a title="Favorite"><?php echo __("Fav", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a></th>
-
                     <?php if (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
-                        <th class="center"><?php echo __("Folder", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                    <?php } ?>
-
+                    <th class="sortable"><a title="Inquired"><?php echo __("Inq", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a></th>
+                    <th><a title="Favorite"><?php echo __("Fav", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a></th>
+                    <th class="center"><?php echo __("Folder", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                     <th><?php echo __("Notes", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                    <?php } ?>
+                    
                 </tr>
                 </thead>
                 <tbody>
                 <?php
                 foreach($groups as $group_name => $folderItems):?>
+                    <?php if (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
                     <tr class="folder-title <?php if(empty($folderItems)) echo 'hide'; ?> header <?php if(isset($folders[$group_name]) && $folders[$group_name] == $default_folder) echo 'default-folder open-folder'; ?>" data-name="<?php echo $group_name ?>">
                         <td colspan="15"><?php echo $folders[$group_name] ?> (<span><?php echo count($folderItems) ?></span>)</td>
                     </tr>
+                    <?php } ?>
                     <?php foreach($folderItems as $key => $item):
                             $prior = ($role == \MissionNext\lib\Constants::ROLE_JOB && @$item['organization']['subscription']['partnership'] == \MissionNext\lib\Constants::PARTNERSHIP_PLUS);
                             ?>
@@ -154,8 +157,9 @@ function getLastLogin($item){
                                         </p>
                                     </td>
                                 <?php endif; ?>
-
-                                <td class="inquired">
+                                
+                               <?php if (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
+                               <td class="inquired">
                                     <?php if (isset($item['inquired'])) { ?>
                                         <img src="<?php echo getResourceUrl('/resources/images/inquire.png') ?>" height="16" width="16" />
                                     <?php } ?>
@@ -164,7 +168,6 @@ function getLastLogin($item){
                                     <div class="favorite-block <?php echo is_integer($item['favorite'])?'favorite':'not-favorite' ?>"></div>
                                 </td>
 
-                                <?php if (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
                                     <td class="folder">
                                         <select>
                                             <?php foreach($folders as $value => $folder): ?>
@@ -173,22 +176,36 @@ function getLastLogin($item){
                                         </select>
                                     </td>
                                 <?php } ?>
-
+    							<?php if (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
                                 <td class="note" data-note="<?php echo htmlentities($item['notes']) ?>">
-                                    <?php if (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
-                                        <div <?php if(!$item['notes']) echo 'class="no-note"' ?>></div>
-                                    <?php } else { ?>
+                                
                                         <?php if($item['notes']) { ?>
                                             <div></div>
                                         <?php } ?>
-                                    <?php } ?>
-                                </td>
+                                 </td>  
+                                <?php } ?>
+                                
+                                <?php if (($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
+                    			<td class="actions">
+                    				<a class="btn btn-primary" href="/job/matches/candidate/<?php echo $item['id'] ?>">
+                        			<?php echo __("Matches", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+                    				</a>
+                				</td>
+                    			<?php } ?>
+   
                             </tr>
                     <?php endforeach; ?>
                 <?php endforeach; ?>
                 </tbody>
             </table>
+                     <?php if (($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
+                    <a class="btn btn-default" href="/affiliates"><?php echo __("Affiliates List", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> 
+                    <?php } ?>
+
+ 
         </div>
+        
+        
         <?php if($matching): ?>
             <div id="no_results" style="display: none">
                 <?php echo __("No results with the set matching rate.", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>

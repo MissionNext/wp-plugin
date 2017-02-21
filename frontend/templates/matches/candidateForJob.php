@@ -40,7 +40,14 @@ $receiving_org = $job['organization']['id'];
         <?php renderTemplate("common/_pager", compact('page', 'pages')) ?>
     <?php else: ?>
         <div class="block">
-            <?php echo __("Sorry, no matches yet.", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+        	<?php if ($userRole == "organization") {
+            	echo __("The job matching calculations can take a few hours. Check back tomorrow.", \MissionNext\lib\Constants::TEXT_DOMAIN); 
+            }
+            else {
+            	echo __("Sorry, no matches yet. ", \MissionNext\lib\Constants::TEXT_DOMAIN);
+            }
+            ?>
+    
         </div>
     <?php endif; ?>
 

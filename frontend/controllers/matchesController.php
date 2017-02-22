@@ -37,6 +37,7 @@ class matchesController extends AbstractLayoutController {
         if($this->userRole == 'candidate'){
 
             $favs = $this->api->getFavorites($this->userId, 'job');
+            $inquires = $this->api->getInquiredJobs($this->userId);
 
             foreach($jobs as $key => $job){
                 $organization = $this->api->getUserProfile($job['organization']['id']);
@@ -47,6 +48,18 @@ class matchesController extends AbstractLayoutController {
                     if($job['id'] == $fav['target_id']){
                         $jobs[$key]['favorite'] = $fav['id'];
                     }
+                }
+
+                $jobs[$key]['inquired'] = null;
+                if($inquires){
+                    $is_inquired = null;
+                    foreach($inquires as $inquire){
+                        if($inquire['id'] == $job['id']){
+                            $is_inquired = $inquire['id'];
+                            break;
+                        }
+                    }
+                    $jobs[$key]['inquired'] = $is_inquired;
                 }
             }
         }

@@ -22,7 +22,7 @@ function groupEmpty($group){
 ?>
 
 <div class="page-header">
-    <h1><?php echo $agency['username'] ?></h1>
+    <h1><?php echo !empty($agency['profileData']['agency_full_name']) ? $agency['profileData']['agency_full_name'] : $agency['username']; ?></h1>
 </div>
 <div class="page-content">
     <div class=" sidebar-container">

@@ -22,7 +22,7 @@
             </thead>
             <tbody>
             <tr class="approved-header header">
-                <td colspan="3"><?php echo __('Approved', \MissionNext\lib\Constants::TEXT_DOMAIN)?></td>
+                <td colspan="4"><?php echo __('Approved', \MissionNext\lib\Constants::TEXT_DOMAIN)?></td>
             </tr>
             <?php foreach($affiliates['approved'] as $aff): ?>
 
@@ -45,7 +45,7 @@
                 </tr>
             <?php endforeach; ?>
             <tr class="pending-header header">
-                <td colspan="3"><?php echo __('Pending', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></td>
+                <td colspan="4"><?php echo __('Pending', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></td>
             </tr>
             <?php foreach($affiliates['pending'] as $aff): ?>
                 <tr data-requester="<?php echo $aff['affiliate_requester'] ?>" data-approver="<?php echo $aff['affiliate_approver'] ?>">

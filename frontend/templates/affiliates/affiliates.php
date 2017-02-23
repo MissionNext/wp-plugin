@@ -31,7 +31,7 @@
                     <?php if ($role == "organization"): ?>
                     	<td class="name"><a href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getUserOrganizationName($aff[$role . '_profile']) ?></a> </td>
                     <?php else: ?>
-                    	<td class="name"><a href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getUserFullName($aff[$role . '_profile']) ?></a> </td>
+                    	<td class="name"><a href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getAgencyFullName($aff[$role . '_profile']) ?></a> </td>
                     <?php endif; ?>
                     
                      <?php if ($role == "organization"): ?>
@@ -53,7 +53,7 @@
                     <?php if ($role == "organization"): ?>
                     	<td class="name"><a href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getUserOrganizationName($aff[$role . '_profile']) ?></a> </td>
                     <?php else: ?>
-                    	<td class="name"><a href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getUserFullName($aff[$role . '_profile']) ?></a> </td>
+                    	<td class="name"><a href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getAgencyFullName($aff[$role . '_profile']) ?></a> </td>
                     <?php endif; ?>
                     <td class="actions">&nbsp;</td>
                 	<td class="actions">

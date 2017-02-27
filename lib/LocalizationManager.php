@@ -37,6 +37,8 @@ class LocalizationManager {
     public function getLocalizedEmail($name){
 
         $dir = MN_ROOT_DIR . '/' . Constants::EMAILS_DIR;
+        $publicKey = Context::getInstance()->getApiManager()->publicKey;
+        $dir .= '/'.$publicKey;
 
         $locale = $this->getSiteDefaultLang();
 

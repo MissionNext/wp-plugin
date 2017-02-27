@@ -1,0 +1,3 @@
+Hello %to_full_name%,
+The %from_full_name% canceled your affiliate request!
+ExploreNext

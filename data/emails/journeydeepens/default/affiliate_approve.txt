@@ -1,0 +1,2 @@
+Hello %to_full_name%,
+The %from_full_name% approved your affiliate request!

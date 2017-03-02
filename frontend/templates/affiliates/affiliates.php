@@ -29,9 +29,9 @@
                 <tr data-requester="<?php echo $aff['affiliate_requester'] ?>" data-approver="<?php echo $aff['affiliate_approver'] ?>">
                     <td class="avatar"><?php echo get_avatar($aff[ $role . '_profile']['email'], 50) ?></td>
                     <?php if ($role == "organization"): ?>
-                    	<td class="name"><a href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getUserOrganizationName($aff[$role . '_profile']) ?></a> </td>
+                    	<td class="name"><a target="_blank" href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getUserOrganizationName($aff[$role . '_profile']) ?></a> </td>
                     <?php else: ?>
-                    	<td class="name"><a href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getAgencyFullName($aff[$role . '_profile']) ?></a> </td>
+                    	<td class="name"><a target="_blank" href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getAgencyFullName($aff[$role . '_profile']) ?></a> </td>
                     <?php endif; ?>
                     
                      <?php if ($role == "organization"): ?>
@@ -51,9 +51,9 @@
                 <tr data-requester="<?php echo $aff['affiliate_requester'] ?>" data-approver="<?php echo $aff['affiliate_approver'] ?>">
                     <td class="avatar"><?php echo get_avatar($aff[ $role . '_profile']['email'], 50) ?></td>
                     <?php if ($role == "organization"): ?>
-                    	<td class="name"><a href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getUserOrganizationName($aff[$role . '_profile']) ?></a> </td>
+                    	<td class="name"><a target="_blank" href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getUserOrganizationName($aff[$role . '_profile']) ?></a> </td>
                     <?php else: ?>
-                    	<td class="name"><a href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getAgencyFullName($aff[$role . '_profile']) ?></a> </td>
+                    	<td class="name"><a target="_blank" href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getAgencyFullName($aff[$role . '_profile']) ?></a> </td>
                     <?php endif; ?>
                     <td class="actions">&nbsp;</td>
                 	<td class="actions">

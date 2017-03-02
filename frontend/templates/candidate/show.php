@@ -32,7 +32,7 @@ $org_string  = $factor.$factor_org; // pass this string, then extract organizati
 $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
 if (preg_match("/explorenext/",$sniff_host)) {
     $site = 3 * $factor;
-
+	
 }
 elseif (preg_match("/teachnext/",$sniff_host)) {
     $site = 6 * $factor;
@@ -85,7 +85,8 @@ function function_jobs() {
                 <div class="buttons">
                     <button class="btn btn-default" title="Matches to Your Jobs" onclick="function_jobs()"><a>Job Matches</a></button> 
                 </div>
-                <br> Test For IE: 
+                
+                <!--<br> Test For IE: 
                 <div class="buttons">
                     <button class="btn btn-default"><a href="https://info.missionnext.org/qcs_view.php?uid=<?php echo $pass_string ?>" title="Qualified Candidate Scale" target="_blank">View QCS Scale</a></button>
                 </div>
@@ -94,7 +95,7 @@ function function_jobs() {
                 </div>
                 <div class="buttons">
                     <button class="btn btn-default"><a href="https://info.missionnext.org/jobs_view.php?uid=<?php echo $pass_string ?>&oid=<?php echo $org_string ?>&site=<?php echo $site ?>" title="Matches to Your Jobs" target="_blank">Job Matches</a></button>
-                </div>
+                </div>-->
             <?php endif; ?>
         </div>
     </div>

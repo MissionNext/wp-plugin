@@ -69,7 +69,7 @@ function groupEmpty($group){
                                     <?php elseif($field['type'] == 'file' && $field['value']): ?>
                                         <a href="<?php echo $config->get('api_base_path') . '/' . $config->get('api_uploads_dir') . '/' . $field['value'] ?>" class="mn-input-file-data"></a>
                                     <?php else: ?>
-                                        <?php echo $field['value'] ?>
+                                        &nbsp; <?php echo $field['value'] ?> 
                                     <?php endif; ?>
                                 </div>
                             </div>

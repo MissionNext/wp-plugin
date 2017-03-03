@@ -126,7 +126,7 @@ function getLastLogin($item){
                             ?>" data-prior="" data-updated="<?php echo date("Y", strtotime($item['updated_at'])); ?>">
                                 <td><?php echo $key + 1  ?></td>
                                 <td class="name">
-                                    <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')">
+                                    <a href="javascript:void(0)" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')">
                                         <?php echo $item['show_name'] ?>
                                     </a>
                                 </td>

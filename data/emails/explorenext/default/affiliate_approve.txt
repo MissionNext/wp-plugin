@@ -1,2 +1,18 @@
 Hello %to_full_name%,
-The %from_full_name% approved your affiliate request!
+
+IF YOU OWN AN EXPLORENEXT AGENCY ACCOUNT:
+
+Your affiliation request with %from_full_name% has been approved. This affiliated account will be able to view your posted jobs and view candidate profiles matching those jobs to assist in recruiting. 
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+IF YOU OWN AN EXPLORENEXT AGENCY REP ACCOUNT:
+
+Your affiliation request with %from_full_name% has been approved. Please log in to your ExploreNext account to view posted jobs and view candidate profiles matching those jobs.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Login at https://explorenext.missionnext.org/explorenext-home/login-here/ 
+
+Thank you for your partnership in the gospel,
+
+ExploreNext Customer Service

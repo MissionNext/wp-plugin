@@ -1,2 +1,11 @@
 Hello %to_full_name%,
-The %from_full_name% canceled your affiliate request!
+
+Your affiliation request with %from_full_name% has been canceled. If you have any questions, you can log in to your ExploreNext account to send a message to the %from_full_name% or contant them directly. 
+
+ExploreNext Customer Service
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Thank you for your partnership in the gospel,
+
+ExploreNext Customer Service
+ExploreNext: https://explorenext.missionnext.org

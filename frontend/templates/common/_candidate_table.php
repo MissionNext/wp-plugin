@@ -7,8 +7,16 @@
  * @var $messages Array
 
  */
-// print_r($items);
-// echo "<br>\$role = $role";
+// print_r($items); // print_r($messages); 
+$Cookie_Values = array_values($_COOKIE); 
+// echo "<br>\$userRole = $userRole; \$role = $role; \$userId = $userId; \$loggedRole = $loggedRole ";
+if ($loggedRole == "agency") { 
+	$agency_user = $Cookie_Values[6]; 
+	$pipe_pos    = strpos($agency_user,"|");
+	$agency_un   = trim(substr($agency_user, 0, $pipe_pos));
+	$factor		 = rand(10,99); // generate random two-digit number
+	// echo "<br>\$factor = $factor; \$agency_un = $agency_un";
+}
 
 // must distinguish which application is in use for users with more than one subscriptiion, since there is more than one app_id 
 $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
@@ -94,7 +102,7 @@ function getLastLogin($item){
                     <th><?php echo __("Gender", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                     <th><?php echo __("Marital status", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                     <th class="sortable"><?php echo __("Location", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                    <th><?php echo __("Last login", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                    <th class="sortable"><?php echo __("Last login", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
 
                     <?php if($matching): ?>
                         <th class="sortable asc"><?php echo __("Match (%)", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
@@ -106,8 +114,11 @@ function getLastLogin($item){
                     <?php if (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
                         <th class="center"><?php echo __("Folder", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                     <?php } ?>
-
-                    <th><?php echo __("Notes", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                    <?php if (isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY) { ?>
+                    	<th><?php echo __("Candidate", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                    <?php } elseif (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
+                    	<th><?php echo __("Notes", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                    <?php } ?>
                 </tr>
                 </thead>
                 <tbody>
@@ -126,7 +137,7 @@ function getLastLogin($item){
                             ?>" data-prior="" data-updated="<?php echo date("Y", strtotime($item['updated_at'])); ?>">
                                 <td><?php echo $key + 1  ?></td>
                                 <td class="name">
-                                    <a href="#" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')">
+                                    <a href="javascript:void(0)" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')">
                                         <?php echo $item['show_name'] ?>
                                     </a>
                                 </td>
@@ -139,7 +150,7 @@ function getLastLogin($item){
                                 <?php if($matching): ?>
                                     <td class="matching" ><?php echo $item['matching_percentage'] ?></td>
                                     <td class="match-highlight"  >
-                                        <!--                                    <div data-user-role='--><?php //echo str_replace('"','', json_encode($item['role'], JSON_HEX_APOS | JSON_HEX_QUOT)); ?><!--' data-item_profile='--><?php //echo json_encode($item['profile'], JSON_HEX_APOS | JSON_HEX_QUOT)?><!--' data-item_results='--><?php //echo json_encode($item['results'], JSON_HEX_APOS | JSON_HEX_QUOT)?><!--'></div>-->
+                                        <!--   <div data-user-role='--><?php //echo str_replace('"','', json_encode($item['role'], JSON_HEX_APOS | JSON_HEX_QUOT)); ?><!--' data-item_profile='--><?php //echo json_encode($item['profile'], JSON_HEX_APOS | JSON_HEX_QUOT)?><!--' data-item_results='--><?php //echo json_encode($item['results'], JSON_HEX_APOS | JSON_HEX_QUOT)?><!--'></div>-->
                                         <div data-name="<?php echo $record_name; ?>" data-for-user-id='<?php echo $userId ?>' data-user-role='<?php echo $item['role'] ?>' data-user-id='<?php echo $item['id'] ?>'></div>
                                         <p class="spinner">
                                             <img src="/wp-includes/images/spinner.gif" width="20" height="20" />
@@ -161,13 +172,15 @@ function getLastLogin($item){
                                     </td>
                                 <?php } ?>
 
-                                <td class="note" data-note="<?php echo htmlentities($item['notes']) ?>">
-                                    <?php if (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
-                                        <div <?php if(!$item['notes']) echo 'class="no-note"' ?>></div>
-                                    <?php } else { ?>
-                                        <?php if($item['notes']) { ?>
-                                            <div></div>
-                                        <?php } ?>
+                                <?php if (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
+                                 	<td class="note" data-note="<?php echo htmlentities($item['notes']) ?>">
+                                       <div <?php if(!$item['notes']) echo 'class="no-note"' ?>></div>
+                                <?php } else { 
+                                	$factored	 = $factor * $item['id'];  // factored is the product of the random number and user_id 
+									$pass_string = $factor.$factored; // pass this string, then extract user_id as $factored / $factor 
+?>
+                                     <td class="agency_note">
+                                        <div style="text-align:center">&nbsp;&nbsp;<a href="https://info.missionnext.org/candidate_recruit.php?c=<?php echo $pass_string ?>&assignment=<?php echo $userId ?>&loggedun=<?php echo $agency_un ?>"><img src="/wp-includes/images/file.gif" width="16" height="16" />&nbsp;&nbsp;</a></div>
                                     <?php } ?>
                                 </td>
                             </tr>

@@ -1,2 +1,18 @@
 Hello %to_full_name%,
-The %from_full_name% requested affiliation!
+
+IF YOU OWN A TEACHNEXT AGENCY ACCOUNT:
+
+TeachNext affiliation has been requested by %from_full_name%. Please log in to your TeachNext account to approve or cancel this request. Upon approval, you will be able to view their posted jobs and view candidate profiles matching those jobs for the purpose of assisting in recruiting qualified candidates. 
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+IF YOU OWN A TEACHNEXT SCHOOL ACCOUNT:
+
+TeachNext affiliation has been requested by %from_full_name%. Please log in to your TeachNext account to approve or cancel this request. Upon approval, this affiliated account will be able to view your posted jobs and view candidate profiles matching those jobs to assist in recruiting. 
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Login at https://teachnext.missionnext.org/teachnext-home/login-here/ 
+
+Thank you for your partnership in the gospel,
+
+TeachNext Customer Service

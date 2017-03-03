@@ -197,6 +197,15 @@ table tr td.favorite div.favorite-block{
 table tr td.favorite div.favorite-block.favorite{
     background: url("../images/favorite.png");
 }
+table tr td.agency_note div.agency_note-block{
+    display: block;
+    height: 16px;
+    width: 16px;
+   
+}
+table tr td.agency_note div.agency_note-block{
+    background: url("../images/manage.png");
+}
 table.payment {
     width: 95% !important;
     margin: 0 0 20px 15px;

@@ -1,2 +1,11 @@
 Hello %to_full_name%,
-The %from_full_name% inquired on %job_name%!
+
+Candidate %from_full_name% has clicked on the inquired button for TeachNext job %job_name%! 
+
+The expectation by the candidates is that someone from your organization will follow up.
+
+To view the candidate profile and to facilitate a response login at https://teachnext.missionnext.org/teachnext-home/login-here/ 
+
+Thank you for your partnership in the gospel,
+
+TeachNext Customer Service

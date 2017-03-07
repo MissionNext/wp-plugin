@@ -1,9 +1,9 @@
-Hello %to_full_name%,
-
-This is to let you know that candidate %from_full_name% has withdrawn the inquiry for TeachNext job %job_name%! 
-
-To follow up on inquiries, manage candidate matches for our school and jobs login at https://teachnext.missionnext.org/teachnext-home/login-here/ 
-
-Thank you for your partnership in the gospel,
-
-TeachNext Customer Service
+Hello %to_full_name%, \n
+\n
+This is to let you know that candidate %from_full_name% has withdrawn the inquiry for TeachNext job %job_name%! \n
+\n
+To follow up on inquiries, manage candidate matches for our school and jobs login at https://teachnext.missionnext.org/teachnext-home/login-here/ \n
+\n
+Thank you for your partnership in the gospel. \n
+\n
+TeachNext Customer Service \n

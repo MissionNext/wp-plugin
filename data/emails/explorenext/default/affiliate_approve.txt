@@ -1,18 +1,11 @@
-Hello %to_full_name%,
-
-IF YOU OWN AN EXPLORENEXT AGENCY ACCOUNT:
-
-Your affiliation request with %from_full_name% has been approved. This affiliated account will be able to view your posted jobs and view candidate profiles matching those jobs to assist in recruiting. 
-
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-IF YOU OWN AN EXPLORENEXT AGENCY REP ACCOUNT:
-
-Your affiliation request with %from_full_name% has been approved. Please log in to your ExploreNext account to view posted jobs and view candidate profiles matching those jobs.
-
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-Login at https://explorenext.missionnext.org/explorenext-home/login-here/ 
-
-Thank you for your partnership in the gospel,
-
-ExploreNext Customer Service
+Hello %to_full_name%, \n
+\n
+IF YOU OWN AN EXPLORENEXT AGENCY ACCOUNT: Your affiliation request with %from_full_name% has been approved. This affiliated account will be able to view your posted jobs and view candidate profiles matching those jobs to assist in recruiting. \n
+\n
+IF YOU OWN AN EXPLORENEXT AGENCY REP ACCOUNT: Your affiliation request with %from_full_name% has been approved. Please log in to your ExploreNext account to view posted jobs and view candidate profiles matching those jobs. \n
+\n
+Login at https://explorenext.missionnext.org/explorenext-home/login-here/ \n
+\n
+Thank you for your partnership in the gospel. \n
+\n
+ExploreNext Customer Service \n

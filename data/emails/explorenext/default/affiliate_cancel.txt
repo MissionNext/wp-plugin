@@ -1,11 +1,8 @@
-Hello %to_full_name%,
-
-Your affiliation request with %from_full_name% has been canceled. If you have any questions, you can log in to your ExploreNext account to send a message to the %from_full_name% or contant them directly. 
-
-ExploreNext Customer Service
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-Thank you for your partnership in the gospel,
-
-ExploreNext Customer Service
-ExploreNext: https://explorenext.missionnext.org
+Hello %to_full_name%, \r\n
+\r\n
+Your affiliation request with %from_full_name% has been canceled. If you have any questions, you can log in to your ExploreNext account to send a message to the %from_full_name% or contant them directly. \r\n
+\r\n
+Thank you for your partnership in the gospel. \r\n
+\r\n
+ExploreNext Customer Service \r\n
+ExploreNext: https://explorenext.missionnext.org \r\n

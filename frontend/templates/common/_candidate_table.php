@@ -8,18 +8,33 @@
 
  */
 // print_r($items); // print_r($messages); 
-$Cookie_Values = array_values($_COOKIE); 
+// 3/3/2017 is no way to identify an agency user_id if this table is called by an agency user. So grab the username from the COOKIE 
+$Cookie_Values = array_values($_COOKIE); // an array with indexed keys 
+$Cookie_Keys   = array_keys($_COOKIE);   // an array of just the cookie keys 
+while (list($key, $val) = each($Cookie_Keys)) {
+	// This is the cookie key. (Following wordpress_logged_in there is a long random string that has no meaning. 
+	// capture the index of $Cookie_Values for a cookie with key containing "/wordpress_logged_in/"
+	if (preg_match("/wordpress_logged_in/",$val)) { $this_key = $key; }
+}
 // echo "<br>\$userRole = $userRole; \$role = $role; \$userId = $userId; \$loggedRole = $loggedRole ";
 if ($loggedRole == "agency") { 
-	$agency_user = $Cookie_Values[6]; 
+	$agency_user = $Cookie_Values[$this_key]; 
 	$pipe_pos    = strpos($agency_user,"|");
-	$agency_un   = trim(substr($agency_user, 0, $pipe_pos));
+	// the username is before the pipe character. Usernames can contain a space, so these are replaced with an underline 
+	$agency_un   = str_replace(" ","_",trim(substr($agency_user, 0, $pipe_pos)));
 	$factor		 = rand(10,99); // generate random two-digit number
 	// echo "<br>\$factor = $factor; \$agency_un = $agency_un";
 }
 
 // must distinguish which application is in use for users with more than one subscriptiion, since there is more than one app_id 
 $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
+// app_id is not identified, so it is hardcoded here for use to organize the tools to for agency users to organize the candidates from affiliated organizations. 
+if (preg_match("/explorenext/",$sniff_host)) { 
+$site_id = 3; 
+}
+elseif (preg_match("/teachnext/",$sniff_host)) { 
+$site_id = 6; 
+}
 
 $items = array_values($items);
 
@@ -180,7 +195,7 @@ function getLastLogin($item){
 									$pass_string = $factor.$factored; // pass this string, then extract user_id as $factored / $factor 
 ?>
                                      <td class="agency_note">
-                                        <div style="text-align:center">&nbsp;&nbsp;<a href="https://info.missionnext.org/candidate_recruit.php?c=<?php echo $pass_string ?>&assignment=<?php echo $userId ?>&loggedun=<?php echo $agency_un ?>"><img src="/wp-includes/images/file.gif" width="16" height="16" />&nbsp;&nbsp;</a></div>
+                                        <div style="text-align:center"><a target="_blank" href="https://info.missionnext.org/candidate_recruit.php?c=<?php echo $pass_string ?>&s=<?php echo $site_id ?>&assignment=<?php echo $userId ?>&loggedun=<?php echo $agency_un ?>"> <img src="/wp-includes/images/recruiting.gif" width="40" height="20" /> </a></div>
                                     <?php } ?>
                                 </td>
                             </tr>

@@ -11,7 +11,7 @@ $years = [2001, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017];
 
 ?>
 <div class="page-header">
-    <h1><?php echo sprintf(__("%s Matches", \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_CANDIDATE))) ?></h1>
+    <h1><?php echo sprintf(__("%s Matches to Your Organization Profile", \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_CANDIDATE))) ?></h1>
 </div>
 <div class="page-content">
 	

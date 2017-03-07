@@ -7,13 +7,14 @@
  * @var Array $fields
  * @var \MissionNext\lib\core\Context $context
  */
+ 
+// echo "\$name = $name; \$userRole = $userRole"; 
 $config = $context->getConfig();
 function fieldEmpty($field){
     return empty($field) || $field == array(''=>'');
 }
 function groupEmpty($group){
     foreach($group as $field){
-
         if(!fieldEmpty($field['value'])){
             return false;
         }
@@ -32,7 +33,6 @@ $org_string  = $factor.$factor_org; // pass this string, then extract organizati
 $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
 if (preg_match("/explorenext/",$sniff_host)) {
     $site = 3 * $factor;
-	
 }
 elseif (preg_match("/teachnext/",$sniff_host)) {
     $site = 6 * $factor;
@@ -82,10 +82,11 @@ function function_jobs() {
                 <div class="buttons">
                     <button class="btn btn-default" title="Printer Friendly Display with What Matched" onclick="function_print()"><a>Print/Forward Profile</a></button> 
                 </div>
+				<?php if($userRole != "agency") { ?>
                 <div class="buttons">
                     <button class="btn btn-default" title="Matches to Your Jobs" onclick="function_jobs()"><a>Job Matches</a></button> 
                 </div>
-                
+                <?php } ?>
                 <!--<br> Test For IE: 
                 <div class="buttons">
                     <button class="btn btn-default"><a href="https://info.missionnext.org/qcs_view.php?uid=<?php echo $pass_string ?>" title="Qualified Candidate Scale" target="_blank">View QCS Scale</a></button>
@@ -100,7 +101,7 @@ function function_jobs() {
         </div>
     </div>
     <div class="content">
-        <p> <strong><?php echo __("Username", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></strong> : <span><?php echo $candidate['username'] ?></span></p>
+        <!--<p> <strong><?php echo __("Username", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></strong> : <span><?php echo $candidate['username'] ?></span></p>-->
         <p> <strong><?php echo __("Email", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></strong> : <span><?php echo $candidate['email'] ?></span></p>
 
         <?php foreach($candidate['profile'] as $group): ?>

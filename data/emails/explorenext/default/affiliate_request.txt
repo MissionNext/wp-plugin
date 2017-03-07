@@ -1,19 +1,11 @@
-Hello %to_full_name%,
-
-IF YOU OWN A EXPLORENEXT AGENCY ACCOUNT:
-
-ExploreNext affiliation has been requested by %from_full_name%. Please log in to your ExploreNext account to approve or cancel this request. Upon approval, this affiliated account will be able to view your posted jobs and view candidate profiles matching those jobs to assist in recruiting. 
-
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-IF YOU OWN A EXPLORENEXT AGENCY REP ACCOUNT:
-
-ExploreNext affiliation has been requested by %from_full_name%. Please log in to your ExploreNext account to approve or cancel this request. Upon approval, you will be able to view posted jobs and view candidate profiles matching those jobs for the purpose of assisting in recruiting qualified candidates. 
-
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-Login at https://explorenext.missionnext.org/explorenext-home/login-here/ 
-
-Thank you for your partnership in the gospel,
-
-ExploreNext Customer Service
+Hello %to_full_name%, \n
+\n
+IF YOU OWN A EXPLORENEXT AGENCY ACCOUNT: ExploreNext affiliation has been requested by %from_full_name%. Please log in to your ExploreNext account to approve or cancel this request. Upon approval, this affiliated account will be able to view your posted jobs and view candidate profiles matching those jobs to assist in recruiting. \n
+\n
+IF YOU OWN A EXPLORENEXT AGENCY REP ACCOUNT: ExploreNext affiliation has been requested by %from_full_name%. Please log in to your ExploreNext account to approve or cancel this request. Upon approval, you will be able to view posted jobs and view candidate profiles matching those jobs for the purpose of assisting in recruiting qualified candidates. \n
+\n
+Login at https://explorenext.missionnext.org/explorenext-home/login-here/ \n
+\n
+Thank you for your partnership in the gospel, \n
+\n
+ExploreNext Customer Service \n

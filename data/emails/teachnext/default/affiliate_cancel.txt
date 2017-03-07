@@ -1,8 +1,8 @@
-Hello %to_full_name%, \n
-\n
-Your affiliation request with %from_full_name% has been canceled. If you have any questions, you can log in to your TeachNext account to send a message to the %from_full_name% or contant them directly. \n
-\n
-Thank you for your partnership in the gospel. \n
-\n
-TeachNext Customer Service \n
-TeachNext: https://teachnext.missionnext.org \n
+Hello %to_full_name%, <br />
+<br />
+Your affiliation request with %from_full_name% has been canceled. If you have any questions, you can log in to your TeachNext account to send a message to the %from_full_name% or contant them directly. <br />
+<br />
+Thank you for your partnership in the gospel. <br />
+<br />
+TeachNext Customer Service <br />
+TeachNext: https://teachnext.missionnext.org <br />

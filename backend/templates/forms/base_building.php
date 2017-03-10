@@ -102,7 +102,7 @@ function getFieldBySymbolKey($fields, $symbol_key) {
     }
     form div.group > select.depend-select
     {
-        width: 240px;
+        width: 220px;
     }
 
     form div.group > input.is-private{

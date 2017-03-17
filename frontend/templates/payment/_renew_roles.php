@@ -57,7 +57,7 @@ foreach($defaults as $default){
 
             <?php if(isset($app['sub_configs'][\MissionNext\lib\Constants::PARTNERSHIP_LIMITED])): ?>
                 <td data-price="<?php echo $app['sub_configs'][\MissionNext\lib\Constants::PARTNERSHIP_LIMITED]['price_year']?>" data-period="year" data-partnership="<?php echo \MissionNext\lib\Constants::PARTNERSHIP_LIMITED ?>">
-                    <input disabled="disabled" name="a[<?php echo $app['id'] ?>]" value="none" type="radio" <?php if( isset($defaults[$app['id']]) && !$defaults[$app['id']]['is_recurrent'] && $defaults[$app['id']]['partnership'] == \MissionNext\lib\Constants::PARTNERSHIP_LIMITED ) echo 'checked="checked"'?>/>
+                    <input name="a[<?php echo $app['id'] ?>]" value="<?php echo \MissionNext\lib\Constants::PARTNERSHIP_LIMITED; ?>" type="radio" <?php if( isset($defaults[$app['id']]) && !$defaults[$app['id']]['is_recurrent'] && $defaults[$app['id']]['partnership'] == \MissionNext\lib\Constants::PARTNERSHIP_LIMITED ) echo 'checked="checked"'?>/>
                     <span>$<?php echo sprintf( "%.2f", $app['sub_configs'][\MissionNext\lib\Constants::PARTNERSHIP_LIMITED]['price_year']) ?></span>
                 </td>
                 <td data-price="<?php echo $app['sub_configs'][\MissionNext\lib\Constants::PARTNERSHIP_LIMITED]['price_month']?>" data-period="month" data-partnership="<?php echo \MissionNext\lib\Constants::PARTNERSHIP_LIMITED ?>">

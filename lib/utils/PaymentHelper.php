@@ -316,7 +316,7 @@ class PaymentHelper {
             $default['left_amount'] = round($default['paid'] * (  $default['days_left'] / ( (strtotime($default['end_date']) - strtotime($default['start_date'])) / (24*60*60) ) ));
             $defaults[$default['app_id']] = $default;
 
-            if($default['partnership'] != Constants::PARTNERSHIP_LIMITED && $default['days_left'] > $days_left){
+            if($default['days_left'] > $days_left){
                 $days_left = $default['days_left'];
                 if(!$default['is_recurrent']){
                     $total_days = round( (strtotime($default['end_date']) - strtotime($default['start_date'])) / (24*60*60));

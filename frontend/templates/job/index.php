@@ -4,17 +4,7 @@
  * @var String $userRole
  * @var Array $jobs
  */
-// echo "<br>\$userRole = $userRole";
-// echo "<pre>";
-// print_r($jobs);
-// print_r($user);
-// echo "</pre>";
-// there is nothing in $user, $userRole to identify which subscription is active for organizations with multiple subscriptions 
-$sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
-// echo "<br>$sniff_host";
-if (preg_match("/explorenext/",$sniff_host))   { $this_app = 3; }
-elseif (preg_match("/teachnext/",$sniff_host)) { $this_app = 6; }
-// echo "<br>\$this_app = $this_app";
+// there is nothing in $user, $userRole to identify which subscription is active for organizations with multiple subscriptions
 ?>
 
 <div class="page-header">
@@ -34,8 +24,6 @@ elseif (preg_match("/teachnext/",$sniff_host)) { $this_app = 6; }
         </thead>
         <tbody>
         <?php foreach($jobs as $job): ?>
-        <?php if($this_app == $job['app_id']): ?>
-        
             <tr>
                 <td class="name"><a href="/job/<?php echo $job['id'] ?>" target="_blank"><?php echo $job['name'] ?></a> </td>
                 <td class="alt_title"><?php echo $job['profileData']['second_title'] ?></td>
@@ -46,7 +34,6 @@ elseif (preg_match("/teachnext/",$sniff_host)) { $this_app = 6; }
                     <a class="btn btn-danger" href="/job/<?php echo $job['id'] ?>/delete"><?php echo __("Delete", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                 </td>
             </tr>
-        <?php endif; ?>   
         <?php endforeach; ?>
         </tbody>
     </table>

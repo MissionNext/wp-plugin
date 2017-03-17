@@ -135,7 +135,7 @@ class paymentController extends AbstractLayoutController {
             $default['left_amount'] = round($default['paid'] * (  $default['days_left'] / ( (strtotime($default['end_date']) - strtotime($default['start_date'])) / (24*60*60) ) ));
             $defaults[$default['app_id']] = $default;
 
-            if( ( $default['partnership'] != Constants::PARTNERSHIP_LIMITED || $default['app']['public_key'] == Context::getInstance()->getApiManager()->publicKey )  && $default['days_left'] > $days_left){
+            if( $default['app']['public_key'] == Context::getInstance()->getApiManager()->publicKey && $default['days_left'] > $days_left){
                 $days_left = $default['days_left'];
                 if(!$default['is_recurrent']){
                     $total_days = round( (strtotime($default['end_date']) - strtotime($default['start_date'])) / (24*60*60));
@@ -171,7 +171,7 @@ class paymentController extends AbstractLayoutController {
         $data = $helper->getSites();
 
         if(!$data){
-            $this->setMessage('notice', __("You must choose at least one site! Please notice that you must choose new partnership level for limited level if any.", Constants::TEXT_DOMAIN));
+            $this->setMessage('notice', __("You must choose at least one site!", Constants::TEXT_DOMAIN));
             $this->redirect('/payment/renew');
         }
 

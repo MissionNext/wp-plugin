@@ -7,7 +7,7 @@
 
 ?>
 <div class="page-header">
-    <h1><?php echo __("Inquiries list", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></h1>
+    <h1><?php echo __("Inquiry list", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></h1>
 </div>
 <div class="page-content">
     <?php if($inquiries): ?>

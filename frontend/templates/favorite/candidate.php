@@ -6,7 +6,6 @@
  * @var String $role
  This page is seen by candidates 
  */
-
 ?>
 <div class="page-header">
     <h1><?php echo __("Favorites", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></h1>
@@ -60,8 +59,8 @@
             <?php foreach($job_favorites as $key => $favorite):?>
                 <tr data-role="job" data-id="<?php echo $favorite['data']['id'] ?>" data-fav-id="<?php echo $favorite['id'] ?>" data-name="<?php echo $favorite['data']['name'] ?>">
                     <td class="id"><?php echo $key+1 ?></td>
-                    <td class="name"><a href="/job/<?php echo $favorite['data']['id'] ?>"><?php echo $favorite['data']['name'] ?></a></td>
-                    <td class="organization"><a href="/organization/<?php echo $favorite['data']['organization']['id'] ?>"><?php echo $favorite['data']['organization']['username'] ?></a></td>
+                    <td class="name"><a target="_blank" href="/job/<?php echo $favorite['data']['id'] ?>"><?php echo $favorite['data']['name'] ?></a> </td>
+                    <td class="organization"><a href="/organization/<?php echo $favorite['data']['organization']['id'] ?>"><?php echo $favorite['data']['organization']['profileData']['organization_name'] ?></a> </td>
                     <td class="note" data-note="<?php echo htmlentities($favorite['notes']) ?>">
                         <div <?php if(!$favorite['notes']) echo 'class="no-note"' ?>></div>
                     </td>

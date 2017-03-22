@@ -39,6 +39,9 @@ class matchesController extends AbstractLayoutController {
             $favs = $this->api->getFavorites($this->userId, 'job');
             $inquires = $this->api->getInquiredJobs($this->userId);
 
+            $date_limit = new \DateTime('now');
+            $date_limit->modify("-6 months");
+            $timelimit = $date_limit->getTimestamp();
             foreach($jobs as $key => $job){
                 $organization = $this->api->getUserProfile($job['organization']['id']);
                 $job['org_name'] = $organization['profileData']['organization_name'];
@@ -60,6 +63,10 @@ class matchesController extends AbstractLayoutController {
                         }
                     }
                     $jobs[$key]['inquired'] = $is_inquired;
+                }
+                $job_update_time = strtotime($jobs[$key]['job_updated']);
+                if (!$jobs[$key]['favorite'] && !$jobs[$key]['inquired'] && $job_update_time < $timelimit) {
+                    unset($jobs[$key]);
                 }
             }
         }

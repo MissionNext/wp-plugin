@@ -9,6 +9,7 @@
  */
  
 // echo "\$name = $name; \$userRole = $userRole"; 
+// print_r($candidate);
 $config = $context->getConfig();
 function fieldEmpty($field){
     return empty($field) || $field == array(''=>'');
@@ -97,6 +98,18 @@ function function_jobs() {
                 <div class="buttons">
                     <button class="btn btn-default"><a href="https://info.missionnext.org/jobs_view.php?uid=<?php echo $pass_string ?>&oid=<?php echo $org_string ?>&site=<?php echo $site ?>" title="Matches to Your Jobs" target="_blank">Job Matches</a></button>
                 </div>-->
+               <?php if( $userRole != \MissionNext\lib\Constants::ROLE_CANDIDATE ): ?>
+                <div>
+                    <hr>
+                    <table>
+                    <tr><td style='text-align:left'>Last Login&nbsp;</td><td><?php echo substr($candidate['last_login'],0,10) ?></td></tr>
+                    <tr><td style='text-align:left'>Last Update&nbsp;</td><td><?php echo substr($candidate['updated_at'],0,10) ?></td></tr>
+                    <tr><td style='text-align:left'>Date Created&nbsp;</td><td><?php echo substr($candidate['created_at'],0,10) ?></td></tr>
+                    </table>
+                    
+                </div>
+            <?php endif; ?>
+             
             <?php endif; ?>
         </div>
     </div>

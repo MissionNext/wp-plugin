@@ -73,6 +73,10 @@ class LoginWidget extends \WP_Widget {
 
                 <?php echo $login_form; ?>
 
+                <div class="login-spinner" style="display: none;">
+                    <img src="<?php echo getResourceUrl('/resources/images/spinner.gif'); ?>" width="32" />
+                </div>
+                <script src="<?php echo getResourceUrl('/resources/js/login.js'); ?>"></script>
                 <div>
                     <p><a href="<?php echo wp_lostpassword_url("/dashboard") ?>"><?php echo __("Can't Sign In?", Constants::TEXT_DOMAIN) ?></a></p>
                     <p><?php echo __("Register as", Constants::TEXT_DOMAIN) ?></p>

@@ -121,8 +121,18 @@ abstract class AbstractLayoutController extends Controller {
         ){
             $this->layout = 'layout.php';
             if($_SERVER['REQUEST_METHOD'] == 'GET'){  // message adjusted by Nelson 5 October 2016
-                // $this->messages['notice'] = sprintf(__("Please complete your profile to reveal the majesty and power of %s", Constants::TEXT_DOMAIN), get_current_site()->site_name);
                 $this->messages['notice'] = sprintf(__("Now complete the profile to short cut the process of finding connections through %s", Constants::TEXT_DOMAIN), get_current_site()->site_name);
+                if (Constants::ROLE_CANDIDATE == $this->userRole) {
+                    $this->subscriptions = $this->api->getSubscriptionsForUser($this->userId);
+                    $this->apps = [
+                        1   => 'http://new.missionnext.org',
+                        2   => 'http://finishersproject.missionnext.org',
+                        3   => 'http://explorenext.missionnext.org',
+                        4   => 'http://journeydeepens.missionnext.org',
+                        5   => 'http://bammatch.missionnext.org',
+                        6   => 'http://teachnext.missionnext.org',
+                    ];
+                }
             }
         }
     }

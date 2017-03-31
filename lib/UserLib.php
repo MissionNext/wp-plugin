@@ -29,7 +29,7 @@ class UserLib extends ProfileLib {
         ){
             return $user['profileData'][Constants::$predefinedFields[$user['role']]['organization_name']];
         } else {
-            return $user['username'];
+            return $user['profileData'][Constants::$predefinedFields[$user['role']]['first_name']] . ' ' . $user['profileData'][Constants::$predefinedFields[$user['role']]['last_name']];
         }
     }
 

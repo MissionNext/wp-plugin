@@ -111,7 +111,7 @@ function mn_password_reset(WP_User $user, $new_pass){
 add_action('password_reset', 'mn_password_reset', 10, 2);
 
 function mn_login_url( $login_url, $redirect ) {
-    return '/login'. ($redirect?"?redirect_to=".urlencode($redirect):'');
+    return '/login-here';
 }
 add_filter( 'login_url', 'mn_login_url', 10, 2 );
 

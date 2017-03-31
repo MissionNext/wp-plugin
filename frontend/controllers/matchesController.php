@@ -134,6 +134,8 @@ class matchesController extends AbstractLayoutController {
         $page = isset($_GET['page'])?$_GET['page']:1;
         $new_rate = isset($_GET['rate'])?$_GET['rate']:0;
         $new_updates = isset($_GET['updates'])?$_GET['updates']:0;
+        $sort_by = isset($_GET['sort_by']) ? $_GET['sort_by'] : 'matching_percentage';
+        $order_by = isset($_GET['order_by']) ? $_GET['order_by'] : 'desc';
 
         if($new_rate)
             $rate = $new_rate;
@@ -156,7 +158,7 @@ class matchesController extends AbstractLayoutController {
                 $updates = $updates['value'];
         }
 
-        $candidates = $this->api->getMatchedCandidatesForOrganization($this->userId, compact('page', 'rate', 'updates'));
+        $candidates = $this->api->getMatchedCandidatesForOrganization($this->userId, compact('page', 'rate', 'updates', 'sort_by', 'order_by'));
 
         if($candidates == 'rematch')
             header('Location: /dashboard');
@@ -177,13 +179,15 @@ class matchesController extends AbstractLayoutController {
             }
         }
 
-        uasort($candidates, array($this, 'sortByMatchingPercent' ));
+        //uasort($candidates, array($this, 'sortByMatchingPercent' ));
 
         $this->candidates =$candidates;
         $this->page = $page;
         $this->pages = $candidates?$candidates[0]['totalPages']:1;
         $this->rate = $rate;
         $this->updates = $updates;
+        $this->sort_by = $sort_by;
+        $this->order_by = $order_by;
     }
 
     public function candidateForJob($params){

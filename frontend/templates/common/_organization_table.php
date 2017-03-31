@@ -500,16 +500,6 @@ function getLastLogin($item){
         });
     }
 
-
-    function hideAllFolders(){
-        var folders = jQuery('table.result tr.folder-title:not(.default-folder)');
-
-        jQuery.each(folders, function(k, v){
-            var folder = jQuery(v);
-            folder.nextUntil('.folder-title').hide();
-        });
-    }
-
     function triggerFolder(folder){
 
         folder = jQuery(folder);

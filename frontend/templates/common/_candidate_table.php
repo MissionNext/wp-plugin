@@ -7,6 +7,13 @@
  * @var $messages Array
 
  */
+
+$data = parse_url($_SERVER['REQUEST_URI']);
+parse_str($data['query'], $url_args);
+$sort_by = isset($url_args['sort_by']) ? $url_args['sort_by']: 'matching_percentage';
+$order_by = isset($url_args['order_by']) ? $url_args['order_by']: 'desc';
+$page = isset($url_args['page']) ? $url_args['page'] : 1;
+
 // print_r($items); // print_r($messages); 
 // 3/3/2017 is no way to identify an agency user_id if this table is called by an agency user. So grab the username from the COOKIE 
 $Cookie_Values = array_values($_COOKIE); // an array with indexed keys 
@@ -112,15 +119,55 @@ function getLastLogin($item){
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th class="sortable"><?php echo __('Candidate Name', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                    <th class="sortable"><?php echo __("Age", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                    <th class="sortable <?php echo ('name' == $sort_by) ? $order_by : ''; ?>">
+                        <a href="<?php echo $data['path'] . '?' . http_build_query([
+                                'page'      => $page,
+                                'sort_by'   => 'name',
+                                'order_by'  => (isset($sort_by) && 'name' == $sort_by && $order_by == 'asc') ? 'desc' : 'asc',
+                            ]); ?>">
+                            <?php echo __('Candidate Name', \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+                        </a>
+                    </th>
+                    <th class="sortable <?php echo ('birth_date' == $sort_by) ? $order_by : ''; ?>">
+                        <a href="<?php echo $data['path'] . '?' . http_build_query([
+                                'page'      => $page,
+                                'sort_by'   => 'birth_date',
+                                'order_by'  => (isset($sort_by) && 'birth_date' == $sort_by && $order_by == 'asc') ? 'desc' : 'asc',
+                            ]); ?>">
+                            <?php echo __("Age", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+                        </a>
+                    </th>
                     <th><?php echo __("Gender", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                     <th><?php echo __("Marital status", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                    <th class="sortable"><?php echo __("Location", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                    <th class="sortable"><?php echo __("Last login", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                    <th class="sortable <?php echo ('country' == $sort_by) ? $order_by : ''; ?>">
+                        <a href="<?php echo $data['path'] . '?' . http_build_query([
+                                'page'      => $page,
+                                'sort_by'   => 'country',
+                                'order_by'  => (isset($sort_by) && 'country' == $sort_by && $order_by == 'asc') ? 'desc' : 'asc',
+                            ]); ?>">
+                            <?php echo __("Location", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+                        </a>
+                    </th>
+                    <th class="sortable <?php echo ('last_login' == $sort_by) ? $order_by : ''; ?>">
+                        <a href="<?php echo $data['path'] . '?' . http_build_query([
+                                'page'      => $page,
+                                'sort_by'   => 'last_login',
+                                'order_by'  => (isset($sort_by) && 'last_login' == $sort_by && $order_by == 'asc') ? 'desc' : 'asc',
+                            ]); ?>">
+                            <?php echo __("Last login", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+                        </a>
+                    </th>
 
                     <?php if($matching): ?>
-                        <th class="sortable asc"><?php echo __("Match (%)", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                        <th class="sortable <?php echo ('matching_percentage' == $sort_by) ? $order_by : ''; ?>">
+                            <a href="<?php echo $data['path'] . '?' . http_build_query([
+                                    'page'      => $page,
+                                    'sort_by'   => 'matching_percentage',
+                                    'order_by'  => (isset($sort_by) && 'matching_percentage' == $sort_by && $order_by == 'asc') ? 'desc' : 'asc',
+                                ]); ?>">
+                                <?php echo __("Match (%)", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+                            </a>
+                        </th>
                         <th><?php echo __("What Matched?", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                     <?php endif; ?>
 
@@ -321,7 +368,6 @@ function getLastLogin($item){
             });
         }
 
-
         var table = jQuery('table.result');
 
         table.find('th.sortable')
@@ -498,16 +544,6 @@ function getLastLogin($item){
                 index++;
             }
 
-        });
-    }
-
-
-    function hideAllFolders(){
-        var folders = jQuery('table.result tr.folder-title:not(.default-folder)');
-
-        jQuery.each(folders, function(k, v){
-            var folder = jQuery(v);
-            folder.nextUntil('.folder-title').hide();
         });
     }
 

@@ -47,8 +47,8 @@ $years = [2001, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017];
     </div>
 
     <?php if($candidates): ?>
-        <?php renderTemplate("common/_candidate_table", array('role' => 'candidate', 'items' => $candidates, 'messages' => $messages, 'userRole' => $userRole, 'userId' => $userId)) ?>
-        <?php renderTemplate("common/_pager", compact('page', 'pages')) ?>
+        <?php renderTemplate("common/_candidate_table", array('role' => 'candidate', 'items' => $candidates, 'messages' => $messages, 'userRole' => $userRole, 'userId' => $userId, 'sort_by' => $sort_by, 'order_by' => $order_by)) ?>
+        <?php renderTemplate("common/_pager", compact('page', 'pages', 'sort_by', 'order_by')) ?>
     <?php else: ?>
         <div class="block">
             <?php echo __("Sorry, no matches yet.", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>

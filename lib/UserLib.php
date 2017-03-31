@@ -17,11 +17,10 @@ class UserLib extends ProfileLib {
     }
 
     public static function getAgencyFullName($user){
-        if(isset($user['profileData'][Constants::$predefinedFields[$user['role']]['agency_full_name']]))
-        {
-            return $user['profileData'][Constants::$predefinedFields[$user['role']]['first_name']] . ' ' . $user['profileData'][Constants::$predefinedFields[$user['role']]['last_name']];
-        } else {
+        if(isset($user['profileData'][Constants::$predefinedFields[$user['role']]['agency_full_name']])) {
             return $user['profileData'][Constants::$predefinedFields[$user['role']]['agency_full_name']];
+        } else {
+            return $user['profileData'][Constants::$predefinedFields[$user['role']]['first_name']] . ' ' . $user['profileData'][Constants::$predefinedFields[$user['role']]['last_name']];
         }
     }
 

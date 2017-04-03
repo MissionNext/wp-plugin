@@ -200,6 +200,8 @@ class matchesController extends AbstractLayoutController {
 
         $page = isset($_GET['page'])?$_GET['page']:1;
         $new_rate = isset($_GET['rate'])?$_GET['rate']:0;
+        $sort_by = isset($_GET['sort_by']) ? $_GET['sort_by'] : 'matching_percentage';
+        $order_by = isset($_GET['order_by']) ? $_GET['order_by'] : 'desc';
 
         if($new_rate)
             $rate = $new_rate;
@@ -214,18 +216,17 @@ class matchesController extends AbstractLayoutController {
         $user_id = $this->userId;
         $job_owner = $this->job['organization_id'];
 
-        $candidates = $this->api->getMatchedCandidatesForJob($params[0], compact('page', 'rate', 'user_id', 'job_owner'));
+        $candidates = $this->api->getMatchedCandidatesForJob($params[0], compact('page', 'rate', 'user_id', 'job_owner', 'sort_by', 'order_by'));
 
         $candidates = $candidates?$candidates:array();
-
-        uasort($candidates, array($this, 'sortByMatchingPercent' ));
 
         $this->candidates =$candidates;
 
         $this->page = $page;
         $this->pages = $candidates?$candidates[0]['totalPages']:1;
         $this->rate = $rate;
-
+        $this->sort_by = $sort_by;
+        $this->order_by = $order_by;
     }
 
     private function sortByMatchingPercent($a, $b){

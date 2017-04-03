@@ -7,6 +7,13 @@
  * @var $messages Array
 
  */
+
+$data = parse_url($_SERVER['REQUEST_URI']);
+parse_str($data['query'], $url_args);
+$sort_by = isset($url_args['sort_by']) ? $url_args['sort_by']: 'matching_percentage';
+$order_by = isset($url_args['order_by']) ? $url_args['order_by']: 'desc';
+$page = isset($url_args['page']) ? $url_args['page'] : 1;
+
 // print_r($items); // print_r($messages); 
 // 3/3/2017 is no way to identify an agency user_id if this table is called by an agency user. So grab the username from the COOKIE 
 $Cookie_Values = array_values($_COOKIE); // an array with indexed keys 
@@ -112,15 +119,47 @@ function getLastLogin($item){
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th class="sortable"><?php echo __('Candidate Name', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                    <th class="sortable"><?php echo __("Age", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                    <th class="sortable <?php echo ('name' == $sort_by) ? $order_by : ''; ?>">
+                        <a href="<?php echo $data['path'] . '?' . http_build_query([
+                                'page'      => $page,
+                                'sort_by'   => 'name',
+                                'order_by'  => (isset($sort_by) && 'name' == $sort_by && $order_by == 'asc') ? 'desc' : 'asc',
+                            ]); ?>">
+                            <?php echo __('Candidate Name', \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+                        </a>
+                    </th>
+                    <th class="sortable <?php echo ('birth_date' == $sort_by) ? $order_by : ''; ?>">
+                        <a href="<?php echo $data['path'] . '?' . http_build_query([
+                                'page'      => $page,
+                                'sort_by'   => 'birth_date',
+                                'order_by'  => (isset($sort_by) && 'birth_date' == $sort_by && $order_by == 'asc') ? 'desc' : 'asc',
+                            ]); ?>">
+                            <?php echo __("Age", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+                        </a>
+                    </th>
                     <th><?php echo __("Gender", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                     <th><?php echo __("Marital status", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                    <th class="sortable"><?php echo __("Location", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                    <th class="sortable"><?php echo __("Last login", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                    <th><?php echo __("Location", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                    <th class="sortable <?php echo ('last_login' == $sort_by) ? $order_by : ''; ?>">
+                        <a href="<?php echo $data['path'] . '?' . http_build_query([
+                                'page'      => $page,
+                                'sort_by'   => 'last_login',
+                                'order_by'  => (isset($sort_by) && 'last_login' == $sort_by && $order_by == 'asc') ? 'desc' : 'asc',
+                            ]); ?>">
+                            <?php echo __("Last login", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+                        </a>
+                    </th>
 
                     <?php if($matching): ?>
-                        <th class="sortable asc"><?php echo __("Match (%)", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                        <th class="sortable <?php echo ('matching_percentage' == $sort_by) ? $order_by : ''; ?>">
+                            <a href="<?php echo $data['path'] . '?' . http_build_query([
+                                    'page'      => $page,
+                                    'sort_by'   => 'matching_percentage',
+                                    'order_by'  => (isset($sort_by) && 'matching_percentage' == $sort_by && $order_by == 'asc') ? 'desc' : 'asc',
+                                ]); ?>">
+                                <?php echo __("Match (%)", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+                            </a>
+                        </th>
                         <th><?php echo __("What Matched?", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                     <?php endif; ?>
 
@@ -320,69 +359,6 @@ function getLastLogin($item){
                 }
             });
         }
-
-
-        var table = jQuery('table.result');
-
-        table.find('th.sortable')
-            .each(function(){
-
-                var th = jQuery(this),
-                    thIndex = th.index(),
-                    inverse = false;
-
-                th.click(function(){
-
-                    table.find('tr.header').each(function(){
-                        jQuery(this).nextUntil('.header').find('td').filter(function(){
-                            return jQuery(this).index() === thIndex;
-
-                        }).sortElements(function(a, b){
-
-                            var a_obj = jQuery(a);
-                            a = a_obj.text();
-                            var parent_a = a_obj.parents('tr');
-                            var prior_a = parent_a.attr('data-prior');
-                            var b_obj = jQuery(b);
-                            b = b_obj.text();
-                            var parent_b = b_obj.parents('tr');
-                            var prior_b = parent_b.attr('data-prior');
-
-                            if( !isNaN(parseInt(a)) && !isNaN(parseInt(b)) ){
-                                a = parseInt(a);
-                                b = parseInt(b);
-                            } else if( !isNaN(parseInt(a)) && !isNaN(parseInt(b)) ){
-                                a = parseInt(a);
-                                b = parseInt(b);
-                            }
-
-
-                            if( (prior_a && prior_b) || (!prior_a && !prior_b) ){
-                                return a > b ?
-                                    inverse ? -1 : 1
-                                    : inverse ? 1 : -1;
-                            } else if(prior_a){
-                                return -1;
-                            } else {
-                                return 1;
-                            }
-
-                        }, function(){
-                            // parentNode is the element we want to move
-                            return this.parentNode;
-
-                        })
-                    });
-
-                    table.find('th.asc').removeClass('asc');
-                    table.find('th.desc').removeClass('desc');
-                    th.addClass(inverse?'asc':'desc');
-                    resetIndexes();
-
-                    inverse = !inverse;
-                });
-
-            });
     }).on('click', 'table.result tr.folder-title', function(e){
         triggerFolder(this);
     });
@@ -498,16 +474,6 @@ function getLastLogin($item){
                 index++;
             }
 
-        });
-    }
-
-
-    function hideAllFolders(){
-        var folders = jQuery('table.result tr.folder-title:not(.default-folder)');
-
-        jQuery.each(folders, function(k, v){
-            var folder = jQuery(v);
-            folder.nextUntil('.folder-title').hide();
         });
     }
 

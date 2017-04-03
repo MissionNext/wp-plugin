@@ -139,15 +139,7 @@ function getLastLogin($item){
                     </th>
                     <th><?php echo __("Gender", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                     <th><?php echo __("Marital status", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                    <th class="sortable <?php echo ('country' == $sort_by) ? $order_by : ''; ?>">
-                        <a href="<?php echo $data['path'] . '?' . http_build_query([
-                                'page'      => $page,
-                                'sort_by'   => 'country',
-                                'order_by'  => (isset($sort_by) && 'country' == $sort_by && $order_by == 'asc') ? 'desc' : 'asc',
-                            ]); ?>">
-                            <?php echo __("Location", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
-                        </a>
-                    </th>
+                    <th><?php echo __("Location", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                     <th class="sortable <?php echo ('last_login' == $sort_by) ? $order_by : ''; ?>">
                         <a href="<?php echo $data['path'] . '?' . http_build_query([
                                 'page'      => $page,
@@ -367,68 +359,6 @@ function getLastLogin($item){
                 }
             });
         }
-
-        var table = jQuery('table.result');
-
-        table.find('th.sortable')
-            .each(function(){
-
-                var th = jQuery(this),
-                    thIndex = th.index(),
-                    inverse = false;
-
-                th.click(function(){
-
-                    table.find('tr.header').each(function(){
-                        jQuery(this).nextUntil('.header').find('td').filter(function(){
-                            return jQuery(this).index() === thIndex;
-
-                        }).sortElements(function(a, b){
-
-                            var a_obj = jQuery(a);
-                            a = a_obj.text();
-                            var parent_a = a_obj.parents('tr');
-                            var prior_a = parent_a.attr('data-prior');
-                            var b_obj = jQuery(b);
-                            b = b_obj.text();
-                            var parent_b = b_obj.parents('tr');
-                            var prior_b = parent_b.attr('data-prior');
-
-                            if( !isNaN(parseInt(a)) && !isNaN(parseInt(b)) ){
-                                a = parseInt(a);
-                                b = parseInt(b);
-                            } else if( !isNaN(parseInt(a)) && !isNaN(parseInt(b)) ){
-                                a = parseInt(a);
-                                b = parseInt(b);
-                            }
-
-
-                            if( (prior_a && prior_b) || (!prior_a && !prior_b) ){
-                                return a > b ?
-                                    inverse ? -1 : 1
-                                    : inverse ? 1 : -1;
-                            } else if(prior_a){
-                                return -1;
-                            } else {
-                                return 1;
-                            }
-
-                        }, function(){
-                            // parentNode is the element we want to move
-                            return this.parentNode;
-
-                        })
-                    });
-
-                    table.find('th.asc').removeClass('asc');
-                    table.find('th.desc').removeClass('desc');
-                    th.addClass(inverse?'asc':'desc');
-                    resetIndexes();
-
-                    inverse = !inverse;
-                });
-
-            });
     }).on('click', 'table.result tr.folder-title', function(e){
         triggerFolder(this);
     });

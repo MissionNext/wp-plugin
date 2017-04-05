@@ -52,8 +52,6 @@
     <input type="hidden" name="id" value=""/>
     <div class="help">
         <p class="role"><?php echo __("Enter or update a brief note about ", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
-<!--            <span>--><?php //echo ucfirst(getCustomTranslation($role)) ?><!--</span>:-->
-<!--            --><?php //echo __("Notation Re:", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
         <span class="name"></span>:</p>
     </div>
     <textarea cols="25" rows="5" class="message"></textarea>

@@ -53,8 +53,6 @@ if (!$role) { $role = "candidate"; }
     <input type="hidden" name="id" value=""/>
     <div class="help">
         <p class="role"><?php echo __("Enter or update a brief note about ", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
-<!--            <span>--><?php //echo ucfirst(getCustomTranslation($role)) ?><!--</span>:-->
-<!--            --><?php //echo __("Notation Re:", \MissionNext\lib\Constants::TEXT_DOMAIN) ?><!-- <span></span>-->
         <span class="name"></span>:</p>
     </div>
     <textarea cols="25" rows="5" class="message"></textarea>
@@ -140,6 +138,7 @@ if (!$role) { $role = "candidate"; }
 
         var modal = jQuery('#note');
 
+        modal.find('[name="id"]').val(id);
         var role = modal.find('[name="role"]').val();
 
         modal.find('textarea.message').val(text?text:' ');

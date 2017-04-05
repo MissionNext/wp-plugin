@@ -14,7 +14,6 @@
     <?php if($job_favorites || $org_favorites):?>
 
         <?php if($org_favorites):?>
-        <!--<?php print_r($org_favorites); ?>-->
         <table class="table result">
             <thead>
             <tr>
@@ -84,12 +83,10 @@
 </div>
 
 <div id="note" title="<?php echo __('Note', \MissionNext\lib\Constants::TEXT_DOMAIN); ?>" style="display: none">
-    <input type="hidden" name="role" value=""/>
+    <input type="hidden" name="role" value="<?php echo $role ?>"/>
     <input type="hidden" name="id" value=""/>
     <div class="help">
         <p class="role"><?php echo __("Enter or update a brief note about ", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
-<!--            <span>--><?php //echo ucfirst(getCustomTranslation($role)) ?><!--</span>:-->
-<!--            --><?php //echo __("Notation Re:", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
             <span class="name">:</p>
     </div>
     <textarea cols="25" rows="5" class="message"></textarea>

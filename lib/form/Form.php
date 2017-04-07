@@ -242,7 +242,7 @@ class Form {
                     foreach($this->fields[$key]['choices'] as $choice){
                         if(is_array($value)){
                             foreach($value as $selected_key => $v){
-                                if(trim($choice['default_value']) == trim($v)){
+                                if(trim($choice['default_value']) == trim(stripslashes($v))){
                                     $r['dictionary_id'][$selected_key] = $choice['id'];
                                 }
                             }

@@ -247,7 +247,7 @@ class Form {
                                 }
                             }
                         } else {
-                            if(trim($choice['default_value']) == trim($value)){
+                            if(trim($choice['default_value']) == trim(stripslashes($value))){
                                 $r['dictionary_id'] = $choice['id'];
                             }
                         }

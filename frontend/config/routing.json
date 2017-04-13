@@ -77,6 +77,10 @@
         "controller" : "home",
         "action" : "index"
     },
+    "/dashboard/check/profile" : {
+        "controller" : "home",
+        "action" : "checkProfile"
+    },
     "/user/account" : {
         "controller" : "home",
         "action" : "wpProfile"

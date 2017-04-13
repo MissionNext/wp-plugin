@@ -72,3 +72,14 @@
         <?php } ?>
     </ul>
 </div>
+
+<script type="text/javascript">
+    jQuery(function($){
+        jQuery.get('/dashboard/check/profile', function(response) {
+            parsedResponse = JSON.parse(response);
+            if ('unvalid' == parsedResponse) {
+                location.href = '/profile';
+            }
+        });
+    })(jQuery);
+</script>

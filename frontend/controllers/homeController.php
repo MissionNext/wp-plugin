@@ -17,31 +17,6 @@ class homeController extends AbstractLayoutController {
 
     public function index(){
 
-        /* Simulation of the form save to get validation information */
-        $this->form = new Form($this->api, $this->userRole, 'profile', $this->userId);
-        $this->form->saveLater = null;
-        $this->form->changedFields = [
-            'status' => 'checked',
-            'changedFields' => []
-        ];
-        $data = [];
-        foreach ($this->form->groups as $key => $value) {
-            $groupData = $value->data;
-            foreach ($value->fields as $fieldKey => $fieldValue) {
-                if ($fieldValue->field['type'] == 'file') {
-                    unset($groupData[$fieldKey]);
-                }
-            }
-            $data[$key] = $groupData;
-        }
-        $this->form->data = $data;
-        $this->form->save();
-
-        if ($this->form->hasErrors()) {
-            $this->api->deactivateUserApp($this->userId);
-            $this->redirect('/profile');
-        }
-
         $this->app_key = Context::getInstance()->getApiManager()->publicKey;
         $this->name = Context::getInstance()->getUser()->getName();
 
@@ -187,5 +162,35 @@ class homeController extends AbstractLayoutController {
         }
 
         return count($inquiries);
+    }
+
+    public function checkProfile()
+    {
+        /* Simulation of the form save to get validation information */
+        $this->form = new Form($this->api, $this->userRole, 'profile', $this->userId);
+        $this->form->saveLater = null;
+        $this->form->changedFields = [
+            'status' => 'checked',
+            'changedFields' => []
+        ];
+        $data = [];
+        foreach ($this->form->groups as $key => $value) {
+            $groupData = $value->data;
+            foreach ($value->fields as $fieldKey => $fieldValue) {
+                if ($fieldValue->field['type'] == 'file') {
+                    unset($groupData[$fieldKey]);
+                }
+            }
+            $data[$key] = $groupData;
+        }
+        $this->form->data = $data;
+        $this->form->save();
+
+        if ($this->form->hasErrors()) {
+            $this->api->deactivateUserApp($this->userId);
+            echo json_encode('unvalid');
+        }
+
+        return false;
     }
 }

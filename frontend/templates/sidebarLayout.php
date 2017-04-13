@@ -91,7 +91,6 @@ $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before
                 inprogress.show();
                 matches.hide();
                 checkQueueStatus();
-                setInterval(checkQueueStatus, 10000);
             });
         function checkQueueStatus() {
                 jQuery.get('/check/queue', function( response ){
@@ -105,6 +104,7 @@ $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before
                                 matches.hide();
                                 inprogress.show();
                             }
+                        setTimeout(checkQueueStatus, 10000);
                     });
             }
     </script>

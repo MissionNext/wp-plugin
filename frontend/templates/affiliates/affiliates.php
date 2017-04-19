@@ -5,6 +5,7 @@
  * @var $role String
  */
 // echo "\$userRole = $userRole "; echo "\$role = $role";
+// print_r($affiliates);
 ?>
 <div class="page-header">
     <h1><?php echo __('Affiliates', \MissionNext\lib\Constants::TEXT_DOMAIN)?></h1>
@@ -14,9 +15,13 @@
         <table class="table">
             <thead>
             <tr>
-                <th></th>
+                <th>&nbsp;</th>
                 <th><?php echo ucfirst(getCustomTranslation($role, $role)) ?></th>
-                <th></th>
+                <?php if ($role == "agency"): ?>
+                <th><?php echo __('Rep Name', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                <?php else: ?>
+                    <th>&nbsp;</th>
+                <?php endif; ?>
                 <th><?php echo __('Actions', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
             </tr>
             </thead>
@@ -24,7 +29,9 @@
             <tr class="approved-header header">
                 <td colspan="4"><?php echo __('Approved', \MissionNext\lib\Constants::TEXT_DOMAIN)?></td>
             </tr>
-            <?php foreach($affiliates['approved'] as $aff): ?>
+            <?php foreach($affiliates['approved'] as $aff): 
+            // echo "<tr><td colspan='4'>"; print_r($aff); echo "</td></tr>";
+            ?>
 
                 <tr data-requester="<?php echo $aff['affiliate_requester'] ?>" data-approver="<?php echo $aff['affiliate_approver'] ?>">
                     <td class="avatar"><?php echo get_avatar($aff[ $role . '_profile']['email'], 50) ?></td>
@@ -34,10 +41,12 @@
                     	<td class="name"><a target="_blank" href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getAgencyFullName($aff[$role . '_profile']) ?></a> </td>
                     <?php endif; ?>
                     
-                     <?php if ($role == "organization"): ?>
+                    <?php if ($role == "organization"): ?>
                         <td class="actions"><div><a href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>/jobs"><?php echo __('View Positions', \MissionNext\lib\Constants::TEXT_DOMAIN); ?></a></div></td>
+                    <?php elseif ($role == "agency"): ?>
+                        <td class="rep_name"><?php echo $aff[ $role . '_profile']['profileData']['first_name'] ?> <?php echo $aff[ $role . '_profile']['profileData']['last_name'] ?> </td>
                     <?php else: ?>
-                    	<td class="actions">&nbsp;</td>
+                    	<td class="rep_name">&nbsp; </td>
                     <?php endif; ?>
                     <td class="actions">
                         <div class="btn btn-link cancel"><?php echo __('Cancel', \MissionNext\lib\Constants::TEXT_DOMAIN); ?></div>
@@ -55,7 +64,14 @@
                     <?php else: ?>
                     	<td class="name"><a target="_blank" href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getAgencyFullName($aff[$role . '_profile']) ?></a> </td>
                     <?php endif; ?>
-                    <td class="actions">&nbsp;</td>
+
+                    <?php if ($role == "organization"): ?>
+                        <td class="actions"><div><a href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>/jobs"><?php echo __('View Positions', \MissionNext\lib\Constants::TEXT_DOMAIN); ?></a></div></td>
+                    <?php elseif ($role == "agency"): ?>
+                        <td class="rep_name"><?php echo $aff[ $role . '_profile']['profileData']['first_name'] ?> <?php echo $aff[ $role . '_profile']['profileData']['last_name'] ?> </td>
+                    <?php else: ?>
+                    	<td class="rep_name">&nbsp; </td>
+                    <?php endif; ?>
                 	<td class="actions">
                         <?php if($aff['affiliate_approver_type'] == $userRole): ?>
                             <div class="btn btn-link approve"><?php echo __('Approve', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></div>

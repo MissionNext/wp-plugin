@@ -40,7 +40,7 @@ $key = 0;
                     <div class="favorite-block <?php echo is_integer($inquirie['favorite'])?'favorite':'not-favorite' ?>"></div>
                 </td>
                 <td>
-                    <a class="btn btn-danger inquire-cancel"><?php echo __('Remove', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                    <a class="btn btn-danger inquire-cancel" title="Click once. Screen takes a moment to refresh"><?php echo __('Remove', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                 </td>
             </tr>
             <?php endforeach; ?>

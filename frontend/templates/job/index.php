@@ -4,7 +4,18 @@
  * @var String $userRole
  * @var Array $jobs
  */
-// there is nothing in $user, $userRole to identify which subscription is active for organizations with multiple subscriptions
+// echo "<br>\$userRole = $userRole";
+// echo "<pre>";
+// print_r($jobs);
+// print_r($user);
+// echo "</pre>";
+// there is nothing in $user, $userRole to identify which subscription is active for organizations with multiple subscriptions 
+$date_today = date("Y-m-d");
+$sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
+// echo "<br>$sniff_host";
+if (preg_match("/explorenext/",$sniff_host))   { $this_app = 3; }
+elseif (preg_match("/teachnext/",$sniff_host)) { $this_app = 6; }
+// echo "<br>\$this_app = $this_app";
 ?>
 
 <div class="page-header">
@@ -16,15 +27,19 @@
     <table class="table table-bordered">
         <thead>
             <tr>
+                <td class="expiration"><strong><?php echo __("Expires", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></strong></td>
                 <td class="name"><strong><?php echo __("Category", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></strong></td>
                 <td class="alt_title"><strong><?php echo __("Job Title", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></strong></td>
-                <td class="country"><strong><?php echo __("Country", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></strong></td>
+                <td class="country"><strong><?php echo __("Location", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></strong></td>
                 <td class="actions" style="text-align:center"><strong><?php echo __("Actions", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></strong></td>
             </tr>
         </thead>
         <tbody>
         <?php foreach($jobs as $job): ?>
+        <?php if($this_app == $job['app_id']): ?>
+        <?php if ($date_today > $job['profileData']['listing_expiration']) { $font = "red"; $warn = "Yes"; } else { $font = "black"; } ?>
             <tr>
+                <td class="expiration"><font color='<?php echo $font ?>'><?php echo $job['profileData']['listing_expiration'] ?></font></td>
                 <td class="name"><a href="/job/<?php echo $job['id'] ?>" target="_blank"><?php echo $job['name'] ?></a> </td>
                 <td class="alt_title"><?php echo $job['profileData']['second_title'] ?></td>
                 <td class="country"><?php echo $job['profileData']['country'] ?></td>
@@ -34,6 +49,7 @@
                     <a class="btn btn-danger" href="/job/<?php echo $job['id'] ?>/delete"><?php echo __("Delete", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                 </td>
             </tr>
+        <?php endif; ?>   
         <?php endforeach; ?>
         </tbody>
     </table>
@@ -47,6 +63,8 @@
             }
             ?>
         </div>
-    <?php endif; ?>
+    <?php endif; 
+    if ($warn == "Yes") { echo "<font color='red'>NOTICE: One or more jobs has expired. Edit / Save job spec to extend the expiration date for another 6 months.</font><br>"; }      
+    ?>
     <a class="btn btn-success" href="/job/new"><?php echo __("New", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
 </div>

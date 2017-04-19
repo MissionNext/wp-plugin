@@ -47,7 +47,7 @@ function groupEmpty($group){
 
     <div class="content">
 
-        <p> <strong><?php echo __('Username', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></strong> : <?php echo $agency['username'] ?></p>
+        <!--<p> <strong><?php echo __('Username', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></strong> : <?php echo $agency['username'] ?></p>-->
         <p> <strong><?php echo __('Email', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></strong> : <?php echo $agency['email'] ?></p>
 
         <?php foreach($agency['profile'] as $group): ?>

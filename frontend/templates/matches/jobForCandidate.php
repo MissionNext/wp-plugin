@@ -3,7 +3,20 @@
  * @var Array $user
  * @var String $userRole
  * @var Array $jobs
+ page URL /candidate/matches/job
  */
+// print_r($user);
+date_default_timezone_set('America/New_York');		
+$datetime   = date("Y-m-d H:i:s"); 
+$updated_at = $user['updated_at'];
+$str_now    = strtotime($datetime);   // The time now becomes a timestamp 
+$str_update = strtotime($updated_at); // updated time becomes a timestamp 
+$interval   = $str_now - $str_update; // subtract the selected number of seconds
+if ($interval < 64800) {
+	$hours = floor($interval / 3600);
+	$minutes = sprintf('%0.0f', ($interval - $hours * 3600)/60);
+}
+// echo "\$interval = $interval";
 
 $percentages = [10, 20, 30, 40, 50, 60, 70, 80, 90];
 
@@ -35,7 +48,12 @@ $percentages = [10, 20, 30, 40, 50, 60, 70, 80, 90];
         <?php renderTemplate("common/_pager", compact('page', 'pages')) ?>
     <?php else: ?>
         <div class="block">
-            <?php echo __("Sorry, no matches yet.", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+        	<?php if ($userRole != "agency") {
+            	echo __("Your profile was updated $hours hours $minutes minutes ago. Job matching calculations can take several hours.", \MissionNext\lib\Constants::TEXT_DOMAIN); 
+            }
+            else {
+            	echo __("Sorry, no matches yet. ", \MissionNext\lib\Constants::TEXT_DOMAIN);
+            } ?>
         </div>
     <?php endif; 
      	$sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 

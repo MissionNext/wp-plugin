@@ -98,11 +98,14 @@ function function_jobs() {
                 <div class="buttons">
                     <button class="btn btn-default"><a href="https://info.missionnext.org/jobs_view.php?uid=<?php echo $pass_string ?>&oid=<?php echo $org_string ?>&site=<?php echo $site ?>" title="Matches to Your Jobs" target="_blank">Job Matches</a></button>
                 </div>-->
-               <?php if( $userRole != \MissionNext\lib\Constants::ROLE_CANDIDATE ): ?>
+               <?php if( $userRole != \MissionNext\lib\Constants::ROLE_CANDIDATE ): 
+               $last_login = substr($candidate['last_login'],0,10);
+               if ($last_login == "2010-01-01") { $last_login = substr($candidate['updated_at'],0,10); }
+               ?>
                 <div>
                     <hr>
                     <table>
-                    <tr><td style='text-align:left'>Last Login&nbsp;</td><td><?php echo substr($candidate['last_login'],0,10) ?></td></tr>
+                    <tr><td style='text-align:left'>Last Login&nbsp;</td><td><?php echo $last_login ?></td></tr>
                     <tr><td style='text-align:left'>Last Update&nbsp;</td><td><?php echo substr($candidate['updated_at'],0,10) ?></td></tr>
                     <tr><td style='text-align:left'>Date Created&nbsp;</td><td><?php echo substr($candidate['created_at'],0,10) ?></td></tr>
                     </table>

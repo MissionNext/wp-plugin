@@ -141,30 +141,49 @@ class Constants {
         ),
         'agency' => array(
             'New Listing',
-            'Saved-Review Later',
-            'High Interest',
-            'Some Interest',
+            'Viewed',
+            'Good Match',
+            'Follow Up',
             'Short-Term',
-            'Contacted',
-            'No Interest'
+            'Contacted By Email',
+            'Contacted By Phone',
+            'Interview',
+            'In Process',
+            'No Response',
+            'Interview',
+            'Not a Fit',
+            'Accepted',
+            'Archived'
         ),
         'organization' => array(
             'New Listing',
-            'Saved-Review Later',
-            'High Interest',
-            'Some Interest',
+            'Viewed',
+            'Good Match',
+            'Follow Up',
             'Short-Term',
-            'Contacted',
-            'No Interest'
+            'Contacted By Email',
+            'Contacted By Phone',
+            'Interview',
+            'In Process',
+            'No Response',
+            'Interview',
+            'Not a Fit',
+            'Accepted',
+            'Archived'
         ),
         'job' => array(
             'New Listing',
-            'Saved-Review Later',
-            'High Interest',
-            'Some Interest',
-            'Short-Term',
-            'Contacted',
-            'No Interest'
+            'Viewed',
+            'Good Match',
+            'Follow Up',
+            'Contacted By Email',
+            'Contacted By Phone',
+            'Interview',
+            'In Process',
+            'No Response',
+            'Accepted',
+            'Position Filled',
+            'Not a Fit'
         )
     );
 

@@ -45,7 +45,7 @@ $site_id = 6;
 
 $items = array_values($items);
 
-$foldersApi = \MissionNext\lib\core\Context::getInstance()->getApiManager()->getApi()->getUserFolders($role, $userId);
+$foldersApi = \MissionNext\lib\core\Context::getInstance()->getApiManager()->getApi()->getUserFolders($role, $organization_id);
 
 $default_folder_id = \MissionNext\lib\SiteConfig::getDefaultFolder($role);
 $default_folder = '';
@@ -144,7 +144,7 @@ function getLastLogin($item){
                         <a href="<?php echo $data['path'] . '?' . http_build_query([
                                 'page'      => $page,
                                 'sort_by'   => 'last_login',
-                                'order_by'  => (isset($sort_by) && 'last_login' == $sort_by && $order_by == 'asc') ? 'desc' : 'asc',
+                                'order_by'  => (isset($sort_by) && 'last_login' == $sort_by && $order_by == 'desc') ? 'asc' : 'desc',
                             ]); ?>">
                             <?php echo __("Last login", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
                         </a>
@@ -168,9 +168,9 @@ function getLastLogin($item){
                     <?php if (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
                         <th class="center"><?php echo __("Folder", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                     <?php } ?>
-                    <?php if (isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY) { ?>
-                    	<th><?php echo __("Candidate", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                    <?php } elseif (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
+                    <?php if (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
+                    	<th><?php echo __("Notes", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                    <?php } elseif (trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY) { ?>
                     	<th><?php echo __("Notes", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                     <?php } ?>
                 </tr>
@@ -226,15 +226,13 @@ function getLastLogin($item){
                                     </td>
                                 <?php } ?>
 
-                                <?php if (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
-                                 	<td class="note" data-note="<?php echo htmlentities($item['notes']) ?>">
-                                       <div <?php if(!$item['notes']) echo 'class="no-note"' ?>></div>
-                                <?php } else { 
-                                	$factored	 = $factor * $item['id'];  // factored is the product of the random number and user_id 
-									$pass_string = $factor.$factored; // pass this string, then extract user_id as $factored / $factor 
-?>
-                                     <td class="agency_note">
-                                        <div style="text-align:center"><a target="_blank" href="https://info.missionnext.org/candidate_recruit.php?c=<?php echo $pass_string ?>&s=<?php echo $site_id ?>&assignment=<?php echo $userId ?>&loggedun=<?php echo $agency_un ?>"> <img src="/wp-includes/images/recruiting.gif" width="40" height="20" /> </a></div>
+                                <td class="note" data-note="<?php echo htmlentities($item['notes']) ?>">
+                                    <?php if (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
+                                        <div <?php if(!$item['notes']) echo 'class="no-note"' ?>></div>
+                                    <?php } else { ?>
+                                        <?php if($item['notes']) { ?>
+                                            <div></div>
+                                        <?php } ?>
                                     <?php } ?>
                                 </td>
                             </tr>

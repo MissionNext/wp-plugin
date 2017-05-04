@@ -8,10 +8,19 @@
  */
 
 $percentages = [10, 20, 30, 40, 50, 60, 70, 80, 90];
-$From_URL = $_SERVER['HTTP_REFERER'];
+$From_URL  = $_SERVER['HTTP_REFERER'];
 $receiving_org = $job['organization']['id'];
-
-
+date_default_timezone_set('America/New_York');		
+$datetime   = date("Y-m-d H:i:s"); 
+$updated_at = $user['updated_at'];
+$str_now    = strtotime($datetime);   // The end date becomes a timestamp 
+$str_update = strtotime($updated_at); // updated time becomes a timestamp 
+$interval   = $str_now - $str_update; // subtract the selected number of seconds
+if ($interval < 64800) {
+	$hours = floor($interval / 3600);
+	$minutes = sprintf('%0.0f', ($interval - $hours * 3600)/60);
+}
+// echo "\$interval = $interval";
 ?>
 
 <div class="page-header">
@@ -36,12 +45,12 @@ $receiving_org = $job['organization']['id'];
 
     <?php if($candidates):
         ?>
-        <?php renderTemplate("common/_candidate_table", array('role' => 'candidate', 'items' => $candidates, 'messages' => $messages, 'userRole' => 'job', 'userId' => $job['id'], 'receiving_org' => $receiving_org, 'loggedRole' => $userRole, 'sort_by' => $sort_by, 'order_by' => $order_by)) ?>
-        <?php renderTemplate("common/_pager", compact('page', 'pages', 'sort_by', 'order_by')) ?>
+        <?php renderTemplate("common/_candidate_table", array('role' => 'candidate', 'items' => $candidates, 'messages' => $messages, 'userRole' => 'job', 'userId' => $job['id'], 'receiving_org' => $receiving_org, 'loggedRole' => $userRole, 'organization_id' => $user['id'])) ?>
+        <?php renderTemplate("common/_pager", compact('page', 'pages')) ?>
     <?php else: ?>
         <div class="block">
-        	<?php if ($userRole == "organization") {
-            	echo __("The job matching calculations can take a few hours. Check back tomorrow.", \MissionNext\lib\Constants::TEXT_DOMAIN); 
+        	<?php if ($userRole != "agency") {
+            	echo __("Your profile was updated $hours hours $minutes minutes ago. Job matching calculations can take several hours.", \MissionNext\lib\Constants::TEXT_DOMAIN); 
             }
             else {
             	echo __("Sorry, no matches yet. ", \MissionNext\lib\Constants::TEXT_DOMAIN);

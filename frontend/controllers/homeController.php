@@ -81,10 +81,10 @@ class homeController extends AbstractLayoutController {
 
         $this->apps = [
             1   => 'https://new.missionnext.org',
-            2   => 'http://finishersproject.missionnext.org',
+            2   => 'https://finishers.missionnext.org',
             3   => 'https://explorenext.missionnext.org',
-            4   => 'http://journeydeepens.missionnext.org',
-            5   => 'http://bammatch.missionnext.org',
+            4   => 'https://jg.missionnext.org',
+            5   => 'https://bammatch.missionnext.org',
             6   => 'https://teachnext.missionnext.org',
         ];
     }

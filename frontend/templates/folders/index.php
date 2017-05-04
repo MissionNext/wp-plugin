@@ -4,6 +4,7 @@
 <?php
 /**
  * @var $role
+ * @var $userRole
  * @var $folders
  * @var $languages
  * @var $default
@@ -40,7 +41,9 @@
         <?php endforeach; ?>
         </tbody>
     </table>
-<?php } ?>
+<?php } 
+// echo "<br>\$userRole = $userRole";
+?>
 
 
 <table class="custom-folders-table" id="folders">

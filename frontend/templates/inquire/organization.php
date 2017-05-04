@@ -5,7 +5,7 @@
  * @var Array $inquiries
  */
 $key = 0;
-
+// echo "Organization<br>"; print_r($inquiries);
 ?>
 <div class="page-header">
     <h1><?php echo __("Inquiry list", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></h1>
@@ -27,7 +27,7 @@ $key = 0;
         <?php foreach($inquiries as $job): ?>
 
             <tr class="header">
-                <td class="inquery-colspan" colspan="5"><a href="/job/<?php echo $job['id']?>"><?php echo $job['name'] ?></a></td>
+                <td class="inquery-colspan" colspan="5"><a href="/job/<?php echo $job['id']?>"><?php echo $job['name'] ?></a> &#151; <?php echo $job['profileData']['second_title'] ?></td>
             </tr>
 
             <?php foreach($job['inquiries'] as $inquirie): ?>

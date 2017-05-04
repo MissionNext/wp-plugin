@@ -45,7 +45,7 @@ $site_id = 6;
 
 $items = array_values($items);
 
-$foldersApi = \MissionNext\lib\core\Context::getInstance()->getApiManager()->getApi()->getUserFolders($role, $userId);
+$foldersApi = \MissionNext\lib\core\Context::getInstance()->getApiManager()->getApi()->getUserFolders($role, $organization_id);
 
 $default_folder_id = \MissionNext\lib\SiteConfig::getDefaultFolder($role);
 $default_folder = '';

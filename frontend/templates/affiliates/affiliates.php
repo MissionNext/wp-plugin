@@ -4,7 +4,7 @@
  * @var $affiliates Array
  * @var $role String
  */
-// echo "\$userRole = $userRole "; echo "\$role = $role";
+echo "\$userRole = $userRole "; echo "\$role = $role";
 // print_r($affiliates);
 ?>
 <div class="page-header">
@@ -87,21 +87,22 @@
         <div class="block">
             <?php $none="Yes"; echo __("No affiliates yet.", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
         </div>
-    <?php endif; ?>
-    <!--Add Affiliate lines added by Nelson Oct 30, 2016-->
-    <!--<? print_r($affiliates); echo "<br>\$userRole = $userRole"; ?>-->
-	<?php if ($userRole == "agency"): ?>
-		<a class="btn btn-default" href="/organization/search"><?php echo __("Request Affiliation", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> 
-	<?php elseif ($userRole == "organization"): 
-
-		$sniff_host  = $_SERVER["HTTP_HOST"]; // returns what is after https:// and before first slash 
+    <?php endif; 
+    	$sniff_host  = $_SERVER["HTTP_HOST"]; // returns what is after https:// and before first slash 
 		if (preg_match("/explorenext/",$sniff_host)) {
     		$site_id = 3;
     	}
 		elseif (preg_match("/teachnext/",$sniff_host)) {
 		    $site_id = 6;
 		}
-	?>
+    ?>
+	<?php if ($userRole == "agency"): ?>
+		<a class="btn btn-default" href="/organization/search"><?php echo __("Request Affiliation", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> &nbsp;
+		<?php if($none != "Yes"): ?>
+			<a class="btn btn-default" href="https://info.missionnext.org/recruit_candidates.php?appid=<?php echo $site_id ?>" target="_blank"><?php echo __("Manage Affiliate Matches", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> 
+		<?php endif; ?>
+
+	<?php elseif ($userRole == "organization"): ?>
 		<a class="btn btn-default" href="/agency/search"><?php echo __("Request Affiliation", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> &nbsp; 
 			<?php if($none != "Yes"): ?>
 			<a class="btn btn-default" href="https://info.missionnext.org/assign_folders.php?appid=<?php echo $site_id ?>" target="_blank"><?php echo __("Assign Folders to Affiliates", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> 

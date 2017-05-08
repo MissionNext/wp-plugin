@@ -224,11 +224,11 @@ function getLastLogin($item){
     <textarea cols="25" rows="5" class="message" maxlength="1000"></textarea>
 </div>
 
-<div id="match-highlight">
+<div id="match-highlight" style="display: none;">
 
 </div>
 
-<div id="folder-message">
+<div id="folder-message" style="display: none;">
 
 </div>
 

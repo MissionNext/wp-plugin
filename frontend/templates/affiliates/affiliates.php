@@ -92,6 +92,10 @@
     <!--<? print_r($affiliates); echo "<br>\$userRole = $userRole"; ?>-->
     <?php if ($userRole == "agency"): ?>
         <a class="btn btn-default" href="/organization/search"><?php echo __("Request Affiliation", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+		<?php if($none != "Yes"): ?>
+			<a class="btn btn-default" href="https://info.missionnext.org/recruit_candidates.php?appid=<?php echo $site_id ?>" target="_blank"><?php echo __("Manage Affiliate Matches", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> 
+		<?php endif; ?>
+
     <?php elseif ($userRole == "organization"):
 
         $sniff_host  = $_SERVER["HTTP_HOST"]; // returns what is after https:// and before first slash

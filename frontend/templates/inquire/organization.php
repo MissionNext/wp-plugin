@@ -5,7 +5,14 @@
  * @var Array $inquiries
  */
 $key = 0;
-// echo "Organization<br>"; print_r($inquiries);
+// echo "Organization $user[id]<br>"; print_r($inquiries);
+        $sniff_host  = $_SERVER["HTTP_HOST"]; // returns what is after https:// and before first slash
+        if (preg_match("/explorenext/",$sniff_host)) {
+            $site_id = 3;
+        }
+        elseif (preg_match("/teachnext/",$sniff_host)) {
+            $site_id = 6;
+        }
 ?>
 <div class="page-header">
     <h1><?php echo __("Inquiry list", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></h1>
@@ -55,7 +62,9 @@ $key = 0;
         <?php echo __("No inquiries yet.", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
     </div>
     <?php endif; ?>
-
+    <div class="block">
+	<a href="https://info.missionnext.org/inquiries.php?appid=<?php echo $site_id ?>" target="_blank">View deleted inquiries</a>
+	</div>
 </div>
 
 <script>

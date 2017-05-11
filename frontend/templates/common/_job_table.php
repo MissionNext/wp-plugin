@@ -20,8 +20,6 @@ $foldersApi = \MissionNext\lib\core\Context::getInstance()->getApiManager()->get
 $default_folder_id = \MissionNext\lib\SiteConfig::getDefaultFolder($role);
 $default_folder = '';
 
-uasort($foldersApi, 'sortFolders');
-
 $folders = array();
 
 foreach($foldersApi as $folderApi){
@@ -59,10 +57,6 @@ foreach($items as $item){
 $matching = isset($items[0]['matching_percentage']);
 
 //FAVORITES
-
-function sortFolders($a, $b){
-    return $a['id'] < $b['id']? -1: 1;
-}
 
 function getProfileField($item, $symbol_key){
 

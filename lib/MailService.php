@@ -8,7 +8,7 @@ class MailService {
 
     public $fromName = "MissionNext";
     public $from;
-    public $contentType = 'text/plain';
+    public $contentType = 'text/html';
     public $charset;
 
     public function __construct(){

@@ -45,12 +45,10 @@ $site_id = 6;
 
 $items = array_values($items);
 
-$foldersApi = \MissionNext\lib\core\Context::getInstance()->getApiManager()->getApi()->getUserFolders($role, $userId);
+$foldersApi = \MissionNext\lib\core\Context::getInstance()->getApiManager()->getApi()->getUserFolders($role, $organization_id);
 
 $default_folder_id = \MissionNext\lib\SiteConfig::getDefaultFolder($role);
 $default_folder = '';
-
-uasort($foldersApi, 'sortFolders');
 
 $folders = array();
 
@@ -86,10 +84,6 @@ foreach($items as $item){
 $matching = isset($items[0]['matching_percentage']);
 
 //FAVORITES
-
-function sortFolders($a, $b){
-    return $a['id'] < $b['id']? -1: 1;
-}
 
 function getProfileField($item, $symbol_key){
 
@@ -260,11 +254,11 @@ function getLastLogin($item){
     <textarea cols="25" rows="5" class="message" maxlength="1000"></textarea>
 </div>
 
-<div id="match-highlight">
+<div id="match-highlight" style="display: none;">
 
 </div>
 
-<div id="folder-message">
+<div id="folder-message" style="display: none;">
 
 </div>
 

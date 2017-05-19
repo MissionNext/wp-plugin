@@ -54,6 +54,11 @@
     </tr>
     </thead>
     <tbody>
+    <!--
+    <pre>
+    <?php print_r($custom); ?>
+    </pre>
+    -->
     <?php foreach($custom as $folder): ?>
         <tr data-id="<?php echo $folder['id'] ?>">
             <td class="name">

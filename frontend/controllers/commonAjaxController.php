@@ -68,8 +68,13 @@ class commonAjaxController extends AbstractLayoutController {
 
         $manager = Context::getInstance()->getMailService();
 
-        $manager->from = $_POST['from'];
+        $options = get_option('sp_settings');
+        $manager->from = (isset($options['from_email']) && !empty($options['from_email'])) ? $options['from_email'] : $_POST['from'];
         $response = $manager->send($_POST['to'], $_POST['subject'], $_POST['body']);
+        if ('copy' == $_POST['cc_me']) {
+            $message = "Message sent to: ".$_POST['to']."\n".$_POST['body'];
+            $response = $manager->send($_POST['from'], $_POST['subject'], $message);
+        }
 
         echo json_encode($response);
 

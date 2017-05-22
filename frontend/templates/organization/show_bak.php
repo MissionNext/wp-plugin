@@ -34,7 +34,7 @@ function groupEmpty($group){
 
             <?php if($organization['email'] != $user['email']): ?>
                 <div class="buttons">
-                    <a onclick="EmailPopup.open('<?php echo $user['email'] ?>', '<?php echo $organization['email'] ?>')" class="btn btn-primary"><?php echo __('Send message', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                    <a onclick="EmailPopup.open('<?php echo $user['id'] ?>', '<?php echo $organization['id'] ?>')" class="btn btn-primary"><?php echo __('Send message', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                 </div>
             <?php endif; ?>
 

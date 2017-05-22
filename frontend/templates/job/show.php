@@ -33,10 +33,9 @@ function groupEmpty($group){
 
                 <?php echo get_avatar($job['organization']['email'], 203) ?>
             </div>
-
         <?php if($job['organization']['email'] != $user['email']): ?>
             <div class="buttons">
-                <a onclick="EmailPopup.open('<?php echo $user['email'] ?>', '<?php echo $job['organization']['email'] ?>')" class="btn btn-primary"><?php echo __("Send message", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                <a onclick="EmailPopup.open('<?php echo $user['id'] ?>', '<?php echo $job['organization']['id'] ?>', '<?php echo $user['profileData']['first_name'] . ' ' . $user['profileData']['last_name'] ?>', '<?php echo $job['org_name'] ?>')" class="btn btn-primary"><?php echo __("Send message", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
             </div>
         <?php endif; ?>
 

@@ -26,11 +26,11 @@ get_header();
         </div>
     </div>
 <?php
-if (\MissionNext\lib\Constants::ROLE_CANDIDATE == $userRole) {
-    renderTemplate('_email_popup');
-} else {
+//if (\MissionNext\lib\Constants::ROLE_CANDIDATE == $userRole) {
+//    renderTemplate('_email_popup');
+//} else {
     renderTemplate('_email_candidate_popup');
-}
+//}
 
 get_footer();
 ?>

@@ -20,7 +20,7 @@
 
             <?php if($organization['email'] != $user['email']): ?>
                 <div class="buttons">
-                    <a onclick="EmailPopup.open('<?php echo $user['email'] ?>', '<?php echo $organization['email'] ?>')" class="btn btn-primary"><?php echo __('Send message', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                    <a onclick="EmailPopup.open('<?php echo $user['id'] ?>', '<?php echo $organization['id'] ?>', '<?php echo isset($user['profileData']['agency_full_name']) ? $user['profileData']['agency_full_name'] : $user['profileData']['first_name'] . ' ' . $user['profileData']['last_name'] ?>', '<?php echo $organization['profileData']['organization_name'] ?>')" class="btn btn-primary"><?php echo __('Send message', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                 </div>
             <?php endif; ?>
 

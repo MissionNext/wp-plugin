@@ -98,12 +98,12 @@ class inquireController extends AbstractLayoutController {
 
         $text_message = Context::getInstance()->getLocalizationManager()->getLocalizedEmail('inquire_cancel.txt');
 
-        $mail_service->send($organization['email'], sprintf(__("%s inquire", Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(Constants::ROLE_JOB))), UserLib::replaceTokens($text_message, $this->user, $organization, $job), '', array(), false);
+        $mail_service->send($organization['email'], sprintf(__("%s Inquiry Canceled", Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(Constants::ROLE_JOB))), UserLib::replaceTokens($text_message, $this->user, $organization, $job), '', array(), false);
 
         foreach($affiliates as $affiliate){
 
             if($affiliate['status'] == 'approved'){
-                $mail_service->send($affiliate['agency_profile']['email'], sprintf(__("%s inquire", Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(Constants::ROLE_JOB))), UserLib::replaceTokens($text_message, $this->user, $affiliate['agency_profile'], $job), '', array(), false);
+                $mail_service->send($affiliate['agency_profile']['email'], sprintf(__("%s Inquiry Canceled", Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(Constants::ROLE_JOB))), UserLib::replaceTokens($text_message, $this->user, $affiliate['agency_profile'], $job), '', array(), false);
             }
 
         }

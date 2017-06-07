@@ -48,6 +48,11 @@ class UserLib extends ProfileLib {
             if(!is_array($value)){
                 $from[] = "%from_$key%";
                 $to[] = $value;
+            } else {
+                $from[] = "%from_$key%";
+                $imploded_value = implode(", ", $value);
+                $new_value = str_replace("(!)", "", $imploded_value);
+                $to[] = $new_value;
             }
         }
 
@@ -61,6 +66,11 @@ class UserLib extends ProfileLib {
             if(!is_array($value)){
                 $from[] = "%to_$key%";
                 $to[] = $value;
+            } else {
+                $from[] = "%to_$key%";
+                $imploded_value = implode(", ", $value);
+                $new_value = str_replace("(!)", "", $imploded_value);
+                $to[] = $new_value;
             }
         }
 
@@ -74,6 +84,11 @@ class UserLib extends ProfileLib {
                 if(!is_array($value)){
                     $from[] = "%job_$key%";
                     $to[] = $value;
+                } else {
+                    $from[] = "%job_$key%";
+                    $imploded_value = implode(", ", $value);
+                    $new_value = str_replace("(!)", "", $imploded_value);
+                    $to[] = $new_value;
                 }
             }
         }

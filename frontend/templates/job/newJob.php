@@ -3,8 +3,21 @@
  * @var $form \MissionNext\lib\form\Form
  * @var $jobs Array
  */
- ?>
 
+require_once("connect.inc.php");
+if(is_array($jobs)) {
+	foreach($jobs as $job) {
+	$job_id = $job['id'];
+	$sql_sec = "SELECT value FROM job_profile WHERE job_id = $job_id AND field_id = 2";
+	$res_sec = pg_query($db_link,$sql_sec) or die("\$sql_sec query failed: <br>$sql_sec");
+		if ($row_sec = pg_fetch_array($res_sec)) {
+			$second_title[$job_id] = $row_sec[0];
+		}
+	}
+}
+pg_close($db_link);
+// print_r($second_title);
+?>
 
 <div class="page-header">
     <h1><?php echo sprintf(__('New %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_JOB))) ?></h1>
@@ -20,7 +33,8 @@
                 <div class="col-sm-10">
                     <select name="from" id="create-from-select">
                         <?php foreach($jobs as $job): ?>
-                            <option value="<?php echo $job['id'] ?>"><?php echo $job['name'] ?></option>
+                        	<?php $thisjob = $job['id']; $other_title = $second_title[$thisjob]; ?>
+                            <option value="<?php echo $job['id'] ?>"><?php echo $job['name'] ?> &#151; <?php echo $other_title ?> </option>
                         <?php endforeach; ?>
                     </select>
                 </div>

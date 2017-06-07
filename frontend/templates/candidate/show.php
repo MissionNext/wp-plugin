@@ -23,7 +23,7 @@ function groupEmpty($group){
     return true;
 }
 // print_r($user); echo "<br>\$userRole = $userRole";
-$organization_id = $user[id];
+$organization_id = $user['id'];
 // echo "\$organization_id = $user[id] ";
 $factor		 = rand(10,99); // generate random two-digit number
 $factored	 = $factor * $candidate['id'];  // factored is the product of the random number and user_id
@@ -66,7 +66,7 @@ function function_jobs() {
             </div>
             <?php if($candidate['email'] != $user['email']): ?>
                 <div class="buttons">
-                    <a onclick="EmailPopup.open('<?php echo $user['id'] ?>', '<?php echo $candidate['id'] ?>', '<?php echo isset($user['profileData']['agency_full_name']) ? $user['profileData']['agency_full_name'] : $user['profileData']['organization_name'] ?>', '<?php echo $name ?>')" class="btn btn-primary"><?php echo __("Send message", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                    <a onclick="EmailPopup.open('<?php echo $user['id'] ?>', '<?php echo $candidate['id'] ?>', <?php echo isset($user['profileData']['agency_full_name']) ? $user['profileData']['agency_full_name'] : $user['profileData']['organization_name'] ?>, '<?php echo $name ?>')" class="btn btn-primary"><?php echo __("Send message", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                 </div>
             <?php endif; ?>
 

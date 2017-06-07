@@ -105,13 +105,13 @@ class homeController extends AbstractLayoutController {
         }
 
         $this->apps = [
-            1   => 'https://new.missionnext.org',
             2   => 'https://finishers.missionnext.org',
             3   => 'https://explorenext.missionnext.org',
             4   => 'https://jg.missionnext.org',
             5   => 'https://bammatch.missionnext.org',
             6   => 'https://teachnext.missionnext.org',
-        ];
+            9   => 'https://new.missionnext.org',
+     ];
     }
 
     public function wpProfile(){

@@ -29,15 +29,15 @@ class LoginWidget extends \WP_Widget {
     public function widget( $args, $instance ) {
 
         echo $args['before_widget'];
+        $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
+		if (preg_match("/explorenext/",$sniff_host))   { $subdomain = "explorenext"; }
+		elseif (preg_match("/teachnext/",$sniff_host)) { $subdomain = "teachnext"; }
+		elseif (preg_match("/jg./",$sniff_host)) { $subdomain = "jg"; }
 
         if(is_user_logged_in()){
 
             $fullname = Context::getInstance()->getUser()->getName();
             $user = Context::getInstance()->getUser()->getUser();
-           	$sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
-			if (preg_match("/explorenext/",$sniff_host))   { $subdomain = "explorenext"; }
-			elseif (preg_match("/teachnext/",$sniff_host)) { $subdomain = "teachnext"; }
-			elseif (preg_match("/jg./",$sniff_host)) { $subdomain = "jg"; }
 
             ?>
                 <?php if(!empty($fullname)): ?>
@@ -45,8 +45,8 @@ class LoginWidget extends \WP_Widget {
                 <?php else: ?>
                 <?php echo $args['before_title'] . __('Hello', Constants::TEXT_DOMAIN) . $args['after_title']; ?>
                 <?php endif ;?>
-<?php 
-	if ($subdomain != "jg") { ?>
+		<?php 
+		if ($subdomain != "jg") { ?>
                 <ul>
                     <?php if($user): ?>
                     <li class="mn-home-link"><a href="<?php echo site_url("/dashboard")?>"><?php echo __('My Dashboard', Constants::TEXT_DOMAIN) ?></a></li>
@@ -57,8 +57,8 @@ class LoginWidget extends \WP_Widget {
                     ?>
                     <li class="logout-link"><a href="<?php echo $logout_link ?>"><?php echo __('Logout', Constants::TEXT_DOMAIN) ?></a></li>
                 </ul>
-	<?php 
-	} else { ?>
+		<?php 
+		} else { ?>
 	
                 <ul>
                     <?php if($user): ?>
@@ -71,10 +71,10 @@ class LoginWidget extends \WP_Widget {
                     <li><a href="<?php echo $logout_link ?>"><font color="#121212"><?php echo __('Logout', Constants::TEXT_DOMAIN) ?></font></a></li>
                 </ul>
 
-        <?php
-		} // if ($subdomain != "jg")
+        	<?php
+			} // if ($subdomain != "jg")
 		
-        } else {
+        } else { // if(is_user_logged_in())
 
             ?>
                 <h4><?php echo __("Registered Users", Constants::TEXT_DOMAIN) ?></h4>
@@ -94,6 +94,13 @@ class LoginWidget extends \WP_Widget {
                     <img src="<?php echo getResourceUrl('/resources/images/spinner.gif'); ?>" width="32" />
                 </div>
                 <script src="<?php echo getResourceUrl('/resources/js/login.js'); ?>"></script>
+                <?php if ($subdomain == "jg") { ?>
+				<div>
+                    <p><a href="<?php echo wp_lostpassword_url("/dashboard") ?>"><font color="#434343"><?php echo __("Can't Sign In?", Constants::TEXT_DOMAIN) ?></font></a></p>
+                    <p><?php echo __("Register as", Constants::TEXT_DOMAIN) ?></p>
+                    <a href="/signup/organization"><font color="#434343"><?php echo ucfirst(getCustomTranslation(Constants::ROLE_ORGANIZATION)) ?></font></a>
+                </div>
+                <?php } else { ?>
                 <div>
                     <p><a href="<?php echo wp_lostpassword_url("/dashboard") ?>"><?php echo __("Can't Sign In?", Constants::TEXT_DOMAIN) ?></a></p>
                     <p><?php echo __("Register as", Constants::TEXT_DOMAIN) ?></p>
@@ -103,9 +110,10 @@ class LoginWidget extends \WP_Widget {
                     <?php endif; ?>
                     <a href="/signup/organization"><?php echo ucfirst(getCustomTranslation(Constants::ROLE_ORGANIZATION)) ?></a>
                 </div>
+                <?php } ?>
 
         <?php
-        }
+        } // else if(is_user_logged_in())
 
         echo $args['after_widget'];
     }

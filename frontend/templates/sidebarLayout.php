@@ -7,6 +7,9 @@
 
 get_header();
 $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
+if (preg_match("/explorenext/",$sniff_host)) { $site_id = 3; }
+elseif (preg_match("/teachnext/",$sniff_host)) { $site_id = 6; }
+elseif (preg_match("/jg./",$sniff_host)) { $site_id = 4; }
 ?>
     <div id="main" role="main" >
         <div class="container clearfix">
@@ -26,7 +29,7 @@ $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before
                                 <?php if($userRole == 'candidate'): 
                                 // generate $_GET value
                                 $factor   = rand(10,99); // generate random two-digit number
-								$factored = $factor * $user[id];  // factored is the product of the random number and user_id 
+								$factored = $factor * $user['id'];  // factored is the product of the random number and user_id 
 								$pass_string = $factor.$factored; // pass this string, then extract user_id as $factored / $factor 
                                 ?>
                                     <a href="/candidate/matches/job" class="matches"><?php echo sprintf(__('View %s Matches', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_JOB))) ?></a>
@@ -44,16 +47,10 @@ $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before
     							$factor		 = rand(10,99); // generate random two-digit number
 								$factored	 = $factor * $rep_id; // factored is the product of the random number and user_id 
 								$pass_string = $factor.$factored; // pass this string, then extract user_id as $factored / $factor 
-								$sniff_host  = $_SERVER["HTTP_HOST"]; // returns what is after https:// and before first slash 
-								if (preg_match("/explorenext/",$sniff_host)) {
-    								$site_id = 3;
-    							}
-								elseif (preg_match("/teachnext/",$sniff_host)) {
-		    						$site_id = 6;
-		   						}
 			                    ?>
                                     <a href="/presentation"><?php echo __('My Presentation', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                                     <a href="/affiliates"><?php echo __('Affiliates', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                                    <?php echo "<a href='https://info.missionnext.org/recruit_candidates.php?appid=$site_id' target='_blank'>Affiliate Candidates</a>"; ?>
                                     <a href="/affiliates/jobs"><?php echo ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_JOB_PLURAL)) ?></a>
                                     <?php echo "<a href='https://info.missionnext.org/recruit_account.php?aid=$pass_string&s=$site_id' target='_blank'>Job Candidates</a>"; ?>
                                     <!--<a href="/job/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_JOB_PLURAL))) ?></a>-->
@@ -62,7 +59,7 @@ $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before
                                     <a href="/inquiries"><?php echo __('Job Inquiry List', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                                 <?php endif; ?>
 
-                                <?php if($userRole == 'organization'): ?>
+                                <?php if($userRole == 'organization' && $site_id != 4): ?>
                                     <a href="/presentation"><?php echo __('My Presentation', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                                  
                                     <a href="/organization/matches/candidate" class="matches"><?php echo sprintf(__('%s Matches', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_CANDIDATE))) ?></a>

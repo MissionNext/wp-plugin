@@ -61,7 +61,7 @@ msgstr ""
 
 #: frontend/controllers/inquireController.php:53
 #: frontend/controllers/inquireController.php:58
-msgid "Job inquire"
+msgid "Job Inquiry"
 msgstr ""
 
 #: frontend/controllers/inquireController.php:86
@@ -74,7 +74,7 @@ msgstr ""
 #: frontend/controllers/inquireController.php:129
 #: frontend/controllers/inquireController.php:161
 #: frontend/controllers/inquireController.php:166
-msgid "%s inquire cancel"
+msgid "%s Inquiry Canceled"
 msgstr ""
 
 #: frontend/templates/_email_popup.php:3

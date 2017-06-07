@@ -65,8 +65,8 @@ msgstr "uk_Sorry, that key does not appear to be valid."
 
 #: frontend/controllers/inquireController.php:53
 #: frontend/controllers/inquireController.php:58
-msgid "Job inquire"
-msgstr "uk_Job inquire"
+msgid "Job Inquiry"
+msgstr "uk_Job Inquiry"
 
 #: frontend/controllers/inquireController.php:86
 #: frontend/controllers/inquireController.php:91
@@ -78,8 +78,8 @@ msgstr "uk %s inquire"
 #: frontend/controllers/inquireController.php:129
 #: frontend/controllers/inquireController.php:161
 #: frontend/controllers/inquireController.php:166
-msgid "%s inquire cancel"
-msgstr "uk %s inquire cancel"
+msgid "%s Inquiry Canceled"
+msgstr "uk %s Inquiry Canceled"
 
 #: frontend/templates/_email_popup.php:3
 msgid "To"

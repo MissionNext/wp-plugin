@@ -1,9 +1,6 @@
 Hello %to_full_name%, <br />
 <br />
-This is to let you know that candidate %from_full_name% has withdrawn the inquiry for ExploreNext job %job_name%! <br />
+%from_full_name% has canceled their inquiry regarding your job posting for %job_name%! <br />
 <br />
-To follow up on inquiries, manage candidate matches for our school and jobs login at https://explorenext.missionnext.org/explorenext-home/login-here/ <br />
+MissionNext Partner Support Team (Tranfsferred from Naleon's IL GAI) <br />
 <br />
-Thank you for your partnership in the gospel. <br />
-<br />
-ExploreNext Customer Service <br />

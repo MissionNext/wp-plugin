@@ -55,14 +55,30 @@ foreach($defaults as $default){
     <tbody>
     <?php foreach($config as $app):
         $config = current($app['sub_configs']);
-        if(!$config) continue;
+
+        if(!$config)
+            continue;
+
         $checked = isset($defaults[$app['id']]);
-        if ($checked) { $URL = "<a href='https://".$app['public_key'].".missionnext.org/dashboard' title='Go to your dashboard'>"; } else { unset($URL); }
+        if ($checked) {
+            $URL = "<a href='https://".$app['public_key'].".missionnext.org/dashboard' title='Go to your dashboard'>";
+        } else {
+            unset($URL);
+        }
+
 		$left_amount = isset($defaults[$app['id']])?$defaults[$app['id']]['left_amount']:null;
         ?>
         <tr<?php if($left_amount !== null): ?> data-left="<?php echo $left_amount ?>"<?php endif; ?>>
             <td><input <?php if($checked) echo 'checked="checked"' ?> name="a[<?php echo $app['id'] ?>]" value="<?php echo \MissionNext\lib\Constants::PARTNERSHIP_BASIC ?>" type="checkbox"/></td>
-            <td class="name"><?php echo $URL ?><?php echo $app['name'] ?></a></td>
+            <td class="name">
+                <?php if (isset($URL)) {
+                    echo $URL;
+                    echo $app['name'];
+                    echo "</a>";
+                } else {
+                    echo $app['name'];
+                } ?>
+            </td>
             <td class="price price-month" data-price="<?php echo $config['price_month'] ?>">
                 $<span><?php echo sprintf( "%.2f", $config['price_month']) ?></span>
             </td>

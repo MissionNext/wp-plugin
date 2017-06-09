@@ -5,13 +5,18 @@
  * @var $role String
  */
 
-$sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
-if (preg_match("/explorenext/",$sniff_host))   { $subdomain = "explorenext"; }
-elseif (preg_match("/teachnext/",$sniff_host)) { $subdomain = "teachnext"; }
-elseif (preg_match("/jg/",$sniff_host)) { $subdomain = "jg"; }
+$sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash
 
-if ($role == "candidate" && $subdomain == "jg") { 
- 	echo "<p>&nbsp;</p><p align='center'>Link to <a href='https://jg.missionnext.org/signup/organization'>Journey Guide Registration</a></p>"; 
+if (preg_match("/explorenext/",$sniff_host)) {
+    $subdomain = "explorenext";
+} elseif (preg_match("/teachnext/",$sniff_host)) {
+    $subdomain = "teachnext";
+} elseif (preg_match("/jg/",$sniff_host)) {
+    $subdomain = "jg";
+}
+
+if ($role == "candidate" && $subdomain == "jg") {
+ 	echo "<p>&nbsp;</p><p align='center'>Link to <a href='https://jg.missionnext.org/signup/organization'>Journey Guide Registration</a></p>";
 } else {
 ?>
 <div class="page-header">
@@ -23,32 +28,32 @@ if ($role == "candidate" && $subdomain == "jg") {
 
         <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render("_inline_form", array('form' => $registrationForm)) ?>
 
-        <?php if($registrationForm->captcha_image): ?>
-        <div class="form-group">
-            <?php if(isset($registrationForm->errors['captcha'])): ?>
-                <?php foreach($registrationForm->errors['captcha'] as $error): ?>
-                    <div class="col-sm-offset-2 col-sm-10 text-danger">
-                        <?php echo $error ?>
-                    </div>
-                <?php endforeach ?>
-            <?php endif; ?>
+        <?php if ($registrationForm->captcha_image) { ?>
+            <div class="form-group">
+                <?php if (isset($registrationForm->errors['captcha'])) {
+                    foreach ($registrationForm->errors['captcha'] as $error) { ?>
+                        <div class="col-sm-offset-2 col-sm-10 text-danger">
+                            <?php echo $error; ?>
+                        </div>
+                    <?php }
+                } ?>
 
-            <label class="col-sm-3 control-label" for="captcha"><?php echo __('Captcha', \MissionNext\lib\Constants::TEXT_DOMAIN) ?> </label>
+                <label class="col-sm-3 control-label" for="captcha"><?php echo __('Captcha', \MissionNext\lib\Constants::TEXT_DOMAIN) ?> </label>
 
-            <div class="col-sm-9">
-                <img src="<?php echo $registrationForm->captcha_image ?>" title="Completely Automated Public Test to tell Computers and Humans Apart" alt="<?php echo __("Captcha", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>"/>
-                <input name="captcha[prefix]" type="hidden" value="<?php echo $registrationForm->captcha_prefix ?>"/>
+                <div class="col-sm-9">
+                    <img src="<?php echo $registrationForm->captcha_image ?>" title="Completely Automated Public Test to tell Computers and Humans Apart" alt="<?php echo __("Captcha", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>"/>
+                    <input name="captcha[prefix]" type="hidden" value="<?php echo $registrationForm->captcha_prefix ?>"/>
+                </div>
+
+                <div class="col-sm-9 col-sm-offset-3">
+                    <?php if (isset($subdomain) && $subdomain == "jg") { ?>
+                        <input id="captcha" name="captcha[value]" type="text" style="width: 150px;" /> &nbsp; (Case Sensitive) <br>To prove you are a real person
+                    <?php } else { ?>
+                        <input id="captcha" name="captcha[value]" type="text"/> &nbsp; (Case Sensitive) <br>To prove you are a real person
+                    <?php } ?>
+                </div>
             </div>
-
-            <div class="col-sm-9 col-sm-offset-3">
-                <?php if ($subdomain == "jg") { ?>
-                <input id="captcha" name="captcha[value]" type="text" style="width: 150px;" /> &nbsp; (Case Sensitive) <br>To prove you are a real person
-                <? } else { ?>
-                <input id="captcha" name="captcha[value]" type="text"/> &nbsp; (Case Sensitive) <br>To prove you are a real person
-                <? } ?>
-            </div>
-        </div>
-        <?php endif; ?>
+        <?php } ?>
 
         <div class="form-group">
             <div class="col-sm-12">
@@ -57,11 +62,9 @@ if ($role == "candidate" && $subdomain == "jg") {
         </div>
     </form>
 </div>
-<?php 
-} // else if ($role == "candidate" && $subdomain == "jg")
-?>
+<?php } // else if ($role == "candidate" && $subdomain == "jg") ?>
 
-<script>
+<script type="text/javascript">
     var userrole = '<?php echo $role; ?>';
 
     jQuery(document).on('change', '[data-dependant]', function(e){

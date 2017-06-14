@@ -40,6 +40,16 @@ class inquireController extends AbstractLayoutController {
             }
             case "agency" : {
                 $this->inquiries = $this->sortJobs($this->api->getInquiredCandidatesForAgency($this->userId));
+                $org_ids = [];
+                foreach ($this->inquiries as $inquiry) {
+                    $org_ids[] = $inquiry['organization_id'];
+                }
+                if (count($org_ids) > 0) {
+                    $this->org_names = $this->api->getOrganizationsNames($org_ids);
+                } else {
+                    $this->org_names = [];
+                }
+
                 break;
             }
         }

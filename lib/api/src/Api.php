@@ -275,6 +275,10 @@ class Api {
         return $this->get("organization/jobs/$organization_id/for/$user_id");
     }
 
+    public function getOrganizationsNames($organizations) {
+        return $this->get("organization/select/names", compact('organizations'));
+    }
+
     /**
      * Job search
      *

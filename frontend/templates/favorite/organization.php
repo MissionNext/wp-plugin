@@ -20,6 +20,7 @@ if (!$role) { $role = "candidate"; }
             <th><?php echo __('Full name', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
             <th><?php echo __('Notes', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
             <th><?php echo __('Actions', \MissionNext\lib\Constants::TEXT_DOMAIN)?></th>
+            <th><?php echo __('Folder', \MissionNext\lib\Constants::TEXT_DOMAIN); ?></th>
         </tr>
         </thead>
         <tbody>
@@ -33,6 +34,16 @@ if (!$role) { $role = "candidate"; }
             </td>
             <td>
                 <a class="btn btn-danger favorite-remove"><?php echo __('Unfavorite', \MissionNext\lib\Constants::TEXT_DOMAIN ) ?></a>
+            </td>
+            <td class="folder">
+                <pre>
+                    <?php echo $item['folder']; ?>
+                </pre>
+                <select>
+                    <?php foreach($folders as $value => $folder): ?>
+                        <option <?php if($item['folder'] == $value) echo 'selected="selected"' ?> value="<?php echo $value ?>"><?php echo $folder ?></option>
+                    <?php endforeach; ?>
+                </select>
             </td>
         </tr>
         <?php endforeach; ?>

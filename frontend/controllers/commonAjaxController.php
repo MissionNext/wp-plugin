@@ -77,10 +77,10 @@ class commonAjaxController extends AbstractLayoutController {
 
         $options = get_option('sp_settings');
         $manager->from = (isset($options['from_email']) && !empty($options['from_email'])) ? $options['from_email'] : $from;
-        $response = $manager->send($to, $_POST['subject'], $_POST['body']);
+        $response = $manager->send($to, stripslashes($_POST['subject']), stripslashes($_POST['body']));
         if ('copy' == $_POST['cc_me']) {
-            $message = "Message sent to: " . $_POST['to_name'] . "\n" . $_POST['body'];
-            $response = $manager->send($from, $_POST['subject'], $message);
+            $message = "Message sent to: " . stripslashes($_POST['to_name']) . "\n" . stripslashes($_POST['body']);
+            $response = $manager->send($from, stripslashes($_POST['subject']), $message);
         }
 
         echo json_encode($response);

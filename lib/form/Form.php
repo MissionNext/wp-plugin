@@ -138,7 +138,15 @@ class Form {
                         }
                         else
                         {
-                            $fields[$_field] = stripslashes(trim($values));
+                            if (is_array($values)) {
+                                foreach ($values as &$item) {
+                                    $item = stripslashes(trim($item));
+                                }
+                                $fields[$_field] = $values;
+                            } else {
+                                $fields[$_field] = stripslashes(trim($values));
+                            }
+
                         }
                     }
                 }

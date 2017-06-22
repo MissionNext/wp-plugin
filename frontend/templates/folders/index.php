@@ -42,7 +42,7 @@
         </tbody>
     </table>
 <?php } 
-// echo "<br>\$userRole = $userRole";
+// echo "<br>\$userRole = $userRole; \$folders = $folders; \$user_id = $user_id";
 ?>
 
 
@@ -88,6 +88,23 @@
     <p>Enter folder name:</p>
     <input type="hidden" name="id"/>
     <input type="text" name="folder"/>
+</div>
+<?
+// link for EN users only
+$sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
+// app_id is not identified, so it is hardcoded here for use to organize the tools to for agency users to organize the candidates from affiliated organizations. 
+if (preg_match("/explorenext/",$sniff_host)) { 
+	// to thwart robots 
+	$site_id = 3; 
+	$factor		 = rand(10,99); // generate random two-digit number
+	$factored	 = $factor * $user_id; // factored is the product of the random number and user_id 
+	$pass_string = $factor.$factored; // pass this string, then extract user_id as $factored / $factor 
+}
+
+?>
+<div id="folder_migrate" title="Migrate FP to EN">
+    <p><a href="https://info.missionnext.org/folder_migration.php?uid=<? echo $pass_string ?>" target="blank">Migrate finishers.org folder assignments to ExploreNext ...</a></p>
+    
 </div>
 
 <script>

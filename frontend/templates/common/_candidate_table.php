@@ -24,13 +24,15 @@ while (list($key, $val) = each($Cookie_Keys)) {
 	if (preg_match("/wordpress_logged_in/",$val)) { $this_key = $key; }
 }
 // echo "<br>\$userRole = $userRole; \$role = $role; \$userId = $userId; \$loggedRole = $loggedRole ";
-if ($loggedRole == "agency") { 
-	$agency_user = $Cookie_Values[$this_key]; 
-	$pipe_pos    = strpos($agency_user,"|");
-	// the username is before the pipe character. Usernames can contain a space, so these are replaced with an underline 
-	$agency_un   = str_replace(" ","_",trim(substr($agency_user, 0, $pipe_pos)));
-	$factor		 = rand(10,99); // generate random two-digit number
-	// echo "<br>\$factor = $factor; \$agency_un = $agency_un";
+if ($loggedRole) { 
+	if ($loggedRole == "agency") { 
+		$agency_user = $Cookie_Values[$this_key]; 
+		$pipe_pos    = strpos($agency_user,"|");
+		// the username is before the pipe character. Usernames can contain a space, so these are replaced with an underline 
+		$agency_un   = str_replace(" ","_",trim(substr($agency_user, 0, $pipe_pos)));
+		$factor		 = rand(10,99); // generate random two-digit number
+		// echo "<br>\$factor = $factor; \$agency_un = $agency_un";
+	}
 }
 
 // must distinguish which application is in use for users with more than one subscriptiion, since there is more than one app_id 

@@ -48,7 +48,7 @@ elseif (preg_match("/jg./",$sniff_host)) { $site_id = 4; }
 								$factored	 = $factor * $rep_id; // factored is the product of the random number and user_id 
 								$pass_string = $factor.$factored; // pass this string, then extract user_id as $factored / $factor 
 			                    ?>
-                                    <a href="/presentation"><?php echo __('My Presentation', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                                    <!--<a href="/presentation"><?php echo __('My Presentation', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>-->
                                     <a href="/affiliates"><?php echo __('Affiliates', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                                     <?php echo "<a href='https://info.missionnext.org/recruit_candidates.php?appid=$site_id' target='_blank'>Affiliate Candidates</a>"; ?>
                                     <a href="/affiliates/jobs"><?php echo ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_JOB_PLURAL)) ?></a>

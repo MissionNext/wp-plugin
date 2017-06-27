@@ -15,16 +15,19 @@ $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before
 // echo "<br>$sniff_host";
 if (preg_match("/explorenext/",$sniff_host))   { $this_app = 3; }
 elseif (preg_match("/teachnext/",$sniff_host)) { $this_app = 6; }
-// echo "<br>\$this_app = $this_app";
+$number_jobs = count($jobs);
+// echo "<br>\$this_app = $this_app; \$number_jobs = $number_jobs";
 ?>
 
 <div class="page-header">
     <h1><?php echo ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_JOB_PLURAL)) ?></h1>
 </div>
 <div class="page-content">
-    <?php if($jobs): ?> 
-    
-    <table class="table table-bordered">
+    <?php if($jobs): 
+    if ($number_jobs > 9): ?> 
+    <a class="btn btn-success" href="/job/new"><?php echo __("New Job", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a><br><br>
+     <?php endif; ?> 
+     <table class="table table-bordered">
         <thead>
             <tr>
                 <td class="expiration"><strong><?php echo __("Expires", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></strong></td>

@@ -295,7 +295,7 @@ class matchesController extends AbstractLayoutController {
                     $matchedFields++;
 
                 foreach ($results as $resultItem) {
-                    if (($resultItem['matchingDataKey'] == $field['symbol_key'] || $resultItem['mainDataKey'] == $field['symbol_key']) && $resultItem['matches'])
+                    if ((isset($resultItem['matchingDataKey']) && $resultItem['matchingDataKey'] == $field['symbol_key'] || isset($resultItem['mainDataKey']) && $resultItem['mainDataKey'] == $field['symbol_key']) && $resultItem['matches'])
                         $matchedFields++;
                 }
             }
@@ -312,7 +312,7 @@ class matchesController extends AbstractLayoutController {
                         $matchesFlag = true;
 
                     foreach ($results as $resultItem) {
-                        if (($resultItem['matchingDataKey'] == $field['symbol_key'] || $resultItem['mainDataKey'] == $field['symbol_key']) && $resultItem['matches'])
+                        if (isset($resultItem['matchingDataKey']) && ($resultItem['matchingDataKey'] == $field['symbol_key'] || isset($resultItem['mainDataKey']) && $resultItem['mainDataKey'] == $field['symbol_key']) && $resultItem['matches'])
                             $matchesFlag = true;
                     }
 

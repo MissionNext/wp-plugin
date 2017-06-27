@@ -7,8 +7,8 @@
  * @var Array $fields
  * @var \MissionNext\lib\core\Context $context
  */
- 
-// echo "\$name = $name; \$userRole = $userRole"; 
+
+// echo "\$name = $name; \$userRole = $userRole";
 // print_r($candidate);
 $config = $context->getConfig();
 function fieldEmpty($field){
@@ -23,15 +23,15 @@ function groupEmpty($group){
     return true;
 }
 // print_r($user); echo "<br>\$userRole = $userRole";
-$organization_id = $user[id];
+$organization_id = $user['id'];
 // echo "\$organization_id = $user[id] ";
 $factor		 = rand(10,99); // generate random two-digit number
-$factored	 = $factor * $candidate['id'];  // factored is the product of the random number and user_id 
-$pass_string = $factor.$factored; // pass this string, then extract user_id as $factored / $factor 
-$factor_org  = $factor * $organization_id;  // factored is the product of the random number and user_id 
-$org_string  = $factor.$factor_org; // pass this string, then extract organization_id as $factored / $factor 
+$factored	 = $factor * $candidate['id'];  // factored is the product of the random number and user_id
+$pass_string = $factor.$factored; // pass this string, then extract user_id as $factored / $factor
+$factor_org  = $factor * $organization_id;  // factored is the product of the random number and user_id
+$org_string  = $factor.$factor_org; // pass this string, then extract organization_id as $factored / $factor
 
-$sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
+$sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash
 if (preg_match("/explorenext/",$sniff_host)) {
     $site = 3 * $factor;
 }
@@ -66,7 +66,7 @@ function function_jobs() {
             </div>
             <?php if($candidate['email'] != $user['email']): ?>
                 <div class="buttons">
-                    <a onclick="EmailPopup.open('<?php echo $user['email'] ?>', '<?php echo $candidate['email'] ?>')" class="btn btn-primary"><?php echo __("Send message", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                    <a onclick="EmailPopup.open('<?php echo $user['id'] ?>', '<?php echo $candidate['id'] ?>', '<?php echo isset($user['profileData']['agency_full_name']) ? str_replace("'", "`", $user['profileData']['agency_full_name']) : str_replace("'", "`", $user['profileData']['organization_name']) ?>', '<?php echo str_replace("'", "`", $name) ?>')" class="btn btn-primary"><?php echo __("Send message", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                 </div>
             <?php endif; ?>
 
@@ -78,17 +78,17 @@ function function_jobs() {
             <?php endif; ?>
             <?php if( $userRole == \MissionNext\lib\Constants::ROLE_ORGANIZATION || $userRole == \MissionNext\lib\Constants::ROLE_AGENCY): ?>
                 <div class="buttons">
-                    <button class="btn btn-default" title="Qualified Candidate Scale" onclick="function_qcs()"><a>View QCS Scale</a></button> 
+                    <button class="btn btn-default" title="Qualified Candidate Scale" onclick="function_qcs()"><a>View QCS Scale</a></button>
                 </div>
                 <div class="buttons">
-                    <button class="btn btn-default" title="Printer Friendly Display with What Matched" onclick="function_print()"><a>Print/Forward Profile</a></button> 
+                    <button class="btn btn-default" title="Printer Friendly Display with What Matched" onclick="function_print()"><a>Print/Forward Profile</a></button>
                 </div>
 				<?php if($userRole != "agency") { ?>
                 <div class="buttons">
-                    <button class="btn btn-default" title="Matches to Your Jobs" onclick="function_jobs()"><a>Job Matches</a></button> 
+                    <button class="btn btn-default" title="Matches to Your Jobs" onclick="function_jobs()"><a>Job Matches</a></button>
                 </div>
                 <?php } ?>
-                <!--<br> Test For IE: 
+                <!--<br> Test For IE:
                 <div class="buttons">
                     <button class="btn btn-default"><a href="https://info.missionnext.org/qcs_view.php?uid=<?php echo $pass_string ?>" title="Qualified Candidate Scale" target="_blank">View QCS Scale</a></button>
                 </div>
@@ -98,7 +98,7 @@ function function_jobs() {
                 <div class="buttons">
                     <button class="btn btn-default"><a href="https://info.missionnext.org/jobs_view.php?uid=<?php echo $pass_string ?>&oid=<?php echo $org_string ?>&site=<?php echo $site ?>" title="Matches to Your Jobs" target="_blank">Job Matches</a></button>
                 </div>-->
-               <?php if( $userRole != \MissionNext\lib\Constants::ROLE_CANDIDATE ): 
+               <?php if( $userRole != \MissionNext\lib\Constants::ROLE_CANDIDATE ):
                $last_login = substr($candidate['last_login'],0,10);
                if ($last_login == "2010-01-01") { $last_login = substr($candidate['updated_at'],0,10); }
                ?>
@@ -109,10 +109,10 @@ function function_jobs() {
                     <tr><td style='text-align:left'>Last Update&nbsp;</td><td><?php echo substr($candidate['updated_at'],0,10) ?></td></tr>
                     <tr><td style='text-align:left'>Date Created&nbsp;</td><td><?php echo substr($candidate['created_at'],0,10) ?></td></tr>
                     </table>
-                    
+
                 </div>
             <?php endif; ?>
-             
+
             <?php endif; ?>
         </div>
     </div>
@@ -138,6 +138,9 @@ function function_jobs() {
 
                                     <?php elseif($field['type'] == 'file' && $field['value']): ?>
                                         <a href="<?php echo $config->get('api_base_path') . '/' . $config->get('api_uploads_dir') . '/' . $field['value'] ?>" class="mn-input-file-data"></a>
+                                    <?php elseif('boolean' == $field['type'] && $field['value']): ?>
+                                        <?php echo "&nbsp;"; ?>
+                                        <?php echo (1 == $field['value']) ? "Yes" : "No" ; ?>
                                     <?php else: echo "&nbsp;"; ?> <!--space added by Nelson Apr 20, 2016-->
                                         <?php echo $field['value'] ?>
                                     <?php endif; ?>

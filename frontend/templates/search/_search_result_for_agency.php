@@ -41,8 +41,6 @@
         $default_affiliate = key($additional_info['affiliates']);
     }
 
-    uasort($foldersApi, 'sortFolders');
-
     $folders = array();
     $folders[$default_folder] = $default_folder;
     foreach ($additional_info['folders'] as $folder) {
@@ -75,11 +73,6 @@
                 $groups[$key][$default_folder?$default_folder:key($folders)][] = $item;
             }
         }
-    }
-
-
-    function sortFolders($a, $b){
-        return $a['id'] < $b['id']? -1: 1;
     }
 
     function getProfileField($item, $symbol_key){

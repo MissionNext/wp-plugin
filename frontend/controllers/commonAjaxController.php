@@ -60,16 +60,37 @@ class commonAjaxController extends AbstractLayoutController {
             || !$this->userId
             || !isset($_POST['from'])
             || !isset($_POST['to'])
+            || !isset($_POST['to_name'])
             || !isset($_POST['subject'])
             || !isset($_POST['body'])
         ){
             $this->forward404();
         }
 
+        $fromValue = $_POST['from'];
+        $toValue = $_POST['to'];
+
+        $subject = stripslashes($_POST['subject']);
+        $body = stripslashes($_POST['body']);
+
+        $cc_me = $_POST['cc_me'];
+        $to_name = stripslashes($_POST['to_name']);
+
+        $from = $this->api->getUserProfile($fromValue);
+        $from = $from['email'];
+
+        $to = $this->api->getUserProfile($toValue);
+        $to = $to['email'];
+
         $manager = Context::getInstance()->getMailService();
 
-        $manager->from = $_POST['from'];
-        $response = $manager->send($_POST['to'], $_POST['subject'], $_POST['body']);
+        $options = get_option('sp_settings');
+        $manager->from = (isset($options['from_email']) && !empty($options['from_email'])) ? $options['from_email'] : $from;
+        $response = $manager->send($to, $subject, $body);
+        if ('copy' == $cc_me) {
+            $message = "Message sent to: " . $to_name . "\n" . $body;
+            $response = $manager->send($from, $subject, $message);
+        }
 
         echo json_encode($response);
 

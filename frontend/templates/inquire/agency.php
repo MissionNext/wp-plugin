@@ -29,11 +29,10 @@
             </tr>
 
             <?php foreach($job['inquiries'] as $inquirie): ?>
-
             <tr data-id="<?php echo $inquirie['id'] ?>" data-job-id="<?php echo $job['id'] ?>" data-candidate-id="<?php echo $inquirie['candidate']['id'] ?>">
                 <td class="id"><?php echo ++$key ?></td>
                 <td class="name"><a href="/candidate/<?php echo $inquirie['candidate']['id'] ?>"><?php echo \MissionNext\lib\UserLib::getUserFullName($inquirie['candidate']) ?></a></td>
-                <td><a href="/organization/<?php echo $job['organization']['id'] ?>"><?php echo $job['organization']['username'] ?></a></td>
+                <td><a href="/organization/<?php echo $job['organization']['id'] ?>"><?php echo $org_names[$job['organization']['id']]; ?></a></td>
                 <td>
                     <a class="btn btn-danger inquire-cancel"><?php echo __('Remove', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                 </td>

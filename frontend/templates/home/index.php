@@ -42,7 +42,13 @@
         <?php } ?>
     </div>
 </div>
-
+<?php
+        $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
+		if (preg_match("/explorenext/",$sniff_host))   { $subdomain = "explorenext"; }
+		elseif (preg_match("/teachnext/",$sniff_host)) { $subdomain = "teachnext"; }
+		elseif (preg_match("/jg./",$sniff_host)) { $subdomain = "jg"; }
+if ($subdomain != "jg") {
+?>
 <div class="info-icons">
     <ul>
         <li>
@@ -71,15 +77,24 @@
             </li>
         <?php } ?>
     </ul>
-</div>
-
-<script type="text/javascript">
-    jQuery(function($){
-        jQuery.get('/dashboard/check/profile', function(response) {
-            parsedResponse = JSON.parse(response);
-            if ('unvalid' == parsedResponse) {
-                location.href = '/profile';
-            }
-        });
-    })(jQuery);
-</script>
+</div> <!--<div class="info-icons">-->
+<? } // if ($subdomain != "jg") 
+	else { 
+/* $Cookie_Values = array_values($_COOKIE); // an array with indexed keys 
+print_r($_COOKIE); 
+$Cookie_Keys   = array_keys($_COOKIE);   // an array of just the cookie keys 
+while (list($key, $val) = each($Cookie_Keys)) {
+	// This is the cookie key. (Following wordpress_logged_in there is a long random string that has no meaning. 
+	// capture the index of $Cookie_Values for a cookie with key containing "/wordpress_logged_in/"
+	// if (preg_match("/wordpress_logged_in/",$val)) { $this_key = $key; }
+	echo "<br>$key => $val";
+}
+*/
+	?>
+	<table>
+	<tr><td align="center">JOURNEY GUIDE DASHBOARD</p></td></tr>
+	<tr><td align="center"><a href="https://guides.missionnext.org/jg_home.php"><img src="<?php echo getResourceUrl('/resources/images/dash_affiliates.png') ?>" /></a></td></tr>
+	<tr><td align="center">Providing information and challege to serve in missions</p></td></tr>
+	</table>
+	<?php }
+?>

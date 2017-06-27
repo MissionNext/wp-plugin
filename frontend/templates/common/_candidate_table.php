@@ -24,13 +24,15 @@ while (list($key, $val) = each($Cookie_Keys)) {
 	if (preg_match("/wordpress_logged_in/",$val)) { $this_key = $key; }
 }
 // echo "<br>\$userRole = $userRole; \$role = $role; \$userId = $userId; \$loggedRole = $loggedRole ";
-if ($loggedRole == "agency") { 
-	$agency_user = $Cookie_Values[$this_key]; 
-	$pipe_pos    = strpos($agency_user,"|");
-	// the username is before the pipe character. Usernames can contain a space, so these are replaced with an underline 
-	$agency_un   = str_replace(" ","_",trim(substr($agency_user, 0, $pipe_pos)));
-	$factor		 = rand(10,99); // generate random two-digit number
-	// echo "<br>\$factor = $factor; \$agency_un = $agency_un";
+if ($loggedRole) { 
+	if ($loggedRole == "agency") { 
+		$agency_user = $Cookie_Values[$this_key]; 
+		$pipe_pos    = strpos($agency_user,"|");
+		// the username is before the pipe character. Usernames can contain a space, so these are replaced with an underline 
+		$agency_un   = str_replace(" ","_",trim(substr($agency_user, 0, $pipe_pos)));
+		$factor		 = rand(10,99); // generate random two-digit number
+		// echo "<br>\$factor = $factor; \$agency_un = $agency_un";
+	}
 }
 
 // must distinguish which application is in use for users with more than one subscriptiion, since there is more than one app_id 
@@ -49,8 +51,6 @@ $foldersApi = \MissionNext\lib\core\Context::getInstance()->getApiManager()->get
 
 $default_folder_id = \MissionNext\lib\SiteConfig::getDefaultFolder($role);
 $default_folder = '';
-
-uasort($foldersApi, 'sortFolders');
 
 $folders = array();
 
@@ -86,10 +86,6 @@ foreach($items as $item){
 $matching = isset($items[0]['matching_percentage']);
 
 //FAVORITES
-
-function sortFolders($a, $b){
-    return $a['id'] < $b['id']? -1: 1;
-}
 
 function getProfileField($item, $symbol_key){
 
@@ -260,11 +256,11 @@ function getLastLogin($item){
     <textarea cols="25" rows="5" class="message" maxlength="1000"></textarea>
 </div>
 
-<div id="match-highlight">
+<div id="match-highlight" style="display: none;">
 
 </div>
 
-<div id="folder-message">
+<div id="folder-message" style="display: none;">
 
 </div>
 

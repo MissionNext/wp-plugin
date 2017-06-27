@@ -128,17 +128,25 @@ class Form {
                             {
                                 foreach($values as $value)
                                 {
-                                    $fields[$_field][$value] = $value;
+                                    $fields[$_field][$value] = stripslashes(trim($value));
                                 }
                             }
                             else
                             {
-                                $fields[$_field] = array($values => $values);
+                                $fields[$_field] = array($values => stripslashes(trim($values)));
                             }
                         }
                         else
                         {
-                            $fields[$_field] = $values;
+                            if (is_array($values)) {
+                                foreach ($values as &$item) {
+                                    $item = stripslashes(trim($item));
+                                }
+                                $fields[$_field] = $values;
+                            } else {
+                                $fields[$_field] = stripslashes(trim($values));
+                            }
+
                         }
                     }
                 }

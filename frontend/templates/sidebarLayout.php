@@ -100,8 +100,8 @@ elseif (preg_match("/jg./",$sniff_host)) { $site_id = 4; }
         jQuery(document).ready(function(){
                 inprogress.show();
                 matches.hide();
-                checkQueueStatus();
-                setInterval(checkQueueStatus, 10000);
+                //checkQueueStatus();
+                //setInterval(checkQueueStatus, 10000);
             });
         function checkQueueStatus() {
                 jQuery.get('/check/queue', function( response ){

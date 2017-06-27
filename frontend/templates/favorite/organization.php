@@ -13,7 +13,7 @@ if (!$role) { $role = "candidate"; }
 </div>
 <div class="page-content">
     <?php if($favorites): ?>
-    <table class="table result">
+    <table class="table result" data-role="<?php echo $role; ?>">
         <thead>
         <tr>
             <th>#</th>
@@ -35,13 +35,10 @@ if (!$role) { $role = "candidate"; }
             <td>
                 <a class="btn btn-danger favorite-remove"><?php echo __('Unfavorite', \MissionNext\lib\Constants::TEXT_DOMAIN ) ?></a>
             </td>
-            <td class="folder">
-                <pre>
-                    <?php echo $item['folder']; ?>
-                </pre>
+            <td class="folder" width="130">
                 <select>
                     <?php foreach($folders as $value => $folder): ?>
-                        <option <?php if($item['folder'] == $value) echo 'selected="selected"' ?> value="<?php echo $value ?>"><?php echo $folder ?></option>
+                        <option <?php if($favorite['folder'] == $folder) echo 'selected="selected"' ?> value="<?php echo $value ?>"><?php echo $folder ?></option>
                     <?php endforeach; ?>
                 </select>
             </td>
@@ -89,7 +86,9 @@ if (!$role) { $role = "candidate"; }
                 tr.attr('data-name')
             );
         }
-    );
+    ).on('change', '.folder select', function (e) {
+        changeFolder(jQuery(e.target).parents('tr'));
+    });
 
     jQuery(document).ready(function(){
         jQuery('#note').dialog({
@@ -168,4 +167,52 @@ if (!$role) { $role = "candidate"; }
         });
     }
 
+    function changeFolder(row){
+
+        row = jQuery(row);
+
+        var folder = row.find('td.folder select').val();
+
+        jQuery.ajax({
+            type: "POST",
+            url: "/folder/change",
+            data: {
+                role: row.parents('table').attr('data-role'),
+                id: row.attr('data-id'),
+                folder: folder
+            },
+            success: function(data, textStatus, jqXHR){
+                if (typeof data.error != "undefined" && data.error.length > 0) {
+                    jQuery('#folder-message').dialog({
+                        autoOpen: false,
+                        height: '300',
+                        width: '300',
+                        modal: true,
+                        buttons: {
+                            "<?php echo __('Close', \MissionNext\lib\Constants::TEXT_DOMAIN); ?>" : function(){
+                                jQuery(this).dialog('close');
+                            }
+                        },
+                        close: function() {
+                            jQuery(this).empty();
+                        }
+                    });
+                    var dialog = jQuery('#folder-message');
+
+                    dialog.html("<p>" + data.error + "</p>");
+
+                    dialog.dialog('open');
+
+                } else {
+                    resetIndexes();
+                }
+
+            },
+            error: function(jqXHR, textStatus, errorThrown){
+
+            },
+            dataType: "JSON"
+        });
+
+    }
 </script>

@@ -22,8 +22,6 @@ class homeController extends AbstractLayoutController {
 
         $this->subscriptions = $this->api->getSubscriptionsForUser($this->userId);
 
-        $this->matching = $this->api->checkQueue($this->userId);
-
         $configs = $this->api->getSubscriptionConfigs();
         $candidateSubscriptions = [];
         $blockedIndexes = [];

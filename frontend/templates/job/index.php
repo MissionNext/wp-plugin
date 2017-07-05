@@ -39,7 +39,7 @@ $number_jobs = count($jobs);
         </thead>
         <tbody>
         <?php foreach($jobs as $job): ?>
-        <?php if($this_app == $job['app_id']): ?>
+        <?php if(3 == $job['app_id']): ?>
         <?php if ($date_today > $job['profileData']['listing_expiration']) { $font = "red"; $warn = "Yes"; } else { $font = "black"; } ?>
             <tr>
                 <td class="expiration"><font color='<?php echo $font ?>'><?php echo $job['profileData']['listing_expiration'] ?></font></td>

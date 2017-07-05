@@ -74,8 +74,9 @@ if ($subdomain != "jg") {
         <?php } ?>
     </ul>
 </div> <!--<div class="info-icons">-->
-
-	?>
+<? } // if ($subdomain != "jg")
+else {
+    ?>
 	<table>
 	<tr><td align="center">JOURNEY GUIDE DASHBOARD</p></td></tr>
 	<tr><td align="center"><a href="https://guides.missionnext.org/jg_home.php"><img src="<?php echo getResourceUrl('/resources/images/dash_affiliates.png') ?>" /></a></td></tr>

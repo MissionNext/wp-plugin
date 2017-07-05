@@ -8,6 +8,7 @@
 
 namespace MissionNext\frontend\controllers;
 
+use MissionNext\lib\Constants;
 use MissionNext\lib\core\Context;
 use MissionNext\lib\core\Controller;
 
@@ -133,5 +134,119 @@ class customAjaxController extends Controller
         echo json_encode($result);
 
         return false;
+    }
+
+    public function selectUserPrefers()
+    {
+        $role = element('role', $_GET);
+        $userid = element('userid', $_GET);
+
+        if($role == Constants::ROLE_CANDIDATE){
+            $orgFavorites = $this->api->getFavorites($userid, 'organization');
+            $jobFavorites = $this->api->getFavorites($userid, 'job');
+            $favoritesCount = count($orgFavorites) + count($jobFavorites);
+
+            $inquiriesCount = $this->getInquiriesViews($role, $userid);
+            $result = [
+                'favoritesCount'    => $favoritesCount,
+                'inquiriesCount'   => $inquiriesCount
+            ];
+        } else {
+            $favorites = $this->api->getFavorites($userid, 'candidate');
+            $favoritesCount = count($favorites);
+
+            $inquiriesCount = $this->getInquiriesViews($role, $userid);
+
+            $affiliates = $this->api->getAffiliates($userid, 'any');
+            $affiliatesCount = count($affiliates);
+
+            $result = [
+                'favoritesCount'    => $favoritesCount,
+                'inquiriesCount'    => $inquiriesCount,
+                'affiliatesCount'   => $affiliatesCount
+            ];
+        }
+
+        echo json_encode($result);
+
+        return false;
+    }
+
+    public function getUserSubscriptions() {
+        $userid = element('userid', $_GET);
+
+        $subscriptions = $this->api->getSubscriptionsForUser($userid);
+
+        $configs = $this->api->getSubscriptionConfigs();
+        $candidateSubscriptions = [];
+        $blockedIndexes = [];
+        foreach($configs as $app){
+            $app_block = false;
+            foreach($app['configs'] as $app_options){
+                if ("block_website" == $app_options['key']){
+                    $app_block = $app_options['value'];
+                }
+            }
+            if (!$app_block) {
+                foreach($app['sub_configs'] as $sub_config){
+                    if($sub_config['role'] == Constants::ROLE_CANDIDATE && $sub_config['price_year'] == 0){
+                        $candidateSubscriptions[$app['id']] = $sub_config;
+                        $candidateSubscriptions[$app['id']]['app_name'] = $app['name'];
+                    }
+                }
+            } else {
+                $blockedIndexes[] = $app["id"];
+            }
+        }
+
+        $subsIndexes = [];
+        $counter = 0;
+        foreach($subscriptions as $sub_item){
+            unset($candidateSubscriptions[$sub_item['app_id']]);
+
+            if(in_array($sub_item['app_id'], $blockedIndexes)){
+                $subsIndexes[] = $counter;
+            }
+            $counter++;
+        }
+
+        foreach($subsIndexes as $val){
+            unset($subscriptions[$val]);
+        }
+
+        $result = [
+            'subscriptions' => $subscriptions,
+            'candidateSubs' => $candidateSubscriptions
+        ];
+
+        echo json_encode($result);
+
+        return false;
+    }
+
+    private function getInquiriesViews($role, $userid){
+        $inquiries = array();
+
+        switch ($role) {
+            case "candidate" : {
+
+                $tmpInquiries = $this->api->getInquiredJobs($userid);
+                $inquiries = [];
+                foreach ($tmpInquiries as $jobItem) {
+                    $inquiries[] = $jobItem;
+                }
+                break;
+            }
+            case "organization" : {
+                $inquiries = $this->api->getInquiredCandidatesForOrganization($userid);
+                break;
+            }
+            case "agency" : {
+                $inquiries = $this->api->getInquiredCandidatesForAgency($userid);
+                break;
+            }
+        }
+
+        return count($inquiries);
     }
 }

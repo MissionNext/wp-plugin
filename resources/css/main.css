@@ -532,3 +532,6 @@ table.payment td.price{
     width: 307px;
     height: 90px;
 }
+.info-icons .spinner-icon{
+    width: 16px;
+}

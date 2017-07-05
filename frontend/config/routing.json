@@ -233,6 +233,16 @@
         "action"    : "deleteJobFile"
     },
 
+    "/get/user/favs": {
+        "controller": "customAjax",
+        "action"    : "selectUserPrefers"
+    },
+
+    "/get/user/subscriptions": {
+        "controller": "customAjax",
+        "action"    : "getUserSubscriptions"
+    },
+
     "/favorite": {
         "controller": "favorite",
         "action" : "show"

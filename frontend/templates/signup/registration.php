@@ -47,9 +47,9 @@ if ($role == "candidate" && $subdomain == "jg") {
 
                 <div class="col-sm-9 col-sm-offset-3">
                     <?php if (isset($subdomain) && $subdomain == "jg") { ?>
-                        <input id="captcha" name="captcha[value]" type="text" style="width: 150px;" /> &nbsp; (Case Sensitive) <br>To prove you are a real person
+                        <input id="captcha" name="captcha[value]" type="text" style="width: 150px;" /> <br />To prove you are a real person
                     <?php } else { ?>
-                        <input id="captcha" name="captcha[value]" type="text"/> &nbsp; (Case Sensitive) <br>To prove you are a real person
+                        <input id="captcha" name="captcha[value]" type="text"/> <br />To prove you are a real person
                     <?php } ?>
                 </div>
             </div>

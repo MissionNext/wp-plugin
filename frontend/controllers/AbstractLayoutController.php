@@ -151,11 +151,14 @@ abstract class AbstractLayoutController extends Controller {
                     $savedArray = array_values($value);
                     sort($savedArray);
 
-                    if (is_array($submitedGroups[$group][$key])) {
-                        $submitArray = array_values($submitedGroups[$group][$key]);
-                        sort($submitArray);
-                    } else {
-                        $submitArray = [ $submitedGroups[$group][$key] ];
+                    $submitArray = [ 0 => null ];
+                    if (isset($submitedGroups[$group][$key])) {
+                        if (is_array($submitedGroups[$group][$key])) {
+                            $submitArray = array_values($submitedGroups[$group][$key]);
+                            sort($submitArray);
+                        } else {
+                            $submitArray = [ $submitedGroups[$group][$key] ];
+                        }
                     }
 
                     if (count($savedArray) != count($submitArray)) {

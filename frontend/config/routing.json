@@ -77,6 +77,10 @@
         "controller" : "home",
         "action" : "index"
     },
+    "/dashboard/check/profile" : {
+        "controller" : "home",
+        "action" : "checkProfile"
+    },
     "/user/account" : {
         "controller" : "home",
         "action" : "wpProfile"
@@ -227,6 +231,16 @@
     "/delete/job/file": {
         "controller": "customAjax",
         "action"    : "deleteJobFile"
+    },
+
+    "/get/user/favs": {
+        "controller": "customAjax",
+        "action"    : "selectUserPrefers"
+    },
+
+    "/get/user/subscriptions": {
+        "controller": "customAjax",
+        "action"    : "getUserSubscriptions"
     },
 
     "/favorite": {

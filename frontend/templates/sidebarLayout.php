@@ -61,7 +61,10 @@ elseif (preg_match("/jg./",$sniff_host)) { $site_id = 4; }
 
                                 <?php if($userRole == 'organization' && $site_id != 4): ?>
                                     <a href="/presentation"><?php echo __('My Presentation', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
-                                 
+                                  <?php if ($user['id'] == 192): ?>
+                                    <a href="https://info.missionnext.org/org_matches.php?s=<?php echo $site_id ?>" title='Under development for SC HQ account only' target='_blank' class="matches"><?php echo sprintf(__('<font color=brown>%s Matches</font>', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_CANDIDATE))) ?></a>
+                                 <?php endif; ?>
+                     
                                     <a href="/organization/matches/candidate" class="matches"><?php echo sprintf(__('%s Matches', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_CANDIDATE))) ?></a>
                                     <a href="/candidate/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_CANDIDATE_PLURAL))) ?></a>
                                     <a href="/favorite"><?php echo __('My Favorites', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>

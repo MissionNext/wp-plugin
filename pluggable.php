@@ -110,6 +110,11 @@ function mn_password_reset(WP_User $user, $new_pass){
 }
 add_action('password_reset', 'mn_password_reset', 10, 2);
 
+function my_expiration_filter(){
+    return 24 * 60 * 60;
+}
+add_filter('auth_cookie_expiration', 'my_expiration_filter', 99, 3);
+
 function mn_login_url( $login_url, $redirect ) {
     return '/login-here';
 }

@@ -9,7 +9,11 @@
  */
 
 $data = parse_url($_SERVER['REQUEST_URI']);
-parse_str($data['query'], $url_args);
+$url_args = [];
+if (isset($data['query'])) {
+    parse_str($data['query'], $url_args);
+}
+
 $sort_by = isset($url_args['sort_by']) ? $url_args['sort_by']: 'matching_percentage';
 $order_by = isset($url_args['order_by']) ? $url_args['order_by']: 'desc';
 $page = isset($url_args['page']) ? $url_args['page'] : 1;

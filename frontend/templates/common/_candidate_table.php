@@ -119,36 +119,53 @@ function getLastLogin($item){
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th class="sortable <?php echo ('name' == $sort_by) ? $order_by : ''; ?>">
-                        <a href="<?php echo $data['path'] . '?' . http_build_query([
-                                'page'      => $page,
-                                'sort_by'   => 'name',
-                                'order_by'  => (isset($sort_by) && 'name' == $sort_by && $order_by == 'asc') ? 'desc' : 'asc',
-                            ]); ?>">
+                    <?php if (isset($pagename) && 'search' == $pagename) { ?>
+                        <th>
                             <?php echo __('Candidate Name', \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
-                        </a>
-                    </th>
-                    <th class="sortable <?php echo ('birth_date' == $sort_by) ? $order_by : ''; ?>">
-                        <a href="<?php echo $data['path'] . '?' . http_build_query([
-                                'page'      => $page,
-                                'sort_by'   => 'birth_date',
-                                'order_by'  => (isset($sort_by) && 'birth_date' == $sort_by && $order_by == 'asc') ? 'desc' : 'asc',
-                            ]); ?>">
+                        </th>
+                        <th>
                             <?php echo __("Age", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
-                        </a>
-                    </th>
+                        </th>
+                    <?php } else { ?>
+                        <th class="sortable <?php echo ('name' == $sort_by) ? $order_by : ''; ?>">
+                            <a href="<?php echo $data['path'] . '?' . http_build_query([
+                                    'page'      => $page,
+                                    'sort_by'   => 'name',
+                                    'order_by'  => (isset($sort_by) && 'name' == $sort_by && $order_by == 'asc') ? 'desc' : 'asc',
+                                ]); ?>">
+                                <?php echo __('Candidate Name', \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+                            </a>
+                        </th>
+                        <th class="sortable <?php echo ('birth_date' == $sort_by) ? $order_by : ''; ?>">
+                            <a href="<?php echo $data['path'] . '?' . http_build_query([
+                                    'page'      => $page,
+                                    'sort_by'   => 'birth_date',
+                                    'order_by'  => (isset($sort_by) && 'birth_date' == $sort_by && $order_by == 'asc') ? 'desc' : 'asc',
+                                ]); ?>">
+                                <?php echo __("Age", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+                            </a>
+                        </th>
+                    <?php } ?>
+
                     <th><?php echo __("Gender", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                     <th><?php echo __("Marital status", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                     <th><?php echo __("Location", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                    <th class="sortable <?php echo ('last_login' == $sort_by) ? $order_by : ''; ?>">
-                        <a href="<?php echo $data['path'] . '?' . http_build_query([
-                                'page'      => $page,
-                                'sort_by'   => 'last_login',
-                                'order_by'  => (isset($sort_by) && 'last_login' == $sort_by && $order_by == 'desc') ? 'asc' : 'desc',
-                            ]); ?>">
+                    <?php if (isset($pagename) && 'search' == $pagename) { ?>
+                        <th>
                             <?php echo __("Last login", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
-                        </a>
-                    </th>
+                        </th>
+                    <?php } else { ?>
+                        <th class="sortable <?php echo ('last_login' == $sort_by) ? $order_by : ''; ?>">
+                            <a href="<?php echo $data['path'] . '?' . http_build_query([
+                                    'page'      => $page,
+                                    'sort_by'   => 'last_login',
+                                    'order_by'  => (isset($sort_by) && 'last_login' == $sort_by && $order_by == 'desc') ? 'asc' : 'desc',
+                                ]); ?>">
+                                <?php echo __("Last login", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+                            </a>
+                        </th>
+                    <?php } ?>
+
 
                     <?php if($matching): ?>
                         <th class="sortable <?php echo ('matching_percentage' == $sort_by) ? $order_by : ''; ?>">

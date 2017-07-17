@@ -99,7 +99,8 @@ class searchController extends AbstractLayoutController {
     }
 
     private function processSearch(){
-        $page = isset($_GET['page'])?$_GET['page']:1;
+        $page = isset($_POST['page']) ? $_POST['page'] : 1;
+        $this->page = $page;
 
         $this->form = new SearchForm($this->api, $this->userRole, $this->userId, $this->role, 'search');
         $this->searches = $this->api->getSavedSearches($this->userRole, $this->role, $this->userId);

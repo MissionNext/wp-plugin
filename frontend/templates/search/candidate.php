@@ -34,9 +34,9 @@
 
         <?php if($result): ?>
             <?php if (\MissionNext\lib\Constants::ROLE_AGENCY == $userRole && \MissionNext\lib\Constants::ROLE_CANDIDATE == $role) { ?>
-                <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_result_for_agency', compact('result', 'role', 'messages', 'userRole', 'userId', 'additional_info', 'multipleResults')) ?>
+                <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_result_for_agency', compact('result', 'role', 'messages', 'userRole', 'userId', 'additional_info', 'multipleResults', 'page', 'pages')) ?>
             <?php } else { ?>
-                <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_result', compact('result', 'role', 'messages', 'userRole', 'userId')) ?>
+                <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_result', compact('result', 'role', 'messages', 'userRole', 'userId', 'page', 'pages')) ?>
             <?php } ?>
         <?php else: ?>
             <div class="block">
@@ -68,8 +68,10 @@
     <?php if($searches): ?>
         <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_saved', array('saved' => $searches, 'role' => $role)) ?>
     <?php endif; ?>
+    <?php endif; ?>
 
-    <form role="form" action="<?php echo $_SERVER['REQUEST_URI']?>" method="POST" class="form-horizontal search-form">
+    <form id="search-form" role="form" action="<?php echo $_SERVER['REQUEST_URI']?>" method="POST" class="form-horizontal search-form <?php echo ($_SERVER['REQUEST_METHOD'] == 'POST') ? "hide" : ""; ?>">
+        <input type="hidden" name="page" value="<?php echo $page; ?>" id="page_number" />
 
         <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_form', compact('form')) ?>
 
@@ -82,6 +84,5 @@
             </div>
         </div>
     </form>
-    <?php endif; ?>
 
 </div>

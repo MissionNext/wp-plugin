@@ -21,7 +21,7 @@
         <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_save_block', array('searches' => $searches, 'search' => $search, 'role' => $role, 'userRole' => $userRole)) ?>
 
         <?php if($result): ?>
-            <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_result', compact('result', 'role', 'messages', 'userRole', 'userId')) ?>
+            <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_result', compact('result', 'role', 'messages', 'userRole', 'userId', 'page', 'pages')) ?>
         <?php else: ?>
             <div class="block">
                 <?php echo sprintf(__("No %s found", \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_JOB_PLURAL))) ?>
@@ -52,20 +52,21 @@
         <?php if($searches): ?>
             <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_saved', array('saved' => $searches, 'role' => $role)) ?>
         <?php endif; ?>
-
-        <form role="form" action="<?php echo $_SERVER['REQUEST_URI']?>" method="POST" class="form-horizontal search-form">
-
-            <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_form', compact('form')) ?>
-
-            <div class="control-buttons">
-                <div class="left">
-                    <a href="/dashboard" class="btn btn-default"><?php echo __("Dashboard", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
-                </div>
-                <div class="right">
-                    <button type="submit" class="btn btn-success"><?php echo __("Search", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
-                </div>
-            </div>
-        </form>
     <?php endif; ?>
+
+    <form id="search-form" role="form" action="<?php echo $_SERVER['REQUEST_URI']?>" method="POST" class="form-horizontal search-form <?php echo ($_SERVER['REQUEST_METHOD'] == 'POST') ? "hide" : ""; ?>">
+        <input type="hidden" name="page" value="<?php echo $page; ?>" id="page_number" />
+
+        <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_form', compact('form')) ?>
+
+        <div class="control-buttons">
+            <div class="left">
+                <a href="/dashboard" class="btn btn-default"><?php echo __("Dashboard", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+            </div>
+            <div class="right">
+                <button type="submit" class="btn btn-success"><?php echo __("Search", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
+            </div>
+        </div>
+    </form>
 
 </div>

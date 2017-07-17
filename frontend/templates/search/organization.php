@@ -28,7 +28,7 @@ elseif (preg_match("/teachnext/",$sniff_host)) { $this_app = 6; }
         <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_save_block', array('searches' => $searches, 'search' => $search, 'role' => $role, 'userRole' => $userRole)) ?>
 
         <?php if($result): ?>
-            <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_result', compact('result', 'role', 'messages', 'userRole', 'userId')) ?>
+            <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_result', compact('result', 'role', 'messages', 'userRole', 'userId', 'page', 'pages')) ?>
         <?php else: ?>
             <div class="block">
                 <?php echo sprintf(__("No %s found", \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_ORGANIZATION_PLURAL))) ?>
@@ -72,8 +72,10 @@ elseif (preg_match("/teachnext/",$sniff_host)) { $this_app = 6; }
     <?php if($searches): ?>
         <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_saved', array('saved' => $searches, 'role' => $role)) ?>
     <?php endif; ?>
+    <?php endif; ?>
 
-    <form role="form" action="<?php echo $_SERVER['REQUEST_URI']?>" method="POST" class="form-horizontal search-form">
+    <form id="search-form" role="form" action="<?php echo $_SERVER['REQUEST_URI']?>" method="POST" class="form-horizontal search-form <?php echo ($_SERVER['REQUEST_METHOD'] == 'POST') ? "hide" : ""; ?>">
+        <input type="hidden" name="page" value="<?php echo $page; ?>" id="page_number" />
 
         <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_form', compact('form')) ?>
 
@@ -86,6 +88,5 @@ elseif (preg_match("/teachnext/",$sniff_host)) { $this_app = 6; }
             </div>
         </div>
     </form>
-    <?php endif; ?>
 
 </div>

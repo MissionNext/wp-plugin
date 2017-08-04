@@ -150,22 +150,25 @@ else {
     function getAppLink(id) {
         switch (id) {
             case 2:
-                return 'https://finishers.missionnext.org';
+                return <?php echo $links[0]; ?>;
                 break;
             case 3:
-                return 'https://explorenext.missionnext.org';
+                return <?php echo $links[1]; ?>;
                 break;
             case 4:
-                return 'https://jg.missionnext.org';
+                return <?php echo $links[2]; ?>;
                 break;
             case 5:
-                return 'https://bammatch.missionnext.org';
+                return <?php echo $links[3]; ?>;
                 break;
             case 6:
-                return 'https://teachnext.missionnext.org';
+                return <?php echo $links[4]; ?>;
                 break;
             case 9:
-                return 'https://new.missionnext.org';
+                return <?php echo $links[5]; ?>;
+                break;
+            case 10:
+                return <?php echo $links[6]; ?>;
                 break;
             default:
                 return '';

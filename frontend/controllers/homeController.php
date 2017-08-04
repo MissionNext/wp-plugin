@@ -104,18 +104,7 @@ class homeController extends AbstractLayoutController {
             $this->affiliatesCount = count($affiliates);
         }
 
-        $config = Context::getInstance()->getConfig();
-        $links = $config->get('links');
-
-        $this->apps = [
-            2   => $links[0],
-            3   => $links[1],
-            4   => $links[2],
-            5   => $links[3],
-            6   => $links[4],
-            9   => $links[5],
-            10  => $links[6],
-     ];
+        $this->links = Context::getInstance()->getConfig()->get('links');
     }
 
     public function wpProfile(){

@@ -99,13 +99,15 @@ if (preg_match("/explorenext/",$sniff_host)) {
 	$factor		 = rand(10,99); // generate random two-digit number
 	$factored	 = $factor * $user_id; // factored is the product of the random number and user_id 
 	$pass_string = $factor.$factored; // pass this string, then extract user_id as $factored / $factor 
-}
 
 ?>
 <div id="folder_migrate" title="Migrate FP to EN">
     <p><a href="https://info.missionnext.org/folder_migration.php?uid=<? echo $pass_string ?>" target="blank">Migrate finishers.org folder assignments to ExploreNext ...</a></p>
     
 </div>
+<?php
+ } 
+?>
 
 <script>
 

@@ -18,6 +18,7 @@
                 <?php } else { ?>
                     <input type="submit" name="submit" class="btn btn-success" title="Allows Program to Continue. All required fields must be completed." value="<?php echo __("Complete? Submit", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>" />
                     <!--<input type="submit" name="savelater" class="btn btn-success" title="Saves Entries Only" value="<?php echo __("Save for Later", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>" />-->
+                    <br><font color="red">Note: No information is saved until all REQUIRED* fields are completed on all tabs. (You can always edit later.)</font>
                 <?php }?>
             </div>
         </div>

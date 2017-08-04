@@ -33,10 +33,9 @@ function groupEmpty($group){
 
                 <?php echo get_avatar($job['organization']['email'], 203) ?>
             </div>
-
         <?php if($job['organization']['email'] != $user['email']): ?>
             <div class="buttons">
-                <a onclick="EmailPopup.open('<?php echo $user['email'] ?>', '<?php echo $job['organization']['email'] ?>')" class="btn btn-primary"><?php echo __("Send message", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                <a onclick="EmailPopup.open('<?php echo $user['id'] ?>', '<?php echo $job['organization']['id'] ?>', '<?php echo str_replace("'", "`", $user['profileData']['first_name']) . ' ' . str_replace("'", "`", $user['profileData']['last_name']) ?>', '<?php echo str_replace("'", "`", $job['org_name']) ?>')" class="btn btn-primary"><?php echo __("Send message", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
             </div>
         <?php endif; ?>
 
@@ -82,6 +81,9 @@ function groupEmpty($group){
 
                                     <?php elseif($field['type'] == 'file' && $field['value']): ?>
                                         <a href="<?php echo $config->get('api_base_path') . '/' . $config->get('api_uploads_dir') . '/' . $field['value'] ?>" class="mn-input-file-data"></a>
+                                    <?php elseif('boolean' == $field['type'] && $field['value']): ?>
+                                        <?php echo "&nbsp;"; ?>
+                                        <?php echo (1 == $field['value']) ? "Yes" : "No" ; ?>
                                     <?php else: echo "&nbsp;"; ?> <!--space added by Nelson Apr 23, 2016-->
                                         <?php echo $field['value'] ?>
                                     <?php endif; ?>
@@ -112,6 +114,9 @@ function groupEmpty($group){
 
                                     <?php elseif($field['type'] == 'file' && $field['value']): ?>
                                         <a href="<?php echo $config->get('api_base_path') . '/' . $config->get('api_uploads_dir') . '/' . $field['value'] ?>" class="mn-input-file-data"></a>
+                                    <?php elseif('boolean' == $field['type'] && $field['value']): ?>
+                                        <?php echo "&nbsp;"; ?>
+                                        <?php echo (1 == $field['value']) ? "Yes" : "No" ; ?>
                                     <?php else: echo "&nbsp;"; ?> <!--space added by Nelson Apr 23, 2016-->
                                         <?php echo $field['value'] ?>
                                     <?php endif; ?>

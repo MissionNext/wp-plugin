@@ -48,6 +48,7 @@
             <tr>
                 <th>#</th>
                 <th class="name"><?php echo sprintf(__('%s Title', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_JOB))) ?></th>
+                <th><?php echo __('Additional Title', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                 <th><?php echo ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_ORGANIZATION)) ?></th>
                 <th><?php echo __('Notes', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                 <th><?php echo __('Actions', \MissionNext\lib\Constants::TEXT_DOMAIN)?></th>
@@ -59,6 +60,7 @@
                 <tr data-role="job" data-id="<?php echo $favorite['data']['id'] ?>" data-fav-id="<?php echo $favorite['id'] ?>" data-name="<?php echo $favorite['data']['name'] ?>">
                     <td class="id"><?php echo $key+1 ?></td>
                     <td class="name"><a target="_blank" href="/job/<?php echo $favorite['data']['id'] ?>"><?php echo $favorite['data']['name'] ?></a> </td>
+                    <td class="alt_name"><?php echo $favorite['data']['profileData']['second_title'] ?></a> </td>
                     <td class="organization"><a href="/organization/<?php echo $favorite['data']['organization']['id'] ?>"><?php echo $favorite['data']['organization']['profileData']['organization_name'] ?></a> </td>
                     <td class="note" data-note="<?php echo htmlentities($favorite['notes']) ?>">
                         <div <?php if(!$favorite['notes']) echo 'class="no-note"' ?>></div>

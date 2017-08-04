@@ -17,101 +17,9 @@ class homeController extends AbstractLayoutController {
 
     public function index(){
 
-        /* Simulation of the form save to get validation information */
-        $this->form = new Form($this->api, $this->userRole, 'profile', $this->userId);
-        $this->form->saveLater = null;
-        $this->form->changedFields = [
-            'status' => 'checked',
-            'changedFields' => []
-        ];
-        $data = [];
-        foreach ($this->form->groups as $key => $value) {
-            $groupData = $value->data;
-            foreach ($value->fields as $fieldKey => $fieldValue) {
-                if ($fieldValue->field['type'] == 'file') {
-                    unset($groupData[$fieldKey]);
-                }
-            }
-            $data[$key] = $groupData;
-        }
-        $this->form->data = $data;
-        $this->form->save();
-
-        if ($this->form->hasErrors()) {
-            $this->api->deactivateUserApp($this->userId);
-            $this->redirect('/profile');
-        }
-
         $this->app_key = Context::getInstance()->getApiManager()->publicKey;
         $this->name = Context::getInstance()->getUser()->getName();
 
-        $this->subscriptions = $this->api->getSubscriptionsForUser($this->userId);
-
-        $this->matching = $this->api->checkQueue($this->userId);
-
-        $configs = $this->api->getSubscriptionConfigs();
-        $candidateSubscriptions = [];
-        $blockedIndexes = [];
-        foreach($configs as $app){
-            $app_block = false;
-            foreach($app['configs'] as $app_options){
-                if ("block_website" == $app_options['key']){
-                    $app_block = $app_options['value'];
-                }
-            }
-            if (!$app_block) {
-                foreach($app['sub_configs'] as $sub_config){
-                    if($sub_config['role'] == Constants::ROLE_CANDIDATE && $sub_config['price_year'] == 0){
-                        $candidateSubscriptions[$app['id']] = $sub_config;
-                        $candidateSubscriptions[$app['id']]['app_name'] = $app['name'];
-                    }
-                }
-            } else {
-                $blockedIndexes[] = $app["id"];
-            }
-        }
-
-        $subsIndexes = [];
-        $counter = 0;
-        foreach($this->subscriptions as $sub_item){
-            unset($candidateSubscriptions[$sub_item['app_id']]);
-
-            if(in_array($sub_item['app_id'], $blockedIndexes)){
-                $subsIndexes[] = $counter;
-            }
-            $counter++;
-        }
-
-        foreach($subsIndexes as $val){
-            unset($this->subscriptions[$val]);
-        }
-
-        $this->candidateSubs = $candidateSubscriptions;
-
-        if($this->userRole == Constants::ROLE_CANDIDATE){
-            $orgFavorites = $this->api->getFavorites($this->userId, 'organization');
-            $jobFavorites = $this->api->getFavorites($this->userId, 'job');
-            $this->favoritesCount = count($orgFavorites) + count($jobFavorites);
-
-            $this->inquiriesCount = $this->getInquiriesViews();
-        } else {
-            $favorites = $this->api->getFavorites($this->userId, 'candidate');
-            $this->favoritesCount = count($favorites);
-
-            $this->inquiriesCount = $this->getInquiriesViews();
-
-            $affiliates = $this->api->getAffiliates($this->userId, 'any');
-            $this->affiliatesCount = count($affiliates);
-        }
-
-        $this->apps = [
-            1   => 'https://new.missionnext.org',
-            2   => 'http://finishersproject.missionnext.org',
-            3   => 'https://explorenext.missionnext.org',
-            4   => 'http://journeydeepens.missionnext.org',
-            5   => 'http://bammatch.missionnext.org',
-            6   => 'https://teachnext.missionnext.org',
-        ];
     }
 
     public function wpProfile(){
@@ -163,29 +71,35 @@ class homeController extends AbstractLayoutController {
         return false;
     }
 
-    private function getInquiriesViews(){
-        $inquiries = array();
 
-        switch ($this->userRole) {
-            case "candidate" : {
 
-                $tmpInquiries = $this->api->getInquiredJobs($this->userId);
-                $inquiries = [];
-                foreach ($tmpInquiries as $jobItem) {
-                    $inquiries[] = $jobItem;
+    public function checkProfile()
+    {
+        /* Simulation of the form save to get validation information */
+        $this->form = new Form($this->api, $this->userRole, 'profile', $this->userId);
+        $this->form->saveLater = null;
+        $this->form->changedFields = [
+            'status' => 'checked',
+            'changedFields' => []
+        ];
+        $data = [];
+        foreach ($this->form->groups as $key => $value) {
+            $groupData = $value->data;
+            foreach ($value->fields as $fieldKey => $fieldValue) {
+                if ($fieldValue->field['type'] == 'file') {
+                    unset($groupData[$fieldKey]);
                 }
-                break;
             }
-            case "organization" : {
-                $inquiries = $this->api->getInquiredCandidatesForOrganization($this->userId);
-                break;
-            }
-            case "agency" : {
-                $inquiries = $this->api->getInquiredCandidatesForAgency($this->userId);
-                break;
-            }
+            $data[$key] = $groupData;
+        }
+        $this->form->data = $data;
+        $this->form->save();
+
+        if ($this->form->hasErrors()) {
+            $this->api->deactivateUserApp($this->userId);
+            echo json_encode('unvalid');
         }
 
-        return count($inquiries);
+        return false;
     }
 }

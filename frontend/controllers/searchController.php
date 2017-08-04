@@ -99,6 +99,8 @@ class searchController extends AbstractLayoutController {
     }
 
     private function processSearch(){
+        $page = isset($_POST['page']) ? $_POST['page'] : 1;
+        $this->page = $page;
 
         $this->form = new SearchForm($this->api, $this->userRole, $this->userId, $this->role, 'search');
         $this->searches = $this->api->getSavedSearches($this->userRole, $this->role, $this->userId);
@@ -112,7 +114,10 @@ class searchController extends AbstractLayoutController {
 
                 foreach($this->searches as $item){
                     if($item['id'] == $_POST['saved']){
-                        $this->result = $this->api->search($this->role, $this->userRole, $this->userId , $item['data']);
+                        $resultArray = $this->api->search($this->role, $this->userRole, $this->userId , $item['data'], $page);
+                        $this->result = $resultArray['results'];
+                        $this->pages = $resultArray['count'];
+
                         if (Constants::ROLE_AGENCY == $this->userRole) {
                             $this->multipleResults = [ 1 => $this->result ];
                             $this->additional_info['affiliates'] = [ 1 => [ 'id' => '1', 'name' => 'Fake' ]];
@@ -130,7 +135,9 @@ class searchController extends AbstractLayoutController {
                 $this->form->validateJobTitle();
 
                 if ($this->form->isValid()) {
-                    $this->result = $this->form->search();
+                    $resultArray = $this->form->search($page);
+                    $this->pages = $resultArray['count'];
+                    $this->result = $resultArray['results'];
 
                     if (Constants::ROLE_AGENCY == $this->userRole) {
                         $default_folder_id = \MissionNext\lib\SiteConfig::getDefaultFolder($this->role);

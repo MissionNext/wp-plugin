@@ -3,8 +3,8 @@
  * @var $form \MissionNext\lib\form\Form
  * @var $jobs Array
  */
- ?>
 
+?>
 
 <div class="page-header">
     <h1><?php echo sprintf(__('New %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_JOB))) ?></h1>
@@ -20,7 +20,7 @@
                 <div class="col-sm-10">
                     <select name="from" id="create-from-select">
                         <?php foreach($jobs as $job): ?>
-                            <option value="<?php echo $job['id'] ?>"><?php echo $job['name'] ?></option>
+                            <option value="<?php echo $job['id'] ?>"><?php echo $job['name'] ?> &#151; <?php echo $job['profileData']['second_title']; ?> </option>
                         <?php endforeach; ?>
                     </select>
                 </div>

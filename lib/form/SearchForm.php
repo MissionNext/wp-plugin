@@ -56,7 +56,7 @@ class SearchForm extends Form {
         $this->setGroups($groups);
     }
 
-    public function search(){
+    public function search($page){
 
         $data = array();
 
@@ -74,13 +74,18 @@ class SearchForm extends Form {
 
         $this->searchRequest = $request;
 
-        $result = $this->api->search($this->searchRole, $this->role, $this->user_id, $request);
+        $resultArray = $this->api->search($this->searchRole, $this->role, $this->user_id, $request, $page);
+        $resultsCount = $resultArray['count'];
+        $result = $resultArray['results'];
 
         if(!$result){
             $result = array();
         }
 
-        return $result;
+        return [
+            'results'   => $result,
+            'count'     => $resultsCount
+        ];
 
     }
 

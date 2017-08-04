@@ -19,8 +19,6 @@ $foldersApi = \MissionNext\lib\core\Context::getInstance()->getApiManager()->get
 $default_folder_id = \MissionNext\lib\SiteConfig::getDefaultFolder($role);
 $default_folder = '';
 
-uasort($foldersApi, 'sortFolders');
-
 $folders = array();
 
 foreach($foldersApi as $folderApi){
@@ -70,11 +68,6 @@ if($affiliate){
 }
 
 //FAVORITES
-
-function sortFolders($a, $b){
-    return $a['id'] < $b['id']? -1: 1;
-}
-
 function getProfileField($item, $symbol_key){
 
     $item =  \MissionNext\lib\ProfileLib::getProfileField($item, $symbol_key);
@@ -126,8 +119,8 @@ function getLastLogin($item){
                 <tbody>
                 <?php
                 foreach($groups as $group_name => $folderItems):?>
-                    <tr class="folder-title <?php if(empty($folderItems)) echo 'hide'; ?> header <?php if(isset($folders[$group_name]) && $folders[$group_name] == $default_folder) echo 'default-folder open-folder'; ?>" data-name="<?php echo $group_name ?>">
-                        <td colspan="15"><?php echo $folders[$group_name] ?> (<span><?php echo count($folderItems) ?></span>)</td>
+                    <tr class="folder-title <?php if(empty($folderItems)) echo 'hide'; ?> header <?php if(isset($folders[$group_name]) && $folders[$group_name] == $default_folder) echo 'default-folder'; ?> open-folder" data-name="<?php echo $group_name ?>">
+                        <td colspan="15"><?php echo $group_name; ?> (<span><?php echo count($folderItems) ?></span>)</td>
                     </tr>
                     <?php foreach($folderItems as $key => $item):
                         if ($item['is_active'] == 1): // endif at line 277
@@ -222,11 +215,11 @@ function getLastLogin($item){
     <textarea cols="25" rows="5" class="message" maxlength="1000"></textarea>
 </div>
 
-<div id="match-highlight">
+<div id="match-highlight" style="display: none;">
 
 </div>
 
-<div id="folder-message">
+<div id="folder-message" style="display: none;">
 
 </div>
 

@@ -33,7 +33,7 @@ function groupEmpty($group){
             </div>
             <?php if($agency['email'] != $user['email']): ?>
                 <div class="buttons">
-                    <a onclick="EmailPopup.open('<?php echo $user['email'] ?>', '<?php echo $agency['email'] ?>')" class="btn btn-primary"><?php echo __('Send message', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                    <a onclick="EmailPopup.open('<?php echo $user['id'] ?>', '<?php echo $agency['id'] ?>', '<?php echo isset($user['profileData']['organization_name']) ? str_replace("'", "`", $user['profileData']['organization_name']) : str_replace("'", "`", $user['profileData']['first_name']) . ' ' . str_replace("'", "`", $user['profileData']['last_name']) ?>', '<?php echo str_replace("'", "`", $agency['profileData']['agency_full_name'])?>')" class="btn btn-primary"><?php echo __('Send message', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                 </div>
             <?php endif; ?>
 
@@ -68,6 +68,9 @@ function groupEmpty($group){
 
                                     <?php elseif($field['type'] == 'file' && $field['value']): ?>
                                         <a href="<?php echo $config->get('api_base_path') . '/' . $config->get('api_uploads_dir') . '/' . $field['value'] ?>" class="mn-input-file-data"></a>
+                                    <?php elseif('boolean' == $field['type'] && $field['value']): ?>
+                                        <?php echo "&nbsp;"; ?>
+                                        <?php echo (1 == $field['value']) ? "Yes" : "No" ; ?>
                                     <?php else: ?>
                                         &nbsp; <?php echo $field['value'] ?> 
                                     <?php endif; ?>

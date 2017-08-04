@@ -12,9 +12,26 @@ class favoriteController extends AbstractLayoutController {
         if($this->userRole == 'candidate'){
             $this->org_favorites = $this->api->getFavorites($this->userId, 'organization');
             $this->job_favorites = $this->api->getFavorites($this->userId, 'job');
-        }
-        else
+        } else {
             $this->favorites = $this->api->getFavorites($this->userId, 'candidate');
+            $foldersApi = $this->api->getUserFolders('candidate', $this->userId);
+            $default_folder_id = \MissionNext\lib\SiteConfig::getDefaultFolder('candidate');
+            $default_folder = '';
+
+            $folders = array();
+
+            foreach($foldersApi as $folderApi){
+
+                if($folderApi['id'] == $default_folder_id){
+                    $default_folder = $folderApi['title'];
+                    $folders = array_merge(array($folderApi['title'] => $folderApi['value']?$folderApi['value']:$folderApi['title']), $folders);
+                } else {
+                    $folders[$folderApi['title']] = $folderApi['value']?$folderApi['value']:$folderApi['title'];
+                }
+            }
+
+            $this->folders = $folders;
+        }
 
         return 'favorite/' . $this->userRole . '.php';
     }

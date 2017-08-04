@@ -36,7 +36,7 @@ $date_today = date("Y-m-d");
             <tr>
                 <td class="id"><?php echo $key ?></td>
                 <td class="listing_expiration" style='text-align:center'><font color='<?php echo $font ?>'><?php echo $job['profileData']['listing_expiration'] ?></font></td>
-                <td class="name"><a href="/job/<?php echo $job['id'] ?>"><?php echo $job['name'] ?></a></td>
+                <td class="name"><a href="/job/<?php echo $job['id'] ?>" target="blank"><?php echo $job['name'] ?></a></td>
                 <td class="title"><?php echo $job['profileData']['second_title'] ?></font></td>
                 <td class="location"><?php echo __(\MissionNext\lib\ProfileLib::getProfileField($job, 'country')) ?></td>
                 <td class="actions" style='text-align:center'>

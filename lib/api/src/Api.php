@@ -255,8 +255,8 @@ class Api {
         return $this->get("search/$role_to/for/$role_from/$user_id");
     }
 
-    public function search($role_for, $role_from, $user_id, $params){
-        return $this->post("search/$role_for/for/$role_from/$user_id", $params);
+    public function search($role_for, $role_from, $user_id, $params, $page){
+        return $this->post("search/$role_for/for/$role_from/$user_id", compact('params', 'page'));
     }
 
     public function getMetaInfoForAgency($user_id, $role){
@@ -273,6 +273,10 @@ class Api {
 
     public function getOrganizationPositions($organization_id, $user_id){
         return $this->get("organization/jobs/$organization_id/for/$user_id");
+    }
+
+    public function getOrganizationsNames($organizations) {
+        return $this->get("organization/select/names", compact('organizations'));
     }
 
     /**

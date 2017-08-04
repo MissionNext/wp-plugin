@@ -45,7 +45,7 @@ if ($interval < 64800) {
 
     <?php if($candidates):
         ?>
-        <?php renderTemplate("common/_candidate_table", array('role' => 'candidate', 'items' => $candidates, 'messages' => $messages, 'userRole' => 'job', 'userId' => $job['id'], 'receiving_org' => $receiving_org, 'loggedRole' => $userRole)) ?>
+        <?php renderTemplate("common/_candidate_table", array('role' => 'candidate', 'items' => $candidates, 'messages' => $messages, 'userRole' => 'job', 'userId' => $job['id'], 'receiving_org' => $receiving_org, 'loggedRole' => $userRole, 'organization_id' => $user['id'])) ?>
         <?php renderTemplate("common/_pager", compact('page', 'pages')) ?>
     <?php else: ?>
         <div class="block">

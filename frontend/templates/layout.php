@@ -10,7 +10,7 @@ get_header();
     <div id="main" role="main" >
         <div class="container">
             <div class="row">
-                    <?php if ($subscriptions) { ?>
+                    <?php if (isset($subscriptions) && is_array($subscriptions)) { ?>
                         <div class="block bg-success notice">
                             <?php echo __('You have a profile at the sites: ', \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
                             <?php if ($userRole == \MissionNext\lib\Constants::ROLE_CANDIDATE) {
@@ -26,6 +26,11 @@ get_header();
         </div>
     </div>
 <?php
-renderTemplate('_email_popup');
+//if (\MissionNext\lib\Constants::ROLE_CANDIDATE == $userRole) {
+//    renderTemplate('_email_popup');
+//} else {
+    renderTemplate('_email_candidate_popup');
+//}
+
 get_footer();
 ?>

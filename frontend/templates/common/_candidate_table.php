@@ -9,7 +9,11 @@
  */
 
 $data = parse_url($_SERVER['REQUEST_URI']);
-parse_str($data['query'], $url_args);
+$url_args = [];
+if (isset($data['query'])) {
+    parse_str($data['query'], $url_args);
+}
+
 $sort_by = isset($url_args['sort_by']) ? $url_args['sort_by']: 'matching_percentage';
 $order_by = isset($url_args['order_by']) ? $url_args['order_by']: 'desc';
 $page = isset($url_args['page']) ? $url_args['page'] : 1;
@@ -24,13 +28,15 @@ while (list($key, $val) = each($Cookie_Keys)) {
 	if (preg_match("/wordpress_logged_in/",$val)) { $this_key = $key; }
 }
 // echo "<br>\$userRole = $userRole; \$role = $role; \$userId = $userId; \$loggedRole = $loggedRole ";
-if ($loggedRole == "agency") { 
-	$agency_user = $Cookie_Values[$this_key]; 
-	$pipe_pos    = strpos($agency_user,"|");
-	// the username is before the pipe character. Usernames can contain a space, so these are replaced with an underline 
-	$agency_un   = str_replace(" ","_",trim(substr($agency_user, 0, $pipe_pos)));
-	$factor		 = rand(10,99); // generate random two-digit number
-	// echo "<br>\$factor = $factor; \$agency_un = $agency_un";
+if ($loggedRole) { 
+	if ($loggedRole == "agency") { 
+		$agency_user = $Cookie_Values[$this_key]; 
+		$pipe_pos    = strpos($agency_user,"|");
+		// the username is before the pipe character. Usernames can contain a space, so these are replaced with an underline 
+		$agency_un   = str_replace(" ","_",trim(substr($agency_user, 0, $pipe_pos)));
+		$factor		 = rand(10,99); // generate random two-digit number
+		// echo "<br>\$factor = $factor; \$agency_un = $agency_un";
+	}
 }
 
 // must distinguish which application is in use for users with more than one subscriptiion, since there is more than one app_id 
@@ -45,12 +51,10 @@ $site_id = 6;
 
 $items = array_values($items);
 
-$foldersApi = \MissionNext\lib\core\Context::getInstance()->getApiManager()->getApi()->getUserFolders($role, $userId);
+$foldersApi = \MissionNext\lib\core\Context::getInstance()->getApiManager()->getApi()->getUserFolders($role, $organization_id);
 
 $default_folder_id = \MissionNext\lib\SiteConfig::getDefaultFolder($role);
 $default_folder = '';
-
-uasort($foldersApi, 'sortFolders');
 
 $folders = array();
 
@@ -87,10 +91,6 @@ $matching = isset($items[0]['matching_percentage']);
 
 //FAVORITES
 
-function sortFolders($a, $b){
-    return $a['id'] < $b['id']? -1: 1;
-}
-
 function getProfileField($item, $symbol_key){
 
     $item =  \MissionNext\lib\ProfileLib::getProfileField($item, $symbol_key);
@@ -119,36 +119,53 @@ function getLastLogin($item){
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th class="sortable <?php echo ('name' == $sort_by) ? $order_by : ''; ?>">
-                        <a href="<?php echo $data['path'] . '?' . http_build_query([
-                                'page'      => $page,
-                                'sort_by'   => 'name',
-                                'order_by'  => (isset($sort_by) && 'name' == $sort_by && $order_by == 'asc') ? 'desc' : 'asc',
-                            ]); ?>">
+                    <?php if (isset($pagename) && 'search' == $pagename) { ?>
+                        <th>
                             <?php echo __('Candidate Name', \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
-                        </a>
-                    </th>
-                    <th class="sortable <?php echo ('birth_date' == $sort_by) ? $order_by : ''; ?>">
-                        <a href="<?php echo $data['path'] . '?' . http_build_query([
-                                'page'      => $page,
-                                'sort_by'   => 'birth_date',
-                                'order_by'  => (isset($sort_by) && 'birth_date' == $sort_by && $order_by == 'asc') ? 'desc' : 'asc',
-                            ]); ?>">
+                        </th>
+                        <th>
                             <?php echo __("Age", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
-                        </a>
-                    </th>
+                        </th>
+                    <?php } else { ?>
+                        <th class="sortable <?php echo ('name' == $sort_by) ? $order_by : ''; ?>">
+                            <a href="<?php echo $data['path'] . '?' . http_build_query([
+                                    'page'      => $page,
+                                    'sort_by'   => 'name',
+                                    'order_by'  => (isset($sort_by) && 'name' == $sort_by && $order_by == 'asc') ? 'desc' : 'asc',
+                                ]); ?>">
+                                <?php echo __('Candidate Name', \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+                            </a>
+                        </th>
+                        <th class="sortable <?php echo ('birth_date' == $sort_by) ? $order_by : ''; ?>">
+                            <a href="<?php echo $data['path'] . '?' . http_build_query([
+                                    'page'      => $page,
+                                    'sort_by'   => 'birth_date',
+                                    'order_by'  => (isset($sort_by) && 'birth_date' == $sort_by && $order_by == 'asc') ? 'desc' : 'asc',
+                                ]); ?>">
+                                <?php echo __("Age", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+                            </a>
+                        </th>
+                    <?php } ?>
+
                     <th><?php echo __("Gender", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                     <th><?php echo __("Marital status", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                     <th><?php echo __("Location", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                    <th class="sortable <?php echo ('last_login' == $sort_by) ? $order_by : ''; ?>">
-                        <a href="<?php echo $data['path'] . '?' . http_build_query([
-                                'page'      => $page,
-                                'sort_by'   => 'last_login',
-                                'order_by'  => (isset($sort_by) && 'last_login' == $sort_by && $order_by == 'asc') ? 'desc' : 'asc',
-                            ]); ?>">
+                    <?php if (isset($pagename) && 'search' == $pagename) { ?>
+                        <th>
                             <?php echo __("Last login", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
-                        </a>
-                    </th>
+                        </th>
+                    <?php } else { ?>
+                        <th class="sortable <?php echo ('last_login' == $sort_by) ? $order_by : ''; ?>">
+                            <a href="<?php echo $data['path'] . '?' . http_build_query([
+                                    'page'      => $page,
+                                    'sort_by'   => 'last_login',
+                                    'order_by'  => (isset($sort_by) && 'last_login' == $sort_by && $order_by == 'desc') ? 'asc' : 'desc',
+                                ]); ?>">
+                                <?php echo __("Last login", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+                            </a>
+                        </th>
+                    <?php } ?>
+
 
                     <?php if($matching): ?>
                         <th class="sortable <?php echo ('matching_percentage' == $sort_by) ? $order_by : ''; ?>">
@@ -168,9 +185,9 @@ function getLastLogin($item){
                     <?php if (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
                         <th class="center"><?php echo __("Folder", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                     <?php } ?>
-                    <?php if (isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY) { ?>
-                    	<th><?php echo __("Candidate", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                    <?php } elseif (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
+                    <?php if (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
+                    	<th><?php echo __("Notes", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
+                    <?php } elseif (trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY) { ?>
                     	<th><?php echo __("Notes", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                     <?php } ?>
                 </tr>
@@ -178,8 +195,8 @@ function getLastLogin($item){
                 <tbody>
                 <?php
                 foreach($groups as $group_name => $folderItems):?>
-                    <tr class="folder-title <?php if(empty($folderItems)) echo 'hide'; ?> header <?php if(isset($folders[$group_name]) && $folders[$group_name] == $default_folder) echo 'default-folder open-folder'; ?>" data-name="<?php echo $group_name ?>">
-                        <td colspan="15"><?php echo $folders[$group_name] ?> (<span><?php echo count($folderItems) ?></span>)</td>
+                    <tr class="folder-title <?php if(empty($folderItems)) echo 'hide'; ?> header <?php if(isset($folders[$group_name]) && $folders[$group_name] == $default_folder) echo 'default-folder'; ?> open-folder" data-name="<?php echo $group_name ?>">
+                        <td colspan="15"><?php echo $group_name; ?> (<span><?php echo count($folderItems) ?></span>)</td>
                     </tr>
                     <?php foreach($folderItems as $key => $item):
                         if ($item['is_active'] == 1): // endif at line 277
@@ -226,15 +243,13 @@ function getLastLogin($item){
                                     </td>
                                 <?php } ?>
 
-                                <?php if (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
-                                 	<td class="note" data-note="<?php echo htmlentities($item['notes']) ?>">
-                                       <div <?php if(!$item['notes']) echo 'class="no-note"' ?>></div>
-                                <?php } else { 
-                                	$factored	 = $factor * $item['id'];  // factored is the product of the random number and user_id 
-									$pass_string = $factor.$factored; // pass this string, then extract user_id as $factored / $factor 
-?>
-                                     <td class="agency_note">
-                                        <div style="text-align:center"><a target="_blank" href="https://info.missionnext.org/candidate_recruit.php?c=<?php echo $pass_string ?>&s=<?php echo $site_id ?>&assignment=<?php echo $userId ?>&loggedun=<?php echo $agency_un ?>"> <img src="/wp-includes/images/recruiting.gif" width="40" height="20" /> </a></div>
+                                <td class="note" data-note="<?php echo htmlentities($item['notes']) ?>">
+                                    <?php if (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
+                                        <div <?php if(!$item['notes']) echo 'class="no-note"' ?>></div>
+                                    <?php } else { ?>
+                                        <?php if($item['notes']) { ?>
+                                            <div></div>
+                                        <?php } ?>
                                     <?php } ?>
                                 </td>
                             </tr>
@@ -262,11 +277,11 @@ function getLastLogin($item){
     <textarea cols="25" rows="5" class="message" maxlength="1000"></textarea>
 </div>
 
-<div id="match-highlight">
+<div id="match-highlight" style="display: none;">
 
 </div>
 
-<div id="folder-message">
+<div id="folder-message" style="display: none;">
 
 </div>
 

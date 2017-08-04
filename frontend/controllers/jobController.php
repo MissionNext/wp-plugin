@@ -22,7 +22,6 @@ class jobController extends AbstractLayoutController {
         }
 
         $jobs = $this->api->findJobsByOrgId($this->userId);
-        uasort($jobs, array($this, 'sortJobs'));
 
         $this->jobs = $jobs;
     }
@@ -221,8 +220,4 @@ class jobController extends AbstractLayoutController {
     private function sortFields($a, $b){
         return $a['order'] < $b['order'] ? -1 : 1;
     }
-
-    private function sortJobs($a, $b){
-        return $a['id'] < $b['id'] ? -1 : 1;
-    }
-} 
+}

@@ -104,14 +104,17 @@ class homeController extends AbstractLayoutController {
             $this->affiliatesCount = count($affiliates);
         }
 
+        $config = Context::getInstance()->getConfig();
+        $links = $config->get('links');
+
         $this->apps = [
-            2   => 'https://finishers.missionnext.org',
-            3   => 'https://explorenext.missionnext.org',
-            4   => 'https://jg.missionnext.org',
-            5   => 'https://bammatch.missionnext.org',
-            6   => 'https://teachnext.missionnext.org',
-            9   => 'https://new.missionnext.org',
-            10   => 'https://canada.missionnext.org',
+            2   => $links[0],
+            3   => $links[1],
+            4   => $links[2],
+            5   => $links[3],
+            6   => $links[4],
+            9   => $links[5],
+            10  => $links[6],
      ];
     }
 

@@ -80,9 +80,7 @@ class searchController extends AbstractLayoutController {
 
         $response = $this->api->addSavedSearch($_POST['role_from'], $_POST['role_to'], $this->userId, array( 'search_name' => $_POST['name'], 'search_data' => $_POST['data']));
 
-        echo json_encode($response);
-
-        return false;
+        $this->redirect('/'.$_POST['role_to'].'/search');
     }
 
     public function deleteSaved(){

@@ -4,9 +4,7 @@ wp_enqueue_script( 'jquery' );
 
 \MissionNext\lib\core\Context::getInstance()->getResourceManager()->addCSSResource('package_css', 'package.css');
 
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('bootstrap_js', 'bootstrap.min.js');
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/modernizr', 'modernizr.js');
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/jquery.js.sortable', 'jquery.fn.sortable.js');
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('package_js', 'package.js');
 \MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/main', 'main.js', array( 'jquery-ui-datepicker' ));
 
 wp_enqueue_script( 'jquery-ui-core' );

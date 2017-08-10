@@ -91,7 +91,7 @@ class LoginWidget extends \WP_Widget {
                 <?php echo $login_form; ?>
 
                 <div class="login-spinner" style="display: none;">
-                    <img src="<?php echo getResourceUrl('/resources/images/spinner.gif'); ?>" width="32" />
+                    <img src="<?php echo getResourceUrl('/resources/images/spinner_32x32.gif'); ?>" width="32" />
                 </div>
                 <script src="<?php echo getResourceUrl('/resources/js/login.js'); ?>"></script>
                 <?php if ($subdomain == "jg") { ?>

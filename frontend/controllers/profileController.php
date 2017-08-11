@@ -63,8 +63,7 @@ class profileController extends AbstractLayoutController {
         {
             if(isset($_POST['presentation']))
             {
-                $presentation = nl2br($_POST['presentation']);
-                $response = Context::getInstance()->getUserConfigManager()->save('presentation', $presentation);
+                $response = Context::getInstance()->getUserConfigManager()->save('presentation', $_POST['presentation']);
 
                 if ($response) {
                     $this->setMessage('notice', 'Presentation saved', Constants::TEXT_DOMAIN);
@@ -73,6 +72,10 @@ class profileController extends AbstractLayoutController {
         }
 
         $this->presentation = Context::getInstance()->getUserConfigManager()->get('presentation');
+
+        $preview_presentation = $this->api->getUserConfigsElement('presentation', $this->userId);
+        $preview_presentation = do_shortcode($preview_presentation['value']);
+        $this->preview_presentation = str_replace("\r\n\r\n", "<br />", $preview_presentation);
     }
 
 

@@ -23,3 +23,8 @@
         </div>
     </form>
 </div>
+
+<div class="presentation-content">
+    <h2><?php echo __('Presentation Preview', \MissionNext\lib\Constants::TEXT_DOMAIN); ?></h2>
+    <?php echo $preview_presentation; ?>
+</div>

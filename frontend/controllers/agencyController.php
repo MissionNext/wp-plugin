@@ -75,6 +75,7 @@ class agencyController extends AbstractLayoutController {
 
         $this->presentation = $this->api->getUserConfigsElement('presentation', $user_id);
         $this->presentation['value'] = do_shortcode($this->presentation['value']);
+        $this->presentation['value'] = str_replace("\r\n\r\n", "<br />", $this->presentation['value']);
 
         if(empty($this->presentation['value']))
         {

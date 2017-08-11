@@ -44,7 +44,7 @@
 
         </div> <!-- class=sidebar -->
     </div>
-    <div class="content">
+    <div class="content presentation-content">
 
         <h2><?php echo __('Presentation', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></h2>
 

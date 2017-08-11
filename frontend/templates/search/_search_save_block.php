@@ -15,6 +15,7 @@ if($searches){
 }
 
 $search_json = json_encode($search);
+
 ?>
 
 <div id="save-search-block">
@@ -23,7 +24,7 @@ $search_json = json_encode($search);
 
     <form id="save-search" action="/saved/search/add" method="post" rel="form" class="form-horizontal">
         <div class="form-group">
-            <input type="hidden" name="data" value='<?php echo json_encode($search) ?>'/>
+            <input type="hidden" name="data" value='<?php echo htmlentities(json_encode($search), ENT_QUOTES); ?>'/>
             <input type="hidden" name="role_from" value='<?php echo $userRole ?>'/>
             <input type="hidden" name="role_to" value='<?php echo $role ?>'/>
             <div class="col-sm-12">

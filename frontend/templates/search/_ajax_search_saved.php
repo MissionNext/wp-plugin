@@ -34,7 +34,7 @@
                 id: div.attr('data-id')
             },
             success: function(data, textStatus, jqXHR){
-                div.remove();
+                jQuery(div).empty();
             },
             error: function(jqXHR, textStatus, errorThrown){
             },

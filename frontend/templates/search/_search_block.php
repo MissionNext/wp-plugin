@@ -18,10 +18,16 @@
                             <dd>
                                 <?php if(is_array($field->getDefault())): ?>
                                     <?php foreach($field->getDefault() as $value): ?>
-                                        <span><?php echo str_replace("(!) ","", $value); ?></span>
+                                        <?php
+                                            $show_string = str_replace("\\", "", $value);
+                                        ?>
+                                        <span><?php echo str_replace("(!) ","", $show_string); ?></span>
                                     <?php endforeach; ?>
                                 <?php else: ?>
-                                    <?php echo str_replace("(!) ","", $field->getDefault()); ?>
+                                    <?php
+                                    $show_string = str_replace("\\", "", $field->getDefault());
+                                    ?>
+                                    <?php echo str_replace("(!) ","", $show_string); ?>
                                 <?php endif; ?>
                             </dd>
                         </dl>

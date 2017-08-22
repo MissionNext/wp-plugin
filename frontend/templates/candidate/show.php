@@ -42,15 +42,15 @@ elseif (preg_match("/teachnext/",$sniff_host)) {
 ?>
 <!-- javascript functions are needed to open a new window using Firefox running on Windows and Macs -->
 <script>
-function function_qcs() {
-    window.open("https://info.missionnext.org/qcs_view.php?uid=<?php echo $pass_string ?>");
-}
-function function_print() {
-    window.open("https://info.missionnext.org/print_view.php?uid=<?php echo $pass_string ?>&oid=<?php echo $org_string ?>&site=<?php echo $site ?>");
-}
-function function_jobs() {
-    window.open("https://info.missionnext.org/jobs_view.php?uid=<?php echo $pass_string ?>&oid=<?php echo $org_string ?>&site=<?php echo $site ?>");
-}
+    function function_qcs() {
+        window.open("https://info.missionnext.org/qcs_view.php?uid=<?php echo $pass_string ?>");
+    }
+    function function_print() {
+        window.open("https://info.missionnext.org/print_view.php?uid=<?php echo $pass_string ?>&oid=<?php echo $org_string ?>&site=<?php echo $site ?>");
+    }
+    function function_jobs() {
+        window.open("https://info.missionnext.org/jobs_view.php?uid=<?php echo $pass_string ?>&oid=<?php echo $org_string ?>&site=<?php echo $site ?>");
+    }
 </script>
 
 <div class="page-header">
@@ -70,7 +70,7 @@ function function_jobs() {
                 </div>
             <?php endif; ?>
 
-            <?php if( $userRole == \MissionNext\lib\Constants::ROLE_ORGANIZATION || $userRole == \MissionNext\lib\Constants::ROLE_AGENCY): ?>
+            <?php if( $userRole == \MissionNext\lib\Constants::ROLE_ORGANIZATION ): ?>
                 <div class="buttons">
                     <button id="make_favorite" title="Click once. Wait a few seconds for update" class="btn btn-success <?php echo $candidate['favorite']?'hide':'' ?>"><?php echo __("Make favorite", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
                     <button data-id="<?php echo $candidate['favorite'] ?>"  id="remove_from_favorites" title="Click once. Wait a few seconds for update" class="btn btn-danger <?php echo $candidate['favorite']?'':'hide' ?>"><?php echo __("Unfavorite", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
@@ -83,10 +83,10 @@ function function_jobs() {
                 <div class="buttons">
                     <button class="btn btn-default" title="Printer Friendly Display with What Matched" onclick="function_print()"><a>Print/Forward Profile</a></button>
                 </div>
-				<?php if($userRole != "agency") { ?>
-                <div class="buttons">
-                    <button class="btn btn-default" title="Matches to Your Jobs" onclick="function_jobs()"><a>Job Matches</a></button>
-                </div>
+                <?php if($userRole != "agency") { ?>
+                    <div class="buttons">
+                        <button class="btn btn-default" title="Matches to Your Jobs" onclick="function_jobs()"><a>Job Matches</a></button>
+                    </div>
                 <?php } ?>
                 <!--<br> Test For IE:
                 <div class="buttons">
@@ -98,20 +98,20 @@ function function_jobs() {
                 <div class="buttons">
                     <button class="btn btn-default"><a href="https://info.missionnext.org/jobs_view.php?uid=<?php echo $pass_string ?>&oid=<?php echo $org_string ?>&site=<?php echo $site ?>" title="Matches to Your Jobs" target="_blank">Job Matches</a></button>
                 </div>-->
-               <?php if( $userRole != \MissionNext\lib\Constants::ROLE_CANDIDATE ):
-               $last_login = substr($candidate['last_login'],0,10);
-               if ($last_login == "2010-01-01") { $last_login = substr($candidate['updated_at'],0,10); }
-               ?>
-                <div>
-                    <hr>
-                    <table>
-                    <tr><td style='text-align:left'>Last Login&nbsp;</td><td><?php echo $last_login ?></td></tr>
-                    <tr><td style='text-align:left'>Last Update&nbsp;</td><td><?php echo substr($candidate['updated_at'],0,10) ?></td></tr>
-                    <tr><td style='text-align:left'>Date Created&nbsp;</td><td><?php echo substr($candidate['created_at'],0,10) ?></td></tr>
-                    </table>
+                <?php if( $userRole != \MissionNext\lib\Constants::ROLE_CANDIDATE ):
+                    $last_login = substr($candidate['last_login'],0,10);
+                    if ($last_login == "2010-01-01") { $last_login = substr($candidate['updated_at'],0,10); }
+                    ?>
+                    <div>
+                        <hr>
+                        <table>
+                            <tr><td style='text-align:left'>Last Login&nbsp;</td><td><?php echo $last_login ?></td></tr>
+                            <tr><td style='text-align:left'>Last Update&nbsp;</td><td><?php echo substr($candidate['updated_at'],0,10) ?></td></tr>
+                            <tr><td style='text-align:left'>Date Created&nbsp;</td><td><?php echo substr($candidate['created_at'],0,10) ?></td></tr>
+                        </table>
 
-                </div>
-            <?php endif; ?>
+                    </div>
+                <?php endif; ?>
 
             <?php endif; ?>
         </div>

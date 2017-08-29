@@ -167,12 +167,23 @@ class searchController extends AbstractLayoutController {
                 foreach ($this->additional_info['affiliates'] as $org) {
                     $multipleResults[$org['id']] = [];
                 }
+
                 foreach ($this->result as &$item) {
-                    foreach ($this->additional_info['notes'] as $note) {
-                        if ($note['user_id'] == $item['id'] && !empty($note['notes'])) {
-                            $item['meta'][$note['note_owner']]['note'] = $note['notes'];
+                    foreach ($this->additional_info['own_notes'] as $own_note) {
+                        if ($own_note['user_id'] == $item['id'] && !empty($own_note['notes'])) {
+                            $item['meta']['own_note'] = htmlentities($own_note['notes']);
                         }
                     }
+
+                    foreach ($this->additional_info['notes'] as $note) {
+                        if ($note['user_id'] == $item['id'] && !empty($note['notes'])) {
+                            $item['meta']['notes'][$note['note_owner']] = [
+                                'org_name'  => $this->additional_info['affiliates'][$note['note_owner']]['name'],
+                                'note_text' => htmlentities($note['notes'])
+                            ];
+                        }
+                    }
+
                     foreach ($this->additional_info['favorites'] as $fav) {
                         if ($fav['target_id'] == $item['id']) {
                             $item['meta'][$fav['favorite_owner']]['fav'] = true;
@@ -187,11 +198,13 @@ class searchController extends AbstractLayoutController {
                     foreach ($this->additional_info['affiliates'] as $org) {
                         $itemData = $item;
                         $itemData['meta'] = null;
-                        if (isset($item['meta'][$org['id']])) {
+                        if (isset($item['meta'])) {
                             $itemData['folder'] = isset($item['meta'][$org['id']]['folder']) ? $item['meta'][$org['id']]['folder'] : null;
-                            $itemData['favorite'] = isset($item['meta'][$org['id']]['fav']) ? $item['meta'][$org['id']]['fav'] : null;;
-                            $itemData['notes'] = isset($item['meta'][$org['id']]['note']) ? $item['meta'][$org['id']]['note'] : null;;
+                            $itemData['favorite'] = isset($item['meta'][$org['id']]['fav']) ? $item['meta'][$org['id']]['fav'] : null;
+                            $itemData['note'] = isset($item['meta']['own_note']) ? $item['meta']['own_note'] : null;
+                            $itemData['notes'] = isset($item['meta']['notes']) ? $item['meta']['notes'] : [];
                         }
+
                         $multipleResults[$org['id']][] = $itemData;
                     }
                 }

@@ -123,7 +123,6 @@
                                 <td colspan="15"><?php echo $folders[$group_name] ?> (<span><?php echo count($folderItems) ?></span>)</td>
                             </tr>
                             <?php foreach($folderItems as $key => $item):
-
                                 $prior = ($role == \MissionNext\lib\Constants::ROLE_JOB && @$item['organization']['subscription']['partnership'] == \MissionNext\lib\Constants::PARTNERSHIP_PLUS) ||
                                     ($role == \MissionNext\lib\Constants::ROLE_ORGANIZATION && @$item['subscription']['partnership'] == \MissionNext\lib\Constants::PARTNERSHIP_PLUS);
                                 ?>
@@ -151,10 +150,8 @@
                                                 <div class="favorite-block <?php echo ($item['favorite'])?'favorite':'not-favorite' ?>"></div>
                                             </td>
 
-                                            <td class="note" data-note="<?php echo htmlentities($item['notes']) ?>">
-                                                <?php if ($item['notes']) { ?>
-                                                    <div></div>
-                                                <?php } ?>
+                                            <td class="note" data-note="<?php echo $item['note']; ?>" data-notes='<?php echo json_encode($item['notes'][$orgId]); ?>'>
+                                                <div <?php if(!$item['note'] && count($item['notes'][$orgId]) == 0) echo 'class="no-note"' ?>></div>
                                             </td>
 
                                         </tr>
@@ -172,11 +169,12 @@
     <div id="note" title="<?php echo __('Note', \MissionNext\lib\Constants::TEXT_DOMAIN); ?>" style="display: none">
         <input type="hidden" name="role" value="<?php echo $role ?>"/>
         <input type="hidden" name="id" value=""/>
+        <p id="other_notes"></p>
         <div class="help">
             <p class="role"><?php echo __("Enter or update a brief note about ", \MissionNext\lib\Constants::TEXT_DOMAIN) ?><span class="name"></span>:</p>
             <p class="folder"><?php echo __("This record is stored in folder:", \MissionNext\lib\Constants::TEXT_DOMAIN) ?> <span></span></p>
         </div>
-        <textarea cols="25" rows="5" class="message" maxlength="1000" disabled="disabled"></textarea>
+        <textarea cols="25" rows="5" class="message" maxlength="1000"></textarea>
     </div>
 
     <script>
@@ -193,6 +191,7 @@
                 openNote(
                     tr.data('id'),
                     jQuery(e.target).parents('td').attr('data-note'),
+                    jQuery(e.target).parents('td').attr('data-notes'),
                     tr.attr('data-name'),
                     tr.find('.folder select').val()
                 );
@@ -219,6 +218,44 @@
                 modal: true,
                 draggable: false,
                 resizable: false,
+                buttons: {
+                    "<?php echo __("Save", \MissionNext\lib\Constants::TEXT_DOMAIN); ?>" : function(){
+
+                        var modal = jQuery(this);
+                        var role = modal.find('[name="role"]').val();
+                        var id = modal.find('[name="id"]').val();
+                        var message = modal.find('textarea.message').val();
+
+                        var data = {
+                            role : role,
+                            id: id,
+                            note: message.trim()
+                        };
+
+                        jQuery.ajax({
+                            type: "POST",
+                            url: "/note/change",
+                            data: data,
+                            success: function(data, textStatus, jqXHR){
+
+                                var tr = jQuery('table.result tr[data-id="'+data.user_id+'"]');
+
+                                tr.find('td.note').attr('data-note', data.notes);
+                                tr.find('td.note div').attr( 'class', data.notes ? '' : 'no-note');
+
+                                modal.dialog('close');
+                            },
+                            error: function(jqXHR, textStatus, errorThrown){
+                                modal.dialog('close');
+                            },
+                            dataType: "JSON"
+                        });
+
+                    },
+                    "<?php echo __("Cancel", \MissionNext\lib\Constants::TEXT_DOMAIN); ?>" : function(){
+                        jQuery(this).dialog('close');
+                    }
+                },
                 close: function() {
                     var modal = jQuery(this);
                     modal.find('[name="id"]').val('');
@@ -289,12 +326,21 @@
                 });
         });
 
-        function openNote(id, text, name, folder){
+        function openNote(id, text, notes, name, folder){
 
             var modal = jQuery('#note');
 
             modal.find('[name="id"]').val(id);
             modal.find('textarea.message').val(text?text:' ');
+            modal.find('#other_notes').html('');
+            if (notes != 'null') {
+                var notes_html = '';
+                var notes_array = JSON.parse(notes);
+                notes_html += "<h5>" + notes_array.org_name + "</h5>";
+                notes_html += "<p>" + notes_array.note_text + "</p>";
+                notes_html += '<br />';
+                modal.find('#other_notes').html(notes_html);
+            }
 
             modal.find('.help .name').html(name);
             modal.find('.help .folder span').html(folder);

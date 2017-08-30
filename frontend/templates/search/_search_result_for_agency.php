@@ -129,7 +129,7 @@
 
                                         <tr class="item<?php if($prior) echo ' success'; ?>"
                                             data-id="<?php echo $item['id'] ?>"
-                                            data-name="<?php echo htmlentities($role == 'job' ? $item['name'] : $item['username']) ?>"
+                                            data-name="<?php $record_name = htmlentities($item['show_name']); echo $record_name; ?>"
                                             data-prior="<?php echo $prior ?>"
                                             data-updated="<?php echo date("Y", strtotime($item['updated_at'])); ?>">
                                             <td><?php echo $key + 1  ?></td>

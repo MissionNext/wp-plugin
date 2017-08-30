@@ -185,11 +185,7 @@ function getLastLogin($item){
                     <?php if (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
                         <th class="center"><?php echo __("Folder", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                     <?php } ?>
-                    <?php if (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
-                    	<th><?php echo __("Notes", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                    <?php } elseif (trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY) { ?>
-                    	<th><?php echo __("Notes", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
-                    <?php } ?>
+                    <th><?php echo __("Notes", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -243,15 +239,16 @@ function getLastLogin($item){
                                     </td>
                                 <?php } ?>
 
-                                <td class="note" data-note="<?php echo htmlentities($item['notes']) ?>">
-                                    <?php if (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
+                                <?php if (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
+                                    <td class="note" data-note="<?php echo htmlentities($item['notes']) ?>">
                                         <div <?php if(!$item['notes']) echo 'class="no-note"' ?>></div>
-                                    <?php } else { ?>
-                                        <?php if($item['notes']) { ?>
-                                            <div></div>
-                                        <?php } ?>
-                                    <?php } ?>
-                                </td>
+                                    </td>
+                                <?php } else { ?>
+                                    <td class="note" data-note="<?php echo $item['meta']['own_note']; ?>" data-notes='<?php echo json_encode($item['meta']['notes']); ?>'>
+                                        <div <?php if(!$item['meta']['own_note'] && count($item['meta']['notes']) == 0) echo 'class="no-note"' ?>></div>
+                                    </td>
+                                <?php }?>
+
                             </tr>
                         <?php endif; ?> <!--From line 164 -->
                     <?php endforeach; ?>
@@ -270,6 +267,7 @@ function getLastLogin($item){
 <div id="note" title="<?php echo __('Note', \MissionNext\lib\Constants::TEXT_DOMAIN); ?>" style="display: none">
     <input type="hidden" name="role" value="<?php echo $role ?>"/>
     <input type="hidden" name="id" value=""/>
+    <p id="other_notes"></p>
     <div class="help">
         <p class="role"><?php echo __("Enter or update a brief note about ", \MissionNext\lib\Constants::TEXT_DOMAIN) ?><span class="name"></span>:</p>
         <p class="folder"><?php echo __("This record is stored in folder:", \MissionNext\lib\Constants::TEXT_DOMAIN) ?> <span></span></p>
@@ -287,6 +285,7 @@ function getLastLogin($item){
 
 <script>
     var userRole = '<?php echo $userRole; ?>';
+    var loggedUser = '<?php echo $loggedRole; ?>';
     function OpenInNewTab(url) {
         var win = window.open(url, '_blank');
         win.focus();
@@ -296,84 +295,78 @@ function getLastLogin($item){
 
             var tr = jQuery(e.target).parents('tr');
 
-            openNote(
-                tr.data('id'),
-                jQuery(e.target).parents('td').attr('data-note'),
-                tr.attr('data-name'),
-                tr.find('.folder select').val()
-            );
+            if ('agency' == userRole || 'agency' == loggedUser ) {
+                openNoteForAgency(
+                    tr.data('id'),
+                    jQuery(e.target).parents('td').attr('data-note'),
+                    jQuery(e.target).parents('td').attr('data-notes'),
+                    tr.attr('data-name'),
+                    tr.find('.folder select').val()
+                );
+            } else {
+                openNote(
+                    tr.data('id'),
+                    jQuery(e.target).parents('td').attr('data-note'),
+                    tr.attr('data-name'),
+                    tr.find('.folder select').val()
+                );
+            }
+
         }
     ).on('change', 'table.result tr td.folder select', function(e){
         changeFolder(jQuery(e.target).parents('tr'), countFolderItems);
     }).ready(function(){
-        if ('agency' == userRole) {
-            jQuery('#note').dialog({
-                autoOpen: false,
-                height: 'auto',
-                width: '500',
-                modal: true,
-                draggable: false,
-                resizable: false,
-                buttons: {},
-                close: function() {
+        jQuery('#note').dialog({
+            autoOpen: false,
+            height: 'auto',
+            width: '500',
+            modal: true,
+            draggable: false,
+            resizable: false,
+            buttons: {
+                "<?php echo __("Save", \MissionNext\lib\Constants::TEXT_DOMAIN); ?>" : function(){
+
                     var modal = jQuery(this);
-                    modal.find('[name="id"]').val('');
-                    modal.find('textarea.message').val('');
-                }
-            });
-        } else {
-            jQuery('#note').dialog({
-                autoOpen: false,
-                height: 'auto',
-                width: '500',
-                modal: true,
-                draggable: false,
-                resizable: false,
-                buttons: {
-                    "<?php echo __("Save", \MissionNext\lib\Constants::TEXT_DOMAIN); ?>" : function(){
+                    var role = modal.find('[name="role"]').val();
+                    var id = modal.find('[name="id"]').val();
+                    var message = modal.find('textarea.message').val();
 
-                        var modal = jQuery(this);
-                        var role = modal.find('[name="role"]').val();
-                        var id = modal.find('[name="id"]').val();
-                        var message = modal.find('textarea.message').val();
+                    var data = {
+                        role : role,
+                        id: id,
+                        note: message.trim()
+                    };
 
-                        var data = {
-                            role : role,
-                            id: id,
-                            note: message.trim()
-                        };
+                    jQuery.ajax({
+                        type: "POST",
+                        url: "/note/change",
+                        data: data,
+                        success: function(data, textStatus, jqXHR){
 
-                        jQuery.ajax({
-                            type: "POST",
-                            url: "/note/change",
-                            data: data,
-                            success: function(data, textStatus, jqXHR){
+                            var tr = jQuery('table.result tr[data-id="'+data.user_id+'"]');
 
-                                var tr = jQuery('table.result tr[data-id="'+data.user_id+'"]');
+                            tr.find('td.note').attr('data-note', data.notes);
+                            tr.find('td.note div').attr( 'class', data.notes ? '' : 'no-note');
 
-                                tr.find('td.note').attr('data-note', data.notes);
-                                tr.find('td.note div').attr( 'class', data.notes ? '' : 'no-note');
+                            modal.dialog('close');
+                        },
+                        error: function(jqXHR, textStatus, errorThrown){
+                            modal.dialog('close');
+                        },
+                        dataType: "JSON"
+                    });
 
-                                modal.dialog('close');
-                            },
-                            error: function(jqXHR, textStatus, errorThrown){
-                                modal.dialog('close');
-                            },
-                            dataType: "JSON"
-                        });
-
-                    },
-                    "<?php echo __("Cancel", \MissionNext\lib\Constants::TEXT_DOMAIN); ?>" : function(){
-                        jQuery(this).dialog('close');
-                    }
                 },
-                close: function() {
-                    var modal = jQuery(this);
-                    modal.find('[name="id"]').val('');
-                    modal.find('textarea.message').val('');
+                "<?php echo __("Cancel", \MissionNext\lib\Constants::TEXT_DOMAIN); ?>" : function(){
+                    jQuery(this).dialog('close');
                 }
-            });
-        }
+            },
+            close: function() {
+                var modal = jQuery(this);
+                modal.find('[name="id"]').val('');
+                modal.find('textarea.message').val('');
+            }
+        });
     }).on('click', 'table.result tr.folder-title', function(e){
         triggerFolder(this);
     });
@@ -384,6 +377,29 @@ function getLastLogin($item){
 
         modal.find('[name="id"]').val(id);
         modal.find('textarea.message').val(text?text:' ');
+
+        modal.find('.help .name').html(name);
+        modal.find('.help .folder span').html(folder);
+
+        modal.dialog('open');
+    }
+
+    function openNoteForAgency(id, text, notes, name, folder){
+
+        var modal = jQuery('#note');
+
+        modal.find('[name="id"]').val(id);
+        modal.find('textarea.message').val(text?text:' ');
+
+        modal.find('#other_notes').html('');
+        if (notes != 'null') {
+            var notes_html = '';
+            var notes_array = JSON.parse(notes);
+            notes_html += "<h5>" + notes_array.org_name + "</h5>";
+            notes_html += "<p>" + notes_array.note_text + "</p>";
+            notes_html += '<br />';
+            modal.find('#other_notes').html(notes_html);
+        }
 
         modal.find('.help .name').html(name);
         modal.find('.help .folder span').html(folder);

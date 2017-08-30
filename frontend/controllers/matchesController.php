@@ -220,6 +220,27 @@ class matchesController extends AbstractLayoutController {
 
         $candidates = $candidates?$candidates:array();
 
+        if ($this->userRole == Constants::ROLE_AGENCY) {
+            $this->additional_info = $this->api->getMetaInfoForAgency($this->userId, Constants::ROLE_CANDIDATE);
+
+            foreach ($candidates as &$item) {
+                foreach ($this->additional_info['own_notes'] as $own_note) {
+                    if ($own_note['user_id'] == $item['id'] && !empty($own_note['notes'])) {
+                        $item['meta']['own_note'] = htmlentities($own_note['notes']);
+                    }
+                }
+
+                foreach ($this->additional_info['notes'] as $note) {
+                    if ($note['user_id'] == $item['id'] && !empty($note['notes'])) {
+                        $item['meta']['notes'] = [
+                            'org_name'  => $this->additional_info['affiliates'][$note['note_owner']]['name'],
+                            'note_text' => htmlentities($note['notes'])
+                        ];
+                    }
+                }
+            }
+        }
+
         $this->candidates =$candidates;
 
         $this->page = $page;

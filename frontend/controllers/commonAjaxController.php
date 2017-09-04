@@ -22,10 +22,10 @@ class commonAjaxController extends AbstractLayoutController {
 
     public function folderChange(){
         if($_SERVER['REQUEST_METHOD'] != 'POST'
-          || !$this->userId
-          || !isset($_POST['role'])
-          || !isset($_POST['id'])
-          || !isset($_POST['folder'])
+            || !$this->userId
+            || !isset($_POST['role'])
+            || !isset($_POST['id'])
+            || !isset($_POST['folder'])
         ){
             $this->forward404();
         }
@@ -83,9 +83,8 @@ class commonAjaxController extends AbstractLayoutController {
         $to = $to['email'];
 
         $manager = Context::getInstance()->getMailService();
+        $manager->reset();
 
-        $options = get_option('sp_settings');
-        $manager->from = (isset($options['from_email']) && !empty($options['from_email'])) ? $options['from_email'] : $from;
         $response = $manager->send($to, $subject, $body);
         if ('copy' == $cc_me) {
             $message = "Message sent to: " . $to_name . "\n" . $body;

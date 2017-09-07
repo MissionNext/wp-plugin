@@ -93,6 +93,10 @@
         "controller" : "profile",
         "action" : "presentation"
     },
+    "/profile/file/(.+)" : {
+        "controller" : "profile",
+        "action" : "getProfileFile"
+    },
     "/avatar/update" : {
         "controller" : "home",
         "action" : "updateAvatar"

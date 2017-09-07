@@ -55,8 +55,8 @@ class FileField extends BaseField {
         } else {
             $uploadShowClass = '';
         }
-        $path = Context::getInstance()->getConfig()->get('api_base_path') . '/' . Context::getInstance()->getConfig()->get('api_uploads_dir').'/'.$default;
-        $field = '<div id="view-'.$key.'" style="'.$viewShowClass.'"><a class="file-link" href="'.$path.'" target="_blank">'.$default.'</a>';
+
+        $field = '<div id="view-'.$key.'" style="'.$viewShowClass.'"><a class="file-link" href="/profile/file/'.$default.'" target="_blank">'.$default.'</a>';
         $field .= '<a class="file-delete-icon" href="javascript:void(0);" alt="Delete file" title="Delete file" data-fieldkey="'.$key.'">&nbsp;&nbsp;<img src="'.getResourceUrl('/resources/images/delete.png').'" width="14"/></a></div>';
 
         $field .= "<div id='uploaded-$key' style='".$uploadShowClass."'><input $optionsString class=\"mn-input-file\" id=\"$id\" name=\"$key\" type=\"file\" data-type=\"$type\" value=\"$default\" accept='$accept_str'/>";

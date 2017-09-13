@@ -23,7 +23,7 @@ class TextareaField extends BaseField {
         }
         $key = $this->name;
         $id = $this->id;
-		$field = "<textarea maxlength='1020' $optionsString name=\"$key\" id=\"$id\" placeholder='$placeholder'>$default</textarea>";
+		$field = "<textarea $optionsString name=\"$key\" id=\"$id\" placeholder='$placeholder'>$default</textarea>";
 		// Change by Nelson Nov 13 2015; added maxlength July 14, 2016 
         // $field = "<textarea rows='3' cols'40' $optionsString name=\"$key\" id=\"$id\" placeholder='$placeholder'>$default</textarea>";
 

@@ -8,7 +8,7 @@
     <p class="options-link-block">
         <a class="options-link" href="javascript:void(0)">Search options (click to show/hide search criterias)</a>
     </p>
-    <div id="search_options">
+    <div id="search_options" style="display: none;">
         <?php foreach($form->groups as $group): ?>
             <?php if(array_filter($group->getDefault())): ?>
                 <h3><?php echo $group->name ?></h3>

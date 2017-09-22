@@ -76,8 +76,8 @@ class commonAjaxController extends AbstractLayoutController {
         $cc_me = $_POST['cc_me'];
         $to_name = stripslashes($_POST['to_name']);
 
-        $from = $this->api->getUserProfile($fromValue);
-        $from = $from['email'];
+        $fromUser = $this->api->getUserProfile($fromValue);
+        $from = $fromUser['email'];
 
         $to = $this->api->getUserProfile($toValue);
         $to = $to['email'];
@@ -85,6 +85,9 @@ class commonAjaxController extends AbstractLayoutController {
         $manager = Context::getInstance()->getMailService();
         $manager->reset();
 
+        if (Constants::ROLE_CANDIDATE == $fromUser['role']) {
+            $body = "Message sent from: ".$fromUser['profileData']['first_name'].' '.$fromUser['profileData']['last_name']."\n".$body;
+        }
         $response = $manager->send($to, $subject, $body);
         if ('copy' == $cc_me) {
             $message = "Message sent to: " . $to_name . "\n" . $body;

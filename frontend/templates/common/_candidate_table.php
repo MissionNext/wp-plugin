@@ -244,7 +244,7 @@ function getLastLogin($item){
                                         <div <?php if(!$item['notes']) echo 'class="no-note"' ?>></div>
                                     </td>
                                 <?php } else { ?>
-                                    <td class="note" data-note="<?php echo $item['meta']['own_note']; ?>" data-notes='<?php echo json_encode($item['meta']['notes']); ?>'>
+                                    <td class="note" data-note="<?php echo $item['meta']['own_note']; ?>" data-notes='<?php echo json_encode($item['meta']['notes']); ?>' data-group="<?php echo $group_name; ?>">
                                         <div <?php if(!$item['meta']['own_note'] && count($item['meta']['notes']) == 0) echo 'class="no-note"' ?>></div>
                                     </td>
                                 <?php }?>
@@ -301,7 +301,7 @@ function getLastLogin($item){
                     jQuery(e.target).parents('td').attr('data-note'),
                     jQuery(e.target).parents('td').attr('data-notes'),
                     tr.attr('data-name'),
-                    tr.find('.folder select').val()
+                    jQuery(e.target).parents('td').attr('data-group'),
                 );
             } else {
                 openNote(

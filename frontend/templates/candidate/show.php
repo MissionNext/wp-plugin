@@ -137,7 +137,7 @@ elseif (preg_match("/teachnext/",$sniff_host)) {
                                         <?php endforeach; ?>
 
                                     <?php elseif($field['type'] == 'file' && $field['value']): ?>
-                                        <a href="<?php echo $config->get('api_base_path') . '/' . $config->get('api_uploads_dir') . '/' . $field['value'] ?>" class="mn-input-file-data"></a>
+                                        <a href="<?php echo '/profile/file/' . $field['value'] ?>" class="mn-input-file-data"></a>
                                     <?php elseif('boolean' == $field['type'] && $field['value']): ?>
                                         <?php echo "&nbsp;"; ?>
                                         <?php echo (1 == $field['value']) ? "Yes" : "No" ; ?>

@@ -31,7 +31,8 @@
         <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_block', compact('form')) ?>
 
         <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_save_block', array('searches' => $searches, 'search' => $search, 'role' => $role, 'userRole' => $userRole)) ?>
-
+		<a name="top">&nbsp;</a> 
+   
         <?php if($result): ?>
             <?php if (\MissionNext\lib\Constants::ROLE_AGENCY == $userRole && \MissionNext\lib\Constants::ROLE_CANDIDATE == $role) { ?>
                 <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_result_for_agency', compact('result', 'role', 'messages', 'userRole', 'userId', 'additional_info', 'multipleResults', 'page', 'pages')) ?>
@@ -69,10 +70,9 @@
         <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_saved', array('saved' => $searches, 'role' => $role)) ?>
     <?php endif; ?>
     <?php endif; ?>
-
-    <form id="search-form" role="form" action="<?php echo $_SERVER['REQUEST_URI']?>" method="POST" class="form-horizontal search-form <?php echo ($_SERVER['REQUEST_METHOD'] == 'POST') ? "hide" : ""; ?>">
+	 <form id="search-form" role="form" action="<?php echo $_SERVER['REQUEST_URI']?>#top" method="POST" class="form-horizontal search-form <?php echo ($_SERVER['REQUEST_METHOD'] == 'POST') ? "hide" : ""; ?>">
         <input type="hidden" name="page" value="<?php echo $page; ?>" id="page_number" />
-
+		
         <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_form', compact('form')) ?>
 
         <div class="control-buttons">

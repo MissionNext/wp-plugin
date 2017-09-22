@@ -4,8 +4,16 @@
  * @var $affiliates Array
  * @var $role String
  */
-// echo "\$userRole = $userRole "; echo "\$role = $role";
+$sniff_host  = $_SERVER["HTTP_HOST"]; // returns what is after https:// and before first slash
+    if (preg_match("/explorenext/",$sniff_host)) {
+        $site_id = 3;
+	}
+	elseif (preg_match("/teachnext/",$sniff_host)) {
+        $site_id = 6;
+	}
+// echo "\$userRole = $userRole "; echo "\$role = $role; \$site_id = $site_id";
 // print_r($affiliates);
+	
 ?>
 <div class="page-header">
     <h1><?php echo __('Affiliates', \MissionNext\lib\Constants::TEXT_DOMAIN)?></h1>
@@ -66,7 +74,7 @@
                     <?php endif; ?>
 
                     <?php if ($role == "organization"): ?>
-                        <td class="actions"><div><a href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>/jobs"><?php echo __('View Positions', \MissionNext\lib\Constants::TEXT_DOMAIN); ?></a></div></td>
+                        <td class="actions"><!--<div><a href="/<?php echo $role ?>/<?php echo $aff[ $role . '_profile']['id'] ?>/jobs"><?php echo __('View Positions', \MissionNext\lib\Constants::TEXT_DOMAIN); ?></a></div>--> &nbsp;</td>
                     <?php elseif ($role == "agency"): ?>
                         <td class="rep_name"><?php echo $aff[ $role . '_profile']['profileData']['first_name'] ?> <?php echo $aff[ $role . '_profile']['profileData']['last_name'] ?> </td>
                     <?php else: ?>
@@ -93,19 +101,11 @@
     <?php if ($userRole == "agency"): ?>
         <a class="btn btn-default" href="/organization/search"><?php echo __("Request Affiliation", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
 		<?php if($none != "Yes"): ?>
-			<a class="btn btn-default" href="https://info.missionnext.org/recruit_candidates.php?appid=<?php echo $site_id ?>" target="_blank"><?php echo __("Manage Affiliate Matches", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> 
+			&nbsp; <a class="btn btn-default" href="https://info.missionnext.org/recruit_candidates.php?appid=<?php echo $site_id ?>" target="_blank"><?php echo __("Manage Affiliate Matches", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> 
 		<?php endif; ?>
+			&nbsp; <a class="btn btn-default" href="https://info.missionnext.org/create_folders.php?appid=<?php echo $site_id ?>" target="_blank"><?php echo __("Manage My Folders", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> 
 
-    <?php elseif ($userRole == "organization"):
-
-        $sniff_host  = $_SERVER["HTTP_HOST"]; // returns what is after https:// and before first slash
-        if (preg_match("/explorenext/",$sniff_host)) {
-            $site_id = 3;
-        }
-        elseif (preg_match("/teachnext/",$sniff_host)) {
-            $site_id = 6;
-        }
-        ?>
+    <?php elseif ($userRole == "organization"): ?>
         <a class="btn btn-default" href="/agency/search"><?php echo __("Request Affiliation", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> &nbsp;
         <?php if($none != "Yes"): ?>
         <a class="btn btn-default" href="https://info.missionnext.org/assign_folders.php?appid=<?php echo $site_id ?>" target="_blank"><?php echo __("Assign Folders to Affiliates", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>

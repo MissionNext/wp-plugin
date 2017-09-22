@@ -16,6 +16,7 @@ $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before
 if (preg_match("/explorenext/",$sniff_host))   { $this_app = 3; }
 elseif (preg_match("/teachnext/",$sniff_host)) { $this_app = 6; }
 $number_jobs = count($jobs);
+$once = "No";
 // echo "<br>\$this_app = $this_app; \$number_jobs = $number_jobs";
 ?>
 
@@ -24,6 +25,7 @@ $number_jobs = count($jobs);
 </div>
 <div class="page-content">
     <?php if($jobs): 
+
     if ($number_jobs > 9): ?> 
     <a class="btn btn-success" href="/job/new"><?php echo __("New Job", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a><br><br>
      <?php endif; ?> 
@@ -39,8 +41,12 @@ $number_jobs = count($jobs);
         </thead>
         <tbody>
         <?php foreach($jobs as $job): ?>
-        <?php if(3 == $job['app_id']): ?>
-        <?php if ($date_today > $job['profileData']['listing_expiration']) { $font = "red"; $warn = "Yes"; } else { $font = "black"; } ?>
+        <?php if($this_app == $job['app_id']): ?>
+        <?php if ($date_today > $job['profileData']['listing_expiration']) { $font = "red"; $warn = "Yes"; } else { $font = "black"; } 
+        if ($warn == "Yes" && $once == "No") { echo "<font color='red'>NOTICE: One or more jobs has expired. Edit / Save job spec to extend the expiration date for another 6 months.</font><br>";     
+			$once = "Yes"; 
+		}
+		?>
             <tr>
                 <td class="expiration" width="80"><font color='<?php echo $font ?>'><?php echo $job['profileData']['listing_expiration'] ?></font></td>
                 <td class="name"><a href="/job/<?php echo $job['id'] ?>" target="_blank"><?php echo $job['name'] ?></a> </td>

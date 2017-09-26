@@ -73,13 +73,13 @@ class CurlClient implements ClientInterface {
         $resp = curl_exec($this->ch);
 
         //debug code
-        try {
+        /*try {
             if (FALSE === $resp) {
                 throw new \Exception(curl_error($this->ch), curl_errno($this->ch));
             }
         } catch(\Exception $e) {
             trigger_error(sprintf('Curl failed with error #%d: %s',$e->getCode(), $e->getMessage()),E_USER_ERROR);
-        }
+        }*/
 
 
         curl_reset($this->ch);

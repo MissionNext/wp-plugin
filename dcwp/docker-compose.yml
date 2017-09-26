@@ -36,6 +36,7 @@ services:
         extra_hosts:
             # IMPORTANT: Replace with your Docker Host IP (will be appended to /etc/hosts)
             - "dockerhost:10.0.75.1"
+            - "api.app:172.18.0.7"
         ports:
            - "2224:22"
         tty: true

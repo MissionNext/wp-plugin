@@ -142,11 +142,12 @@ abstract class AbstractLayoutController extends Controller {
         $changedFields = [];
 
         foreach ($savedGroups as $group => $groupValue) {
-            foreach ($groupValue->data as $key => $value) {
-                if ('file' == $groupValue->fields[$key]->field['type']) {
+            foreach ($groupValue->fields as $key => $fieldValue) {
+                if ('file' == $fieldValue->field['type']) {
                     continue;
                 }
 
+                $value = $groupValue->data[$key];
                 if (is_array($value)) {
                     $savedArray = array_values($value);
                     sort($savedArray);

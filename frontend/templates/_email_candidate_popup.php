@@ -127,7 +127,6 @@
         clear: function(){
             this.toInput.val("");
             this.fromInput.val("");
-            this.ccMe.attr("checked", false);
             this.subjectInput.val("");
             this.bodyInput.val("");
         }

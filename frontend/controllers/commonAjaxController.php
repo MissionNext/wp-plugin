@@ -85,14 +85,16 @@ class commonAjaxController extends AbstractLayoutController {
         $manager = Context::getInstance()->getMailService();
         $manager->reset();
 
+        if ('copy' == $cc_me) {
+            $message = "Message sent to: " . $to_name . "\n" . $body;
+            $response = $manager->send($from, $subject, $message);
+            $body = "Message sent from: ".$from."\n".$body;
+        }
+
         if (Constants::ROLE_CANDIDATE == $fromUser['role']) {
             $body = "Message sent from: ".$fromUser['profileData']['first_name'].' '.$fromUser['profileData']['last_name']."\n".$body;
         }
         $response = $manager->send($to, $subject, $body);
-        if ('copy' == $cc_me) {
-            $message = "Message sent to: " . $to_name . "\n" . $body;
-            $response = $manager->send($from, $subject, $message);
-        }
 
         echo json_encode($response);
 

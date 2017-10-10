@@ -1738,6 +1738,14 @@ fieldset.mn-profile-group > div div {
 .list-of-tips li{
     margin:3px;
 }
+#search_block .options-link-block{
+    margin: 0 0 20px 0;
+    float: left;
+    width: 100%;
+}
+#search_block .options-link{
+    font-size: 14px;
+}
 #saved_search .search .name {
     min-width: 120px;
     margin: 5px 0;

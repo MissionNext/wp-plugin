@@ -7,7 +7,7 @@
 
 <?php foreach($saved as $item): ?>
     <div class="search" data-id="<?php echo $item['id'] ?>">
-        <form action="/<?php echo $role ?>/search" method="POST">
+        <form action="/<?php echo $role ?>/search#top" method="POST">
             <input type="hidden" name="saved" value="<?php echo $item['id'] ?>"/>
             <div class="name">
                 <span><?php echo $item['search_name'] ?></span>

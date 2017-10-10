@@ -47,11 +47,11 @@ function selectState(data)
         {
             if(e.value == value)
             {
-                select.append('<option value="' + e.value + '" selected>' + e.name + '</option>');
+                select.append('<option value="' + e.name + '" selected>' + e.name + '</option>');
             }
             else
             {
-                select.append('<option value="' + e.value + '">' + e.name + '</option>');
+                select.append('<option value="' + e.name + '">' + e.name + '</option>');
             }
         });
     }

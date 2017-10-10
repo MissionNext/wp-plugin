@@ -275,7 +275,7 @@ class PaymentForm extends Form {
                 array(
                     'type' => 'text',
                     'symbol_key' => 'note',
-                    'name' => __('Optional note: (For exammple, what organization should be credited with the payment?)', Constants::TEXT_DOMAIN),
+                    'name' => __('Optional note: (For example, what organization should be credited with the payment?)', Constants::TEXT_DOMAIN),
                     'order' => 13,
                     'default_value' => '',
                     'class' => 'payment-textarea'

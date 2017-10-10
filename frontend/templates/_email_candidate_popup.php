@@ -11,7 +11,7 @@
             <input id="name-from" type="text" disabled="disabled"/>
         </div>
         <div class="block-cc">
-            <input type="checkbox" id="cc_me" name="cc_me" value="copy" />
+            <input type="checkbox" id="cc_me" name="cc_me" checked="checked" value="copy" />
             <label for="cc_me"><?php echo __('Copy Me', \MissionNext\lib\Constants::TEXT_DOMAIN)?></label>
         </div>
     </div>
@@ -127,7 +127,6 @@
         clear: function(){
             this.toInput.val("");
             this.fromInput.val("");
-            this.ccMe.attr("checked", false);
             this.subjectInput.val("");
             this.bodyInput.val("");
         }

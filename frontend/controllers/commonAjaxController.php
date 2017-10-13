@@ -79,18 +79,72 @@ class commonAjaxController extends AbstractLayoutController {
         $fromUser = $this->api->getUserProfile($fromValue);
         $from = $fromUser['email'];
 
-        $to = $this->api->getUserProfile($toValue);
-        $to = $to['email'];
+        $toUser = $this->api->getUserProfile($toValue);
+        $to = $toUser['email'];
 
         $manager = Context::getInstance()->getMailService();
         $manager->reset();
-
-        if (Constants::ROLE_CANDIDATE == $fromUser['role']) {
-            $body = "Message sent from: ".$fromUser['profileData']['first_name'].' '.$fromUser['profileData']['last_name']."\n".$body;
+        $array_state   = $fromUser['profileData']['state'];   // simplify the 3 dimensional array
+        $array_country = $fromUser['profileData']['country'];
+        // these are select fields with only one value 
+        if (is_array($array_state)) {
+        	foreach ($array_state AS $This_Value) {
+        		$user_state = $This_Value;
+        	}
         }
-        $response = $manager->send($to, $subject, $body);
-        if ('copy' == $cc_me) {
-            $message = "Message sent to: " . $to_name . "\n" . $body;
+        if (is_array($array_country)) {
+        	foreach ($array_country AS $This_Value) {
+        		$user_country = $This_Value;
+        	}
+        }
+		// Candidate to Organization 
+        if (Constants::ROLE_CANDIDATE == $fromUser['role']) {
+        	unset($response);
+            // $body = "Message sent from: ".$fromUser['profileData']['first_name'].' '.$fromUser['profileData']['last_name']."\n".$body;
+            $body1 = "Notice from MissionNext: \n";
+            $body1 .= "This is a message sent from Candidate: ".$fromUser['profileData']['first_name'].' '.$fromUser['profileData']['last_name']."\n";
+            $body1 .= "Email Address: ".$fromUser['profileData']['email']."\n";
+            $body1 .= "Location: ".$user_state.' '.$user_country."\n";
+        	if ($fromUser['profileData']['cell_phone']) {
+        		$body1 .= "Best Phone: ".$fromUser['profileData']['cell_phone']."\n";
+        	}
+        	// $body1 .= json_encode($fromUser)."\n"; // if used, captures entire user JSON profile; unscramble at http://freeonlinetools24.com/json-decode
+        	$body1 = $body1."\n".$body;
+        	$response = $manager->send($to, $subject, $body1);
+        }
+        // CC to Candidate if Copy Me box is checked 
+        if ('copy' == $cc_me && Constants::ROLE_CANDIDATE == $fromUser['role']) {
+            unset($response);
+            $body2 = "Notice: \n";
+            $body2 .= "You sent a message to: ".$toUser['profileData']['organization_name']."\n";
+            $body2 .= "Key Contact Name: ".$toUser['profileData']['first_name'].' '.$toUser['profileData']['last_name']."\n";
+            $body2 .= "Key Contact Phone: ".$toUser['profileData']['key_contact_phone']."\n";
+            $body2 .= "Email Address: ".$toUser['profileData']['email']."\n";
+            $message = $body2."\n - - - - - - - - - - - - - - \n".$body;
+
+            $response = $manager->send($from, $subject, $message);
+        }
+        // Organization to Candidate 
+        if (Constants::ROLE_ORGANIZATION == $fromUser['role']) {
+            $body3 = "Notice from MissionNext: \n";
+            $body3 .= "You have a message from partner organization: ".$fromUser['profileData']['organization_name']."\n";
+            $body3 .= "Key Contact Name: ".$fromUser['profileData']['first_name'].' '.$fromUser['profileData']['last_name']."\n";
+            $body3 .= "Key Contact Phone: ".$fromUser['profileData']['key_contact_phone']."\n";
+            $body3 .= "Email Address: ".$fromUser['profileData']['email']."\n";
+            // $body3 .= json_encode($fromUser)."\n"; // if used, captures entire user JSON profile; unscramble at http://freeonlinetools24.com/json-decode
+        	$body3 .= "Message: " . "\n - - - - - - - - - - - - - - \n".$body;
+        	$body = $body3. "\n - - - - - - - - - - - - - - \n"."(Do not reply directly to this note. Respond to ".$fromUser['profileData']['organization_name']." using the email address shown above.)\n";
+        	$response = $manager->send($to, $subject, $body);
+       	}
+        // CC to Organization if Copy Me box is checked 
+        if ('copy' == $cc_me && Constants::ROLE_ORGANIZATION == $fromUser['role']) {
+        	unset($response);
+            $body4 = "Notice: \n";
+            $body4 .= "You sent a message to Candidate: ".$toUser['profileData']['first_name'].' '.$toUser['profileData']['last_name']."\n";
+            $body4 .= "Email Address: ".$toUser['profileData']['email']."\n";
+            $body4 .= "Location: ".$user_state.' '.$user_country."\n\n";
+        	$body4 .= "That message reads: " . "\n - - - - - - - - - - - - - - \n";
+        	$message = $body4."\n".$body;
             $response = $manager->send($from, $subject, $message);
         }
 

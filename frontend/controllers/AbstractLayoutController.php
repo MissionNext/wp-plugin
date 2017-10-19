@@ -22,6 +22,7 @@ abstract class AbstractLayoutController extends Controller {
     public $flash;
     public $layout = 'layout.php';
     public $secured = true;
+    public $options = '';
     /**
      * @var Context
      */
@@ -36,6 +37,8 @@ abstract class AbstractLayoutController extends Controller {
     public function __construct(){
         parent::__construct();
         $this->api = Context::getInstance()->getApiManager()->getApi();
+
+        $this->options = get_option('et_divi');
     }
 
     public function beforeAction(){

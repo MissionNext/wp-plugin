@@ -4,20 +4,19 @@
  * @var String $userRole
  * @var Array $jobs
  */
-// echo "<br>\$userRole = $userRole";
-// echo "<pre>";
-// print_r($jobs);
-// print_r($user);
-// echo "</pre>";
+
+$warn = '';
 // there is nothing in $user, $userRole to identify which subscription is active for organizations with multiple subscriptions 
 $date_today = date("Y-m-d");
 $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
 // echo "<br>$sniff_host";
-if (preg_match("/explorenext/",$sniff_host))   { $this_app = 3; }
-elseif (preg_match("/teachnext/",$sniff_host)) { $this_app = 6; }
+if (preg_match("/explorenext/",$sniff_host)) {
+    $this_app = 3;
+} elseif (preg_match("/teachnext/",$sniff_host)) {
+    $this_app = 6;
+}
 $number_jobs = count($jobs);
 $once = "No";
-// echo "<br>\$this_app = $this_app; \$number_jobs = $number_jobs";
 ?>
 
 <div class="page-header">

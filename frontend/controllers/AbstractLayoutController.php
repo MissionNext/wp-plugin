@@ -147,7 +147,7 @@ abstract class AbstractLayoutController extends Controller {
                     continue;
                 }
 
-                $value = $groupValue->data[$key];
+                $value = isset($groupValue->data[$key]) ? $groupValue->data[$key] : null;
                 if (is_array($value)) {
                     $savedArray = array_values($value);
                     sort($savedArray);

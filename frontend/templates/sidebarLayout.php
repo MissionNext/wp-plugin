@@ -6,10 +6,18 @@
  */
 
 get_header();
-$sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
-if (preg_match("/explorenext/",$sniff_host)) { $site_id = 3; }
-elseif (preg_match("/teachnext/",$sniff_host)) { $site_id = 6; }
-elseif (preg_match("/jg./",$sniff_host)) { $site_id = 4; }
+$sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash
+
+$site_id = null;
+
+if (preg_match("/explorenext/",$sniff_host)) {
+    $site_id = 3;
+} elseif (preg_match("/teachnext/",$sniff_host)) {
+    $site_id = 6;
+} elseif (preg_match("/jg./",$sniff_host)) {
+    $site_id = 4;
+}
+
 ?>
     <div id="main" role="main" >
         <div class="container clearfix">
@@ -26,11 +34,11 @@ elseif (preg_match("/jg./",$sniff_host)) { $site_id = 4; }
                                 <a href="/dashboard"><?php echo __('My Dashboard', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                                 <a href="/profile"><?php echo __('My Profile', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                                 <a href="/user/account"><?php echo __('My Account', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
-                                <?php if($userRole == 'candidate'): 
+                                <?php if($userRole == 'candidate'):
                                 // generate $_GET value
                                 $factor   = rand(10,99); // generate random two-digit number
-								$factored = $factor * $user['id'];  // factored is the product of the random number and user_id 
-								$pass_string = $factor.$factored; // pass this string, then extract user_id as $factored / $factor 
+								$factored = $factor * $user['id'];  // factored is the product of the random number and user_id
+								$pass_string = $factor.$factored; // pass this string, then extract user_id as $factored / $factor
                                 ?>
                                     <a href="/candidate/matches/job" class="matches"><?php echo sprintf(__('View %s Matches', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_JOB))) ?></a>
                                     <a href="/job/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_JOB_PLURAL))) ?></a>
@@ -39,14 +47,14 @@ elseif (preg_match("/jg./",$sniff_host)) { $site_id = 4; }
                                     <a href="/inquiries"><?php echo __('Job Inquiry List', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                                     <a href="/favorite"><?php echo __('My Favorites', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                                     <a target="_blank" href="https://info.missionnext.org/qcs.php?uid=<?php echo $pass_string ?> "><?php echo __('Your QCS', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
-                                   
+
                                 <?php endif; ?>
 
-                                <?php if($userRole == 'agency'): 
+                                <?php if($userRole == 'agency'):
      							$rep_id		 = $user['id'];
     							$factor		 = rand(10,99); // generate random two-digit number
-								$factored	 = $factor * $rep_id; // factored is the product of the random number and user_id 
-								$pass_string = $factor.$factored; // pass this string, then extract user_id as $factored / $factor 
+								$factored	 = $factor * $rep_id; // factored is the product of the random number and user_id
+								$pass_string = $factor.$factored; // pass this string, then extract user_id as $factored / $factor
 			                    ?>
                                     <!--<a href="/presentation"><?php echo __('My Presentation', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>-->
                                     <a href="/affiliates"><?php echo __('Affiliates', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
@@ -65,7 +73,7 @@ elseif (preg_match("/jg./",$sniff_host)) { $site_id = 4; }
                     				<!--<a href="/organization/matches/candidate" class="matches"><?php echo sprintf(__('%s Matches', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_CANDIDATE))) ?></a>-->
                                     <a href="/candidate/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_CANDIDATE_PLURAL))) ?></a>
                                     <a href="/favorite"><?php echo __('My Favorites', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
-                                    <a href="/job">My <?php echo ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_JOB_PLURAL)) ?></a>  
+                                    <a href="/job">My <?php echo ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_JOB_PLURAL)) ?></a>
                                     <a href="/inquiries"><?php echo __('Job Inquiry List', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                                     <a href="/folders"><?php echo __('Manage Folders', \MissionNext\lib\Constants::TEXT_DOMAIN); ?></a>
                                    <?php if(isAgencyOn()): ?>

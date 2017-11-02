@@ -33,10 +33,17 @@
     </div>
 </div>
 <?php
-        $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
-		if (preg_match("/explorenext/",$sniff_host))   { $subdomain = "explorenext"; }
-		elseif (preg_match("/teachnext/",$sniff_host)) { $subdomain = "teachnext"; }
-		elseif (preg_match("/jg./",$sniff_host)) { $subdomain = "jg"; }
+    $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash
+    $subdomain = '';
+
+    if (preg_match("/explorenext/",$sniff_host)) {
+        $subdomain = "explorenext";
+    } elseif (preg_match("/teachnext/",$sniff_host)) {
+        $subdomain = "teachnext";
+    } elseif (preg_match("/jg./",$sniff_host)) {
+        $subdomain = "jg";
+    }
+
 if ($subdomain != "jg") {
 ?>
 <div class="info-icons">

@@ -150,9 +150,7 @@
                                                 <div class="favorite-block <?php echo ($item['favorite'])?'favorite':'not-favorite' ?>"></div>
                                             </td>
 
-                                            <td class="note" data-note="<?php echo $item['note']; ?>" data-notes='<?php echo json_encode($item['notes'][$orgId]); ?>' data-group="<?php echo $group_name; ?>">
-                                                <div <?php if(!$item['note'] && count($item['notes'][$orgId]) == 0) echo 'class="no-note"' ?>></div>
-                                            </td>
+
 
                                         </tr>
 

@@ -1,5 +1,16 @@
+<?php
+        $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
+		if (preg_match("/explorenext/",$sniff_host))   { $subdomain = "explorenext"; }
+		elseif (preg_match("/teachnext/",$sniff_host)) { $subdomain = "teachnext"; }
+		elseif (preg_match("canada/",$sniff_host)) { $subdomain = "canada"; }
+		elseif (preg_match("/jg./",$sniff_host)) { $subdomain = "jg"; }
+?>
 <div class="page-header">
-    <?php if(!empty($name)): ?>
+
+	<?php if (\MissionNext\lib\Constants::ROLE_AGENCY == $userRole && $subdomain == "explorenext"): 
+		$fullname = $user[profileData][first_name]." ".$user[profileData][last_name]; ?>
+        <h1><?php echo __('Hello', \MissionNext\lib\Constants::TEXT_DOMAIN) . ', ' . $fullname; ?></h1> <!--Rep Name-->
+   <?php elseif(!empty($name)): ?>
         <h1><?php echo __('Hello', \MissionNext\lib\Constants::TEXT_DOMAIN) . ', ' . $name; ?></h1> <!--Candidate Name-->
     <?php else: ?>
         <h1><?php echo __('Hello', \MissionNext\lib\Constants::TEXT_DOMAIN); ?></h1>
@@ -32,18 +43,7 @@
         <?php } ?>
     </div>
 </div>
-<?php
-    $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash
-    $subdomain = '';
-
-    if (preg_match("/explorenext/",$sniff_host)) {
-        $subdomain = "explorenext";
-    } elseif (preg_match("/teachnext/",$sniff_host)) {
-        $subdomain = "teachnext";
-    } elseif (preg_match("/jg./",$sniff_host)) {
-        $subdomain = "jg";
-    }
-
+<?php 
 if ($subdomain != "jg") {
 ?>
 <div class="info-icons">
@@ -84,10 +84,10 @@ if ($subdomain != "jg") {
 <? } // if ($subdomain != "jg")
 else {
     ?>
-	<table>
-	<tr><td align="center">JOURNEY GUIDE DASHBOARD</p></td></tr>
-	<tr><td align="center"><a href="https://guides.missionnext.org/jg_home.php"><img src="<?php echo getResourceUrl('/resources/images/dash_affiliates.png') ?>" /></a></td></tr>
-	<tr><td align="center">Providing information and challege to serve in missions</p></td></tr>
+	<table width="220" border>
+	<tr><td align="center">CANDIDATE DASHBOARD</td><td align="center">VIEW JOBS</td></tr>
+	<tr><td align="center"><a href="https://guides.missionnext.org/jg_home.php" title="View Selected Candidates"><img src="<?php echo getResourceUrl('/resources/images/dash_affiliates.png') ?>" /></a> </td><td align="center"> <a href="https://guides.missionnext.org/job_list.php" title="Jobs List" target="_blank"><img src="<?php echo getResourceUrl('/resources/images/dash_jobs.png') ?>" /></a></td></tr>
+	<tr><td align="center" colspan="2">MissionNext: Providing information, challenge and pathways to serve in missions.</p></td></tr>
 	</table>
 	<?php }
 ?>

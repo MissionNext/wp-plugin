@@ -311,7 +311,11 @@ function getFieldBySymbolKey($fields, $symbol_key) {
                                                 <div class="field  <?php echo ('select' == $field['type'] || 'radio' == $field['type']) ? 'dark-grey' : ''; ?>">
                                                     <label for="<?php echo $innerField['symbol_key'] ?>"><?php echo $innerField['default_name'] ?></label>
                                                     <input name="<?php echo $formName . '[' . $innerGroup['symbol_key'] . '][fields][' . $innerField['symbol_key'] . '][symbol_key]' ?>" type="hidden" data-orig-name="<?php echo $innerField['symbol_key'] ?>" value="<?php echo $innerField['symbol_key'] ?>"/>
-                                                    <input type="hidden" name="<?php echo $formName . '[' . $innerGroup['symbol_key'] . '][fields][' . $innerField['symbol_key'] . '][notes]' ?>" value="<?php echo htmlspecialchars(json_encode(array( 'before_notes' => $defaults[$group['symbol_key']]['fields'][$field['symbol_key']]['group']['fields'][$innerField['symbol_key']]['meta']['before_notes'], 'after_notes' => $defaults[$group['symbol_key']]['fields'][$field['symbol_key']]['group']['fields'][$innerField['symbol_key']]['meta']['after_notes']))) ?>"/>
+                                                    <input type="hidden"
+                                                           name="<?php echo $formName . '[' . $innerGroup['symbol_key'] . '][fields][' . $innerField['symbol_key'] . '][notes]' ?>"
+                                                           value="<?php echo htmlspecialchars(json_encode(array(
+                                                               'before_notes' => $defaults[$group['symbol_key']]['fields'][$field['symbol_key']]['group'][0]['fields'][$innerField['symbol_key']]['meta']['before_notes'],
+                                                               'after_notes' => $defaults[$group['symbol_key']]['fields'][$field['symbol_key']]['group'][0]['fields'][$innerField['symbol_key']]['meta']['after_notes']))) ?>"/>
 
                                                     <?php if($canHaveExpandedFields && ($innerField['type'] == 'radio' || $innerField['type'] == 'select' || 'custom_marital' == $innerField['type'])): ?>
                                                         <div class="option expanded">

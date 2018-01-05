@@ -95,7 +95,7 @@ abstract class AbstractLayoutController extends Controller {
                         }
                     }
 
-                } elseif($this->user['subscription']['status'] == Constants::SUBSCRIPTION_STATUS_EXPIRED){
+                } elseif($this->user['subscription']['status'] == Constants::SUBSCRIPTION_STATUS_EXPIRED && Constants::ROLE_CANDIDATE !== $this->userRole){
                     $this->setMessage('error', __("Your subscription is expired, please renew it", Constants::TEXT_DOMAIN));
                     $this->redirect('/payment/renew');
                 } elseif($this->user['subscription']['status'] == Constants::SUBSCRIPTION_STATUS_GRACE && $this->user['role'] != Constants::ROLE_CANDIDATE){

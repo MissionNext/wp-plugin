@@ -1,0 +1,9 @@
+Hello %to_full_name%, <br />
+<br />
+Someone is looking for you! %from_full_name% has inquired about the %job_second_title% job you posted on ExploreNext Canada. Please log in to your account and learn more about this connection by selecting Inquiries on your Dashboard.   <br />
+<br />
+If you run into any problems or need guidance, contact headquarters@missionnext.org.<br />
+<br />
+Thank you. <br />
+<br />
+ExploreNext Partner Support<br />

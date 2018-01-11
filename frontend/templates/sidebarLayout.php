@@ -95,11 +95,8 @@ elseif (preg_match("/jg./",$sniff_host)) { $site_id = 4; }
     </div>
 
 <script type="text/javascript">
-        var inprogress = jQuery('.matching-inprogress');
-        var ready = jQuery('.matching-ready');
         var matches = jQuery('.matches');
         jQuery(document).ready(function(){
-                inprogress.show();
                 matches.hide();
                 checkQueueStatus();
                 setInterval(checkQueueStatus, 10000);
@@ -108,13 +105,9 @@ elseif (preg_match("/jg./",$sniff_host)) { $site_id = 4; }
                 jQuery.get('/check/queue', function( response ){
                         parsedResponse = JSON.parse(response);
                         if (parsedResponse.data == 0) {
-                                inprogress.hide();
-                                ready.show();
                                 matches.show();
                             } else {
-                                ready.hide();
                                 matches.hide();
-                                inprogress.show();
                             }
                     });
             }

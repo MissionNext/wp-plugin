@@ -17,16 +17,6 @@
     <?php endif ;?>
 </div>
 <div class="dashboard-applications">
-    <div class="matching-status">
-        <p class="matching-inprogress" style="display: none;">
-            <img src="<?php echo getResourceUrl('/resources/images/spinner_32x32.gif') ?>" width="16" />
-            <span>Matching calculations in progress.</span>
-        </p>
-        <p class="matching-ready" style="display: none;">
-            <img src="<?php echo getResourceUrl('/resources/images/green_circle_icone.png') ?>" width="16" />
-            <span>Matching results ready.</span>
-        </p>
-    </div>
     <div class="col-md-12">
         <?php if ($userRole == \MissionNext\lib\Constants::ROLE_CANDIDATE) { ?>
             <table class="subscriptions-table">

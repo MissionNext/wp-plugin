@@ -1,6 +1,6 @@
 Hello %to_full_name%, <br />
 <br />
-%from_full_name% has canceled their inquiry regarding your job posting for %job_second_title%! <br />
+%from_full_name% has canceled the inquiry regarding your %job_second_title% posting. <br />
 <br />
-MissionNext Partner Support Team (Tranfsferred from Naleon's IL GAI) <br />
+MissionNext Partner Support Team  <br />
 <br />

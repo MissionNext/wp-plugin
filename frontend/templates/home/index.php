@@ -2,8 +2,9 @@
         $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
 		if (preg_match("/explorenext/",$sniff_host))   { $subdomain = "explorenext"; }
 		elseif (preg_match("/teachnext/",$sniff_host)) { $subdomain = "teachnext"; }
-		elseif (preg_match("canada/",$sniff_host)) { $subdomain = "canada"; }
+		elseif (preg_match("/canada/",$sniff_host)) { $subdomain = "canada"; }
 		elseif (preg_match("/jg./",$sniff_host)) { $subdomain = "jg"; }
+		else { $subdomain = "Not Identified"; }
 ?>
 <div class="page-header">
 
@@ -17,16 +18,6 @@
     <?php endif ;?>
 </div>
 <div class="dashboard-applications">
-    <div class="matching-status">
-        <p class="matching-inprogress" style="display: none;">
-            <img src="<?php echo getResourceUrl('/resources/images/spinner_32x32.gif') ?>" width="16" />
-            <span>Matching calculations in progress.</span>
-        </p>
-        <p class="matching-ready" style="display: none;">
-            <img src="<?php echo getResourceUrl('/resources/images/green_circle_icone.png') ?>" width="16" />
-            <span>Matching results ready.</span>
-        </p>
-    </div>
     <div class="col-md-12">
         <?php if ($userRole == \MissionNext\lib\Constants::ROLE_CANDIDATE) { ?>
             <table class="subscriptions-table">
@@ -63,7 +54,7 @@ if ($subdomain != "jg") {
                 <span class="icon-title favorites-icon"><?php echo __('Favorites', \MissionNext\lib\Constants::TEXT_DOMAIN) ?><br>
                     <img class="spinner-icon" width="16" src="<?php echo getResourceUrl('/resources/images/spinner_32x32.gif') ?>" />
                 </span>
-                <img src="<?php echo getResourceUrl('/resources/images/dash_favorites.jpg') ?>" />
+                <img src="<?php echo getResourceUrl('/resources/images/dash_favorites.png') ?>" />
                 
             </a>
         </li>
@@ -82,13 +73,17 @@ if ($subdomain != "jg") {
     </ul>
 </div> <!--<div class="info-icons">-->
 <? } // if ($subdomain != "jg")
-else {
+else { // for Journey Guide Appliation Only
     ?>
-	<table width="220" border>
-	<tr><td align="center">CANDIDATE DASHBOARD</td><td align="center">VIEW JOBS</td></tr>
-	<tr><td align="center"><a href="https://guides.missionnext.org/jg_home.php" title="View Selected Candidates"><img src="<?php echo getResourceUrl('/resources/images/dash_affiliates.png') ?>" /></a> </td><td align="center"> <a href="https://guides.missionnext.org/job_list.php" title="Jobs List" target="_blank"><img src="<?php echo getResourceUrl('/resources/images/dash_jobs.png') ?>" /></a></td></tr>
-	<tr><td align="center" colspan="2">MissionNext: Providing information, challenge and pathways to serve in missions.</p></td></tr>
-	</table>
+    <p>&nbsp;</p><p>&nbsp;</p>
+	<center><table style="width: 600px">
+	<tr><td style="text-align:center; width: 200px">CANDIDATE DASHBOARD</td><td style="text-align:center; width: 200px">VIEW INQUIRIES</td><td style="text-align:center; width: 200px">VIEW JOBS</td></tr>
+	<tr><td style="text-align:center; width: 200px"><a href="https://guides.missionnext.org/jg_home.php" title="View Selected Candidates"><img src="<?php echo getResourceUrl('/resources/images/dash_affiliates.png') ?>" /></a> </td>
+	<td style="text-align:center; width: 200px"> <a href="https://guides.missionnext.org/inq_list.php" title="Inquiry List (Takes a long moment to display)" target="_blank"><img src="<?php echo getResourceUrl('/resources/images/dash_inquiries.jpg') ?>" /></a></td>
+	<td style="text-align:center; width: 200px"> <a href="https://guides.missionnext.org/job_list.php" title="Jobs List" target="_blank"><img src="<?php echo getResourceUrl('/resources/images/dash_jobs.png') ?>" /></a></td></tr>
+	<tr><td align="center" colspan="3">&nbsp;</p></td></tr>
+	<tr><td align="center" colspan="3">MissionNext: Providing information, challenge and pathways for fellow Christ-followers to serve in missions.</p></td></tr>
+	</table></center>
 	<?php }
 ?>
 
@@ -121,8 +116,7 @@ else {
                         link = getLinkHtml(appKey, value);
                         subsTable.append('<tr><td>' + link + '</td><td></td></tr>');
                     });
-
-                    jQuery.each(response.candidateSubs, function (index, value) {
+					jQuery.each(response.candidateSubs, function (index, value) {
                         appUrl = getAppLink(value.app_id);
                         subsTable.append('<tr><td>' +
                             '<a class="btn btn-default" disabled target="_blank" href="' + appUrl + '/dashboard">' + value.app_name + '</a>' +
@@ -130,7 +124,7 @@ else {
                             '<a class="btn btn-default" href="/subscription/add/' + value.app_id + '">SignUp for Free</a>' +
                             '</td></tr>');
                     });
-                } else {
+                 } else {
                     var subsList = jQuery('.subscription-list');
                     subsList.html('');
                     jQuery.each(response.subscriptions, function (index, value) {
@@ -182,3 +176,11 @@ else {
         }
     }
 </script>
+<?php 
+if ($subdomain == "canada") {
+print ("<p>&nbsp; &nbsp; &nbsp; &nbsp;Note: Use <strong>Canada</strong> or <strong>TeachNext</strong>. <strong>ExploreNext</strong> is for US citizens</p>");
+} elseif (\MissionNext\lib\Constants::ROLE_CANDIDATE == $userRole) {
+print ("<p>&nbsp;</p><p>&nbsp; &nbsp; &nbsp; &nbsp;Note: <strong>Canada</strong> is for Canadian citizens</p>");
+}
+// echo "<br> \$userRole =  $userRole";
+?>

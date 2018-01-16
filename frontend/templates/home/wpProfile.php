@@ -93,10 +93,12 @@ $pass_string = $factor.$factored; // pass this string, then extract user_id as $
 $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
 if (preg_match("/explorenext/",$sniff_host)) { 
 	$site = 3 * $factor;
-	
 }
 elseif (preg_match("/teachnext/",$sniff_host)) { 
 	$site = 6 * $factor;
+}
+elseif (preg_match("/canada/",$sniff_host)) { 
+	$site = 10 * $factor;
 }
 ?> 
 <!-- javascript functions are needed to open a new window using Firefox running on Windows and Macs -->

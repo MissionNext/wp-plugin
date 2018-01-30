@@ -11,6 +11,8 @@ if (preg_match("/explorenext/",$sniff_host)) {
     $subdomain = "explorenext";
 } elseif (preg_match("/teachnext/",$sniff_host)) {
     $subdomain = "teachnext";
+} elseif (preg_match("/canada/",$sniff_host)) {
+    $subdomain = "canada";
 } elseif (preg_match("/jg/",$sniff_host)) {
     $subdomain = "jg";
 }

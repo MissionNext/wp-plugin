@@ -45,64 +45,7 @@ class homeController extends AbstractLayoutController {
         $this->app_key = Context::getInstance()->getApiManager()->publicKey;
         $this->name = Context::getInstance()->getUser()->getName();
 
-        $this->subscriptions = $this->api->getSubscriptionsForUser($this->userId);
-
         $this->matching = $this->api->checkQueue($this->userId);
-
-        $configs = $this->api->getSubscriptionConfigs();
-        $candidateSubscriptions = [];
-        $blockedIndexes = [];
-        foreach($configs as $app){
-            $app_block = false;
-            foreach($app['configs'] as $app_options){
-                if ("block_website" == $app_options['key']){
-                    $app_block = $app_options['value'];
-                }
-            }
-            if (!$app_block) {
-                foreach($app['sub_configs'] as $sub_config){
-                    if($sub_config['role'] == Constants::ROLE_CANDIDATE && $sub_config['price_year'] == 0){
-                        $candidateSubscriptions[$app['id']] = $sub_config;
-                        $candidateSubscriptions[$app['id']]['app_name'] = $app['name'];
-                    }
-                }
-            } else {
-                $blockedIndexes[] = $app["id"];
-            }
-        }
-
-        $subsIndexes = [];
-        $counter = 0;
-        foreach($this->subscriptions as $sub_item){
-            unset($candidateSubscriptions[$sub_item['app_id']]);
-
-            if(in_array($sub_item['app_id'], $blockedIndexes)){
-                $subsIndexes[] = $counter;
-            }
-            $counter++;
-        }
-
-        foreach($subsIndexes as $val){
-            unset($this->subscriptions[$val]);
-        }
-
-        $this->candidateSubs = $candidateSubscriptions;
-
-        if($this->userRole == Constants::ROLE_CANDIDATE){
-            $orgFavorites = $this->api->getFavorites($this->userId, 'organization');
-            $jobFavorites = $this->api->getFavorites($this->userId, 'job');
-            $this->favoritesCount = count($orgFavorites) + count($jobFavorites);
-
-            $this->inquiriesCount = $this->getInquiriesViews();
-        } else {
-            $favorites = $this->api->getFavorites($this->userId, 'candidate');
-            $this->favoritesCount = count($favorites);
-
-            $this->inquiriesCount = $this->getInquiriesViews();
-
-            $affiliates = $this->api->getAffiliates($this->userId, 'any');
-            $this->affiliatesCount = count($affiliates);
-        }
 
         $this->links = Context::getInstance()->getConfig()->get('links');
     }
@@ -123,9 +66,7 @@ class homeController extends AbstractLayoutController {
                 $this->setMessage('notice' , __('Your account info saved successfully!', Constants::TEXT_DOMAIN));
                 $this->redirect($_SERVER['REQUEST_URI']);
             }
-
         }
-
     }
 
     public function updateAvatar(){
@@ -154,31 +95,5 @@ class homeController extends AbstractLayoutController {
         echo json_encode($this->api->checkQueue($this->userId));
 
         return false;
-    }
-
-    private function getInquiriesViews(){
-        $inquiries = array();
-
-        switch ($this->userRole) {
-            case "candidate" : {
-
-                $tmpInquiries = $this->api->getInquiredJobs($this->userId);
-                $inquiries = [];
-                foreach ($tmpInquiries as $jobItem) {
-                    $inquiries[] = $jobItem;
-                }
-                break;
-            }
-            case "organization" : {
-                $inquiries = $this->api->getInquiredCandidatesForOrganization($this->userId);
-                break;
-            }
-            case "agency" : {
-                $inquiries = $this->api->getInquiredCandidatesForAgency($this->userId);
-                break;
-            }
-        }
-
-        return count($inquiries);
     }
 }

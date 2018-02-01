@@ -380,6 +380,10 @@ class Api {
         return $this->get('check/profile/'.$user_id);
     }
 
+    public function deleteProfileCompletnessStatus($role) {
+        return $this->delete('completness/profile/'.$role);
+    }
+
     public function updateUserProfile($user_id, $profile, $changedData = null, $saveLater = null){
         return $this->put('profile/'.$user_id, compact('profile', 'changedData', 'saveLater'));
     }

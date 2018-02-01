@@ -376,6 +376,10 @@ class Api {
         return $this->post($role.'/field/choices/'.$field_id, array('choices' => $choices));
     }
 
+    public function checkCompletedProfile($user_id) {
+        return $this->get('check/profile/'.$user_id);
+    }
+
     public function updateUserProfile($user_id, $profile, $changedData = null, $saveLater = null){
         return $this->put('profile/'.$user_id, compact('profile', 'changedData', 'saveLater'));
     }

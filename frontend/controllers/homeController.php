@@ -25,8 +25,6 @@ class homeController extends AbstractLayoutController {
         $this->app_key = Context::getInstance()->getApiManager()->publicKey;
         $this->name = Context::getInstance()->getUser()->getName();
 
-        $this->matching = $this->api->checkQueue($this->userId);
-
         $this->links = Context::getInstance()->getConfig()->get('links');
     }
 
@@ -70,10 +68,4 @@ class homeController extends AbstractLayoutController {
         $this->redirect(isset($_SERVER['HTTP_REFERER'])?$_SERVER['HTTP_REFERER']:'/dashboard');
     }
 
-    public function checkQueue(){
-
-        echo json_encode($this->api->checkQueue($this->userId));
-
-        return false;
-    }
 }

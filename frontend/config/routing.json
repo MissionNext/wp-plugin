@@ -289,10 +289,6 @@
         "controller" : "forgotPassword",
         "action" : "reset"
     },
-    "/check/queue" : {
-        "controller" : "home",
-        "action" : "checkQueue"
-    },
     "/folders" : {
         "controller" : "folders",
         "action" : "index"

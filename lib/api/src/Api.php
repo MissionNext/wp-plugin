@@ -428,10 +428,6 @@ class Api {
         return $this->post('user', compact('username', 'email', 'password', 'role', 'profile'));
     }
 
-    public function checkQueue($user_id){
-        return $this->get('check/queue/' . $user_id);
-     }
-
     public function getLastError(){
         return $this->lastError;
     }

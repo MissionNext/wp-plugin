@@ -17,35 +17,13 @@ class homeController extends AbstractLayoutController {
 
     public function index(){
 
-        /* Simulation of the form save to get validation information */
-        $this->form = new Form($this->api, $this->userRole, 'profile', $this->userId);
-        $this->form->saveLater = null;
-        $this->form->changedFields = [
-            'status' => 'checked',
-            'changedFields' => []
-        ];
-        $data = [];
-        foreach ($this->form->groups as $key => $value) {
-            $groupData = $value->data;
-            foreach ($value->fields as $fieldKey => $fieldValue) {
-                if ($fieldValue->field['type'] == 'file') {
-                    unset($groupData[$fieldKey]);
-                }
-            }
-            $data[$key] = $groupData;
-        }
-        $this->form->data = $data;
-        $this->form->save();
-
-        if ($this->form->hasErrors()) {
+        if (!$this->profileCompleted) {
             $this->api->deactivateUserApp($this->userId);
             $this->redirect('/profile');
         }
 
         $this->app_key = Context::getInstance()->getApiManager()->publicKey;
         $this->name = Context::getInstance()->getUser()->getName();
-
-        $this->matching = $this->api->checkQueue($this->userId);
 
         $this->links = Context::getInstance()->getConfig()->get('links');
     }
@@ -90,10 +68,4 @@ class homeController extends AbstractLayoutController {
         $this->redirect(isset($_SERVER['HTTP_REFERER'])?$_SERVER['HTTP_REFERER']:'/dashboard');
     }
 
-    public function checkQueue(){
-
-        echo json_encode($this->api->checkQueue($this->userId));
-
-        return false;
-    }
 }

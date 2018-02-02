@@ -203,7 +203,7 @@ abstract class AbstractFormBuilderTab extends AbstractSettingsTab {
             }
 
             $this->api->saveFormGroupTranslations($translations);
-
+            $this->api->deleteProfileCompletnessStatus($this->getRole());
             $this->addNotice('form', ucfirst($this->getRole()) . ' ' . $this->getFormName() . ' form saved');
         } else {
             $error = $this->api->getLastError();

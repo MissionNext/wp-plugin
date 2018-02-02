@@ -376,6 +376,14 @@ class Api {
         return $this->post($role.'/field/choices/'.$field_id, array('choices' => $choices));
     }
 
+    public function checkCompletedProfile($user_id) {
+        return $this->get('check/profile/'.$user_id);
+    }
+
+    public function deleteProfileCompletnessStatus($role) {
+        return $this->delete('completness/profile/'.$role);
+    }
+
     public function updateUserProfile($user_id, $profile, $changedData = null, $saveLater = null){
         return $this->put('profile/'.$user_id, compact('profile', 'changedData', 'saveLater'));
     }
@@ -419,10 +427,6 @@ class Api {
     public function register($username, $email, $password, $role, $profile = array()){
         return $this->post('user', compact('username', 'email', 'password', 'role', 'profile'));
     }
-
-    public function checkQueue($user_id){
-        return $this->get('check/queue/' . $user_id);
-     }
 
     public function getLastError(){
         return $this->lastError;

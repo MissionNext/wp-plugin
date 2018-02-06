@@ -6,7 +6,7 @@
 
 ?>
 
-<div id="form_intro_translations" title="Form intoduction">
+<div id="form_intro_translations" title="Form introduction">
     <table class="wp-list-table widefat">
         <thead>
             <tr>
@@ -91,7 +91,7 @@
 
                 delete data[key]['name'];
             });
-
+            
             return data;
         },
 

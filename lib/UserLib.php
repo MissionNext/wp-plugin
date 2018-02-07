@@ -10,7 +10,11 @@ class UserLib extends ProfileLib {
         if(isset($user['profileData'][Constants::$predefinedFields[$user['role']]['first_name']])
             || isset($user['profileData'][Constants::$predefinedFields[$user['role']]['last_name']])
         ){
-            return $user['profileData'][Constants::$predefinedFields[$user['role']]['first_name']] . ' ' . $user['profileData'][Constants::$predefinedFields[$user['role']]['last_name']];
+            $userFullName = [];
+            $userFullName[] = !empty($user['profileData'][Constants::$predefinedFields[$user['role']]['first_name']]) ? $user['profileData'][Constants::$predefinedFields[$user['role']]['first_name']] : '';
+            $userFullName[] = !empty($user['profileData'][Constants::$predefinedFields[$user['role']]['last_name']]) ? $user['profileData'][Constants::$predefinedFields[$user['role']]['last_name']] : '';
+
+            return implode(' ', $userFullName);
         } else {
             return $user['username'];
         }

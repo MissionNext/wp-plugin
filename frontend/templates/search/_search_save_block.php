@@ -39,39 +39,10 @@ $search_json = json_encode($search);
 </div>
 
 <script>
-
-    jQuery('#save-search').on('submit', function(event){
-        var form = jQuery(event.target);
-
-        var data = {
-            name: form.find('[name="name"]').val(),
-            role_from: form.find('[name="role_from"]').val(),
-            role_to: form.find('[name="role_to"]').val(),
-            data: JSON.parse(form.find('[name="data"]').val())
-        };
-
-        if(!form.find('input[name="name"]').val()){
-            return false;
-        }
-
-        jQuery.ajax({
-            type: "POST",
-            url: form.attr('action'),
-            data: data,
-            success: function(data, textStatus, jqXHR){
-                jQuery("#save-search-block")
-                    .prepend("<p class='success'><?php echo __('Successfully saved', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></p>")
-                    .find('form').hide();
-            },
-            error: function(jqXHR, textStatus, errorThrown){
-                jQuery("#save-search-block").prepend("<p class='error'><?php echo __('Save error', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></p>");
-            },
-            dataType: "JSON"
-        });
-
-        event.preventDefault();
-        return false;
-    });
-
+    var success = '<?php echo __("Successfully saved", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>';
+    var error = '<?php echo __("Save error", MissionNext\lib\Constants::TEXT_DOMAIN) ?>';
 </script>
 
+<?php
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/search/search_save_block', 'search/search_save_block.js', array( 'jquery' ));
+?>

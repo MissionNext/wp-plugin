@@ -3,6 +3,8 @@
  * @var $saved Array
  * @var $role
  */
+
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/search/ajax_search_saved', 'search/ajax_search_saved.js', array( 'jquery' ));
 ?>
 
 <?php foreach($saved as $item): ?>
@@ -19,26 +21,3 @@
         </form>
     </div>
 <?php endforeach; ?>
-
-
-<script>
-
-    function deleteJob(button){
-
-        var div = jQuery(button).parents('.search');
-
-        jQuery.ajax({
-            type: "POST",
-            url: "/saved/search/delete",
-            data: {
-                id: div.attr('data-id')
-            },
-            success: function(data, textStatus, jqXHR){
-                jQuery(div).empty();
-            },
-            error: function(jqXHR, textStatus, errorThrown){
-            },
-            dataType: "JSON"
-        });
-    }
-</script>

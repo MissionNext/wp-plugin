@@ -94,25 +94,8 @@ elseif (preg_match("/jg./",$sniff_host)) { $site_id = 4; }
         </div>
     </div>
 
-<script type="text/javascript">
-        var matches = jQuery('.matches');
-        jQuery(document).ready(function(){
-                matches.hide();
-                checkQueueStatus();
-                setInterval(checkQueueStatus, 10000);
-            });
-        function checkQueueStatus() {
-                jQuery.get('/check/queue', function( response ){
-                        parsedResponse = JSON.parse(response);
-                        if (parsedResponse.data == 0) {
-                                matches.show();
-                            } else {
-                                matches.hide();
-                            }
-                    });
-            }
-    </script>
 <?php
-renderTemplate('_email_popup');
+//renderTemplate('_email_popup');
 get_footer();
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/sidebar', 'sidebar.js', array( 'jquery' ));
 ?>

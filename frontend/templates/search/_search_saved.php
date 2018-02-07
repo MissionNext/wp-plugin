@@ -9,21 +9,9 @@
 </div>
 
 <script>
-    window.onload = function(){
-        loadSavedSearches("<?php echo $role ?>", function(data){
-            jQuery('#saved_search').html(data);
-        }, function(){console.log('error')});
-    };
-    window.onunload = function(){};
-
-    function loadSavedSearches(role, successCallback, errorCallback){
-
-        jQuery.ajax({
-            type: "GET",
-            url: "/saved/search/" + role,
-            success: successCallback,
-            error: errorCallback
-        });
-
-    }
+    var role = "<?php echo $role ?>";
 </script>
+
+<?php
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/search/search_saved', 'search/search_saved.js', array( 'jquery' ));
+?>

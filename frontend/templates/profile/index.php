@@ -26,54 +26,10 @@
 </div>
 
 <script type="text/javascript">
-    var formHasChanged = false;
-    var submitted = false;
     var user_id = <?php echo $userId; ?>;
     var userrole = '<?php echo $userRole; ?>';
-
-    jQuery(document).ready(function () {
-
-        jQuery(document).on('change', 'form.form-horizontal input, form.form-horizontal select, form.form-horizontal textarea', function (e) {
-            formHasChanged = true;
-        });
-
-        jQuery(document).on('click', '.file-delete-icon', function (e) {
-            var link = jQuery(this);
-            var route = '/delete/file';
-            var fieldkey = link.data('fieldkey');
-
-            jQuery.ajax
-            ({
-                url: route,
-                type: "POST",
-                dataType: "JSON",
-                data:
-                {
-                    fieldname: fieldkey,
-                    userid: user_id
-                },
-                success: function(data)
-                {
-                    if ("success" == data.status) {
-                        jQuery('#view-' + fieldkey).hide();
-                        jQuery('#uploaded-' + fieldkey).show();
-                    }
-
-                }
-            });
-        });
-
-        window.onbeforeunload = function (e) {
-            if (formHasChanged && !submitted) {
-                var message = "You have not saved your changes.", e = e || window.event;
-                if (e) {
-                    e.returnValue = message;
-                }
-                return message;
-            }
-        }
-        jQuery("form").submit(function() {
-            submitted = true;
-        });
-    });
 </script>
+
+<?php
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/profile/index', '/profile/index.js', array( 'jquery' ));
+?>

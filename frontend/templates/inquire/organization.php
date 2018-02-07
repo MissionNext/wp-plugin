@@ -13,6 +13,8 @@ $key = 0;
         elseif (preg_match("/teachnext/",$sniff_host)) {
             $site_id = 6;
         }
+        
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/inquire/organization', 'inquire/organization.js', array( 'jquery' ));
 ?>
 <div class="page-header">
     <h1><?php echo __("Inquiry list", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></h1>
@@ -66,46 +68,3 @@ $key = 0;
 	<a href="https://info.missionnext.org/inquiries.php?appid=<?php echo $site_id ?>" target="_blank">View deleted inquiries</a>
 	</div>
 </div>
-
-<script>
-
-    jQuery(document).on('click', '.inquire-cancel', function(e){
-
-        var row = jQuery(e.target).parents('tr');
-
-        cancelInquireByOrganization(row.attr('data-id'), row.attr('data-job-id'), row.attr('data-candidate-id'), function(data){
-            row.remove();
-            removeHeaders();
-            resetIndexes();
-        });
-    });
-
-    function resetIndexes(){
-        var index = 1;
-        var rows = jQuery('table tbody tr td.id');
-        jQuery.each(rows, function(key, value){
-            jQuery(value).text(index);
-            index++;
-        });
-    }
-
-    function removeHeaders(){
-        var rows = jQuery('table.table.result tbody tr');
-
-        jQuery.each(rows, function(key, value){
-
-            value = jQuery(value);
-
-            if(!value.hasClass('header')){
-                return;
-            }
-
-            var next = value.next();
-
-            if(!next.length || next.hasClass('header')){
-                value.remove();
-            }
-        });
-    }
-
-</script>

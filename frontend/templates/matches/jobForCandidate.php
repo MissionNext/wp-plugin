@@ -74,7 +74,9 @@ $percentages = [10, 20, 30, 40, 50, 60, 70, 80, 90];
 </div>
 
 <script>
-    jQuery(document).on('change', '#percentage_filter', function() {
-        window.location.href = "<?php echo $_SERVER['REDIRECT_URL']?>?rate=" + jQuery(this).val();
-    });
+    var redirect_url = '<?php echo $_SERVER['REDIRECT_URL']?>';
 </script>
+
+<?php
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/matches/candidateForJob', 'matches/candidateForJob.js', array( 'jquery' ));
+?>

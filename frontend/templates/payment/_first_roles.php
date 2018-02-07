@@ -4,6 +4,8 @@
  * @var $app_id
  */
 
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/payment/first_roles', 'payment/first_roles.js', array( 'jquery' ));
+
 ?>
 
 <div class="block payment-period payment-type">
@@ -69,36 +71,3 @@ Partnership Notes (<a href="https://new.missionnext.org/welcome/for-organization
 <li>Tier 1: Annual revenues of under $5 million 
 <li>One Rate: All TeachNext Schools 
 </ul>
-<script>
-
-    jQuery(document).on('change', '#payment_table_roles input[type="radio"]', function(e){
-        pushPrice();
-    }).on('ready', function(e){
-        pushPrice();
-    });
-
-    function pushPrice(){
-
-        var rows = jQuery("#payment_table_roles input[type='radio']:not([value='none']):checked");
-
-        var price = 0;
-        var sites = 0;
-
-        jQuery.each(rows, function(key, value){
-
-            var site_price = parseInt(jQuery(value).parents('td').attr('data-price'));
-
-            if(site_price){
-                price += site_price;
-                sites++;
-            }
-
-        });
-
-        TotalCart.renew_price = price;
-        TotalCart.discount_active = sites > 1;
-        TotalCart.update();
-
-    }
-
-</script>

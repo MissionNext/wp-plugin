@@ -7,6 +7,7 @@
 $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after https:// and before first slash 
 // echo "Candidate <br>"; print_r($inquiries);
 
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/inquire/candidate', 'inquire/candidate.js', array( 'jquery' ));
 ?>
 <div class="page-header">
     <h1><?php echo __("Inquiry list", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></h1>
@@ -51,23 +52,3 @@ $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after https:// and befor
     <?php endif; ?>
 
 </div>
-
-<script>
-    jQuery(document).on("click", "table tr td .inquire-cancel", function(e){
-
-        var tr = jQuery(e.target).parents("tr");
-        cancelInquire(tr.attr('data-id'), function(data){
-            tr.remove();
-            resetIndexes();
-        });
-    });
-
-    function resetIndexes(){
-        var index = 1;
-        var rows = jQuery('table tbody tr td.id');
-        jQuery.each(rows, function(key, value){
-            jQuery(value).text(index);
-            index++;
-        });
-    }
-</script>

@@ -63,11 +63,10 @@ $years = [2001, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017];
 </div>
 
 <script>
-    jQuery(document).on('change', '#percentage_filter', function() {
-        window.location.href = "<?php echo $_SERVER['REDIRECT_URL']?>?rate=" + jQuery(this).val();
-
-    }).on('change', '#update_year', function () {
-        window.location.href = "<?php echo $_SERVER['REDIRECT_URL']?>?updates=" + jQuery(this).val();
-    });
+    var redirect_url = '<?php echo $_SERVER['REDIRECT_URL']?>';
 </script>
+
+<?php
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/matches/candidateForOrganization', 'matches/candidateForOrganization.js', array( 'jquery' ));
+?>
 

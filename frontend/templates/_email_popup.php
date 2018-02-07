@@ -18,98 +18,10 @@
 </div>
 
 <script>
-
-    jQuery(document).ready(function(){
-        EmailPopup.init();
-    });
-
-    var EmailPopup = {
-
-        popup : '',
-        fromInput : '',
-        toInput : '',
-        subjectInput : '',
-        bodyInput : '',
-
-        dialogConfig : {
-            autoOpen: false,
-            height: 'auto',
-            width: '500',
-            modal: true,
-            draggable: false,
-            resizable: false,
-            buttons: {
-                "<?php echo __('Send', \MissionNext\lib\Constants::TEXT_DOMAIN) ?>" : function(){
-
-                    EmailPopup.send(
-                        function(data, textStatus, jqXHR){
-                            EmailPopup.clear();
-                            EmailPopup.popup.dialog('close');
-                        },
-                        function(data, textStatus, jqXHR){
-                            EmailPopup.popup.dialog('close');
-                        }
-                    );
-
-                },
-                "<?php echo __('Cancel', \MissionNext\lib\Constants::TEXT_DOMAIN) ?>" : function(){
-                    EmailPopup.popup.dialog('close');
-                }
-            },
-            close: function() {
-                var modal = jQuery(this);
-                modal.find('[name="id"]').val('');
-                modal.find('textarea.message').val('');
-            }
-        },
-
-        init : function(){
-            this.popup = jQuery("#email-popup").dialog(this.dialogConfig);
-
-            this.fromInput = this.popup.find("#email-from");
-            this.toInput = this.popup.find("#email-to");
-            this.subjectInput = this.popup.find("#email-subject");
-            this.bodyInput = this.popup.find("#email-body");
-        },
-
-        open : function (from, to, subject, body){
-
-            this.fromInput.val(from);
-            this.toInput.val(to);
-            this.subjectInput.val(subject);
-            this.bodyInput.val(body);
-
-            this.popup.dialog('open');
-        },
-
-        send: function(success, error){
-
-            var data = {
-                to : this.toInput.val(),
-                from: this.fromInput.val(),
-                subject: this.subjectInput.val(),
-                body: this.bodyInput.val()
-            };
-
-            jQuery.ajax({
-                type: "POST",
-                url: "/email/send",
-                data: data,
-                success: success,
-                error: error,
-                dataType: "JSON"
-            });
-        },
-
-        clear: function(){
-            this.toInput.val("");
-            this.fromInput.val("");
-            this.subjectInput.val("");
-            this.bodyInput.val("");
-        }
-    };
-
-
-
-
+    var sendButton = "<?php echo __('Send', \MissionNext\lib\Constants::TEXT_DOMAIN) ?>";
+    var cancelButton = "<?php echo __('Cancel', \MissionNext\lib\Constants::TEXT_DOMAIN) ?>";
 </script>
+
+<?php
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/email_popup', 'email_popup.js', array( 'jquery', 'jquery-ui-dialog' ));
+?>

@@ -164,17 +164,9 @@ elseif (preg_match("/teachnext/",$sniff_host)) {
 
 
 <script>
-
-    jQuery(document).on('click', '#make_favorite', function(e){
-        addFavorite( <?php echo $candidate['id'] ?>, 'candidate',function(data){
-            jQuery('#remove_from_favorites').attr('data-id', data['id']).removeClass('hide');
-            jQuery('#make_favorite').addClass('hide');
-        });
-    }).on('click', '#remove_from_favorites', function(e){
-        removeFavorite(jQuery(e.target).attr('data-id'),function(data){
-            jQuery('#remove_from_favorites').attr('data-id', false).addClass('hide');
-            jQuery('#make_favorite').removeClass('hide');
-        });
-    });
-
+    var candidate_id = '<?php echo $candidate['id'] ?>';
 </script>
+
+<?php
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/candidate/show', 'candidate/show.js', array( 'jquery' ));
+?>

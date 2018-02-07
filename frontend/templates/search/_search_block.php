@@ -2,6 +2,8 @@
 /**
  * @var $form \MissionNext\lib\form\Form
  */
+
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/search/search_block', 'search/search_block.js', array( 'jquery' ));
 ?>
 
 <div id="search_block">
@@ -42,12 +44,3 @@
         <?php endforeach; ?>
     </div>
 </div>
-
-<script type="text/javascript">
-    jQuery(document).ready(function () {
-        jQuery('.options-link').on('click', function (e) {
-            e.preventDefault();
-            jQuery('#search_options').toggle();
-        });
-    });
-</script>

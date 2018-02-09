@@ -93,9 +93,7 @@ elseif (preg_match("/jg./",$sniff_host)) { $site_id = 4; }
             </div>
         </div>
     </div>
-
 <?php
-//renderTemplate('_email_popup');
+renderTemplate('_email_popup');
 get_footer();
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/sidebar', 'sidebar.js', array( 'jquery' ));
 ?>

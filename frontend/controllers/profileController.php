@@ -35,16 +35,7 @@ class profileController extends AbstractLayoutController {
             }
         }
 
-        if( $this->secured && !in_array($this->context->getApiManager()->publicKey, $this->user['app_names']) &&
-            $this->route['controller'] == 'profile' && $this->route['action'] == 'index' && !current_user_can('manage_options')
-        ){
-            $this->profileCompleted = false;
-        } else {
-            $this->profileCompleted = true;
-        }
-
-
-	\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/country', 'country.js', array( 'jquery' ));
+    	\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/country', 'country.js');
     }
 
     /**

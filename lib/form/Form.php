@@ -59,6 +59,8 @@ class Form {
         $intro = '';
         $role = (isset($this->searchRole)) ? $this->searchRole : $this->role;
         $translations = Context::getInstance()->getSiteConfigManager()->get("{$this->name}_{$role}_form_intro");
+        $translations = str_replace('&#92;', '\\', $translations);
+
         if(!empty($translations))
         {
             $lang_id = Context::getInstance()->getLocalizationManager()->getCurrentLangId();

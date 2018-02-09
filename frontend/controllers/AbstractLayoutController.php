@@ -22,6 +22,7 @@ abstract class AbstractLayoutController extends Controller {
     public $flash;
     public $layout = 'layout.php';
     public $secured = true;
+    public $profileCompleted = false;
     /**
      * @var Context
      */
@@ -47,6 +48,9 @@ abstract class AbstractLayoutController extends Controller {
         $this->userRole = get_user_meta(get_current_user_id(), Constants::META_ROLE, true);
         $this->userId = get_user_meta(get_current_user_id(), Constants::META_KEY, true);
         $this->user = Context::getInstance()->getUser()->getUser();
+
+        $checkProfileCompleted = $this->api->checkCompletedProfile($this->userId);
+        $this->profileCompleted = $checkProfileCompleted['profile_completed'];
 
         $this->context = Context::getInstance();
 
@@ -104,8 +108,10 @@ abstract class AbstractLayoutController extends Controller {
             }
 
             //Presence
-            if($this->secured && !in_array($app_name, $this->user['app_names']) &&
-                !($this->route['controller'] == 'profile' && $this->route['action'] == 'index') &&
+            if ($this->secured &&
+                !$this->profileCompleted &&
+                !($this->route['controller'] == 'profile' &&
+                $this->route['action'] == 'index') &&
                 $this->route['controller'] != 'payment'
             ){
                 $this->redirect('/profile');
@@ -116,8 +122,11 @@ abstract class AbstractLayoutController extends Controller {
 
     public function afterAction(){
 
-        if( $this->secured && !in_array($this->context->getApiManager()->publicKey, $this->user['app_names']) &&
-            $this->route['controller'] == 'profile' && $this->route['action'] == 'index' && !current_user_can('manage_options')
+        if( $this->secured &&
+            !$this->profileCompleted &&
+            $this->route['controller'] == 'profile' &&
+            $this->route['action'] == 'index' &&
+            !current_user_can('manage_options')
         ){
             $this->layout = 'layout.php';
             if($_SERVER['REQUEST_METHOD'] == 'GET'){  // message adjusted by Nelson 5 October 2016

@@ -412,6 +412,7 @@ abstract class AbstractModelBuilderTab extends AbstractSettingsTab {
 
         if($ret){
             $this->addNotice('model', 'Model saved');
+            $this->api->deleteProfileCompletnessStatus($this->getModelName());
         } else {
             $error = $this->api->getLastError();
 

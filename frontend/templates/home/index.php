@@ -34,7 +34,12 @@
         <?php } ?>
     </div>
 </div>
-<?php 
+<?php
+        $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
+		if (preg_match("/explorenext/",$sniff_host))   { $subdomain = "explorenext"; }
+		elseif (preg_match("/teachnext/",$sniff_host)) { $subdomain = "teachnext"; }
+		elseif (preg_match("/canada/",$sniff_host)) { $subdomain = "canada"; }
+		elseif (preg_match("/jg./",$sniff_host)) { $subdomain = "jg"; }
 if ($subdomain != "jg") {
 ?>
 <div class="info-icons">
@@ -73,7 +78,7 @@ if ($subdomain != "jg") {
     </ul>
 </div> <!--<div class="info-icons">-->
 <? } // if ($subdomain != "jg")
-else { // for Journey Guide Appliation Only
+else { // for Journey Guide Application Only
     ?>
     <p>&nbsp;</p><p>&nbsp;</p>
 	<center><table style="width: 600px">

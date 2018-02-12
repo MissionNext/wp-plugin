@@ -179,8 +179,6 @@
 
     <script>
         var current_org = <?php echo $default_affiliate; ?>;
-        var saveButton = '<?php echo __("Save", \MissionNext\lib\Constants::TEXT_DOMAIN); ?>';
-        var cancelButton = '<?php echo __("Cancel", \MissionNext\lib\Constants::TEXT_DOMAIN); ?>';
     </script>
 </div>
 

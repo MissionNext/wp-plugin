@@ -16,12 +16,3 @@
         <textarea id="email-body" cols="30" rows="10"></textarea>
     </div>
 </div>
-
-<script>
-    var sendButton = "<?php echo __('Send', \MissionNext\lib\Constants::TEXT_DOMAIN) ?>";
-    var cancelButton = "<?php echo __('Cancel', \MissionNext\lib\Constants::TEXT_DOMAIN) ?>";
-</script>
-
-<?php
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/email_popup', 'email_popup.js', array( 'jquery', 'jquery-ui-dialog' ));
-?>

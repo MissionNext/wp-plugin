@@ -35,7 +35,7 @@ function groupEmpty($group){
             </div>
         <?php if($job['organization']['email'] != $user['email']): ?>
             <div class="buttons">
-                <a onclick="EmailPopup.open('<?php echo $user['id'] ?>', '<?php echo $job['organization']['id'] ?>', '<?php echo str_replace("'", "`", $user['profileData']['first_name']) . ' ' . str_replace("'", "`", $user['profileData']['last_name']) ?>', '<?php echo str_replace("'", "`", $job['org_name']) ?>')" class="btn btn-primary"><?php echo __("Send message", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                <a id="sendEmail" class="btn btn-primary"><?php echo __("Send message", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
             </div>
         <?php endif; ?>
 
@@ -146,8 +146,14 @@ function groupEmpty($group){
 
 <script>
     var job_id = '<?php echo $job['id'] ?>';
+    var from = '<?php echo $user['id'] ?>';
+    var to = '<?php echo $job['organization']['id'] ?>';
+    var from_name = '<?php echo str_replace("'", "`", $user['profileData']['first_name']) . ' ' . str_replace("'", "`", $user['profileData']['last_name']) ?>';
+    var to_name = '<?php echo str_replace("'", "`", $job['org_name']) ?>';
 </script>
 
 <?php
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/job/show', 'job/show.js', array( 'jquery' ));
+    renderTemplate('_email_candidate_popup');
+    \MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/email_candidate_popup', 'email_candidate_popup.js', array( 'jquery', 'jquery-ui-dialog' ));
+    \MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/job/show', 'job/show.js', array( 'jquery', 'mn/email_candidate_popup' ));
 ?>

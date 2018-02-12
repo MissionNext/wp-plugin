@@ -38,7 +38,7 @@ jQuery(document).on('click', 'table.result tr td.note div', function(e){
         draggable: false,
         resizable: false,
         buttons: {
-            saveButton : function(){
+            Save : function(){
 
                 var modal = jQuery(this);
                 var role = modal.find('[name="role"]').val();
@@ -71,7 +71,7 @@ jQuery(document).on('click', 'table.result tr td.note div', function(e){
                 });
 
             },
-            cancelButton : function(){
+            Cancel : function(){
                 jQuery(this).dialog('close');
             }
         },

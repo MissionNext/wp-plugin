@@ -20,7 +20,7 @@ jQuery(document).ready(function () {
             data:
                 {
                     fieldname: fieldkey,
-                    userid: user_id
+                    userid: userId
                 },
             success: function(data)
             {

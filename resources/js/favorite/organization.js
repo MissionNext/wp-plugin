@@ -29,7 +29,7 @@ jQuery(document).ready(function(){
         draggable: false,
         resizable: false,
         buttons: {
-            saveButton : function(){
+            Save : function(){
 
                 var modal = jQuery(this);
                 var role = modal.find('[name="role"]').val();
@@ -62,7 +62,7 @@ jQuery(document).ready(function(){
                 });
 
             },
-            cancelButton : function(){
+            Cancel : function(){
                 jQuery(this).dialog('close');
             }
         },
@@ -119,7 +119,7 @@ function changeFolder(row){
                     width: '300',
                     modal: true,
                     buttons: {
-                        closeButton : function(){
+                        Close : function(){
                             jQuery(this).dialog('close');
                         }
                     },

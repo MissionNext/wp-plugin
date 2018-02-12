@@ -223,9 +223,6 @@ function getLastLogin($item){
     var userRole = '<?php echo $userRole; ?>';
     var matching = '<?php echo $matching; ?>';
     var affiliate = '<?php echo $affiliate; ?>';
-    var saveButton = '<?php echo __("Save", \MissionNext\lib\Constants::TEXT_DOMAIN); ?>';
-    var cancelButton = '<?php echo __("Cancel", \MissionNext\lib\Constants::TEXT_DOMAIN); ?>';
-    var closeButton = '<?php echo __("Close", \MissionNext\lib\Constants::TEXT_DOMAIN); ?>';
 </script>
 
 <?php

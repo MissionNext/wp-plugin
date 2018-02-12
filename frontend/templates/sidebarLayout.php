@@ -94,6 +94,5 @@ elseif (preg_match("/jg./",$sniff_host)) { $site_id = 4; }
         </div>
     </div>
 <?php
-renderTemplate('_email_popup');
 get_footer();
 ?>

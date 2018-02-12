@@ -1,9 +1,3 @@
-jQuery(document).ready(function(){
-    console.log(EmailPopup);
-    EmailPopup.init();
-    console.log(EmailPopup);
-});
-
 var EmailPopup = {
 
     popup : '',
@@ -23,7 +17,7 @@ var EmailPopup = {
         draggable: false,
         resizable: false,
         buttons: {
-            sendButton : function(){
+            Send : function(){
 
                 EmailPopup.send(
                     function(data, textStatus, jqXHR){
@@ -36,7 +30,7 @@ var EmailPopup = {
                 );
 
             },
-            cancelButton : function(){
+            Cancel : function(){
                 EmailPopup.popup.dialog('close');
             }
         },

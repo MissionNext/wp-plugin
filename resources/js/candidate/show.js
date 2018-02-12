@@ -8,4 +8,7 @@ jQuery(document).on('click', '#make_favorite', function(e){
         jQuery('#remove_from_favorites').attr('data-id', false).addClass('hide');
         jQuery('#make_favorite').removeClass('hide');
     });
+}).on('click', '#sendEmail', function (e) {
+    EmailPopup.init();
+    EmailPopup.open(from, to, subject, body);
 });

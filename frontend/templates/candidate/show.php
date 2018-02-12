@@ -66,7 +66,7 @@ elseif (preg_match("/teachnext/",$sniff_host)) {
             </div>
             <?php if($candidate['email'] != $user['email']): ?>
                 <div class="buttons">
-                    <a onclick="EmailPopup.open('<?php echo $user['id'] ?>', '<?php echo $candidate['id'] ?>', '<?php echo isset($user['profileData']['agency_full_name']) ? str_replace("'", "`", $user['profileData']['agency_full_name']) : str_replace("'", "`", $user['profileData']['organization_name']) ?>', '<?php echo str_replace("'", "`", $name) ?>')" class="btn btn-primary"><?php echo __("Send message", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                    <a id="sendEmail"  class="btn btn-primary"><?php echo __("Send message", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                 </div>
             <?php endif; ?>
 
@@ -162,11 +162,18 @@ elseif (preg_match("/teachnext/",$sniff_host)) {
 
 </div>
 
-
 <script>
     var candidate_id = '<?php echo $candidate['id'] ?>';
+    var from = '<?php echo $candidate['id'] ?>';
+    var to = '<?php echo $organization['id'] ?>';
+    var subject = '<?php echo isset($user['profileData']['agency_full_name']) ?
+        str_replace("'", "`", $user['profileData']['agency_full_name']) :
+        str_replace("'", "`", $user['profileData']['organization_name']) ?>';
+    var body = '<?php echo str_replace("'", "`", $name) ?>';
 </script>
 
 <?php
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/candidate/show', 'candidate/show.js', array( 'jquery' ));
+    renderTemplate('_email_popup');
+    \MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/email_popup', 'email_popup.js', array( 'jquery', 'jquery-ui-dialog' ));
+    \MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/candidate/show', 'candidate/show.js', array( 'jquery', 'mn/email_popup' ));
 ?>

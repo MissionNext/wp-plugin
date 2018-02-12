@@ -28,7 +28,7 @@ jQuery(document).ready(function(){
         draggable: false,
         resizable: false,
         buttons: {
-            saveButton : function(){
+            Save : function(){
 
                 var modal = jQuery(this);
                 var role = modal.find('[name="role"]').val();
@@ -61,7 +61,7 @@ jQuery(document).ready(function(){
                 });
 
             },
-            cancelButton : function(){
+            Cancel : function(){
                 jQuery(this).dialog('close');
             }
         },

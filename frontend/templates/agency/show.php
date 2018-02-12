@@ -33,7 +33,7 @@ function groupEmpty($group){
             </div>
             <?php if($agency['email'] != $user['email']): ?>
                 <div class="buttons">
-                    <a onclick="EmailPopup.open('<?php echo $user['id'] ?>', '<?php echo $agency['id'] ?>', '<?php echo isset($user['profileData']['organization_name']) ? str_replace("'", "`", $user['profileData']['organization_name']) : str_replace("'", "`", $user['profileData']['first_name']) . ' ' . str_replace("'", "`", $user['profileData']['last_name']) ?>', '<?php echo str_replace("'", "`", $agency['profileData']['agency_full_name'])?>')" class="btn btn-primary"><?php echo __('Send message', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                    <a id="sendEmail" class="btn btn-primary"><?php echo __('Send message', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                 </div>
             <?php endif; ?>
 
@@ -90,3 +90,18 @@ function groupEmpty($group){
         </div>
     </div>
 </div>
+
+<script>
+    var from = '<?php echo $user['id'] ?>';
+    var to = '<?php echo $agency['id'] ?>';
+    var from_name = '<?php echo isset($user['profileData']['organization_name']) ?
+        str_replace("'", "`", $user['profileData']['organization_name']) :
+        str_replace("'", "`", $user['profileData']['first_name']) . ' ' . str_replace("'", "`", $user['profileData']['last_name']) ?>';
+    var to_name = '<?php echo str_replace("'", "`", $agency['profileData']['agency_full_name'])?>';
+</script>
+
+<?php
+    renderTemplate('_email_candidate_popup');
+    \MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/email_candidate_popup', 'email_candidate_popup.js', array( 'jquery', 'jquery-ui-dialog' ));
+    \MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/organization/presentation', 'organization/presentation.js', array( 'jquery', 'mn/email_candidate_popup' ));
+?>

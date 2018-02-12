@@ -57,11 +57,6 @@
     <textarea cols="25" rows="5" class="message"></textarea>
 </div>
 
-<script>
-    var saveButton = '<?php echo __("Save", \MissionNext\lib\Constants::TEXT_DOMAIN); ?>';
-    var cancelButton = '<?php echo __("Cancel", \MissionNext\lib\Constants::TEXT_DOMAIN); ?>';
-</script>
-
 <?php
 \MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/favorite/agency', 'favorite/agency.js', array( 'jquery', 'jquery-ui-dialog' ));
 ?>

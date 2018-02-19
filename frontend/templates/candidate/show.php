@@ -173,7 +173,7 @@ elseif (preg_match("/teachnext/",$sniff_host)) {
 </script>
 
 <?php
-    renderTemplate('_email_popup');
+    renderTemplate('_email_candidate_popup');
     \MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/email_candidate_popup', 'email_candidate_popup.js', array( 'jquery', 'jquery-ui-dialog' ));
     \MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/candidate/show', 'candidate/show.js', array( 'jquery', 'mn/email_candidate_popup' ));
 ?>

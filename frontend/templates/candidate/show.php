@@ -166,14 +166,14 @@ elseif (preg_match("/teachnext/",$sniff_host)) {
     var candidate_id = '<?php echo $candidate['id'] ?>';
     var from = '<?php echo $candidate['id'] ?>';
     var to = '<?php echo $organization['id'] ?>';
-    var subject = '<?php echo isset($user['profileData']['agency_full_name']) ?
+    var from_name = '<?php echo isset($user['profileData']['agency_full_name']) ?
         str_replace("'", "`", $user['profileData']['agency_full_name']) :
         str_replace("'", "`", $user['profileData']['organization_name']) ?>';
-    var body = '<?php echo str_replace("'", "`", $name) ?>';
+    var to_name = '<?php echo str_replace("'", "`", $name) ?>';
 </script>
 
 <?php
     renderTemplate('_email_popup');
-    \MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/email_popup', 'email_popup.js', array( 'jquery', 'jquery-ui-dialog' ));
-    \MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/candidate/show', 'candidate/show.js', array( 'jquery', 'mn/email_popup' ));
+    \MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/email_candidate_popup', 'email_candidate_popup.js', array( 'jquery', 'jquery-ui-dialog' ));
+    \MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/candidate/show', 'candidate/show.js', array( 'jquery', 'mn/email_candidate_popup' ));
 ?>

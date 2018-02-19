@@ -10,5 +10,5 @@ jQuery(document).on('click', '#make_favorite', function(e){
     });
 }).on('click', '#sendEmail', function (e) {
     EmailPopup.init();
-    EmailPopup.open(from, to, subject, body);
+    EmailPopup.open(from, to, from_name, to_name);
 });

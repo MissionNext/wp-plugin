@@ -18,6 +18,7 @@ elseif (preg_match("/teachnext/",$sniff_host)) { $this_app = 6; }
 
 <div class="page-header">
     <h1><?php echo sprintf(__('Interactive %s Search', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_ORGANIZATION_PLURAL))) ?></h1>
+<!--search/organization.php search by candidates for organizations -->
 </div>
 <div class="page-content">
 

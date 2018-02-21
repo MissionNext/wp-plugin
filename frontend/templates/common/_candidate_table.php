@@ -28,6 +28,7 @@ while (list($key, $val) = each($Cookie_Keys)) {
 	if (preg_match("/wordpress_logged_in/",$val)) { $this_key = $key; }
 }
 // echo "<br>\$userRole = $userRole; \$role = $role; \$userId = $userId; \$loggedRole = $loggedRole ";
+// for org search of candidate: $userRole = organization; $role = candidate
 if ($loggedRole) { 
 	if ($loggedRole == "agency") { 
 		$agency_user = $Cookie_Values[$this_key]; 

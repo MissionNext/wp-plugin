@@ -7,7 +7,8 @@
 ?>
 
 <div class="page-header">
-    <h1><?php echo __('My Presentation', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></h1>
+    <h2><?php echo __('My Presentation', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></h2>
+    <font color="#666666">Note: Contact MissionNext to delete media items.</font>
 </div>
 <div class="page-content">
     <form class="form-horizontal" action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">

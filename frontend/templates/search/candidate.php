@@ -14,7 +14,7 @@
     <h1><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_CANDIDATE_PLURAL))) ?></h1>
 </div>
 <div class="page-content">
-
+<!--search/candidate.php search by organizations for candidates -->
     <?php if($_SERVER['REQUEST_METHOD'] == 'POST'): ?>
 
         <?php if (\MissionNext\lib\Constants::ROLE_AGENCY == $userRole) { ?>

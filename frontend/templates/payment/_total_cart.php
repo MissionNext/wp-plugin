@@ -23,5 +23,5 @@ $fee = \MissionNext\lib\GlobalConfig::getSubscriptionFee();
 </script>
 
 <?php
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/payment/total_cart', 'payment/total_cart.js', array( 'jquery' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/payment/total_cart', 'payment/total_cart.js', array( 'jquery' ), false, true);
 ?>

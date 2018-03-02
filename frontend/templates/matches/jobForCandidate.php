@@ -52,7 +52,7 @@ $percentages = [10, 20, 30, 40, 50, 60, 70, 80, 90];
             	echo __("Your profile was updated $hours hours $minutes minutes ago. Job matching calculations occur overnight US time.", \MissionNext\lib\Constants::TEXT_DOMAIN); 
             }
             else {
-            	echo __("Sorry, no matches yet. ", \MissionNext\lib\Constants::TEXT_DOMAIN);
+            	echo __("Sorry, no matches yet. (Matches are run overnight US Time)", \MissionNext\lib\Constants::TEXT_DOMAIN);
             } ?>
         </div>
     <?php endif; 

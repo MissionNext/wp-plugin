@@ -38,7 +38,7 @@ $percentages = [10, 20, 30, 40, 50, 60, 70, 80, 90];
         <?php renderTemplate("common/_pager", compact('page', 'pages')) ?>
     <?php else: ?>
         <div class="block">
-            <?php echo __("Sorry, no matches yet.", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+            <?php echo __("Sorry, no matches yet. (Matches are run overnight US Time)", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
         </div>
     <?php endif; ?>
 

@@ -51,7 +51,7 @@ $years = [2001, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017];
         <?php renderTemplate("common/_pager", compact('page', 'pages', 'sort_by', 'order_by')) ?>
     <?php else: ?>
         <div class="block">
-            <?php echo __("Sorry, no matches yet.", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+            <?php echo __("Sorry, no matches yet. (Matches are run overnight US Time)", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
         </div>
     <?php endif; ?>
 

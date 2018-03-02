@@ -158,8 +158,8 @@ function getLastLogin($item){
                                         <img src="<?php echo getResourceUrl('/resources/images/inquire.png') ?>" height="16" width="16" />
                                     <?php } ?>
                                 </td>
-                              <td class="favorite" data-id="<?php echo $item['favorite'] ?>">
-                                    <div class="favorite-block <?php echo is_integer($item['favorite'])?'favorite':'not-favorite' ?>"></div>
+                              <td class="favorite" data-id="<?php echo isset($item['favorite']) ? isset($item['favorite']) : ''; ?>">
+                                    <div class="favorite-block <?php echo (isset($item['favorite']) && is_integer($item['favorite'])) ? 'favorite' : 'not-favorite'; ?>"></div>
                                 </td>
 
                                     <td class="folder">

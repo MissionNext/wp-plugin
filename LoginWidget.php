@@ -95,7 +95,7 @@ class LoginWidget extends \WP_Widget {
                     <img src="<?php echo getResourceUrl('/resources/images/spinner_32x32.gif'); ?>" width="32" />
                 </div>
                 <script src="<?php echo getResourceUrl('/resources/js/login.js'); ?>"></script>
-                <?php if ($subdomain == "jg") { ?>
+                <?php if (isset($subdomain) && $subdomain == "jg") { ?>
 				<div>
                     <p><a href="<?php echo wp_lostpassword_url("/dashboard") ?>"><font color="#434343"><?php echo __("Can't Sign In?", Constants::TEXT_DOMAIN) ?></font></a></p>
                     <p><?php echo __("Register as", Constants::TEXT_DOMAIN) ?></p>

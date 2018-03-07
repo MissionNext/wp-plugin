@@ -233,5 +233,5 @@ function getLastLogin($item){
 </script>
 
 <?php
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/common/organization_table', 'common/organization_table.js', array( 'jquery', 'jquery-ui-dialog' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/common/organization_table', 'common/organization_table.js', array( 'jquery', 'jquery-ui-dialog' ), false, true);
 ?>

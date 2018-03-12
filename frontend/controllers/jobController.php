@@ -97,8 +97,6 @@ class jobController extends AbstractLayoutController {
 
         $this->jobs = $this->api->findJobs(array('organization_id' => $this->userId));
 
-        uasort($this->jobs, array($this, 'sortJobs'));
-
         $this->form = new JobForm($this->api, $this->userId, isset($_GET['from']) ? $_GET['from'] : null, true);
 
         /* Condition uncheck all fields dependance from job title */

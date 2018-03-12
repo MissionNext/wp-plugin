@@ -29,15 +29,13 @@ while (list($key, $val) = each($Cookie_Keys)) {
 }
 // echo "<br>\$userRole = $userRole; \$role = $role; \$userId = $userId; \$loggedRole = $loggedRole ";
 // for org search of candidate: $userRole = organization; $role = candidate
-if ($loggedRole) { 
-	if ($loggedRole == "agency") { 
-		$agency_user = $Cookie_Values[$this_key]; 
-		$pipe_pos    = strpos($agency_user,"|");
-		// the username is before the pipe character. Usernames can contain a space, so these are replaced with an underline 
-		$agency_un   = str_replace(" ","_",trim(substr($agency_user, 0, $pipe_pos)));
-		$factor		 = rand(10,99); // generate random two-digit number
-		// echo "<br>\$factor = $factor; \$agency_un = $agency_un";
-	}
+if (isset($loggedRole) && \MissionNext\lib\Constants::ROLE_AGENCY == $loggedRole) {
+    $agency_user = $Cookie_Values[$this_key];
+    $pipe_pos    = strpos($agency_user,"|");
+    // the username is before the pipe character. Usernames can contain a space, so these are replaced with an underline
+    $agency_un   = str_replace(" ","_",trim(substr($agency_user, 0, $pipe_pos)));
+    $factor		 = rand(10,99); // generate random two-digit number
+    // echo "<br>\$factor = $factor; \$agency_un = $agency_un";
 }
 
 // must distinguish which application is in use for users with more than one subscriptiion, since there is more than one app_id 
@@ -286,7 +284,7 @@ function getLastLogin($item){
 
 <script>
     var userRole = '<?php echo $userRole; ?>';
-    var loggedUser = '<?php echo $loggedRole; ?>';
+    var loggedUser = '<?php echo isset($loggedRole) ? $loggedRole : ''; ?>';
     var matching = '<?php echo $matching; ?>';
     var saveButton = '<?php echo __("Save", \MissionNext\lib\Constants::TEXT_DOMAIN); ?>';
     var cancelButton = '<?php echo __("Cancel", \MissionNext\lib\Constants::TEXT_DOMAIN); ?>';

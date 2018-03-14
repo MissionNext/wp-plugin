@@ -156,7 +156,13 @@ class jobController extends AbstractLayoutController {
             $this->forward404();
         }
 
-        $this->api->deleteJob($params[0], $this->userId);
+        $old_user = $this->get_old_user();
+        $old_login = false;
+        if ($old_user) {
+            $old_login = $old_user->data->user_login;
+        }
+
+        $this->api->deleteJob($params[0], $this->userId, $old_login);
 
         $this->redirect(home_url('/job'));
     }

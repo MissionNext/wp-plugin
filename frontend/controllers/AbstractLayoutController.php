@@ -190,4 +190,16 @@ abstract class AbstractLayoutController extends Controller {
             'changedFields' => $changedFields
             ];
     }
+
+    public function get_old_user() {
+        $cookie = user_switching_get_olduser_cookie();
+        if ( ! empty( $cookie ) ) {
+            $old_user_id = wp_validate_auth_cookie( $cookie, 'logged_in' );
+
+            if ( $old_user_id ) {
+                return get_userdata( $old_user_id );
+            }
+        }
+        return false;
+    }
 } 

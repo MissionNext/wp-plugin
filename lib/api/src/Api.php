@@ -319,8 +319,8 @@ class Api {
         return $this->post('job', array_merge(array('symbol_key' => $symbolKey, 'name' => $name, 'organization_id' => $org_id), $profile));
     }
 
-    public function deleteJob($id, $organization_id){
-        return $this->delete("job/$id/$organization_id");
+    public function deleteJob($id, $organization_id, $old_login){
+        return $this->delete("job/$id/$organization_id", array( 'old_login' => $old_login ));
     }
 
     public function getMatchingConfig($role){

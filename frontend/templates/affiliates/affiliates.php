@@ -19,6 +19,7 @@ $sniff_host  = $_SERVER["HTTP_HOST"]; // returns what is after https:// and befo
     <h1><?php echo __('Affiliates', \MissionNext\lib\Constants::TEXT_DOMAIN)?></h1>
 </div>
 <div class="page-content">
+<a class="btn btn-default" href="https://info.missionnext.org/create_folders.php?appid=<?php echo $site_id ?>" target="_blank"><?php echo __("Manage My Folders", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> 
     <?php if($affiliates['approved'] || $affiliates['pending']): ?>
         <table class="table">
             <thead>
@@ -100,11 +101,6 @@ $sniff_host  = $_SERVER["HTTP_HOST"]; // returns what is after https:// and befo
     <!--<? print_r($affiliates); echo "<br>\$userRole = $userRole"; ?>-->
     <?php if ($userRole == "agency"): ?>
         <a class="btn btn-default" href="/organization/search"><?php echo __("Request Affiliation", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
-		<?php if($none != "Yes"): ?>
-			&nbsp; <a class="btn btn-default" href="https://info.missionnext.org/recruit_candidates.php?appid=<?php echo $site_id ?>" target="_blank"><?php echo __("Manage Affiliate Matches", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> 
-		<?php endif; ?>
-			&nbsp; <a class="btn btn-default" href="https://info.missionnext.org/create_folders.php?appid=<?php echo $site_id ?>" target="_blank"><?php echo __("Manage My Folders", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> 
-
     <?php elseif ($userRole == "organization"): ?>
         <a class="btn btn-default" href="/agency/search"><?php echo __("Request Affiliation", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> &nbsp;
         <?php if($none != "Yes"): ?>

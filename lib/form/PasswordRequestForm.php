@@ -68,12 +68,12 @@ class PasswordRequestForm extends Form {
         if($key) {
             $user = Context::getInstance()->getApiManager()->getApi()->getUserProfile(get_user_meta($this->user_data->ID, Constants::META_KEY, true));
 
-            $message = __('Someone requested that the password be reset for the following account:', Constants::TEXT_DOMAIN) . "\r\n\r\n";
-            $message .= home_url('/') . "\r\n\r\n";
-            $message .= sprintf(__('Username: %s', Constants::TEXT_DOMAIN), $user_login) . "\r\n\r\n";
-            $message .= __('If this was a mistake, just ignore this email and nothing will happen.', Constants::TEXT_DOMAIN) . "\r\n\r\n";
-            $message .= __('To reset your password, visit the following address:', Constants::TEXT_DOMAIN) . "\r\n\r\n";
-            $message .= '<a href="' . site_url("password/reset?key=$key&login=" . rawurlencode($user_login), 'login') . '">' . site_url("password/reset?key=$key&login=" . rawurlencode($user_login), 'login') . '</a>';
+            $message = __('<br>Someone requested that the password be reset for the following account:', Constants::TEXT_DOMAIN) . "<br><br>";
+            $message .= home_url('/') . "<br><br>";
+            $message .= sprintf(__('Username: %s', Constants::TEXT_DOMAIN), $user_login) . "<br><br>";
+            $message .= __('If this was a mistake, just ignore this email and nothing will happen.', Constants::TEXT_DOMAIN) . "<br><br>";
+            $message .= __('To reset your password, visit the following address:', Constants::TEXT_DOMAIN) . "<br><br>";
+            $message .= '<a href="' . site_url("password/reset?key=$key&login=" . rawurlencode($user_login), 'login') . '">' . site_url("password/reset?key=$key&login=" . rawurlencode($user_login), 'login') . '</a><br><br>';
 
             $ms = Context::getInstance()->getMailService();
 

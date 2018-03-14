@@ -49,12 +49,9 @@ elseif (preg_match("/jg./",$sniff_host)) { $site_id = 4; }
 								$factored	 = $factor * $rep_id; // factored is the product of the random number and user_id 
 								$pass_string = $factor.$factored; // pass this string, then extract user_id as $factored / $factor 
 			                    ?>
-                                    <!--<a href="/presentation"><?php echo __('My Presentation', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>-->
                                     <a href="/affiliates"><?php echo __('Affiliates', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                                     <?php echo "<a href='https://info.missionnext.org/recruit_candidates.php?appid=$site_id' target='_blank'>Affiliate Candidates</a>"; ?>
-                                    <a href="/affiliates/jobs"><?php echo ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_JOB_PLURAL)) ?></a>
                                     <?php echo "<a href='https://info.missionnext.org/recruit_account.php?aid=$pass_string&s=$site_id' target='_blank'>Job Candidates</a>"; ?>
-                                    <!--<a href="/job/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_JOB_PLURAL))) ?></a>-->
                                     <a href="/candidate/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_CANDIDATE_PLURAL))) ?></a>
                                     <a href="/organization/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_ORGANIZATION_PLURAL))) ?></a>
                                     <a href="/inquiries"><?php echo __('Job Inquiry List', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
@@ -63,7 +60,6 @@ elseif (preg_match("/jg./",$sniff_host)) { $site_id = 4; }
                                 <?php if($userRole == 'organization' && $site_id != 4): ?>
                                     <a href="/presentation"><?php echo __('My Presentation', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                                     <a href="https://info.missionnext.org/org_matches.php?s=<?php echo $site_id ?>" title='Matches to your organization profile' target='_blank' class="matches"><?php echo sprintf(__('%s Matches', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_CANDIDATE))) ?></a>
-                    				<!--<a href="/organization/matches/candidate" class="matches"><?php echo sprintf(__('%s Matches', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_CANDIDATE))) ?></a>-->
                                     <a href="/candidate/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_CANDIDATE_PLURAL))) ?></a>
                                     <a href="/favorite"><?php echo __('My Favorites', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                                     <a href="/job">My <?php echo ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_JOB_PLURAL)) ?></a>  
@@ -71,7 +67,6 @@ elseif (preg_match("/jg./",$sniff_host)) { $site_id = 4; }
                                     <a href="/folders"><?php echo __('Manage Folders', \MissionNext\lib\Constants::TEXT_DOMAIN); ?></a>
                                    <?php if(isAgencyOn()): ?>
                                     <a href="/affiliates"><?php echo __('Affiliates', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
-                                    <!--<a href="/agency/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_AGENCY_PLURAL))) ?></a>-->
                                     <?php endif; ?>
                                 <?php endif; ?>
 

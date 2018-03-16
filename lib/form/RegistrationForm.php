@@ -143,26 +143,23 @@ class RegistrationForm extends Form {
         }
 
         $result = $this->validateUserSignup($username, $email);
-        $wp_validation = wpmu_validate_user_signup($username, $email);
+
+        $space_position = strpos($username, ' ');
+        $wp_validation = validate_username($username) && strlen($username) > 5 && $space_position === false;
 
         $errors = $result['errors']->errors;
-        $wp_errors = $wp_validation['errors']->errors;
 
-        if(!empty($errors) || !empty($wp_errors)){
+        if(!empty($errors) || !$wp_validation){
             if(isset($errors['user_name'])){
                 $this->addError( 'username', $errors['user_name']);
             }
 
-            if (isset($wp_errors['user_name'])) {
-                $this->addError( 'username', $wp_errors['user_name']);
+            if (!$wp_validation) {
+                $this->addError( 'username', __('Must be at least 6 characters long, no spaces, lowercase letters and numbers only, no special or unique characters.'));
             }
 
             if(isset($errors['user_email'])){
                 $this->addError('email', $errors['user_email']);
-            }
-
-            if (isset($wp_errors['user_email'])) {
-                $this->addError( 'email', $wp_errors['user_email']);
             }
         }
 

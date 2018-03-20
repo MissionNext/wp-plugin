@@ -72,6 +72,7 @@ class affiliatesController extends AbstractLayoutController {
 
             $mail_service->from = 'no-reply@'.$_SERVER['SERVER_NAME'];
             $mail_service->send($user_to['email'], "Affiliate request", $message);
+            $this->logger('email', 'sent', "Affiliate request from $user_from to $user_to");
         }
 
         echo json_encode($response);
@@ -99,6 +100,7 @@ class affiliatesController extends AbstractLayoutController {
 
             $mail_service->from = 'no-reply@'.$_SERVER['SERVER_NAME'];
             $mail_service->send($user_to['email'], "Affiliate approval", $message);
+            $this->logger('email', 'sent', "Affiliate approval. From $user_from to $user_to");
         }
 
         echo json_encode($response);
@@ -128,6 +130,7 @@ class affiliatesController extends AbstractLayoutController {
 
             $mail_service->from = 'no-reply@'.$_SERVER['SERVER_NAME'];
             $mail_service->send($user_to['email'], "Affiliate cancellation", $message);
+            $this->logger('email', 'sent', "Affiliate cancellation. From $user_from to $user_to");
 
         }
 

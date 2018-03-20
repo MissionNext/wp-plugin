@@ -111,6 +111,7 @@ class commonAjaxController extends AbstractLayoutController {
         	// $body1 .= json_encode($fromUser)."\n"; // if used, captures entire user JSON profile; unscramble at http://freeonlinetools24.com/json-decode
         	$body1 = $body1."\n".$body;
         	$response = $manager->send($to, $subject, $body1);
+        	$this->logger('email', 'sent', "Notification: User $from sent email to user $to");
         }
         // CC to Candidate if Copy Me box is checked
         if ('copy' == $cc_me && Constants::ROLE_CANDIDATE == $fromUser['role']) {
@@ -123,6 +124,7 @@ class commonAjaxController extends AbstractLayoutController {
             $message = $body2."\n - - - - - - - - - - - - - - \n".$body;
 
             $response = $manager->send($from, $subject, $message);
+            $this->logger('email', 'sent', "Notification: Email sent to user $from");
         }
         // Organization to Candidate
         if (Constants::ROLE_ORGANIZATION == $fromUser['role']) {
@@ -135,6 +137,7 @@ class commonAjaxController extends AbstractLayoutController {
         	$body3 .= "Message: " . "\n - - - - - - - - - - - - - - \n".$body;
         	$body = $body3. "\n - - - - - - - - - - - - - - \n"."(Do not reply directly to this note. Respond to ".$fromUser['profileData']['organization_name']." using the email address shown above.)\n";
         	$response = $manager->send($to, $subject, $body);
+            $this->logger('email', 'sent', "Notification: User $from sent email to user $to");
        	}
         // CC to Organization if Copy Me box is checked
         if ('copy' == $cc_me && Constants::ROLE_ORGANIZATION == $fromUser['role']) {
@@ -146,6 +149,7 @@ class commonAjaxController extends AbstractLayoutController {
         	$body4 .= "That message reads: " . "\n - - - - - - - - - - - - - - \n";
         	$message = $body4."\n".$body;
             $response = $manager->send($from, $subject, $message);
+            $this->logger('email', 'sent', "Notification: Email sent to user $from");
         }
 
         echo json_encode($response);

@@ -13,6 +13,7 @@ use MissionNext\Api;
 use MissionNext\lib\Constants;
 use MissionNext\lib\core\Context;
 use MissionNext\lib\core\Controller;
+use MissionNext\lib\core\Logger;
 
 abstract class AbstractLayoutController extends Controller {
 
@@ -201,5 +202,12 @@ abstract class AbstractLayoutController extends Controller {
             }
         }
         return false;
+    }
+
+    protected function logger($log_type, $action, $message){
+        $view_log = new Logger();
+        $view_log->log('', '-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-');
+        $view_log->log($log_type, "$action: $message");
+        $view_log->log('', '-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-');
     }
 }

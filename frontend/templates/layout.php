@@ -25,6 +25,9 @@ get_header();
             </div>
         </div>
     </div>
+    <div id="loader" style="display: none; position: absolute; left: 50%; top: 200px;">
+        <img src="<?php echo getResourceUrl('/resources/images/spinner_big.gif') ?>" />
+    </div>
 <?php
 //if (\MissionNext\lib\Constants::ROLE_CANDIDATE == $userRole) {
 //    renderTemplate('_email_popup');

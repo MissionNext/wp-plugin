@@ -12,6 +12,7 @@ var EmailPopup = {
     captchaImage : '',
     prefix: '',
     captchaError : '',
+    spinner : '',
 
     dialogConfig : {
         autoOpen: false,
@@ -31,9 +32,11 @@ var EmailPopup = {
                             EmailPopup.clear();
                             EmailPopup.popup.dialog('close');
                         }
+                        EmailPopup.spinner.hide();
                     },
                     function(data, textStatus, jqXHR){
                         EmailPopup.popup.dialog('close');
+                        EmailPopup.spinner.hide();
                     }
                 );
 
@@ -63,6 +66,7 @@ var EmailPopup = {
         this.captcha = this.popup.find("#captcha");
         this.captchaImage = this.popup.find("#captcha-image");
         this.captchaError = this.popup.find("#captcha-error");
+        this.spinner = this.popup.find("#loader");
     },
 
     open : function (from, to, from_name, to_name, captcha, prefix, subject, body, cc_me){
@@ -81,6 +85,7 @@ var EmailPopup = {
     },
 
     send: function(success, error){
+        this.spinner.show();
         var cc_me = '';
         if (this.ccMe.is(':checked')) {
             cc_me = 'copy';

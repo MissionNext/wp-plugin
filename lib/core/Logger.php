@@ -18,7 +18,7 @@ class Logger {
     public function __construct(){
         $this->status = Context::getInstance()->getConfig()->get("logger", false);
         $this->dir = MN_ROOT_DIR . '/' . Context::getInstance()->getConfig()->get('logger_dir', 'data/logs');
-        $this->file = 'logs_'.date('Y-m-d H').'.txt';
+        $this->file = 'logs_'.date('Y-m-d').'.txt';
 
         if($this->status){
             $this->fh = fopen($this->dir . '/' . $this->file, 'a');

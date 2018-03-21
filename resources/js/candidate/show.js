@@ -10,5 +10,11 @@ jQuery(document).on('click', '#make_favorite', function(e){
     });
 }).on('click', '#sendEmail', function (e) {
     EmailPopup.init();
-    EmailPopup.open(from, to, from_name, to_name);
+    jQuery.ajax({
+        type: "GET",
+        url: "/get/captcha",
+        dataType: "JSON"
+    }).done(function (data) {
+        EmailPopup.open(from, to, from_name, to_name, data.image_path, data.prefix);
+    });
 });

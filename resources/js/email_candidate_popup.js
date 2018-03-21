@@ -8,6 +8,10 @@ var EmailPopup = {
     bodyInput : '',
     nameTo : '',
     nameFrom : '',
+    captcha : '',
+    captchaImage : '',
+    prefix: '',
+    captchaError : '',
 
     dialogConfig : {
         autoOpen: false,
@@ -21,8 +25,12 @@ var EmailPopup = {
 
                 EmailPopup.send(
                     function(data, textStatus, jqXHR){
-                        EmailPopup.clear();
-                        EmailPopup.popup.dialog('close');
+                        if (typeof data.error != 'undefined') {
+                            EmailPopup.captchaError.html(data.error);
+                        } else {
+                            EmailPopup.clear();
+                            EmailPopup.popup.dialog('close');
+                        }
                     },
                     function(data, textStatus, jqXHR){
                         EmailPopup.popup.dialog('close');
@@ -31,6 +39,7 @@ var EmailPopup = {
 
             },
             Cancel : function(){
+                EmailPopup.captchaError.html('');
                 EmailPopup.popup.dialog('close');
             }
         },
@@ -51,10 +60,12 @@ var EmailPopup = {
         this.bodyInput = this.popup.find("#email-body");
         this.nameTo = this.popup.find("#name-to");
         this.nameFrom = this.popup.find("#name-from");
+        this.captcha = this.popup.find("#captcha");
+        this.captchaImage = this.popup.find("#captcha-image");
+        this.captchaError = this.popup.find("#captcha-error");
     },
 
-    open : function (from, to, from_name, to_name, subject, body, cc_me){
-
+    open : function (from, to, from_name, to_name, captcha, prefix, subject, body, cc_me){
         this.fromInput.val(from);
         this.ccMe.val(cc_me);
         this.toInput.val(to);
@@ -62,6 +73,9 @@ var EmailPopup = {
         this.bodyInput.val(body);
         this.nameFrom.val(from_name);
         this.nameTo.val(to_name);
+        this.captcha.val('');
+        this.captchaImage.attr('src', captcha);
+        this.prefix = prefix;
 
         this.popup.dialog('open');
     },
@@ -78,7 +92,9 @@ var EmailPopup = {
             to_name: this.nameTo.val(),
             cc_me: cc_me,
             subject: this.subjectInput.val(),
-            body: this.bodyInput.val()
+            body: this.bodyInput.val(),
+            captcha: this.captcha.val(),
+            prefix: this.prefix,
         };
 
         jQuery.ajax({
@@ -96,5 +112,7 @@ var EmailPopup = {
         this.fromInput.val("");
         this.subjectInput.val("");
         this.bodyInput.val("");
+        this.captcha.val("");
+        this.captchaError.html('');
     }
 };

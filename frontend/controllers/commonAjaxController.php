@@ -54,6 +54,20 @@ class commonAjaxController extends AbstractLayoutController {
         return false;
     }
 
+    public function getCaptcha() {
+        if(class_exists('ReallySimpleCaptcha')){
+            $captcha = new \ReallySimpleCaptcha();
+            $captcha->cleanup();
+            $word = $captcha->generate_random_word();
+            $captcha_prefix = mt_rand();
+            $captcha_image = plugins_url($captcha->generate_image($captcha_prefix, $word), $captcha->tmp_dir .'/tpm');
+
+            echo json_encode([ 'image_path' => $captcha_image, 'prefix' => $captcha_prefix ]);
+
+            return false;
+        }
+    }
+
     public function sendEmail(){
 
         if($_SERVER['REQUEST_METHOD'] != 'POST'
@@ -66,6 +80,19 @@ class commonAjaxController extends AbstractLayoutController {
         ){
             $this->forward404();
         }
+
+        if(class_exists('ReallySimpleCaptcha')){
+            $captcha = new \ReallySimpleCaptcha();
+        }
+
+        if (!isset($_POST['captcha']) || !$captcha->check($_POST['prefix'], $_POST['captcha'])) {
+            echo json_encode([
+                'error' => __("Captcha not matched", Constants::TEXT_DOMAIN)
+            ]);
+
+            return false;
+        }
+        $captcha->remove($_POST['prefix']);
 
         $fromValue = $_POST['from'];
         $toValue = $_POST['to'];
@@ -88,29 +115,30 @@ class commonAjaxController extends AbstractLayoutController {
         $array_country = $fromUser['profileData']['country'];
         // these are select fields with only one value
         if (is_array($array_state)) {
-        	foreach ($array_state AS $This_Value) {
-        		$user_state = $This_Value;
-        	}
+            foreach ($array_state AS $This_Value) {
+                $user_state = $This_Value;
+            }
         }
         if (is_array($array_country)) {
-        	foreach ($array_country AS $This_Value) {
-        		$user_country = $This_Value;
-        	}
+            foreach ($array_country AS $This_Value) {
+                $user_country = $This_Value;
+            }
         }
-		// Candidate to Organization
+        // Candidate to Organization
         if (Constants::ROLE_CANDIDATE == $fromUser['role']) {
-        	unset($response);
+            unset($response);
             // $body = "Message sent from: ".$fromUser['profileData']['first_name'].' '.$fromUser['profileData']['last_name']."\n".$body;
             $body1 = "Notice from MissionNext: \n";
             $body1 .= "This is a message sent from Candidate: ".$fromUser['profileData']['first_name'].' '.$fromUser['profileData']['last_name']."\n";
             $body1 .= "Email Address: ".$fromUser['profileData']['email']."\n";
             $body1 .= "Location: ".$user_state.' '.$user_country."\n";
-        	if ($fromUser['profileData']['cell_phone']) {
-        		$body1 .= "Best Phone: ".$fromUser['profileData']['cell_phone']."\n";
-        	}
-        	// $body1 .= json_encode($fromUser)."\n"; // if used, captures entire user JSON profile; unscramble at http://freeonlinetools24.com/json-decode
-        	$body1 = $body1."\n".$body;
-        	$response = $manager->send($to, $subject, $body1);
+            if ($fromUser['profileData']['cell_phone']) {
+                $body1 .= "Best Phone: ".$fromUser['profileData']['cell_phone']."\n";
+            }
+            // $body1 .= json_encode($fromUser)."\n"; // if used, captures entire user JSON profile; unscramble at http://freeonlinetools24.com/json-decode
+            $body1 = $body1."\n".$body;
+            $response = $manager->send($to, $subject, $body1);
+            $this->logger('email', 'sent', "Notification: User $from sent email to user $to");
         }
         // CC to Candidate if Copy Me box is checked
         if ('copy' == $cc_me && Constants::ROLE_CANDIDATE == $fromUser['role']) {
@@ -123,6 +151,7 @@ class commonAjaxController extends AbstractLayoutController {
             $message = $body2."\n - - - - - - - - - - - - - - \n".$body;
 
             $response = $manager->send($from, $subject, $message);
+            $this->logger('email', 'sent', "Notification: Email sent to user $from");
         }
         // Organization to Candidate
         if (Constants::ROLE_ORGANIZATION == $fromUser['role']) {
@@ -132,20 +161,22 @@ class commonAjaxController extends AbstractLayoutController {
             $body3 .= "Key Contact Phone: ".$fromUser['profileData']['key_contact_phone']."\n";
             $body3 .= "Email Address: ".$fromUser['profileData']['email']."\n";
             // $body3 .= json_encode($fromUser)."\n"; // if used, captures entire user JSON profile; unscramble at http://freeonlinetools24.com/json-decode
-        	$body3 .= "Message: " . "\n - - - - - - - - - - - - - - \n".$body;
-        	$body = $body3. "\n - - - - - - - - - - - - - - \n"."(Do not reply directly to this note. Respond to ".$fromUser['profileData']['organization_name']." using the email address shown above.)\n";
-        	$response = $manager->send($to, $subject, $body);
-       	}
+            $body3 .= "Message: " . "\n - - - - - - - - - - - - - - \n".$body;
+            $body = $body3. "\n - - - - - - - - - - - - - - \n"."(Do not reply directly to this note. Respond to ".$fromUser['profileData']['organization_name']." using the email address shown above.)\n";
+            $response = $manager->send($to, $subject, $body);
+            $this->logger('email', 'sent', "Notification: User $from sent email to user $to");
+        }
         // CC to Organization if Copy Me box is checked
         if ('copy' == $cc_me && Constants::ROLE_ORGANIZATION == $fromUser['role']) {
-        	unset($response);
+            unset($response);
             $body4 = "Notice: \n";
             $body4 .= "You sent a message to Candidate: ".$toUser['profileData']['first_name'].' '.$toUser['profileData']['last_name']."\n";
             $body4 .= "Email Address: ".$toUser['profileData']['email']."\n";
             $body4 .= "Location: ".$user_state.' '.$user_country."\n\n";
-        	$body4 .= "That message reads: " . "\n - - - - - - - - - - - - - - \n";
-        	$message = $body4."\n".$body;
+            $body4 .= "That message reads: " . "\n - - - - - - - - - - - - - - \n";
+            $message = $body4."\n".$body;
             $response = $manager->send($from, $subject, $message);
+            $this->logger('email', 'sent', "Notification: Email sent to user $from");
         }
 
         echo json_encode($response);

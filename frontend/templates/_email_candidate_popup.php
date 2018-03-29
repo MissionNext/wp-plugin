@@ -29,4 +29,7 @@
         <img id="captcha-image" src="<?php echo getResourceUrl('/resources/images/spinner_32x32.gif') ?>" title="Completely Automated Public Test to tell Computers and Humans Apart" alt="<?php echo __("Captcha", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>" />
         <input id="captcha" name="captcha_text" type="text" style="width: 150px;" /> <br />To prove you are a real person
     </div>
+    <div id="loader" style="display: none; text-align: center;">
+        <img src="<?php echo getResourceUrl('/resources/images/spinner_32x32.gif') ?>" />
+    </div>
 </div>

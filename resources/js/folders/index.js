@@ -3,6 +3,7 @@ jQuery(document).on('click', '#folders tr td.actions .edit', function(e){
 
     editFolder(tr.attr('data-id'), tr.find('td.name').text().trim());
 }).on('click', '#folders tr td.actions .delete', function(e){
+    jQuery('#loader').show();
     var tr = jQuery(e.target).parents('tr');
 
     deleteFolder(tr.attr('data-id'), function(data){
@@ -11,8 +12,10 @@ jQuery(document).on('click', '#folders tr td.actions .edit', function(e){
         if (rows == 0) {
             jQuery('#custom-folders-head').hide();
         }
+        jQuery('#loader').hide();
     });
 }).on('click', '#new_folder_button', function(e){
+    jQuery('#loader').show();
     var folder = jQuery('#new_folder_input').val();
 
     addFolder(folder, user_id, function(data){
@@ -23,6 +26,7 @@ jQuery(document).on('click', '#folders tr td.actions .edit', function(e){
 
         jQuery('#folders').append(tr);
         jQuery('#custom-folders-head').show();
+        jQuery('#loader').hide();
     });
 });
 
@@ -37,6 +41,7 @@ jQuery(function(){
         modal: true,
         buttons: {
             Save: function() {
+                jQuery('#loader').show();
 
                 var dialog = jQuery(this);
 
@@ -48,7 +53,10 @@ jQuery(function(){
 
                         jQuery('#folders').find('tr[data-id='+id+'] td.name').text(data['title']);
                         dialog.dialog( "close" );
+                        jQuery('#loader').hide();
                     });
+                } else {
+                    jQuery('#loader').hide();
                 }
 
             },
@@ -74,6 +82,8 @@ function addFolder(folder, user_id, successCallback){
     folder = folder.trim();
 
     if(!folder){
+        jQuery('#loader').hide();
+
         return;
     }
 
@@ -114,6 +124,8 @@ function updateFolder(id, folder, successCallback){
     folder = folder.trim();
 
     if(!folder){
+        jQuery('#loader').hide();
+
         return;
     }
 

@@ -1,5 +1,5 @@
 function deleteJob(button){
-
+    jQuery("#loader").show();
     var div = jQuery(button).parents('.search');
 
     jQuery.ajax({
@@ -10,8 +10,10 @@ function deleteJob(button){
         },
         success: function(data, textStatus, jqXHR){
             jQuery(div).empty();
+            jQuery("#loader").hide();
         },
         error: function(jqXHR, textStatus, errorThrown){
+            jQuery("#loader").hide();
         },
         dataType: "JSON"
     });

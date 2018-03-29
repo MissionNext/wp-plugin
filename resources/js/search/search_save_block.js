@@ -1,4 +1,5 @@
 jQuery('#save-search').on('submit', function(event){
+    jQuery("#loader").show();
     var form = jQuery(event.target);
 
     var data = {
@@ -9,6 +10,8 @@ jQuery('#save-search').on('submit', function(event){
     };
 
     if(!form.find('input[name="name"]').val()){
+        jQuery("#loader").hide();
+
         return false;
     }
 
@@ -20,13 +23,16 @@ jQuery('#save-search').on('submit', function(event){
             jQuery("#save-search-block")
                 .prepend("<p class='success'>" + success + "</p>")
                 .find('form').hide();
+            jQuery("#loader").hide();
         },
         error: function(jqXHR, textStatus, errorThrown){
+            jQuery("#loader").hide();
             jQuery("#save-search-block").prepend("<p class='error'>" + error + "</p>");
         },
         dataType: "JSON"
     });
 
     event.preventDefault();
+
     return false;
 });

@@ -138,5 +138,5 @@ foreach($defaults as $default){
 </script>
 
 <?php
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/payment/renew_no_roles', 'payment/renew_no_roles.js', array( 'jquery' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/payment/renew_no_roles', 'payment/renew_no_roles.js', array( 'jquery' ), false, true);
 ?>

@@ -67,5 +67,5 @@ if (!$role) { $role = "candidate"; }
 </div>
 
 <?php
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/favorite/organization', 'favorite/organization.js', array( 'jquery', 'jquery-ui-dialog' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/favorite/organization', 'favorite/organization.js', array( 'jquery', 'jquery-ui-dialog' ), false, true);
 ?>

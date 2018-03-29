@@ -78,5 +78,5 @@ $percentages = [10, 20, 30, 40, 50, 60, 70, 80, 90];
 </script>
 
 <?php
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/matches/candidateForJob', 'matches/candidateForJob.js', array( 'jquery' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/matches/candidateForJob', 'matches/candidateForJob.js', array( 'jquery' ), false, true);
 ?>

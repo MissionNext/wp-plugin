@@ -115,5 +115,5 @@ $sniff_host  = $_SERVER["HTTP_HOST"]; // returns what is after https:// and befo
 </script>
 
 <?php
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/affiliates', 'affiliates/affiliates.js', array( 'jquery' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/affiliates', 'affiliates/affiliates.js', array( 'jquery' ), false, true);
 ?>

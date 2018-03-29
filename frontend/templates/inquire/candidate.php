@@ -7,7 +7,7 @@
 $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after https:// and before first slash 
 // echo "Candidate <br>"; print_r($inquiries);
 
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/inquire/candidate', 'inquire/candidate.js', array( 'jquery' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/inquire/candidate', 'inquire/candidate.js', array( 'jquery' ), false, true);
 ?>
 <div class="page-header">
     <h1><?php echo __("Inquiry list", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></h1>

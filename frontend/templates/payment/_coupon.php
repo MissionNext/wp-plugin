@@ -20,5 +20,5 @@
 </script>
 
 <?php
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/payment/coupon', 'payment/coupon.js', array( 'jquery' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/payment/coupon', 'payment/coupon.js', array( 'jquery' ), false, true);
 ?>

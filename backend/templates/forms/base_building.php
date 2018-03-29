@@ -390,5 +390,5 @@ function getFieldBySymbolKey($fields, $symbol_key) {
 </script>
 
 <?php
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/forms/base_building', 'forms/base_building.js', array( 'jquery' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/forms/base_building', 'forms/base_building.js', array( 'jquery' ), false, true);
 ?>

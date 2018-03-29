@@ -178,10 +178,10 @@
     </div>
 
     <script>
-        var current_org = <?php echo $default_affiliate; ?>;
+        var current_org = '<?php echo $default_affiliate; ?>';
     </script>
 </div>
 
 <?php
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/search/search_result_agency', 'search/search_result_agency.js', array( 'jquery', 'jquery-ui-dialog' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/search/search_result_agency', 'search/search_result_agency.js', array( 'jquery', 'jquery-ui-dialog' ), false, true);
 ?>

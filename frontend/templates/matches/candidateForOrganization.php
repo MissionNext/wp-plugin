@@ -67,6 +67,6 @@ $years = [2001, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017];
 </script>
 
 <?php
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/matches/candidateForOrganization', 'matches/candidateForOrganization.js', array( 'jquery' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/matches/candidateForOrganization', 'matches/candidateForOrganization.js', array( 'jquery' ), false, true);
 ?>
 

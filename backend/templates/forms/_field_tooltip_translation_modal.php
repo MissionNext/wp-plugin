@@ -4,7 +4,7 @@
  * @var array $languages
  */
 
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/forms/field_tooltip', 'forms/field_tooltip.js', array( 'jquery', 'jquery-ui-dialog', 'jquery-form' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/forms/field_tooltip', 'forms/field_tooltip.js', array( 'jquery', 'jquery-ui-dialog', 'jquery-form' ), false, true);
 
 ?>
 

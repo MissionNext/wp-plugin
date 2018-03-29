@@ -4,7 +4,7 @@
  * @var $role
  */
 
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/search/ajax_search_saved', 'search/ajax_search_saved.js', array( 'jquery' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/search/ajax_search_saved', 'search/ajax_search_saved.js', array( 'jquery' ), false, true);
 ?>
 
 <?php foreach($saved as $item): ?>

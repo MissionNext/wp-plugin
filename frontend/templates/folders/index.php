@@ -111,9 +111,9 @@ if (preg_match("/explorenext/",$sniff_host)) {
 
 <script>
     var user_id = <?php echo $user_id; ?>;
-    var role = <?php echo $role; ?>;
+    var role = '<?php echo $role; ?>';
 </script>
 
 <?php
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/folders/index', 'folders/index.js', array( 'jquery', 'jquery-ui-dialog' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/folders/index', 'folders/index.js', array( 'jquery', 'jquery-ui-dialog' ), false, true);
 ?>

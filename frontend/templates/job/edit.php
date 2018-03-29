@@ -30,5 +30,5 @@ $second_title = $form->job['profileData']['second_title'];
 </script>
 
 <?php
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/job/edit', 'job/edit.js', array( 'jquery' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/job/edit', 'job/edit.js', array( 'jquery' ), false, true);
 ?>

@@ -13,5 +13,5 @@
 </script>
 
 <?php
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/search/search_saved', 'search/search_saved.js', array( 'jquery' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/search/search_saved', 'search/search_saved.js', array( 'jquery' ), false, true);
 ?>

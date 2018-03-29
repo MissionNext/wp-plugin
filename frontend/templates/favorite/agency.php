@@ -58,5 +58,5 @@
 </div>
 
 <?php
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/favorite/agency', 'favorite/agency.js', array( 'jquery', 'jquery-ui-dialog' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/favorite/agency', 'favorite/agency.js', array( 'jquery', 'jquery-ui-dialog' ), false, true);
 ?>

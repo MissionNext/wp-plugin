@@ -13,5 +13,5 @@ $languages = \MissionNext\lib\core\Context::getInstance()->getApiManager()->getA
 </script>
 
 <?php
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/model/field_translation', 'model/field_translation.js', array( 'jquery', 'jquery-ui-dialog', 'jquery-form' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/model/field_translation', 'model/field_translation.js', array( 'jquery', 'jquery-ui-dialog', 'jquery-form' ), false, true);
 ?>

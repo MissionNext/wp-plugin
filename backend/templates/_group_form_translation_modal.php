@@ -3,7 +3,7 @@
  * @var $languages
  */
 
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/model/group_form_translation', 'model/group_form_translation.js', array( 'jquery', 'jquery-ui-dialog', 'jquery-form' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/model/group_form_translation', 'model/group_form_translation.js', array( 'jquery', 'jquery-ui-dialog', 'jquery-form' ), false, true);
 ?>
 
 <div id="group_label_translations" title="Label translations">

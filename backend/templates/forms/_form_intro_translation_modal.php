@@ -4,7 +4,7 @@
  * @var array $languages
  */
 
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/forms/intro', 'forms/intro.js', array( 'jquery', 'jquery-ui-dialog', 'jquery-form' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/forms/intro', 'forms/intro.js', array( 'jquery', 'jquery-ui-dialog', 'jquery-form' ), false, true);
 
 ?>
 

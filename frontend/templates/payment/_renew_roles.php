@@ -154,5 +154,5 @@ Partnership Notes (<a href="https://new.missionnext.org/welcome/for-organization
 </script>
 
 <?php
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/payment/renew_roles', 'payment/renew_roles.js', array( 'jquery' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/payment/renew_roles', 'payment/renew_roles.js', array( 'jquery' ), false, true);
 ?>

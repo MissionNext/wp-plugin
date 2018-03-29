@@ -95,5 +95,5 @@
 </div>
 
 <?php
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/favorite/candidate', 'favorite/candidate.js', array( 'jquery', 'jquery-ui-dialog' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/favorite/candidate', 'favorite/candidate.js', array( 'jquery', 'jquery-ui-dialog' ), false, true);
 ?>

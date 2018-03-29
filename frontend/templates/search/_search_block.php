@@ -3,7 +3,7 @@
  * @var $form \MissionNext\lib\form\Form
  */
 
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/search/search_block', 'search/search_block.js', array( 'jquery' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/search/search_block', 'search/search_block.js', array( 'jquery' ), false, true);
 ?>
 
 <div id="search_block">

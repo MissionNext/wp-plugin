@@ -4,7 +4,7 @@
  * @var $app_id
  */
 
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/payment/first_roles', 'payment/first_roles.js', array( 'jquery' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/payment/first_roles', 'payment/first_roles.js', array( 'jquery' ), false, true);
 
 ?>
 

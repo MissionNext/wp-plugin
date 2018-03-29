@@ -69,5 +69,5 @@
 </script>
 
 <?php
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/model/folders', 'model/folders.js', array( 'jquery', 'jquery-ui-dialog' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/model/folders', 'model/folders.js', array( 'jquery', 'jquery-ui-dialog' ), false, true);
 ?>

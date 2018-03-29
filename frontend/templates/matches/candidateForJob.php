@@ -78,5 +78,5 @@ if ($interval < 64800) {
 </script>
 
 <?php
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/matches/candidateForJob', 'matches/candidateForJob.js', array( 'jquery' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/matches/candidateForJob', 'matches/candidateForJob.js', array( 'jquery' ), false, true);
 ?>

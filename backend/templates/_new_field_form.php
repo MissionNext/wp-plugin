@@ -136,5 +136,5 @@
 </script>
 
 <?php
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/model/new_field', 'model/new_field.js', array( 'jquery', 'jquery-ui-dialog', 'jquery-ui-sortable', 'jquery-ui-datepicker' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/model/new_field', 'model/new_field.js', array( 'jquery', 'jquery-ui-dialog', 'jquery-ui-sortable', 'jquery-ui-datepicker' ), false, true);
 ?>

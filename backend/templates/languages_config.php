@@ -5,7 +5,7 @@
  * @var $default_language
  */
 
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/model/languages_config', 'model/languages_config.js', array( 'jquery' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/model/languages_config', 'model/languages_config.js', array( 'jquery' ), false, true);
 ?>
 
 <style>

@@ -5,7 +5,7 @@
  * @var Array $inquiries
  */
 
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/inquire/agency', 'inquire/agency.js', array( 'jquery' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/inquire/agency', 'inquire/agency.js', array( 'jquery' ), false, true);
 ?>
 <div class="page-header">
     <h1><?php echo __("Inquiry list", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></h1>

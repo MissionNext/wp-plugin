@@ -3,7 +3,7 @@
  * @var $languages
  */
 
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/forms/field_notes', 'forms/field_notes.js', array( 'jquery', 'jquery-ui-dialog' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/forms/field_notes', 'forms/field_notes.js', array( 'jquery', 'jquery-ui-dialog' ), false, true);
 ?>
 
 <div id="field_notes_translations" title="Field notes">

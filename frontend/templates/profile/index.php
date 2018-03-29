@@ -30,5 +30,5 @@
 </script>
 
 <?php
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/profile/index', '/profile/index.js', array( 'jquery' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/profile/index', '/profile/index.js', array( 'jquery' ), false, true);
 ?>

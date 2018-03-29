@@ -145,5 +145,5 @@ print ("<p>&nbsp; &nbsp; &nbsp; &nbsp;Note: Use <strong>Canada</strong> or <stro
 print ("<p>&nbsp;</p><p>&nbsp; &nbsp; &nbsp; &nbsp;Note: <strong>Canada</strong> is for Canadian citizens</p>");
 }
 // echo "<br> \$userRole =  $userRole";
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/home/index', 'home/index.js', array( 'jquery' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/home/index', 'home/index.js', array( 'jquery' ), false, true);
 ?>

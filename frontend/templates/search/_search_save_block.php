@@ -44,5 +44,5 @@ $search_json = json_encode($search);
 </script>
 
 <?php
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/search/search_save_block', 'search/search_save_block.js', array( 'jquery' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/search/search_save_block', 'search/search_save_block.js', array( 'jquery' ), false, true);
 ?>

@@ -4,7 +4,7 @@
  * @var $app_id
  */
 
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/payment/first_no_roles', 'payment/first_no_roles.js', array( 'jquery' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/payment/first_no_roles', 'payment/first_no_roles.js', array( 'jquery' ), false, true);
 ?>
 
 <div class="block payment-period payment-type">

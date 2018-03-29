@@ -14,7 +14,7 @@ $key = 0;
             $site_id = 6;
         }
         
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/inquire/organization', 'inquire/organization.js', array( 'jquery' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/inquire/organization', 'inquire/organization.js', array( 'jquery' ), false, true);
 ?>
 <div class="page-header">
     <h1><?php echo __("Inquiry list", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></h1>

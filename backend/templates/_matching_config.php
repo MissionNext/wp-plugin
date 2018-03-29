@@ -10,7 +10,7 @@
 $mainRoleLabel = ucfirst($mainRole) . ' fields';
 $secondaryRoleLabel = ( 'organization' == $secondaryRole ? 'Receiving Organization' : 'Job' ) . ' fields';
 
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/model/matching_config', 'model/matching_config.js', array( 'jquery' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/model/matching_config', 'model/matching_config.js', array( 'jquery' ), false, true);
 ?>
 
 <form method="POST" action="<?php echo $_SERVER['REQUEST_URI'] ?>">

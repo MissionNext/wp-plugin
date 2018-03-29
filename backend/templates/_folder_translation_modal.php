@@ -3,7 +3,7 @@
  * @var $languages
  */
 
-\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/model/folder_translation', 'model/folder_translation.js', array( 'jquery', 'jquery-ui-dialog', 'jquery-form' ));
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/model/folder_translation', 'model/folder_translation.js', array( 'jquery', 'jquery-ui-dialog', 'jquery-form' ), false, true);
 ?>
 
 <div id="folder_translations_modal">

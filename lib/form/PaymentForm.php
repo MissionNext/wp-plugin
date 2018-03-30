@@ -191,7 +191,7 @@ class PaymentForm extends Form {
                     'symbol_key' => 'first_name',
                     'name' => __('First Name', Constants::TEXT_DOMAIN),
                     'order' => 2,
-                    'default_value' => UserLib::getProfileField($this->user, Constants::$predefinedFields[$this->user['role']]['first_name']),
+                    'default_value' => '',
                     'constraints' => 'required'
                 ),
                 array(
@@ -199,7 +199,7 @@ class PaymentForm extends Form {
                     'symbol_key' => 'last_name',
                     'name' => __('Last Name', Constants::TEXT_DOMAIN),
                     'order' => 3,
-                    'default_value' => UserLib::getProfileField($this->user, Constants::$predefinedFields[$this->user['role']]['last_name']),
+                    'default_value' => '',
                     'constraints' => 'required'
                 ),
                 array(
@@ -214,7 +214,7 @@ class PaymentForm extends Form {
                     'symbol_key' => 'email',
                     'name' => __('E-mail', Constants::TEXT_DOMAIN),
                     'order' => 5,
-                    'default_value' => UserLib::getProfileField($this->user, Constants::$predefinedFields[$this->user['role']]['email']),
+                    'default_value' => '',
                     'constraints' => 'required'
                 ),
                 array(
@@ -222,7 +222,7 @@ class PaymentForm extends Form {
                     'symbol_key' => 'address',
                     'name' => __('Address', Constants::TEXT_DOMAIN),
                     'order' => 6,
-                    'default_value' => UserLib::getProfileField($this->user, Constants::$predefinedFields[$this->user['role']]['address']),
+                    'default_value' => '',
                     'constraints' => 'required'
                 ),
                 array(
@@ -230,7 +230,7 @@ class PaymentForm extends Form {
                     'symbol_key' => 'city',
                     'name' => __('City', Constants::TEXT_DOMAIN),
                     'order' => 7,
-                    'default_value' => UserLib::getProfileField($this->user, Constants::$predefinedFields[$this->user['role']]['city']),
+                    'default_value' => '',
                     'constraints' => 'required'
                 ),
                 array(
@@ -238,7 +238,7 @@ class PaymentForm extends Form {
                     'symbol_key' => 'state',
                     'name' => __('State ', Constants::TEXT_DOMAIN),
                     'order' => 8,
-                    'default_value' => UserLib::getProfileField($this->user, Constants::$predefinedFields[$this->user['role']]['state']),
+                    'default_value' => '',
                     'constraints' => 'required'
                 ),
                 array(
@@ -246,7 +246,7 @@ class PaymentForm extends Form {
                     'symbol_key' => 'zip',
                     'name' => __('Zip', Constants::TEXT_DOMAIN),
                     'order' => 9,
-                    'default_value' => UserLib::getProfileField($this->user, Constants::$predefinedFields[$this->user['role']]['zip']),
+                    'default_value' => '',
                     'constraints' => 'required'
                 ),
                 array(
@@ -254,7 +254,7 @@ class PaymentForm extends Form {
                     'symbol_key' => 'country',
                     'name' => __('Country', Constants::TEXT_DOMAIN),
                     'order' => 10,
-                    'default_value' => UserLib::getProfileField($this->user, Constants::$predefinedFields[$this->user['role']]['country']),
+                    'default_value' => '',
                     'constraints' => 'required'
                 ),
                 array(
@@ -262,7 +262,7 @@ class PaymentForm extends Form {
                     'symbol_key' => 'phone',
                     'name' => __('Phone', Constants::TEXT_DOMAIN),
                     'order' => 11,
-                    'default_value' => UserLib::getProfileField($this->user, Constants::$predefinedFields[$this->user['role']]['phone']),
+                    'default_value' => '',
                     'constraints' => 'required'
                 ),
                 /*array(

@@ -942,6 +942,10 @@ msgstr ""
 msgid "Card Number"
 msgstr ""
 
+#: lib/form/PaymentForm.php:110
+msgid "The name and address must correspond to the credit card."
+msgstr ""
+
 #: lib/form/PaymentForm.php:119
 msgid "E-check"
 msgstr ""

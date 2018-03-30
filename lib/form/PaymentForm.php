@@ -103,7 +103,17 @@ class PaymentForm extends Form {
                     'name' => __('Card Number', Constants::TEXT_DOMAIN),
                     'order' => 0,
                     'default_value' => '',
-                    'constraints' => 'required'
+                    'constraints' => 'required',
+                    'meta'  => [
+                        'before_notes'    => [
+                            0   => [
+                                'value' => __('The name and address must correspond to the credit card.', Constants::TEXT_DOMAIN),
+                                'lang_id'   => 0
+                            ],
+
+                        ],
+                        'after_notes'   => []
+                    ]
                 ),
                 array(
                     'type' => 'input',

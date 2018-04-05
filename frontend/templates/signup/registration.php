@@ -66,6 +66,10 @@ if ($role == "candidate" && $subdomain == "jg") {
 </div>
 <?php } // else if ($role == "candidate" && $subdomain == "jg") ?>
 
+<script type="text/javascript">
+    var userrole = '<?php echo $role; ?>';
+</script>
+
 <?php
 \MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/signup/registration', 'signup/registration.js', array( 'jquery', 'jquery-ui-tabs' ), false, true);
 ?>

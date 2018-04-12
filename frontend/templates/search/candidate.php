@@ -13,7 +13,7 @@
 <div class="page-header">
     <h1><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_CANDIDATE_PLURAL))) ?></h1>
 </div>
-<div class="page-content">
+<div class="page-content candidate-results">
 <!--search/candidate.php search by organizations for candidates -->
     <?php if($_SERVER['REQUEST_METHOD'] == 'POST'): ?>
 
@@ -28,9 +28,10 @@
             </div>
         <?php } ?>
 
+        <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_save_block', array('searches' => $searches, 'search' => $search, 'role' => $role, 'userRole' => $userRole)) ?>
+
         <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_block', compact('form')) ?>
 
-        <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_save_block', array('searches' => $searches, 'search' => $search, 'role' => $role, 'userRole' => $userRole)) ?>
 		<a name="top">&nbsp;</a> 
    
         <?php if($result): ?>

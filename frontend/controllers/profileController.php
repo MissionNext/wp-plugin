@@ -35,7 +35,7 @@ class profileController extends AbstractLayoutController {
             }
         }
 
-    	\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/country', 'country.js');
+    	\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/country', 'country.js', [], false, true);
     }
 
     /**

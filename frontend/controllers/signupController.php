@@ -25,7 +25,7 @@ class signupController extends AbstractLayoutController {
     public function beforeAction(){
 
         $this->api = Context::getInstance()->getApiManager()->getApi();
-        \MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/country', 'country.js', array( 'jquery' ));
+        \MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/country', 'country.js', array( 'jquery' ), false, true);
 
     }
 

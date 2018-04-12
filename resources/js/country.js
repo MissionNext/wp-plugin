@@ -11,6 +11,8 @@ jQuery(document).on('change', 'select[data-key="country"]', function(e)
 
 function selectCountry()
 {
+    jQuery('#loader').show();
+
     var select = jQuery('select[data-key="country"]');
     var name = select.val();
     var route = "/select/country";
@@ -30,6 +32,10 @@ function selectCountry()
         success: function(data)
         {
             selectState(data);
+            jQuery('#loader').hide();
+        },
+        error: function () {
+            jQuery('#loader').hide();
         }
     });
 }

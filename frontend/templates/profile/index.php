@@ -27,6 +27,7 @@
 
 <script type="text/javascript">
     var userId = <?php echo $userId; ?>;
+    var userrole = '<?php echo $userRole; ?>';
 </script>
 
 <?php

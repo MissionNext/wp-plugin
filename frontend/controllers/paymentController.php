@@ -7,6 +7,7 @@ namespace MissionNext\frontend\controllers;
 use MissionNext\lib\Constants;
 use MissionNext\lib\core\Context;
 use MissionNext\lib\form\PaymentForm;
+use MissionNext\lib\UserLib;
 use MissionNext\lib\utils\PaymentHelper;
 
 class paymentController extends AbstractLayoutController {
@@ -223,8 +224,27 @@ class paymentController extends AbstractLayoutController {
 
             if($this->form->isValid()){
                 if($this->form->process($helper)){
+                    $params = [];
+                    $params['%organization_name%'] = ('organization' == $this->userRole) ? UserLib::getUserOrganizationName($this->user) : UserLib::getAgencyFullName($this->user);
+                    $params['%to_email%'] = $this->user['email'];
+                    if (in_array(Context::getInstance()->getApiManager()->publicKey, ['canada', 'explorenext'])) {
+                        $params['%subject%'] = 'Thank You for Your ExploreNext Partnership Renewal';
+                    } elseif ("teachnext" == Context::getInstance()->getApiManager()->publicKey) {
+                        $params['%subject%'] = 'Thank You for Your TeachNext Partnership Renewal';
+                    }
+
+                    $this->sendRenewEmail($params);
+
+                    $params['%to_email%'] = 'headquarters@missionnext.org';
+                    $this->sendRenewEmail($params);
+
                     $this->setMessage('notice', __("Payment successful. Thank you for renewing your subscription. Be sure the profile and job entries are up-to-date.", Constants::TEXT_DOMAIN), 1);
                     $this->redirect('/profile');
+                } else {
+                    $params['%organization_name%'] = ('organization' == $this->userRole) ? UserLib::getUserOrganizationName($this->user) : UserLib::getAgencyFullName($this->user);
+                    $subject = ('organization' == $this->userRole) ? $_SERVER['SERVER_NAME']." Subscription Renewal Attempt" : $_SERVER['SERVER_NAME']." Agency Rep Renewal Attempt";
+
+                    $this->sendFailRenewEmail($params, $this->userRole, $subject, $this->user['email']);
                 }
             }
         }
@@ -375,5 +395,31 @@ class paymentController extends AbstractLayoutController {
         $this->api->addSubscription($data);
 
         $this->redirect('/dashboard');
+    }
+
+    private function sendRenewEmail($params){
+        $mail_service = Context::getInstance()->getMailService();
+
+        $messageText = Context::getInstance()->getLocalizationManager()->getLocalizedEmail('subscription_renew.txt');
+        foreach ($params as $item => $value) {
+            $messageText = str_replace($item, $value, $messageText);
+        }
+
+        $mail_service->from = 'no-reply@'.$_SERVER['SERVER_NAME'];
+        $mail_service->send($params['%to_email%'], $params['%subject%'], $messageText);
+        $this->logger('email', 'sent', "Send message about subscription renewal of user ".$params['%to_email%']);
+    }
+
+    private function sendFailRenewEmail($params, $role, $subject, $user) {
+        $mail_service = Context::getInstance()->getMailService();
+
+        $messageText = Context::getInstance()->getLocalizationManager()->getLocalizedEmail($role."_renew_fail.txt");
+        foreach ($params as $item => $value) {
+            $messageText = str_replace($item, $value, $messageText);
+        }
+
+        $mail_service->from = 'no-reply@'.$_SERVER['SERVER_NAME'];
+        $mail_service->send('headquarters@missionnext.org', $subject, $messageText);
+        $this->logger('email', 'sent', "Send message about failed renewal of user $user.");
     }
 } 

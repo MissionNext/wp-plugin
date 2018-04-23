@@ -1,0 +1,1 @@
+This is to inform you that an attempted renewal payment from %organization_name% has failed. Please contact this organization to provide assistance.

@@ -242,6 +242,7 @@ class paymentController extends AbstractLayoutController {
                     $this->redirect('/profile');
                 } else {
                     $params['%organization_name%'] = ('organization' == $this->userRole) ? UserLib::getUserOrganizationName($this->user) : UserLib::getAgencyFullName($this->user);
+                    $params['%organization_name%'] .= " (".$this->user['email'].")";
                     $subject = ('organization' == $this->userRole) ? $_SERVER['SERVER_NAME']." Subscription Renewal Attempt" : $_SERVER['SERVER_NAME']." Agency Rep Renewal Attempt";
 
                     $this->sendFailRenewEmail($params, $this->userRole, $subject, $this->user['email']);

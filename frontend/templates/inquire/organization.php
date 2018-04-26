@@ -13,6 +13,9 @@ $key = 0;
         elseif (preg_match("/teachnext/",$sniff_host)) {
             $site_id = 6;
         }
+        elseif (preg_match("/canada/",$sniff_host)) {
+            $site_id = 10;
+        }
         
 \MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/inquire/organization', 'inquire/organization.js', array( 'jquery' ), false, true);
 ?>

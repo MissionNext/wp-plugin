@@ -89,6 +89,7 @@
     <input type="hidden" name="id"/>
     <input type="text" name="folder"/>
 </div>
+<!--
 <?
 // link for EN users only
 $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
@@ -108,7 +109,7 @@ if (preg_match("/explorenext/",$sniff_host)) {
 <?php
  } 
 ?>
-
+-->
 <script>
     var user_id = <?php echo $user_id; ?>;
     var role = '<?php echo $role; ?>';

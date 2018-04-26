@@ -14,9 +14,12 @@ if (preg_match("/explorenext/",$sniff_host)) {
     $this_app = 3;
 } elseif (preg_match("/teachnext/",$sniff_host)) {
     $this_app = 6;
+} elseif (preg_match("/canada/",$sniff_host)) {
+    $this_app = 10;
 }
 $number_jobs = count($jobs);
 $once = "No";
+// print_r($jobs);
 ?>
 
 <div class="page-header">

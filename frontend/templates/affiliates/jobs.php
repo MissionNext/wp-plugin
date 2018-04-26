@@ -63,7 +63,11 @@ $date_today = date("Y-m-d");
 			}
 			elseif (preg_match("/teachnext/",$sniff_host)) {
 		    	$site_id = 6;
-		    		$entity = "SCHOOL";
+		    	$entity = "SCHOOL";
+			}
+			elseif (preg_match("/canada/",$sniff_host)) {
+		    	$site_id = 10;
+		    	$entity = "AGENCY";
 			}
 			print ("<p align='center'><a href='https://info.missionnext.org/recruit_account.php?aid=$pass_string&s=$site_id' target='_blank'>MANAGE $entity JOB MATCHES FOR AFFILIATED ACCOUNTS</a></p>");
     	}	

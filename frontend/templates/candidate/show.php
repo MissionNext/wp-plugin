@@ -38,6 +38,9 @@ if (preg_match("/explorenext/",$sniff_host)) {
 elseif (preg_match("/teachnext/",$sniff_host)) {
     $site = 6 * $factor;
 }
+elseif (preg_match("/canada/",$sniff_host)) {
+    $site = 10 * $factor;
+}
 
 ?>
 <!-- javascript functions are needed to open a new window using Firefox running on Windows and Macs -->

@@ -55,6 +55,7 @@ elseif (preg_match("/jg./",$sniff_host)) { $site_id = 4; }
                                     <a href="/candidate/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_CANDIDATE_PLURAL))) ?></a>
                                     <a href="/organization/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_ORGANIZATION_PLURAL))) ?></a>
                                     <a href="/inquiries"><?php echo __('Job Inquiry List', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                                	<?php echo "<a href='https://info.missionnext.org/create_folders.php?appid=$site_id' target='_blank'>Manage Folders</a>"; ?>
                                 <?php endif; ?>
 
                                 <?php if($userRole == 'organization' && $site_id != 4): ?>

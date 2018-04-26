@@ -11,6 +11,9 @@ $sniff_host  = $_SERVER["HTTP_HOST"]; // returns what is after https:// and befo
 	elseif (preg_match("/teachnext/",$sniff_host)) {
         $site_id = 6;
 	}
+	elseif (preg_match("/canada/",$sniff_host)) {
+        $site_id = 10;
+	}
 // echo "\$userRole = $userRole "; echo "\$role = $role; \$site_id = $site_id";
 // print_r($affiliates);
 	

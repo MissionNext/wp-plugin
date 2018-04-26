@@ -47,6 +47,9 @@ $site_id = 3;
 elseif (preg_match("/teachnext/",$sniff_host)) { 
 $site_id = 6; 
 }
+elseif (preg_match("/canada/",$sniff_host)) { 
+$site_id = 10; 
+}
 
 $items = array_values($items);
 

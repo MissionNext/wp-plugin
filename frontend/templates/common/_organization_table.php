@@ -138,7 +138,7 @@ function getLastLogin($item){
 
                                 <?php if($role == \MissionNext\lib\Constants::ROLE_AGENCY): ?>
                                     <td class="name">
-                                        <?php if (preg_match("/explorenext/",$sniff_host))   { ?>
+                                        <?php if (preg_match("/explorenext/",$sniff_host) || preg_match("/canada/",$sniff_host))   { ?>
                                             <a href="javascript:void(0)" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo $item['profileData']['last_name']." ".$item['profileData']['first_name']." (".$item['profileData']['abbreviation'].")"; ?></a>
                                         <?php } else { ?>
                                             <a href="javascript:void(0)" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo $item['profileData']['agency_full_name']; ?></a>

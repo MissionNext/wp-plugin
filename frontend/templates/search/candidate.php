@@ -32,7 +32,7 @@
 
         <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_block', compact('form')) ?>
 
-		<a name="top">&nbsp;</a> 
+		<a name="top">&nbsp;</a>
    
         <?php if($result): ?>
             <?php if (\MissionNext\lib\Constants::ROLE_AGENCY == $userRole && \MissionNext\lib\Constants::ROLE_CANDIDATE == $role) { ?>

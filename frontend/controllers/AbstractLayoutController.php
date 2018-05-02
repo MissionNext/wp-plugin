@@ -180,7 +180,7 @@ abstract class AbstractLayoutController extends Controller {
                     if ($savedArray != $submitArray) {
                         $changedFields[] = $key;
                     }
-                } elseif ($value != $submitedGroups[$group][$key]) {
+                } elseif (isset($submitedGroups[$group][$key]) && $value != $submitedGroups[$group][$key]) {
                     $changedFields[] = $key;
                 }
             }

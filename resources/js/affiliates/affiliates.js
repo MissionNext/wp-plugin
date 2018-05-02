@@ -4,7 +4,7 @@ jQuery(document).on("click", "table tr td div.approve", function(e){
 
     approveAffiliate(tr.attr('data-requester'), tr.attr('data-approver'), function(data){
         if(data['status'] == 'approved'){
-            tr.find('td.actions').html("<div class='btn btn-link cancel'>" + cancelButton + "</div>");
+            tr.find('td.actions').html("<div class='btn btn-link cancel'>Cancel</div>");
             var header = tr.siblings('.pending-header');
             tr.detach();
             header.before(tr);

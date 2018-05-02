@@ -113,10 +113,6 @@ $sniff_host  = $_SERVER["HTTP_HOST"]; // returns what is after https:// and befo
 
 </div>
 
-<script>
-    var cancelButton = '<?php echo __("Cancel", \MissionNext\lib\Constants::TEXT_DOMAIN); ?>';
-</script>
-
 <?php
 \MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/affiliates', 'affiliates/affiliates.js', array( 'jquery' ), false, true);
 ?>

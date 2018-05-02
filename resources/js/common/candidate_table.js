@@ -13,7 +13,7 @@ jQuery(document).on('click', 'table.result tr td.note div', function(e){
                 jQuery(e.target).parents('td').attr('data-note'),
                 jQuery(e.target).parents('td').attr('data-notes'),
                 tr.attr('data-name'),
-                jQuery(e.target).parents('td').attr('data-group'),
+                jQuery(e.target).parents('td').attr('data-group')
             );
         } else {
             openNote(
@@ -36,7 +36,7 @@ jQuery(document).on('click', 'table.result tr td.note div', function(e){
         draggable: false,
         resizable: false,
         buttons: {
-            saveButton : function(){
+            Save: function(){
 
                 var modal = jQuery(this);
                 var role = modal.find('[name="role"]').val();
@@ -69,7 +69,7 @@ jQuery(document).on('click', 'table.result tr td.note div', function(e){
                 });
 
             },
-            cancelButton : function(){
+            Cancel : function(){
                 jQuery(this).dialog('close');
             }
         },
@@ -141,7 +141,7 @@ function changeFolder(row, callback){
                     width: '300',
                     modal: true,
                     buttons: {
-                        closeButton : function(){
+                        Close : function(){
                             jQuery(this).dialog('close');
                         }
                     },
@@ -268,7 +268,7 @@ if(matching) {
             width: '50%',
             modal: true,
             buttons: {
-                closeButton : function(){
+                Close : function(){
                     jQuery(this).dialog('close');
                 }
             },

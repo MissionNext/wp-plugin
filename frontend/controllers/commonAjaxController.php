@@ -54,20 +54,6 @@ class commonAjaxController extends AbstractLayoutController {
         return false;
     }
 
-    public function getCaptcha() {
-        if(class_exists('ReallySimpleCaptcha')){
-            $captcha = new \ReallySimpleCaptcha();
-            $captcha->cleanup();
-            $word = $captcha->generate_random_word();
-            $captcha_prefix = mt_rand();
-            $captcha_image = plugins_url($captcha->generate_image($captcha_prefix, $word), $captcha->tmp_dir .'/tpm');
-
-            echo json_encode([ 'image_path' => $captcha_image, 'prefix' => $captcha_prefix ]);
-
-            return false;
-        }
-    }
-
     public function sendEmail(){
 
         if($_SERVER['REQUEST_METHOD'] != 'POST'
@@ -80,19 +66,6 @@ class commonAjaxController extends AbstractLayoutController {
         ){
             $this->forward404();
         }
-
-        if(class_exists('ReallySimpleCaptcha')){
-            $captcha = new \ReallySimpleCaptcha();
-        }
-
-        if (!isset($_POST['captcha']) || !$captcha->check($_POST['prefix'], $_POST['captcha'])) {
-            echo json_encode([
-                'error' => __("Captcha not matched", Constants::TEXT_DOMAIN)
-            ]);
-
-            return false;
-        }
-        $captcha->remove($_POST['prefix']);
 
         $fromValue = $_POST['from'];
         $toValue = $_POST['to'];

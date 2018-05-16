@@ -212,11 +212,6 @@
         "action" : "noteChange"
     },
 
-    "/get/captcha" : {
-        "controller" : "commonAjax",
-        "action"    : "getCaptcha"
-    },
-
     "/email/send" : {
         "controller" : "commonAjax",
         "action" : "sendEmail"

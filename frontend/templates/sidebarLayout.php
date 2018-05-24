@@ -89,7 +89,7 @@ elseif (preg_match("/jg./",$sniff_host)) { $site_id = 4; }
             </div>
         </div>
     </div>
-    <div id="loader" style="display: none; position: absolute; left: 50%; top: 200px;">
+    <div id="loader" style="display: none; position: absolute; left: 50%; top: 200px; transform: translate(-50%);">
         <img src="<?php echo getResourceUrl('/resources/images/spinner_big.gif') ?>" />
     </div>
 <?php

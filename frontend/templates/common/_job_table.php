@@ -172,10 +172,7 @@ function getLastLogin($item){
                                 <?php } ?>
     							<?php if (!($userRole == \MissionNext\lib\Constants::ROLE_AGENCY || isset($loggedRole) && trim($loggedRole) ==\MissionNext\lib\Constants::ROLE_AGENCY)) { ?>
                                 <td class="note" data-note="<?php echo htmlentities($item['notes']) ?>">
-                                
-                                        <?php if($item['notes']) { ?>
-                                            <div></div>
-                                        <?php } ?>
+                                    <div <?php if(!$item['notes']) echo 'class="no-note"' ?>></div>
                                  </td>  
                                 <?php } ?>
                                 

@@ -79,7 +79,7 @@ class organizationController extends AbstractLayoutController {
         $inquiredJobs = $this->api->getInquiredJobs($this->userId);
         if ($inquiredJobs) {
             $filteredInquiredJobs = array_map(function($item){
-                return $item['name'];
+                return $item['id'];
             }, $inquiredJobs);
         }
 
@@ -90,7 +90,7 @@ class organizationController extends AbstractLayoutController {
                 $favKey = array_search($job['id'], $favoritedJobs);
                 $job['favorite'] = $favKey;
             }
-            if ($filteredInquiredJobs && in_array($job['name'], $filteredInquiredJobs)) {
+            if ($filteredInquiredJobs && in_array($job['id'], $filteredInquiredJobs)) {
                 $job['inquired'] = true;
             }
 

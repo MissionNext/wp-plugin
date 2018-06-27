@@ -4,6 +4,7 @@
 		elseif (preg_match("/teachnext/",$sniff_host)) { $subdomain = "teachnext"; }
 		elseif (preg_match("/canada/",$sniff_host)) { $subdomain = "canada"; }
 		elseif (preg_match("/jg./",$sniff_host)) { $subdomain = "jg"; }
+        elseif (preg_match("/it-next/",$sniff_host)) { $subdomain = "it-next"; }
 		else { $subdomain = "Not Identified"; }
 ?>
 <div class="page-header">
@@ -36,11 +37,13 @@
 </div>
 <?php
         $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
-		if (preg_match("/explorenext/",$sniff_host))   { $subdomain = "explorenext"; }
-		elseif (preg_match("/teachnext/",$sniff_host)) { $subdomain = "teachnext"; }
-		elseif (preg_match("/canada/",$sniff_host)) { $subdomain = "canada"; }
-		elseif (preg_match("/jg./",$sniff_host)) { $subdomain = "jg"; }
+		if (preg_match("/explorenext/",$sniff_host))   { $subdomain = "explorenext"; $appid = 3; }
+		elseif (preg_match("/teachnext/",$sniff_host)) { $subdomain = "teachnext";  $appid = 6; }
+		elseif (preg_match("/canada/",$sniff_host)) { $subdomain = "canada"; $appid = 10; }
+		elseif (preg_match("/jg./",$sniff_host)) { $subdomain = "jg"; $appid = 4; }
+        elseif (preg_match("/it-next/",$sniff_host)) { $subdomain = "it-next"; $appid = 11; }
 if ($subdomain != "jg") {
+// echo "\$userRole = $userRole"; 
 ?>
 <div class="info-icons">
     <ul>
@@ -53,7 +56,7 @@ if ($subdomain != "jg") {
                 
             </a>
         </li>
-        <?php if (\MissionNext\lib\Constants::ROLE_AGENCY != $userRole) { ?>
+        <?php if (\MissionNext\lib\Constants::ROLE_AGENCY != $userRole) { ?>        
         <li>
             <a href="/favorite">
                 <span class="icon-title favorites-icon"><?php echo __('Favorites', \MissionNext\lib\Constants::TEXT_DOMAIN) ?><br>
@@ -63,7 +66,16 @@ if ($subdomain != "jg") {
                 
             </a>
         </li>
-        <?php } ?>
+       <?php } elseif (\MissionNext\lib\Constants::ROLE_AGENCY == $userRole) { ?> 
+        <li>
+            <a href="https://info.missionnext.org/favorites.php?appid=<?php echo "$appid"; ?>" target="blank">
+                <span><?php echo __('Favorites', \MissionNext\lib\Constants::TEXT_DOMAIN) ?><br>
+                    &nbsp;
+                </span>
+                <img src="<?php echo getResourceUrl('/resources/images/dash_favorites.png') ?>" />
+            </a>
+        </li>
+       <?php } ?>
         <?php if (\MissionNext\lib\Constants::ROLE_CANDIDATE != $userRole) { ?>
             <li>
                 <a href="/affiliates">
@@ -132,6 +144,9 @@ else { // for Journey Guide Application Only
                 break;
             case 10:
                 return '<?php echo $links[6]; ?>';
+                break;
+            case 11:
+                return '<?php echo $links[7]; ?>';
                 break;
             default:
                 return '';

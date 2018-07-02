@@ -92,11 +92,8 @@
 <!--
 <?
 // link for EN users only
-$sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
-// app_id is not identified, so it is hardcoded here for use to organize the tools to for agency users to organize the candidates from affiliated organizations. 
-if (preg_match("/explorenext/",$sniff_host)) { 
-	// to thwart robots 
-	$site_id = 3; 
+if (3 === $site) {
+	// to thwart robots
 	$factor		 = rand(10,99); // generate random two-digit number
 	$factored	 = $factor * $user_id; // factored is the product of the random number and user_id 
 	$pass_string = $factor.$factored; // pass this string, then extract user_id as $factored / $factor 

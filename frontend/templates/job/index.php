@@ -8,15 +8,6 @@
 $warn = '';
 // there is nothing in $user, $userRole to identify which subscription is active for organizations with multiple subscriptions 
 $date_today = date("Y-m-d");
-$sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
-// echo "<br>$sniff_host";
-if (preg_match("/explorenext/",$sniff_host)) {
-    $this_app = 3;
-} elseif (preg_match("/teachnext/",$sniff_host)) {
-    $this_app = 6;
-} elseif (preg_match("/canada/",$sniff_host)) {
-    $this_app = 10;
-}
 $number_jobs = count($jobs);
 $once = "No";
 // print_r($jobs);
@@ -43,7 +34,7 @@ $once = "No";
         </thead>
         <tbody>
         <?php foreach($jobs as $job): ?>
-        <?php if($this_app == $job['app_id']): ?>
+        <?php if($site == $job['app_id']): ?>
         <?php if ($date_today > $job['profileData']['listing_expiration']) { $font = "red"; $warn = "Yes"; } else { $font = "black"; } 
         if ($warn == "Yes" && $once == "No") { echo "<font color='red'>NOTICE: One or more jobs has expired. Edit / Save job spec to extend the expiration date for another 6 months.</font><br>";     
 			$once = "Yes"; 

@@ -6,16 +6,6 @@
  */
 $key = 0;
 // echo "Organization $user[id]<br>"; print_r($inquiries);
-        $sniff_host  = $_SERVER["HTTP_HOST"]; // returns what is after https:// and before first slash
-        if (preg_match("/explorenext/",$sniff_host)) {
-            $site_id = 3;
-        }
-        elseif (preg_match("/teachnext/",$sniff_host)) {
-            $site_id = 6;
-        }
-        elseif (preg_match("/canada/",$sniff_host)) {
-            $site_id = 10;
-        }
         
 \MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/inquire/organization', 'inquire/organization.js', array( 'jquery' ), false, true);
 ?>
@@ -68,6 +58,6 @@ $key = 0;
     </div>
     <?php endif; ?>
     <div class="block">
-	<a href="https://info.missionnext.org/inquiries.php?appid=<?php echo $site_id ?>" target="_blank">View deleted inquiries</a>
+	<a href="https://info.missionnext.org/inquiries.php?appid=<?php echo $site ?>" target="_blank">View deleted inquiries</a>
 	</div>
 </div>

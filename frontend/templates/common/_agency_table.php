@@ -9,8 +9,6 @@
  */
 // print_r($items);
 // echo "<br>\$role = $role";
-// must distinguish which application is in use for users with more than one subscriptiion, since there is more than one app_id 
-$sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
 
 $items = array_values($items);
 
@@ -135,7 +133,7 @@ function getLastLogin($item){
                                 <td><?php echo $key + 1  ?></td>
 
                                 <td class="name">
-                                    <?php if (preg_match("/explorenext/",$sniff_host) || preg_match("/canada/",$sniff_host))   { ?>
+                                    <?php if(3 === $site || 6 === $site) { ?>
                                         <a href="javascript:void(0)" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo $item['profileData']['last_name']." ".$item['profileData']['first_name']." (".$item['profileData']['abbreviation'].")"; ?></a>
                                     <?php } else { ?>
                                         <a href="javascript:void(0)" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo $item['profileData']['agency_full_name']; ?></a>

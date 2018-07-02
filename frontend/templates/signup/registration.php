@@ -5,19 +5,7 @@
  * @var $role String
  */
 
-$sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash
-
-if (preg_match("/explorenext/",$sniff_host)) {
-    $subdomain = "explorenext";
-} elseif (preg_match("/teachnext/",$sniff_host)) {
-    $subdomain = "teachnext";
-} elseif (preg_match("/canada/",$sniff_host)) {
-    $subdomain = "canada";
-} elseif (preg_match("/jg/",$sniff_host)) {
-    $subdomain = "jg";
-}
-
-if ($role == "candidate" && $subdomain == "jg") {
+if ($role == "candidate" && $site == 4) {
  	echo "<p>&nbsp;</p><p align='center'>Link to <a href='https://jg.missionnext.org/signup/organization'>Journey Guide Registration</a></p>";
 } else {
 ?>
@@ -48,7 +36,7 @@ if ($role == "candidate" && $subdomain == "jg") {
                 </div>
 
                 <div class="col-sm-9 col-sm-offset-3">
-                    <?php if (isset($subdomain) && $subdomain == "jg") { ?>
+                    <?php if ($site == 4) { ?>
                         <input id="captcha" name="captcha[value]" type="text" style="width: 150px;" /> <br />To prove you are a real person
                     <?php } else { ?>
                         <input id="captcha" name="captcha[value]" type="text"/> <br />To prove you are a real person
@@ -64,7 +52,7 @@ if ($role == "candidate" && $subdomain == "jg") {
         </div>
     </form>
 </div>
-<?php } // else if ($role == "candidate" && $subdomain == "jg") ?>
+<?php } // else if ($role == "candidate" && $site == 4) ?>
 
 <script type="text/javascript">
     var userrole = '<?php echo $role; ?>';

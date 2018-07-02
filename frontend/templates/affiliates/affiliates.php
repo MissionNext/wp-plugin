@@ -4,17 +4,7 @@
  * @var $affiliates Array
  * @var $role String
  */
-$sniff_host  = $_SERVER["HTTP_HOST"]; // returns what is after https:// and before first slash
-    if (preg_match("/explorenext/",$sniff_host)) {
-        $site_id = 3;
-	}
-	elseif (preg_match("/teachnext/",$sniff_host)) {
-        $site_id = 6;
-	}
-	elseif (preg_match("/canada/",$sniff_host)) {
-        $site_id = 10;
-	}
-// echo "\$userRole = $userRole "; echo "\$role = $role; \$site_id = $site_id";
+// echo "\$userRole = $userRole "; echo "\$role = $role; \$appId = $appId";
 // print_r($affiliates);
 	
 ?>
@@ -22,7 +12,7 @@ $sniff_host  = $_SERVER["HTTP_HOST"]; // returns what is after https:// and befo
     <h1><?php echo __('Affiliates', \MissionNext\lib\Constants::TEXT_DOMAIN)?></h1>
 </div>
 <div class="page-content">
-<a class="btn btn-default" href="https://info.missionnext.org/create_folders.php?appid=<?php echo $site_id ?>" target="_blank"><?php echo __("Manage My Folders", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> 
+<a class="btn btn-default" href="https://info.missionnext.org/create_folders.php?appid=<?php echo $site ?>" target="_blank"><?php echo __("Manage My Folders", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
     <?php if($affiliates['approved'] || $affiliates['pending']): ?>
         <table class="table">
             <thead>
@@ -107,7 +97,7 @@ $sniff_host  = $_SERVER["HTTP_HOST"]; // returns what is after https:// and befo
     <?php elseif ($userRole == "organization"): ?>
         <a class="btn btn-default" href="/agency/search"><?php echo __("Request Affiliation", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> &nbsp;
         <?php if($none != "Yes"): ?>
-        <a class="btn btn-default" href="https://info.missionnext.org/assign_folders.php?appid=<?php echo $site_id ?>" target="_blank"><?php echo __("Assign Folders to Affiliates", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+        <a class="btn btn-default" href="https://info.missionnext.org/assign_folders.php?appid=<?php echo $site ?>" target="_blank"><?php echo __("Assign Folders to Affiliates", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
     <?php endif;
     endif; ?>
 

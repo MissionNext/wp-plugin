@@ -38,19 +38,6 @@ if (isset($loggedRole) && \MissionNext\lib\Constants::ROLE_AGENCY == $loggedRole
     // echo "<br>\$factor = $factor; \$agency_un = $agency_un";
 }
 
-// must distinguish which application is in use for users with more than one subscriptiion, since there is more than one app_id 
-$sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
-// app_id is not identified, so it is hardcoded here for use to organize the tools to for agency users to organize the candidates from affiliated organizations. 
-if (preg_match("/explorenext/",$sniff_host)) { 
-$site_id = 3; 
-}
-elseif (preg_match("/teachnext/",$sniff_host)) { 
-$site_id = 6; 
-}
-elseif (preg_match("/canada/",$sniff_host)) { 
-$site_id = 10; 
-}
-
 $items = array_values($items);
 
 $foldersApi = \MissionNext\lib\core\Context::getInstance()->getApiManager()->getApi()->getUserFolders($role, $organization_id);

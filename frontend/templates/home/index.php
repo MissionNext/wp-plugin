@@ -1,15 +1,6 @@
-<?php
-        $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
-		if (preg_match("/explorenext/",$sniff_host))   { $subdomain = "explorenext"; }
-		elseif (preg_match("/teachnext/",$sniff_host)) { $subdomain = "teachnext"; }
-		elseif (preg_match("/canada/",$sniff_host)) { $subdomain = "canada"; }
-		elseif (preg_match("/jg./",$sniff_host)) { $subdomain = "jg"; }
-        elseif (preg_match("/it-next/",$sniff_host)) { $subdomain = "it-next"; }
-		else { $subdomain = "Not Identified"; }
-?>
 <div class="page-header">
 
-	<?php if (\MissionNext\lib\Constants::ROLE_AGENCY == $userRole && $subdomain == "explorenext"): 
+	<?php if (\MissionNext\lib\Constants::ROLE_AGENCY == $userRole && $site == 3):
 		$fullname = $user[profileData][first_name]." ".$user[profileData][last_name]; ?>
         <h1><?php echo __('Hello', \MissionNext\lib\Constants::TEXT_DOMAIN) . ', ' . $fullname; ?></h1> <!--Rep Name-->
    <?php elseif(!empty($name)): ?>
@@ -36,14 +27,7 @@
     </div>
 </div>
 <?php
-        $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
-		if (preg_match("/explorenext/",$sniff_host))   { $subdomain = "explorenext"; $appid = 3; }
-		elseif (preg_match("/teachnext/",$sniff_host)) { $subdomain = "teachnext";  $appid = 6; }
-		elseif (preg_match("/canada/",$sniff_host)) { $subdomain = "canada"; $appid = 10; }
-		elseif (preg_match("/jg./",$sniff_host)) { $subdomain = "jg"; $appid = 4; }
-        elseif (preg_match("/it-next/",$sniff_host)) { $subdomain = "it-next"; $appid = 11; }
-if ($subdomain != "jg") {
-// echo "\$userRole = $userRole"; 
+if ($site != 4) {
 ?>
 <div class="info-icons">
     <ul>
@@ -68,7 +52,7 @@ if ($subdomain != "jg") {
         </li>
        <?php } elseif (\MissionNext\lib\Constants::ROLE_AGENCY == $userRole) { ?> 
         <li>
-            <a href="https://info.missionnext.org/favorites.php?appid=<?php echo "$appid"; ?>" target="blank">
+            <a href="https://info.missionnext.org/favorites.php?appid=<?php echo "$site"; ?>" target="blank">
                 <span><?php echo __('Favorites', \MissionNext\lib\Constants::TEXT_DOMAIN) ?><br>
                     &nbsp;
                 </span>
@@ -89,7 +73,7 @@ if ($subdomain != "jg") {
         <?php } ?>
     </ul>
 </div> <!--<div class="info-icons">-->
-<? } // if ($subdomain != "jg")
+<? } // if ($site != 4)
 else { // for Journey Guide Application Only
     ?>
     <p>&nbsp;</p><p>&nbsp;</p>
@@ -154,7 +138,7 @@ else { // for Journey Guide Application Only
     }
 </script>
 <?php 
-if ($subdomain == "canada") {
+if ($site == 10) {
 print ("<p>&nbsp; &nbsp; &nbsp; &nbsp;Note: Use <strong>Canada</strong> or <strong>TeachNext</strong>. <strong>ExploreNext</strong> is for US citizens</p>");
 } elseif (\MissionNext\lib\Constants::ROLE_CANDIDATE == $userRole) {
 print ("<p>&nbsp;</p><p>&nbsp; &nbsp; &nbsp; &nbsp;Note: <strong>Canada</strong> is for Canadian citizens</p>");

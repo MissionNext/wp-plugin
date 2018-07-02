@@ -94,6 +94,17 @@ class Routing {
 
         $vars = get_object_vars($controller);
 
+        $site = 0;
+        $configs = \MissionNext\lib\core\Context::getInstance()->getApiManager()->getApi()->getSubscriptionConfigs();
+        $publicKey = \MissionNext\lib\core\Context::getInstance()->getApiManager()->publicKey;
+        foreach($configs as $config){
+            if($config['public_key'] == $publicKey){
+                $site = $config['id'];
+            }
+        }
+
+        $vars = array_merge($vars, ['site' => $site]);
+
         if($templateName === null){
             $templateName = $route['controller'].'/'.$route['action'].'.php';
         } elseif($templateName === false){

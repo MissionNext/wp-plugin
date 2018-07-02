@@ -31,16 +31,7 @@ $pass_string = $factor.$factored; // pass this string, then extract user_id as $
 $factor_org  = $factor * $organization_id;  // factored is the product of the random number and user_id
 $org_string  = $factor.$factor_org; // pass this string, then extract organization_id as $factored / $factor
 
-$sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash
-if (preg_match("/explorenext/",$sniff_host)) {
-    $site = 3 * $factor;
-}
-elseif (preg_match("/teachnext/",$sniff_host)) {
-    $site = 6 * $factor;
-}
-elseif (preg_match("/canada/",$sniff_host)) {
-    $site = 10 * $factor;
-}
+$site *= $factor;
 
 ?>
 <!-- javascript functions are needed to open a new window using Firefox running on Windows and Macs -->

@@ -56,20 +56,17 @@ $date_today = date("Y-m-d");
     		$factor		 = rand(10,99); // generate random two-digit number
 			$factored	 = $factor * $rep_id;  // factored is the product of the random number and user_id 
 			$pass_string = $factor.$factored; // pass this string, then extract user_id as $factored / $factor 
-			$sniff_host  = $_SERVER["HTTP_HOST"]; // returns what is after https:// and before first slash 
-			if (preg_match("/explorenext/",$sniff_host)) {
-    			$site_id = 3;
+
+			if (3 === $site) {
     			$entity = "AGENCY";
 			}
-			elseif (preg_match("/teachnext/",$sniff_host)) {
-		    	$site_id = 6;
+			elseif (6 === $site) {
 		    	$entity = "SCHOOL";
 			}
-			elseif (preg_match("/canada/",$sniff_host)) {
-		    	$site_id = 10;
+			elseif (10 === $site) {
 		    	$entity = "AGENCY";
 			}
-			print ("<p align='center'><a href='https://info.missionnext.org/recruit_account.php?aid=$pass_string&s=$site_id' target='_blank'>MANAGE $entity JOB MATCHES FOR AFFILIATED ACCOUNTS</a></p>");
+			print ("<p align='center'><a href='https://info.missionnext.org/recruit_account.php?aid=$pass_string&s=$site' target='_blank'>MANAGE $entity JOB MATCHES FOR AFFILIATED ACCOUNTS</a></p>");
     	}	
 
     ?>

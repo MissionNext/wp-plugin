@@ -55,15 +55,13 @@ $percentages = [10, 20, 30, 40, 50, 60, 70, 80, 90];
             	echo __("Sorry, no matches yet. (Matches are run overnight US Time)", \MissionNext\lib\Constants::TEXT_DOMAIN);
             } ?>
         </div>
-    <?php endif; 
-     	$sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
-    ?>
+    <?php endif; ?>
 
     <div class="control-buttons">
         <div class="left">
             <a class="btn btn-default" href="/dashboard"><?php echo __("Dashboard", \MissionNext\lib\Constants::TEXT_DOMAIN); ?></a>
             <?php		
-            if (preg_match("/teachnext/",$sniff_host)): ?>
+            if (6 === $site): ?>
             <a class="btn btn-default" href="/candidate/matches/organization"><?php echo __("Schools", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> <!-- Added By Nelson Apr 23, 2016 -->
             <?php else: ?>
             <a class="btn btn-default" href="/candidate/matches/organization"><?php echo __("Agencies", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> <!-- Added By Nelson Apr 23, 2016 -->

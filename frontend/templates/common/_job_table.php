@@ -9,9 +9,7 @@
 
  */
 // print_r($items);
-// to add an item to a column must call the item into the array at MissionNext/lib/Constants.php 
-// must distinguish which application is in use for users with more than one subscriptiion, since there is more than one app_id 
-$sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
+// to add an item to a column must call the item into the array at MissionNext/lib/Constants.php
 
 $items = array_values($items);
 

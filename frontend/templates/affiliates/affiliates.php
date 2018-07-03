@@ -4,7 +4,7 @@
  * @var $affiliates Array
  * @var $role String
  */
-// echo "\$userRole = $userRole "; echo "\$role = $role; \$appId = $appId";
+// echo "\$userRole = $userRole "; echo "\$role = $role; \$site = $site";
 // print_r($affiliates);
 	
 ?>

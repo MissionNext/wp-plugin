@@ -4,7 +4,7 @@
  * @var String $userRole
  * @var Array $inquiries
  */
-$sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after https:// and before first slash 
+
 // echo "Candidate <br>"; print_r($inquiries);
 
 \MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/inquire/candidate', 'inquire/candidate.js', array( 'jquery' ), false, true);

@@ -73,7 +73,7 @@ if ($site != 4) {
         <?php } ?>
     </ul>
 </div> <!--<div class="info-icons">-->
-<? } // if ($site != 4)
+<?php } // if ($site != 4)
 else { // for Journey Guide Application Only
     ?>
     <p>&nbsp;</p><p>&nbsp;</p>

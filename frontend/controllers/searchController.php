@@ -66,6 +66,19 @@ class searchController extends AbstractLayoutController {
         $this->role = 'job';
 
         $this->processSearch();
+
+        $inquiredJobs = $this->api->getInquiredJobs($this->userId);
+        if ($inquiredJobs) {
+            $filteredInquiredJobs = array_map(function($item){
+                return $item['id'];
+            }, $inquiredJobs);
+        }
+
+        foreach ($this->result as $key => $job) {
+            if ($filteredInquiredJobs && in_array($job['id'], $filteredInquiredJobs)) {
+                $this->result[$key]['inquired'] = true;
+            }
+        }
     }
 
     public function addSaved(){

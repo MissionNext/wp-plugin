@@ -160,6 +160,28 @@ class Form {
         $this->files = $files;
     }
 
+    public function prepareForValidation() {
+        $preparedData = [];
+
+        foreach($this->groups as $_group => $group)
+        {
+            $groupData = $group->data;
+            foreach($group->fields as $_field => $field) {
+                if ('checkbox' === $field->field['type'] || 'select_multiple' === $field->field['type']) {
+                    $preparedData[$_group][$_field] = array_values($groupData[$_field]);
+                } else {
+                    if (is_array($groupData[$_field])) {
+                        $preparedData[$_group][$_field] = array_values($groupData[$_field])[0];
+                    } else {
+                        $preparedData[$_group][$_field] = $groupData[$_field];
+                    }
+                }
+            }
+        }
+
+        $this->data = $preparedData;
+    }
+
     public function getName()
     {
         return $this->name;

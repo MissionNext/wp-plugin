@@ -115,7 +115,7 @@ abstract class AbstractLayoutController extends Controller {
                 $this->route['action'] == 'index') &&
                 $this->route['controller'] != 'payment'
             ){
-                $this->redirect('/profile');
+                $this->redirect('/profile?requestUri=' . $_SERVER['REQUEST_URI']);
             }
         }
 
@@ -135,12 +135,14 @@ abstract class AbstractLayoutController extends Controller {
                 if (Constants::ROLE_CANDIDATE == $this->userRole) {
                     $this->subscriptions = $this->api->getSubscriptionsForUser($this->userId);
                     $this->apps = [
-                        1   => 'http://new.missionnext.org',
-                        2   => 'http://finishersproject.missionnext.org',
-                        3   => 'http://explorenext.missionnext.org',
-                        4   => 'http://journeydeepens.missionnext.org',
-                        5   => 'http://bammatch.missionnext.org',
-                        6   => 'http://teachnext.missionnext.org',
+                        2   => 'http://short-term.missionfinder.net',
+                        3   => 'http://explorenext.missionfinder.net',
+                        4   => 'http://journeydeepens.missionfinder.net',
+                        5   => 'http://bammatch.missionfinder.net',
+                        6   => 'http://teachnext.missionfinder.net',
+                        9   => 'http://missionnext.missionfinder.net',
+                        10   => 'http://canada.missionfinder.net',
+                        11   => 'http://it-next.missionfinder.net'
                     ];
                 }
             }

@@ -33,6 +33,17 @@ class profileController extends AbstractLayoutController {
                 $this->setMessage('notice', __("Profile saved - Continue at the Dashboard", Constants::TEXT_DOMAIN), 1);
                 $this->redirect($_SERVER['REQUEST_URI']);
             }
+        } else {
+            $this->form->prepareForValidation();
+
+            $this->form->changedFields = $this->getChangedFields($this->form->groups, $this->form->getData());
+
+            $this->form->save();
+
+            if($this->form->isValid() && isset($_GET['requestUri'])) {
+
+                $this->redirect($_GET['requestUri']);
+            }
         }
 
     	\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/country', 'country.js', [], false, true);

@@ -58,8 +58,9 @@ class DefaultDataManager {
 
         switch_to_blog($blog_id);
 
-        if ( $current_pages = get_pages() )
+        if ( $current_pages = get_pages() ) {
             $default_pages = array_diff( $default_pages, wp_list_pluck( $current_pages, 'post_name' ) );
+        }
 
         foreach($default_pages as $page){
             wp_insert_post(array(

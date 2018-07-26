@@ -169,6 +169,22 @@ class Form {
             foreach($group->fields as $_field => $field) {
                 if ('checkbox' === $field->field['type'] || 'select_multiple' === $field->field['type']) {
                     $preparedData[$_group][$_field] = array_values($groupData[$_field]);
+                } elseif ('file' === $field->field['type']) {
+                    $config = Context::getInstance()->getConfig();
+
+                    $default = $field->default?$field->default:$field->field['default_value'];
+
+                    $filename = $config->get('api_uploads_dir').'/'.$default;
+
+                    if(file_exists($filename)){
+                        $this->files = [$_field => [
+                            'name' => $default,
+                            'type' => finfo_open(FILEINFO_MIME_TYPE),
+                            'tmp_name' => $filename,
+                            'error' => null,
+                            'size' => filesize($filename),
+                        ]];
+                    }
                 } else {
                     if (is_array($groupData[$_field])) {
                         $preparedData[$_group][$_field] = array_values($groupData[$_field])[0];

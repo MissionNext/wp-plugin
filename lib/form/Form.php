@@ -172,17 +172,18 @@ class Form {
                 } elseif ('file' === $field->field['type']) {
                     $config = Context::getInstance()->getConfig();
 
-                    $default = $field->default?$field->default:$field->field['default_value'];
+                    $fileName = $groupData[$_field];
 
-                    $filename = $config->get('api_uploads_dir').'/'.$default;
+                    if(file_exists($config->get('api_uploads_dir') . '/' . $fileName)){
+                        $tmpName = '/tmp/php' . substr(md5(rand()), 0, 7);
+                        copy($config->get('api_uploads_dir') . '/' . $fileName, $tmpName);
 
-                    if(file_exists($filename)){
                         $this->files = [$_field => [
-                            'name' => $default,
-                            'type' => finfo_open(FILEINFO_MIME_TYPE),
-                            'tmp_name' => $filename,
-                            'error' => null,
-                            'size' => filesize($filename),
+                            'name' => $fileName,
+                            'type' => mime_content_type($tmpName),
+                            'tmp_name' => $tmpName,
+                            'error' => 0,
+                            'size' => filesize($tmpName),
                         ]];
                     }
                 } else {

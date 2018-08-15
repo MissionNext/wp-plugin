@@ -172,9 +172,9 @@ class Form {
                 } elseif ('file' === $field->field['type']) {
                     $config = Context::getInstance()->getConfig();
 
-                    $fileName = $groupData[$_field];
+                    $fileName = isset($groupData[$_field]) ? $groupData[$_field] : null;
 
-                    if(file_exists($config->get('api_uploads_dir') . '/' . $fileName)){
+                    if(!empty($fileName) && file_exists($config->get('api_uploads_dir') . '/' . $fileName)){
                         $tmpName = '/tmp/php' . substr(md5(rand()), 0, 7);
                         copy($config->get('api_uploads_dir') . '/' . $fileName, $tmpName);
 

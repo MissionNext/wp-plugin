@@ -107,17 +107,28 @@ class organizationController extends AbstractLayoutController {
     {
         $user_id = array_shift($params);
 
-        $this->organization = $this->api->getUserProfile($user_id);
+        $organization = $this->api->getUserProfile($user_id);
 
-        if(empty($this->organization))
-        {
+        if(empty($organization) || $organization['role'] != Constants::ROLE_ORGANIZATION){
             $this->forward404();
         }
 
-        if($this->organization['role'] != Constants::ROLE_ORGANIZATION)
-        {
-            $this->forward404();
+        $favorites = $this->api->getFavorites($this->userId, 'organization');
+
+        $is_favorite = false;
+
+        if($favorites){
+            foreach($favorites as $favorite){
+                if($favorite['target_id'] == $user_id){
+                    $is_favorite = $favorite['id'];
+                    break;
+                }
+            }
         }
+
+        $organization['favorite'] = $is_favorite;
+
+        $this->organization = $organization;
 
         $this->presentation = $this->api->getUserConfigsElement('presentation', $user_id);
         $this->presentation['value'] = do_shortcode($this->presentation['value']);

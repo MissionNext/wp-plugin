@@ -3,6 +3,7 @@
 /**
  * @var array $organization
  * @var array $presentation
+ * @var String $userRole
  */
 
 ?>
@@ -36,7 +37,7 @@
  
             <?php if( $userRole != \MissionNext\lib\Constants::ROLE_AGENCY) { ?>
                 <div class="buttons">
-                    <button id="make_favorite" class="btn btn-success <?php echo $organization['favorite']?'hide':'' ?>"><?php echo __("Make favorite", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
+                    <button id="make_favorite" title="Click once. Wait a few seconds for update" class="btn btn-success <?php echo $organization['favorite']?'hide':'' ?>"><?php echo __("Make favorite", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
                     <button data-id="<?php echo $organization['favorite'] ?>"  id="remove_from_favorites" class="btn btn-danger <?php echo $organization['favorite']?'':'hide' ?>"><?php echo __("Unfavorite", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
                 </div>
             <?php } ?>
@@ -59,6 +60,7 @@
 </div>
 
 <script>
+    var organization_id = '<?php echo $organization['id'] ?>';
     var from = '<?php echo $user['id'] ?>';
     var to = '<?php echo $organization['id'] ?>';
     var from_name = '<?php echo isset($user['profileData']['agency_full_name']) ?
@@ -70,5 +72,5 @@
 <?php
     renderTemplate('_email_candidate_popup');
     \MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/email_candidate_popup', 'email_candidate_popup.js', array( 'jquery', 'jquery-ui-dialog' ), false, true);
-    \MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/organization/presentation', 'organization/presentation.js', array( 'jquery', 'mn/email_candidate_popup' ), false, true);
+\MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/organization/show', 'organization/show.js', array( 'jquery', 'mn/email_candidate_popup' ), false, true);
 ?>

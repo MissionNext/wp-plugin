@@ -29,13 +29,6 @@
                 </div>
             <?php endif; ?>
 
-            <?php if( $userRole != \MissionNext\lib\Constants::ROLE_AGENCY) { ?>
-                <div class="buttons">
-                    <button id="make_favorite" class="btn btn-success <?php echo $organization['favorite']?'hide':'' ?>"><?php echo __("Make favorite", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
-                    <button data-id="<?php echo $organization['favorite'] ?>"  id="remove_from_favorites" class="btn btn-danger <?php echo $organization['favorite']?'':'hide' ?>"><?php echo __("Unfavorite", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
-                </div>
-            <?php } ?>
-
             <div class="control-buttons">
                 <div class="left">
                 <a class="btn btn-default" href="/dashboard"><?php echo __('Dashboard', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>

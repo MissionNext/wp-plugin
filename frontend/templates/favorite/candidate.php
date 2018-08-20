@@ -3,7 +3,6 @@
  * @var Array $user
  * @var String $userRole
  * @var Array $favorites
- * @var String $role
  This page is seen by candidates 
  */
 ?>
@@ -85,7 +84,7 @@
 </div>
 
 <div id="note" title="<?php echo __('Note', \MissionNext\lib\Constants::TEXT_DOMAIN); ?>" style="display: none">
-    <input type="hidden" name="role" value="<?php echo $role ?>"/>
+    <input type="hidden" name="role" value=""/>
     <input type="hidden" name="id" value=""/>
     <div class="help">
         <p class="role"><?php echo __("Enter or update a brief note about ", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>

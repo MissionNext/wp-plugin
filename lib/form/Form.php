@@ -168,7 +168,7 @@ class Form {
             $groupData = $group->data;
             foreach($group->fields as $_field => $field) {
                 if ('checkbox' === $field->field['type'] || 'select_multiple' === $field->field['type']) {
-                    $preparedData[$_group][$_field] = array_values($groupData[$_field]);
+                    $preparedData[$_group][$_field] = isset($groupData[$_field]) ? array_values($groupData[$_field]) : null;
                 } elseif ('file' === $field->field['type']) {
                     $config = Context::getInstance()->getConfig();
 
@@ -187,10 +187,10 @@ class Form {
                         ]];
                     }
                 } else {
-                    if (is_array($groupData[$_field])) {
+                    if (isset($groupData[$_field]) && is_array($groupData[$_field])) {
                         $preparedData[$_group][$_field] = array_values($groupData[$_field])[0];
                     } else {
-                        $preparedData[$_group][$_field] = $groupData[$_field];
+                        $preparedData[$_group][$_field] = isset($groupData[$_field]) ? $groupData[$_field] : null;
                     }
                 }
             }

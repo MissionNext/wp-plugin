@@ -6,7 +6,7 @@
  * @var String $role
  This page is seen by organizations
  */
-if (!$role) { $role = "candidate"; }
+if (!isset($role)) { $role = "candidate"; }
 ?>
 <div class="page-header">
     <h1><?php echo __("Favorites", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></h1>

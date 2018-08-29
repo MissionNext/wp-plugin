@@ -86,11 +86,11 @@ class organizationController extends AbstractLayoutController {
         $tmpJobArray = $this->api->getOrganizationPositions($id, $this->userId);
         foreach ($tmpJobArray as $job) {
             $job['org_name'] = $this->organization['profileData']['organization_name'];
-            if ($favoritedJobs && in_array($job['id'], $favoritedJobs)) {
+            if (isset($favoritedJobs) && in_array($job['id'], $favoritedJobs)) {
                 $favKey = array_search($job['id'], $favoritedJobs);
                 $job['favorite'] = $favKey;
             }
-            if ($filteredInquiredJobs && in_array($job['id'], $filteredInquiredJobs)) {
+            if (isset($filteredInquiredJobs) && in_array($job['id'], $filteredInquiredJobs)) {
                 $job['inquired'] = true;
             }
 

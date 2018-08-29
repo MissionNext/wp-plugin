@@ -12,7 +12,7 @@
     </h1>
 </div>
 
-<?php if($jobs):?>
+<?php if(isset($jobs)):?>
     <?php renderTemplate("common/_job_table", array('role' => 'job', 'items' => $jobs, 'messages' => $messages, 'userRole' => $userRole, 'userId' => $userId)); ?>
 <?php else: ?>
     <div class="block">

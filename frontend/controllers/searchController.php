@@ -76,7 +76,7 @@ class searchController extends AbstractLayoutController {
 
         if (isset($this->result)) {
             foreach ($this->result as $key => $job) {
-                if ($filteredInquiredJobs && in_array($job['id'], $filteredInquiredJobs)) {
+                if (isset($filteredInquiredJobs) && in_array($job['id'], $filteredInquiredJobs)) {
                     $this->result[$key]['inquired'] = true;
                 }
             }

@@ -50,7 +50,10 @@ get_header();
                                     <a href="/candidate/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_CANDIDATE_PLURAL))) ?></a>
                                     <a href="/organization/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_ORGANIZATION_PLURAL))) ?></a>
                                     <a href="/inquiries"><?php echo __('Job Inquiry List', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
-                                	<?php echo "<a href='https://info.missionnext.org/create_folders.php?appid=$site' target='_blank'>Manage Folders</a>"; ?>
+                                	<?php if($site == 6 && $rep_id = 9775): ?>
+                                	<a href="/presentation"><?php echo __('My Presentation', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                                    <?php endif; ?>
+                                   <?php echo "<a href='https://info.missionnext.org/create_folders.php?appid=$site' target='_blank'>Manage Folders</a>"; ?>
                                 <?php endif; ?>
 
                                 <?php if($userRole == 'organization' && $site != 4): ?>

@@ -1,6 +1,14 @@
 Hello %to_full_name%, <br />
 <br />
-%from_full_name% has canceled the inquiry regarding your %job_second_title% posting. <br />
+%from_full_name% has closed the inquiry regarding your %job_second_title% posting. Thank you for using MissionNext and taking the initiative to inquire about this position.<br />
 <br />
-MissionNext Partner Support Team  <br />
+New mission agencies are partnering with MissionNext on a regular basis, so if you are still willing to explore an assignment in missions, please continue to log in to your ExploreNext account at explorenext.missionnext.org to review your profile. Select View Agency Matches and View Job Matches for positions that appear to be a good fit for you and contact those that you find most compelling.<br />
+<br />
+Note that most positions in missions require that candidates raise or provide their own support. Your willingness to engage in this way will greatly expand your options for making a difference for eternity.<br />
+<br />
+If you run into any problems or need guidance, contact headquarters@missionnext.org.<br />
+<br />
+Thank you. <br />
+<br />
+ExploreNext Partner Support<br />MissionNext Partner Support Team  <br />
 <br />

@@ -1743,11 +1743,6 @@ fieldset.mn-profile-group > div div {
     float: left;
     width: 100%;
 }
-.candidate-results #search_block .options-link-block{
-    margin: 20px 0 0 0;
-    float: left;
-    width: 100%;
-}
 #search_block .options-link{
     font-size: 14px;
 }

@@ -44,6 +44,7 @@
 <?php } 
 // echo "<br>\$userRole = $userRole; \$folders = $folders; \$user_id = $user_id";
 ?>
+<p><a class="btn btn-default" href="https://info.missionnext.org/assign_folders.php?appid=<?php echo $site ?>" target="_blank"><?php echo __("Assign Folders to Affiliates", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
 
 
 <table class="custom-folders-table" id="folders">
@@ -70,6 +71,13 @@
             </td>
         </tr>
     <?php endforeach; ?>
+    
+    <tr><td colspan="2"><strong><font color="red">DELETE CAUTION</font>:</strong> Empty a folder before deleting. &nbsp; &nbsp; &nbsp; &nbsp; 
+    <button type="display" class="delete button btn btn-danger" title="Choose Archived or Not a Fit if you no longer have need of the profiles. To move the profiles, Select Candidate Matches and scroll below New Listing to find/open your folder and move the profiles." >Mouseover Tip</button>
+    <br>
+    Candidate listings remaining in a deleted folder will re-appear in &quot;New Listing&quot;. 
+    </td></tr>
+    
     </tbody>
     <tfoot>
     <tr>

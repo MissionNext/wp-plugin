@@ -77,6 +77,8 @@
                     <td class="actions">
                         <?php if($aff['affiliate_approver_type'] == $userRole): ?>
                             <div class="btn btn-link approve"><?php echo __('Approve', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></div>
+                        <?php elseif($aff['affiliate_approver_type'] == $role): ?>
+                            <div class="btn btn-link approve"><?php echo __('Approve', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></div>
                         <?php endif; ?>
                         <div class="btn btn-link cancel"><?php echo __('Cancel', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></div>
                     </td>

@@ -37,7 +37,7 @@
                 <div class="favorite-block <?php echo isset($inquire['favorite'])?'favorite':'not-favorite' ?>"></div>
             </td>
             <td>
-                <a class="btn btn-danger inquire-cancel"><?php echo __('Cancel', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                <a title="Click Only Once" class="btn btn-danger inquire-cancel"><?php echo __('Cancel', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
             </td>
         </tr>
         <?php endforeach; ?>

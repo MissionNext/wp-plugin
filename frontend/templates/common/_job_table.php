@@ -128,7 +128,8 @@ function getLastLogin($item){
                                 <td><?php echo $key + 1  ?></td>
                                 <td class="name">
                                     <?php $job_key = 'job_title_!#'.$item['app_names'][0]; ?>
-                                    <a href="javascript:void(0)" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo !empty($item['profileData'][$job_key]) ? current($item['profileData'][$job_key]) : $item['show_name'] ?></a>
+                                    <!--<a href="javascript:void(0)" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')"><?php echo !empty($item['profileData'][$job_key]) ? current($item['profileData'][$job_key]) : $item['show_name'] ?></a>-->
+                                    <a target="_blank" href="/job/<?php echo $item['id'] ?>)"><?php echo !empty($item['profileData'][$job_key]) ? current($item['profileData'][$job_key]) : $item['show_name'] ?></a>
                                 </td>
                                 <td class="organization" >
                                     <a href="/organization/<?php echo $item['organization']['id'] ?>" target="_blank">

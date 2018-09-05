@@ -1,9 +1,12 @@
 Hello %to_full_name%, <br />
 <br />
-Someone is looking for you! %from_full_name% has inquired about the %job_second_title% job you posted on ExploreNext. Please log in to your account and learn more about this connection by selecting Inquiries on your Dashboard.   <br />
+Candidate %from_full_name% has clicked on the Inquire Now button for the %job_name% - %job_second_title% job you have posted on ExploreNext! <br />
 <br />
-If you run into any problems or need guidance, contact headquarters@missionnext.org.<br />
+It is expected that someone from your organization will follow up with this candidate. <br />
 <br />
-Thank you. <br />
+To view the candidate’s profile and to facilitate a response, login at 
+https://explorenext.missionnext.org/explorenext-home/login-here/ and select the Inquiries icon on the Dashboard. <br />
 <br />
-ExploreNext Partner Support<br />
+Thank you for your partnership in the gospel. <br />
+<br />
+ExploreNext Customer Service <br />

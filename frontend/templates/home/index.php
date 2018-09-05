@@ -109,28 +109,28 @@ else { // for Journey Guide Application Only
     function getAppLink(id) {
         switch (id) {
             case 2:
-                return '<?php echo $links[0]; ?>';
+                return '<?php echo $links[0]; ?>'; // short-term
                 break;
             case 3:
-                return '<?php echo $links[1]; ?>';
+                return '<?php echo $links[1]; ?>'; // explorenext
                 break;
             case 4:
-                return '<?php echo $links[2]; ?>';
+                return '<?php echo $links[2]; ?>'; // jg
                 break;
             case 5:
-                return '<?php echo $links[3]; ?>';
+                return '<?php echo $links[3]; ?>'; // bammatch
                 break;
             case 6:
-                return '<?php echo $links[4]; ?>';
+                return '<?php echo $links[4]; ?>'; // teachnext
                 break;
             case 9:
-                return '<?php echo $links[5]; ?>';
+                return '<?php echo $links[5]; ?>'; // new
                 break;
             case 10:
-                return '<?php echo $links[6]; ?>';
+                return '<?php echo $links[6]; ?>'; // canada
                 break;
             case 11:
-                return '<?php echo $links[7]; ?>';
+                return '<?php echo $links[7]; ?>'; // it-next
                 break;
             default:
                 return '';
@@ -141,7 +141,7 @@ else { // for Journey Guide Application Only
 if ($site == 10) {
 print ("<p>&nbsp; &nbsp; &nbsp; &nbsp;Note: Use <strong>Canada</strong> or <strong>TeachNext</strong>. <strong>ExploreNext</strong> is for US citizens</p>");
 } elseif (\MissionNext\lib\Constants::ROLE_CANDIDATE == $userRole) {
-print ("<p>&nbsp;</p><p>&nbsp; &nbsp; &nbsp; &nbsp;Note: <strong>Canada</strong> is for Canadian citizens</p>");
+// print ("<p>&nbsp;</p><p>&nbsp; &nbsp; &nbsp; &nbsp;Note: <strong>Canada</strong> is for Canadian citizens</p>");
 }
 // echo "<br> \$userRole =  $userRole";
 \MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/home/index', 'home/index.js', array( 'jquery' ), false, true);

@@ -6,6 +6,7 @@
  * @var String $role
  This page is seen by organizations
  */
+// print_r($favorites); // echo "organization.php <br>\$role = $role";
 if (!isset($role)) { $role = "candidate"; }
 ?>
 <div class="page-header">

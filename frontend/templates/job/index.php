@@ -10,7 +10,7 @@ $warn = '';
 $date_today = date("Y-m-d");
 $number_jobs = count($jobs);
 $once = "No";
-// print_r($jobs);
+// echo "Line 30 \$jobs = $jobs"; print_r($jobs);
 ?>
 
 <div class="page-header">

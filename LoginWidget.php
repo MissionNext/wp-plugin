@@ -34,6 +34,8 @@ class LoginWidget extends \WP_Widget {
 		elseif (preg_match("/teachnext/",$sniff_host)) { $subdomain = "teachnext"; }
 		elseif (preg_match("/canada/",$sniff_host))    { $subdomain = "canada"; }
 		elseif (preg_match("/jg./",$sniff_host))	   { $subdomain = "jg"; }
+		elseif (preg_match("/short/",$sniff_host))	   { $subdomain = "short-term"; }
+		elseif (preg_match("/it-next/",$sniff_host))   { $subdomain = "it-next"; }
 
         if(is_user_logged_in()){
 
@@ -98,7 +100,7 @@ class LoginWidget extends \WP_Widget {
                 <?php if (isset($subdomain) && $subdomain == "jg") { ?>
 				<div>
                     <p><a href="<?php echo wp_lostpassword_url("/dashboard") ?>"><font color="#434343"><?php echo __("Can't Sign In?", Constants::TEXT_DOMAIN) ?></font></a></p>
-                    <p><?php echo __("Register as", Constants::TEXT_DOMAIN) ?></p>
+                    <p><?php echo __("Sign up as", Constants::TEXT_DOMAIN) ?></p>
                     <a href="/signup/organization"><font color="#434343"><?php echo ucfirst(getCustomTranslation(Constants::ROLE_ORGANIZATION)) ?></font></a>
                 </div>
                 <?php } else { ?>

@@ -2,5 +2,11 @@ Hello %to_full_name%, <br />
 <br />
 %from_full_name% has canceled the inquiry regarding your %job_second_title% posting. <br />
 <br />
-MissionNext Partner Support Team  <br />
+Please log in to your account and learn more about other connections for organizations and job matches that meet your criteria for service. <br />
+<br />
+If you run into any problems or need guidance, contact headquarters@missionnext.org.<br />
+<br />
+Thank you. <br />
+<br />
+ExploreNext Partner Support<br />MissionNext Partner Support Team  <br />
 <br />

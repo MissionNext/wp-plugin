@@ -1,8 +1,7 @@
-Dear %organization_name%,
-
-Thank you for renewing your ExploreNext subscription; we value and appreciate your partnership.
-
-Someone from our Partner Support Team will be in touch with you to offer assistance or answer any questions you may have.
-
-
+Dear %organization_name%, <br />
+<br />
+Thank you for renewing your ExploreNext subscription; we value and appreciate your partnership.<br />
+<br />
+Someone from our Partner Support Team will be in touch with you to offer assistance or answer any questions you may have.<br />
+<br />
 The MissionNext Team

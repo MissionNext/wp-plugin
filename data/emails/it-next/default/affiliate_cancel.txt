@@ -1,0 +1,8 @@
+Hello %to_full_name%, <br />
+<br />
+Your affiliation request with %from_full_name% has been cancelled. If you have any questions, you can log in to your IT-Next account to send a message to the %from_full_name% or contant them directly. <br />
+<br />
+Thank you for your partnership in the gospel. <br />
+<br />
+IT-Next Customer Service <br />
+IT-Next: https://it-next.missionfinder.net <br />

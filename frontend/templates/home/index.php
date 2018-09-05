@@ -27,7 +27,11 @@
     </div>
 </div>
 <?php
+// specify if affilations are possible.
+if (3 === $site || 6 === $site)   { $affilations = "Yes"; }
+
 if ($site != 4) {
+// echo "\$userRole = $userRole"; 
 ?>
 <div class="info-icons">
     <ul>
@@ -52,7 +56,7 @@ if ($site != 4) {
         </li>
        <?php } elseif (\MissionNext\lib\Constants::ROLE_AGENCY == $userRole) { ?> 
         <li>
-            <a href="https://info.missionnext.org/favorites.php?appid=<?php echo "$site"; ?>" target="blank">
+            <a href="https://info.missionfinder.net/favorites.php?appid=<?php echo "$site"; ?>" target="blank">
                 <span><?php echo __('Favorites', \MissionNext\lib\Constants::TEXT_DOMAIN) ?><br>
                     &nbsp;
                 </span>
@@ -60,7 +64,7 @@ if ($site != 4) {
             </a>
         </li>
        <?php } ?>
-        <?php if (\MissionNext\lib\Constants::ROLE_CANDIDATE != $userRole) { ?>
+        <?php if (\MissionNext\lib\Constants::ROLE_CANDIDATE != $userRole && $affilations == "Yes") { ?>
             <li>
                 <a href="/affiliates">
                     <span class="icon-title affiliates-icon"><?php echo __('Affiliates', \MissionNext\lib\Constants::TEXT_DOMAIN) ?><br>
@@ -79,9 +83,9 @@ else { // for Journey Guide Application Only
     <p>&nbsp;</p><p>&nbsp;</p>
 	<center><table style="width: 600px">
 	<tr><td style="text-align:center; width: 200px">CANDIDATE DASHBOARD</td><td style="text-align:center; width: 200px">VIEW INQUIRIES</td><td style="text-align:center; width: 200px">VIEW JOBS</td></tr>
-	<tr><td style="text-align:center; width: 200px"><a href="https://guides.missionnext.org/jg_home.php" title="View Selected Candidates"><img src="<?php echo getResourceUrl('/resources/images/dash_affiliates.png') ?>" /></a> </td>
-	<td style="text-align:center; width: 200px"> <a href="https://guides.missionnext.org/inq_list.php" title="Inquiry List (Takes a long moment to display)" target="_blank"><img src="<?php echo getResourceUrl('/resources/images/dash_inquiries.jpg') ?>" /></a></td>
-	<td style="text-align:center; width: 200px"> <a href="https://guides.missionnext.org/job_list.php" title="Jobs List" target="_blank"><img src="<?php echo getResourceUrl('/resources/images/dash_jobs.png') ?>" /></a></td></tr>
+	<tr><td style="text-align:center; width: 200px"><a href="https://guides.missionfinder.net/jg_home.php" title="View Selected Candidates"><img src="<?php echo getResourceUrl('/resources/images/dash_affiliates.png') ?>" /></a> </td>
+	<td style="text-align:center; width: 200px"> <a href="https://guides.missionfinder.net/inq_list.php" title="Inquiry List (Takes a long moment to display)" target="_blank"><img src="<?php echo getResourceUrl('/resources/images/dash_inquiries.jpg') ?>" /></a></td>
+	<td style="text-align:center; width: 200px"> <a href="https://guides.missionfinder.net/job_list.php" title="Jobs List" target="_blank"><img src="<?php echo getResourceUrl('/resources/images/dash_jobs.png') ?>" /></a></td></tr>
 	<tr><td align="center" colspan="3">&nbsp;</p></td></tr>
 	<tr><td align="center" colspan="3">MissionNext: Providing information, challenge and pathways for fellow Christ-followers to serve in missions.</p></td></tr>
 	</table></center>
@@ -109,28 +113,28 @@ else { // for Journey Guide Application Only
     function getAppLink(id) {
         switch (id) {
             case 2:
-                return '<?php echo $links[0]; ?>';
+                return '<?php echo $links[0]; ?>'; // short-term
                 break;
             case 3:
-                return '<?php echo $links[1]; ?>';
+                return '<?php echo $links[1]; ?>'; // explorenext
                 break;
             case 4:
-                return '<?php echo $links[2]; ?>';
+                return '<?php echo $links[2]; ?>'; // jg
                 break;
             case 5:
-                return '<?php echo $links[3]; ?>';
+                return '<?php echo $links[3]; ?>'; // bammatch
                 break;
             case 6:
-                return '<?php echo $links[4]; ?>';
+                return '<?php echo $links[4]; ?>'; // teachnext
                 break;
             case 9:
-                return '<?php echo $links[5]; ?>';
+                return '<?php echo $links[5]; ?>'; // new
                 break;
             case 10:
-                return '<?php echo $links[6]; ?>';
+                return '<?php echo $links[6]; ?>'; // canada
                 break;
             case 11:
-                return '<?php echo $links[7]; ?>';
+                return '<?php echo $links[7]; ?>'; // it-next
                 break;
             default:
                 return '';
@@ -141,7 +145,7 @@ else { // for Journey Guide Application Only
 if ($site == 10) {
 print ("<p>&nbsp; &nbsp; &nbsp; &nbsp;Note: Use <strong>Canada</strong> or <strong>TeachNext</strong>. <strong>ExploreNext</strong> is for US citizens</p>");
 } elseif (\MissionNext\lib\Constants::ROLE_CANDIDATE == $userRole) {
-print ("<p>&nbsp;</p><p>&nbsp; &nbsp; &nbsp; &nbsp;Note: <strong>Canada</strong> is for Canadian citizens</p>");
+// print ("<p>&nbsp;</p><p>&nbsp; &nbsp; &nbsp; &nbsp;Note: <strong>Canada</strong> is for Canadian citizens</p>");
 }
 // echo "<br> \$userRole =  $userRole";
 \MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/home/index', 'home/index.js', array( 'jquery' ), false, true);

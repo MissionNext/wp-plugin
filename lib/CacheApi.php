@@ -12,7 +12,7 @@ class CacheApi extends Api {
 
     private $cache_manager;
 
-    public function __construct(ClientInterface $client, $publicKey, $privateKey, $basePath = 'https://api.missionnext.org'){
+    public function __construct(ClientInterface $client, $publicKey, $privateKey, $basePath = 'https://api.missionfinder.net'){
         parent::__construct($client, $publicKey, $privateKey, $basePath);
 
         $this->cache_manager = Context::getInstance()->getCacheManager();

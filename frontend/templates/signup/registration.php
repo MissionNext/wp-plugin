@@ -6,7 +6,7 @@
  */
 
 if ($role == "candidate" && $site == 4) {
- 	echo "<p>&nbsp;</p><p align='center'>Link to <a href='https://jg.missionnext.org/signup/organization'>Journey Guide Registration</a></p>";
+ 	echo "<p>&nbsp;</p><p align='center'>Link to <a href='https://jg.missionfinder.net/signup/organization'>Journey Guide Registration</a></p>";
 } else {
 ?>
 <div class="page-header">

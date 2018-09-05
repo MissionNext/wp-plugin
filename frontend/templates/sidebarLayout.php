@@ -34,7 +34,7 @@ get_header();
                                     <a href="/organization/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_ORGANIZATION_PLURAL))) ?></a>
                                     <a href="/inquiries"><?php echo __('Job Inquiry List', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                                     <a href="/favorite"><?php echo __('My Favorites', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
-                                    <a target="_blank" href="https://info.missionnext.org/qcs.php?uid=<?php echo $pass_string ?> "><?php echo __('Your QCS', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                                    <a target="_blank" href="https://info.missionfinder.net/qcs.php?uid=<?php echo $pass_string ?> "><?php echo __('Your QCS', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                                    
                                 <?php endif; ?>
 
@@ -45,17 +45,17 @@ get_header();
 								$pass_string = $factor.$factored; // pass this string, then extract user_id as $factored / $factor 
 			                    ?>
                                     <a href="/affiliates"><?php echo __('Affiliates', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
-                                    <?php echo "<a href='https://info.missionnext.org/recruit_candidates.php?appid=$site' target='_blank'>Affiliate Candidates</a>"; ?>
-                                    <?php echo "<a href='https://info.missionnext.org/recruit_account.php?aid=$pass_string&s=$site' target='_blank'>Job Candidates</a>"; ?>
+                                    <?php echo "<a href='https://info.missionfinder.net/recruit_candidates.php?appid=$site' target='_blank'>Affiliate Candidates</a>"; ?>
+                                    <?php echo "<a href='https://info.missionfinder.net/recruit_account.php?aid=$pass_string&s=$site' target='_blank'>Job Candidates</a>"; ?>
                                     <a href="/candidate/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_CANDIDATE_PLURAL))) ?></a>
                                     <a href="/organization/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_ORGANIZATION_PLURAL))) ?></a>
                                     <a href="/inquiries"><?php echo __('Job Inquiry List', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
-                                	<?php echo "<a href='https://info.missionnext.org/create_folders.php?appid=$site' target='_blank'>Manage Folders</a>"; ?>
+                                	<?php echo "<a href='https://info.missionfinder.net/create_folders.php?appid=$site' target='_blank'>Manage Folders</a>"; ?>
                                 <?php endif; ?>
 
                                 <?php if($userRole == 'organization' && $site != 4): ?>
                                     <a href="/presentation"><?php echo __('My Presentation', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
-                                    <a href="https://info.missionnext.org/org_matches.php?s=<?php echo $site ?>" title='Matches to your organization profile' target='_blank' class="matches"><?php echo sprintf(__('%s Matches', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_CANDIDATE))) ?></a>
+                                    <a href="https://info.missionfinder.net/org_matches.php?s=<?php echo $site ?>" title='Matches to your organization profile' target='_blank' class="matches"><?php echo sprintf(__('%s Matches', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_CANDIDATE))) ?></a>
                                     <a href="/candidate/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_CANDIDATE_PLURAL))) ?></a>
                                     <a href="/favorite"><?php echo __('My Favorites', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                                     <a href="/job">My <?php echo ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_JOB_PLURAL)) ?></a>  

@@ -37,13 +37,13 @@ $site *= $factor;
 <!-- javascript functions are needed to open a new window using Firefox running on Windows and Macs -->
 <script>
     function function_qcs() {
-        window.open("https://info.missionnext.org/qcs_view.php?uid=<?php echo $pass_string ?>");
+        window.open("https://info.missionfinder.net/qcs_view.php?uid=<?php echo $pass_string ?>");
     }
     function function_print() {
-        window.open("https://info.missionnext.org/print_view.php?uid=<?php echo $pass_string ?>&oid=<?php echo $org_string ?>&site=<?php echo $site ?>");
+        window.open("https://info.missionfinder.net/print_view.php?uid=<?php echo $pass_string ?>&oid=<?php echo $org_string ?>&site=<?php echo $site ?>");
     }
     function function_jobs() {
-        window.open("https://info.missionnext.org/jobs_view.php?uid=<?php echo $pass_string ?>&oid=<?php echo $org_string ?>&site=<?php echo $site ?>");
+        window.open("https://info.missionfinder.net/jobs_view.php?uid=<?php echo $pass_string ?>&oid=<?php echo $org_string ?>&site=<?php echo $site ?>");
     }
 </script>
 
@@ -84,13 +84,13 @@ $site *= $factor;
                 <?php } ?>
                 <!--<br> Test For IE:
                 <div class="buttons">
-                    <button class="btn btn-default"><a href="https://info.missionnext.org/qcs_view.php?uid=<?php echo $pass_string ?>" title="Qualified Candidate Scale" target="_blank">View QCS Scale</a></button>
+                    <button class="btn btn-default"><a href="https://info.missionfinder.net/qcs_view.php?uid=<?php echo $pass_string ?>" title="Qualified Candidate Scale" target="_blank">View QCS Scale</a></button>
                 </div>
                 <div class="buttons">
-                    <button class="btn btn-default"><a href="https://info.missionnext.org/print_view.php?uid=<?php echo $pass_string ?>&oid=<?php echo $org_string ?>&site=<?php echo $site ?>" title="Printer Friendly Display with What Matched" target="_blank">Print/Forward Profile</a></button>
+                    <button class="btn btn-default"><a href="https://info.missionfinder.net/print_view.php?uid=<?php echo $pass_string ?>&oid=<?php echo $org_string ?>&site=<?php echo $site ?>" title="Printer Friendly Display with What Matched" target="_blank">Print/Forward Profile</a></button>
                 </div>
                 <div class="buttons">
-                    <button class="btn btn-default"><a href="https://info.missionnext.org/jobs_view.php?uid=<?php echo $pass_string ?>&oid=<?php echo $org_string ?>&site=<?php echo $site ?>" title="Matches to Your Jobs" target="_blank">Job Matches</a></button>
+                    <button class="btn btn-default"><a href="https://info.missionfinder.net/jobs_view.php?uid=<?php echo $pass_string ?>&oid=<?php echo $org_string ?>&site=<?php echo $site ?>" title="Matches to Your Jobs" target="_blank">Job Matches</a></button>
                 </div>-->
                 <?php if( $userRole != \MissionNext\lib\Constants::ROLE_CANDIDATE ):
                     $last_login = substr($candidate['last_login'],0,10);

@@ -12,7 +12,7 @@
     <h1><?php echo __('Affiliates', \MissionNext\lib\Constants::TEXT_DOMAIN)?></h1>
 </div>
 <div class="page-content">
-<a class="btn btn-default" href="https://info.missionnext.org/create_folders.php?appid=<?php echo $site ?>" target="_blank"><?php echo __("Manage My Folders", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+<a class="btn btn-default" href="https://info.missionfinder.net/create_folders.php?appid=<?php echo $site ?>" target="_blank"><?php echo __("Manage My Folders", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
     <?php if($affiliates['approved'] || $affiliates['pending']): ?>
         <table class="table">
             <thead>
@@ -77,6 +77,8 @@
                     <td class="actions">
                         <?php if($aff['affiliate_approver_type'] == $userRole): ?>
                             <div class="btn btn-link approve"><?php echo __('Approve', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></div>
+                        <?php elseif($aff['affiliate_approver_type'] == $role): ?>
+                            <div class="btn btn-link approve"><?php echo __('Approve', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></div>
                         <?php endif; ?>
                         <div class="btn btn-link cancel"><?php echo __('Cancel', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></div>
                     </td>
@@ -97,7 +99,7 @@
     <?php elseif ($userRole == "organization"): ?>
         <a class="btn btn-default" href="/agency/search"><?php echo __("Request Affiliation", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> &nbsp;
         <?php if($none != "Yes"): ?>
-        <a class="btn btn-default" href="https://info.missionnext.org/assign_folders.php?appid=<?php echo $site ?>" target="_blank"><?php echo __("Assign Folders to Affiliates", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+        <a class="btn btn-default" href="https://info.missionfinder.net/assign_folders.php?appid=<?php echo $site ?>" target="_blank"><?php echo __("Assign Folders to Affiliates", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
     <?php endif;
     endif; ?>
 

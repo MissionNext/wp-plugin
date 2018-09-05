@@ -57,16 +57,13 @@ $date_today = date("Y-m-d");
 			$factored	 = $factor * $rep_id;  // factored is the product of the random number and user_id 
 			$pass_string = $factor.$factored; // pass this string, then extract user_id as $factored / $factor 
 
-			if (3 === $site) {
-    			$entity = "AGENCY";
+            if (6 === $site) {
+                $entity = "SCHOOL";
 			}
-			elseif (6 === $site) {
-		    	$entity = "SCHOOL";
-			}
-			elseif (10 === $site) {
-		    	$entity = "AGENCY";
-			}
-			print ("<p align='center'><a href='https://info.missionnext.org/recruit_account.php?aid=$pass_string&s=$site' target='_blank'>MANAGE $entity JOB MATCHES FOR AFFILIATED ACCOUNTS</a></p>");
+			else {
+                $entity = "AGENCY";
+            }
+			print ("<p align='center'><a href='https://info.missionfinder.net/recruit_account.php?aid=$pass_string&s=$site' target='_blank'>MANAGE $entity JOB MATCHES FOR AFFILIATED ACCOUNTS</a></p>");
     	}	
 
     ?>

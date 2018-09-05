@@ -6,6 +6,7 @@
  * @var String $role
  This page is seen be agencies / agency reps
  */
+echo "<br>agency.php \$userRole = $userRole; \$user=<br>"; print_r($user);
 ?>
 <div class="page-header">
     <h1><?php echo __("Favorites", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></h1>

@@ -5,6 +5,8 @@
  * @var $days_left
  * @var $total_days
  */
+// echo "no_roles: \$config = $config<br>"; print_r($config);
+// echo "<br>\$defaults = $defaults<br>"; print_r($defaults);
 $first_default = current($defaults);
 $period = ( $defaults && $first_default && $first_default['is_recurrent'] )?'month' : 'year';
 $end_date = strtotime("+$days_left day");
@@ -61,7 +63,7 @@ foreach($defaults as $default){
 
         $checked = isset($defaults[$app['id']]);
         if ($checked) {
-            $URL = "<a href='https://".$app['public_key'].".missionnext.org/dashboard' title='Go to your dashboard'>";
+            $URL = "<a href='https://".$app['public_key'].".missionfinder.net/dashboard' title='Go to your dashboard'>";
         } else {
             unset($URL);
         }

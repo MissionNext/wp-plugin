@@ -1,10 +1,11 @@
 Hello %to_full_name%, <br />
 <br />
-Candidate %from_full_name% has clicked on the inquired button for TeachNext job %job_name%! <br />
+Candidate %from_full_name% has clicked on the Inquire Now button for the %job_name% - %job_second_title% job you have posted on TeachNext! <br />
 <br />
-The expectation by the candidates is that someone from your organization will follow up. <br />
+It is expected that someone from your school will follow up with this candidate. <br />
 <br />
-To view the candidate profile and to facilitate a response login at https://teachnext.missionfinder.net/teachnext-home/login-here/ <br />
+To view the candidate’s profile and to facilitate a response, login at 
+https://teachnext.missionfinder.net/teachnext-home/login-here/ and select the Inquiries icon on the Dashboard. <br />
 <br />
 Thank you for your partnership in the gospel. <br />
 <br />

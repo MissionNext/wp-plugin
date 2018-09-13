@@ -117,7 +117,8 @@ class commonAjaxController extends AbstractLayoutController {
         if ('copy' == $cc_me && Constants::ROLE_CANDIDATE == $fromUser['role']) {
             unset($response);
             $body2 = "Notice: \n";
-            $body2 .= "You sent a message to: ".$toUser['profileData']['organization_name']."\n";
+            $body2 .= "You are receiving a message from: ".$toUser['profileData']['organization_name']."\n";
+            $body2 .= "Please reply to the following:"."\n";
             $body2 .= "Key Contact Name: ".$toUser['profileData']['first_name'].' '.$toUser['profileData']['last_name']."\n";
             $body2 .= "Key Contact Phone: ".$toUser['profileData']['key_contact_phone']."\n";
             $body2 .= "Email Address: ".$toUser['profileData']['email']."\n";

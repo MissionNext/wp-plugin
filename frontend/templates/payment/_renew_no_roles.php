@@ -5,8 +5,6 @@
  * @var $days_left
  * @var $total_days
  */
-// echo "no_roles: \$config = $config<br>"; print_r($config);
-// echo "<br>\$defaults = $defaults<br>"; print_r($defaults);
 $first_default = current($defaults);
 $period = ( $defaults && $first_default && $first_default['is_recurrent'] )?'month' : 'year';
 $end_date = strtotime("+$days_left day");

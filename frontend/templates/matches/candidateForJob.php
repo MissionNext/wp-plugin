@@ -43,6 +43,16 @@ if ($interval < 64800) {
         </select>
         <?php echo __("not shown. <br>Folder icons clickable to expand/collapse. Refresh screen to update favorites and note icons. <font color=white>candidateForJob.php</font>", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
     </div>
+    <div class="control-buttons">
+        <div class="left">
+            <a class="btn btn-default" href="/dashboard"><?php echo __("Dashboard", \MissionNext\lib\Constants::TEXT_DOMAIN); ?></a>
+            <?php if(preg_match("/affiliates/", $From_URL)): ?> <!--$_SERVER['HTTP_REFERER'] is used to discern if this page view is from a receiving org or a sending (affiliate) organization, then redirect as appropriate. -->
+            	<a class="btn btn-default" href="/affiliates/jobs"><?php echo __("Jobs", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+            <?php else: ?>
+            	<a class="btn btn-default" href="/job"><?php echo __("Jobs", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+            <?php endif; ?>
+           </div>
+    </div>
 
     <?php if($candidates):
         ?>

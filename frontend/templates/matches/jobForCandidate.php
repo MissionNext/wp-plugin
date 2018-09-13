@@ -37,8 +37,13 @@ $percentages = [10, 20, 30, 40, 50, 60, 70, 80, 90];
             }?>
         </select>
         <?php echo __("not shown. <br>Folder icons clickable to expand/collapse. Refresh screen to update favorites and note icons. <font color=white>jobforCandidate.php</font>", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+
+	<div class="control-buttons">
+        <div class="left">
+            <a class="btn btn-default" href="/dashboard"><?php echo __("Dashboard", \MissionNext\lib\Constants::TEXT_DOMAIN); ?></a>
+        </div>
     </div>
-	
+    </div>
     <?php 
 		// echo "<br>"; print_r($jobs); echo "<br>"; 
     ?>

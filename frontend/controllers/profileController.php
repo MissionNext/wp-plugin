@@ -30,7 +30,7 @@ class profileController extends AbstractLayoutController {
 
             if($this->form->isValid()){
 
-                $this->setMessage('notice', __("Profile saved - Continue at the Dashboard", Constants::TEXT_DOMAIN), 1);
+                $this->setMessage('notice', __("<p style='font-size: 15px; font-weight: bold; color='#ffffff'>Thank you for completing your Profile. Select <a href='/dashboard'>My Dashboard</a> to continue.</p>", Constants::TEXT_DOMAIN), 1);
                 $this->redirect($_SERVER['REQUEST_URI']);
             }
         } else {

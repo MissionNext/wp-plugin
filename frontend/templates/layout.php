@@ -12,7 +12,7 @@ get_header();
             <div class="row">
                     <?php if (isset($subscriptions) && is_array($subscriptions)) { ?>
                         <div class="block bg-success notice">
-                            <?php echo __('You have started or completed a profile on these MissionNext pathways: | ', \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
+                            <?php echo __("<p style='font-size: 15px; font-weight: bold; color='#ffffff'>You have started or completed a profile on these MissionNext pathways: | ", \MissionNext\lib\Constants::TEXT_DOMAIN) ?>
                             <?php if ($userRole == \MissionNext\lib\Constants::ROLE_CANDIDATE) {
                                 foreach ($subscriptions as $sub) { ?>
                                     <a href="<?php echo $apps[$sub['app_id']]; ?>" target="_blank"><?php echo $sub['app']['name']; ?></a> | 

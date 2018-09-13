@@ -1,7 +1,7 @@
 <div class="page-header">
 
 	<?php if (\MissionNext\lib\Constants::ROLE_AGENCY == $userRole && $site == 3):
-		$fullname = $user[profileData][first_name]." ".$user[profileData][last_name]; ?>
+		$fullname = $user['profileData']['first_name']." ".$user['profileData']['last_name']; ?>
         <h1><?php echo __('Hello', \MissionNext\lib\Constants::TEXT_DOMAIN) . ', ' . $fullname; ?></h1> <!--Rep Name-->
    <?php elseif(!empty($name)): ?>
         <h1><?php echo __('Hello', \MissionNext\lib\Constants::TEXT_DOMAIN) . ', ' . $name; ?></h1> <!--Candidate Name-->

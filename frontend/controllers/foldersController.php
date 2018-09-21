@@ -40,6 +40,7 @@ class foldersController extends Controller
         $this->userRole = 'organization';
         $this->default = $defaultFolders;
         $this->custom = $customFolders;
+        $this->domain = Context::getInstance()->getConfig()->get('domain');
     }
 
     public function add(){

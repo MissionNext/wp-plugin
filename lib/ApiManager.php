@@ -25,7 +25,7 @@ class ApiManager {
 
         $this->publicKey = get_option(Constants::PUBLIC_KEY_TOKEN);
         $this->privateKey = get_option(Constants::PRIVATE_KEY_TOKEN);
-        $this->basePath = Context::getInstance()->getConfig()->get('api_base_path', 'https://api.missionfinder.net');
+        $this->basePath = Context::getInstance()->getConfig()->get('api_base_path');
 
         $this->cache_manager = Context::getInstance()->getCacheManager();
 

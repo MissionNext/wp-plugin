@@ -5,4 +5,4 @@ Your affiliation request with %from_full_name% has been canceled. If you have an
 Thank you for your partnership in the gospel. <br />
 <br />
 ExploreNext Customer Service <br />
-ExploreNext: https://explorenext.missionfinder.net <br />
+ExploreNext: https://explorenext.%domain% <br />

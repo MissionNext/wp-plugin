@@ -37,7 +37,7 @@ class UserLib extends ProfileLib {
         }
     }
 
-    public static function replaceTokens($string, $user_from, $user_to, $job = null){
+    public static function replaceTokens($string, $user_from, $user_to, $domain, $job = null){
 
         $from = array();
         $to = array();
@@ -77,6 +77,9 @@ class UserLib extends ProfileLib {
                 $to[] = $new_value;
             }
         }
+
+        $from[] = "%domain%";
+        $to[] = $domain;
 
         if($job){
 

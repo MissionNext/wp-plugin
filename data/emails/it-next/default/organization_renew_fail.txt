@@ -1,1 +1,1 @@
-This is to inform you that an attempted renewal payment from %organization_name% has failed at it-next.missionfinder.net. Please contact this organization to provide assistance.
+This is to inform you that an attempted renewal payment from %organization_name% has failed at it-next.%domain%. Please contact this organization to provide assistance.

@@ -3,10 +3,11 @@
  * @var $profileForm \MissionNext\lib\form\Form
  * @var $registrationForm \MissionNext\lib\form\RegistrationForm
  * @var $role String
+ * @var $domain String
  */
 
 if ($role == "candidate" && $site == 4) {
- 	echo "<p>&nbsp;</p><p align='center'>Link to <a href='https://jg.missionfinder.net/signup/organization'>Journey Guide Registration</a></p>";
+ 	echo "<p>&nbsp;</p><p align='center'>Link to <a href='https://jg.$domain/signup/organization'>Journey Guide Registration</a></p>";
 } else {
 ?>
 <div class="page-header">

@@ -4,6 +4,8 @@ $date_today = date("Y-m-d");
  * @var $userRole
  * @var $jobs Array
  * @var $user Array
+ * @var $domain String
+ * @var $site
  */
 // echo "\$userRole = $userRole "; echo "\$user = <br>"; print_r($user);
 // print_r($jobs);
@@ -63,7 +65,7 @@ $date_today = date("Y-m-d");
 			else {
                 $entity = "AGENCY";
             }
-			print ("<p align='center'><a href='https://info.missionfinder.net/recruit_account.php?aid=$pass_string&s=$site' target='_blank'>MANAGE $entity JOB MATCHES FOR AFFILIATED ACCOUNTS</a></p>");
+			print ("<p align='center'><a href='https://info.{$domain}/recruit_account.php?aid=$pass_string&s=$site' target='_blank'>MANAGE $entity JOB MATCHES FOR AFFILIATED ACCOUNTS</a></p>");
     	}	
 
     ?>

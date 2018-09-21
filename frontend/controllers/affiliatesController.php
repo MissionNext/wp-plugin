@@ -68,7 +68,7 @@ class affiliatesController extends AbstractLayoutController {
             $user_to = $this->api->getUserProfile($_POST['id']);
             $mail_service = Context::getInstance()->getMailService();
 
-            $message = UserLib::replaceTokens(Context::getInstance()->getLocalizationManager()->getLocalizedEmail('affiliate_request.txt'), $user_from, $user_to);
+            $message = UserLib::replaceTokens(Context::getInstance()->getLocalizationManager()->getLocalizedEmail('affiliate_request.txt'), $user_from, $user_to, $this->domain);
 
             $mail_service->from = 'no-reply@'.$_SERVER['SERVER_NAME'];
             $mail_service->send($user_to['email'], "Affiliate request", $message);
@@ -96,7 +96,7 @@ class affiliatesController extends AbstractLayoutController {
             $user_to = $this->api->getUserProfile($_POST['requester_id']);
             $mail_service = Context::getInstance()->getMailService();
 
-            $message = UserLib::replaceTokens(Context::getInstance()->getLocalizationManager()->getLocalizedEmail('affiliate_approve.txt'), $user_from, $user_to);
+            $message = UserLib::replaceTokens(Context::getInstance()->getLocalizationManager()->getLocalizedEmail('affiliate_approve.txt'), $user_from, $user_to, $this->domain);
 
             $mail_service->from = 'no-reply@'.$_SERVER['SERVER_NAME'];
             $mail_service->send($user_to['email'], "Affiliate approval", $message);
@@ -126,7 +126,7 @@ class affiliatesController extends AbstractLayoutController {
             $user_to = $this->api->getUserProfile($this->userId == $_POST['requester_id'] ? $_POST['approver_id'] : $_POST['requester_id']);
             $mail_service = Context::getInstance()->getMailService();
 
-            $message = UserLib::replaceTokens(Context::getInstance()->getLocalizationManager()->getLocalizedEmail('affiliate_cancel.txt'), $user_from, $user_to);
+            $message = UserLib::replaceTokens(Context::getInstance()->getLocalizationManager()->getLocalizedEmail('affiliate_cancel.txt'), $user_from, $user_to, $this->domain);
 
             $mail_service->from = 'no-reply@'.$_SERVER['SERVER_NAME'];
             $mail_service->send($user_to['email'], "Affiliate cancellation", $message);

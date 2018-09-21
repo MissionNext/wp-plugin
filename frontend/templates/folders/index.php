@@ -8,6 +8,8 @@
  * @var $folders
  * @var $languages
  * @var $default
+ * @var $domain
+ * @var $site
  */
 
 if (3 === $site || 6 === $site) {
@@ -52,7 +54,7 @@ if (3 === $site || 6 === $site) {
 // echo "<br>\$userRole = $userRole; \$folders = $folders; \$user_id = $user_id";
 if ($affiliations == "Yes") {
 ?>
-<p><a class="btn btn-default" href="https://info.missionfinder.net/assign_folders.php?appid=<?php echo $site ?>" target="_blank"><?php echo __("Assign Folders to Affiliates", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+<p><a class="btn btn-default" href="https://info.<?php echo $domain ?>/assign_folders.php?appid=<?php echo $site ?>" target="_blank"><?php echo __("Assign Folders to Affiliates", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
 <?php } ?>
 
 <table class="custom-folders-table" id="folders">

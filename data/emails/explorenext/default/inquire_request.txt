@@ -5,7 +5,7 @@ Candidate %from_full_name% has clicked on the Inquire Now button for the %job_na
 It is expected that someone from your organization will follow up with this candidate. <br />
 <br />
 To view the candidate’s profile and to facilitate a response, login at 
-https://explorenext.missionfinder.net/explorenext-home/login-here/ and select the Inquiries icon on the Dashboard. <br />
+https://explorenext.%domain%/explorenext-home/login-here/ and select the Inquiries icon on the Dashboard. <br />
 <br />
 Thank you for your partnership in the gospel. <br />
 <br />

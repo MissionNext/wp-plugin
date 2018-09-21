@@ -4,7 +4,7 @@ IF YOU OWN AN EXPLORENEXT AGENCY ACCOUNT: An affiliation has been requested by %
 <br />
 IF YOU OWN A EXPLORENEXT AGENCY REP ACCOUNT: An affiliation has been requested by %from_full_name%. Please log in to your ExploreNext account to approve or cancel this request. Upon approval, you will be able to view their posted jobs and view candidate profiles matching those jobs for the purpose of assisting in recruiting qualified candidates. <br />
 <br />
-Login at https://explorenext.missionfinder.net/explorenext-home/login-here/ <br />
+Login at https://explorenext.%domain%/explorenext-home/login-here/ <br />
 <br />
 Thank you for your partnership in the gospel, <br />
 <br />

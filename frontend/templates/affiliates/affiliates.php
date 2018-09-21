@@ -3,6 +3,8 @@
  * @var $userRole
  * @var $affiliates Array
  * @var $role String
+ * @var $domain String
+ * @var $site
  */
 // echo "\$userRole = $userRole "; echo "\$role = $role; \$site = $site";
 // print_r($affiliates);
@@ -12,7 +14,7 @@
     <h1><?php echo __('Affiliates', \MissionNext\lib\Constants::TEXT_DOMAIN)?></h1>
 </div>
 <div class="page-content">
-<a class="btn btn-default" href="https://info.missionfinder.net/create_folders.php?appid=<?php echo $site ?>" target="_blank"><?php echo __("Manage My Folders", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+<a class="btn btn-default" href="https://info.<?php echo $domain ?>/create_folders.php?appid=<?php echo $site ?>" target="_blank"><?php echo __("Manage My Folders", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
     <?php if($affiliates['approved'] || $affiliates['pending']): ?>
         <table class="table">
             <thead>
@@ -99,7 +101,7 @@
     <?php elseif ($userRole == "organization"): ?>
         <a class="btn btn-default" href="/agency/search"><?php echo __("Request Affiliation", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> &nbsp;
         <?php if($none != "Yes"): ?>
-        <a class="btn btn-default" href="https://info.missionfinder.net/assign_folders.php?appid=<?php echo $site ?>" target="_blank"><?php echo __("Assign Folders to Affiliates", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+        <a class="btn btn-default" href="https://info.<?php echo $domain ?>/assign_folders.php?appid=<?php echo $site ?>" target="_blank"><?php echo __("Assign Folders to Affiliates", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
     <?php endif;
     endif; ?>
 

@@ -4,6 +4,7 @@
  * @var $defaults
  * @var $days_left
  * @var $total_days
+ * @var $domain String
  */
 $first_default = current($defaults);
 $period = ( $defaults && $first_default && $first_default['is_recurrent'] )?'month' : 'year';
@@ -61,7 +62,7 @@ foreach($defaults as $default){
 
         $checked = isset($defaults[$app['id']]);
         if ($checked) {
-            $URL = "<a href='https://".$app['public_key'].".missionfinder.net/dashboard' title='Go to your dashboard'>";
+            $URL = "<a href='https://".$app['public_key'].".$domain/dashboard' title='Go to your dashboard'>";
         } else {
             unset($URL);
         }

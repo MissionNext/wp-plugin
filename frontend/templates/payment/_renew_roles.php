@@ -4,6 +4,7 @@
  * @var $defaults
  * @var $days_left
  * @var $total_days
+ * @var $domain String
  */
 $first_default = current($defaults);
 $period = ( $defaults && $first_default && $first_default['is_recurrent'] )?'month' : 'year';
@@ -102,7 +103,7 @@ foreach($defaults as $default){
     <?php endforeach; ?>
     </tbody>
 </table>
-Partnership Notes (<a href="https://missionfinder.net/welcome/for-organizations/#partnership-fees" title="Fee Schedule" target="_blank">ExploreNext Tier Pricing</a>):<ul>
+Partnership Notes (<a href="https://<?php echo $domain ?>/welcome/for-organizations/#partnership-fees" title="Fee Schedule" target="_blank">ExploreNext Tier Pricing</a>):<ul>
 <li>Tier 1: Annual revenues of under $5 million 
 <li>Tier 2: Annual revenues of $5 - $20 million 
 <li>Tier 3: Annual revenues of $20 million or more

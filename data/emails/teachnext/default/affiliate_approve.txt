@@ -4,7 +4,7 @@ IF YOU OWN A TEACHNEXT AGENCY ACCOUNT: Your affiliation request with %from_full_
 <br />
 IF YOU OWN A TEACHNEXT SCHOOL ACCOUNT: Your affiliation request with %from_full_name% has been approved. This affiliated account will be able to view your posted jobs and view candidate profiles matching those jobs to assist in recruiting. <br />
 <br />
-Login at https://teachnext.missionfinder.net/teachnext-home/login-here/ <br />
+Login at https://teachnext.%domain%/teachnext-home/login-here/ <br />
 <br />
 Thank you for your partnership in the gospel. <br />
 <br />

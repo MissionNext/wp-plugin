@@ -1,10 +1,10 @@
 Hello %to_full_name%,<br />
 <br />
-IF YOU OWN A SHORT-TERM AGENCY ACCOUNT: Your affiliation request with %from_full_name% has been approved. Please log in to your short-term.missionfinder.net account to view their posted jobs and view candidate profiles matching those jobs.<br />
+IF YOU OWN A SHORT-TERM AGENCY ACCOUNT: Your affiliation request with %from_full_name% has been approved. Please log in to your short-term.%domain% account to view their posted jobs and view candidate profiles matching those jobs.<br />
 <br />
 IF YOU OWN A SHORT-TERM REP ACCOUNT: Your affiliation request with %from_full_name% has been approved. This affiliated account will be able to view your posted jobs and view candidate profiles matching those jobs to assist in recruiting. <br />
 <br />
-Login at https://short-term.missionfinder.net/short-term-home/login-here/ <br />
+Login at https://short-term.%domain%/short-term-home/login-here/ <br />
 <br />
 Thank you for your partnership in the gospel. <br />
 <br />

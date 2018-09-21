@@ -1,6 +1,6 @@
 Hello %to_full_name%, <br />
 <br />
-%from_full_name% has cancelled the inquiry at short-term.missionfinder.net regarding your %job_second_title% posting. <br />
+%from_full_name% has cancelled the inquiry at short-term.%domain% regarding your %job_second_title% posting. <br />
 <br />
 MissionNext Partner Support Team  <br />
 <br />

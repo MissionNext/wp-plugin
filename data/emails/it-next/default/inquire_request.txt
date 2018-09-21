@@ -4,7 +4,7 @@ Candidate %from_full_name% has clicked on the inquired button for IT-Next job %j
 <br />
 The expectation by the candidates is that someone from your organization will follow up. <br />
 <br />
-To view the candidate profile and to facilitate a response login at https://it-next.missionfinder.net/teachnext-home/login-here/ <br />
+To view the candidate profile and to facilitate a response login at https://it-next.%domain%/teachnext-home/login-here/ <br />
 <br />
 Thank you for your partnership in the gospel. <br />
 <br />

@@ -16,9 +16,9 @@
     <div class="col-sm-9">
 
         <?php if($userRole == \MissionNext\lib\Constants::ROLE_ORGANIZATION){
-            renderTemplate("payment/_renew_roles", compact('config', 'defaults', 'days_left', 'total_days'));
+            renderTemplate("payment/_renew_roles", compact('config', 'defaults', 'days_left', 'total_days', 'fees_domain'));
         } else {
-            renderTemplate("payment/_renew_no_roles", compact('config', 'defaults', 'days_left', 'total_days'));
+            renderTemplate("payment/_renew_no_roles", compact('config', 'defaults', 'days_left', 'total_days', 'domain'));
         }
         ?>
 

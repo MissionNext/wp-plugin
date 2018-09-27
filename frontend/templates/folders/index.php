@@ -8,6 +8,8 @@
  * @var $folders
  * @var $languages
  * @var $default
+ * @var $domain
+ * @var $site
  */
 ?>
 <style>
@@ -44,8 +46,7 @@
 <?php } 
 // echo "<br>\$userRole = $userRole; \$folders = $folders; \$user_id = $user_id";
 ?>
-<p><a class="btn btn-default" href="https://info.missionnext.org/assign_folders.php?appid=<?php echo $site ?>" target="_blank"><?php echo __("Assign Folders to Affiliates", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
-
+<p><a class="btn btn-default" href="https://info.<?php echo $domain ?>/assign_folders.php?appid=<?php echo $site ?>" target="_blank"><?php echo __("Assign Folders to Affiliates", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
 
 <table class="custom-folders-table" id="folders">
     <thead id="custom-folders-head" style="display: <?php if (count($custom)) { ?>table-header-group<?php } else { ?>none<?php } ?>">

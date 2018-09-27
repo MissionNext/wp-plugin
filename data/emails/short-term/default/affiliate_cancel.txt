@@ -1,0 +1,8 @@
+Hello %to_full_name%, <br />
+<br />
+Your affiliation request at short-term.%domain% with %from_full_name% has been canceled. If you have any questions, you can log in to your Short-Term.%domain% account to send a message to the %from_full_name% or contant them directly. <br />
+<br />
+Thank you for your partnership in the gospel. <br />
+<br />
+Short-Term Customer Service <br />
+Short-Term: https://short-term.%domain% <br />

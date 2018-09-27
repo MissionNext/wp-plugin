@@ -12,7 +12,7 @@ class ApiLogger extends CacheApi {
 
     private $logger;
 
-    public function __construct(ClientInterface $client, $publicKey, $privateKey, $basePath = 'https://api.missionnext.org'){
+    public function __construct(ClientInterface $client, $publicKey, $privateKey, $basePath){
         parent::__construct($client, $publicKey, $privateKey, $basePath);
         $this->logger = Context::getInstance()->getLogger();
     }

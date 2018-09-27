@@ -415,6 +415,8 @@ class paymentController extends AbstractLayoutController {
         $mail_service = Context::getInstance()->getMailService();
 
         $messageText = Context::getInstance()->getLocalizationManager()->getLocalizedEmail($role."_renew_fail.txt");
+
+        $params = array_merge($params, ['%domain%' => $this->domain]);
         foreach ($params as $item => $value) {
             $messageText = str_replace($item, $value, $messageText);
         }

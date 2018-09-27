@@ -1,0 +1,11 @@
+Hello %to_full_name%,<br />
+<br />
+IF YOU OWN A IT-NEXT AGENCY ACCOUNT: Your affiliation request with %from_full_name% has been approved. Please log in to your IT-Next account to view their posted jobs and view candidate profiles matching those jobs.<br />
+<br />
+IF YOU OWN A IT-NEXT REP ACCOUNT: Your affiliation request with %from_full_name% has been approved. This affiliated account will be able to view your posted jobs and view candidate profiles matching those jobs to assist in recruiting. <br />
+<br />
+Login at https://it-next.%domain%/it-next-home/login-here/ <br />
+<br />
+Thank you for your partnership in the gospel. <br />
+<br />
+IT-Next Customer Service <br />

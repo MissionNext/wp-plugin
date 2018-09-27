@@ -3,6 +3,8 @@
  * @var Array $user
  * @var String $userRole
  * @var Array $inquiries
+ * @var String $domain
+ * @var $site
  */
 $key = 0;
 // echo "Organization $user[id]<br>"; print_r($inquiries);
@@ -58,6 +60,6 @@ $key = 0;
     </div>
     <?php endif; ?>
     <div class="block">
-	<a href="https://info.missionnext.org/inquiries.php?appid=<?php echo $site ?>" target="_blank">View deleted inquiries</a>
+	<a href="https://info.<?php echo $domain ?>/inquiries.php?appid=<?php echo $site ?>" target="_blank">View deleted inquiries</a>
 	</div>
 </div>

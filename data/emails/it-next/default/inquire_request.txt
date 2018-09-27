@@ -1,0 +1,11 @@
+Hello %to_full_name%, <br />
+<br />
+Candidate %from_full_name% has clicked on the inquired button for IT-Next job %job_name%! <br />
+<br />
+The expectation by the candidates is that someone from your organization will follow up. <br />
+<br />
+To view the candidate profile and to facilitate a response login at https://it-next.%domain%/teachnext-home/login-here/ <br />
+<br />
+Thank you for your partnership in the gospel. <br />
+<br />
+IT-Next Customer Service at MissionNext<br />

@@ -1,0 +1,12 @@
+Hello %to_full_name%, <br />
+<br />
+IF YOU OWN A IT-NEXT AGENCY ACCOUNT: An affiliation has been requested by %from_full_name% representing a IT-Next agency. Please log in to your IT-Next account to approve or cancel this request. Upon approval, you will be able to view their posted jobs and candidate profiles matching those jobs in order to assist them in recruiting qualified IT Professionals.  <br />
+<br />
+IF YOU OWN A IT-NEXT REP ACCOUNT: An affiliation has been requested by %from_full_name% representing a IT-Next mission agency. Please log in to your IT-Next account to approve or cancel this request. Upon approval, this organization will be able to view your posted jobs and the candidate profiles matching those jobs to assist in your recruitment efforts. <br />
+<br />
+Login at https://it-next.%domain%/it-next-home/login-here/ <br />
+<br />
+Thank you for your partnership in the gospel. <br />
+<br />
+IT-Next Customer Service for MissionNext <br />
+

@@ -3,6 +3,8 @@
  * @var Array $user
  * @var String $userRole
  * @var \MissionNext\lib\form\Form $form
+ * @var String $domain
+ * @var $site
  */
 $group = reset($form->groups);
 global $shortcode_tags;
@@ -94,12 +96,12 @@ $site *= $factor;
 <!-- javascript functions are needed to open a new window using Firefox running on Windows and Macs -->
 <script>
 function function_print() {
-    window.open("https://info.missionnext.org/print_profile.php?uid=<?php echo $pass_string ?>&site=<?php echo $site ?>");
+    window.open("https://info.<?php echo $domain ?>/print_profile.php?uid=<?php echo $pass_string ?>&site=<?php echo $site ?>");
 }
 </script>
               
                 <div class="buttons"> 
-            	<!--<a href="https://info.missionnext.org/print_profile.php?uid=<?php echo $pass_string ?>&site=<?php echo $site ?>" title="Printer Friendly Display" target="_blank"><button class="btn btn-default">Your Profile</button></a>-->
+            	<!--<a href="https://info.<?php echo $domain ?>/print_profile.php?uid=<?php echo $pass_string ?>&site=<?php echo $site ?>" title="Printer Friendly Display" target="_blank"><button class="btn btn-default">Your Profile</button></a>-->
     			<button class="btn btn-default" title="Printer Friendly Display" onclick="function_print()"><a>Your Profile</a></button> 
                 </div>
             	

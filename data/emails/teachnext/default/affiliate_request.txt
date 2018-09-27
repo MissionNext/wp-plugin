@@ -4,7 +4,7 @@ IF YOU OWN A TEACHNEXT AGENCY ACCOUNT: An affiliation has been requested by %fro
 <br />
 IF YOU OWN A TEACHNEXT SCHOOL ACCOUNT: An affiliation has been requested by %from_full_name% representing a TeachNext mission agency. Please log in to your TeachNext account to approve or cancel this request. Upon approval, this organization will be able to view your posted jobs and the candidate profiles matching those jobs to assist in your recruitment efforts. <br />
 <br />
-Login at https://teachnext.missionnext.org/teachnext-home/login-here/ <br />
+Login at https://teachnext.%domain%/teachnext-home/login-here/ <br />
 <br />
 Thank you for your partnership in the gospel. <br />
 <br />

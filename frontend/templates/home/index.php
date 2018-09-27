@@ -1,3 +1,15 @@
+<?php
+/**
+ * @var $userRole
+ * @var $user
+ * @var $app_key
+ * @var $userId
+ * @var $domain
+ * @var $site
+ * @var $links
+ */
+?>
+
 <div class="page-header">
 
 	<?php if (\MissionNext\lib\Constants::ROLE_AGENCY == $userRole && $site == 3):
@@ -52,7 +64,7 @@ if ($site != 4) {
         </li>
        <?php } elseif (\MissionNext\lib\Constants::ROLE_AGENCY == $userRole) { ?> 
         <li>
-            <a href="https://info.missionnext.org/favorites.php?appid=<?php echo "$site"; ?>" target="blank">
+            <a href="https://info.<?php echo $domain ?>/favorites.php?appid=<?php echo "$site"; ?>" target="blank">
                 <span><?php echo __('Favorites', \MissionNext\lib\Constants::TEXT_DOMAIN) ?><br>
                     &nbsp;
                 </span>
@@ -79,9 +91,9 @@ else { // for Journey Guide Application Only
     <p>&nbsp;</p><p>&nbsp;</p>
 	<center><table style="width: 600px">
 	<tr><td style="text-align:center; width: 200px">CANDIDATE DASHBOARD</td><td style="text-align:center; width: 200px">VIEW INQUIRIES</td><td style="text-align:center; width: 200px">VIEW JOBS</td></tr>
-	<tr><td style="text-align:center; width: 200px"><a href="https://guides.missionnext.org/jg_home.php" title="View Selected Candidates"><img src="<?php echo getResourceUrl('/resources/images/dash_affiliates.png') ?>" /></a> </td>
-	<td style="text-align:center; width: 200px"> <a href="https://guides.missionnext.org/inq_list.php" title="Inquiry List (Takes a long moment to display)" target="_blank"><img src="<?php echo getResourceUrl('/resources/images/dash_inquiries.jpg') ?>" /></a></td>
-	<td style="text-align:center; width: 200px"> <a href="https://guides.missionnext.org/job_list.php" title="Jobs List" target="_blank"><img src="<?php echo getResourceUrl('/resources/images/dash_jobs.png') ?>" /></a></td></tr>
+	<tr><td style="text-align:center; width: 200px"><a href="https://guides.<?php echo $domain ?>/jg_home.php" title="View Selected Candidates"><img src="<?php echo getResourceUrl('/resources/images/dash_affiliates.png') ?>" /></a> </td>
+	<td style="text-align:center; width: 200px"> <a href="https://guides.<?php echo $domain ?>/inq_list.php" title="Inquiry List (Takes a long moment to display)" target="_blank"><img src="<?php echo getResourceUrl('/resources/images/dash_inquiries.jpg') ?>" /></a></td>
+	<td style="text-align:center; width: 200px"> <a href="https://guides.<?php echo $domain ?>/job_list.php" title="Jobs List" target="_blank"><img src="<?php echo getResourceUrl('/resources/images/dash_jobs.png') ?>" /></a></td></tr>
 	<tr><td align="center" colspan="3">&nbsp;</p></td></tr>
 	<tr><td align="center" colspan="3">MissionNext: Providing information, challenge and pathways for fellow Christ-followers to serve in missions.</p></td></tr>
 	</table></center>

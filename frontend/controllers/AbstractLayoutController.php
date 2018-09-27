@@ -38,6 +38,7 @@ abstract class AbstractLayoutController extends Controller {
     public function __construct(){
         parent::__construct();
         $this->api = Context::getInstance()->getApiManager()->getApi();
+        $this->domain = Context::getInstance()->getConfig()->get('domain');
     }
 
     public function beforeAction(){

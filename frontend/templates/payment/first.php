@@ -12,7 +12,7 @@
 
     <div class="col-sm-9">
 
-        <?php renderTemplate('payment/_choose_subscription', compact('userRole', 'config', 'app_id')) ?>
+        <?php renderTemplate('payment/_choose_subscription', compact('userRole', 'config', 'app_id', 'fees_domain')) ?>
 
         <div class="col-sm-12 coupon-block">
             <?php renderTemplate('payment/_coupon') ?>

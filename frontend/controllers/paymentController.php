@@ -48,6 +48,7 @@ class paymentController extends AbstractLayoutController {
         }
 
         $this->app_id = $currentAppId;
+        $this->fees_domain = Context::getInstance()->getConfig()->get('fees_domain');
 
     }
 
@@ -157,6 +158,7 @@ class paymentController extends AbstractLayoutController {
         $this->defaults = $defaults;
         $this->days_left = $days_left;
         $this->total_days = $total_days;
+        $this->fees_domain = Context::getInstance()->getConfig()->get('fees_domain');
     }
 
     public function processRenew(){

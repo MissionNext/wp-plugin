@@ -2,7 +2,7 @@
 /**
  * @var $config
  * @var $app_id
- * @var $domain
+ * @var $fees_domain
  */
 
 \MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/payment/first_roles', 'payment/first_roles.js', array( 'jquery' ), false, true);
@@ -66,7 +66,7 @@
     <?php endforeach; ?>
     </tbody>
 </table>
-Partnership Notes (<a href="https://<?php echo $domain ?>/welcome/for-organizations/#partnership-fees" title="Fee Schedule" target="_blank">ExploreNext Tier Pricing</a>):<ul>
+Partnership Notes (<a href="https://<?php echo $fees_domain ?>/welcome/for-organizations/#partnership-fees" title="Fee Schedule" target="_blank">ExploreNext Tier Pricing</a>):<ul>
 <li>Tier 3: Annual revenues of $20 million or more
 <li>Tier 2: Annual revenues of $5 - $20 million
 <li>Tier 1: Annual revenues of under $5 million 

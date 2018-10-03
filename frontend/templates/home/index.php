@@ -39,6 +39,9 @@
     </div>
 </div>
 <?php
+// specify if affilations are possible.
+if (3 === $site || 6 === $site)   { $affilations = "Yes"; }
+
 if ($site != 4) {
 ?>
 <div class="info-icons">
@@ -72,7 +75,7 @@ if ($site != 4) {
             </a>
         </li>
        <?php } ?>
-        <?php if (\MissionNext\lib\Constants::ROLE_CANDIDATE != $userRole) { ?>
+        <?php if (\MissionNext\lib\Constants::ROLE_CANDIDATE != $userRole && $affilations == "Yes") { ?>
             <li>
                 <a href="/affiliates">
                     <span class="icon-title affiliates-icon"><?php echo __('Affiliates', \MissionNext\lib\Constants::TEXT_DOMAIN) ?><br>

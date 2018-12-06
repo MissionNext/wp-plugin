@@ -159,8 +159,8 @@ $site *= $factor;
 
 <script>
     var candidate_id = '<?php echo $candidate['id'] ?>';
-    var from = '<?php echo $candidate['id'] ?>';
-    var to = '<?php echo $organization_id; ?>';
+    var from = '<?php echo $organization_id ?>';
+    var to = '<?php echo $candidate['id']; ?>';
     var from_name = '<?php echo isset($user['profileData']['agency_full_name']) ?
         str_replace("'", "`", $user['profileData']['agency_full_name']) :
         str_replace("'", "`", $user['profileData']['organization_name']) ?>';

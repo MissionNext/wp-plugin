@@ -11,12 +11,12 @@
     <div class="search" data-id="<?php echo $item['id'] ?>">
         <form action="/<?php echo $role ?>/search#top" method="POST">
             <input type="hidden" name="saved" value="<?php echo $item['id'] ?>"/>
-            <div class="name">
-                <span><?php echo $item['search_name'] ?></span>
-            </div>
             <div>
                 <button class="btn btn-success"><?php echo __("Search", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
                 <button class="btn btn-danger delete" type="button" onclick="deleteJob(this)"><?php echo __("Delete", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></button>
+            </div>
+            <div class="name">
+                <span><?php echo $item['search_name'] ?></span>
             </div>
         </form>
     </div>

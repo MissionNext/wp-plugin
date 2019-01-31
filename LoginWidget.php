@@ -29,13 +29,14 @@ class LoginWidget extends \WP_Widget {
     public function widget( $args, $instance ) {
 
         echo $args['before_widget'];
-        $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
+        $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after https:// and before first slash 
 		if (preg_match("/explorenext/",$sniff_host))   { $subdomain = "explorenext"; }
 		elseif (preg_match("/teachnext/",$sniff_host)) { $subdomain = "teachnext"; }
 		elseif (preg_match("/canada/",$sniff_host))    { $subdomain = "canada"; }
 		elseif (preg_match("/jg./",$sniff_host))	   { $subdomain = "jg"; }
 		elseif (preg_match("/short/",$sniff_host))	   { $subdomain = "short-term"; }
-		elseif (preg_match("/it-next/",$sniff_host))   { $subdomain = "it-next"; }
+		elseif (preg_match("/it-technology/",$sniff_host)) { $subdomain = "it-technology"; }
+		elseif (preg_match("/urbana/",$sniff_host))    { $subdomain = "urbana"; }
 
         if(is_user_logged_in()){
 
@@ -82,8 +83,7 @@ class LoginWidget extends \WP_Widget {
             ?>
                 <h4><?php echo __("Registered Users", Constants::TEXT_DOMAIN) ?></h4>
                 <p><?php echo __("If you have previously registered, login to access your information.", Constants::TEXT_DOMAIN) ?></p>
-
-                <?php $login_form = wp_login_form(array('echo' => false)); ?>
+				<?php $login_form = wp_login_form(array('echo' => false)); ?>
                 <?php $login_placeholder = __("Username"); ?>
                 <?php $pass_placeholder = __("Password"); ?>
                 <?php $login_form = preg_replace("/<label(.*?)\/label>/is", "", $login_form); ?>
@@ -108,10 +108,12 @@ class LoginWidget extends \WP_Widget {
                     <p><a href="<?php echo wp_lostpassword_url("/dashboard") ?>"><?php echo __("Can't Sign In?", Constants::TEXT_DOMAIN) ?></a></p>
                     <p><?php echo __("Register as", Constants::TEXT_DOMAIN) ?></p>
                     <a href="/signup/candidate"><?php echo ucfirst(getCustomTranslation(Constants::ROLE_CANDIDATE)) ?></a>&comma;
-                    <?php if(isAgencyOn()): ?>
+                    <?php if($subdomain != "urbana"): ?>
+                   	<?php if(isAgencyOn()): ?>
                     <a href="/signup/agency"><?php echo ucfirst(getCustomTranslation(Constants::ROLE_AGENCY)) ?></a>&comma;
                     <?php endif; ?>
                     <a href="/signup/organization"><?php echo ucfirst(getCustomTranslation(Constants::ROLE_ORGANIZATION)) ?></a>
+                    <?php endif; ?>
                 </div>
                 <?php } ?>
 

@@ -8,6 +8,7 @@
  * @var $site
  * @var $links
  */
+// echo "<br>\$userRole=$userRole; \$userId=$userId; \$domain=$domain; \$site=$site; \$user= "; print_r($user);
 ?>
 
 <div class="page-header">
@@ -42,7 +43,7 @@
 // specify if affilations are possible.
 if (3 === $site || 6 === $site)   { $affilations = "Yes"; }
 
-if ($site != 4) {
+if ($site != 4 && $site != 13) {
 ?>
 <div class="info-icons">
     <ul>
@@ -69,7 +70,7 @@ if ($site != 4) {
         <li>
             <a href="https://info.<?php echo $domain ?>/favorites.php?appid=<?php echo "$site"; ?>" target="blank">
                 <span><?php echo __('Favorites', \MissionNext\lib\Constants::TEXT_DOMAIN) ?><br>
-                    &nbsp;
+                    <?php include("agency_favs.inc.php"); ?>
                 </span>
                 <img src="<?php echo getResourceUrl('/resources/images/dash_favorites.png') ?>" />
             </a>
@@ -88,8 +89,12 @@ if ($site != 4) {
         <?php } ?>
     </ul>
 </div> <!--<div class="info-icons">-->
-<?php } // if ($site != 4)
-else { // for Journey Guide Application Only
+ 
+<?php if (\MissionNext\lib\Constants::ROLE_CANDIDATE == $userRole) { ?>
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p align="center">Be sure to set your email options to accept messages from missionnext.org</p>
+<?php }
+} // if ($site != 4)
+elseif ($site == 4) { // for Journey Guide Application Only
     ?>
     <p>&nbsp;</p><p>&nbsp;</p>
 	<center><table style="width: 600px">
@@ -101,6 +106,17 @@ else { // for Journey Guide Application Only
 	<tr><td align="center" colspan="3">MissionNext: Providing information, challenge and pathways for fellow Christ-followers to serve in missions.</p></td></tr>
 	</table></center>
 	<?php }
+elseif ($site == 13) { // for Urbana Application Only
+?>
+ 
+ <p>Thank you for registering. You are now eligible to receive a one-hour coaching session with a MissionNext Journey Guide regarding possible next steps including options in missions. We'll be in touch with you.</p>
+ <p>Join any of the pathways into missions at the left to connect with organizations that will be a surprisingly good fit for you. 
+ <strong>ExploreNext</strong> for any field | <strong>TeachNext</strong> is for educators | <strong>Short-Term</strong> is new.</p>
+ <br><p>MissionNext has partnered with <i>Perspectives on the World Christian Movement</i> to offer Spring Scholarships for Perspective classes. 
+ Register today at Perspectives.org and select MissionNext. [<a href="https://info.missionnext.org/perspectives.php" target="_blank">Instructions ...</a>] 
+ <p align="center"><img src="<?php echo getResourceUrl('/resources/images/psp_logos_gray.png') ?>" /></p>
+
+<?php }
 ?>
 
 <script type="text/javascript">
@@ -147,13 +163,16 @@ else { // for Journey Guide Application Only
             case 11:
                 return '<?php echo $links[7]; ?>'; // it-next
                 break;
+            case 12:
+                return '<?php echo $links[8]; ?>'; // urbana
+                break;
             default:
                 return '';
         }
     }
 </script>
 <?php 
-if ($site == 10) {
+if ($site == 10) { // Canada
 print ("<p>&nbsp; &nbsp; &nbsp; &nbsp;Note: Use <strong>Canada</strong> or <strong>TeachNext</strong>. <strong>ExploreNext</strong> is for US citizens</p>");
 } elseif (\MissionNext\lib\Constants::ROLE_CANDIDATE == $userRole) {
 // print ("<p>&nbsp;</p><p>&nbsp; &nbsp; &nbsp; &nbsp;Note: <strong>Canada</strong> is for Canadian citizens</p>");

@@ -9,6 +9,9 @@
 </div>
 <div class="page-content <?php echo $userRole; ?>-form">
     <form role="form" action="<?php echo $_SERVER['REQUEST_URI']?>" method="POST" class="form-horizontal" enctype="multipart/form-data">
+                <?php if (!$profileCompleted) { ?>
+                   <p align="center" style="font-size: 15px">Visit <strong><font color="#cc3333">RED</font></strong> tabs and complete required fields to find options for serving that are surprisingly well suited for you.</p> 
+                <?php } ?>
         <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('_form', compact('form')) ?>
 
         <div class="form-group">

@@ -8,7 +8,8 @@
 
 <div class="page-header">
     <h2><?php echo __('My Presentation', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></h2>
-    <font color="#666666">Note: Contact MissionNext to delete media items.</font>
+    <font color="#666666">Notes: <ul><li>Deleting Items: Contact MissionNext to delete media items.</li>
+    <li>Video: This admin view may show video coding. It will not show the video itself here, but is available to candidates.</li></ul></font>
 </div>
 <div class="page-content">
     <form class="form-horizontal" action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">

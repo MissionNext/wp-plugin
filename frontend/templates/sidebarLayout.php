@@ -6,7 +6,12 @@
  * @var String $domain
  * @var $site
  */
+// for page https://aubdomain.missionnext.org/user/account the value for $site is incorrect. 
+$sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
+if (preg_match("/urbana/",$sniff_host)) { $subdomain = "urbana"; $site = 13; }
+if (preg_match("/jg./",$sniff_host))    { $subdomain = "jg"; $site = 4; }
 
+// echo "\$userRole=$userRole; \$site=$site"; // \$user= print_r($user[app_ids])"; // print_r($user);
 get_header();
 ?>
     <div id="main" role="main" >
@@ -24,7 +29,7 @@ get_header();
                                 <a href="/dashboard"><?php echo __('My Dashboard', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                                 <a href="/profile"><?php echo __('My Profile', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                                 <a href="/user/account"><?php echo __('My Account', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
-                                <?php if($userRole == 'candidate'): 
+                                <?php if($userRole == 'candidate' && $site != 13): // urbana 
                                 // generate $_GET value
                                 $factor   = rand(10,99); // generate random two-digit number
 								$factored = $factor * $user['id'];  // factored is the product of the random number and user_id 
@@ -36,8 +41,9 @@ get_header();
                                     <a href="/organization/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_ORGANIZATION_PLURAL))) ?></a>
                                     <a href="/inquiries"><?php echo __('Job Inquiry List', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                                     <a href="/favorite"><?php echo __('My Favorites', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                                    <?php if ($site == 3 || $site == 6): ?> <!-- explorenext and teachnext only -->
                                     <a target="_blank" href="https://info.<?php echo $domain ?>/qcs.php?uid=<?php echo $pass_string ?> "><?php echo __('Your QCS', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
-                                   
+                                    <?php endif; ?>
                                 <?php endif; ?>
 
                                 <?php if($userRole == 'agency'): 
@@ -52,9 +58,9 @@ get_header();
                                     <a href="/candidate/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_CANDIDATE_PLURAL))) ?></a>
                                     <a href="/organization/search"><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_ORGANIZATION_PLURAL))) ?></a>
                                     <a href="/inquiries"><?php echo __('Job Inquiry List', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
-                                	<?php if($site == 6 && $rep_id = 9775): ?>
+                                	<!--<?php if($site == 6 && $rep_id = 9775): ?>
                                 	<a href="/presentation"><?php echo __('My Presentation', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
-                                    <?php endif; ?>
+                                    <?php endif; ?>-->
                                    <?php echo "<a href='https://info.$domain/create_folders.php?appid=$site' target='_blank'>Manage Folders</a>"; ?>
                                 <?php endif; ?>
 
@@ -69,6 +75,15 @@ get_header();
                                    <?php if(isAgencyOn()): ?>
                                     <a href="/affiliates"><?php echo __('Affiliates', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                                     <?php endif; ?>
+                                    <?php // echo "\$user['id'] = $user[id]"; 
+                                    	$this_id = $user[id];
+                                    	date_default_timezone_set('America/New_York');
+                                    	$datetime = date("Y-m-d H:i:s"); 
+                                    	include("job/connect.inc.php");
+                                    	$sql_date = "UPDATE users SET last_login = '$datetime' WHERE id = $this_id"; // echo "$sql_date";
+                                    	$res_date = pg_query($db_link,$sql_date) or die("\$sql_date query failed: <br>$sql_date");
+	                                    pg_close($db_link);
+                                    ?>                                    
                                 <?php endif; ?>
 
                                 <a href="<?php echo wp_logout_url(home_url()); ?>" title="Logout"><?php echo __("Logout", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>

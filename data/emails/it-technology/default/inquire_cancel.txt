@@ -1,0 +1,6 @@
+Hello %to_full_name%, <br />
+<br />
+%from_full_name% has cancelled the inquiry regarding your %job_second_title% posting. <br />
+<br />
+MissionNext Partner IT-Technology Support Team  <br />
+<br />

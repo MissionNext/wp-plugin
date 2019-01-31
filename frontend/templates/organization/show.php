@@ -62,12 +62,13 @@ function groupEmpty($group){
     </div>
 
     <div class="content">
-        <?php foreach($organization['profile'] as $group): ?>
+        <?php foreach($organization['profile'] as $group): /* print_r($group); */ ?>
             <?php if(!groupEmpty($group['fields']) && ( isset($group['meta']['is_private']) && !$group['meta']['is_private'] || !isset($group['meta']['is_private']) ) ): ?>
                 <fieldset class="mn-profile-group">
                     <legend><?php echo $group['name'] ?></legend>
 
-                    <?php foreach($group['fields'] as $field): ?>
+                    <?php foreach($group['fields'] as $field): /* print_r($field); */ ?>
+                      <?php if($field['symbol_key'] != "account_set_up"): ?> <!--block the Account Set Up field -->
                         <?php if(!fieldEmpty($field['value'])): ?>
                             <div>
                                 <strong><?php echo $field['label'] ?>:</strong>
@@ -89,6 +90,7 @@ function groupEmpty($group){
                                 </div>
                             </div>
                         <?php endif; ?>
+                      <?php endif; ?>
                     <?php endforeach; ?>
                 </fieldset>
             <?php endif; ?>

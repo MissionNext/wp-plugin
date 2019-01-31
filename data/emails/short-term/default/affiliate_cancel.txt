@@ -5,4 +5,4 @@ Your affiliation request at short-term.%domain% with %from_full_name% has been c
 Thank you for your partnership in the gospel. <br />
 <br />
 Short-Term Customer Service <br />
-Short-Term: https://short-term.%domain% <br />
+Short-Term MissionNext: https://short-term.%domain% <br />

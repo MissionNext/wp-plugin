@@ -6,7 +6,7 @@
  * @var $messages Array
  * @var $userRole String
  */
-
+// echo "\$role = $role";
 \MissionNext\lib\core\Context::getInstance()->getResourceManager()->addJSResource('mn/search/search_result', 'search/search_result.js', array( 'jquery' ), false, true);
 ?>
 <div id="result_table">

@@ -38,6 +38,8 @@ if (isset($loggedRole) && \MissionNext\lib\Constants::ROLE_AGENCY == $loggedRole
     // echo "<br>\$factor = $factor; \$agency_un = $agency_un";
 }
 
+$site *= $factor;
+
 $items = array_values($items);
 
 $foldersApi = \MissionNext\lib\core\Context::getInstance()->getApiManager()->getApi()->getUserFolders($role, $organization_id);

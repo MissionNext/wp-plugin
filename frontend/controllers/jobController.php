@@ -110,7 +110,7 @@ class jobController extends AbstractLayoutController {
                     }
                 }
             }
-            $this->setMessage('notice' , __('Job populated successfull.', Constants::TEXT_DOMAIN));
+            $this->setMessage('notice' , __('Job populated successfully.', Constants::TEXT_DOMAIN));
         }
 
         if($_SERVER['REQUEST_METHOD'] == 'POST'){

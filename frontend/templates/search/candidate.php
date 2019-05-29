@@ -6,6 +6,7 @@
  * @var $result Array
  * @var $searches Array
  * @var $search Array
+ * @var $search_name String
  */
 
 ?>
@@ -13,6 +14,18 @@
 <div class="page-header">
     <h1><?php echo sprintf(__('Search %s', \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_CANDIDATE_PLURAL))) ?></h1>
 </div>
+        <div class="control-buttons">
+            <div class="left">
+                <a href="/dashboard" class="btn btn-default"><?php echo __("Dashboard", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+            </div>
+            <?php if(is_array($search)): ?>
+            <div class="right">
+                <a class="btn btn-success" href="/candidate/search"><?php echo __("Start Over", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+            </div>
+            <?php endif; ?>
+        </div>
+
+
 <div class="page-content candidate-results">
 <!--search/candidate.php search by organizations for candidates -->
     <?php if($_SERVER['REQUEST_METHOD'] == 'POST'): ?>
@@ -38,7 +51,7 @@
             <?php if (\MissionNext\lib\Constants::ROLE_AGENCY == $userRole && \MissionNext\lib\Constants::ROLE_CANDIDATE == $role) { ?>
                 <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_result_for_agency', compact('result', 'role', 'messages', 'userRole', 'userId', 'additional_info', 'multipleResults', 'page', 'pages')) ?>
             <?php } else { ?>
-                <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_result', compact('result', 'role', 'messages', 'userRole', 'userId', 'page', 'pages')) ?>
+                <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_result', compact('result', 'role', 'messages', 'userRole', 'userId', 'page', 'pages', 'search_name')) ?>
             <?php } ?>
         <?php else: ?>
             <div class="block">
@@ -52,7 +65,7 @@
                 <a class="btn btn-default" href="/dashboard"><?php echo __("Dashboard", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
             </div>
             <div class="right">
-                <a class="btn btn-success" href="/candidate/search"><?php echo __("Start over", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                <a class="btn btn-success" href="/candidate/search"><?php echo __("Start Over", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
             </div>
         </div>
     <?php else: ?>

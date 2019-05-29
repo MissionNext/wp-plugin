@@ -134,6 +134,7 @@ class searchController extends AbstractLayoutController {
                         $this->pages = $resultArray['count'];
 
                         $this->search = $item['data'];
+                        $this->search_name = $item['search_name'];
 
                         $this->form->setSearchDefaults($item['data']);
                     }

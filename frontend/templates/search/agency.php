@@ -6,6 +6,7 @@
  * @var $result Array
  * @var $searches Array
  * @var $search Array
+ * @var $search_name String
  */
 
 // echo "\$role = $role "; echo "\$userRole = $userRole"; echo "<br>\$_POST = <br>"; print_r($_POST); echo "<br>\$result = <br>"; print_r($result); echo "<br>\$search = <br>"; print_r($search); echo "<br>\$searches = <br>"; print_r($searches); 
@@ -23,7 +24,7 @@
         <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_save_block', array('searches' => $searches, 'search' => $search, 'role' => $role, 'userRole' => $userRole)) ?>
 
         <?php if($result): ?>
-            <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_result', compact('result', 'role', 'messages', 'userRole', 'userId', 'page', 'pages')) ?>
+            <?php \MissionNext\lib\core\Context::getInstance()->getTemplateService()->render('search/_search_result', compact('result', 'role', 'messages', 'userRole', 'userId', 'page', 'pages', 'search_name')) ?>
         <?php else: ?>
             <div class="block">
                 <?php echo sprintf(__("No %s found", \MissionNext\lib\Constants::TEXT_DOMAIN), ucfirst(getCustomTranslation(\MissionNext\lib\Constants::ROLE_AGENCY_PLURAL))) ?>

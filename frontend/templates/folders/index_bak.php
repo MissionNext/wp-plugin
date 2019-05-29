@@ -8,9 +8,17 @@
  * @var $folders
  * @var $languages
  * @var $default
- * @var $domain
- * @var $site
  */
+$sniff_host  = $_SERVER["HTTP_HOST"]; // returns what is after https:// and before first slash
+    if (preg_match("/explorenext/",$sniff_host)) {
+        $site_id = 3;
+	}
+	elseif (preg_match("/teachnext/",$sniff_host)) {
+        $site_id = 6;
+	}
+	elseif (preg_match("/canada/",$sniff_host)) {
+        $site_id = 10;
+	}
 ?>
 <style>
     td.default{
@@ -46,7 +54,8 @@
 <?php } 
 // echo "<br>\$userRole = $userRole; \$folders = $folders; \$user_id = $user_id";
 ?>
-<p><a class="btn btn-default" href="https://info.<?php echo $domain ?>/assign_folders.php?appid=<?php echo $site ?>" target="_blank"><?php echo __("Assign Folders to Affiliates", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+<p><a class="btn btn-default" href="https://info.missionnext.org/assign_folders.php?appid=<?php echo $site_id ?>" target="_blank"><?php echo __("Assign Folders to Affiliates", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+
 
 <table class="custom-folders-table" id="folders">
     <thead id="custom-folders-head" style="display: <?php if (count($custom)) { ?>table-header-group<?php } else { ?>none<?php } ?>">
@@ -72,13 +81,6 @@
             </td>
         </tr>
     <?php endforeach; ?>
-    
-    <tr><td colspan="2"><strong><font color="red">DELETE CAUTION</font>:</strong> Empty a folder before deleting. &nbsp; &nbsp; &nbsp; &nbsp; 
-    <button type="display" class="delete button btn btn-danger" title="Choose Archived or Not a Fit if you no longer have need of the profiles. To move the profiles, Select Candidate Matches and scroll below New Listing to find/open your folder and move the profiles." >Mouseover Tip</button>
-    <br>
-    Candidate listings remaining in a deleted folder will re-appear in &quot;New Listing&quot;. 
-    </td></tr>
-    
     </tbody>
     <tfoot>
     <tr>
@@ -101,8 +103,11 @@
 <!--
 <?
 // link for EN users only
-if (3 === $site) {
-	// to thwart robots
+$sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before first slash 
+// app_id is not identified, so it is hardcoded here for use to organize the tools to for agency users to organize the candidates from affiliated organizations. 
+if (preg_match("/explorenext/",$sniff_host)) { 
+	// to thwart robots 
+	$site_id = 3; 
 	$factor		 = rand(10,99); // generate random two-digit number
 	$factored	 = $factor * $user_id; // factored is the product of the random number and user_id 
 	$pass_string = $factor.$factored; // pass this string, then extract user_id as $factored / $factor 

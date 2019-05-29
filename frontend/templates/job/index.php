@@ -3,14 +3,16 @@
  * @var Array $user
  * @var String $userRole
  * @var Array $jobs
- */
+ * @var string $domain
+ * @var $site
+   */
 
 $warn = '';
 // there is nothing in $user, $userRole to identify which subscription is active for organizations with multiple subscriptions 
 $date_today = date("Y-m-d");
 $number_jobs = count($jobs);
 $once = "No";
-// echo "Line 22 \$jobs = $jobs"; print_r($jobs);
+// echo "Line 15 \$domain = $domain; \$site = $site; \$jobs ="; print_r($jobs); 
 ?>
 
 <div class="page-header">
@@ -57,8 +59,14 @@ $once = "No";
     </table>
     <?php else: ?>
         <div class="block">
-        	<?php if ($userRole == "organization") {
+        	<?php if ($userRole == "organization" && $site == 2) {
+            	echo __("Post your first trip opportunity to find appropriate candidates.", \MissionNext\lib\Constants::TEXT_DOMAIN); 
+            }
+        	elseif ($userRole == "organization") {
             	echo __("Post your first job/assigment to find appropriate candidates.", \MissionNext\lib\Constants::TEXT_DOMAIN); 
+            }
+            elseif ($site == 2) {
+            	echo __("Available trips to be posted soon. Please check back.", \MissionNext\lib\Constants::TEXT_DOMAIN); 
             }
             else {
             	echo __("Available jobs to be posted soon. Please check back.", \MissionNext\lib\Constants::TEXT_DOMAIN); 
@@ -67,6 +75,9 @@ $once = "No";
         </div>
     <?php endif; 
     if ($warn == "Yes") { echo "<font color='red'>NOTICE: One or more jobs has expired. Edit / Save job spec to extend the expiration date for another 6 months.</font><br>"; }      
-    ?>
+    if ($site == 2): ?>
+    <a class="btn btn-success" href="/job/new"><?php echo __("New Trip", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+	<?php else: ?>
     <a class="btn btn-success" href="/job/new"><?php echo __("New Job", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+    <?php endif; ?>   
 </div>

@@ -1,3 +1,5 @@
-This is to inform you that an attempted renewal payment from %organization_name% has failed for short-term.%domain%
-
-Please contact this organization to provide assistance.
+Hello %to_full_name%, <br />
+<br />
+This is to inform you that an attempted renewal payment from %organization_name% has failed. Please contact this agency user to provide assistance.
+<br />
+This is an automatic message from the short-term.%domain% website.

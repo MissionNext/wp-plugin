@@ -182,7 +182,7 @@ function getLastLogin($item){
                 <tbody>
                 <?php
                 foreach($groups as $group_name => $folderItems):?>
-                    <tr class="folder-title <?php if(empty($folderItems)) echo 'hide'; ?> header <?php if(isset($folders[$group_name]) && $folders[$group_name] == $default_folder) echo 'default-folder'; ?> open-folder" data-name="<?php echo $group_name ?>">
+                    <tr class="folder-title <?php if(empty($folderItems)) echo 'hide'; ?> header <?php if(isset($folders[$group_name]) && $folders[$group_name] == $default_folder) echo 'default-folder'; ?> " data-name="<?php echo $group_name ?>">
                         <td colspan="15"><?php echo $group_name; ?> (<span><?php echo count($folderItems) ?></span>)</td>
                     </tr>
                     <?php foreach($folderItems as $key => $item):
@@ -192,7 +192,7 @@ function getLastLogin($item){
                             <tr class="item" data-id="<?php echo $item['id'] ?>" data-name="<?php
                             $record_name = htmlentities($item['show_name']);
                             echo $record_name;
-                            ?>" data-prior="" data-updated="<?php echo date("Y", strtotime($item['updated_at'])); ?>">
+                            ?>" data-prior="" data-updated="<?php echo date("Y", strtotime($item['updated_at'])); ?>" style="display: none">
                                 <td><?php echo $key + 1  ?></td>
                                 <td class="name">
                                     <a href="javascript:void(0)" onclick="OpenInNewTab('/<?php echo $role ?>/<?php echo $item['id'] ?>')">

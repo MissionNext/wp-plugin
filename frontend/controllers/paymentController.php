@@ -229,7 +229,7 @@ class paymentController extends AbstractLayoutController {
                     $params = [];
                     $params['%organization_name%'] = ('organization' == $this->userRole) ? UserLib::getUserOrganizationName($this->user) : UserLib::getAgencyFullName($this->user);
                     $params['%to_email%'] = $this->user['email'];
-                    if (in_array(Context::getInstance()->getApiManager()->publicKey, ['canada', 'explorenext'])) {
+                    if (in_array(Context::getInstance()->getApiManager()->publicKey, ['canada', 'journey'])) {
                         $params['%subject%'] = 'Thank You for Your ExploreNext Partnership Renewal';
                     } elseif ("teachnext" == Context::getInstance()->getApiManager()->publicKey) {
                         $params['%subject%'] = 'Thank You for Your TeachNext Partnership Renewal';

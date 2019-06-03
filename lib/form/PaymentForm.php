@@ -431,7 +431,7 @@ class PaymentForm extends Form {
 
         $data = $this->getData();
 
-        $this->updateProfile($data['user_fields']);
+//        $this->updateProfile($data['user_fields']);
 
         $payment_type = null;
 
@@ -492,7 +492,7 @@ class PaymentForm extends Form {
 
         if($this->api->getLastStatus() == 1){
 
-            $this->updateProfile($data['user_fields']);
+//            $this->updateProfile($data['user_fields']);
 
             return $response;
 

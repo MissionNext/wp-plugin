@@ -11,7 +11,8 @@ $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after http:// and before
 if (preg_match("/urbana/",$sniff_host)) { $subdomain = "urbana"; $site = 13; }
 if (preg_match("/jg./",$sniff_host))    { $subdomain = "jg"; $site = 4; }
 
-// echo "\$userRole=$userRole; \$site=$site"; // \$user= print_r($user[app_ids])"; // print_r($user);
+// echo "<br>\$userRole=$userRole; <br>\$userId=$userId; <br>\$domain=$domain; <br>\$site=$site; <br>"; 
+// print_r($user);
 get_header();
 ?>
     <div id="main" role="main" >
@@ -28,7 +29,7 @@ get_header();
                             <div class="links mn-sidebar-links">
                                 <a href="/dashboard"><?php echo __('My Dashboard', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                                 <a href="/profile"><?php echo __('My Profile', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
-                                <a href="/user/account"><?php echo __('My Account', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+                                <a href="/user/account"><?php echo __('Change Password', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                                 <?php if($userRole == 'candidate' && $site != 13): // urbana 
                                 // generate $_GET value
                                 $factor   = rand(10,99); // generate random two-digit number
@@ -76,7 +77,7 @@ get_header();
                                     <a href="/affiliates"><?php echo __('Affiliates', \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
                                     <?php endif; ?>
                                     <?php // echo "\$user['id'] = $user[id]"; 
-                                    	$this_id = $user[id];
+                                    	$this_id = $user['id'];
                                     	date_default_timezone_set('America/New_York');
                                     	$datetime = date("Y-m-d H:i:s"); 
                                     	include("job/connect.inc.php");

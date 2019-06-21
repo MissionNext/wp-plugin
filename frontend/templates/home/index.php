@@ -8,7 +8,21 @@
  * @var $site
  * @var $links
  */
-// echo "<br>\$userRole=$userRole; \$userId=$userId; \$domain=$domain; \$site=$site; \$user= "; print_r($user);
+// echo "<br>\$userRole=$userRole; \$userId=$userId; \$domain=$domain; \$site=$site; \$user= <br>"; print_r($user);
+// print_r($_COOKIE);
+while(list($key,$cookie) = each($_COOKIE)) {
+	if (preg_match("/wordpress_logged_in/",$key)) {
+		// echo "<br>$key => $cookie";
+		$pipe_pos  = strpos($cookie, "|");
+		$visit_un = substr($cookie, 0, $pipe_pos);
+	} 
+	elseif (preg_match("/wordpress_sec/",$key)) {
+		// echo "<br>$key => $cookie";
+		$pipe_pos  = strpos($cookie, "|");
+		$visit_un = substr($cookie, 0, $pipe_pos);
+	} // wordpress_sec
+}
+
 ?>
 
 <div class="page-header">
@@ -161,7 +175,7 @@ elseif ($site == 13) { // for Urbana Application Only
                 return '<?php echo $links[6]; ?>'; // canada
                 break;
             case 11:
-                return '<?php echo $links[7]; ?>'; // it-next
+                return '<?php echo $links[7]; ?>'; // it-technology 
                 break;
             case 12:
                 return '<?php echo $links[8]; ?>'; // urbana

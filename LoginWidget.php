@@ -30,8 +30,8 @@ class LoginWidget extends \WP_Widget {
 
         echo $args['before_widget'];
         $sniff_host = $_SERVER["HTTP_HOST"]; // returns what is after https:// and before first slash 
-		if (preg_match("/explorenext/",$sniff_host))   { $subdomain = "explorenext"; }
-		elseif (preg_match("/teachnext/",$sniff_host)) { $subdomain = "teachnext"; }
+		if (preg_match("/journey/",$sniff_host))	   { $subdomain = "journey"; }
+		elseif (preg_match("/education/",$sniff_host)) { $subdomain = "education"; }
 		elseif (preg_match("/canada/",$sniff_host))    { $subdomain = "canada"; }
 		elseif (preg_match("/jg./",$sniff_host))	   { $subdomain = "jg"; }
 		elseif (preg_match("/short/",$sniff_host))	   { $subdomain = "short-term"; }

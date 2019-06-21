@@ -15,11 +15,11 @@ $total_unused_value = 0;
 foreach($defaults as $default){
     $total_unused_value += $default['left_amount'];
 }
-
+$total_unused_value =  sprintf('%0.0f',$total_unused_value / 100);
 ?>
 
 <div class="block bg-success">
-    <?php echo sprintf(__("NOTE: Your current subscription has %s days remaining until %s for a residual value of $%s.", \MissionNext\lib\Constants::TEXT_DOMAIN), $days_left, date("Y-m-d", $end_date), $total_unused_value) ?>
+    <?php echo sprintf(__("NOTE: Your current subscription has %s days remaining <!--until %s for a residual value of $%s-->.", \MissionNext\lib\Constants::TEXT_DOMAIN), $days_left, date("Y-m-d", $end_date), $total_unused_value) ?>
 </div>
 
 <div class="block payment-period">
@@ -103,11 +103,13 @@ foreach($defaults as $default){
     <?php endforeach; ?>
     </tbody>
 </table>
-Partnership Notes (<a href="https://<?php echo $fees_domain ?>/welcome/for-organizations/#partnership-fees" title="Fee Schedule" target="_blank">ExploreNext Tier Pricing</a>):<ul>
-<li>Tier 1: Annual revenues of under $5 million 
-<li>Tier 2: Annual revenues of $5 - $20 million 
-<li>Tier 3: Annual revenues of $20 million or more
-<li>One Rate: All TeachNext Schools 
+Partnership Notes (<a href="https://<?php echo $fees_domain ?>/welcome/for-organizations/#partnership-fees" title="Fee Schedule" target="_blank">Journey (ExploreNext) Tier Pricing</a>):<ul>
+<li>Tier 3: Annual revenues of $10 million or more
+<li>Tier 2: Annual revenues of $3 - $10 million
+<li>Tier 1: Annual revenues of $0.5 - $3 million
+<li>Tier 0: Annual revenues under $500 thousand
+<li>One Rate: All other pathways including schools 
+<li>The <strong>JourneyGuide</strong> program is for MissionNext workers only 
 </ul>
 <div class="col-sm-12 coupon-block">
     <?php renderTemplate('payment/_coupon') ?>

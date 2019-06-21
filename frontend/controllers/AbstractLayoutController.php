@@ -137,11 +137,14 @@ abstract class AbstractLayoutController extends Controller {
                     $this->subscriptions = $this->api->getSubscriptionsForUser($this->userId);
                     $this->apps = [
                         1   => 'http://new.missionnext.org',
-                        2   => 'http://finishersproject.missionnext.org',
-                        3   => 'http://explorenext.missionnext.org',
+                        2   => 'http://short-term.missionnext.org',
+                        3   => 'http://journey.missionnext.org',
                         4   => 'http://journeydeepens.missionnext.org',
                         5   => 'http://bammatch.missionnext.org',
-                        6   => 'http://teachnext.missionnext.org',
+                        6   => 'http://education.missionnext.org',
+                        10   => 'http://canada.missionnext.org',
+                        11   => 'http://it-technology.missionnext.org',
+                        13   => 'http://urbana.missionnext.org'
                     ];
                 }
             }

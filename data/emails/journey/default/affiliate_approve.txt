@@ -1,0 +1,11 @@
+Hello %to_full_name%, <br />
+<br />
+IF YOU OWN AN JOURNEY MissionNext AGENCY ACCOUNT: Your affiliation request with %from_full_name% has been approved. This affiliated account will be able to view your posted jobs and view candidate profiles matching those jobs to assist in recruiting. <br />
+<br />
+IF YOU OWN AN JOURNEY MissionNext AGENCY REP ACCOUNT: Your affiliation request with %from_full_name% has been approved. Please log in to your ExploreNext account to view posted jobs and view candidate profiles matching those jobs. <br />
+<br />
+Login at https://explorenext.%domain%/journey-home/login-here/ <br />
+<br />
+Thank you for your partnership in the gospel. <br />
+<br />
+ExploreNext Customer Service <br />

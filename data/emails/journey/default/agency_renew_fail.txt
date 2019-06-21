@@ -1,5 +1,5 @@
-Hello %to_full_name%,  
- 
+Hello %to_full_name%, <br />
+<br />
 This is to inform you that an attempted renewal payment from %organization_name% has failed. Please contact this agency user to provide assistance.
- 
-This is an automatic message from the canada.%domain% website.
+<br />
+This is an automatic message from the journey.%domain% website.

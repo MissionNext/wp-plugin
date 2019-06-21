@@ -66,9 +66,11 @@
     <?php endforeach; ?>
     </tbody>
 </table>
-Partnership Notes (<a href="https://<?php echo $fees_domain ?>/welcome/for-organizations/#partnership-fees" title="Fee Schedule" target="_blank">ExploreNext Tier Pricing</a>):<ul>
-<li>Tier 3: Annual revenues of $20 million or more
-<li>Tier 2: Annual revenues of $5 - $20 million
-<li>Tier 1: Annual revenues of under $5 million 
-<li>One Rate: All TeachNext Schools 
+Partnership Notes (<a href="https://<?php echo $fees_domain ?>/welcome/for-organizations/#partnership-fees" title="Fee Schedule" target="_blank">Journey (ExploreNext) Tier Pricing</a>):<ul>
+<li>Tier 3: Annual revenues of $10 million or more
+<li>Tier 2: Annual revenues of $3 - $10 million
+<li>Tier 1: Annual revenues of $0.5 - $3 million
+<li>Tier 0: Annual revenues under $500 thousand 
+<li>One Rate: All other pathways including schools 
+<li>The <strong>JourneyGuide</strong> program is for MissionNext workers only 
 </ul>

@@ -1,0 +1,8 @@
+Hello %to_full_name%, <br />
+<br />
+Your affiliation request with %from_full_name% has been canceled. If you have any questions, you can log in to your Journey MissionNext account to send a message to the %from_full_name% or contact them directly. <br />
+<br />
+Thank you for your partnership in the gospel. <br />
+<br />
+ExploreNext Customer Service <br />
+ExploreNext: https://journey.%domain% <br />

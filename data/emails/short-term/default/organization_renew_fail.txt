@@ -1,5 +1,5 @@
-Hello %to_full_name%, <br />
-<br />
+Hello %to_ 
+ 
 This is to inform you that an attempted renewal payment from %organization_name% has failed. Please contact this agency user to provide assistance.
-<br />
+ 
 This is an automatic message from the short-term.%domain% website.

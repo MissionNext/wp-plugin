@@ -15,10 +15,11 @@ $total_unused_value = 0;
 foreach($defaults as $default){
     $total_unused_value += $default['left_amount'];
 }
+// $total_unused_value = $total_unused_value / 100;
 ?>
 
 <div class="block">
-    <?php echo sprintf(__("NOTE: Your current subscription has %s days remaining until %s for a residual value of $%s.", \MissionNext\lib\Constants::TEXT_DOMAIN), $days_left, date("Y-m-d", $end_date), $total_unused_value) ?>
+    <?php echo sprintf(__("NOTE21: Your current subscription has %s days remaining until %s for a residual value of $%s.", \MissionNext\lib\Constants::TEXT_DOMAIN), $days_left, date("Y-m-d", $end_date), $total_unused_value) ?>
 </div>
 
 <div class="block payment-period">

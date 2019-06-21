@@ -12,7 +12,7 @@ $warn = '';
 $date_today = date("Y-m-d");
 $number_jobs = count($jobs);
 $once = "No";
-// echo "Line 15 \$domain = $domain; \$site = $site; \$jobs ="; print_r($jobs); 
+// echo "Line 15 \$domain = $domain; \$site = $site; \$jobs =<br>"; print_r($jobs); echo "<br>\$user =<br>"; print_r($user); 
 ?>
 
 <div class="page-header">
@@ -21,9 +21,13 @@ $once = "No";
 <div class="page-content">
     <?php if($jobs): 
 
-    if ($number_jobs > 9): ?> 
-    <a class="btn btn-success" href="/job/new"><?php echo __("New Job", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a><br><br>
-     <?php endif; ?> 
+    if ($number_jobs > 9):  
+    	if ($site == 2): ?>
+    	<a class="btn btn-success" href="/job/new"><?php echo __("New Job or Trip", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> 
+		<?php else: ?>
+    	<a class="btn btn-success" href="/job/new"><?php echo __("New Job", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+    	<?php endif;   
+     endif; ?> 
      <table class="table table-bordered">
         <thead>
             <tr>
@@ -37,8 +41,9 @@ $once = "No";
         <tbody>
         <?php foreach($jobs as $job): ?>
         <?php if($site == $job['app_id']): ?>
-        <?php if ($date_today > $job['profileData']['listing_expiration']) { $font = "red"; $warn = "Yes"; } else { $font = "black"; } 
-        if ($warn == "Yes" && $once == "No") { echo "<font color='red'>NOTICE: One or more jobs has expired. Edit / Save job spec to extend the expiration date for another 6 months.</font><br>";     
+        <?php if ($date_today > $job['profileData']['listing_expiration']) { $font = "red"; $warn = "Yes"; $jobs_expired[] = $job[id]; } else { $font = "black"; } 
+        if ($warn == "Yes" && $once == "No") { 
+        	echo "<font color='red'>NOTICE: One or more jobs has expired. Edit / Save job spec to extend the expiration date for another 6 months.</font><br>";     
 			$once = "Yes"; 
 		}
 		?>
@@ -60,13 +65,13 @@ $once = "No";
     <?php else: ?>
         <div class="block">
         	<?php if ($userRole == "organization" && $site == 2) {
-            	echo __("Post your first trip opportunity to find appropriate candidates.", \MissionNext\lib\Constants::TEXT_DOMAIN); 
+            	echo __("Post your first short-term opportunity to find appropriate candidates.", \MissionNext\lib\Constants::TEXT_DOMAIN); 
             }
         	elseif ($userRole == "organization") {
             	echo __("Post your first job/assigment to find appropriate candidates.", \MissionNext\lib\Constants::TEXT_DOMAIN); 
             }
             elseif ($site == 2) {
-            	echo __("Available trips to be posted soon. Please check back.", \MissionNext\lib\Constants::TEXT_DOMAIN); 
+            	echo __("Available short-term opportunities to be posted soon. Please check back.", \MissionNext\lib\Constants::TEXT_DOMAIN); 
             }
             else {
             	echo __("Available jobs to be posted soon. Please check back.", \MissionNext\lib\Constants::TEXT_DOMAIN); 
@@ -74,9 +79,16 @@ $once = "No";
             ?>
         </div>
     <?php endif; 
-    if ($warn == "Yes") { echo "<font color='red'>NOTICE: One or more jobs has expired. Edit / Save job spec to extend the expiration date for another 6 months.</font><br>"; }      
+    if ($warn == "Yes") { 
+    	echo "<font color='red'>NOTICE: One or more jobs has expired. Edit / Save job spec to extend the expiration date for another 6 months.</font><br>"; 
+    	if ($site != 6 && $userRole == "organization") { // allow updating jobs in bulk if an org that is not "Education", $site = 6.
+    		$implode_expired = implode(",", $jobs_expired); // echo "$implode_expired<br>"; // produces comma separated string, e.g. 1855,1539,1540,660
+    		// print_r($jobs_expired); echo "<br>"; echo "Line 86 \$site = $site; \$user[id] = $user[id]"; 
+    		print ("<a href='https://info.missionnext.org/jobs_bulk_update.php?exp_list=$implode_expired&uid=$user[id]&site=$site' target='_blank'>Update expired jobs in bulk.</a><br><br>");
+    	}
+    }      
     if ($site == 2): ?>
-    <a class="btn btn-success" href="/job/new"><?php echo __("New Trip", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
+    <a class="btn btn-success" href="/job/new"><?php echo __("New Job or Trip", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a> 
 	<?php else: ?>
     <a class="btn btn-success" href="/job/new"><?php echo __("New Job", \MissionNext\lib\Constants::TEXT_DOMAIN) ?></a>
     <?php endif; ?>   

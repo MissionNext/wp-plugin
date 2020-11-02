@@ -1,6 +1,8 @@
 .idea
 /config/app.json
 /dcwp
+/dcwp2
+/dcwp3
 /frontend/templates/job/connect.inc.php
 /frontend/templates/inquire/connect.inc.php
 /frontend/templates/search/connect.inc.php

@@ -288,13 +288,15 @@ class Form {
                 );
 
                 if($this->fields[$key]['choices']){
+									$dictionary_ids = [];
                     foreach($this->fields[$key]['choices'] as $choice){
                         if(is_array($value)){
                             foreach($value as $selected_key => $v){
                                 if(trim($choice['default_value']) == trim(stripslashes($v))){
-                                    $r['dictionary_id'][$selected_key] = $choice['id'];
+																	$dictionary_ids[$selected_key] = $choice['id'];
                                 }
                             }
+													$r['dictionary_id'] = $dictionary_ids;
                         } else {
                             if(trim($choice['default_value']) == trim(stripslashes($value))){
                                 $r['dictionary_id'] = $choice['id'];

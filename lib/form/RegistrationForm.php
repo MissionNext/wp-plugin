@@ -214,13 +214,15 @@ class RegistrationForm extends Form {
                 );
 
                 if($this->fields[$key]['choices']){
+									$dictionary_ids = [];
                     foreach($this->fields[$key]['choices'] as $choice){
                         if(is_array($value)){
                             foreach($value as $v){
                                 if($choice['default_value'] == $v){
-                                    $r['dictionary_id'][] = $choice['id'];
+																	$dictionary_ids[] = $choice['id'];
                                 }
                             }
+													$r['dictionary_id'] = $dictionary_ids;
                         } else {
                             if($choice['default_value'] == $value){
                                 $r['dictionary_id'] = $choice['id'];

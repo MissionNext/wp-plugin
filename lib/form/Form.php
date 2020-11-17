@@ -281,9 +281,13 @@ class Form {
 
         foreach($this->getData() as $group){
             foreach($group as $key => $value){
+            	if (is_array($value) && count($value) === 1 && empty($value[0])){
+            		$value = '';
+							}
+
                 $r = array(
                     'type' => $this->fields[$key]['type'],
-                    'value' => is_array($value)?stripslashes_deep($value):stripslashes(trim($value)),
+                    'value' => is_array($value) ? stripslashes_deep($value) : stripslashes(trim($value)),
                     'dictionary_id' => ''
                 );
 
@@ -303,6 +307,7 @@ class Form {
                             }
                         }
                     }
+
                 }
 
                 $data[$key] = $r;

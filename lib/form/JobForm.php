@@ -103,6 +103,22 @@ class JobForm extends Form {
 								$value = '';
 							}
 
+							if ($this->fields[$key]['choices'] && is_array($value)) {
+								$newValues = [];
+								foreach ($value as $selected_key => $v) {
+									foreach ($this->fields[$key]['choices'] as $choiceItem) {
+										if (trim($choiceItem['default_value']) == trim(stripslashes($v))) {
+											$newValues[$selected_key] = $v;
+										}
+									}
+								}
+								if (count($newValues) > 0) {
+									$value = $newValues;
+								} else {
+									$value = '';
+								}
+							}
+
                 $r = array(
                     'type' => $this->fields[$key]['type'],
                     'value' => is_array($value) ? stripslashes_deep($value) : stripslashes($value),

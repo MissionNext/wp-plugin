@@ -224,7 +224,7 @@ class Form {
 
             uasort($group['fields'], array($this, 'sortFields'));
 
-            if($group['depends_on']){
+            if($group['depends_on'] && $this->fields && $this->fields[$group['depends_on']]){
                 $group['dependant'] = $this->fields[$group['depends_on']];
             }
 
@@ -281,9 +281,25 @@ class Form {
 
         foreach($this->getData() as $group){
             foreach($group as $key => $value){
-            	if (is_array($value) && count($value) === 1 && empty($value[0])){
-            		$value = '';
-							}
+								if (is_array($value) && count($value) === 1 && empty($value[0])){
+									$value = '';
+								}
+
+								if ($this->fields[$key]['choices'] && is_array($value)) {
+									$newValues = [];
+									foreach ($value as $selected_key => $v) {
+										foreach ($this->fields[$key]['choices'] as $choiceItem) {
+											if (trim($choiceItem['default_value']) == trim(stripslashes($v))) {
+												$newValues[$selected_key] = $v;
+											}
+										}
+									}
+									if (count($newValues) > 0) {
+										$value = $newValues;
+									} else {
+										$value = '';
+									}
+								}
 
                 $r = array(
                     'type' => $this->fields[$key]['type'],
@@ -294,7 +310,9 @@ class Form {
                 if($this->fields[$key]['choices']){
 									$dictionary_ids = [];
                     foreach($this->fields[$key]['choices'] as $choice){
+
                         if(is_array($value)){
+
                             foreach($value as $selected_key => $v){
                                 if(trim($choice['default_value']) == trim(stripslashes($v))){
 																	$dictionary_ids[$selected_key] = $choice['id'];
@@ -307,9 +325,7 @@ class Form {
                             }
                         }
                     }
-
                 }
-
                 $data[$key] = $r;
             }
         }

@@ -66,7 +66,7 @@ class AvatarManager {
         }
     }
 
-    public function get_avatar( $avatar = '', $id_or_email, $size = 96, $default = '', $alt = false ) {
+    public function get_avatar( $id_or_email, $avatar = '',$size = 96, $default = '', $alt = false ) {
 
         // Determine if we recive an ID or string
         if ( is_numeric( $id_or_email ) )

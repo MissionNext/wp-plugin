@@ -286,11 +286,11 @@ class Api {
      * @return bool
      */
     public function findJobs($params){
-        return $this->post("job/find", $params);
+        return $this->get("job/find", $params);
     }
 
     public function findJobsByOrgId($org_id){
-        return $this->post("job/find/$org_id");
+        return $this->get("job/find/$org_id");
     }
 
     /**
@@ -457,7 +457,6 @@ class Api {
     }
 
     public function post($method, $data = array()){
-
         $url = $this->buildUrl($method);
 
         $this->client->setMethod('POST');
@@ -491,7 +490,15 @@ class Api {
 
         $response = $this->getResponse($url);
         $this->lastResponse = $response;
-
+        // if (str_starts_with($url, '/api/v1/inquire')) {
+            // echo "<pre>";
+            // print_r($url);
+            // echo "</pre>\r\n";
+            // echo "<pre>";
+            // print_r($response);
+            // echo "</pre>";
+        // }
+        
         return $this->parseResponse($response);
     }
 
@@ -499,7 +506,7 @@ class Api {
         $response = json_decode($json, true);
         $response = stripslashes_deep($response);
         $this->lastStatus = $response['status'];
-    
+        
         if($response['status']){
             return $response['data'];
         } else {

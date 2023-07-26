@@ -384,8 +384,8 @@ class Api {
         return $this->delete('completness/profile/'.$role);
     }
 
-    public function updateUserProfile($user_id, $profileData, $changedData = null, $saveLater = null){
-        return $this->put('profile/'.$user_id, compact('profileData', 'changedData', 'saveLater'));
+    public function updateUserProfile($user_id, $profile, $changedData = null, $saveLater = null){
+        return $this->put('profile/'.$user_id, compact('profile', 'changedData', 'saveLater'));
     }
 
     public function getUserProfile($user_id){

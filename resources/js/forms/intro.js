@@ -54,6 +54,7 @@ var FormIntroTranslationModal =
             jQuery.each(data, function(key, value)
             {
                 data[key]['id'] = data[key]['name'];
+                data[key]['value'] = data[key]['value'].replaceAll('"', '\'');
 
                 delete data[key]['name'];
             });

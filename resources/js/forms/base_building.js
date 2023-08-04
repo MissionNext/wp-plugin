@@ -449,15 +449,20 @@ function checkNotesStates()
         {
             var state = false;
             var langs = JSON.parse(json);
-
+            
             jQuery.each(langs['before_notes'], function(k, v)
             {
-                state |= v['value'].length > 0;
+                if (v['value']) {
+                    state |= v['value'].length > 0;
+                }
             });
 
             jQuery.each(langs['after_notes'], function(k, v)
             {
-                state |= v['value'].length > 0;
+                if (v['value']) {
+                    state |= v['value'].length > 0;
+                }
+                
             });
 
             button.removeClass('button-default').removeClass('button-primary').addClass(state?'button-primary':'button-default');

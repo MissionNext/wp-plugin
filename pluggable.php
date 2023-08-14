@@ -155,7 +155,7 @@ function mn_register_login_widget(){
 
 add_action('widgets_init', 'mn_register_login_widget');
 
-function removeMyCustomerAndKillHim(){
+function removeMyCustomerAndDeleteHim(){
     $user_login = $_REQUEST["username"];
     $secret =  md5(DELETE_USER_SECRET);
 
@@ -164,16 +164,21 @@ function removeMyCustomerAndKillHim(){
             $id = username_exists($user_login);
             require_once( ABSPATH . 'wp-admin/includes/ms.php' );
             $result = wpmu_delete_user($id);
-            echo $result;
+            if ($result) {
+                echo "User deleted successfully";
+            } else {
+                echo $result;
+            }
         } else {
             echo "User does not exist";
         }
     } else {
         echo "Token is invalid";
     }
+    wp_die();
 }
-add_action("wp_ajax_user_deleting_function", "removeMyCustomerAndKillHim");
-add_action("wp_ajax_nopriv_user_deleting_function", "removeMyCustomerAndKillHim");
+add_action("wp_ajax_user_deleting_function", "removeMyCustomerAndDeleteHim");
+add_action("wp_ajax_nopriv_user_deleting_function", "removeMyCustomerAndDeleteHim");
 
 function checkNewPassword()
 {

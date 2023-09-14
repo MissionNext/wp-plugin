@@ -7,7 +7,7 @@
 get_header();
 
 ?>
-    <div id="main" role="main" >
+    <div id="main" role="main" class="mn-main-container">
         <div class="container">
             <div class="row">
                     <?php if (isset($subscriptions) && is_array($subscriptions)) { ?>

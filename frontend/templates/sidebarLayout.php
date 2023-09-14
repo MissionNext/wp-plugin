@@ -15,7 +15,7 @@ if (preg_match("/jg./",$sniff_host))    { $subdomain = "jg"; $site = 4; }
 // print_r($user);
 get_header();
 ?>
-    <div id="main" role="main" >
+    <div id="main" role="main" class="mn-main-container">
         <div class="container clearfix">
             <div class="row">
                 <div class="page-content">

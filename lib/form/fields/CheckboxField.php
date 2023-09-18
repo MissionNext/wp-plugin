@@ -26,10 +26,12 @@ class CheckboxField extends BaseField {
         $key = $this->id;
         $name = $this->name;
 
-        if(isset($this->constraints[0]) && $this->constraints[0] == 'required')
+        if(isset($this->constraints[0]) && $this->constraints[0] == 'required') {
             $field = "<input $optionsString name=\"$name\" id=\"$key\" type=\"checkbox\" value=\"1\" $checked />";
-        else
-            $field = "<input name=\"$name\" id=\"$key\" type=\"hidden\" value=\"0\"><input $optionsString name=\"$name\" id=\"$key\" type=\"checkbox\" value=\"1\" $checked />";
+        } else {
+            $hiddenKey = $key."_hidden";
+            $field = "<input name=\"$name\" id=\"$hiddenKey\" type=\"hidden\" value=\"0\"><input $optionsString name=\"$name\" id=\"$key\" type=\"checkbox\" value=\"1\" $checked />";
+        }
 
         return $field;
 

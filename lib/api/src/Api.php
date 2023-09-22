@@ -143,19 +143,19 @@ class Api {
     }
 
     public function cancelInquire($candidate_id, $job_id){
-        return $this->post("inquire/$candidate_id/for/$job_id/cancel");
+        return $this->post("inquire/$candidate_id/for/$job_id/cancel", compact('job_id'));
     }
 
     public function cancelInquireByAgency($agency_id, $inquire_id){
-        return $this->post("inquire/cancel/$inquire_id/by/agency/$agency_id");
+        return $this->post("inquire/cancel/$inquire_id/by/agency/$agency_id", compact('agency_id'));
     }
 
     public function cancelInquireByOrganization($org_id, $inquire_id){
-        return $this->post("inquire/cancel/$inquire_id/by/organization/$org_id");
+        return $this->post("inquire/cancel/$inquire_id/by/organization/$org_id", compact('org_id'));
     }
 
     public function inquireJob($candidate_id, $job_id){
-        return $this->post("inquire/$candidate_id/for/$job_id");
+        return $this->post("inquire/$candidate_id/for/$job_id", compact('candidate_id'));
     }
 
     public function addFavorite($user_id, $target_type, $target_id){
@@ -212,15 +212,15 @@ class Api {
     }
 
     public function requestAffiliate($requester_id, $target_id){
-        return $this->post("affiliate/$requester_id/to/$target_id");
+        return $this->post("affiliate/$requester_id/to/$target_id", compact('requester_id'));
     }
 
     public function approveAffiliate($requester_id, $target_id){
-        return $this->post("affiliate/$requester_id/to/$target_id/approve");
+        return $this->post("affiliate/$requester_id/to/$target_id/approve", compact('requester_id'));
     }
 
     public function cancelAffiliate($requester_id, $target_id){
-        return $this->post("affiliate/$requester_id/to/$target_id/cancel");
+        return $this->post("affiliate/$requester_id/to/$target_id/cancel", compact('requester_id'));
     }
 
     public function getMatchedJobsForCandidate($candidate_id, $options = array()){
@@ -290,7 +290,7 @@ class Api {
     }
 
     public function findJobsByOrgId($org_id){
-        return $this->post("job/find/$org_id");
+        return $this->post("job/find/$org_id", compact('org_id'));
     }
 
     /**
@@ -457,7 +457,6 @@ class Api {
     }
 
     public function post($method, $data = array()){
-
         $url = $this->buildUrl($method);
 
         $this->client->setMethod('POST');
@@ -490,9 +489,8 @@ class Api {
     protected function performRequest($url){
 
         $response = $this->getResponse($url);
-
         $this->lastResponse = $response;
-
+        
         return $this->parseResponse($response);
     }
 
@@ -500,7 +498,7 @@ class Api {
         $response = json_decode($json, true);
         $response = stripslashes_deep($response);
         $this->lastStatus = $response['status'];
-
+        
         if($response['status']){
             return $response['data'];
         } else {

@@ -22,7 +22,7 @@ $page = isset($url_args['page']) ? $url_args['page'] : 1;
 // 3/3/2017 is no way to identify an agency user_id if this table is called by an agency user. So grab the username from the COOKIE 
 $Cookie_Values = array_values($_COOKIE); // an array with indexed keys 
 $Cookie_Keys   = array_keys($_COOKIE);   // an array of just the cookie keys 
-while (list($key, $val) = each($Cookie_Keys)) {
+foreach ($Cookie_Keys as $key => $val) {
 	// This is the cookie key. (Following wordpress_logged_in there is a long random string that has no meaning. 
 	// capture the index of $Cookie_Values for a cookie with key containing "/wordpress_logged_in/"
 	if (preg_match("/wordpress_logged_in/",$val)) { $this_key = $key; }

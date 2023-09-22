@@ -65,10 +65,13 @@ abstract class AbstractLayoutController extends Controller {
 
         if($this->user && !current_user_can('manage_options')){
             //Activity
+            
             if(!$this->user['is_active'] || !$this->user['is_active_app'] ){
-
+                
                 if($this->user['status'] == Constants::USER_STATUS_PENDING){
-                    $this->redirect(get_permalink(get_page_by_path(Constants::PAGE_PENDING_APPROVAL)));
+                    // old code to redirect to the pending page
+                    // $this->redirect(get_permalink(get_page_by_path(Constants::PAGE_PENDING_APPROVAL)));
+                    $this->redirect("/".Constants::PAGE_PENDING_APPROVAL);
                 }
             }
 

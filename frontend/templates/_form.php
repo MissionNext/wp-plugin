@@ -107,7 +107,7 @@
                                                     <?php echo $innerField->printField() ?>
                                                     <?php if ($innerField->tooltip): ?>
                                                         <img src="<?php echo getResourceUrl('/resources/images/tooltip.png') ?>"
-                                                             class="field-tooltip" alt="tooltip" title="<?php echo $field->tooltip ?>"/>
+                                                             class="field-tooltip" alt="tooltip" title="<?php echo $innerField->tooltip ?>"/>
                                                     <?php endif; ?>
                                                 </div>
 
@@ -148,7 +148,7 @@
                                         <?php echo $innerField->printField() ?>
                                         <?php if ($innerField->tooltip): ?>
                                             <img src="<?php echo getResourceUrl('/resources/images/tooltip.png') ?>"
-                                                 class="field-tooltip" alt="tooltip" title="<?php echo $field->tooltip ?>"/>
+                                                 class="field-tooltip" alt="tooltip" title="<?php echo $innerField->tooltip ?>"/>
                                         <?php endif; ?>
                                     </div>
 

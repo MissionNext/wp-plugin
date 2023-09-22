@@ -67,7 +67,7 @@ function getFieldBySymbolKey($fields, $symbol_key) {
         margin: 5px ;
     }
 
-    .tooltip,
+    .predefined-field .tooltip,
     .notes
     {
         float: right;

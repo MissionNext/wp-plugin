@@ -74,8 +74,8 @@ abstract class AbstractFormBuilderTab extends AbstractSettingsTab {
 
         $this->restFields = $fields;
 
-        $this->form_intro               = Context::getInstance()->getSiteConfigManager()->get($this->getFormName() . '_' . $this->getRole() . '_form_intro');
-        $this->form_outro               = Context::getInstance()->getSiteConfigManager()->get($this->getFormName() . '_' . $this->getRole() . '_form_outro');
+        $this->form_intro               = stripslashes(html_entity_decode(Context::getInstance()->getSiteConfigManager()->get($this->getFormName() . '_' . $this->getRole() . '_form_intro')));
+        $this->form_outro               = stripslashes(html_entity_decode(Context::getInstance()->getSiteConfigManager()->get($this->getFormName() . '_' . $this->getRole() . '_form_outro')));
         $this->main_fields              = Context::getInstance()->getSiteConfigManager()->get($this->getFormName() . '_' . $this->getRole() . '_main_fields', 'Main Fields');
         $this->main_fields_translations = Context::getInstance()->getSiteConfigManager()->get($this->getFormName() . '_' . $this->getRole() . '_main_fields_translations');
 

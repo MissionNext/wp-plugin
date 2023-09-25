@@ -295,14 +295,25 @@ class matchesController extends AbstractLayoutController {
         $results = [];
         foreach ($matchResult['results'] as $matchKey => $matchItem) {
             foreach ($matchItem[$role."_value"] as &$resultValue) {
-                $exclamation_mark = strpos($resultValue, '(!)');
-                if ($exclamation_mark !== false) {
-                    $resultValue = str_replace("(!) ", "", $resultValue);
-                    $matchItem['forcibly'] = true;
+                if ('array' === gettype($resultValue)) {
+                    foreach ($resultValue as &$resultValueItem) {
+                        $exclamation_mark = strpos($resultValueItem, '(!)');
+                        if ($exclamation_mark !== false) {
+                            $resultValueItem = str_replace("(!) ", "", $resultValueItem);
+                            $matchItem['forcibly'] = true;
+                        }
+                    }
+                } else {
+                    $exclamation_mark = strpos($resultValue, '(!)');
+                    if ($exclamation_mark !== false) {
+                        $resultValue = str_replace("(!) ", "", $resultValue);
+                        $matchItem['forcibly'] = true;
+                    }
                 }
             }
             $results[$matchItem['matchingDataKey']] = $matchItem;
         }
+        
 
         $fields = $this->api->getModelFields($role);
         $checkboxFields = $this->getCheckboxWithGroups($fields);

@@ -151,7 +151,10 @@
                                             </td>
 
                                             <td class="note" data-note="<?php echo isset($item['note']) ? $item['note'] : ''; ?>" data-notes='<?php echo json_encode($item['notes'][$orgId]); ?>' data-group="<?php echo $group_name; ?>">
-                                                <div <?php if((!isset($item['note']) || !$item['note']) && count($item['notes'][$orgId]) == 0) echo 'class="no-note"' ?>></div>
+                                                <div <?php 
+                                                    if ((!isset($item['note']) || !$item['note']) && (!isset($item['notes'][$orgId]) || count($item['notes'][$orgId]) == 0)) 
+                                                        echo 'class="no-note"' 
+                                                ?>></div>
                                             </td>
 
                                         </tr>

@@ -15,7 +15,6 @@ class profileController extends AbstractLayoutController {
     public $layout = 'sidebarLayout.php';
 
     public function index(){
-
         $this->form = new Form($this->api, $this->userRole, 'profile', $this->userId);
 
         $this->form->saveLater = @$_POST['savelater'];
@@ -30,8 +29,24 @@ class profileController extends AbstractLayoutController {
 
             if($this->form->isValid()){
 
-                $this->setMessage('notice', __("<p style='font-size: 15px; font-weight: bold; color='#ffffff'>Thank you for completing your Profile. Select <a href='/dashboard'>My Dashboard</a> to continue.</p>", Constants::TEXT_DOMAIN), 1);
-                $this->redirect($_SERVER['REQUEST_URI']);
+                $wp_user_id = wp_get_current_user()->ID;
+                $meta_value = get_user_meta($wp_user_id, 'thank_you_page', true);
+        
+                echo "<!-- ";
+                if (!$meta_value) {
+                    echo "<pre>";
+                    print_r('No thank you page showed');
+                    echo "</pre>";
+                    update_user_meta($wp_user_id, 'thank_you_page', 1);
+                    echo " -->";
+                } else {
+                    echo "<pre>";
+                    print_r('Thank you page showed');
+                    echo "</pre>"; 
+                    echo " -->";
+                    $this->setMessage('notice', __("<p style='font-size: 15px; font-weight: bold; color='#ffffff'>Thank you for completing your Profile. Select <a href='/dashboard'>My Dashboard</a> to continue.</p>", Constants::TEXT_DOMAIN), 1);
+                    $this->redirect($_SERVER['REQUEST_URI']);
+                }
             }
         } else {
             $this->form->prepareForValidation();

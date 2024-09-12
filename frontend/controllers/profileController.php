@@ -29,21 +29,27 @@ class profileController extends AbstractLayoutController {
 
             if($this->form->isValid()){
 
-                $wp_user_id = wp_get_current_user()->ID;
-                $meta_value = get_user_meta($wp_user_id, 'thank_you_page', true);
+                $configs = $this->api->getSubscriptionConfigs();
+                $site_id = 0;
         
-                echo "<!-- ";
+                foreach($configs as $config){
+                    if($config['public_key'] == $this->context->getApiManager()->publicKey){
+                        $site_id = $config['id'];
+                    }
+                }
+
+                $wp_user_id = wp_get_current_user()->ID;
+                $meta_value = get_user_meta($wp_user_id, 'thank_you_page_'.$site_id, true);
+        
                 if (!$meta_value) {
-                    echo "<pre>";
-                    print_r('No thank you page showed');
-                    echo "</pre>";
-                    update_user_meta($wp_user_id, 'thank_you_page', 1);
-                    echo " -->";
+                    update_user_meta($wp_user_id, 'thank_you_page_'.$site_id, 1);
+                    $thank_you_page = get_page_by_path( 'mn-thank-you-page', OBJECT, 'page' );
+                    if ($thank_you_page) {
+                        $this->redirect('/mn-thank-you-page');
+                    } else {
+                        $this->redirect($_SERVER['REQUEST_URI']);
+                    }
                 } else {
-                    echo "<pre>";
-                    print_r('Thank you page showed');
-                    echo "</pre>"; 
-                    echo " -->";
                     $this->setMessage('notice', __("<p style='font-size: 15px; font-weight: bold; color='#ffffff'>Thank you for completing your Profile. Select <a href='/dashboard'>My Dashboard</a> to continue.</p>", Constants::TEXT_DOMAIN), 1);
                     $this->redirect($_SERVER['REQUEST_URI']);
                 }

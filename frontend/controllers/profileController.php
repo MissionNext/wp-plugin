@@ -44,7 +44,7 @@ class profileController extends AbstractLayoutController {
                 if (!$meta_value) {
                     update_user_meta($wp_user_id, 'thank_you_page_'.$site_id, 1);
                     $thank_you_page = get_page_by_path( 'mn-thank-you-page', OBJECT, 'page' );
-                    if ($thank_you_page && $this->userRole == Constants::ROLE_CANDIDATE) {
+                    if ($thank_you_page && $this->userRole == Constants::ROLE_CANDIDATE && ($site_id == 3 || $site_id == 6)) {
                         $this->redirect('/mn-thank-you-page');
                     } else {
                         $this->redirect($_SERVER['REQUEST_URI']);
